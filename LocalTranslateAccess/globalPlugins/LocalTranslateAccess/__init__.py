@@ -1080,7 +1080,8 @@ def _manager_hooks(app, activate=False, source_sample=None, source_hint=None):
            'setup':lambda context:_show_model_manager(app=context,activate=True),
            'announce':_announce,
            'report_error':lambda:log.exception('LocalTranslate: model download or installation failed'),
-           'copy_get':get_copy_to_cb,'copy_set':set_copy_to_cb}
+           'copy_get':get_copy_to_cb,'copy_set':set_copy_to_cb,
+           'add_languages':lambda parent:_show_add_languages(parent)}
     return hooks
 
 def _show_model_manager(parent=None, app=None, activate=False, on_done=None):
@@ -1300,18 +1301,12 @@ def _ondemand_translate(text, app, started):
         _ondemand['busy'] = False
         wx.CallAfter(_ondemand_idle)
 
+from .language_packs import Packs
+_packs = Packs(_store)
+
 def _ondemand_family(app, source, target):
-    """The installed model family able to translate this pair, the configured one first."""
-    def can_translate(family):
-        if not _store.runtime_ready(family):
-            return False
-        try:
-            _store.route(family, source, target, installed_only=True)
-            return True
-        except ValueError:
-            return False
-    families = sorted({entry['family'] for entry in _store.catalog['entries']})
-    return ondemand.choose_family(_store.config(app)['family'], families, can_translate)
+    """The installed engine able to translate this pair, the configured one first."""
+    return _packs.family_for(source, target, preferred=_store.config(app)['family'])
 
 def _language_name(code):
     """A language name inside a sentence: French does not capitalise it."""
@@ -1319,43 +1314,70 @@ def _language_name(code):
     from . import i18n
     return label.lower() if i18n._language.split('_')[0] == 'fr' else label
 
+def _language_tools(parent=None):
+    """What the language windows need: where to speak, what to do on errors and after a change."""
+    return dict(announce=_announce,
+        report_error=lambda: log.exception('LocalTranslateAccess: language download failed'),
+        changed=_manager_changed)
+
 def _offer_language_install(text, app, source, target):
-    """Ask whether to install the missing language; if so, open its download and then translate."""
+    """A text is in a language that is not installed: one plain question, then a direct download."""
     global _manager_open
+    from . import language_ui
     # The question must be heard: end the quiet period that follows the menu.
     _quiet.close()
     if _configuration_open():
         _announce(_("La fenêtre LocalTranslate est déjà ouverte."))
         return
-    message = _('Ce texte est en {source}. La traduction {source} vers {target} n’est pas installée. Voulez-vous l’installer maintenant ?').format(
-        source=_language_name(source), target=_language_name(target))
+    plan = _packs.plan(source, target)
+    if plan is None:
+        gui.messageBox(_('Ce texte est en {language}. Cette langue ne peut pas être traduite sur cet ordinateur.').format(
+            language=_language_name(source)), _('Langue non installée'), wx.OK | wx.ICON_INFORMATION)
+        return
+    # The language to install is the one that is not the user's own.
+    missing = target if _packs.installed(source, _target_for(app)) else source
+    message = _('Ce texte est en {language}, une langue qui n’est pas installée. Voulez-vous la télécharger ? ({size})') if missing == source \
+        else _('La traduction vers cette langue ({language}) n’est pas installée. Voulez-vous la télécharger ? ({size})')
+    message = message.format(language=_language_name(missing), size=language_ui.size_text(plan.size))
     if gui.messageBox(message, _('Langue non installée'), wx.YES_NO | wx.ICON_QUESTION) != wx.YES:
         return
-    from .setup_wizard import SetupWizard
+    tools = _language_tools()
     _manager_open = True
-    wizard = None
-    installed = False
     prepared = False
+    error = 'failed'
     try:
         gui.mainFrame.prePopup()
         prepared = True
-        wizard = SetupWizard(gui.mainFrame, _store, _telemetry, app, _manager_hooks(app),
-            activate=False, pairs=[(source, target)], download_only=True)
-        installed = wizard.ShowModal() == wx.ID_OK and bool(wizard.downloaded_family)
+        # Translators: Title of the download progress window. {language} is the language being downloaded.
+        error = language_ui.download(gui.mainFrame, _packs, [plan],
+            _('Téléchargement : {language}').format(language=_label_for_ui(missing)), tools['announce'], tools['report_error'])
     except Exception:
-        log.exception('LocalTranslateAccess: language download window failed')
-        _announce(_('Impossible d’ouvrir le téléchargement des modèles.'))
+        tools['report_error']()
     finally:
-        if wizard is not None:
-            wizard.dead = True
-            wizard.cancel.set()
-            wizard.Destroy()
         if prepared:
             gui.mainFrame.postPopup()
         _manager_open = False
-    if installed and _ondemand_family(app, source, target) is not None:
+    _manager_changed()
+    if error == 'cancelled':
+        _announce(_('Téléchargement annulé.'))
+    elif error is not None or _ondemand_family(app, source, target) is None:
+        gui.messageBox(_('Le téléchargement a échoué. Vérifiez votre connexion Internet, puis réessayez.'),
+            _('Langue non installée'), wx.OK | wx.ICON_ERROR)
+    else:
         # The language is there now: do what was asked in the first place.
         _ondemand_start(text, app, '', delayed=True)
+
+def _show_add_languages(parent=None):
+    """The list of languages to tick. Returns True when at least one language was added."""
+    from . import language_ui
+    tools = _language_tools()
+    dialog = language_ui.AddLanguagesDialog(parent or gui.mainFrame, _packs, _target_for('global'), _label_for_ui,
+        tools['announce'], tools['report_error'], tools['changed'])
+    try:
+        dialog.ShowModal()
+        return dialog.added
+    finally:
+        dialog.Destroy()
 
 def _ondemand_idle():
     if _ondemand['timer'] is not None:

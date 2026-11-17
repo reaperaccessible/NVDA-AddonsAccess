@@ -2302,3 +2302,54 @@ msgstr "Language not installed"
 
 msgid "A&jouter une langue…"
 msgstr "&Add a language…"
+
+msgid "{megabytes} Mo"
+msgstr "{megabytes} MB"
+
+msgid "Téléchargement en cours…"
+msgstr "Downloading…"
+
+msgid "Téléchargement : {percent} %"
+msgstr "Downloading: {percent}%"
+
+msgid "Ajouter des langues"
+msgstr "Add languages"
+
+msgid "Cochez les langues à ajouter :"
+msgstr "Tick the languages to add:"
+
+msgid "Langues à ajouter"
+msgstr "Languages to add"
+
+msgid "{language} — {size}"
+msgstr "{language} — {size}"
+
+msgid "Toutes les langues disponibles sont déjà installées."
+msgstr "Every available language is already installed."
+
+msgid "Aucune langue cochée."
+msgstr "No language ticked."
+
+msgid "Télécharger ({size})"
+msgstr "Download ({size})"
+
+msgid "Téléchargement des langues"
+msgstr "Downloading languages"
+
+msgid "Langues installées : {languages}."
+msgstr "Languages installed: {languages}."
+
+msgid "Le téléchargement a échoué. Vérifiez votre connexion Internet, puis réessayez."
+msgstr "The download failed. Check your Internet connection, then try again."
+
+msgid "Ce texte est en {language}. Cette langue ne peut pas être traduite sur cet ordinateur."
+msgstr "This text is in {language}. This language cannot be translated on this computer."
+
+msgid "Ce texte est en {language}, une langue qui n’est pas installée. Voulez-vous la télécharger ? ({size})"
+msgstr "This text is in {language}, a language that is not installed. Do you want to download it? ({size})"
+
+msgid "La traduction vers cette langue ({language}) n’est pas installée. Voulez-vous la télécharger ? ({size})"
+msgstr "Translation into this language ({language}) is not installed. Do you want to download it? ({size})"
+
+msgid "Téléchargement : {language}"
+msgstr "Downloading: {language}"

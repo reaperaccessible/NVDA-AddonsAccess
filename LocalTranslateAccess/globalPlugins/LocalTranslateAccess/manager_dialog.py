@@ -172,11 +172,14 @@ class ManagerPanel(wx.Panel):
             wizard=None
             try:
                 if self.dead:return
-                from .setup_wizard import SetupWizard
-                # No language is preselected: the window lets the user choose them.
-                wizard=SetupWizard(self,self.store,self.telemetry,'global',self.hooks,
-                    activate=False,download_only=True)
-                wizard.ShowModal()
+                if 'add_languages' in self.hooks:
+                    # The simple list of languages to tick.
+                    self.hooks['add_languages'](self)
+                else:
+                    from .setup_wizard import SetupWizard
+                    wizard=SetupWizard(self,self.store,self.telemetry,'global',self.hooks,
+                        activate=False,download_only=True)
+                    wizard.ShowModal()
             except Exception:
                 self.hooks.get('report_error',lambda:None)()
                 self.hooks.get('announce',lambda text:None)(_('Impossible d’ouvrir le téléchargement des modèles.'))
