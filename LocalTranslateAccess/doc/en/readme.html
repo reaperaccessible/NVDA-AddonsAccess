@@ -1,38 +1,110 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>LocalTranslateAccess</title></head><body>
-<h1>LocalTranslateAccess: local translation for NVDA</h1>
-<p>This experimental edition translates NVDA speech for the current application or globally. Translation runs on your computer. No translation weights are bundled.</p>
-<h2>Shortcut and translation menu</h2>
-<p>The add-on has a single shortcut: <strong>NVDA + Ctrl + Shift + T</strong>. It opens the translation menu, which you browse with the arrow keys. Press Enter, or press the letter given below.</p>
-<ul><li><strong>Translation for this application</strong> (T): turn the translation of everything NVDA says in the current application on or off. The item is checked while translation is on.</li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocalTranslateAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>LocalTranslateAccess</h1>
+<p>LocalTranslateAccess translates what NVDA says. The translation is computed on your computer: no text is sent over the Internet.</p>
+<p>You can translate everything NVDA says in one application or in all of them, continuously, or translate a selected text, the clipboard or the last announcement on request.</p>
+<p>French and English are included and work as soon as the add-on is installed. Other languages are added as language packs, downloaded when you ask for them.</p>
+<p>The add-on is displayed in French when NVDA is in French, and in English in every other language.</p>
+
+<h2>The shortcut and the translation menu</h2>
+<p>The add-on has a single shortcut: <kbd>NVDA+Ctrl+Shift+T</kbd>. It opens the translation menu. Browse it with the arrow keys and press Enter, or press the letter given below.</p>
+<ul>
+<li><strong>Translation for this application</strong> (T): turn the translation of everything NVDA says in the current application on or off. The item is checked while translation is on.</li>
 <li><strong>Global translation</strong> (G): turn translation on or off in every application. The item is checked while translation is on.</li>
 <li><strong>Translate the selection</strong> (S): translate the selected text.</li>
-<li><strong>Translate the clipboard</strong> (P): translate the copied text.</li>
+<li><strong>Translate the clipboard</strong> (P): translate the text you copied.</li>
 <li><strong>Translate the last announcement</strong> (L): translate what NVDA has just said.</li>
 <li><strong>Copy the last translation</strong> (C): put the last translation on the clipboard.</li>
 <li><strong>Swap the languages</strong> (W): translate the other way round.</li>
 <li><strong>Announce the languages</strong> (A): hear the current source and target languages.</li>
-<li><strong>Translation configuration</strong> (F): open the language and model settings.</li></ul>
-<p>A short translation is spoken. A long translation, or one with several lines, opens in a window. If the text is already in the target language, it is translated the other way round.</p>
-<p>The shortcut can be changed in NVDA's Input gestures dialog, in the "LocalTranslateAccess" category.</p>
-<h2>Source language settings</h2><p>NVDA Preferences, LocalTranslateAccess opens the Languages tab first. Its controls are global source, global target, global model, configured applications, application source, application target and application model, in that order. Model choices include only installed engines and complete installed routes compatible with the selected pair, including pivots. In Automatic source mode, each engine must cover every expected source language from that configuration to the chosen target. Those languages are listed with Auto. Automatic detects the language; the selected engine remains fixed. Unsupported detected languages retain the original text. If no compatible engine is installed, a contextual Download a model button replaces the choice. It opens the compatible-engine page directly, using the pending source and target settings and expected sources for Automatic mode. After downloading and explicitly clicking Apply, the original Languages tab returns with focus on the model choice and the installed engine selected. Other pending edits are preserved. Downloading does not apply preferences; use Apply afterward. Cancel returns without changing preferences. Pending model choices are retained across application selection and saved with Apply. Global and application models can differ. The initial target uses the active synthesizer voice language when known and supported, then the NVDA UI language as fallback. This initial choice is persisted; changing the voice later does not overwrite configured targets, and existing user choices are preserved on upgrade. Current values are preselected. Applications use their stable executable name, independently of changing window titles, retaining the same preferences and cache. Select an application and press Tab to reach its source choice; choose Automatic or a specific language. Pending edits to multiple applications are preserved until Apply saves them. Changes persist across NVDA restarts; the completed initial setup is retained. With no configured applications, the application controls are disabled while global settings remain available. The second tab is Installed models, the third Translation cache and the fourth Performance. Model selection and downloading use the setup assistant when activating translation with missing models. Missing model requirements are reported after a source change.</p>
-<p>Application activation and deactivation announcements use the window title. Preferences and cache remain associated with the executable.</p>
-<h2>Getting started</h2><p>First application or global activation opens one setup window without a separate source-confirmation dialog. Document language or a previously detected application language is preselected when available. Otherwise focused-text detection runs in the background and can update the selection until you change it or add a pair. An explicitly configured manual source is preserved.</p>
-<p>Select one or more source languages with arrows and Space, select the target and choose Add. The pair list and Remove appear after the first pair. Compatible models appear automatically below the language controls in the same window and update whenever pairs are added or removed; there is no Validate step or page switch. Only models compatible with every requested pair and the machine are shown. There is no recommendation. Models are sorted by total size, unknown sizes last, with the first item initially selected. Background size updates keep the first item selected until you choose a model, then preserve your choice. Sizes include deduplicated intermediate pairs; multilingual weights count once. Ready models are marked installed.</p>
-<p>A ready installed model offers Apply immediately. Otherwise choose Download. The same window stays open with focus on the button, which shows one byte-weighted percentage for all required runtime and model downloads, including pivot pairs, without restarting for each file; repeated clicks during download do not restart the operation; there are no download edit fields. The button retains its progress label during verification and installation, or displays Downloading if any total size remains unknown after metadata lookup, until a complete total can be calculated. Only the overall percentage is spoken during the operation; model names and extraction, conversion and installation phases are silent. Errors are still announced. At completion the button becomes Apply. Language, pair and model controls stay visible and accessible with Tab in the same window. Their values are preserved during download and can be changed afterward. Completion changes the button to Apply. Downloading does not save preferences: only Apply commits languages and model, closes the window and triggers activation. Cancel keeps preferences unchanged; downloaded resources remain available. The first pair determines the initial speech target. Removing the final pair hides model selection and unused controls. First-use setup is preserved across restarts.</p>
-<p>NVDA Preferences, LocalTranslateAccess opens configuration. Its contextual download button opens model choices for the pending languages. Apply in that download window returns to the first tab with the installed model selected; Apply in configuration saves the pending preferences. Once resources are installed, translation works offline. Activation announcements simply confirm the original window or global scope, without announcing source language or origin.</p>
-<h2>Model families</h2><ul><li>Argos: bilingual models using CTranslate2 INT8, on CPU by default.</li><li>Firefox / Bergamot: bilingual CPU models using WebAssembly. Node.js is downloaded when first needed.</li><li>Marian / OPUS-MT: initially English to French, downloaded and converted locally to CTranslate2 INT8. The original download is larger than the installed weights.</li><li>Hy-MT2-7B Q8_0: approximately 8 GB multilingual GGUF weights using llama.cpp. CPU and RAM are used by default and require at least 12 GB available RAM. An eligible NVIDIA GPU with at least 11 GB free VRAM enables optional GPU execution using the same weights.</li></ul>
-<h2>Using the graphics card</h2><p>Use the graphics card to accelerate translation appears immediately after the model list when a compatible dedicated NVIDIA GPU has enough known free VRAM for the weights and working memory. It is unchecked by default: CPU and RAM. Checking it selects GPU and VRAM. Choices are saved separately for each application and global translation, in setup or the Languages tab. Argos, Marian, NLLB, SMaLL-100, M2M-100 and Hy-MT2 can use GPU execution; Firefox/Bergamot remains CPU-only. Model files are reused across modes. Additional runtimes are downloaded only when needed, with one progress indicator in the same window. If GPU loading or execution fails, CPU execution is used when RAM permits and a message is announced. CPU and GPU performance samples are kept separate. Speed improvements depend on model and text; very short phrases may still be faster on CPU.</p>
-<p>AMD and Intel adapters are detected, but GPU acceleration for them is not enabled in this edition. Shared system memory does not count as dedicated VRAM. Hardware is used to filter incompatible engines; compare actual timings on your computer. The Argos and Firefox pair catalogue can be refreshed; OPUS, NLLB, SMaLL-100, M2M-100 and Hy versions are fixed for this edition.</p>
-<p>NLLB-200 Distilled 600M INT8 is also available: a single multilingual download of approximately 643 MB serves all its supported pairs listed in the addon, including Japanese to French and simplified Chinese to French. It uses the CPU, requires SSE4.1 and at least 3 GB available RAM in the assistant, and can be slow on older processors. It uses the same base model and precision as native5, with a publicly distributed CTranslate2 conversion. Weights come from osa911/nllb-200-distilled-600M-ct2-int8, and the tokenizer from the original Meta repository. The original CC BY-NC 4.0 license applies.</p>
-<p>SMaLL-100 330M INT8 (~344 MB) and M2M-100 418M INT8 (~496 MB) each cover 100 languages with a single CPU model. They use greedy decoding (beam size 1) to prioritize latency, potentially reducing quality. The assistant requires SSE4.1 and 2 GB available RAM as a conservative initial rule. Language detection is separate; selecting a manual source skips it. Community conversions are pinned and checksum verified.</p>
-<h2>Source language</h2><p>A manually selected source language takes precedence. Otherwise the document language is used when available, followed by a remembered application language if you explicitly opted in, and text detection. Application language memory is off by default. NVDA voice language is not treated as the text language. Application source settings can inherit global settings.</p>
-<h2>Cache and resource management</h2><p>Translation results are stored locally per application and language pair, independently of the model. Global mode uses its own shared cache. Older model caches are merged automatically, preserving manual corrections and original files, and survive NVDA restarts. This translation cache contains source text and translations. Models are shared between applications. Minimizing a window keeps its engine available; closing the last tracked application releases engine resources. Global translation keeps the engine available until disabled.</p>
-<p>The installed-models tab lets you remove models and install different ones. Removal disables translation; activate it again to select or complete models. Cache and preferences remain. Shared Node.js and CUDA runtimes can remain installed after model removal.</p>
-<p>All data is stored inside the addon under <code>LocalTranslateAccess/data</code>: <code>models</code> holds translation weights, downloaded engines, catalogue, timings and model settings; <code>cache</code> holds translations and language preferences; <code>localTranslate.ini</code> holds other preferences. On first startup, older profile-level model, cache and settings paths are moved into this directory. An upgrade preserves addon-owned data. Uninstall removes these resources when NVDA applies removal on restart; a fresh installation following completed uninstall starts without models. NVDA 2026.1 64-bit Python is used; no separate Python runtime is included.</p>
-<h2>Browsing, correcting and sharing the cache</h2>
-<p>The third tab, Translation cache, lets you choose an application or Global translation, search original texts and translations, and select an entry. Tab reaches the complete read-only original text, then the editable translation. Save correction persists immediately, independently of Apply in Languages. It is reused for the exact same text, application and language pair with any installed model, including after restart. Automatic results do not overwrite manual corrections. Drafts survive browsing within this window, but only saved edits survive closing it. Restore saved translation discards the draft; Refresh cache reloads entries. Searches display up to 1,000 matches.</p>
-<p>Export cache opens a multiple-selection application list operated with arrows and Space. Focus starts on All applications, unchecked by default, with no applications preselected. It selects or deselects the entire list; Include global cache independently adds global mode. Export global only, selected applications, all applications, or everything. All saved entries are included, including automatic translations and manual corrections, independently of the current search. The compressed .ltcache file contains texts and translations without models or machine settings. You can share the file yourself.</p>
-<p>Import cache opens a .ltcache file, then lets you select applications and global cache. Replace existing automatic translations is checked by default; unchecking it retains existing entries. Existing manual corrections are always protected. Imported manual corrections remain marked as corrections. Import does not change language settings or installed models: a cache generated with a large GPU model works with a small CPU model. Completion reports additions, replacements and protected corrections. Disk access runs in the background.</p>
-<h2>Performance</h2><p>The tab shows the latest loading time for each model first, then average translation time and sample count for each source and target language pair. Models and language pairs are kept separate. Automatic and manual source modes are identified and averaged separately. Automatic mode shows average detection time before average translation time for each detected source and target pair. Document-provided or remembered languages do not require text classification and contribute zero detection time. Older complete samples without source mode remain separate and are marked accordingly. Cache hits and failures are excluded, as are loading, detection and speech synthesis. Pivot translations count once, using total time across all steps. Text length also affects duration. The new averages use complete translation timings recorded from this version onward; older step timings remain in the journal but are excluded. Statistics come from translations performed during ordinary use of the addon. The local journal contains no translated text and can be cleared. Translation text is never sent to an online translation service.</p>
-</body></html>
+<li><strong>Translation configuration</strong> (F): open the add-on's settings.</li>
+</ul>
+<p>To change this shortcut, open the NVDA menu, Preferences, Input gestures, "LocalTranslateAccess" category. The two translation toggles are listed there too, with no key assigned, in case you want to give them a direct shortcut.</p>
+
+<h2>Translating continuously</h2>
+<p>Choose "Translation for this application" when a single program is in another language, for example a game or software that has not been translated. Other applications are left alone, and each application keeps its own languages.</p>
+<p>Choose "Global translation" to translate everywhere with a single language setting.</p>
+<p>A beep and an announcement confirm that translation is on. Choose the same item again to turn it off.</p>
+
+<h3>First activation</h3>
+<p>The first time you turn translation on for an application, or globally, a setup window opens. Everything is done in that one window.</p>
+<ol>
+<li>Choose one or more source languages with the arrow keys and Space. The language detected in the application is preselected when it is known.</li>
+<li>Choose the target language, then "Add". You can add several language pairs.</li>
+<li>Choose a model in the list. Those that are ready are marked "installed".</li>
+<li>If the button reads "Apply", press it: translation turns on. If it reads "Download", press it to download the language pack; the button shows the progress, then becomes "Apply".</li>
+</ol>
+<p>Cancel closes the window without turning translation on. Whatever was already downloaded stays available.</p>
+
+<h2>Translating a text on request</h2>
+<p>"Translate the selection", "Translate the clipboard" and "Translate the last announcement" work even when continuous translation is off.</p>
+<ul>
+<li>A short translation is spoken.</li>
+<li>A long translation, or one with several lines, opens in a window that you read with the arrow keys.</li>
+<li>If the text is already in the target language, it is translated the other way round. A French text, for example, is translated into English.</li>
+<li>If no model is installed for the languages needed, a message tells you which language to add in the configuration.</li>
+</ul>
+<p>These commands use the languages configured for the current application, or the global languages if the application has no setting of its own.</p>
+
+<h2>Settings</h2>
+<p>Open the NVDA menu, Preferences, Settings, then the "LocalTranslateAccess" category. "Translation configuration" in the translation menu takes you there too.</p>
+<p>The category holds four tabs, followed by the update settings. Continuous translation is paused while this category is open.</p>
+
+<h3>Languages tab</h3>
+<ul>
+<li><strong>Source language for global translation</strong>: "Automatic detection" or a specific language.</li>
+<li><strong>Target language for global translation</strong>: the language in which NVDA speaks the translations.</li>
+<li><strong>Model for global translation</strong>: the model used for these languages.</li>
+<li><strong>Applications with a configured source language</strong>: the applications you have already set up. Select one to change the next three settings.</li>
+<li><strong>Source language, target language and model for this application</strong>: the same choices, for the selected application only.</li>
+<li><strong>Use the graphics card to speed up translation</strong>: this box only appears for the models and computers that allow it.</li>
+</ul>
+<p>The button under the tabs reads "Apply" when everything is ready, and "Download" when the chosen model is not installed yet. The OK button of NVDA's Settings dialog also saves your language choices, but never starts a download.</p>
+<p>The first target language offered is that of NVDA's voice. With automatic detection, a detected language for which no model is installed is not translated: the original text is spoken.</p>
+
+<h3>Installed models tab</h3>
+<p>This tab lists the models on your computer, with their size. You can remove the selected model to free some space, or refresh the catalogue to see the language packs added since you installed the add-on.</p>
+
+<h3>Translation cache tab</h3>
+<p>The add-on remembers the translations it has already made, so that it can give them back at once. In this tab you can search for a translation, correct it, and export or import a cache to share it.</p>
+
+<h3>Performance tab</h3>
+<p>This tab shows how long the models take to load and the average translation time for each language pair. A button clears these measurements.</p>
+
+<h3>Updates</h3>
+<ul>
+<li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
+<li><strong>Check for updates now</strong>: this button starts the check right away.</li>
+</ul>
+
+<h2>Languages and language packs</h2>
+<p>A language pack is downloaded once, then used without a connection. There are two kinds of models.</p>
+<ul>
+<li><strong>Firefox / Bergamot</strong>: one model per language pair, fast, about 25 to 50 MB. This is the model included for French and English. Between two languages other than English, the translation goes through English and therefore needs two packs.</li>
+<li><strong>Multilingual models</strong> (NLLB-200, SMaLL-100, M2M-100): a single download of 350 to 650 MB covers many languages, including some that Bergamot does not offer. They are slower.</li>
+</ul>
+
+<h2>Updates of the add-on</h2>
+<p>LocalTranslateAccess does not go through NVDA's Add-on Store. The add-on checks by itself, shortly after NVDA starts, whether a new version has been published. If so, a window offers to install it. When several ReaperAccessible add-ons are updated together, their windows open one after the other and NVDA asks to restart only once, at the end.</p>
+<p>Your languages, your models and your cache are kept when the add-on is updated.</p>
+<p>In the Add-on Store, the add-on is listed with the "External" channel. This is normal for an add-on installed from outside the Store.</p>
+
+<h2>Privacy</h2>
+<ul>
+<li>The texts to translate and their translations stay on your computer.</li>
+<li>The add-on contacts the Internet in two cases only: to download a language pack or refresh the catalogue, when you ask for it, and to check for updates. These exchanges are with GitHub.</li>
+<li>The performance measurements hold durations only, never any text.</li>
+</ul>
+
+<h2>Credits</h2>
+<p>LocalTranslateAccess is published by ReaperAccessible. The add-on is based on LocalTranslate and uses the Bergamot and CTranslate2 translation engines. The licences of the components are supplied with the add-on.</p>
+<p>Source code and new versions: <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>

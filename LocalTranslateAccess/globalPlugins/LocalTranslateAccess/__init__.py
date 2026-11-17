@@ -504,7 +504,7 @@ def _copy_to_clip_safely(text: str):
         pass
 
 def _is_translation_enabled_now() -> bool:
-    if _manager_open:
+    if _configuration_open():
         return False
     return _global_enabled or (_get_app_key() in _per_app_enabled)
 
@@ -764,7 +764,7 @@ def _activation_feedback(app,label=None):
     token=object();_activation_tokens[app]=token
     def announce():
         if _activation_tokens.get(app) is not token:return
-        if _manager_open or not (_global_enabled if app=='global' else app in _per_app_enabled):return
+        if _configuration_open() or not (_global_enabled if app=='global' else app in _per_app_enabled):return
         message=_('Traduction globale activée.') if app=='global' else _('Traduction activée pour {app}.').format(app=label or app)
         _announce(message,priority=True)
     wx.CallLater(300,lambda:_schedule(announce))
@@ -1033,27 +1033,15 @@ def _manager_removed():
     _sync_model_lifetime()
 
 _manager_open = False
+# The configuration panel shown in NVDA's Settings dialog, while it exists.
+_settings_manager = None
 
-def _show_model_manager(parent=None, app=None, activate=False, on_done=None):
-    global _manager_open
-    if _manager_open:
-        _announce(_("La fenêtre LocalTranslate est déjà ouverte."))
-        return
-    _manager_open = True
-    if _dispatcher is not None:
-        _dispatcher.cancel()
-    from .manager_dialog import ManagerDialog
-    from .setup_wizard import SetupWizard
-    app = app or _settings_application()
-    source_sample=None;source_hint=None
-    if activate:
-        from .source_confirmation import focus_sample
-        try:source_sample=focus_sample(api.getFocusObject())
-        except Exception:source_sample=('',None)
-        report=_source_reports.get(app) or _source_reports.get(_get_app_key())
-        if report and report[1]!='manual':source_hint=report[0]
-        prefs=_app_languages.settings(app)
-        if source_hint is None and prefs['remember']:source_hint=prefs['detected']
+def _configuration_open():
+    """True while the first-use wizard or the configuration panel is open: translation pauses meanwhile."""
+    return _manager_open or bool(_settings_manager)
+
+def _manager_hooks(app, activate=False, source_sample=None, source_hint=None):
+    """What the configuration windows need from the add-on: reading and saving the preferences."""
     def preferences(context):
         return (_app_languages.settings(context) if context != 'global' else
                 {'source':_load_ini()['localTranslate'].get('sourceLang','auto'),'remember':False})
@@ -1093,6 +1081,32 @@ def _show_model_manager(parent=None, app=None, activate=False, on_done=None):
            'announce':_announce,
            'report_error':lambda:log.exception('LocalTranslate: model download or installation failed'),
            'copy_get':get_copy_to_cb,'copy_set':set_copy_to_cb}
+    return hooks
+
+def _show_model_manager(parent=None, app=None, activate=False, on_done=None):
+    global _manager_open
+    if not activate:
+        # The configuration lives in NVDA's Settings dialog.
+        _show_settings_dialog()
+        return
+    if _configuration_open():
+        _announce(_("La fenêtre LocalTranslate est déjà ouverte."))
+        return
+    _manager_open = True
+    if _dispatcher is not None:
+        _dispatcher.cancel()
+    from .setup_wizard import SetupWizard
+    app = app or _settings_application()
+    source_sample=None;source_hint=None
+    if activate:
+        from .source_confirmation import focus_sample
+        try:source_sample=focus_sample(api.getFocusObject())
+        except Exception:source_sample=('',None)
+        report=_source_reports.get(app) or _source_reports.get(_get_app_key())
+        if report and report[1]!='manual':source_hint=report[0]
+        prefs=_app_languages.settings(app)
+        if source_hint is None and prefs['remember']:source_hint=prefs['detected']
+    hooks = _manager_hooks(app, activate, source_sample, source_hint)
     def run():
         global _manager_open
         dlg = None
@@ -1101,8 +1115,7 @@ def _show_model_manager(parent=None, app=None, activate=False, on_done=None):
         try:
             gui.mainFrame.prePopup()
             prepared = True
-            dialog_class=SetupWizard if activate else ManagerDialog
-            dlg=dialog_class(parent or gui.mainFrame,_store,_telemetry,app,hooks,activate)
+            dlg=SetupWizard(parent or gui.mainFrame,_store,_telemetry,app,hooks,activate)
             accepted = dlg.ShowModal() == wx.ID_OK
         except Exception:
             log.exception('LocalTranslate: model manager failed')
@@ -1122,7 +1135,9 @@ def _show_model_manager(parent=None, app=None, activate=False, on_done=None):
     wx.CallAfter(run)
 
 def _show_settings_dialog(parent=None):
-    return _show_model_manager(parent)
+    """Open NVDA's Settings dialog on this add-on's category."""
+    wx.CallAfter(gui.mainFrame.popupSettingsDialog, gui.settingsDialogs.NVDASettingsDialog,
+        LocalTranslateAccessSettingsPanel)
 
 def _source_models_ready(app):
     if not _store.ready(app):return False
@@ -1142,19 +1157,56 @@ class LocalTranslateAccessSettingsPanel(gui.settingsDialogs.SettingsPanel):
     title = 'LocalTranslateAccess'
     # Set by the global plugin; None on secure screens.
     updater = None
+    MANAGER_SIZE = (680, 560)
 
     def makeSettings(self, settingsSizer):
+        global _settings_manager
+        self.manager = None
+        if _configuration_open():
+            # The first-use wizard, or another copy of this panel, is already editing the configuration.
+            settingsSizer.Add(wx.StaticText(self, label=_("La fenêtre LocalTranslate est déjà ouverte.")), 0, wx.ALL, 8)
+        else:
+            from .manager_dialog import ManagerPanel
+            if _dispatcher is not None:
+                _dispatcher.cancel()
+            app = _settings_application()
+            self.manager = ManagerPanel(self, _store, _telemetry, app, _manager_hooks(app))
+            self.manager.SetMinSize(self.MANAGER_SIZE)
+            settingsSizer.Add(self.manager, 1, wx.EXPAND)
+            _settings_manager = self.manager
+            self.Bind(wx.EVT_WINDOW_DESTROY, self.onDestroy)
         helper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
-        self.configureButton = helper.addItem(wx.Button(self, label=_('Ouvrir la &configuration de la traduction…')))
-        self.Bind(wx.EVT_BUTTON, lambda event: wx.CallAfter(_show_settings_dialog, gui.mainFrame), self.configureButton)
         self.checkForUpdatesCB = helper.addItem(wx.CheckBox(self, label=_('Vérifier a&utomatiquement les mises à jour au démarrage de NVDA')))
         self.checkForUpdatesCB.SetValue(config.conf[CONFIG_SECTION]['checkForUpdates'])
         self.checkNowButton = helper.addItem(wx.Button(self, label=_('&Vérifier les mises à jour maintenant')))
         self.Bind(wx.EVT_BUTTON, lambda event: self.updater.check(manual=True), self.checkNowButton)
         self.checkNowButton.Enable(self.updater is not None)
 
+    def closeManager(self):
+        """Stop the configuration panel's background work. Safe to call twice."""
+        global _settings_manager
+        manager, self.manager = self.manager, None
+        if manager is None:
+            return
+        try:
+            manager.shutdown()
+        except Exception:
+            log.exception('LocalTranslateAccess: closing the configuration panel failed')
+        if _settings_manager is manager:
+            _settings_manager = None
+
+    def onDestroy(self, event):
+        if event.GetEventObject() is self:
+            self.closeManager()
+        event.Skip()
+
     def onSave(self):
         config.conf[CONFIG_SECTION]['checkForUpdates'] = self.checkForUpdatesCB.GetValue()
+        if self.manager is not None:
+            self.manager.save_pending()
+
+    def onDiscard(self):
+        self.closeManager()
 
 # === Traduction à la demande (menu) ====================================
 import textInfos
@@ -1355,7 +1407,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         self._perAppEnabled = set()
         global _app_monitor
         _app_monitor = AppMonitor(_schedule, _sync_model_lifetime, report_error=_lifetime_error)
-        wx.CallAfter(_install_preferences_menu_item, self)
+        # No entry in the Preferences menu: every setting is in NVDA's Settings dialog.
         # No update check on secure screens (logon, UAC), where nothing may be installed.
         config.conf.spec[CONFIG_SECTION] = {'checkForUpdates': 'boolean(default=true)'}
         self.updater = None

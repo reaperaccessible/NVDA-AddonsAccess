@@ -17,10 +17,16 @@ MODEL_NAMES={'argos':'Argos Translate','bergamot':'Firefox / Bergamot','opus':'M
              'hy':'Hy-MT2 7B Q8','nllb':'NLLB-200 600M INT8',
              'small100':'SMaLL-100 330M INT8','m2m100':'M2M-100 418M INT8'}
 
-class ManagerDialog(wx.Dialog):
-    def __init__(self,parent,store,telemetry,app,hooks,activate=False):
-        super().__init__(parent,title=_('LocalTranslate — configuration'),size=(780,760))
+class ManagerPanel(wx.Panel):
+    """The whole translation configuration: languages, installed models, cache and performance.
+
+    It is hosted by NVDA's Settings dialog. `finish` is called with a wx result code
+    when the panel asks its host to close.
+    """
+    def __init__(self,parent,store,telemetry,app,hooks,activate=False,finish=None):
+        super().__init__(parent)
         set_window_direction(self)
+        self.finish_callback=finish
         self.store,self.telemetry,self.app,self.hooks=store,telemetry,app,hooks
         self.activate=activate;self.cancel=threading.Event();self.busy=False;self.dead=False
         self.info=None;self.last_progress=0;self.user_family_changed=False
@@ -101,11 +107,8 @@ class ManagerDialog(wx.Dialog):
         outer.Add(self.tabs,1,wx.ALL|wx.EXPAND,8)
         # Keep this action outside the native notebook's accessibility tree.
         outer.Add(self.source_page.apply,0,wx.ALL,8)
-        close=wx.Button(self,wx.ID_CANCEL,label=_('Fermer'));outer.Add(close,0,wx.ALL|wx.ALIGN_RIGHT,8)
         self.SetSizer(outer)
         self.tabs.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED,self.on_page_changed)
-        self.Bind(wx.EVT_CLOSE,self.on_close)
-        close.Bind(wx.EVT_BUTTON,self.on_close)
         self.scope.Bind(wx.EVT_CHOICE,self.load)
         self.family.Bind(wx.EVT_CHOICE,self.change_family)
         self.source.Bind(wx.EVT_CHOICE,self.update_preview)
@@ -161,7 +164,7 @@ class ManagerDialog(wx.Dialog):
     def on_setup(self,event):
         if self.busy:return
         context=self.context()
-        self.EndModal(wx.ID_CANCEL)
+        self.finish(wx.ID_CANCEL)
         wx.CallAfter(self.hooks['setup'],context)
     def context(self):return self.app if self.scope.GetSelection()==0 else 'global'
     def family_id(self):return FAMILIES[max(0,self.family.GetSelection())][0]
@@ -170,7 +173,8 @@ class ManagerDialog(wx.Dialog):
         control.SetCheckedItems([i for i,c in enumerate(self.codes) if c in values])
     def dispatch(self,fn,*args):
         def run():
-            if not self.dead:fn(*args)
+            # `self` is false once the window is destroyed.
+            if not self.dead and self:fn(*args)
         wx.CallAfter(run)
     def inventory(self):
         from . import gpu_support
@@ -353,13 +357,13 @@ class ManagerDialog(wx.Dialog):
         if error:self.hooks['changed']();self.status.SetLabel(error);return
         self.commit(selection,context,remember,inherit)
         self.status.SetLabel(_('Modèles installés. Traduction prête.'));self.gauge.SetValue(100)
-        if self.activate:self.EndModal(wx.ID_OK)
+        if self.activate:self.finish(wx.ID_OK)
     def on_save(self,event):
         try:
             selection=self.selection()
             if not self.store.runtime_ready(selection[0]) or not all(self.store.installed(e) for e in selection[5]):raise ValueError(_('Téléchargez d’abord les modèles nécessaires.'))
             self.commit(selection,self.context(),self.remember.GetValue(),self.inherit.GetValue())
-            self.EndModal(wx.ID_OK)
+            self.finish(wx.ID_OK)
         except ValueError as exc:self.status.SetLabel(str(exc))
     def refresh_installed(self):
         self.installed_entries=self.store.installed_entries()
@@ -407,8 +411,18 @@ class ManagerDialog(wx.Dialog):
         threading.Thread(target=work,daemon=True).start()
     def reset_done(self,error):
         self.set_busy(False);self.statistics.SetValue(error or _('Journal effacé.'))
-    def on_close(self,event):
+    def finish(self,result):
+        if self.finish_callback is not None:self.finish_callback(result)
+    def shutdown(self):
+        """Stop background work before the host window goes away. Safe to call twice."""
         self.cache_page.dead=True
         self.source_page.dead=True
         self.cancel.set();self.dead=True
-        self.EndModal(wx.ID_CANCEL)
+    def save_pending(self):
+        """Apply the language choices still waiting on the Languages page, unless they need a download."""
+        page=self.source_page
+        if self.dead or getattr(page,'downloading',False):return
+        if not (page.edits or page.target_edits or page.model_edits or page.gpu_edits):return
+        try:downloads,runtimes,entries=page.download_plan()
+        except ValueError:return
+        if not runtimes and not entries:page.save_choices()
