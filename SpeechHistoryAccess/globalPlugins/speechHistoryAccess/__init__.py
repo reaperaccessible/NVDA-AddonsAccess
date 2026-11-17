@@ -223,12 +223,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		return speechViewer.SPEECH_ITEM_SEPARATOR.join([x for x in sequence if isinstance(x, str)])
 
 	__gestures = {
-		'kb:NVDA+shift+f12': 'copyLast',
-		'kb:NVDA+shift+f10': 'prevString',
-		'kb:NVDA+shift+f11': 'nextString',
-		'kb:NVDA+shift+f9': 'startRecording',
-		'kb:NVDA+shift+f8': 'stopRecording',
-		'kb:NVDA+h': 'showHistory',
+		'kb:NVDA+control+shift+f12': 'copyLast',
+		'kb:NVDA+control+shift+f10': 'prevString',
+		'kb:NVDA+control+shift+f11': 'nextString',
+		'kb:NVDA+control+shift+f9': 'startRecording',
+		'kb:NVDA+control+shift+f8': 'stopRecording',
+		'kb:NVDA+control+shift+h': 'showHistory',
 	}
 
 

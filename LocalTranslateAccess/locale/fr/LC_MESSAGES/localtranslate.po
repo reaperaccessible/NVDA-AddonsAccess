@@ -1,0 +1,2189 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: LocalTranslate 2026.1.0-adaptive50\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: LocalTranslate local catalog tools (NLLB + CLDR; linguistic review recommended)\n"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:187
+#, python-brace-format
+msgid ""
+"\n"
+"{v0} : mémoire dédiée {v1:.1f} Go"
+msgstr ""
+"\n"
+"{v0} : mémoire dédiée {v1:.1f} Go"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:189
+msgid " ; mémoire partagée comptée séparément."
+msgstr " ; mémoire partagée comptée séparément."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:291
+msgid " ; taille totale inconnue."
+msgstr " ; taille totale inconnue."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:111
+msgid " Les 1 000 premières sont affichées. Affinez la recherche."
+msgstr " Les 1 000 premières sont affichées. Affinez la recherche."
+
+#: globalPlugins\LocalTranslate\source_settings.py:266
+msgid ""
+" Pour certaines langues, ouvrez l’assistant afin de télécharger les modèles "
+"nécessaires."
+msgstr ""
+" Pour certaines langues, ouvrez l’assistant afin de télécharger les modèles "
+"nécessaires."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:185
+#, python-brace-format
+msgid " RAM disponible : {v0:.1f} Go sur {v1:.1f} Go."
+msgstr " RAM disponible : {v0:.1f} Go sur {v1:.1f} Go."
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:82
+msgid " Votre choix dans la liste est conservé."
+msgstr " Votre choix dans la liste est conservé."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:267
+msgid " connus ; taille à compléter."
+msgstr " connus ; taille à compléter."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:268
+#, python-brace-format
+msgid " connus ; {v0} taille(s) à déterminer."
+msgstr " connus ; {v0} taille(s) à déterminer."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:257
+msgid " connus, taille à compléter"
+msgstr " connus, taille à compléter"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:252
+#, python-brace-format
+msgid " pour {v0} paire(s)"
+msgstr " pour {v0} paire(s)"
+
+#: globalPlugins\LocalTranslate\telemetry.py:76
+msgid " seconde"
+msgstr " seconde"
+
+#: globalPlugins\LocalTranslate\telemetry.py:76
+msgid " secondes"
+msgstr " secondes"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:291
+#, python-brace-format
+msgid " sur {v0:.1f} Mo."
+msgstr " sur {v0:.1f} Mo."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:372
+#: globalPlugins\LocalTranslate\setup_wizard.py:364
+#: globalPlugins\LocalTranslate\telemetry.py:82
+msgid " vers "
+msgstr " vers "
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:257
+msgid " à télécharger"
+msgstr " à télécharger"
+
+#: globalPlugins\LocalTranslate\telemetry.py:74
+msgid " — CPU, RAM"
+msgstr " — CPU, RAM"
+
+#: globalPlugins\LocalTranslate\telemetry.py:74
+msgid " — GPU NVIDIA, VRAM"
+msgstr " — GPU NVIDIA, VRAM"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:375
+msgid " — ancienne version"
+msgstr " — ancienne version"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:90
+msgid " — corrigée"
+msgstr " — corrigée"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:257
+#: globalPlugins\LocalTranslate\setup_wizard.py:253
+msgid " — installé"
+msgstr " — installé"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:374
+#, python-brace-format
+msgid " — multilingue, {v0} langues"
+msgstr " — multilingue, {v0} langues"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:257
+msgid " — taille du téléchargement non publiée"
+msgstr " — taille du téléchargement non publiée"
+
+#: globalPlugins\LocalTranslate\__init__.py:879
+msgid " — utilisation désactivée ; détection à chaque texte"
+msgstr " — utilisation désactivée ; détection à chaque texte"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:257
+#, python-brace-format
+msgid " — {size:.1f} Mo"
+msgstr " — {size:.1f} Mo"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:44
+#, python-brace-format
+msgid ", fichier {v0} sur {v1}"
+msgstr ", fichier {v0} sur {v1}"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:188
+#, python-brace-format
+msgid ", libre {free:.1f} Go"
+msgstr ", libre {free:.1f} Go"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:56
+msgid ". Choisissez Automatique pour les contenus multilingues."
+msgstr ". Choisissez Automatique pour les contenus multilingues."
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:346
+#: globalPlugins\LocalTranslate\source_settings.py:200
+msgid "0% du téléchargement"
+msgstr "0% du téléchargement"
+
+#: globalPlugins\LocalTranslate\backends.py:84
+msgid ""
+"Accélération GPU indisponible. La traduction utilise le processeur et la "
+"RAM."
+msgstr ""
+"Accélération GPU indisponible. La traduction utilise le processeur et la "
+"RAM."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:39
+msgid "Actualiser le cache"
+msgstr "Actualiser le cache"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:93
+msgid "Actualiser le catalogue des modèles"
+msgstr "Actualiser le catalogue des modèles"
+
+#: globalPlugins\LocalTranslate\model_store.py:325
+msgid "Adresse de registre inattendue"
+msgstr "Adresse de registre inattendue"
+
+#: globalPlugins\LocalTranslate\__init__.py:29
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: globalPlugins\LocalTranslate\__init__.py:148
+msgid "Afrique du Sud"
+msgstr "Afrique du Sud"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:111
+msgid "Ajouter"
+msgstr "Ajouter"
+
+#: globalPlugins\LocalTranslate\model_store.py:242
+msgid "Ajoutez au moins une paire de langues."
+msgstr "Ajoutez au moins une paire de langues."
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:128
+msgid "Ajoutez les paires de langues dont vous avez besoin."
+msgstr "Ajoutez les paires de langues dont vous avez besoin."
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:214
+msgid "Ajoutez une paire de langues pour continuer."
+msgstr "Ajoutez une paire de langues pour continuer."
+
+#: globalPlugins\LocalTranslate\__init__.py:136
+msgid "Albanais"
+msgstr "Albanais"
+
+#: globalPlugins\LocalTranslate\__init__.py:98
+msgid "Allemand"
+msgstr "Allemand"
+
+#: globalPlugins\LocalTranslate\__init__.py:88
+msgid "Amharique"
+msgstr "Amharique"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:48
+msgid "Analyse de la machine en cours…"
+msgstr "Analyse de la machine en cours…"
+
+#: globalPlugins\LocalTranslate\__init__.py:100
+msgid "Anglais"
+msgstr "Anglais"
+
+#: globalPlugins\LocalTranslate\cache_selection.py:29
+#: globalPlugins\LocalTranslate\setup_wizard.py:130
+#: globalPlugins\LocalTranslate\source_confirmation.py:60
+msgid "Annuler"
+msgstr "Annuler"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:83
+msgid "Annuler le téléchargement"
+msgstr "Annuler le téléchargement"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:21
+msgid "Application :"
+msgstr "Application :"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:46
+msgid "Application : "
+msgstr "Application : "
+
+#: globalPlugins\LocalTranslate\__init__.py:840
+#, python-brace-format
+msgid "Application : {app}"
+msgstr "Application : {app}"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:22
+msgid "Application du cache de traduction"
+msgstr "Application du cache de traduction"
+
+#: globalPlugins\LocalTranslate\cache_selection.py:16
+msgid "Applications (sélectionnez avec Espace) :"
+msgstr "Applications (sélectionnez avec Espace) :"
+
+#: globalPlugins\LocalTranslate\source_settings.py:37
+msgid "Applications avec une langue source configurée"
+msgstr "Applications avec une langue source configurée"
+
+#: globalPlugins\LocalTranslate\source_settings.py:36
+msgid "Applications avec une langue source configurée :"
+msgstr "Applications avec une langue source configurée :"
+
+#: globalPlugins\LocalTranslate\cache_selection.py:18
+msgid "Applications à inclure"
+msgstr "Applications à inclure"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:84
+#: globalPlugins\LocalTranslate\setup_wizard.py:387
+#: globalPlugins\LocalTranslate\setup_wizard.py:388
+#: globalPlugins\LocalTranslate\setup_wizard.py:296
+#: globalPlugins\LocalTranslate\source_settings.py:223
+#: globalPlugins\LocalTranslate\source_settings.py:54
+msgid "Appliquer"
+msgstr "Appliquer"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:84
+msgid "Appliquer et activer"
+msgstr "Appliquer et activer"
+
+#: globalPlugins\LocalTranslate\__init__.py:90
+msgid "Arabe"
+msgstr "Arabe"
+
+#: globalPlugins\LocalTranslate\__init__.py:89
+msgid "Aragonais"
+msgstr "Aragonais"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:11
+msgid "Argos Translate — CPU"
+msgstr "Argos Translate — CPU"
+
+#: globalPlugins\LocalTranslate\__init__.py:48
+msgid "Arménien"
+msgstr "Arménien"
+
+#: globalPlugins\LocalTranslate\__init__.py:30
+msgid "Asturien"
+msgstr "Asturien"
+
+#: globalPlugins\LocalTranslate\telemetry.py:84
+msgid "Aucun chargement mesuré pour le moment."
+msgstr "Aucun chargement mesuré pour le moment."
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:232
+msgid ""
+"Aucun modèle compatible ne couvre toutes ces paires. Modifiez les paires "
+"ajoutées."
+msgstr ""
+"Aucun modèle compatible ne couvre toutes ces paires. Modifiez les paires "
+"ajoutées."
+
+#: globalPlugins\LocalTranslate\source_settings.py:111
+msgid "Aucun modèle installé compatible avec ces langues"
+msgstr "Aucun modèle installé compatible avec ces langues"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:79
+msgid "Aucun téléchargement en cours."
+msgstr "Aucun téléchargement en cours."
+
+#: globalPlugins\LocalTranslate\source_settings.py:85
+msgid ""
+"Aucune application n’a encore de langue source configurée. La langue globale"
+" reste modifiable."
+msgstr ""
+"Aucune application n’a encore de langue source configurée. La langue globale"
+" reste modifiable."
+
+#: globalPlugins\LocalTranslate\__init__.py:877
+#, python-brace-format
+msgid "Aucune langue mémorisée pour {app}"
+msgstr "Aucune langue mémorisée pour {app}"
+
+#: globalPlugins\LocalTranslate\source_settings.py:197
+msgid "Aucune modification à enregistrer."
+msgstr "Aucune modification à enregistrer."
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:200
+msgid ""
+"Aucune nouvelle paire : les paires existent déjà ou la source est identique "
+"à la cible."
+msgstr ""
+"Aucune nouvelle paire : les paires existent déjà ou la source est identique "
+"à la cible."
+
+#: globalPlugins\LocalTranslate\model_store.py:190
+#, python-brace-format
+msgid "Aucune traduction disponible : {v0} → {v1}."
+msgstr "Aucune traduction disponible : {v0} → {v1}."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:110
+msgid "Aucune traduction en cache pour cette recherche."
+msgstr "Aucune traduction en cache pour cette recherche."
+
+#: globalPlugins\LocalTranslate\telemetry.py:101
+msgid "Aucune traduction mesurée avec ce nouveau calcul pour le moment."
+msgstr "Aucune traduction mesurée avec ce nouveau calcul pour le moment."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:166
+msgid "Aucune traduction à exporter."
+msgstr "Aucune traduction à exporter."
+
+#: globalPlugins\LocalTranslate\__init__.py:175
+msgid "Auto (détection)"
+msgstr "Auto (détection)"
+
+#: globalPlugins\LocalTranslate\__init__.py:849
+#, python-brace-format
+msgid "Auto — {lang} mémorisé pour cette application"
+msgstr "Auto — {lang} mémorisé pour cette application"
+
+#: globalPlugins\LocalTranslate\telemetry.py:89
+msgid "Automatique"
+msgstr "Automatique"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:51
+msgid "Automatique — suivre la langue de chaque texte"
+msgstr "Automatique — suivre la langue de chaque texte"
+
+#: globalPlugins\LocalTranslate\__init__.py:31
+msgid "Azéri"
+msgstr "Azéri"
+
+#: globalPlugins\LocalTranslate\__init__.py:32
+msgid "Bachkir"
+msgstr "Bachkir"
+
+#: globalPlugins\LocalTranslate\__init__.py:40
+msgid "Basque"
+msgstr "Basque"
+
+#: globalPlugins\LocalTranslate\__init__.py:92
+msgid "Bengali"
+msgstr "Bengali"
+
+#: globalPlugins\LocalTranslate\__init__.py:123
+msgid "Birman"
+msgstr "Birman"
+
+#: globalPlugins\LocalTranslate\__init__.py:33
+msgid "Biélorusse"
+msgstr "Biélorusse"
+
+#: globalPlugins\LocalTranslate\__init__.py:93
+msgid "Bosnien"
+msgstr "Bosnien"
+
+#: globalPlugins\LocalTranslate\__init__.py:35
+msgid "Breton"
+msgstr "Breton"
+
+#: globalPlugins\LocalTranslate\__init__.py:151
+msgid "Brésil"
+msgstr "Brésil"
+
+#: globalPlugins\LocalTranslate\__init__.py:91
+msgid "Bulgare"
+msgstr "Bulgare"
+
+#: globalPlugins\LocalTranslate\doc_strings.py:18
+#: globalPlugins\LocalTranslate\manager_dialog.py:40
+msgid "Cache de traduction"
+msgstr "Cache de traduction"
+
+#: globalPlugins\LocalTranslate\__init__.py:84
+msgid "Cantonais"
+msgstr "Cantonais"
+
+#: globalPlugins\LocalTranslate\__init__.py:94
+msgid "Catalan"
+msgstr "Catalan"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:395
+msgid ""
+"Catalogue actualisé. Les modèles sont téléchargés uniquement à votre "
+"demande."
+msgstr ""
+"Catalogue actualisé. Les modèles sont téléchargés uniquement à votre "
+"demande."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:205
+msgid "Ce fichier ne contient aucune traduction."
+msgstr "Ce fichier ne contient aucune traduction."
+
+#: globalPlugins\LocalTranslate\cache_sharing.py:45
+msgid "Ce fichier n’est pas un cache LocalTranslate compatible."
+msgstr "Ce fichier n’est pas un cache LocalTranslate compatible."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:240
+msgid ""
+"Ce modèle demande une carte NVIDIA dédiée compatible avec au moins 12 Go de "
+"VRAM ; la mémoire libre doit être suffisante."
+msgstr ""
+"Ce modèle demande une carte NVIDIA dédiée compatible avec au moins 12 Go de "
+"VRAM ; la mémoire libre doit être suffisante."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:238
+msgid ""
+"Ce modèle multilingue demande au moins 2 Go de RAM disponibles. Essayez "
+"Argos ou Firefox."
+msgstr ""
+"Ce modèle multilingue demande au moins 2 Go de RAM disponibles. Essayez "
+"Argos ou Firefox."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:232
+msgid "Ce processeur ne déclare pas SSE4.1. Choisissez Firefox/Bergamot."
+msgstr "Ce processeur ne déclare pas SSE4.1. Choisissez Firefox/Bergamot."
+
+#: globalPlugins\LocalTranslate\__init__.py:36
+msgid "Cebuano"
+msgstr "Cebuano"
+
+#: globalPlugins\LocalTranslate\model_store.py:403
+msgid "Certificat TLS non reconnu ; téléchargement Windows indisponible."
+msgstr "Certificat TLS non reconnu ; téléchargement Windows indisponible."
+
+#: globalPlugins\LocalTranslate\doc_strings.py:23
+msgid ""
+"Cet onglet indique le temps de chargement du modèle et le temps moyen de "
+"traduction, séparé par modèle, langue source et langue cible. En mode "
+"automatique, le temps de détection est indiqué séparément. Les traductions "
+"retrouvées dans le cache sont exclues des moyennes."
+msgstr ""
+"Cet onglet indique le temps de chargement du modèle et le temps moyen de "
+"traduction, séparé par modèle, langue source et langue cible. En mode "
+"automatique, le temps de détection est indiqué séparément. Les traductions "
+"retrouvées dans le cache sont exclues des moyennes."
+
+#: globalPlugins\LocalTranslate\doc_strings.py:17
+msgid ""
+"Cet onglet présente les modèles installés, leurs langues et leur taille. "
+"Vous pouvez supprimer un modèle ; le cache des traductions est conservé. Les"
+" modèles et le cache sont stockés dans le dossier de l’addon."
+msgstr ""
+"Cet onglet présente les modèles installés, leurs langues et leur taille. "
+"Vous pouvez supprimer un modèle ; le cache des traductions est conservé. Les"
+" modèles et le cache sont stockés dans le dossier de l’addon."
+
+#: globalPlugins\LocalTranslate\cache_editor.py:54
+msgid "Cette traduction a changé. Actualisez la liste avant de la corriger."
+msgstr "Cette traduction a changé. Actualisez la liste avant de la corriger."
+
+#: globalPlugins\LocalTranslate\cache_editor.py:52
+msgid "Cette traduction n’existe plus. Actualisez la liste."
+msgstr "Cette traduction n’existe plus. Actualisez la liste."
+
+#: globalPlugins\LocalTranslate\data_paths.py:15
+msgid "Chemin de données LocalTranslate inattendu : "
+msgstr "Chemin de données LocalTranslate inattendu : "
+
+#: globalPlugins\LocalTranslate\model_store.py:68
+msgid "Chemin de modèle invalide"
+msgstr "Chemin de modèle invalide"
+
+#: globalPlugins\LocalTranslate\cache_sharing.py:66
+#: globalPlugins\LocalTranslate\persistent_cache.py:49
+msgid "Chemin du cache invalide."
+msgstr "Chemin du cache invalide."
+
+#: globalPlugins\LocalTranslate\model_store.py:440
+msgid "Chemin interdit dans une archive"
+msgstr "Chemin interdit dans une archive"
+
+#: globalPlugins\LocalTranslate\__init__.py:153
+msgid "Chine"
+msgstr "Chine"
+
+#: globalPlugins\LocalTranslate\__init__.py:145
+msgid "Chinois"
+msgstr "Chinois"
+
+#: globalPlugins\LocalTranslate\__init__.py:85
+msgid "Chinois (simplifié)"
+msgstr "Chinois (simplifié)"
+
+#: globalPlugins\LocalTranslate\__init__.py:86
+msgid "Chinois (traditionnel)"
+msgstr "Chinois (traditionnel)"
+
+#: globalPlugins\LocalTranslate\telemetry.py:89
+msgid "Choisie manuellement"
+msgstr "Choisie manuellement"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:190
+msgid "Choisir un cache à importer"
+msgstr "Choisir un cache à importer"
+
+#: globalPlugins\LocalTranslate\model_store.py:244
+msgid "Choisissez deux langues différentes."
+msgstr "Choisissez deux langues différentes."
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:298
+msgid "Choisissez le modèle puis Télécharger."
+msgstr "Choisissez le modèle puis Télécharger."
+
+#: globalPlugins\LocalTranslate\cache_selection.py:11
+msgid ""
+"Choisissez les applications à inclure. Les textes, traductions et "
+"corrections sont inclus."
+msgstr ""
+"Choisissez les applications à inclure. Les textes, traductions et "
+"corrections sont inclus."
+
+#: globalPlugins\LocalTranslate\model_store.py:96
+msgid "Choisissez les langues sources et cibles."
+msgstr "Choisissez les langues sources et cibles."
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:119
+msgid "Choisissez un modèle compatible avec votre ordinateur et vos langues :"
+msgstr ""
+"Choisissez un modèle compatible avec votre ordinateur et vos langues :"
+
+#: globalPlugins\LocalTranslate\doc_strings.py:19
+msgid ""
+"Choisissez une application, recherchez un texte et sélectionnez une "
+"traduction. Le texte d’origine est en lecture seule. Modifiez la traduction "
+"puis choisissez Enregistrer la correction. Les corrections et les "
+"traductions sont conservées après le redémarrage de NVDA et peuvent servir "
+"avec un autre modèle."
+msgstr ""
+"Choisissez une application, recherchez un texte et sélectionnez une "
+"traduction. Le texte d’origine est en lecture seule. Modifiez la traduction "
+"puis choisissez Enregistrer la correction. Les corrections et les "
+"traductions sont conservées après le redémarrage de NVDA et peuvent servir "
+"avec un autre modèle."
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:191
+msgid "Choisissez une langue cible."
+msgstr "Choisissez une langue cible."
+
+#: globalPlugins\LocalTranslate\doc_strings.py:11
+msgid ""
+"Choisissez une ou plusieurs langues sources avec Espace, puis une langue "
+"cible. Ajoutez vos paires avec Ajouter. Sélectionnez ensuite un modèle "
+"compatible dans la liste, classée par taille. Choisissez Télécharger si "
+"nécessaire : le bouton indique la progression totale de 0 à 100 %. Une fois "
+"les modèles prêts, choisissez Appliquer pour enregistrer vos choix et "
+"activer la traduction."
+msgstr ""
+"Choisissez une ou plusieurs langues sources avec Espace, puis une langue "
+"cible. Ajoutez vos paires avec Ajouter. Sélectionnez ensuite un modèle "
+"compatible dans la liste, classée par taille. Choisissez Télécharger si "
+"nécessaire : le bouton indique la progression totale de 0 à 100 %. Une fois "
+"les modèles prêts, choisissez Appliquer pour enregistrer vos choix et "
+"activer la traduction."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:76
+msgid "Choisissez vos langues puis téléchargez les modèles nécessaires."
+msgstr "Choisissez vos langues puis téléchargez les modèles nécessaires."
+
+#: globalPlugins\LocalTranslate\__init__.py:150
+msgid "Colombie"
+msgstr "Colombie"
+
+#: globalPlugins\LocalTranslate\doc_strings.py:12
+msgid "Configuration"
+msgstr "Configuration"
+
+#: globalPlugins\LocalTranslate\__init__.py:842
+#: globalPlugins\LocalTranslate\manager_dialog.py:47
+msgid "Configuration à modifier :"
+msgstr "Configuration à modifier :"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:49
+msgid "Confirmez la langue à traduire pour "
+msgstr "Confirmez la langue à traduire pour "
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:299
+msgid "Conversion du modèle en INT8"
+msgstr "Conversion du modèle en INT8"
+
+#: globalPlugins\LocalTranslate\__init__.py:921
+#: globalPlugins\LocalTranslate\manager_dialog.py:72
+msgid "Copier la traduction dans le presse-papiers"
+msgstr "Copier la traduction dans le presse-papiers"
+
+#: globalPlugins\LocalTranslate\cache_sharing.py:52
+msgid "Correction de cache invalide."
+msgstr "Correction de cache invalide."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:156
+msgid "Correction enregistrée."
+msgstr "Correction enregistrée."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:154
+msgid ""
+"Correction enregistrée. Elle sera utilisée pour ce texte dans cette "
+"application."
+msgstr ""
+"Correction enregistrée. Elle sera utilisée pour ce texte dans cette "
+"application."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:151
+msgid "Correction non enregistrée : "
+msgstr "Correction non enregistrée : "
+
+#: globalPlugins\LocalTranslate\__init__.py:118
+msgid "Coréen"
+msgstr "Coréen"
+
+#: globalPlugins\LocalTranslate\__init__.py:109
+msgid "Croate"
+msgstr "Croate"
+
+#: globalPlugins\LocalTranslate\__init__.py:47
+msgid "Créole haïtien"
+msgstr "Créole haïtien"
+
+#: globalPlugins\LocalTranslate\__init__.py:97
+msgid "Danois"
+msgstr "Danois"
+
+#: globalPlugins\LocalTranslate\data_paths.py:34
+msgid "Destination de données invalide."
+msgstr "Destination de données invalide."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:298
+msgid "Décompression"
+msgstr "Décompression"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:348
+msgid "Démarrage de l’opération"
+msgstr "Démarrage de l’opération"
+
+#: globalPlugins\LocalTranslate\source_settings.py:18
+msgid "Détection automatique"
+msgstr "Détection automatique"
+
+#: globalPlugins\LocalTranslate\detection.py:55
+msgid "Détection de langue indisponible"
+msgstr "Détection de langue indisponible"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:99
+msgid "Effacer le journal de performances"
+msgstr "Effacer le journal de performances"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:37
+msgid "Enregistrer la correction"
+msgstr "Enregistrer la correction"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:172
+msgid "Enregistrer le cache à partager"
+msgstr "Enregistrer le cache à partager"
+
+#: globalPlugins\LocalTranslate\cache_sharing.py:48
+msgid "Entrée de cache invalide."
+msgstr "Entrée de cache invalide."
+
+#: globalPlugins\LocalTranslate\__init__.py:101
+msgid "Espagnol"
+msgstr "Espagnol"
+
+#: globalPlugins\LocalTranslate\__init__.py:38
+msgid "Espéranto"
+msgstr "Espéranto"
+
+#: globalPlugins\LocalTranslate\__init__.py:39
+msgid "Estonien"
+msgstr "Estonien"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:178
+msgid "Export du cache en cours…"
+msgstr "Export du cache en cours…"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:185
+msgid "Export impossible : "
+msgstr "Export impossible : "
+
+#: globalPlugins\LocalTranslate\cache_selection.py:28
+msgid "Exporter"
+msgstr "Exporter"
+
+#: globalPlugins\LocalTranslate\cache_selection.py:7
+msgid "Exporter le cache de traduction"
+msgstr "Exporter le cache de traduction"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:43
+msgid "Exporter un cache"
+msgstr "Exporter un cache"
+
+#: globalPlugins\LocalTranslate\doc_strings.py:20
+msgid ""
+"Exporter un cache permet de partager le cache global, celui de toutes les "
+"applications ou celui des applications sélectionnées. Toutes les "
+"applications est décoché par défaut à l’exportation. Les textes d’origine, "
+"les traductions et les corrections sont inclus : vérifiez leur contenu avant"
+" de partager le fichier. Importer un cache permet de récupérer ces "
+"traductions ; vos corrections personnelles existantes sont conservées."
+msgstr ""
+"Exporter un cache permet de partager le cache global, celui de toutes les "
+"applications ou celui des applications sélectionnées. Toutes les "
+"applications est décoché par défaut à l’exportation. Les textes d’origine, "
+"les traductions et les corrections sont inclus : vérifiez leur contenu avant"
+" de partager le fichier. Importer un cache permet de récupérer ces "
+"traductions ; vos corrections personnelles existantes sont conservées."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:53
+msgid "Famille de modèles :"
+msgstr "Famille de modèles :"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:104
+msgid "Fermer"
+msgstr "Fermer"
+
+#: globalPlugins\LocalTranslate\cache_sharing.py:43
+msgid "Fichier de cache LocalTranslate invalide : "
+msgstr "Fichier de cache LocalTranslate invalide : "
+
+#: globalPlugins\LocalTranslate\model_store.py:463
+msgid "Fichier de modèle multilingue inattendu."
+msgstr "Fichier de modèle multilingue inattendu."
+
+#: globalPlugins\LocalTranslate\__init__.py:103
+msgid "Finnois"
+msgstr "Finnois"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:11
+msgid "Firefox / Bergamot — CPU"
+msgstr "Firefox / Bergamot — CPU"
+
+#: globalPlugins\LocalTranslate\__init__.py:104
+msgid "Français"
+msgstr "Français"
+
+#: globalPlugins\LocalTranslate\__init__.py:42
+msgid "Frison occidental"
+msgstr "Frison occidental"
+
+#: globalPlugins\LocalTranslate\backends.py:80
+msgid ""
+"GPU indisponible et RAM insuffisante pour ce modèle. Choisissez un modèle "
+"plus léger."
+msgstr ""
+"GPU indisponible et RAM insuffisante pour ce modèle. Choisissez un modèle "
+"plus léger."
+
+#: globalPlugins\LocalTranslate\__init__.py:106
+msgid "Galicien"
+msgstr "Galicien"
+
+#: globalPlugins\LocalTranslate\__init__.py:37
+msgid "Gallois"
+msgstr "Gallois"
+
+#: globalPlugins\LocalTranslate\__init__.py:43
+msgid "Gaélique écossais"
+msgstr "Gaélique écossais"
+
+#: globalPlugins\LocalTranslate\__init__.py:99
+msgid "Grec"
+msgstr "Grec"
+
+#: globalPlugins\LocalTranslate\__init__.py:44
+msgid "Gujarati"
+msgstr "Gujarati"
+
+#: globalPlugins\LocalTranslate\__init__.py:115
+msgid "Géorgien"
+msgstr "Géorgien"
+
+#: globalPlugins\LocalTranslate\__init__.py:45
+msgid "Haoussa"
+msgstr "Haoussa"
+
+#: globalPlugins\LocalTranslate\__init__.py:108
+msgid "Hindi"
+msgstr "Hindi"
+
+#: globalPlugins\LocalTranslate\__init__.py:154
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+#: globalPlugins\LocalTranslate\__init__.py:110
+msgid "Hongrois"
+msgstr "Hongrois"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:12
+msgid "Hy-MT2 7B Q8 — multilingue, gros téléchargement"
+msgstr "Hy-MT2 7B Q8 — multilingue, gros téléchargement"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:11
+msgid "Hy-MT2 7B Q8 — téléchargement volumineux"
+msgstr "Hy-MT2 7B Q8 — téléchargement volumineux"
+
+#: globalPlugins\LocalTranslate\__init__.py:107
+msgid "Hébreu"
+msgstr "Hébreu"
+
+#: globalPlugins\LocalTranslate\model_store.py:66
+msgid "Identifiant de modèle invalide"
+msgstr "Identifiant de modèle invalide"
+
+#: globalPlugins\LocalTranslate\__init__.py:49
+msgid "Igbo"
+msgstr "Igbo"
+
+#: globalPlugins\LocalTranslate\__init__.py:50
+msgid "Ilocano"
+msgstr "Ilocano"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:209
+msgid "Import annulé."
+msgstr "Import annulé."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:212
+msgid "Import du cache en cours…"
+msgstr "Import du cache en cours…"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:203
+msgid "Import impossible : "
+msgstr "Import impossible : "
+
+#: globalPlugins\LocalTranslate\cache_settings.py:223
+msgid "Import interrompu : "
+msgstr "Import interrompu : "
+
+#: globalPlugins\LocalTranslate\cache_settings.py:224
+#, python-brace-format
+msgid ""
+"Import terminé. Ajouts : {added}. Remplacements : {replaced}. Entrées déjà "
+"présentes : {kept}. Corrections personnelles conservées : {protected}."
+msgstr ""
+"Import terminé. Ajouts : {added}. Remplacements : {replaced}. Entrées déjà "
+"présentes : {kept}. Corrections personnelles conservées : {protected}."
+
+#: globalPlugins\LocalTranslate\cache_selection.py:28
+msgid "Importer"
+msgstr "Importer"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:44
+msgid "Importer un cache"
+msgstr "Importer un cache"
+
+#: globalPlugins\LocalTranslate\cache_selection.py:7
+msgid "Importer un cache de traduction"
+msgstr "Importer un cache de traduction"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:78
+msgid "Impossible de lire le cache : "
+msgstr "Impossible de lire le cache : "
+
+#: globalPlugins\LocalTranslate\__init__.py:1201
+msgid "Impossible d’activer la traduction."
+msgstr "Impossible d’activer la traduction."
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:405
+msgid ""
+"Impossible d’enregistrer les langues et le modèle. Réessayez Appliquer."
+msgstr ""
+"Impossible d’enregistrer les langues et le modèle. Réessayez Appliquer."
+
+#: globalPlugins\LocalTranslate\source_settings.py:269
+msgid ""
+"Impossible d’enregistrer les langues et les modèles. Vérifiez les modèles "
+"installés."
+msgstr ""
+"Impossible d’enregistrer les langues et les modèles. Vérifiez les modèles "
+"installés."
+
+#: globalPlugins\LocalTranslate\__init__.py:1094
+msgid ""
+"Impossible d’ouvrir la fenêtre LocalTranslate. Consultez le journal NVDA."
+msgstr ""
+"Impossible d’ouvrir la fenêtre LocalTranslate. Consultez le journal NVDA."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:152
+msgid "Impossible d’ouvrir le téléchargement des modèles."
+msgstr "Impossible d’ouvrir le téléchargement des modèles."
+
+#: globalPlugins\LocalTranslate\cache_selection.py:14
+msgid "Inclure le cache global"
+msgstr "Inclure le cache global"
+
+#: globalPlugins\LocalTranslate\__init__.py:111
+msgid "Indonésien"
+msgstr "Indonésien"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:299
+msgid "Installation terminée"
+msgstr "Installation terminée"
+
+#: globalPlugins\LocalTranslate\__init__.py:105
+msgid "Irlandais"
+msgstr "Irlandais"
+
+#: globalPlugins\LocalTranslate\__init__.py:112
+msgid "Islandais"
+msgstr "Islandais"
+
+#: globalPlugins\LocalTranslate\__init__.py:113
+msgid "Italien"
+msgstr "Italien"
+
+#: globalPlugins\LocalTranslate\__init__.py:114
+msgid "Japonais"
+msgstr "Japonais"
+
+#: globalPlugins\LocalTranslate\__init__.py:51
+msgid "Javanais"
+msgstr "Javanais"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:409
+msgid "Journal effacé."
+msgstr "Journal effacé."
+
+#: globalPlugins\LocalTranslate\__init__.py:117
+msgid "Kannada"
+msgstr "Kannada"
+
+#: globalPlugins\LocalTranslate\__init__.py:52
+msgid "Kazakh"
+msgstr "Kazakh"
+
+#: globalPlugins\LocalTranslate\__init__.py:53
+msgid "Khmer"
+msgstr "Khmer"
+
+#: globalPlugins\LocalTranslate\__init__.py:119
+msgid "Kirghize"
+msgstr "Kirghize"
+
+#: globalPlugins\LocalTranslate\__init__.py:54
+msgid "Kurde"
+msgstr "Kurde"
+
+#: globalPlugins\LocalTranslate\__init__.py:116
+msgid "Kurde (kurmanji)"
+msgstr "Kurde (kurmanji)"
+
+#: globalPlugins\LocalTranslate\__init__.py:95
+msgid "Kurde central"
+msgstr "Kurde central"
+
+#: globalPlugins\LocalTranslate\telemetry.py:103
+msgid "La durée dépend aussi de la longueur des textes traduits."
+msgstr "La durée dépend aussi de la longueur des textes traduits."
+
+#: globalPlugins\LocalTranslate\__init__.py:1026
+msgid "La fenêtre LocalTranslate est déjà ouverte."
+msgstr "La fenêtre LocalTranslate est déjà ouverte."
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:83
+msgid ""
+"La langue n’a pas pu être déterminée. Choisissez une langue dans la liste ou"
+" conservez Automatique."
+msgstr ""
+"La langue n’a pas pu être déterminée. Choisissez une langue dans la liste ou"
+" conservez Automatique."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:234
+msgid ""
+"La préparation initiale du modèle OPUS demande au moins 3 Go de RAM "
+"disponibles. Essayez Argos ou Firefox."
+msgstr ""
+"La préparation initiale du modèle OPUS demande au moins 3 Go de RAM "
+"disponibles. Essayez Argos ou Firefox."
+
+#: globalPlugins\LocalTranslate\cache_editor.py:43
+msgid "La traduction ne peut pas être vide."
+msgstr "La traduction ne peut pas être vide."
+
+#: globalPlugins\LocalTranslate\nllb_backend.py:45
+msgid "Langue NLLB absente du tokenizer : "
+msgstr "Langue NLLB absente du tokenizer : "
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:101
+msgid "Langue cible"
+msgstr "Langue cible"
+
+#: globalPlugins\LocalTranslate\__init__.py:900
+msgid "Langue cible (toutes les applications) :"
+msgstr "Langue cible (toutes les applications) :"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:100
+msgid "Langue cible :"
+msgstr "Langue cible :"
+
+#: globalPlugins\LocalTranslate\model_store.py:82
+msgid "Langue cible non prise en charge."
+msgstr "Langue cible non prise en charge."
+
+#: globalPlugins\LocalTranslate\source_settings.py:43
+msgid "Langue cible pour cette application"
+msgstr "Langue cible pour cette application"
+
+#: globalPlugins\LocalTranslate\source_settings.py:42
+msgid "Langue cible pour cette application :"
+msgstr "Langue cible pour cette application :"
+
+#: globalPlugins\LocalTranslate\source_settings.py:26
+msgid "Langue cible pour la traduction globale"
+msgstr "Langue cible pour la traduction globale"
+
+#: globalPlugins\LocalTranslate\source_settings.py:25
+msgid "Langue cible pour la traduction globale :"
+msgstr "Langue cible pour la traduction globale :"
+
+#: globalPlugins\LocalTranslate\telemetry.py:98
+msgid ""
+"Langue fournie par le document ou mémorisée : aucune détection du texte "
+"nécessaire."
+msgstr ""
+"Langue fournie par le document ou mémorisée : aucune détection du texte "
+"nécessaire."
+
+#: globalPlugins\LocalTranslate\__init__.py:875
+#, python-brace-format
+msgid "Langue mémorisée pour {app} : {lang}"
+msgstr "Langue mémorisée pour {app} : {lang}"
+
+#: globalPlugins\LocalTranslate\nllb_backend.py:52
+msgid "Langue non prise en charge par NLLB."
+msgstr "Langue non prise en charge par NLLB."
+
+#: globalPlugins\LocalTranslate\gpu_backend.py:112
+msgid "Langue non prise en charge par ce modèle GPU"
+msgstr "Langue non prise en charge par ce modèle GPU"
+
+#: globalPlugins\LocalTranslate\multilingual_backend.py:25
+msgid "Langue non prise en charge par ce modèle multilingue."
+msgstr "Langue non prise en charge par ce modèle multilingue."
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:80
+msgid "Langue proposée : "
+msgstr "Langue proposée : "
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:59
+#: globalPlugins\LocalTranslate\setup_wizard.py:98
+#: globalPlugins\LocalTranslate\source_confirmation.py:51
+msgid "Langue source"
+msgstr "Langue source"
+
+#: globalPlugins\LocalTranslate\__init__.py:846
+#: globalPlugins\LocalTranslate\manager_dialog.py:58
+#: globalPlugins\LocalTranslate\setup_wizard.py:97
+#: globalPlugins\LocalTranslate\source_confirmation.py:50
+msgid "Langue source :"
+msgstr "Langue source :"
+
+#: globalPlugins\LocalTranslate\telemetry.py:89
+msgid "Langue source : "
+msgstr "Langue source : "
+
+#: globalPlugins\LocalTranslate\source_settings.py:40
+msgid "Langue source pour cette application"
+msgstr "Langue source pour cette application"
+
+#: globalPlugins\LocalTranslate\source_settings.py:39
+msgid "Langue source pour cette application :"
+msgstr "Langue source pour cette application :"
+
+#: globalPlugins\LocalTranslate\source_settings.py:23
+msgid "Langue source pour la traduction globale"
+msgstr "Langue source pour la traduction globale"
+
+#: globalPlugins\LocalTranslate\source_settings.py:22
+msgid "Langue source pour la traduction globale :"
+msgstr "Langue source pour la traduction globale :"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:32
+msgid "Langues"
+msgstr "Langues"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:67
+msgid "Langues cibles à installer"
+msgstr "Langues cibles à installer"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:66
+msgid "Langues cibles à installer (plusieurs choix possibles) :"
+msgstr "Langues cibles à installer (plusieurs choix possibles) :"
+
+#: globalPlugins\LocalTranslate\source_settings.py:256
+msgid "Langues et modèles enregistrés."
+msgstr "Langues et modèles enregistrés."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:61
+msgid "Langues sources attendues en mode Auto"
+msgstr "Langues sources attendues en mode Auto"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:60
+msgid "Langues sources attendues en mode Auto :"
+msgstr "Langues sources attendues en mode Auto :"
+
+#: globalPlugins\LocalTranslate\__init__.py:58
+msgid "Lao"
+msgstr "Lao"
+
+#: globalPlugins\LocalTranslate\data_paths.py:22
+msgid "Le dossier de données doit rester dans l’addon."
+msgstr "Le dossier de données doit rester dans l’addon."
+
+#: globalPlugins\LocalTranslate\cache_sharing.py:40
+msgid "Le fichier de cache dépasse 512 Mo après décompression."
+msgstr "Le fichier de cache dépasse 512 Mo après décompression."
+
+#: globalPlugins\LocalTranslate\backends.py:18
+msgid "Le fichier de découpage BPE du modèle Argos est invalide."
+msgstr "Le fichier de découpage BPE du modèle Argos est invalide."
+
+#: globalPlugins\LocalTranslate\model_store.py:209
+msgid ""
+"Le modèle choisi n’est pas installé pour toutes les langues nécessaires."
+msgstr ""
+"Le modèle choisi n’est pas installé pour toutes les langues nécessaires."
+
+#: globalPlugins\LocalTranslate\detection.py:25
+msgid "Le moteur CTranslate2 demande SSE4.1. Essayez Firefox/Bergamot."
+msgstr "Le moteur CTranslate2 demande SSE4.1. Essayez Firefox/Bergamot."
+
+#: globalPlugins\LocalTranslate\model_store.py:503
+msgid ""
+"Le paquet Argos ne contient ni sentencepiece.model ni bpe.model. Choisissez "
+"un autre modèle et signalez cette paire."
+msgstr ""
+"Le paquet Argos ne contient ni sentencepiece.model ni bpe.model. Choisissez "
+"un autre modèle et signalez cette paire."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:71
+msgid "Lecture du cache en cours…"
+msgstr "Lecture du cache en cours…"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:196
+msgid "Lecture du cache à importer…"
+msgstr "Lecture du cache à importer…"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:138
+msgid "Les langues sont identiques : aucun modèle n’est nécessaire."
+msgstr "Les langues sont identiques : aucun modèle n’est nécessaire."
+
+#: globalPlugins\LocalTranslate\doc_strings.py:22
+msgid ""
+"Les mesures sur CPU et sur GPU sont séparées. Le GPU peut réduire le temps "
+"de traduction, mais le gain dépend du modèle et du texte. Le chargement "
+"initial peut être plus long."
+msgstr ""
+"Les mesures sur CPU et sur GPU sont séparées. Le GPU peut réduire le temps "
+"de traduction, mais le gain dépend du modèle et du texte. Le chargement "
+"initial peut être plus long."
+
+#: globalPlugins\LocalTranslate\__init__.py:1191
+msgid "Les modèles de cette application ne sont pas encore prêts."
+msgstr "Les modèles de cette application ne sont pas encore prêts."
+
+#: globalPlugins\LocalTranslate\telemetry.py:102
+msgid ""
+"Les moyennes sont séparées par modèle et par paire de langues. Elles "
+"excluent le cache, le chargement et la détection de la langue. Une "
+"traduction passant par une langue intermédiaire compte une seule fois, avec "
+"le temps de toutes ses étapes."
+msgstr ""
+"Les moyennes sont séparées par modèle et par paire de langues. Elles "
+"excluent le cache, le chargement et la détection de la langue. Une "
+"traduction passant par une langue intermédiaire compte une seule fois, avec "
+"le temps de toutes ses étapes."
+
+#: globalPlugins\LocalTranslate\__init__.py:59
+msgid "Letton"
+msgstr "Letton"
+
+#: globalPlugins\LocalTranslate\__init__.py:57
+msgid "Lingala"
+msgstr "Lingala"
+
+#: globalPlugins\LocalTranslate\__init__.py:120
+msgid "Lituanien"
+msgstr "Lituanien"
+
+#: globalPlugins\LocalTranslate\__init__.py:1128 manifest.ini
+msgid "LocalTranslate"
+msgstr "LocalTranslate"
+
+#: globalPlugins\LocalTranslate\__init__.py:547
+msgid ""
+"LocalTranslate : impossible de déplacer les anciennes données. Consultez le "
+"journal NVDA."
+msgstr ""
+"LocalTranslate : impossible de déplacer les anciennes données. Consultez le "
+"journal NVDA."
+
+#: globalPlugins\LocalTranslate\doc_strings.py:6
+msgid "LocalTranslate : traduction locale pour NVDA"
+msgstr "LocalTranslate : traduction locale pour NVDA"
+
+#: globalPlugins\LocalTranslate\__init__.py:807
+msgid "LocalTranslate : échec du chargement. Le texte original sera annoncé."
+msgstr "LocalTranslate : échec du chargement. Le texte original sera annoncé."
+
+#: globalPlugins\LocalTranslate\doc_strings.py:7
+msgid ""
+"LocalTranslate traduit les textes annoncés par NVDA sur votre ordinateur, "
+"pour une application ou pour toutes les applications. Choisissez vos langues"
+" et un modèle compatible. Internet sert à télécharger les modèles ; les "
+"textes à traduire ne sont pas envoyés à un service en ligne."
+msgstr ""
+"LocalTranslate traduit les textes annoncés par NVDA sur votre ordinateur, "
+"pour une application ou pour toutes les applications. Choisissez vos langues"
+" et un modèle compatible. Internet sert à télécharger les modèles ; les "
+"textes à traduire ne sont pas envoyés à un service en ligne."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:23
+msgid "LocalTranslate — configuration"
+msgstr "LocalTranslate — configuration"
+
+#: globalPlugins\LocalTranslate\__init__.py:837
+msgid "LocalTranslate — essai OPUS-MT anglais vers français"
+msgstr "LocalTranslate — essai OPUS-MT anglais vers français"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:44
+msgid "LocalTranslate — langue source pour "
+msgstr "LocalTranslate — langue source pour "
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:78
+msgid "LocalTranslate — première utilisation"
+msgstr "LocalTranslate — première utilisation"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:78
+msgid "LocalTranslate — première utilisation pour cette application"
+msgstr "LocalTranslate — première utilisation pour cette application"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:83
+msgid "LocalTranslate — télécharger un modèle"
+msgstr "LocalTranslate — télécharger un modèle"
+
+#: globalPlugins\LocalTranslate\__init__.py:970
+msgid "LocalTranslate…"
+msgstr "LocalTranslate…"
+
+#: globalPlugins\LocalTranslate\__init__.py:56
+msgid "Luganda"
+msgstr "Luganda"
+
+#: globalPlugins\LocalTranslate\__init__.py:55
+msgid "Luxembourgeois"
+msgstr "Luxembourgeois"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:378
+msgid "L’installation du modèle est incomplète. Réessayez le téléchargement."
+msgstr "L’installation du modèle est incomplète. Réessayez le téléchargement."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:15
+msgid "M2M-100 418M INT8 — CPU, multilingue, priorité à la rapidité"
+msgstr "M2M-100 418M INT8 — CPU, multilingue, priorité à la rapidité"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:14
+msgid "M2M-100 418M INT8 — multilingue, priorité à la rapidité"
+msgstr "M2M-100 418M INT8 — multilingue, priorité à la rapidité"
+
+#: globalPlugins\LocalTranslate\__init__.py:121
+msgid "Macédonien"
+msgstr "Macédonien"
+
+#: globalPlugins\LocalTranslate\__init__.py:63
+msgid "Malais"
+msgstr "Malais"
+
+#: globalPlugins\LocalTranslate\__init__.py:61
+msgid "Malayalam"
+msgstr "Malayalam"
+
+#: globalPlugins\LocalTranslate\__init__.py:60
+msgid "Malgache"
+msgstr "Malgache"
+
+#: globalPlugins\LocalTranslate\__init__.py:62
+msgid "Marathi"
+msgstr "Marathi"
+
+#: globalPlugins\LocalTranslate\source_settings.py:57
+msgid "Modifiez une langue, puis choisissez Appliquer."
+msgstr "Modifiez une langue, puis choisissez Appliquer."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:291
+msgid "Modèle"
+msgstr "Modèle"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:370
+msgid "Modèle de traduction"
+msgstr "Modèle de traduction"
+
+#: globalPlugins\LocalTranslate\source_settings.py:239
+msgid "Modèle indisponible"
+msgstr "Modèle indisponible"
+
+#: globalPlugins\LocalTranslate\backends.py:129
+msgid "Modèle indisponible. Choisissez un autre modèle dans les préférences. "
+msgstr ""
+"Modèle indisponible. Choisissez un autre modèle dans les préférences. "
+
+#: globalPlugins\LocalTranslate\source_settings.py:157
+msgid ""
+"Modèle installé. Choisissez Appliquer pour enregistrer vos langues et votre "
+"modèle."
+msgstr ""
+"Modèle installé. Choisissez Appliquer pour enregistrer vos langues et votre "
+"modèle."
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:298
+msgid "Modèle installé. Choisissez Appliquer."
+msgstr "Modèle installé. Choisissez Appliquer."
+
+#: globalPlugins\LocalTranslate\backends.py:96
+msgid "Modèle manquant : "
+msgstr "Modèle manquant : "
+
+#: globalPlugins\LocalTranslate\source_settings.py:47
+msgid "Modèle pour cette application"
+msgstr "Modèle pour cette application"
+
+#: globalPlugins\LocalTranslate\source_settings.py:45
+msgid "Modèle pour cette application :"
+msgstr "Modèle pour cette application :"
+
+#: globalPlugins\LocalTranslate\source_settings.py:30
+msgid "Modèle pour la traduction globale"
+msgstr "Modèle pour la traduction globale"
+
+#: globalPlugins\LocalTranslate\source_settings.py:28
+msgid "Modèle pour la traduction globale :"
+msgstr "Modèle pour la traduction globale :"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:400
+msgid ""
+"Modèle supprimé ; traduction désactivée, cache et réglages conservés. "
+"Réactivez la traduction pour choisir les modèles."
+msgstr ""
+"Modèle supprimé ; traduction désactivée, cache et réglages conservés. "
+"Réactivez la traduction pour choisir les modèles."
+
+#: globalPlugins\LocalTranslate\model_store.py:524
+msgid "Modèle vide"
+msgstr "Modèle vide"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:330
+#: globalPlugins\LocalTranslate\setup_wizard.py:365
+#, python-brace-format
+msgid "Modèle {v0} sur {v1}, "
+msgstr "Modèle {v0} sur {v1}, "
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:120
+msgid "Modèles compatibles"
+msgstr "Modèles compatibles"
+
+#: globalPlugins\LocalTranslate\doc_strings.py:15
+#: globalPlugins\LocalTranslate\manager_dialog.py:38
+msgid "Modèles installés"
+msgstr "Modèles installés"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:355
+msgid "Modèles installés. Traduction prête."
+msgstr "Modèles installés. Traduction prête."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:75
+msgid "Modèles nécessaires et téléchargements :"
+msgstr "Modèles nécessaires et téléchargements :"
+
+#: globalPlugins\LocalTranslate\__init__.py:122
+msgid "Mongol"
+msgstr "Mongol"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:265
+#, python-brace-format
+msgid ""
+"Moteur CUDA : {v0:.0f} Mo supplémentaires. Chargement GPU expérimental."
+msgstr ""
+"Moteur CUDA : {v0:.0f} Mo supplémentaires. Chargement GPU expérimental."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:262
+#, python-brace-format
+msgid "Moteur Node.js : {v0:.0f} Mo supplémentaires ; Bergamot est inclus."
+msgstr "Moteur Node.js : {v0:.0f} Mo supplémentaires ; Bergamot est inclus."
+
+#: globalPlugins\LocalTranslate\backends.py:88
+#: globalPlugins\LocalTranslate\backends.py:118
+#: globalPlugins\LocalTranslate\backends.py:120
+#: globalPlugins\LocalTranslate\backends.py:135
+#: globalPlugins\LocalTranslate\backends.py:158
+msgid "Moteur arrêté"
+msgstr "Moteur arrêté"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:327
+#: globalPlugins\LocalTranslate\setup_wizard.py:360
+#: globalPlugins\LocalTranslate\source_settings.py:210
+msgid "Moteur de traduction"
+msgstr "Moteur de traduction"
+
+#: globalPlugins\LocalTranslate\model_store.py:558
+msgid "Moteur téléchargé incomplet"
+msgstr "Moteur téléchargé incomplet"
+
+#: globalPlugins\LocalTranslate\__init__.py:871
+#: globalPlugins\LocalTranslate\manager_dialog.py:62
+msgid "Mémoriser la langue détectée pour cette application"
+msgstr "Mémoriser la langue détectée pour cette application"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:236
+msgid ""
+"NLLB demande au moins 3 Go de RAM disponibles. Essayez Argos ou Firefox."
+msgstr ""
+"NLLB demande au moins 3 Go de RAM disponibles. Essayez Argos ou Firefox."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:13
+msgid "NLLB-200 600M INT8 — CPU, multilingue"
+msgstr "NLLB-200 600M INT8 — CPU, multilingue"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:12
+msgid "NLLB-200 600M INT8 — multilingue"
+msgstr "NLLB-200 600M INT8 — multilingue"
+
+#: globalPlugins\LocalTranslate\__init__.py:156
+msgid "Norvège"
+msgstr "Norvège"
+
+#: globalPlugins\LocalTranslate\__init__.py:64
+msgid "Norvégien"
+msgstr "Norvégien"
+
+#: globalPlugins\LocalTranslate\__init__.py:124
+msgid "Norvégien (Bokmål)"
+msgstr "Norvégien (Bokmål)"
+
+#: globalPlugins\LocalTranslate\__init__.py:127
+msgid "Norvégien (Nynorsk)"
+msgstr "Norvégien (Nynorsk)"
+
+#: globalPlugins\LocalTranslate\__init__.py:960
+msgid "Note : détection automatique activée."
+msgstr "Note : détection automatique activée."
+
+#: globalPlugins\LocalTranslate\__init__.py:126
+msgid "Néerlandais"
+msgstr "Néerlandais"
+
+#: globalPlugins\LocalTranslate\__init__.py:125
+msgid "Népalais"
+msgstr "Népalais"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:12
+msgid "OPUS-MT — CPU"
+msgstr "OPUS-MT — CPU"
+
+#: globalPlugins\LocalTranslate\__init__.py:66
+msgid "Occitan"
+msgstr "Occitan"
+
+#: globalPlugins\LocalTranslate\__init__.py:67
+msgid "Odia (oriya)"
+msgstr "Odia (oriya)"
+
+#: globalPlugins\LocalTranslate\__init__.py:882
+msgid "Oublier la langue mémorisée (nouvelle détection en mode Auto)"
+msgstr "Oublier la langue mémorisée (nouvelle détection en mode Auto)"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:64
+msgid "Oublier la langue mémorisée pour cette application"
+msgstr "Oublier la langue mémorisée pour cette application"
+
+#: globalPlugins\LocalTranslate\__init__.py:143
+msgid "Ourdou"
+msgstr "Ourdou"
+
+#: globalPlugins\LocalTranslate\doc_strings.py:13
+msgid ""
+"Ouvrez le menu NVDA, Préférences, LocalTranslate. Dans Langues, modifiez la "
+"langue source, la langue cible et le modèle pour la traduction globale ou "
+"pour une application. Choisissez Appliquer pour enregistrer. La langue cible"
+" initiale suit la langue de la voix active de NVDA, ou celle de son "
+"interface si la voix ne fournit pas cette information."
+msgstr ""
+"Ouvrez le menu NVDA, Préférences, LocalTranslate. Dans Langues, modifiez la "
+"langue source, la langue cible et le modèle pour la traduction globale ou "
+"pour une application. Choisissez Appliquer pour enregistrer. La langue cible"
+" initiale suit la langue de la voix active de NVDA, ou celle de son "
+"interface si la voix ne fournit pas cette information."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:50
+msgid "Ouvrir l’assistant de choix des langues et du modèle"
+msgstr "Ouvrir l’assistant de choix des langues et du modèle"
+
+#: globalPlugins\LocalTranslate\__init__.py:79
+msgid "Ouzbek"
+msgstr "Ouzbek"
+
+#: globalPlugins\LocalTranslate\__init__.py:78
+msgid "Ouïghour"
+msgstr "Ouïghour"
+
+#: globalPlugins\LocalTranslate\__init__.py:69
+msgid "Pachto"
+msgstr "Pachto"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:113
+msgid "Paires ajoutées :"
+msgstr "Paires ajoutées :"
+
+#: globalPlugins\LocalTranslate\doc_strings.py:16
+msgid ""
+"Par défaut, les modèles utilisent le processeur et la RAM, y compris Hy-MT2 "
+"de 8 Go. Après la liste des modèles, la case Utiliser la carte graphique "
+"pour accélérer la traduction apparaît si une carte NVIDIA dédiée compatible "
+"dispose de suffisamment de VRAM libre. Cochez-la pour utiliser le GPU et la "
+"VRAM. Le choix est enregistré séparément pour chaque application et pour la "
+"traduction globale. Les bibliothèques nécessaires sont téléchargées "
+"automatiquement ; le modèle reste le même. Si le GPU devient indisponible, "
+"le processeur est utilisé lorsque la RAM le permet."
+msgstr ""
+"Par défaut, les modèles utilisent le processeur et la RAM, y compris Hy-MT2 "
+"de 8 Go. Après la liste des modèles, la case Utiliser la carte graphique "
+"pour accélérer la traduction apparaît si une carte NVIDIA dédiée compatible "
+"dispose de suffisamment de VRAM libre. Cochez-la pour utiliser le GPU et la "
+"VRAM. Le choix est enregistré séparément pour chaque application et pour la "
+"traduction globale. Les bibliothèques nécessaires sont téléchargées "
+"automatiquement ; le modèle reste le même. Si le GPU devient indisponible, "
+"le processeur est utilisé lorsque la RAM le permet."
+
+#: globalPlugins\LocalTranslate\__init__.py:128
+msgid "Pendjabi"
+msgstr "Pendjabi"
+
+#: globalPlugins\LocalTranslate\doc_strings.py:21
+#: globalPlugins\LocalTranslate\manager_dialog.py:41
+msgid "Performances"
+msgstr "Performances"
+
+#: globalPlugins\LocalTranslate\__init__.py:102
+msgid "Persan"
+msgstr "Persan"
+
+#: globalPlugins\LocalTranslate\__init__.py:41
+msgid "Peul"
+msgstr "Peul"
+
+#: globalPlugins\LocalTranslate\__init__.py:129
+msgid "Polonais"
+msgstr "Polonais"
+
+#: globalPlugins\LocalTranslate\__init__.py:130
+msgid "Portugais"
+msgstr "Portugais"
+
+#: globalPlugins\LocalTranslate\__init__.py:68
+msgid "Portugais (Brésil)"
+msgstr "Portugais (Brésil)"
+
+#: globalPlugins\LocalTranslate\__init__.py:152
+msgid "Portugal"
+msgstr "Portugal"
+
+#: globalPlugins\LocalTranslate\doc_strings.py:10
+msgid "Première utilisation"
+msgstr "Première utilisation"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:301
+#: globalPlugins\LocalTranslate\source_settings.py:242
+msgid ""
+"RAM disponible insuffisante pour ce modèle sur CPU. Activez la carte "
+"graphique ou choisissez un autre modèle."
+msgstr ""
+"RAM disponible insuffisante pour ce modèle sur CPU. Activez la carte "
+"graphique ou choisissez un autre modèle."
+
+#: globalPlugins\LocalTranslate\doc_strings.py:8
+msgid "Raccourcis"
+msgstr "Raccourcis"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:143
+#: globalPlugins\LocalTranslate\setup_wizard.py:228
+msgid "Recherche des modèles compatibles…"
+msgstr "Recherche des modèles compatibles…"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:25
+msgid "Rechercher dans le cache de traduction"
+msgstr "Rechercher dans le cache de traduction"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:24
+msgid "Rechercher dans les textes et les traductions :"
+msgstr "Rechercher dans les textes et les traductions :"
+
+#: globalPlugins\LocalTranslate\cache_selection.py:24
+msgid "Remplacer les traductions automatiques déjà présentes"
+msgstr "Remplacer les traductions automatiques déjà présentes"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:268
+#, python-brace-format
+msgid "Reste à télécharger, moteurs compris : {v0:.1f} Mo"
+msgstr "Reste à télécharger, moteurs compris : {v0:.1f} Mo"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:116
+msgid "Retirer la paire sélectionnée"
+msgstr "Retirer la paire sélectionnée"
+
+#: globalPlugins\LocalTranslate\__init__.py:131
+msgid "Roumain"
+msgstr "Roumain"
+
+#: globalPlugins\LocalTranslate\__init__.py:132
+msgid "Russe"
+msgstr "Russe"
+
+#: globalPlugins\LocalTranslate\__init__.py:840
+#: globalPlugins\LocalTranslate\manager_dialog.py:46
+msgid "Réglages généraux"
+msgstr "Réglages généraux"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:38
+msgid "Rétablir la traduction enregistrée"
+msgstr "Rétablir la traduction enregistrée"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:14
+msgid "SMaLL-100 330M INT8 — CPU, multilingue, priorité à la rapidité"
+msgstr "SMaLL-100 330M INT8 — CPU, multilingue, priorité à la rapidité"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:13
+msgid "SMaLL-100 330M INT8 — multilingue, priorité à la rapidité"
+msgstr "SMaLL-100 330M INT8 — multilingue, priorité à la rapidité"
+
+#: globalPlugins\LocalTranslate\__init__.py:137
+msgid "Serbe"
+msgstr "Serbe"
+
+#: globalPlugins\LocalTranslate\__init__.py:46
+msgid "Serbo-croate"
+msgstr "Serbo-croate"
+
+#: globalPlugins\LocalTranslate\__init__.py:70
+msgid "Sindhi"
+msgstr "Sindhi"
+
+#: globalPlugins\LocalTranslate\__init__.py:71
+msgid "Singhalais"
+msgstr "Singhalais"
+
+#: globalPlugins\LocalTranslate\__init__.py:133
+msgid "Slovaque"
+msgstr "Slovaque"
+
+#: globalPlugins\LocalTranslate\__init__.py:134
+msgid "Slovène"
+msgstr "Slovène"
+
+#: globalPlugins\LocalTranslate\__init__.py:135
+msgid "Somali"
+msgstr "Somali"
+
+#: globalPlugins\LocalTranslate\model_store.py:480
+msgid "Somme de contrôle du modèle incorrecte"
+msgstr "Somme de contrôle du modèle incorrecte"
+
+#: globalPlugins\LocalTranslate\model_store.py:426
+msgid "Somme de contrôle incorrecte"
+msgstr "Somme de contrôle incorrecte"
+
+#: globalPlugins\LocalTranslate\__init__.py:65
+msgid "Sotho du Nord"
+msgstr "Sotho du Nord"
+
+#: globalPlugins\LocalTranslate\__init__.py:73
+msgid "Soundanais"
+msgstr "Soundanais"
+
+#: globalPlugins\LocalTranslate\__init__.py:955
+#, python-brace-format
+msgid "Source : {src} — Cible : {tgt}"
+msgstr "Source : {src} — Cible : {tgt}"
+
+#: globalPlugins\LocalTranslate\__init__.py:149
+msgid "Suisse"
+msgstr "Suisse"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:91
+msgid "Supprimer le modèle sélectionné"
+msgstr "Supprimer le modèle sélectionné"
+
+#: globalPlugins\LocalTranslate\__init__.py:138
+msgid "Suédois"
+msgstr "Suédois"
+
+#: globalPlugins\LocalTranslate\__init__.py:74
+msgid "Swahili"
+msgstr "Swahili"
+
+#: globalPlugins\LocalTranslate\__init__.py:72
+msgid "Swati"
+msgstr "Swati"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:190
+msgid "Sélectionnez au moins une langue source avec Espace."
+msgstr "Sélectionnez au moins une langue source avec Espace."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:229
+msgid "Sélectionnez au moins une langue source et une langue cible."
+msgstr "Sélectionnez au moins une langue source et une langue cible."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:89
+msgid ""
+"Sélectionnez un modèle. Le cache des traductions est conservé lors de sa "
+"suppression."
+msgstr ""
+"Sélectionnez un modèle. Le cache des traductions est conservé lors de sa "
+"suppression."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:47
+msgid "Sélectionnez une application, puis un texte à corriger."
+msgstr "Sélectionnez une application, puis un texte à corriger."
+
+#: globalPlugins\LocalTranslate\__init__.py:76
+msgid "Tagalog"
+msgstr "Tagalog"
+
+#: globalPlugins\LocalTranslate\model_store.py:396
+msgid "Taille du téléchargement inattendue"
+msgstr "Taille du téléchargement inattendue"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:267
+#, python-brace-format
+msgid "Taille totale des modèles pour vos langues : {v0:.1f} Mo"
+msgstr "Taille totale des modèles pour vos langues : {v0:.1f} Mo"
+
+#: globalPlugins\LocalTranslate\__init__.py:139
+msgid "Tamoul"
+msgstr "Tamoul"
+
+#: globalPlugins\LocalTranslate\__init__.py:155
+msgid "Taïwan"
+msgstr "Taïwan"
+
+#: globalPlugins\LocalTranslate\__init__.py:96
+msgid "Tchèque"
+msgstr "Tchèque"
+
+#: globalPlugins\LocalTranslate\telemetry.py:77
+msgid "Temps de chargement du modèle :"
+msgstr "Temps de chargement du modèle :"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:97
+msgid "Temps de chargement et temps moyen de traduction"
+msgstr "Temps de chargement et temps moyen de traduction"
+
+#: globalPlugins\LocalTranslate\telemetry.py:96
+msgid "Temps de détection de la langue : aucune mesure disponible."
+msgstr "Temps de détection de la langue : aucune mesure disponible."
+
+#: globalPlugins\LocalTranslate\telemetry.py:95
+msgid "Temps moyen de détection de la langue : "
+msgstr "Temps moyen de détection de la langue : "
+
+#: globalPlugins\LocalTranslate\telemetry.py:99
+#, python-brace-format
+msgid "Temps moyen de traduction : {duration}, sur {count} traduction."
+msgstr "Temps moyen de traduction : {duration}, sur {count} traduction."
+
+#: globalPlugins\LocalTranslate\telemetry.py:99
+#, python-brace-format
+msgid "Temps moyen de traduction : {duration}, sur {count} traductions."
+msgstr "Temps moyen de traduction : {duration}, sur {count} traductions."
+
+#: globalPlugins\LocalTranslate\telemetry.py:85
+msgid "Temps moyen de traduction par langue source et langue cible :"
+msgstr "Temps moyen de traduction par langue source et langue cible :"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:31
+msgid "Texte d’origine"
+msgstr "Texte d’origine"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:30
+msgid "Texte d’origine :"
+msgstr "Texte d’origine :"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:28
+msgid "Textes en cache"
+msgstr "Textes en cache"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:27
+msgid "Textes en cache :"
+msgstr "Textes en cache :"
+
+#: globalPlugins\LocalTranslate\__init__.py:140
+msgid "Thaï"
+msgstr "Thaï"
+
+#: globalPlugins\LocalTranslate\__init__.py:34
+msgid "Tibétain"
+msgstr "Tibétain"
+
+#: globalPlugins\LocalTranslate\cache_selection.py:12
+msgid "Toutes les applications"
+msgstr "Toutes les applications"
+
+#: globalPlugins\LocalTranslate\__init__.py:754
+#, python-brace-format
+msgid "Traduction activée pour {app}."
+msgstr "Traduction activée pour {app}."
+
+#: globalPlugins\LocalTranslate\__init__.py:1236
+#, python-brace-format
+msgid "Traduction désactivée pour {app}"
+msgstr "Traduction désactivée pour {app}"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:83
+msgid "Traduction globale"
+msgstr "Traduction globale"
+
+#: globalPlugins\LocalTranslate\__init__.py:754
+msgid "Traduction globale activée."
+msgstr "Traduction globale activée."
+
+#: globalPlugins\LocalTranslate\__init__.py:1213
+msgid "Traduction globale désactivée"
+msgstr "Traduction globale désactivée"
+
+#: manifest.ini
+msgid ""
+"Traduction hors ligne avec modèles téléchargeables selon les langues et la "
+"machine."
+msgstr ""
+"Traduction hors ligne avec modèles téléchargeables selon les langues et la "
+"machine."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:34
+msgid "Traduction à corriger"
+msgstr "Traduction à corriger"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:33
+msgid "Traduction à corriger :"
+msgstr "Traduction à corriger :"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:110
+#, python-brace-format
+msgid "Traductions en cache : {count}."
+msgstr "Traductions en cache : {count}."
+
+#: globalPlugins\LocalTranslate\cache_settings.py:185
+#, python-brace-format
+msgid "Traductions exportées : {count}. Fichier : {path}."
+msgstr "Traductions exportées : {count}. Fichier : {path}."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:68
+msgid "Traduire les annonces de NVDA en :"
+msgstr "Traduire les annonces de NVDA en :"
+
+#: globalPlugins\LocalTranslate\__init__.py:77
+msgid "Tswana"
+msgstr "Tswana"
+
+#: globalPlugins\LocalTranslate\__init__.py:141
+msgid "Turc"
+msgstr "Turc"
+
+#: globalPlugins\LocalTranslate\__init__.py:75
+msgid "Télougou"
+msgstr "Télougou"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:298
+msgid "Téléchargement"
+msgstr "Téléchargement"
+
+#: globalPlugins\LocalTranslate\model_store.py:362
+msgid "Téléchargement HTTPS requis"
+msgstr "Téléchargement HTTPS requis"
+
+#: globalPlugins\LocalTranslate\model_store.py:415
+msgid "Téléchargement Windows : "
+msgstr "Téléchargement Windows : "
+
+#: globalPlugins\LocalTranslate\model_store.py:350
+#: globalPlugins\LocalTranslate\setup_wizard.py:357
+#: globalPlugins\LocalTranslate\setup_wizard.py:370
+msgid "Téléchargement annulé."
+msgstr "Téléchargement annulé."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:290
+#: globalPlugins\LocalTranslate\setup_wizard.py:331
+#: globalPlugins\LocalTranslate\setup_wizard.py:332
+msgid "Téléchargement en cours"
+msgstr "Téléchargement en cours"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:350
+msgid "Téléchargement et installation terminés. Traduction prête."
+msgstr "Téléchargement et installation terminés. Traduction prête."
+
+#: globalPlugins\LocalTranslate\model_store.py:422
+msgid "Téléchargement incomplet"
+msgstr "Téléchargement incomplet"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:26
+msgid "Téléchargement total"
+msgstr "Téléchargement total"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:124
+#: globalPlugins\LocalTranslate\setup_wizard.py:382
+#: globalPlugins\LocalTranslate\setup_wizard.py:296
+msgid "Télécharger"
+msgstr "Télécharger"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:349
+#: globalPlugins\LocalTranslate\manager_dialog.py:82
+msgid "Télécharger les modèles nécessaires"
+msgstr "Télécharger les modèles nécessaires"
+
+#: globalPlugins\LocalTranslate\source_settings.py:51
+msgid "Télécharger un modèle pour cette application"
+msgstr "Télécharger un modèle pour cette application"
+
+#: globalPlugins\LocalTranslate\source_settings.py:34
+msgid "Télécharger un modèle pour la traduction globale"
+msgstr "Télécharger un modèle pour la traduction globale"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:360
+msgid "Téléchargez d’abord les modèles nécessaires."
+msgstr "Téléchargez d’abord les modèles nécessaires."
+
+#: globalPlugins\LocalTranslate\__init__.py:142
+msgid "Ukrainien"
+msgstr "Ukrainien"
+
+#: globalPlugins\LocalTranslate\cache_sharing.py:51
+msgid "Une entrée contient un texte, une langue ou une application vide."
+msgstr "Une entrée contient un texte, une langue ou une application vide."
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:56
+msgid "Une langue précise sera utilisée pour "
+msgstr "Une langue précise sera utilisée pour "
+
+#: globalPlugins\LocalTranslate\doc_strings.py:14
+msgid ""
+"Une langue source choisie manuellement a priorité. En Détection automatique,"
+" la langue du document est utilisée lorsqu’elle est disponible ; sinon, le "
+"texte est analysé. La mémorisation de la langue d’une application est "
+"facultative et désactivée par défaut. Le modèle doit couvrir les langues à "
+"traduire."
+msgstr ""
+"Une langue source choisie manuellement a priorité. En Détection automatique,"
+" la langue du document est utilisée lorsqu’elle est disponible ; sinon, le "
+"texte est analysé. La mémorisation de la langue d’une application est "
+"facultative et désactivée par défaut. Le modèle doit couvrir les langues à "
+"traduire."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:269
+msgid "Une seule langue cible sera annoncée : "
+msgstr "Une seule langue cible sera annoncée : "
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:122
+#: globalPlugins\LocalTranslate\source_settings.py:32
+#: globalPlugins\LocalTranslate\source_settings.py:49
+msgid "Utiliser la carte graphique pour accélérer la traduction"
+msgstr "Utiliser la carte graphique pour accélérer la traduction"
+
+#: globalPlugins\LocalTranslate\__init__.py:868
+#: globalPlugins\LocalTranslate\manager_dialog.py:56
+msgid "Utiliser la langue source des réglages généraux"
+msgstr "Utiliser la langue source des réglages généraux"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:58
+msgid "Valider"
+msgstr "Valider"
+
+#: globalPlugins\LocalTranslate\__init__.py:144
+msgid "Vietnamien"
+msgstr "Vietnamien"
+
+#: globalPlugins\LocalTranslate\cache_selection.py:26
+msgid "Vos corrections personnelles déjà enregistrées sont conservées."
+msgstr "Vos corrections personnelles déjà enregistrées sont conservées."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:298
+msgid "Vérification du fichier"
+msgstr "Vérification du fichier"
+
+#: globalPlugins\LocalTranslate\__init__.py:80
+msgid "Wolof"
+msgstr "Wolof"
+
+#: globalPlugins\LocalTranslate\__init__.py:81
+msgid "Xhosa"
+msgstr "Xhosa"
+
+#: globalPlugins\LocalTranslate\__init__.py:82
+msgid "Yiddish"
+msgstr "Yiddish"
+
+#: globalPlugins\LocalTranslate\__init__.py:83
+msgid "Yoruba"
+msgstr "Yoruba"
+
+#: globalPlugins\LocalTranslate\__init__.py:87
+msgid "Zoulou"
+msgstr "Zoulou"
+
+#: globalPlugins\LocalTranslate\__init__.py:457
+msgid "application"
+msgstr "application"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:251
+#, python-brace-format
+msgid "au moins {v0:.1f} Mo — taille à compléter"
+msgstr "au moins {v0:.1f} Mo — taille à compléter"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:55
+msgid "cette application"
+msgstr "cette application"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:37
+msgid "détection automatique fastText"
+msgstr "détection automatique fastText"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:55
+msgid "la traduction globale"
+msgstr "la traduction globale"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:31
+msgid "langue indiquée par le document"
+msgstr "langue indiquée par le document"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:33
+msgid "langue mémorisée pour cette application"
+msgstr "langue mémorisée pour cette application"
+
+#: globalPlugins\LocalTranslate\telemetry.py:90
+msgid "mode non enregistré dans les anciennes mesures"
+msgstr "mode non enregistré dans les anciennes mesures"
+
+#: globalPlugins\LocalTranslate\source_confirmation.py:39
+msgid "réglage existant de cette application"
+msgstr "réglage existant de cette application"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:251
+msgid "taille à déterminer"
+msgstr "taille à déterminer"
+
+#: globalPlugins\LocalTranslate\app_languages.py:70
+msgid "unsupported source language"
+msgstr "unsupported source language"
+
+#: globalPlugins\LocalTranslate\doc_strings.py:9
+#, python-brace-format
+msgid ""
+"{application_shortcut} : activer ou désactiver la traduction pour "
+"l’application courante. {global_shortcut} : activer ou désactiver la "
+"traduction globale. Vous pouvez modifier ces raccourcis dans les Gestes de "
+"commandes de NVDA."
+msgstr ""
+"{application_shortcut} : activer ou désactiver la traduction pour "
+"l’application courante. {global_shortcut} : activer ou désactiver la "
+"traduction globale. Vous pouvez modifier ces raccourcis dans les Gestes de "
+"commandes de NVDA."
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:184
+#, python-brace-format
+msgid "{cpu} ; {cores} processeurs logiques."
+msgstr "{cpu} ; {cores} processeurs logiques."
+
+#: globalPlugins\LocalTranslate\__init__.py:183
+#, python-brace-format
+msgid "{lang} ({region})"
+msgstr "{lang} ({region})"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:375
+#, python-brace-format
+msgid "{name} — {size:.0f} Mo"
+msgstr "{name} — {size:.0f} Mo"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:250
+#, python-brace-format
+msgid "{v0:.1f} Mo de modèles"
+msgstr "{v0:.1f} Mo de modèles"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:291
+#, python-brace-format
+msgid "{v0:.1f} Mo téléchargés"
+msgstr "{v0:.1f} Mo téléchargés"
+
+#: globalPlugins\LocalTranslate\telemetry.py:83
+#, python-brace-format
+msgid "{v0} : {v1} — dernier chargement."
+msgstr "{v0} : {v1} — dernier chargement."
+
+#: globalPlugins\LocalTranslate\telemetry.py:88
+#, python-brace-format
+msgid "{v0} vers {v1} — {v2}"
+msgstr "{v0} vers {v1} — {v2}"
+
+#: globalPlugins\LocalTranslate\cache_settings.py:90
+#, python-brace-format
+msgid "{v0} — {v1} vers {v2}"
+msgstr "{v0} — {v1} vers {v2}"
+
+#: globalPlugins\LocalTranslate\manager_dialog.py:289
+#: globalPlugins\LocalTranslate\setup_wizard.py:325
+#: globalPlugins\LocalTranslate\source_settings.py:220
+#, python-brace-format
+msgid "{v0}% du téléchargement"
+msgstr "{v0}% du téléchargement"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:271
+msgid "Échec :"
+msgstr "Échec :"
+
+#: globalPlugins\LocalTranslate\setup_wizard.py:382
+#: globalPlugins\LocalTranslate\source_settings.py:224
+msgid "Échec : "
+msgstr "Échec : "
+
+#~ msgid "Hy-MT2 7B Q8 — NVIDIA, qualité, gros téléchargement"
+#~ msgstr "Hy-MT2 7B Q8 — NVIDIA, qualité, gros téléchargement"
+
+#~ msgid ""
+#~ "Ctrl + Windows + Alt + T : activer ou désactiver la traduction pour "
+#~ "l’application courante. Ctrl + Windows + Alt + Maj + T : activer ou "
+#~ "désactiver la traduction globale. Vous pouvez modifier ces raccourcis dans "
+#~ "les Gestes de commandes de NVDA."
+#~ msgstr ""
+#~ "Ctrl + Windows + Alt + T : activer ou désactiver la traduction pour "
+#~ "l’application courante. Ctrl + Windows + Alt + Maj + T : activer ou "
+#~ "désactiver la traduction globale. Vous pouvez modifier ces raccourcis dans "
+#~ "les Gestes de commandes de NVDA."
+
+#~ msgid "NLLB CPU fallback"
+#~ msgstr "NLLB CPU fallback"
+
+#~ msgid "source equals target, unchanged"
+#~ msgstr "source equals target, unchanged"
+
+#~ msgid "LocalTranslate : Python embarqué ou worker introuvable."
+#~ msgstr "LocalTranslate : Python embarqué ou worker introuvable."
+
+#~ msgid "Utiliser le GPU (si disponible)"
+#~ msgstr "Utiliser le GPU (si disponible)"
+
+#~ msgid "Impossible de démarrer LocalTranslate."
+#~ msgstr "Impossible de démarrer LocalTranslate."
+
+#~ msgid "Traduction globale activée"
+#~ msgstr "Traduction globale activée"
+
+#~ msgid "Impossible d'activer la traduction globale."
+#~ msgstr "Impossible d'activer la traduction globale."
+
+#~ msgid "Traduction activée pour {app}"
+#~ msgstr "Traduction activée pour {app}"
+
+#~ msgid "Impossible d'activer la traduction pour {app}."
+#~ msgstr "Impossible d'activer la traduction pour {app}."

@@ -1,0 +1,3351 @@
+{
+ "schema": 1,
+ "date": "2026-10-08",
+ "entries": [
+  {
+   "id": "bergamot-af-en",
+   "family": "bergamot",
+   "source": "af",
+   "target": "en",
+   "version": "d43baa7ab565",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-af-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2133684
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-af-en.model.gz",
+     "sha256": "d43baa7ab565a6cdc2bc230a4ab6fcaf7b4a871e53e42cc7128e55871ef36086",
+     "unpacked_bytes": 31561787,
+     "bytes": 23479680
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-af-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 408581
+    }
+   }
+  },
+  {
+   "id": "bergamot-ar-en",
+   "family": "bergamot",
+   "source": "ar",
+   "target": "en",
+   "version": "7b7af0282dc5",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ar-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2259861
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ar-en.model.gz",
+     "sha256": "7b7af0282dc5f4d8805b9a298c2fa828967e3f09ca10f1942ebeea0b2cfc12fa",
+     "unpacked_bytes": 31561787,
+     "bytes": 23224456
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ar-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 416700
+    }
+   }
+  },
+  {
+   "id": "bergamot-be-en",
+   "family": "bergamot",
+   "source": "be",
+   "target": "en",
+   "version": "bd7148a6eef3",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-be-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2182133
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-be-en.model.gz",
+     "sha256": "bd7148a6eef3df7d631f4ad1ebc01cd5770404a224c3c35eb54a901ac5340563",
+     "unpacked_bytes": 31561787,
+     "bytes": 22664530
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-be-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 435603
+    }
+   }
+  },
+  {
+   "id": "bergamot-bg-en",
+   "family": "bergamot",
+   "source": "bg",
+   "target": "en",
+   "version": "78f7e6e1435c",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-bg-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2187053
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-bg-en.model.gz",
+     "sha256": "78f7e6e1435cc2d4a29cf597f493187fe29ddb9ce9d3766c287e2e6d37052d01",
+     "unpacked_bytes": 31561787,
+     "bytes": 22399269
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-bg-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 434940
+    }
+   }
+  },
+  {
+   "id": "bergamot-bn-en",
+   "family": "bergamot",
+   "source": "bn",
+   "target": "en",
+   "version": "14c1d9e92918",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-bn-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2264284
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-bn-en.model.gz",
+     "sha256": "14c1d9e92918e8d04cb0ed351ae386c3b5d5c62a6dc601d9515f4c7e6c2a3a56",
+     "unpacked_bytes": 17141051,
+     "bytes": 12665857
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-bn-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 437571
+    }
+   }
+  },
+  {
+   "id": "bergamot-ca-en",
+   "family": "bergamot",
+   "source": "ca",
+   "target": "en",
+   "version": "b7f9c7082305",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ca-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2257590
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ca-en.model.gz",
+     "sha256": "b7f9c70823052f60c257eb1c4eff893abea3648aa9d1c23c8774e1e5ef061434",
+     "unpacked_bytes": 31561787,
+     "bytes": 22787743
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ca-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409662
+    }
+   }
+  },
+  {
+   "id": "bergamot-cs-en",
+   "family": "bergamot",
+   "source": "cs",
+   "target": "en",
+   "version": "c815273b3107",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-cs-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2493702
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-cs-en.model.gz",
+     "sha256": "c815273b31074492eaab0ccd78d33d7ac16f94088707ab2492abaedcb9ee0b75",
+     "unpacked_bytes": 31561787,
+     "bytes": 22830296
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-cs-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 412691
+    }
+   }
+  },
+  {
+   "id": "bergamot-da-en",
+   "family": "bergamot",
+   "source": "da",
+   "target": "en",
+   "version": "2c1ace24220c",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-da-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2170970
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-da-en.model.gz",
+     "sha256": "2c1ace24220c905404bbb1de14bfeda8a391ef8d6c56f3b193a9d3e340d99b12",
+     "unpacked_bytes": 17141051,
+     "bytes": 12525769
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-da-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 399344
+    }
+   }
+  },
+  {
+   "id": "bergamot-de-en",
+   "family": "bergamot",
+   "source": "de",
+   "target": "en",
+   "version": "3e6f7c2c2425",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-de-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2626658
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-de-en.model.gz",
+     "sha256": "3e6f7c2c2425d10824797270b382bee718ff34af2cab9308841c82ca46dc6f20",
+     "unpacked_bytes": 31561787,
+     "bytes": 22403755
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-de-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 413879
+    }
+   }
+  },
+  {
+   "id": "bergamot-el-en",
+   "family": "bergamot",
+   "source": "el",
+   "target": "en",
+   "version": "0a43c3716156",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-el-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1851246
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-el-en.model.gz",
+     "sha256": "0a43c3716156061494d995d0c88113e789f8d919e0c88a15bc1ad360e0482a8c",
+     "unpacked_bytes": 17141051,
+     "bytes": 12696541
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-el-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 419174
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-af",
+   "family": "bergamot",
+   "source": "en",
+   "target": "af",
+   "version": "afc1dcb25774",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-af.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1667268
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-af.model.gz",
+     "sha256": "afc1dcb25774e61f513fe722e037744a18c23063ba799bb01f5cdec5cc79b502",
+     "unpacked_bytes": 31561787,
+     "bytes": 23561122
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-af.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409344
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-ar",
+   "family": "bergamot",
+   "source": "en",
+   "target": "ar",
+   "version": "ae659d7045fc",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ar.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1639219
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ar.model.gz",
+     "sha256": "ae659d7045fc2e5d6ba50583586a5d94ee4358d92c019847e37b57a0e627faa8",
+     "unpacked_bytes": 31561787,
+     "bytes": 22857819
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ar.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 418930
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-az",
+   "family": "bergamot",
+   "source": "en",
+   "target": "az",
+   "version": "9c87aa09ff4f",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-az.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1711544
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-az.model.gz",
+     "sha256": "9c87aa09ff4f81c320993fe412624ca3584fe9ccf5371247d64f1117dffcf168",
+     "unpacked_bytes": 17141051,
+     "bytes": 13233108
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-az.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 418956
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-be",
+   "family": "bergamot",
+   "source": "en",
+   "target": "be",
+   "version": "88fb3a6e2cc4",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-be.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1342392
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-be.model.gz",
+     "sha256": "88fb3a6e2cc4b936313596eef445a548e63e1ca3ef0dfa54b88229c3ce877116",
+     "unpacked_bytes": 31561787,
+     "bytes": 22851751
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-be.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 437794
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-bg",
+   "family": "bergamot",
+   "source": "en",
+   "target": "bg",
+   "version": "e2b30db98ac6",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-bg.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1548577
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-bg.model.gz",
+     "sha256": "e2b30db98ac6706efc893067a74e51f36f015a8f820fe8a4f0f5052fa6a22f30",
+     "unpacked_bytes": 31561787,
+     "bytes": 23432015
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-bg.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 434940
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-bn",
+   "family": "bergamot",
+   "source": "en",
+   "target": "bn",
+   "version": "b63c8d5f8fdc",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-bn.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1607697
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-bn.model.gz",
+     "sha256": "b63c8d5f8fdc1fcb8bbb2d20c751faab94af67ee1822427665119c93a11f6596",
+     "unpacked_bytes": 17141051,
+     "bytes": 12821521
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-bn.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 437373
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-bs",
+   "family": "bergamot",
+   "source": "en",
+   "target": "bs",
+   "version": "27575113fffa",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-bs.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1682912
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-bs.model.gz",
+     "sha256": "27575113fffad6c45a0bad36bd1823c4f319ed30f65ec134815b67bdae0d9f8d",
+     "unpacked_bytes": 31561787,
+     "bytes": 22932779
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-bs.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 412204
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-ca",
+   "family": "bergamot",
+   "source": "en",
+   "target": "ca",
+   "version": "735881c99ff3",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ca.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2085904
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ca.model.gz",
+     "sha256": "735881c99ff303e55eb2e92a3b86762523d5dd1a4797b2574b851062051426ee",
+     "unpacked_bytes": 31561787,
+     "bytes": 23174479
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ca.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409866
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-cs",
+   "family": "bergamot",
+   "source": "en",
+   "target": "cs",
+   "version": "1d7855f91c3e",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-cs.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1896925
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-cs.model.gz",
+     "sha256": "1d7855f91c3e2b8ef79fbea62707d46ceb8a1ad01834ef6dd500f32a7006cc2c",
+     "unpacked_bytes": 31561787,
+     "bytes": 23192301
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-cs.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 412691
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-da",
+   "family": "bergamot",
+   "source": "en",
+   "target": "da",
+   "version": "0157ed1162dd",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-da.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1582768
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-da.model.gz",
+     "sha256": "0157ed1162dd5a7a0fc6a3cc86014ec21cb47a8febf77164df24d8921270bb29",
+     "unpacked_bytes": 17141051,
+     "bytes": 12723889
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-da.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 398818
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-de",
+   "family": "bergamot",
+   "source": "en",
+   "target": "de",
+   "version": "8df29d9494d1",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-de.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2314750
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-de.model.gz",
+     "sha256": "8df29d9494d19f47fd5d97c6a73474c6f657e9f81c1a607c431d02befdf3810f",
+     "unpacked_bytes": 31561787,
+     "bytes": 22992073
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-de.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 413879
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-el",
+   "family": "bergamot",
+   "source": "en",
+   "target": "el",
+   "version": "724b358d399c",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-el.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1352643
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-el.model.gz",
+     "sha256": "724b358d399c6b23444de36d76e9e2630c7024c29d9e617323b820a11631535a",
+     "unpacked_bytes": 17141051,
+     "bytes": 12808027
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-el.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 419275
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-es",
+   "family": "bergamot",
+   "source": "en",
+   "target": "es",
+   "version": "3b1c399511c0",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-es.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2265250
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-es.model.gz",
+     "sha256": "3b1c399511c01c84c36fae5c0524df44096288efdc8236e182b5c97d7ad2244c",
+     "unpacked_bytes": 31561787,
+     "bytes": 22698792
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-es.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409312
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-et",
+   "family": "bergamot",
+   "source": "en",
+   "target": "et",
+   "version": "36bdc87f8d50",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-et.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1865410
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-et.model.gz",
+     "sha256": "36bdc87f8d500861a5d286ebd3ea58df530da87e31b8a233f5e9c46c300c281d",
+     "unpacked_bytes": 31561787,
+     "bytes": 22951751
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-et.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 414262
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-eu",
+   "family": "bergamot",
+   "source": "en",
+   "target": "eu",
+   "version": "f28d03817b71",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-eu.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1638880
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-eu.model.gz",
+     "sha256": "f28d03817b718806c9262e3d76960efb8cbd04d0721307c8e23edcae9364150a",
+     "unpacked_bytes": 31561787,
+     "bytes": 23068167
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-eu.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409774
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-fa",
+   "family": "bergamot",
+   "source": "en",
+   "target": "fa",
+   "version": "456ad3952bcc",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-fa.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1728367
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-fa.model.gz",
+     "sha256": "456ad3952bcc59d208c76baba4dcef340ee4239416bd760d6fec27f9a16228f8",
+     "unpacked_bytes": 17141051,
+     "bytes": 13058508
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-fa.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 416223
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-fi",
+   "family": "bergamot",
+   "source": "en",
+   "target": "fi",
+   "version": "88b0caa4cc69",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-fi.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1875557
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-fi.model.gz",
+     "sha256": "88b0caa4cc6980d632801cb2b1950748f1dc43ad2ac83678917ad86c720b5cdd",
+     "unpacked_bytes": 31561787,
+     "bytes": 22580027
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-fi.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 414280
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-fr",
+   "family": "bergamot",
+   "source": "en",
+   "target": "fr",
+   "version": "6322e296d4fe",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-fr.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2297334
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-fr.model.gz",
+     "sha256": "6322e296d4fecfe395a8d5723da4ec37ecbe6d7613bb1dfcf4b28e2a47498b68",
+     "unpacked_bytes": 31561787,
+     "bytes": 23045432
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-fr.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409706
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-gl",
+   "family": "bergamot",
+   "source": "en",
+   "target": "gl",
+   "version": "bec08e540893",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-gl.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1598079
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-gl.model.gz",
+     "sha256": "bec08e5408932c3813ccfb565ab7003d334dd6ca148c9d2bd074e17b8c0be1b1",
+     "unpacked_bytes": 31561787,
+     "bytes": 23427851
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-gl.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 410563
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-gu",
+   "family": "bergamot",
+   "source": "en",
+   "target": "gu",
+   "version": "0f2c8bc7f13e",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-gu.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1529098
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-gu.model.gz",
+     "sha256": "0f2c8bc7f13ecb9b89459e8fd9af6d8736e0f6b1c8f8a80f747fcdc030d0a588",
+     "unpacked_bytes": 17141051,
+     "bytes": 12657911
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-gu.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 434881
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-he",
+   "family": "bergamot",
+   "source": "en",
+   "target": "he",
+   "version": "e37ac6e6f131",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-he.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1567190
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-he.model.gz",
+     "sha256": "e37ac6e6f131704c85deb94a657aa20afbb44db2879f44aec9c33a34f4467587",
+     "unpacked_bytes": 17141051,
+     "bytes": 12979964
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-he.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 411686
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-hi",
+   "family": "bergamot",
+   "source": "en",
+   "target": "hi",
+   "version": "18682fa6aa1c",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-hi.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1690062
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-hi.model.gz",
+     "sha256": "18682fa6aa1c1b2f78a6fcbcb354755094d623e65436ef7821720c5213e11a49",
+     "unpacked_bytes": 17141051,
+     "bytes": 12736263
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-hi.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 430026
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-hr",
+   "family": "bergamot",
+   "source": "en",
+   "target": "hr",
+   "version": "2f34590dff70",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-hr.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1713561
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-hr.model.gz",
+     "sha256": "2f34590dff70aec009d3c6e9bee7a4a18aa6a0a1978c7dc49c686eb454b77704",
+     "unpacked_bytes": 31561787,
+     "bytes": 22758240
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-hr.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 410897
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-hu",
+   "family": "bergamot",
+   "source": "en",
+   "target": "hu",
+   "version": "0c42f56edca7",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-hu.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1794658
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-hu.model.gz",
+     "sha256": "0c42f56edca74b3f732a74c64553c47d0005b50cf095f43024601985fab5d461",
+     "unpacked_bytes": 31561787,
+     "bytes": 22889950
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-hu.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 421527
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-id",
+   "family": "bergamot",
+   "source": "en",
+   "target": "id",
+   "version": "f81f13eef703",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-id.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1734565
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-id.model.gz",
+     "sha256": "f81f13eef703a4e0650ffc3138a0f4bab7b6c8bfd173ef1b7bda68d16b8bc7e8",
+     "unpacked_bytes": 17141051,
+     "bytes": 12503257
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-id.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 379806
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-is",
+   "family": "bergamot",
+   "source": "en",
+   "target": "is",
+   "version": "459626236a49",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-is.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1977789
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-is.model.gz",
+     "sha256": "459626236a49158aa555facd23e5f594e2f8416f4ebad32e0548af94c5b1ae0c",
+     "unpacked_bytes": 31561787,
+     "bytes": 22588003
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-is.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 413543
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-it",
+   "family": "bergamot",
+   "source": "en",
+   "target": "it",
+   "version": "248f47568788",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-it.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2209348
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-it.model.gz",
+     "sha256": "248f47568788ecc351da7e5e07064d4153b4f71e011364ae2c931ffeec4d1cc2",
+     "unpacked_bytes": 31561787,
+     "bytes": 23892889
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-it.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 407598
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-ja",
+   "family": "bergamot",
+   "source": "en",
+   "target": "ja",
+   "version": "59ae659f9bb6",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ja.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2341409
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ja.model.gz",
+     "sha256": "59ae659f9bb63e4f81f474fe3c03d3f4499434b5f9e779fab7c12a45f31fd562",
+     "unpacked_bytes": 43849787,
+     "bytes": 33052218
+    },
+    "srcVocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ja.srcVocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 404352
+    },
+    "trgVocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ja.trgVocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 431278
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-kn",
+   "family": "bergamot",
+   "source": "en",
+   "target": "kn",
+   "version": "17a5ddc86e24",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-kn.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1416160
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-kn.model.gz",
+     "sha256": "17a5ddc86e24f62c04aa15272930275812b5c1674bec50a877528680d5834d2d",
+     "unpacked_bytes": 17141051,
+     "bytes": 13009213
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-kn.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 450046
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-lt",
+   "family": "bergamot",
+   "source": "en",
+   "target": "lt",
+   "version": "d27c676d9d76",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-lt.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1769752
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-lt.model.gz",
+     "sha256": "d27c676d9d761c2abfffec83956e32b2923f3f745b56acdbd84c49d888cdc94e",
+     "unpacked_bytes": 31561787,
+     "bytes": 22865642
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-lt.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 403356
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-lv",
+   "family": "bergamot",
+   "source": "en",
+   "target": "lv",
+   "version": "715f9f444dff",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-lv.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1725879
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-lv.model.gz",
+     "sha256": "715f9f444dffa0b39e71955c28bffd30afa4cc8300a192ec8fabb766cc5ba11d",
+     "unpacked_bytes": 31561787,
+     "bytes": 23727668
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-lv.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 407540
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-ml",
+   "family": "bergamot",
+   "source": "en",
+   "target": "ml",
+   "version": "c461749c8315",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ml.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1275347
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ml.model.gz",
+     "sha256": "c461749c8315f6417104cf4df32e5063e86cb101203f9629512294c1c8ab5337",
+     "unpacked_bytes": 17141051,
+     "bytes": 12570038
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ml.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 454768
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-mr",
+   "family": "bergamot",
+   "source": "en",
+   "target": "mr",
+   "version": "1520f77c2f1c",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-mr.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1401383
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-mr.model.gz",
+     "sha256": "1520f77c2f1c703b6148e4452b376ac28aec1e63c467eedec8a986864827ce8c",
+     "unpacked_bytes": 31561787,
+     "bytes": 22896929
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-mr.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 443275
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-ms",
+   "family": "bergamot",
+   "source": "en",
+   "target": "ms",
+   "version": "3d6961462ffa",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ms.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2044118
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ms.model.gz",
+     "sha256": "3d6961462ffa711413d513624d7e6399b3560c2b0994daa73b0a45699e657af8",
+     "unpacked_bytes": 17141051,
+     "bytes": 13039668
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ms.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 404033
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-nb",
+   "family": "bergamot",
+   "source": "en",
+   "target": "nb",
+   "version": "78429eb7f544",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-nb.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2193397
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-nb.model.gz",
+     "sha256": "78429eb7f544361061c9d9ec2f0872adf30b76e4c9ef3dbaab1210a0f2aa19b5",
+     "unpacked_bytes": 17141051,
+     "bytes": 12713727
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-nb.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409037
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-nl",
+   "family": "bergamot",
+   "source": "en",
+   "target": "nl",
+   "version": "7e8402da6197",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-nl.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2155034
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-nl.model.gz",
+     "sha256": "7e8402da61972dc2fdcf7147c7f1e12f7916a6d9349514ee7a731288357575a9",
+     "unpacked_bytes": 31561787,
+     "bytes": 23386633
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-nl.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 410222
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-no",
+   "family": "bergamot",
+   "source": "en",
+   "target": "no",
+   "version": "78429eb7f544",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-no.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2193397
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-no.model.gz",
+     "sha256": "78429eb7f544361061c9d9ec2f0872adf30b76e4c9ef3dbaab1210a0f2aa19b5",
+     "unpacked_bytes": 17141051,
+     "bytes": 12713727
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-no.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409037
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-pl",
+   "family": "bergamot",
+   "source": "en",
+   "target": "pl",
+   "version": "b0b59716bcc8",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-pl.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1874327
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-pl.model.gz",
+     "sha256": "b0b59716bcc8f46b8dc6ab5c32a2732acaad42a5a6d9ae9b472526a1bb0d71d4",
+     "unpacked_bytes": 31561787,
+     "bytes": 22577447
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-pl.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 413194
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-pt",
+   "family": "bergamot",
+   "source": "en",
+   "target": "pt",
+   "version": "07892fd2544e",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-pt.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2117608
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-pt.model.gz",
+     "sha256": "07892fd2544ee79dcb643615d8f2debb9793fae16842e87c328e27a3dd26a770",
+     "unpacked_bytes": 31561787,
+     "bytes": 23340019
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-pt.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 408686
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-ro",
+   "family": "bergamot",
+   "source": "en",
+   "target": "ro",
+   "version": "aa98c415e5be",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ro.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1846074
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ro.model.gz",
+     "sha256": "aa98c415e5beb1c5ee2f7d2508a3bbba949be223d7d9e5e1788ad0ae8598dda5",
+     "unpacked_bytes": 17141051,
+     "bytes": 12207487
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ro.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 397137
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-sk",
+   "family": "bergamot",
+   "source": "en",
+   "target": "sk",
+   "version": "e33af359fd58",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sk.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1708788
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sk.model.gz",
+     "sha256": "e33af359fd58c8958104b1b74b3ea302800ccba2f125c1629e09d7f9dd9a3804",
+     "unpacked_bytes": 31561787,
+     "bytes": 22902983
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sk.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 405652
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-sl",
+   "family": "bergamot",
+   "source": "en",
+   "target": "sl",
+   "version": "a34fc5cc2f52",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sl.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1741316
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sl.model.gz",
+     "sha256": "a34fc5cc2f52733f64e37f8512cf1ddc4723c08a7a1a59d01fc2b6e641fc2280",
+     "unpacked_bytes": 31561787,
+     "bytes": 22669559
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sl.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 398763
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-sq",
+   "family": "bergamot",
+   "source": "en",
+   "target": "sq",
+   "version": "8a90d17ab279",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sq.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1599959
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sq.model.gz",
+     "sha256": "8a90d17ab2798509e639e544caa1d577f7cf87c31b9ab7e53890c8d1d59b6eee",
+     "unpacked_bytes": 17141051,
+     "bytes": 13366206
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sq.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 410650
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-sr",
+   "family": "bergamot",
+   "source": "en",
+   "target": "sr",
+   "version": "d26e1c5a01f9",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sr.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1289317
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sr.model.gz",
+     "sha256": "d26e1c5a01f917c38ccda17d1bf116024ac4d988105e1bbf70bc5e8f9191c57a",
+     "unpacked_bytes": 31561787,
+     "bytes": 23014587
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sr.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 433623
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-sv",
+   "family": "bergamot",
+   "source": "en",
+   "target": "sv",
+   "version": "65ea0db8e658",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sv.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1921270
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sv.model.gz",
+     "sha256": "65ea0db8e658435846f297384face62dbf1804cfc92de8388b0e368e6ecc25a7",
+     "unpacked_bytes": 17141051,
+     "bytes": 12775086
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-sv.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 398384
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-ta",
+   "family": "bergamot",
+   "source": "en",
+   "target": "ta",
+   "version": "8c7d9ba830c1",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ta.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1453949
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ta.model.gz",
+     "sha256": "8c7d9ba830c15e2ba89a70307f301a62b7b2a51ae1e9f9a3938843eaa875af3d",
+     "unpacked_bytes": 17141051,
+     "bytes": 12645399
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ta.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 446752
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-te",
+   "family": "bergamot",
+   "source": "en",
+   "target": "te",
+   "version": "a3fee2fcd39d",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-te.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1434105
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-te.model.gz",
+     "sha256": "a3fee2fcd39df975da28666c536adff60147dce59062fca6097bb42fb2a52500",
+     "unpacked_bytes": 17141051,
+     "bytes": 12590862
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-te.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 448838
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-th",
+   "family": "bergamot",
+   "source": "en",
+   "target": "th",
+   "version": "80e326097655",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-th.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1601933
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-th.model.gz",
+     "sha256": "80e326097655fca75f841130da3338a849aa245374e1616448bcf37b9523a05a",
+     "unpacked_bytes": 31561787,
+     "bytes": 22976729
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-th.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 450379
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-tl",
+   "family": "bergamot",
+   "source": "en",
+   "target": "tl",
+   "version": "33b71965ab9c",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-tl.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1412886
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-tl.model.gz",
+     "sha256": "33b71965ab9c9c533c63444551c9483e811dd540e75e4cfe21d062a83a60b72f",
+     "unpacked_bytes": 31561787,
+     "bytes": 23500661
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-tl.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 408817
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-tr",
+   "family": "bergamot",
+   "source": "en",
+   "target": "tr",
+   "version": "ea3cd4ee09de",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-tr.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1546258
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-tr.model.gz",
+     "sha256": "ea3cd4ee09de190df265c78d84260e277a9a8a3ddff05eb55d72afe7fc0fdbf4",
+     "unpacked_bytes": 17141051,
+     "bytes": 13159314
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-tr.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 395473
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-ug",
+   "family": "bergamot",
+   "source": "en",
+   "target": "ug",
+   "version": "0fe41f8efab5",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ug.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 990376
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ug.model.gz",
+     "sha256": "0fe41f8efab57c8f763d82af523f0219f5e4b90d559abccb4bf0c51d6af16660",
+     "unpacked_bytes": 31561635,
+     "bytes": 24223157
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ug.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 406290
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-uk",
+   "family": "bergamot",
+   "source": "en",
+   "target": "uk",
+   "version": "ed8bb4a811e1",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-uk.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1564122
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-uk.model.gz",
+     "sha256": "ed8bb4a811e1c45a259e91052080d25e5c8b4e2df0e59cb1521c04a57855ef97",
+     "unpacked_bytes": 31561787,
+     "bytes": 22864374
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-uk.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 436850
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-ur",
+   "family": "bergamot",
+   "source": "en",
+   "target": "ur",
+   "version": "0c29a5776a42",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ur.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1498625
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ur.model.gz",
+     "sha256": "0c29a5776a42ccb68f7969f41e64c0cd7a16ff00a5bfed0ed2809039febc202e",
+     "unpacked_bytes": 31561787,
+     "bytes": 22684591
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-ur.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 417745
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-vi",
+   "family": "bergamot",
+   "source": "en",
+   "target": "vi",
+   "version": "04fa6044593a",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-vi.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2246027
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-vi.model.gz",
+     "sha256": "04fa6044593a404c2aa02b3096f203880852df6f8f41e5eb966ed9f2b4366737",
+     "unpacked_bytes": 31561787,
+     "bytes": 24244705
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-vi.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 400183
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-zh",
+   "family": "bergamot",
+   "source": "en",
+   "target": "zh",
+   "version": "4e5accc14137",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-zh.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2536039
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-zh.model.gz",
+     "sha256": "4e5accc141373565ddc8fa1565bceaa8d0c3482a82cab8131c719ebcc6c2157c",
+     "unpacked_bytes": 43849787,
+     "bytes": 33375922
+    },
+    "srcVocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-zh.srcVocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 407784
+    },
+    "trgVocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-zh.trgVocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 425748
+    }
+   }
+  },
+  {
+   "id": "bergamot-en-zh-hant",
+   "family": "bergamot",
+   "source": "en",
+   "target": "zh-hant",
+   "version": "559ab90d723a",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-zh-hant.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2290215
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-zh-hant.model.gz",
+     "sha256": "559ab90d723a58c1f1e2ab7cc12137bc667af5ba3e325e3eb30b5cdc930db520",
+     "unpacked_bytes": 43849787,
+     "bytes": 33291007
+    },
+    "srcVocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-zh-hant.srcVocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 404976
+    },
+    "trgVocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-en-zh-hant.trgVocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 416659
+    }
+   }
+  },
+  {
+   "id": "bergamot-es-en",
+   "family": "bergamot",
+   "source": "es",
+   "target": "en",
+   "version": "4aed7734152a",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-es-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2543246
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-es-en.model.gz",
+     "sha256": "4aed7734152ae0045d1a69ae49c86cfda18f53c61f90e95e1d1de1c7c7c3b033",
+     "unpacked_bytes": 31561787,
+     "bytes": 23288494
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-es-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409312
+    }
+   }
+  },
+  {
+   "id": "bergamot-et-en",
+   "family": "bergamot",
+   "source": "et",
+   "target": "en",
+   "version": "df844b3a6df9",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-et-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2321326
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-et-en.model.gz",
+     "sha256": "df844b3a6df906b2e0682fb7765694f35b351854db00f964896d9c8c365fbff3",
+     "unpacked_bytes": 31561787,
+     "bytes": 22785077
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-et-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 414262
+    }
+   }
+  },
+  {
+   "id": "bergamot-eu-en",
+   "family": "bergamot",
+   "source": "eu",
+   "target": "en",
+   "version": "f0a31e26b381",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-eu-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1896953
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-eu-en.model.gz",
+     "sha256": "f0a31e26b381d6340b069da4d505e11d18ac91e42f0189d37ed5fe6aa3685ed4",
+     "unpacked_bytes": 31561787,
+     "bytes": 23241057
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-eu-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 412669
+    }
+   }
+  },
+  {
+   "id": "bergamot-fa-en",
+   "family": "bergamot",
+   "source": "fa",
+   "target": "en",
+   "version": "aa326306c177",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-fa-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1939291
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-fa-en.model.gz",
+     "sha256": "aa326306c177e11129de5bfeba518abc499c0b6005492766748a9c9ea6f4c712",
+     "unpacked_bytes": 17141051,
+     "bytes": 13071390
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-fa-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 416123
+    }
+   }
+  },
+  {
+   "id": "bergamot-fi-en",
+   "family": "bergamot",
+   "source": "fi",
+   "target": "en",
+   "version": "e3887341f18b",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-fi-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2580517
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-fi-en.model.gz",
+     "sha256": "e3887341f18bcc7787d9b59eb1229b56eefce18d49b7ebf1e62c55d65a377321",
+     "unpacked_bytes": 31561787,
+     "bytes": 22935246
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-fi-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 414280
+    }
+   }
+  },
+  {
+   "id": "bergamot-fr-en",
+   "family": "bergamot",
+   "source": "fr",
+   "target": "en",
+   "version": "15f997bc0d13",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-fr-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2649934
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-fr-en.model.gz",
+     "sha256": "15f997bc0d13808b0b0fbd0786e684a3c8a52adcd8071844b76123fdacbf2b90",
+     "unpacked_bytes": 31561787,
+     "bytes": 23175075
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-fr-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409706
+    }
+   }
+  },
+  {
+   "id": "bergamot-gl-en",
+   "family": "bergamot",
+   "source": "gl",
+   "target": "en",
+   "version": "7e8ea0279166",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-gl-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2191952
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-gl-en.model.gz",
+     "sha256": "7e8ea0279166c72b0b430327533c643a88f26e80e4a9f9f294244a84213f3e6d",
+     "unpacked_bytes": 31561787,
+     "bytes": 23054964
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-gl-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 410400
+    }
+   }
+  },
+  {
+   "id": "bergamot-gu-en",
+   "family": "bergamot",
+   "source": "gu",
+   "target": "en",
+   "version": "7b16e4e64f27",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-gu-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2028621
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-gu-en.model.gz",
+     "sha256": "7b16e4e64f2776c73d87db01922c091738566b6a6092a42488cbaee1385cb4ab",
+     "unpacked_bytes": 17141051,
+     "bytes": 12917932
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-gu-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 435011
+    }
+   }
+  },
+  {
+   "id": "bergamot-hbs-en",
+   "family": "bergamot",
+   "source": "hbs",
+   "target": "en",
+   "version": "744c61ec0b98",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-hbs-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2578631
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-hbs-en.model.gz",
+     "sha256": "744c61ec0b987c44717f192fcebda7c2a1ac34f5cbfb56672771d28ff79c82c7",
+     "unpacked_bytes": 31561787,
+     "bytes": 22949263
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-hbs-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 410336
+    }
+   }
+  },
+  {
+   "id": "bergamot-he-en",
+   "family": "bergamot",
+   "source": "he",
+   "target": "en",
+   "version": "7291cab3ec48",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-he-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2232949
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-he-en.model.gz",
+     "sha256": "7291cab3ec483b8cf524da96201fe947dca8c550132be21a06badeb946b5c079",
+     "unpacked_bytes": 17141051,
+     "bytes": 12999905
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-he-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 411769
+    }
+   }
+  },
+  {
+   "id": "bergamot-hi-en",
+   "family": "bergamot",
+   "source": "hi",
+   "target": "en",
+   "version": "c82fd6ed3794",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-hi-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2319675
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-hi-en.model.gz",
+     "sha256": "c82fd6ed3794b79fb9dde0718a22324502a408a9eca73497b5d0a4b8024ec6de",
+     "unpacked_bytes": 17141051,
+     "bytes": 12752013
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-hi-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 430096
+    }
+   }
+  },
+  {
+   "id": "bergamot-hu-en",
+   "family": "bergamot",
+   "source": "hu",
+   "target": "en",
+   "version": "518356dbb0c0",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-hu-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2778202
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-hu-en.model.gz",
+     "sha256": "518356dbb0c071739318601963a87580fb41732652f52bd3635246330c186d9e",
+     "unpacked_bytes": 17140899,
+     "bytes": 13181613
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-hu-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 419908
+    }
+   }
+  },
+  {
+   "id": "bergamot-id-en",
+   "family": "bergamot",
+   "source": "id",
+   "target": "en",
+   "version": "eeed3d8c2c78",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-id-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1818222
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-id-en.model.gz",
+     "sha256": "eeed3d8c2c78ec7011b31b2419e1d2dfdf2a7cc0ee0dbb1fcd164c934cb5d328",
+     "unpacked_bytes": 17141051,
+     "bytes": 13010657
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-id-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 379859
+    }
+   }
+  },
+  {
+   "id": "bergamot-is-en",
+   "family": "bergamot",
+   "source": "is",
+   "target": "en",
+   "version": "d2c285755d37",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-is-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2012853
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-is-en.model.gz",
+     "sha256": "d2c285755d37f710458f1a49db5391a123e4e41ca7bd9829dd87cc61e4907ee6",
+     "unpacked_bytes": 31561787,
+     "bytes": 23229378
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-is-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 412304
+    }
+   }
+  },
+  {
+   "id": "bergamot-it-en",
+   "family": "bergamot",
+   "source": "it",
+   "target": "en",
+   "version": "21b70978ce2f",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-it-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2532929
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-it-en.model.gz",
+     "sha256": "21b70978ce2f3b4da7a06b5de86a09abe3acd30b9eee1b2ebb3582b9bad790bf",
+     "unpacked_bytes": 31561787,
+     "bytes": 23301774
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-it-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 407598
+    }
+   }
+  },
+  {
+   "id": "bergamot-kn-en",
+   "family": "bergamot",
+   "source": "kn",
+   "target": "en",
+   "version": "49e8d3bd794b",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-kn-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2128860
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-kn-en.model.gz",
+     "sha256": "49e8d3bd794b098047f7b177d9d0e6d3e49ac798c2b75bc132149cb46c5bfbfd",
+     "unpacked_bytes": 17141051,
+     "bytes": 13077357
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-kn-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 450324
+    }
+   }
+  },
+  {
+   "id": "bergamot-lt-en",
+   "family": "bergamot",
+   "source": "lt",
+   "target": "en",
+   "version": "0aa4571ede6f",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-lt-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2308876
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-lt-en.model.gz",
+     "sha256": "0aa4571ede6f68db2f14d2662875b4d2e6323aeccd75e3b4377ab9072a22db70",
+     "unpacked_bytes": 17141051,
+     "bytes": 12571257
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-lt-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 403960
+    }
+   }
+  },
+  {
+   "id": "bergamot-lv-en",
+   "family": "bergamot",
+   "source": "lv",
+   "target": "en",
+   "version": "7a96dd363ae9",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-lv-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2131786
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-lv-en.model.gz",
+     "sha256": "7a96dd363ae9b4485aa254ddbff042223a565a20bfe5ba0ba29b94d8ded0406a",
+     "unpacked_bytes": 17141051,
+     "bytes": 12689153
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-lv-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 407237
+    }
+   }
+  },
+  {
+   "id": "bergamot-ml-en",
+   "family": "bergamot",
+   "source": "ml",
+   "target": "en",
+   "version": "5480719a5a8a",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ml-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2296381
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ml-en.model.gz",
+     "sha256": "5480719a5a8ac43acdf28db1c89a4d60837a475e1120ea0c4e021c4d5b7e6fd6",
+     "unpacked_bytes": 17141051,
+     "bytes": 12792306
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ml-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 454911
+    }
+   }
+  },
+  {
+   "id": "bergamot-mr-en",
+   "family": "bergamot",
+   "source": "mr",
+   "target": "en",
+   "version": "7e4ce4102d15",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-mr-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2327949
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-mr-en.model.gz",
+     "sha256": "7e4ce4102d159b1d0154193859ee36e26232ad6b1bc656fd9de23ebf530d67b0",
+     "unpacked_bytes": 31561787,
+     "bytes": 22289099
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-mr-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 443184
+    }
+   }
+  },
+  {
+   "id": "bergamot-ms-en",
+   "family": "bergamot",
+   "source": "ms",
+   "target": "en",
+   "version": "db5c9415591f",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ms-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2141259
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ms-en.model.gz",
+     "sha256": "db5c9415591f8a35c5c72046227b9c9398acade5df8afb5e6ac9f11f7d6650d5",
+     "unpacked_bytes": 17141051,
+     "bytes": 12538542
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ms-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 403877
+    }
+   }
+  },
+  {
+   "id": "bergamot-nb-en",
+   "family": "bergamot",
+   "source": "nb",
+   "target": "en",
+   "version": "00ab7b969156",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-nb-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2308582
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-nb-en.model.gz",
+     "sha256": "00ab7b969156f6c948be59dad4755e47a24eeb31aa39f02f1de7bce43081cc2a",
+     "unpacked_bytes": 17141051,
+     "bytes": 13193689
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-nb-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409135
+    }
+   }
+  },
+  {
+   "id": "bergamot-nl-en",
+   "family": "bergamot",
+   "source": "nl",
+   "target": "en",
+   "version": "ff987741ff15",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-nl-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2616098
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-nl-en.model.gz",
+     "sha256": "ff987741ff15a5d94fff16cbef28f2b0a85a6e9547d982fad60ac09d16d11270",
+     "unpacked_bytes": 31561787,
+     "bytes": 22647743
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-nl-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 410222
+    }
+   }
+  },
+  {
+   "id": "bergamot-no-en",
+   "family": "bergamot",
+   "source": "no",
+   "target": "en",
+   "version": "00ab7b969156",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-no-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2308582
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-no-en.model.gz",
+     "sha256": "00ab7b969156f6c948be59dad4755e47a24eeb31aa39f02f1de7bce43081cc2a",
+     "unpacked_bytes": 17141051,
+     "bytes": 13193689
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-no-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409135
+    }
+   }
+  },
+  {
+   "id": "bergamot-pl-en",
+   "family": "bergamot",
+   "source": "pl",
+   "target": "en",
+   "version": "06dbab3baa3b",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-pl-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2489764
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-pl-en.model.gz",
+     "sha256": "06dbab3baa3bbceab746bc6a3bba807878f38536382c03acddf59d3edf3b5d94",
+     "unpacked_bytes": 31561787,
+     "bytes": 22630393
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-pl-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 413194
+    }
+   }
+  },
+  {
+   "id": "bergamot-pt-en",
+   "family": "bergamot",
+   "source": "pt",
+   "target": "en",
+   "version": "7b854f1ec5a4",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-pt-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2487847
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-pt-en.model.gz",
+     "sha256": "7b854f1ec5a485dd33efd7c1bc01dd7d5a57f566957c5e47722af333f0ce9157",
+     "unpacked_bytes": 31561787,
+     "bytes": 22700409
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-pt-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 408686
+    }
+   }
+  },
+  {
+   "id": "bergamot-ro-en",
+   "family": "bergamot",
+   "source": "ro",
+   "target": "en",
+   "version": "e7542557fc6d",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ro-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2159556
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ro-en.model.gz",
+     "sha256": "e7542557fc6dbafacddae7b48e67fcdb07bd67b3fb55a76139edf366eca5dbdb",
+     "unpacked_bytes": 17141051,
+     "bytes": 12722200
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ro-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 396717
+    }
+   }
+  },
+  {
+   "id": "bergamot-ru-en",
+   "family": "bergamot",
+   "source": "ru",
+   "target": "en",
+   "version": "b1d85c13cfbb",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ru-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1962008
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ru-en.model.gz",
+     "sha256": "b1d85c13cfbb05e1d326dd6f0fb5ef270a2011b547450260f96567a93f446c94",
+     "unpacked_bytes": 17141051,
+     "bytes": 12613599
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ru-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 419860
+    }
+   }
+  },
+  {
+   "id": "bergamot-sk-en",
+   "family": "bergamot",
+   "source": "sk",
+   "target": "en",
+   "version": "1686f94838ac",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sk-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2348184
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sk-en.model.gz",
+     "sha256": "1686f94838ace314719e945606a09a66dafd40847dd3fd352ad3f7a969aac62f",
+     "unpacked_bytes": 17141051,
+     "bytes": 12821519
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sk-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 405122
+    }
+   }
+  },
+  {
+   "id": "bergamot-sl-en",
+   "family": "bergamot",
+   "source": "sl",
+   "target": "en",
+   "version": "9d15df58b600",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sl-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2138548
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sl-en.model.gz",
+     "sha256": "9d15df58b60048366de4f7b6e727157ffdaea3a0fd1c1759ce232b057e2f991c",
+     "unpacked_bytes": 31561787,
+     "bytes": 23730414
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sl-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 398535
+    }
+   }
+  },
+  {
+   "id": "bergamot-sq-en",
+   "family": "bergamot",
+   "source": "sq",
+   "target": "en",
+   "version": "4b0ce319e7c8",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sq-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2165940
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sq-en.model.gz",
+     "sha256": "4b0ce319e7c8f7e1836ce18cb6522c83268e8cff54f2a7f5dcef270250a44475",
+     "unpacked_bytes": 17141051,
+     "bytes": 12593638
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sq-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 410423
+    }
+   }
+  },
+  {
+   "id": "bergamot-sv-en",
+   "family": "bergamot",
+   "source": "sv",
+   "target": "en",
+   "version": "92d79e272571",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sv-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2165215
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sv-en.model.gz",
+     "sha256": "92d79e2725718b84aed486473bdfcbe6bba3e7094922d4bead8a121cfa346372",
+     "unpacked_bytes": 17141051,
+     "bytes": 12847259
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-sv-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 397625
+    }
+   }
+  },
+  {
+   "id": "bergamot-ta-en",
+   "family": "bergamot",
+   "source": "ta",
+   "target": "en",
+   "version": "5413fca6c35c",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ta-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2410364
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ta-en.model.gz",
+     "sha256": "5413fca6c35cd9c50157df1ebd425d6ca02713bfedc1ba7e5fb3050a437b13b6",
+     "unpacked_bytes": 31561787,
+     "bytes": 23526938
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ta-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 451486
+    }
+   }
+  },
+  {
+   "id": "bergamot-te-en",
+   "family": "bergamot",
+   "source": "te",
+   "target": "en",
+   "version": "e2ec7b13ba61",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-te-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2209444
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-te-en.model.gz",
+     "sha256": "e2ec7b13ba6148eba309244ee17dc935f1b71e95bbf57154216f6247877abb7e",
+     "unpacked_bytes": 17141051,
+     "bytes": 13202063
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-te-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 448555
+    }
+   }
+  },
+  {
+   "id": "bergamot-th-en",
+   "family": "bergamot",
+   "source": "th",
+   "target": "en",
+   "version": "f70a50132474",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-th-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2239323
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-th-en.model.gz",
+     "sha256": "f70a501324743668b031bee19cd001a66839e8e5dfc0b4a1c44d5ea99d4e8d66",
+     "unpacked_bytes": 31561787,
+     "bytes": 22974117
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-th-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 451231
+    }
+   }
+  },
+  {
+   "id": "bergamot-tl-en",
+   "family": "bergamot",
+   "source": "tl",
+   "target": "en",
+   "version": "be2e4b60b2be",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-tl-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2546344
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-tl-en.model.gz",
+     "sha256": "be2e4b60b2be35d8f32e3f68f0a3a567e6a4a27c521d5a9fd6017d1e47599e37",
+     "unpacked_bytes": 31561787,
+     "bytes": 23110247
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-tl-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 408906
+    }
+   }
+  },
+  {
+   "id": "bergamot-tr-en",
+   "family": "bergamot",
+   "source": "tr",
+   "target": "en",
+   "version": "bd18594ac5a7",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-tr-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 2470683
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-tr-en.model.gz",
+     "sha256": "bd18594ac5a7f1d9997e7ea5bd80272082219cf8b1ce604766e4f207eb86abbf",
+     "unpacked_bytes": 17140836,
+     "bytes": 12362908
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-tr-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 409060
+    }
+   }
+  },
+  {
+   "id": "bergamot-ug-en",
+   "family": "bergamot",
+   "source": "ug",
+   "target": "en",
+   "version": "ffc0db5c5de7",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ug-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1702175
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ug-en.model.gz",
+     "sha256": "ffc0db5c5de708fb4dd6440b1d6b1e4645ad48a8963d98d9240aec8bb044d0f9",
+     "unpacked_bytes": 31561635,
+     "bytes": 23536190
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ug-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 406295
+    }
+   }
+  },
+  {
+   "id": "bergamot-uk-en",
+   "family": "bergamot",
+   "source": "uk",
+   "target": "en",
+   "version": "2e7b8bc9d256",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-uk-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1790588
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-uk-en.model.gz",
+     "sha256": "2e7b8bc9d2569d8b4ae244e964cdc343a0aa3735cc83ecb664be84a37cb45f48",
+     "unpacked_bytes": 17141051,
+     "bytes": 12677432
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-uk-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 415266
+    }
+   }
+  },
+  {
+   "id": "bergamot-ur-en",
+   "family": "bergamot",
+   "source": "ur",
+   "target": "en",
+   "version": "4915518d1699",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ur-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1833159
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ur-en.model.gz",
+     "sha256": "4915518d1699fb72c390603605d3ead9fb87a8c2f70092089a27df22a7c540d0",
+     "unpacked_bytes": 31561787,
+     "bytes": 22876447
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-ur-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 418061
+    }
+   }
+  },
+  {
+   "id": "bergamot-vi-en",
+   "family": "bergamot",
+   "source": "vi",
+   "target": "en",
+   "version": "de4bf2b9ffb4",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-vi-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 1887658
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-vi-en.model.gz",
+     "sha256": "de4bf2b9ffb4d910e32720ec3a43655fb6f4062ce5219332f824fc1bdca7a5f4",
+     "unpacked_bytes": 17141051,
+     "bytes": 12914609
+    },
+    "vocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-vi-en.vocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 375643
+    }
+   }
+  },
+  {
+   "id": "bergamot-zh-hant-en",
+   "family": "bergamot",
+   "source": "zh-hant",
+   "target": "en",
+   "version": "0aee91790894",
+   "files": {
+    "lexicalShortlist": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-zh-hant-en.lexicalShortlist.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 3268812
+    },
+    "model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-zh-hant-en.model.gz",
+     "sha256": "0aee91790894458f5d367551f6edcd4c9cb97852c34f221bcbf9f4701ebcf0cd",
+     "unpacked_bytes": 43849787,
+     "bytes": 33653648
+    },
+    "srcVocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-zh-hant-en.srcVocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 423691
+    },
+    "trgVocab": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/bergamot-zh-hant-en.trgVocab.gz",
+     "sha256": null,
+     "unpacked_bytes": null,
+     "bytes": 408143
+    }
+   }
+  },
+  {
+   "id": "nllb-200-600m-int8",
+   "family": "nllb",
+   "languages": [
+    "af",
+    "am",
+    "ar",
+    "bg",
+    "bn",
+    "bs",
+    "ca",
+    "ckb",
+    "cs",
+    "da",
+    "de",
+    "el",
+    "en",
+    "es",
+    "fa",
+    "fi",
+    "fr",
+    "ga",
+    "gl",
+    "he",
+    "hi",
+    "hr",
+    "hu",
+    "id",
+    "is",
+    "it",
+    "ja",
+    "ka",
+    "kmr",
+    "kn",
+    "ko",
+    "ku",
+    "ky",
+    "lt",
+    "mk",
+    "mn",
+    "my",
+    "nb",
+    "ne",
+    "nl",
+    "nn",
+    "no",
+    "pa",
+    "pl",
+    "pt",
+    "ro",
+    "ru",
+    "sk",
+    "sl",
+    "so",
+    "sq",
+    "sr",
+    "sv",
+    "ta",
+    "th",
+    "tr",
+    "uk",
+    "ur",
+    "vi",
+    "zh",
+    "zh-hans",
+    "zh-hant"
+   ],
+   "version": "46858753dbaf8eb5e21bb6f0037c3b90851e090a",
+   "files": {
+    "model.bin": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/nllb-200-600m-int8.model.bin",
+     "bytes": 619704329,
+     "sha256": "ca3362e6e81906c0cf9c33bd6917674222c71d69617d0afb18507ce0b6c2e2e8"
+    },
+    "shared_vocabulary.json": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/nllb-200-600m-int8.shared_vocabulary.json",
+     "bytes": 5921176,
+     "sha256": "af53bfd0e6f726209e7325e45b87ab3b14e5856f7d42d7b9be91de3287c45267"
+    },
+    "config.json": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/nllb-200-600m-int8.config.json",
+     "bytes": 223,
+     "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af"
+    },
+    "README.md": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/nllb-200-600m-int8.README.md",
+     "bytes": 1069,
+     "sha256": "4bac2569092e7bb10fb22540b464f1def65fdc7bcb945ad7284ad537e220477f"
+    },
+    "tokenizer.json": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/nllb-200-600m-int8.tokenizer.json",
+     "bytes": 17331176,
+     "sha256": "e316b82de11d0f951f370943b3c438311629547285129b0b81dadabd01bca665"
+    }
+   },
+   "bytes": 642957973
+  },
+  {
+   "id": "small100-int8",
+   "family": "small100",
+   "version": "3c5af8e17d5c4f35bda849b7ffceaa1dfc62eb84",
+   "languages": [
+    "af",
+    "am",
+    "ar",
+    "ast",
+    "az",
+    "ba",
+    "be",
+    "bg",
+    "bn",
+    "br",
+    "bs",
+    "ca",
+    "ceb",
+    "cs",
+    "cy",
+    "da",
+    "de",
+    "el",
+    "en",
+    "es",
+    "et",
+    "fa",
+    "ff",
+    "fi",
+    "fr",
+    "fy",
+    "ga",
+    "gd",
+    "gl",
+    "gu",
+    "ha",
+    "he",
+    "hi",
+    "hr",
+    "ht",
+    "hu",
+    "hy",
+    "id",
+    "ig",
+    "ilo",
+    "is",
+    "it",
+    "ja",
+    "jv",
+    "ka",
+    "kk",
+    "km",
+    "kn",
+    "ko",
+    "lb",
+    "lg",
+    "ln",
+    "lo",
+    "lt",
+    "lv",
+    "mg",
+    "mk",
+    "ml",
+    "mn",
+    "mr",
+    "ms",
+    "my",
+    "ne",
+    "nl",
+    "no",
+    "ns",
+    "oc",
+    "or",
+    "pa",
+    "pl",
+    "ps",
+    "pt",
+    "ro",
+    "ru",
+    "sd",
+    "si",
+    "sk",
+    "sl",
+    "so",
+    "sq",
+    "sr",
+    "ss",
+    "su",
+    "sv",
+    "sw",
+    "ta",
+    "th",
+    "tl",
+    "tn",
+    "tr",
+    "uk",
+    "ur",
+    "uz",
+    "vi",
+    "wo",
+    "xh",
+    "yi",
+    "yo",
+    "zh",
+    "zu"
+   ],
+   "files": {
+    "model.bin": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/small100-int8.model.bin",
+     "bytes": 338727246,
+     "sha256": "24e8b51720b7267cfd8faacedce50128bf11c4327f039632a494deb5e1c421f6"
+    },
+    "config.json": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/small100-int8.config.json",
+     "bytes": 233,
+     "sha256": "72901fbd8abd89fb5cf4a388f26fc681f5c4c58a1e1a88b30b879f107270e7ee"
+    },
+    "shared_vocabulary.json": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/small100-int8.shared_vocabulary.json",
+     "bytes": 2924622,
+     "sha256": "18916ac68f9ac8fbd5250ca603dcb3861aac8672924d93a8dadc82eb3147f941"
+    },
+    "sentencepiece.bpe.model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/small100-int8.sentencepiece.bpe.model",
+     "bytes": 2423393,
+     "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+    },
+    "README.md": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/small100-int8.README.md",
+     "bytes": 4723,
+     "sha256": "3b1ca2f469ab9eb7298fd9c33df013828faeee4e23ffee5af7fa39a4318520f6"
+    },
+    "LICENSE": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/small100-int8.LICENSE",
+     "bytes": 1078,
+     "sha256": "84a84b62f07e8905c054b5c2f319a5a806a3c7441b6186944d9c5ab433a934b1"
+    },
+    "NOTICE": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/small100-int8.NOTICE",
+     "bytes": 663,
+     "sha256": "6377aadb590c5e0f8c0bb32f92f8aa6ca4c8b86e7aced0a86bd85ed0fb8193c7"
+    },
+    "conversion.json": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/small100-int8.conversion.json",
+     "bytes": 498,
+     "sha256": "7fa177b1b0ae0055fd4207eb92dc343e7fb5879b17db0f3ca93262cb5447148c"
+    }
+   },
+   "bytes": 344082456,
+   "license": "MIT",
+   "beam_size": 1
+  },
+  {
+   "id": "m2m100-int8",
+   "family": "m2m100",
+   "version": "18e406c615ef2991fa74d53734bf66b0a6b10cb4",
+   "languages": [
+    "af",
+    "am",
+    "ar",
+    "ast",
+    "az",
+    "ba",
+    "be",
+    "bg",
+    "bn",
+    "br",
+    "bs",
+    "ca",
+    "ceb",
+    "cs",
+    "cy",
+    "da",
+    "de",
+    "el",
+    "en",
+    "es",
+    "et",
+    "fa",
+    "ff",
+    "fi",
+    "fr",
+    "fy",
+    "ga",
+    "gd",
+    "gl",
+    "gu",
+    "ha",
+    "he",
+    "hi",
+    "hr",
+    "ht",
+    "hu",
+    "hy",
+    "id",
+    "ig",
+    "ilo",
+    "is",
+    "it",
+    "ja",
+    "jv",
+    "ka",
+    "kk",
+    "km",
+    "kn",
+    "ko",
+    "lb",
+    "lg",
+    "ln",
+    "lo",
+    "lt",
+    "lv",
+    "mg",
+    "mk",
+    "ml",
+    "mn",
+    "mr",
+    "ms",
+    "my",
+    "ne",
+    "nl",
+    "no",
+    "ns",
+    "oc",
+    "or",
+    "pa",
+    "pl",
+    "ps",
+    "pt",
+    "ro",
+    "ru",
+    "sd",
+    "si",
+    "sk",
+    "sl",
+    "so",
+    "sq",
+    "sr",
+    "ss",
+    "su",
+    "sv",
+    "sw",
+    "ta",
+    "th",
+    "tl",
+    "tn",
+    "tr",
+    "uk",
+    "ur",
+    "uz",
+    "vi",
+    "wo",
+    "xh",
+    "yi",
+    "yo",
+    "zh",
+    "zu"
+   ],
+   "files": {
+    "model.bin": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/m2m100-int8.model.bin",
+     "bytes": 490667752,
+     "sha256": "a1826980fc5c037e69c7ac94fcb56c03001a66f380eb71863cc0a3879e71421b"
+    },
+    "config.json": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/m2m100-int8.config.json",
+     "bytes": 223,
+     "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af"
+    },
+    "shared_vocabulary.json": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/m2m100-int8.shared_vocabulary.json",
+     "bytes": 2796509,
+     "sha256": "7eb5d0ff184c6095c7c10f9911c0aea492250abd12854f9c3d787c64b1c6397e"
+    },
+    "sentencepiece.bpe.model": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/m2m100-int8.sentencepiece.bpe.model",
+     "bytes": 2423393,
+     "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+    },
+    "README.md": {
+     "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/m2m100-int8.README.md",
+     "bytes": 492,
+     "sha256": "65f2c478ba5de327aea45cca1ca745118405167ff0690f4fa27ebec179546d99"
+    }
+   },
+   "bytes": 495888369,
+   "license": "MIT",
+   "beam_size": 1
+  }
+ ],
+ "runtimes": {
+  "node": {
+   "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/node-v24.19.0-win-x64.zip",
+   "sha256": "57f71ab3652e797d84acddc79c81cc9ff1c6ddb2a1974cdb83f00fee9bff4c73",
+   "bytes": 37304352
+  },
+  "ct2_cuda": [
+   {
+    "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/nvidia_cublas_cu12-12.9.2.10-py3-none-win_amd64.whl",
+    "bytes": 553162896,
+    "sha256": "623f43027d40d44ceadf0043f002bd25cf353e8f13ce90b9a87057019f560661"
+   },
+   {
+    "url": "https://github.com/reaperaccessible/NVDA-AddonsAccess/releases/download/translation-models/nvidia_cuda_nvrtc_cu12-12.9.86-py3-none-win_amd64.whl",
+    "bytes": 76408187,
+    "sha256": "72972ebdcf504d69462d3bcd67e7b81edd25d0fb85a2c46d3ea3517666636349"
+   }
+  ]
+ }
+}

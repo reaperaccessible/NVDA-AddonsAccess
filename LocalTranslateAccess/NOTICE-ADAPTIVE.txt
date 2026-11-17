@@ -1,0 +1,48 @@
+LocalTranslate 1.0.1 — experimental downloadable-model edition
+
+Interface, localized manifests and help cover 66 language/region catalogues.
+Existing translations are retained; new translations include local machine-generated
+drafts and need linguistic review. PO sources and the current POT are included.
+The help for languages other than French and English is a concise current guide.
+
+Bundled translation runtimes: CTranslate2 4.8.2 (MIT), SentencePiece 0.2.2
+(Apache-2.0), NumPy 2.5.3 (BSD and included third-party notices), PyYAML 6.0.3
+(MIT), fasttext-community 0.11.8 (MIT), @browsermt/bergamot-translator 0.4.9
+(MPL-2.0, modified local-file bridge and worker; sources supplied in bergamot-js).
+Component licenses and package metadata are preserved in vendor directories.
+Argos BPE tokenization: upstream argostranslate/apply_bpe.py (MIT notice retained),
+sacremoses 0.2.0 with regex 2026.9.29 and its Python dependencies.
+Both SentencePiece and BPE Argos package formats are supported.
+NLLB tokenizer runtime: tokenizers 0.23.2 (Apache-2.0).
+NLLB translation pipeline and tokenizer adapter reuse the previous native edition.
+Compact fastText lid.176.ftz language identification data is bundled, CC BY-SA 3.0:
+https://fasttext.cc/docs/en/language-identification.html
+This is a language detector, not translation weights.
+
+Translation weights, Node.js and llama.cpp/CUDA are downloaded only after user
+selection. Their notices are retained with the downloaded resources where supplied.
+NVIDIA CTranslate2 acceleration downloads NVIDIA cuBLAS 12.9.2.10 and NVRTC
+12.9.86 Windows wheels as verified archives; only DLLs and license files are extracted.
+No additional Python interpreter is installed. The respective NVIDIA licenses apply.
+CPU Hy-MT2 uses the pinned llama.cpp b11429 Windows x64 CPU release.
+GPU checkboxes are optional and CPU is the default. Model files are reused.
+Argos pair catalogue: argosopentech/argospm-index.
+Firefox pair catalogue: Mozilla public translations model registry.
+Marian English-French: OPUS-MT en-fr opus-2020-02-26 (CC BY 4.0).
+NLLB: Meta NLLB-200 Distilled 600M, CC BY-NC 4.0.
+Public CTranslate2 INT8 conversion: osa911/nllb-200-distilled-600M-ct2-int8,
+pinned revision 46858753dbaf8eb5e21bb6f0037c3b90851e090a.
+Original tokenizer: facebook/nllb-200-distilled-600M,
+pinned revision f8d333a098d19b4fd9a8b18f94170487ad3f821d.
+SMaLL-100: alirezamsh/small100 (MIT), community INT8 conversion
+solavr/small100-ctranslate2-int8, revision 3c5af8e17d5c4f35bda849b7ffceaa1dfc62eb84.
+M2M-100: facebook/m2m100_418M (MIT), community INT8 conversion
+gn64/M2M100_418M_CTranslate2, revision 18e406c615ef2991fa74d53734bf66b0a6b10cb4.
+Tokenization follows the respective upstream language-tag conventions.
+GPU: Tencent Hy-MT2-7B GGUF Q8_0; the upstream Tencent license applies.
+Pinned GPU runtime: llama.cpp b11429 CUDA 13.4 Windows x64.
+Node runtime: official Node.js 24.19.0 Windows x64 distribution.
+
+Language pair availability and hardware compatibility rules are preliminary.
+This addon does not send translation text to a network translation service.
+Timing logs exclude text; the persistent translation cache does contain text.

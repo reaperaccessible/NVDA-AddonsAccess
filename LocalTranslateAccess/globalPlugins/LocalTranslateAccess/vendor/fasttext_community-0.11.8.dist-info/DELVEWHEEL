@@ -1,0 +1,2 @@
+Version: 1.13.1
+Arguments: ['C:\\Users\\runneradmin\\AppData\\Local\\Temp\\cibw-run-kve0iz32\\cp313-win_amd64\\build\\venv\\Scripts\\delvewheel', 'repair', '-w', 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\cibw-run-kve0iz32\\cp313-win_amd64\\repaired_wheel', '-v', 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\cibw-run-kve0iz32\\cp313-win_amd64\\built_wheel\\fasttext_community-0.11.8-cp313-cp313-win_amd64.whl']

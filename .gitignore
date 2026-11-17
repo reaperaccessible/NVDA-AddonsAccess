@@ -4,6 +4,10 @@
 !/.gitignore
 !/README.md
 !/SpeechHistoryAccess/
+!/LocalTranslateAccess/
+
+# Bundled models and runtime: they ship in the release package, not in the source.
+/LocalTranslateAccess/data/
 
 __pycache__/
 *.pyc
