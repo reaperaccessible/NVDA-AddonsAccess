@@ -57,7 +57,8 @@
 <li>Une traduction courte est annoncée.</li>
 <li>Une traduction longue, ou sur plusieurs lignes, s'ouvre dans une fenêtre que vous lisez avec les flèches.</li>
 <li>Si le texte est déjà dans la langue cible, il est traduit dans l'autre sens. Un texte français sera par exemple traduit en anglais.</li>
-<li>Si aucun modèle n'est installé pour les langues demandées, un message vous indique la langue à ajouter dans la configuration.</li>
+<li>Si la langue du texte n'est pas installée, une fenêtre vous le dit et vous propose de l'installer. Si vous répondez Oui, le téléchargement s'ouvre avec cette langue déjà choisie ; une fois le pack installé, votre texte est traduit aussitôt.</li>
+<li>N'importe quel modèle installé capable de traduire ces langues est utilisé, même s'il n'est pas celui choisi dans les réglages.</li>
 </ul>
 <p>Ces commandes utilisent les langues configurées pour l'application en cours, ou les langues globales si l'application n'a pas de réglage propre.</p>
 
@@ -78,7 +79,12 @@
 <p>La première langue cible proposée est celle de la voix de NVDA. En détection automatique, une langue détectée pour laquelle aucun modèle n'est installé n'est pas traduite : le texte d'origine est annoncé.</p>
 
 <h3>Onglet Modèles installés</h3>
-<p>Cet onglet liste les modèles présents sur votre ordinateur, avec leur taille. Vous pouvez supprimer le modèle sélectionné pour libérer de la place, ou actualiser le catalogue pour voir les packs de langues ajoutés depuis l'installation.</p>
+<p>Cet onglet liste les modèles présents sur votre ordinateur, avec leur taille. C'est ici que vous gérez vos langues.</p>
+<ul>
+<li><strong>Ajouter une langue</strong> : ouvre la fenêtre de téléchargement. Choisissez une ou plusieurs langues sources, la langue cible, puis « Ajouter » ; choisissez un modèle et validez « Télécharger ». Vos réglages de traduction ne sont pas modifiés : la langue est simplement disponible.</li>
+<li><strong>Supprimer le modèle sélectionné</strong> : libère de la place sur votre disque.</li>
+<li><strong>Actualiser le catalogue des modèles</strong> : affiche les packs de langues ajoutés depuis l'installation de l'extension.</li>
+</ul>
 
 <h3>Onglet Cache de traduction</h3>
 <p>L'extension garde en mémoire les traductions déjà faites, pour les redonner immédiatement. Dans cet onglet, vous pouvez rechercher une traduction, la corriger, et exporter ou importer un cache pour le partager.</p>

@@ -160,13 +160,16 @@ class Engine:
         for id in list(self.backends):
             if id not in retained:self.backends.pop(id).close()
         for entry in route:self._backend(entry)
-    def translate(self,text,src,tgt,app=None,source_mode='manual',detection_ms=0.0,source_system='manual'):
+    def translate(self,text,src,tgt,app=None,source_mode='manual',detection_ms=0.0,source_system='manual',family=None):
         import time
         with self.lock:
             self._wait_for_release()
             if self.closed:raise RuntimeError(_('Moteur arrêté'))
             if src==tgt:return text
-            config=self.store.config(app or self.application())
+            config=dict(self.store.config(app or self.application()))
+            if family and family!=config['family']:
+                # A translation on request may use another installed model than the configured one.
+                config.update(family=family,gpu=False)
             route=self.store.route(config['family'],src,tgt)
             self._prepare(route,config)
             translation_start=time.perf_counter()

@@ -94,6 +94,8 @@ class ManagerPanel(wx.Panel):
         self.installed_list=wx.ListBox(self.models_page)
         installed.Add(wx.StaticText(self.models_page,label=_('Sélectionnez un modèle. Le cache des traductions est conservé lors de sa suppression.')),0,wx.ALL,8)
         installed.Add(self.installed_list,1,wx.ALL|wx.EXPAND,8)
+        self.add_language=wx.Button(self.models_page,label=_('A&jouter une langue…'))
+        installed.Add(self.add_language,0,wx.ALL,8)
         self.remove=wx.Button(self.models_page,label=_('Supprimer le modèle sélectionné'))
         installed.Add(self.remove,0,wx.ALL,8)
         self.refresh=wx.Button(self.models_page,label=_('Actualiser le catalogue des modèles'))
@@ -119,6 +121,7 @@ class ManagerPanel(wx.Panel):
         self.download.Bind(wx.EVT_BUTTON,self.on_download)
         self.cancel_download.Bind(wx.EVT_BUTTON,lambda event:self.cancel.set())
         self.save.Bind(wx.EVT_BUTTON,self.on_save)
+        self.add_language.Bind(wx.EVT_BUTTON,self.on_add_language)
         self.remove.Bind(wx.EVT_BUTTON,self.on_remove)
         self.refresh.Bind(wx.EVT_BUTTON,self.on_refresh)
         reset.Bind(wx.EVT_BUTTON,self.on_reset)
@@ -160,6 +163,30 @@ class ManagerPanel(wx.Panel):
             if not self.dead:
                 self.tabs.SetSelection(0);self.refresh_installed()
                 on_done(family)
+        wx.CallAfter(run)
+    def on_add_language(self,event):
+        """Download a language pack without changing any translation setting."""
+        if self.busy or self.dead:return
+        self.busy=True
+        def run():
+            wizard=None
+            try:
+                if self.dead:return
+                from .setup_wizard import SetupWizard
+                # No language is preselected: the window lets the user choose them.
+                wizard=SetupWizard(self,self.store,self.telemetry,'global',self.hooks,
+                    activate=False,download_only=True)
+                wizard.ShowModal()
+            except Exception:
+                self.hooks.get('report_error',lambda:None)()
+                self.hooks.get('announce',lambda text:None)(_('Impossible d’ouvrir le téléchargement des modèles.'))
+            finally:
+                if wizard is not None:
+                    wizard.dead=True;wizard.cancel.set();wizard.Destroy()
+                self.busy=False
+            if not self.dead:
+                self.refresh_installed();self.source_page.refresh_models()
+                self.add_language.SetFocus()
         wx.CallAfter(run)
     def on_setup(self,event):
         if self.busy:return
@@ -276,7 +303,7 @@ class ManagerPanel(wx.Panel):
     def set_busy(self,value):
         self.source_page.set_busy(value)
         self.busy=value
-        for control in (self.scope,self.family,self.sources,self.targets,self.active,self.inherit,self.remember,self.forget,self.copy,self.download,self.save,self.remove,self.refresh):control.Enable(not value)
+        for control in (self.scope,self.family,self.sources,self.targets,self.active,self.inherit,self.remember,self.forget,self.copy,self.download,self.save,self.add_language,self.remove,self.refresh):control.Enable(not value)
         self.cancel_download.Enable(value);self.update_preview()
         if not value:
             self.inherit.Enable(self.context()!='global')

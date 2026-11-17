@@ -2293,3 +2293,12 @@ msgstr "Turns translation on or off for the current application."
 
 msgid "Active ou désactive la traduction globale."
 msgstr "Turns global translation on or off."
+
+msgid "Ce texte est en {source}. La traduction {source} vers {target} n’est pas installée. Voulez-vous l’installer maintenant ?"
+msgstr "This text is in {source}. The {source} to {target} translation is not installed. Do you want to install it now?"
+
+msgid "Langue non installée"
+msgstr "Language not installed"
+
+msgid "A&jouter une langue…"
+msgstr "&Add a language…"

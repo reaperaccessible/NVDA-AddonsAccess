@@ -1275,11 +1275,10 @@ def _ondemand_translate(text, app, started):
         if source == target:
             _ondemand_say(_('Ce texte est déjà en {language}.').format(language=_label_for_ui(target)), started)
             return
-        try:
-            _store.route(_store.config(app)['family'], source, target, installed_only=True)
-        except ValueError:
-            _ondemand_say(_('Aucun modèle installé pour traduire de {source} vers {target}. Ajoutez cette langue dans la configuration.').format(
-                source=_label_for_ui(source), target=_label_for_ui(target)), started)
+        family = _ondemand_family(app, source, target)
+        if family is None:
+            # Nothing installed translates this pair: offer to install it, on the main thread.
+            wx.CallAfter(_offer_language_install, text, app, source, target)
             return
         pieces = ondemand.split_text(text)
         if len(pieces) > 1:
@@ -1287,7 +1286,7 @@ def _ondemand_translate(text, app, started):
         result = []
         for piece in pieces:
             body = piece.rstrip()
-            result.append((engine.translate(body, source, target, app=app) if body.strip() else body) + piece[len(body):])
+            result.append((engine.translate(body, source, target, app=app, family=family) if body.strip() else body) + piece[len(body):])
         translation = ''.join(result)
         _ondemand['last'] = translation
         if ondemand.needs_window(translation):
@@ -1300,6 +1299,63 @@ def _ondemand_translate(text, app, started):
     finally:
         _ondemand['busy'] = False
         wx.CallAfter(_ondemand_idle)
+
+def _ondemand_family(app, source, target):
+    """The installed model family able to translate this pair, the configured one first."""
+    def can_translate(family):
+        if not _store.runtime_ready(family):
+            return False
+        try:
+            _store.route(family, source, target, installed_only=True)
+            return True
+        except ValueError:
+            return False
+    families = sorted({entry['family'] for entry in _store.catalog['entries']})
+    return ondemand.choose_family(_store.config(app)['family'], families, can_translate)
+
+def _language_name(code):
+    """A language name inside a sentence: French does not capitalise it."""
+    label = _label_for_ui(code)
+    from . import i18n
+    return label.lower() if i18n._language.split('_')[0] == 'fr' else label
+
+def _offer_language_install(text, app, source, target):
+    """Ask whether to install the missing language; if so, open its download and then translate."""
+    global _manager_open
+    # The question must be heard: end the quiet period that follows the menu.
+    _quiet.close()
+    if _configuration_open():
+        _announce(_("La fenêtre LocalTranslate est déjà ouverte."))
+        return
+    message = _('Ce texte est en {source}. La traduction {source} vers {target} n’est pas installée. Voulez-vous l’installer maintenant ?').format(
+        source=_language_name(source), target=_language_name(target))
+    if gui.messageBox(message, _('Langue non installée'), wx.YES_NO | wx.ICON_QUESTION) != wx.YES:
+        return
+    from .setup_wizard import SetupWizard
+    _manager_open = True
+    wizard = None
+    installed = False
+    prepared = False
+    try:
+        gui.mainFrame.prePopup()
+        prepared = True
+        wizard = SetupWizard(gui.mainFrame, _store, _telemetry, app, _manager_hooks(app),
+            activate=False, pairs=[(source, target)], download_only=True)
+        installed = wizard.ShowModal() == wx.ID_OK and bool(wizard.downloaded_family)
+    except Exception:
+        log.exception('LocalTranslateAccess: language download window failed')
+        _announce(_('Impossible d’ouvrir le téléchargement des modèles.'))
+    finally:
+        if wizard is not None:
+            wizard.dead = True
+            wizard.cancel.set()
+            wizard.Destroy()
+        if prepared:
+            gui.mainFrame.postPopup()
+        _manager_open = False
+    if installed and _ondemand_family(app, source, target) is not None:
+        # The language is there now: do what was asked in the first place.
+        _ondemand_start(text, app, '', delayed=True)
 
 def _ondemand_idle():
     if _ondemand['timer'] is not None:

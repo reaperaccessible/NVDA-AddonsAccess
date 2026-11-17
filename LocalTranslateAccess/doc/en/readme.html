@@ -57,7 +57,8 @@
 <li>A short translation is spoken.</li>
 <li>A long translation, or one with several lines, opens in a window that you read with the arrow keys.</li>
 <li>If the text is already in the target language, it is translated the other way round. A French text, for example, is translated into English.</li>
-<li>If no model is installed for the languages needed, a message tells you which language to add in the configuration.</li>
+<li>If the language of the text is not installed, a window says so and offers to install it. If you answer Yes, the download window opens with this language already chosen; once the pack is installed, your text is translated at once.</li>
+<li>Any installed model able to translate these languages is used, even if it is not the one chosen in the settings.</li>
 </ul>
 <p>These commands use the languages configured for the current application, or the global languages if the application has no setting of its own.</p>
 
@@ -78,7 +79,12 @@
 <p>The first target language offered is that of NVDA's voice. With automatic detection, a detected language for which no model is installed is not translated: the original text is spoken.</p>
 
 <h3>Installed models tab</h3>
-<p>This tab lists the models on your computer, with their size. You can remove the selected model to free some space, or refresh the catalogue to see the language packs added since you installed the add-on.</p>
+<p>This tab lists the models on your computer, with their size. This is where you manage your languages.</p>
+<ul>
+<li><strong>Add a language</strong>: opens the download window. Choose one or more source languages, the target language, then "Add"; choose a model and press "Download". Your translation settings are not changed: the language is simply available.</li>
+<li><strong>Remove the selected model</strong>: frees some space on your disk.</li>
+<li><strong>Refresh the model catalogue</strong>: shows the language packs added since you installed the add-on.</li>
+</ul>
 
 <h3>Translation cache tab</h3>
 <p>The add-on remembers the translations it has already made, so that it can give them back at once. In this tab you can search for a translation, correct it, and export or import a cache to share it.</p>

@@ -124,3 +124,15 @@ class QuietWindow:
 
     def remembering_paused(self):
         return self._held or self.active()
+
+
+def choose_family(preferred, families, can_translate):
+    """The model family to use for a translation on request.
+
+    The configured family comes first; failing that, any other family that is
+    installed for this pair. Returns None when nothing installed can do it.
+    """
+    for family in [preferred] + [name for name in families if name != preferred]:
+        if can_translate(family):
+            return family
+    return None
