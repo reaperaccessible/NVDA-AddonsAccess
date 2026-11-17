@@ -95,6 +95,13 @@ class Engine:
             start=time.perf_counter()
             try:return self.detector.detect(text)
             finally:self.telemetry.record('detection',milliseconds=(time.perf_counter()-start)*1000,characters=len(text))
+    def candidates(self,text):
+        import time
+        with self.lock:
+            if self.closed:raise RuntimeError(_('Moteur arrêté'))
+            start=time.perf_counter()
+            try:return self.detector.candidates(text)
+            finally:self.telemetry.record('detection',milliseconds=(time.perf_counter()-start)*1000,characters=len(text))
     def _backend(self,entry):
         import time
         if entry['id'] in self.failed:raise RuntimeError(self.failed[entry['id']])

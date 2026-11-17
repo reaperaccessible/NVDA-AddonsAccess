@@ -54,5 +54,13 @@ class Detector:
             labels,probabilities=self.model.predict(' '.join(text.split())[:4000],k=1)
             if not labels:raise RuntimeError(_('Détection de langue indisponible'))
             return labels[0].removeprefix('__label__'),float(probabilities[0])
+    def candidates(self,text,k=4):
+        """The most likely languages, best first, as [(code, probability)]."""
+        with self.lock:
+            if self.model is None:
+                _unused,_unused,fasttext=libraries(False)
+                self.model=fasttext.load_model(str(BASE/'assets/lid.176.ftz'))
+            labels,probabilities=self.model.predict(' '.join(text.split())[:4000],k=k)
+            return [(label.removeprefix('__label__'),float(probability)) for label,probability in zip(labels,probabilities)]
     def close(self):
         with self.lock:self.model=None

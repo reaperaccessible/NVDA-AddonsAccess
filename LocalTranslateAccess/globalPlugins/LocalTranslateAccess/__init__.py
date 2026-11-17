@@ -764,18 +764,27 @@ def _resolve_source(app, source, document, text):
         _source_report(app,code,system,confidence)
     # The language of the text itself comes first: an application configured for English, or a
     # page declaring English, may well show a message written in another language.
-    resolved=None
+    # What is configured for the application or declared by the page: only a fallback.
     try:
-        code,confidence=detect(text)
-        resolved=ondemand.trusted_continuous(text,_normalize_language(code),confidence)
+        fallback=_app_languages.resolve(app, source, document, text, detect,report=report)
     except Exception:
-        resolved=None
-    if resolved:
+        fallback=None
+    try:
+        start=time.perf_counter()
+        candidates=[(_normalize_language(code),chance) for code,chance in _engine.candidates(text)]
+        timing['detection_ms']+=(time.perf_counter()-start)*1000
+    except Exception:
+        candidates=[]
+    letters=sum(1 for character in text if character.isalpha())
+    resolved,sure=ondemand.decide_language(candidates,letters,fallback,_recent_language.get(app))
+    if resolved is None:
+        raise ValueError('language of the text unknown')
+    if ondemand.gives_context(resolved,sure,letters):
+        # The lines that follow in the same message keep this language when they are unsure.
+        _recent_language.note(app,resolved)
+    if resolved!=fallback:
         timing['source_mode']='auto'
-        report(resolved,'fasttext',confidence)
-    else:
-        # Too short or too uncertain to tell: fall back on what is configured or declared.
-        resolved=_app_languages.resolve(app, source, document, text, detect,report=report)
+        report(resolved,'fasttext',dict(candidates).get(resolved) if sure else 0.0)
     _speech_context.resolution={'app':app,'source':resolved,'timing':timing}
     return resolved
 
@@ -1216,6 +1225,8 @@ class LocalTranslateAccessSettingsPanel(gui.settingsDialogs.SettingsPanel):
 # === Traduction à la demande (menu) ====================================
 import textInfos
 from . import ondemand
+# The language surely recognised a moment ago in each application: context for unsure sentences.
+_recent_language = ondemand.RecentLanguage()
 from .app_languages import normalize as _normalize_language
 
 _speech_memory = ondemand.SpeechMemory()
@@ -1268,8 +1279,10 @@ def _ondemand_say(message, started=None):
 def _ondemand_translate(text, app, started):
     def detect():
         try:
-            code, confidence = _ondemand['engine'].detect(text)
-            return ondemand.trusted_detection(text, _normalize_language(code), confidence)
+            candidates = [(_normalize_language(code), chance) for code, chance in _ondemand['engine'].candidates(text)]
+            letters = sum(1 for character in text if character.isalpha())
+            code, sure = ondemand.decide_language(candidates, letters, None, _recent_language.get(app))
+            return code
         except Exception:
             return None
     try:

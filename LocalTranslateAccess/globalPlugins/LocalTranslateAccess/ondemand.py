@@ -175,3 +175,90 @@ class QuietWindow:
     def remembering_paused(self):
         return self._held or self.active()
 
+
+
+# --- deciding the language of a text
+STRONG = 0.8            # the detector is sure
+CLEAR = 0.5             # the detector leans clearly one way...
+CLEAR_RATIO = 2.0       # ...when its first guess is at least twice as likely as the second
+CONTEXT = 0.15          # enough for a language that was being read just before
+PLAUSIBLE = 0.35        # the least to accept a guess when nothing else is known
+MIN_LETTERS = 12        # below this, a text says too little about its language
+CONTEXT_LETTERS = 8
+RECENT_SECONDS = 120    # how long "just before" lasts
+
+
+def decide_language(candidates, letters, fallback=None, recent=None):
+    """The language of a text, and whether that is sure.
+
+    candidates: the detector's guesses, best first, as (code, probability); the code is
+                None for a language the add-on does not know.
+    letters:    number of letters in the text.
+    fallback:   the language configured for the application or declared by the page, if any.
+    recent:     the language surely recognised in the same application a moment ago, if any.
+
+    Returns (code or None, sure). `sure` is True only for a decision solid enough to be
+    remembered as context and to justify asking the user about a missing language.
+    """
+    usable = [(code, probability) for code, probability in candidates if code]
+    if not usable:
+        return fallback, False
+    best, probability = usable[0]
+    second = usable[1][1] if len(usable) > 1 else 0.0
+    first_is_known = candidates[0][0] == best
+    if letters >= MIN_LETTERS and first_is_known:
+        if probability >= STRONG:
+            return best, letters >= CONTINUOUS_MIN_LETTERS
+        if probability >= CLEAR and probability >= CLEAR_RATIO * second:
+            # A sentence quoting a few words of another language lands here. It is not sure
+            # enough to ask the user anything, but it does tell what is being read.
+            _clear_decisions.add(best)
+            return best, False
+    if recent and letters >= CONTEXT_LETTERS:
+        # The same message goes on: an unsure sentence keeps the language of the previous one.
+        for code, chance in usable:
+            if code == recent and (chance >= CONTEXT or code == best):
+                return recent, False
+    if fallback:
+        return fallback, False
+    if letters >= MIN_LETTERS and first_is_known and probability >= PLAUSIBLE:
+        return best, False
+    return None, False
+
+
+class _ClearDecisions(threading.local):
+    """Marks, for the thread deciding, that the last decision leaned clearly one way."""
+    language = None
+    def add(self, code): self.language = code
+    def take(self):
+        code, self.language = self.language, None
+        return code
+
+
+_clear_decisions = _ClearDecisions()
+
+
+def gives_context(code, sure, letters):
+    """Whether a decision is solid enough to serve as context for the lines that follow."""
+    clear = _clear_decisions.take()
+    return bool(code) and letters >= CONTINUOUS_MIN_LETTERS and (sure or clear == code)
+
+
+class RecentLanguage:
+    """The language surely recognised a moment ago, for each application."""
+
+    def __init__(self, clock=time.monotonic, lifetime=RECENT_SECONDS):
+        self._clock, self._lifetime = clock, lifetime
+        self._seen = {}
+        self._lock = threading.Lock()
+
+    def note(self, app, code):
+        with self._lock:
+            self._seen[app] = (code, self._clock())
+
+    def get(self, app):
+        with self._lock:
+            entry = self._seen.get(app)
+            if entry is None or self._clock() - entry[1] > self._lifetime:
+                return None
+            return entry[0]
