@@ -114,3 +114,6 @@ msgstr "La mise à jour n'a pas pu être installée."
 
 msgid "The update is installed. NVDA must restart to finish. Restart now?"
 msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."

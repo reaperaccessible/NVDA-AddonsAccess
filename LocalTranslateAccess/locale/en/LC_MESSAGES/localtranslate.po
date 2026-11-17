@@ -2263,3 +2263,6 @@ msgstr "&Global translation"
 
 msgid "Ouvre le menu de traduction : traduction pour l’application ou globale, sélection, presse-papiers, dernière annonce, copie, langues et configuration."
 msgstr "Opens the translation menu: translation for the application or global, selection, clipboard, last announcement, copy, languages and configuration."
+
+msgid "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."
+msgstr "The update is already installed. Restart NVDA to finish."

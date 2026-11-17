@@ -29,6 +29,9 @@ ADDON_EXTENSION = '.nvda-addon'
 REQUEST_HEADERS = {'Accept': 'application/vnd.github+json', 'User-Agent': 'NVDA-AddonsAccess-updater'}
 TIMEOUT = 20 # seconds
 STARTUP_DELAY = 20000 # ms
+RETRY_DELAY = 30000 # ms
+# Shared by every add-on using this checker, so that only one of them updates at a time.
+SHARED_FLAG = '_addonsAccessUpdateInProgress'
 
 
 def parseVersion(version):
@@ -88,6 +91,12 @@ class Updater:
 
 	def check(self, manual=False):
 		"""Look for an update in the background. Only a manual check reports 'up to date' or errors."""
+		if self._waitingForRestart():
+			# The new version is already installed: offering it again would install it twice.
+			if manual:
+				# Translators: Message shown when the new version of the add-on is installed but NVDA has not restarted yet.
+				self._inform(_('The update is already installed. Restart NVDA to finish.'), wx.ICON_INFORMATION)
+			return
 		if not self._busy.acquire(blocking=False):
 			return
 		if manual:
@@ -116,6 +125,22 @@ class Updater:
 			return
 		wx.CallAfter(self._offer, *update)
 
+	def _waitingForRestart(self):
+		"""True when a version of this add-on is installed or removed but NVDA has not restarted yet."""
+		try:
+			return any(
+				addon.name == self.name and (addon.isPendingInstall or addon.isPendingRemove)
+				for addon in addonHandler.getAvailableAddons()
+			)
+		except Exception:
+			return False
+
+	def _release(self):
+		"""End of an update attempt: let this add-on, and the others, check again."""
+		if getattr(addonHandler, SHARED_FLAG, None) == self.name:
+			setattr(addonHandler, SHARED_FLAG, None)
+		self._busy.release()
+
 	def _title(self):
 		# Translators: Title of the add-on's update windows. {name} is the name of the add-on.
 		return _('{name} update').format(name=self.name)
@@ -127,8 +152,17 @@ class Updater:
 		# Translators: Question asked when a newer version of the add-on exists. {name} is the name of the add-on, {new} the new version, {current} the installed one.
 		message = _('{name} {new} is available. You have version {current}. Do you want to install it now?').format(
 			name=self.name, new=version, current=self.version)
-		if gui.messageBox(message, self._title(), wx.YES_NO | wx.ICON_QUESTION) != wx.YES:
+		if self._waitingForRestart():
 			self._busy.release()
+			return
+		if getattr(addonHandler, SHARED_FLAG, None):
+			# Another add-on is being updated: come back once it has finished.
+			self._busy.release()
+			self._timer = wx.CallLater(RETRY_DELAY, self.check)
+			return
+		setattr(addonHandler, SHARED_FLAG, self.name)
+		if gui.messageBox(message, self._title(), wx.YES_NO | wx.ICON_QUESTION) != wx.YES:
+			self._release()
 			return
 		# Translators: Message spoken while the new version of the add-on is being downloaded.
 		ui.message(_('Downloading the update...'))
@@ -155,7 +189,7 @@ class Updater:
 		except Exception:
 			log.error('%s: update download failed' % self.name, exc_info=True)
 			self._remove(path)
-			self._busy.release()
+			wx.CallAfter(self._release)
 			# Translators: Message shown when the new version of the add-on could not be downloaded.
 			wx.CallAfter(self._inform, _('The update could not be downloaded.'), wx.ICON_ERROR)
 			return
@@ -175,7 +209,7 @@ class Updater:
 			return
 		finally:
 			self._remove(path)
-			self._busy.release()
+			self._release()
 		# Translators: Question asked once the new version of the add-on is installed.
 		message = _('The update is installed. NVDA must restart to finish. Restart now?')
 		if gui.messageBox(message, self._title(), wx.YES_NO | wx.ICON_QUESTION) == wx.YES:
