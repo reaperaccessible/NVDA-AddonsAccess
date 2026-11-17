@@ -1,0 +1,12 @@
+# This folder also holds third-party add-ons kept for reference.
+# Only the add-ons published by ReaperAccessible are tracked.
+/*
+!/.gitignore
+!/README.md
+!/SpeechHistoryAccess/
+
+__pycache__/
+*.pyc
+*.nvda-addon
+*.original
+*.avant_ecoute

@@ -1,0 +1,116 @@
+# French translation of SpeechHistoryAccess.
+msgid ""
+msgstr ""
+"Project-Id-Version: SpeechHistoryAccess 2026.1\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Copied"
+msgstr "Copié"
+
+msgid "Copy the currently selected speech history item to the clipboard, which by default will be the most recently spoken text by NVDA."
+msgstr "Copier dans le presse-papiers l'élément sélectionné de l'historique de la parole, par défaut le dernier texte annoncé par NVDA."
+
+msgid "Review the previous item in NVDA's speech history."
+msgstr "Lire l'élément précédent de l'historique de la parole de NVDA."
+
+msgid "Review the next item in NVDA's speech history."
+msgstr "Lire l'élément suivant de l'historique de la parole de NVDA."
+
+msgid "Already recording speech"
+msgstr "Enregistrement de la parole déjà en cours"
+
+msgid "Started recording speech"
+msgstr "Enregistrement de la parole démarré"
+
+msgid "Start recording NVDA's speech output, for copying multiple announcements to the clipboard."
+msgstr "Démarrer l'enregistrement de la parole de NVDA, pour copier plusieurs annonces dans le presse-papiers."
+
+msgid "Not currently recording speech"
+msgstr "Aucun enregistrement de la parole en cours"
+
+msgid "Recorded speech copied to clipboard"
+msgstr "Parole enregistrée copiée dans le presse-papiers"
+
+msgid "Stop recording NVDA's speech output, and copy the recorded announcements to the clipboard."
+msgstr "Arrêter l'enregistrement de la parole de NVDA et copier les annonces enregistrées dans le presse-papiers."
+
+msgid "Viewing speech history is not supported in this version of NVDA for security reasons."
+msgstr "L'affichage de l'historique de la parole n'est pas pris en charge dans cette version de NVDA, pour des raisons de sécurité."
+
+msgid "No history items."
+msgstr "Aucun élément dans l'historique."
+
+msgid "Speech History"
+msgstr "Historique de la parole"
+
+msgid "Show NVDA's speech history in a browseable list"
+msgstr "Afficher l'historique de la parole de NVDA dans une liste consultable"
+
+msgid "&Maximum number of history entries (requires NVDA restart to take effect)"
+msgstr "Nombre &maximal d'entrées dans l'historique (nécessite un redémarrage de NVDA)"
+
+msgid "&After copying speech:"
+msgstr "&Après la copie :"
+
+msgid "Do nothing"
+msgstr "Ne rien faire"
+
+msgid "Beep"
+msgstr "Bip"
+
+msgid "Speak"
+msgstr "Annoncer"
+
+msgid "Both beep and speak"
+msgstr "Bip et annonce"
+
+msgid "Beep &frequency (Hz)"
+msgstr "&Fréquence du bip (Hz)"
+
+msgid "Beep &duration (ms)"
+msgstr "&Durée du bip (ms)"
+
+msgid "&Play example beep"
+msgstr "&Jouer un bip d'exemple"
+
+msgid "Trim whitespace from &start when copying text"
+msgstr "Supprimer les espaces au dé&but du texte copié"
+
+msgid "Trim whitespace from &end when copying text"
+msgstr "Supprimer les espaces à la fi&n du texte copié"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
+
+msgid "&Check for updates now"
+msgstr "&Vérifier les mises à jour maintenant"
+
+msgid "Checking for updates..."
+msgstr "Recherche de mises à jour..."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Impossible de vérifier les mises à jour. Vérifiez votre connexion Internet."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} est à jour (version {version})."
+
+msgid "{name} update"
+msgstr "Mise à jour de {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} est disponible. Vous avez la version {current}. Voulez-vous l'installer maintenant ?"
+
+msgid "Downloading the update..."
+msgstr "Téléchargement de la mise à jour..."
+
+msgid "The update could not be downloaded."
+msgstr "La mise à jour n'a pas pu être téléchargée."
+
+msgid "The update could not be installed."
+msgstr "La mise à jour n'a pas pu être installée."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
