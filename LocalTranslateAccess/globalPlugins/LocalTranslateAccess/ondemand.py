@@ -13,6 +13,9 @@ CHUNK_LIMIT = 1200
 # Above this, or with several lines, the result is shown in a window instead of only spoken.
 SPOKEN_LIMIT = 400
 HISTORY_LENGTH = 30
+# After an action is chosen in the menu, NVDA would re-announce the window, the application
+# and the selection as the focus comes back. It stays quiet for this long instead (seconds).
+QUIET_AFTER_MENU = 1.0
 
 
 def split_text(text, limit=CHUNK_LIMIT):
@@ -88,3 +91,36 @@ class SpeechMemory:
     def latest(self):
         with self._lock:
             return self._items[-1][1] if self._items else ''
+
+
+class QuietWindow:
+    """A short period during which NVDA's own speech is dropped.
+
+    It always ends by itself: it is only a deadline, so nothing has to be restored
+    and speech can never stay muted if something goes wrong.
+    """
+    LONGEST = 3.0   # seconds; a safety limit whatever is asked
+
+    def __init__(self, clock=time.monotonic):
+        self._clock = clock
+        self._until = 0.0
+        self._held = False
+
+    def open(self, seconds):
+        self._until = self._clock() + min(max(seconds, 0.0), self.LONGEST)
+
+    def close(self):
+        self._until = 0.0
+
+    def hold(self):
+        """The menu is open: its items are spoken normally, but not remembered as announcements."""
+        self._held = True
+
+    def release(self):
+        self._held = False
+
+    def active(self):
+        return self._clock() < self._until
+
+    def remembering_paused(self):
+        return self._held or self.active()

@@ -1218,9 +1218,18 @@ _ondemand = {'engine': None, 'swapped': False, 'last': '', 'busy': False, 'timer
 ONDEMAND_IDLE_MS = 120000   # the models used on request are unloaded after two idle minutes
 ONDEMAND_SPEECH_DELAY = 0.5 # lets NVDA announce the focus coming back from the menu first
 
+_quiet = ondemand.QuietWindow()
+
 def _remember_speech(speechSequence=None, **kwargs):
-    if not _reentryFlag:
+    # The menu's own items and the focus coming back are not announcements worth translating.
+    if not _reentryFlag and not _quiet.remembering_paused():
         _speech_memory.remember(speechSequence)
+
+def _quiet_filter(speechSequence, *args, **kwargs):
+    """Drop what NVDA wants to say while the quiet window is open, except this add-on's own messages."""
+    if _reentryFlag or not _quiet.active():
+        return speechSequence
+    return []
 
 def _selected_text():
     """The selection under the caret, read before the menu takes the focus."""
@@ -1297,8 +1306,8 @@ def _ondemand_idle():
         _ondemand['timer'].Stop()
     _ondemand['timer'] = wx.CallLater(ONDEMAND_IDLE_MS, _ondemand_release)
 
-def _ondemand_start(text, app, empty_message):
-    started = time.monotonic()
+def _ondemand_start(text, app, empty_message, delayed=True):
+    started = time.monotonic() if delayed else None
     if not text or not text.strip():
         _ondemand_say(empty_message, started)
         return
@@ -1331,24 +1340,40 @@ def _capture_app_context():
 
 MENU_TOGGLE_DELAY_MS = 400  # lets NVDA announce the focus coming back from the menu first
 
+# Each action exists once, used both by the menu (delayed=True) and by its own command.
+def _ondemand_clipboard_text():
+    try:
+        value = api.getClipData()
+    except Exception:
+        value = ''
+    return value if isinstance(value, str) else ''
+
+def _action_translate_selection(app, selection, delayed=True):
+    _ondemand_start(selection, app, _('Aucune sélection.'), delayed)
+
+def _action_translate_clipboard(app, delayed=True):
+    _ondemand_start(_ondemand_clipboard_text(), app, _('Le presse-papiers ne contient pas de texte.'), delayed)
+
+def _action_translate_last(app, spoken, delayed=True):
+    _ondemand_start(spoken, app, _('Aucune annonce à traduire.'), delayed)
+
+def _action_copy_last(delayed=True):
+    started = time.monotonic() if delayed else None
+    if _ondemand['last'] and api.copyToClip(_ondemand['last']):
+        _ondemand_say(_('Traduction copiée dans le presse-papiers.'), started)
+    else:
+        _ondemand_say(_('Aucune traduction à copier.'), started)
+
+def _action_swap(app, delayed=True):
+    _ondemand['swapped'] = not _ondemand['swapped']
+    _ondemand_say(_ondemand_languages_message(app, swapped_notice=True), time.monotonic() if delayed else None)
+
+def _action_announce_languages(app, delayed=True):
+    _ondemand_say(_ondemand_languages_message(app), time.monotonic() if delayed else None)
+
 def _translation_menu(plugin, context, selection, spoken):
     """Build and show the menu. Everything it needs was read before it took the focus."""
     app = context['key']
-    started = lambda: time.monotonic()
-    def clipboard():
-        try:
-            value = api.getClipData()
-        except Exception:
-            value = ''
-        return value if isinstance(value, str) else ''
-    def copy_last():
-        if _ondemand['last'] and api.copyToClip(_ondemand['last']):
-            _ondemand_say(_('Traduction copiée dans le presse-papiers.'), started())
-        else:
-            _ondemand_say(_('Aucune traduction à copier.'), started())
-    def swap():
-        _ondemand['swapped'] = not _ondemand['swapped']
-        _ondemand_say(_ondemand_languages_message(app, swapped_notice=True), started())
     toggles = [
         (_('Traduction pour cette &application'), app in plugin._perAppEnabled,
             lambda: wx.CallLater(MENU_TOGGLE_DELAY_MS, plugin.script_toggleTranslateForApp, None, context)),
@@ -1356,14 +1381,14 @@ def _translation_menu(plugin, context, selection, spoken):
             lambda: wx.CallLater(MENU_TOGGLE_DELAY_MS, plugin.script_toggleTranslateGlobal, None)),
     ]
     actions = [
-        (_('Traduire la &sélection'), lambda: _ondemand_start(selection, app, _('Aucune sélection.'))),
-        (_('Traduire le &presse-papiers'), lambda: _ondemand_start(clipboard(), app, _('Le presse-papiers ne contient pas de texte.'))),
-        (_('Traduire la &dernière annonce'), lambda: _ondemand_start(spoken, app, _('Aucune annonce à traduire.'))),
-        (_('&Copier la dernière traduction'), copy_last),
-        (_('&Inverser les langues'), swap),
-        (_('Annoncer les &langues'), lambda: _ondemand_say(_ondemand_languages_message(app), started())),
+        (_('Traduire la &sélection'), lambda: _action_translate_selection(app, selection)),
+        (_('Traduire le &presse-papiers'), lambda: _action_translate_clipboard(app)),
+        (_('Traduire la &dernière annonce'), lambda: _action_translate_last(app, spoken)),
+        (_('&Copier la dernière traduction'), _action_copy_last),
+        (_('&Inverser les langues'), lambda: _action_swap(app)),
+        (_('Annoncer les &langues'), lambda: _action_announce_languages(app)),
         None,
-        (_('Con&figuration de la traduction…'), lambda: _show_settings_dialog(gui.mainFrame)),
+        (_('Con&figuration de la traduction…'), lambda: (_quiet.close(), _show_settings_dialog(gui.mainFrame))),
     ]
     menu = wx.Menu()
     chosen = []
@@ -1379,12 +1404,17 @@ def _translation_menu(plugin, context, selection, spoken):
         item = menu.Append(wx.ID_ANY, action[0])
         menu.Bind(wx.EVT_MENU, lambda event, run=action[1]: chosen.append(run), item)
     gui.mainFrame.prePopup()
+    _quiet.hold()   # nothing said while the menu is open is remembered as an announcement
     try:
         gui.mainFrame.sysTrayIcon.PopupMenu(menu)
     finally:
         gui.mainFrame.postPopup()
         menu.Destroy()
+        _quiet.release()
     if chosen:
+        # An action was chosen: keep NVDA from re-reading the window, the application and
+        # the selection when the focus comes back, so that only the result is heard.
+        _quiet.open(ondemand.QUIET_AFTER_MENU)
         chosen[0]()
 
 # === GlobalPlugin (gestes + cycle de vie) ==============================
@@ -1418,8 +1448,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         LocalTranslateAccessSettingsPanel.updater = self.updater
         # Remember what NVDA says, so that the last announcement can be translated on request.
         try:
-            from speech.extensions import pre_speech
+            from speech.extensions import pre_speech, filter_speechSequence
             pre_speech.register(_remember_speech)
+            filter_speechSequence.register(_quiet_filter)
         except Exception:
             log.exception('LocalTranslateAccess: last announcement unavailable for translation')
         gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(LocalTranslateAccessSettingsPanel)
@@ -1448,8 +1479,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         if self.updater is not None:
             self.updater.cancel()
         try:
-            from speech.extensions import pre_speech
+            from speech.extensions import pre_speech, filter_speechSequence
             pre_speech.unregister(_remember_speech)
+            filter_speechSequence.unregister(_quiet_filter)
         except Exception:
             pass
         if _ondemand['timer'] is not None:
@@ -1503,7 +1535,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         _sync_model_lifetime()
 
     def script_toggleTranslateGlobal(self, gesture):
-        """Active/désactive la traduction globale."""
         global _global_enabled
         if self.translationGlobalEnabled:
             self.translationGlobalEnabled = False
@@ -1521,13 +1552,42 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
             if not getattr(self,'_terminated',False):self._start_translation('global',activated)
         start()
 
+    # The commands below have no key by default: the menu gives access to all of them.
+    # They exist so that a shortcut can be assigned to each one in NVDA's Input gestures dialog.
+    def script_translateSelection(self, gesture):
+        _action_translate_selection(_get_app_key(), _selected_text(), delayed=False)
+    script_translateSelection.__doc__ = _('Traduit le texte sélectionné.')
+
+    def script_translateClipboard(self, gesture):
+        _action_translate_clipboard(_get_app_key(), delayed=False)
+    script_translateClipboard.__doc__ = _('Traduit le texte du presse-papiers.')
+
+    def script_translateLastAnnouncement(self, gesture):
+        _action_translate_last(_get_app_key(), _speech_memory.latest(), delayed=False)
+    script_translateLastAnnouncement.__doc__ = _('Traduit la dernière annonce de NVDA.')
+
+    def script_copyLastTranslation(self, gesture):
+        _action_copy_last(delayed=False)
+    script_copyLastTranslation.__doc__ = _('Copie la dernière traduction dans le presse-papiers.')
+
+    def script_swapLanguages(self, gesture):
+        _action_swap(_get_app_key(), delayed=False)
+    script_swapLanguages.__doc__ = _('Inverse la langue source et la langue cible des traductions à la demande.')
+
+    def script_announceLanguages(self, gesture):
+        _action_announce_languages(_get_app_key(), delayed=False)
+    script_announceLanguages.__doc__ = _('Annonce la langue source et la langue cible actuelles.')
+
+    def script_openConfiguration(self, gesture):
+        _show_settings_dialog()
+    script_openConfiguration.__doc__ = _('Ouvre la configuration de la traduction dans les Paramètres de NVDA.')
+
     def script_translationMenu(self, gesture):
         # Read the context now: the menu takes the focus and NVDA announces its items.
         wx.CallAfter(_translation_menu, self, _capture_app_context(), _selected_text(), _speech_memory.latest())
     script_translationMenu.__doc__ = _('Ouvre le menu de traduction : traduction pour l’application ou globale, sélection, presse-papiers, dernière annonce, copie, langues et configuration.')
 
     def script_toggleTranslateForApp(self, gesture, context=None):
-        """Active/désactive la traduction pour l’application courante."""
         global _per_app_enabled
         # From the menu, the application was identified before the menu took the focus.
         context = context or _capture_app_context()
@@ -1553,6 +1613,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         def start():
             if not getattr(self,'_terminated',False):self._start_translation(key,activated)
         start()
+
+GlobalPlugin.script_toggleTranslateForApp.__doc__ = _('Active ou désactive la traduction pour l’application en cours.')
+GlobalPlugin.script_toggleTranslateGlobal.__doc__ = _('Active ou désactive la traduction globale.')
 
 # === sortie propre =====================================================
 def _cleanup_on_exit():

@@ -2266,3 +2266,30 @@ msgstr "Opens the translation menu: translation for the application or global, s
 
 msgid "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."
 msgstr "The update is already installed. Restart NVDA to finish."
+
+msgid "Traduit le texte sélectionné."
+msgstr "Translates the selected text."
+
+msgid "Traduit le texte du presse-papiers."
+msgstr "Translates the text on the clipboard."
+
+msgid "Traduit la dernière annonce de NVDA."
+msgstr "Translates NVDA's last announcement."
+
+msgid "Copie la dernière traduction dans le presse-papiers."
+msgstr "Copies the last translation to the clipboard."
+
+msgid "Inverse la langue source et la langue cible des traductions à la demande."
+msgstr "Swaps the source and target languages of translations on request."
+
+msgid "Annonce la langue source et la langue cible actuelles."
+msgstr "Announces the current source and target languages."
+
+msgid "Ouvre la configuration de la traduction dans les Paramètres de NVDA."
+msgstr "Opens the translation configuration in NVDA's Settings dialog."
+
+msgid "Active ou désactive la traduction pour l’application en cours."
+msgstr "Turns translation on or off for the current application."
+
+msgid "Active ou désactive la traduction globale."
+msgstr "Turns global translation on or off."
