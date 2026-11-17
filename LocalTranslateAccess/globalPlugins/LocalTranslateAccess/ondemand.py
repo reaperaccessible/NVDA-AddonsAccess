@@ -92,6 +92,26 @@ def trusted_detection(text, code, confidence):
     return code
 
 
+# Continuous translation sees many short labels: before disturbing the user about a missing
+# language, the detection must be surer and the text longer than for a translation on request.
+CONTINUOUS_CONFIDENCE = 0.8
+CONTINUOUS_MIN_LETTERS = 20
+
+
+def worth_offering(text, origin, confidence, already_offered):
+    """Whether a language missing during continuous translation deserves a question.
+
+    origin: how the language was found ('fasttext' for detection, otherwise it was stated).
+    already_offered: True when this language was already offered since NVDA started.
+    """
+    if already_offered:
+        return False
+    if origin != 'fasttext':
+        return True
+    letters = sum(1 for character in text if character.isalpha())
+    return letters >= CONTINUOUS_MIN_LETTERS and (confidence or 0) >= CONTINUOUS_CONFIDENCE
+
+
 def needs_window(text):
     return len(text) > SPOKEN_LIMIT or '\n' in text.strip()
 

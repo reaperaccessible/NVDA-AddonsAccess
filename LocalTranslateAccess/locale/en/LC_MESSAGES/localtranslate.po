@@ -2401,3 +2401,6 @@ msgstr "No language is installed to translate into your language ({language}). D
 
 msgid "Ajouter des lang&ues…"
 msgstr "A&dd languages…"
+
+msgid "Langue installée : {language}."
+msgstr "Language installed: {language}."

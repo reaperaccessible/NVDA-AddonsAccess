@@ -621,7 +621,24 @@ def _request_translate(text, src, tgt, timeout=None, app=None):
     resolution = getattr(_speech_context, 'resolution', None)
     _speech_context.resolution=None
     timing = resolution['timing'] if resolution and resolution['app']==app and resolution['source']==src else {}
-    return _engine.translate(text, src, tgt, app=app, **timing)
+    # Any installed engine able to translate this language is used, the configured one first.
+    family = _packs.family_for(src, tgt, preferred=_store.config(app or _get_app_key())['family'])
+    if family is None:
+        _continuous_language_missing(text, app, src, tgt)
+        raise ValueError('language not installed')
+    return _engine.translate(text, src, tgt, app=app, family=family, **timing)
+
+_continuous_offered = set()
+
+def _continuous_language_missing(text, app, source, target):
+    """Called from the translation thread when what NVDA says is in a language that is not installed."""
+    report = _source_reports.get(app) or (source, 'manual', None)
+    origin, confidence = (report[1], report[2]) if report[0] == source else ('manual', None)
+    if not ondemand.worth_offering(text, origin, confidence, source in _continuous_offered):
+        return
+    # Asked once per language until NVDA restarts, whatever the answer.
+    _continuous_offered.add(source)
+    wx.CallAfter(_offer_language_install, None, app, source, target)
 
 def _warmup_if_auto():
     engine = _engine
@@ -1301,7 +1318,11 @@ def _offer_language_install(text, app, source, target):
     # The question must be heard: end the quiet period that follows the menu.
     _quiet.close()
     if _configuration_open():
-        _announce(_("La fenêtre LocalTranslate est déjà ouverte."))
+        if text:
+            _announce(_("La fenêtre LocalTranslate est déjà ouverte."))
+        else:
+            # Not the moment to ask: the question may come back the next time this language is heard.
+            _continuous_offered.discard(source)
         return
     plan = _packs.plan(source, target)
     if plan is None:
@@ -1337,9 +1358,12 @@ def _offer_language_install(text, app, source, target):
     elif error is not None or _ondemand_family(app, source, target) is None:
         gui.messageBox(_('Le téléchargement a échoué. Vérifiez votre connexion Internet, puis réessayez.'),
             _('Langue non installée'), wx.OK | wx.ICON_ERROR)
-    else:
+    elif text:
         # The language is there now: do what was asked in the first place.
         _ondemand_start(text, app, '', delayed=True)
+    else:
+        # Asked during continuous translation: what NVDA says next in this language is translated.
+        _announce(_('Langue installée : {language}.').format(language=_label_for_ui(missing)))
 
 def _show_add_languages(parent=None):
     """The list of languages to tick. Returns True when at least one language was added."""
