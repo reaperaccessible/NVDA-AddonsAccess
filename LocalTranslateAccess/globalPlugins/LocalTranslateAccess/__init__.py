@@ -1264,7 +1264,7 @@ def _ondemand_translate(text, app, started):
     def detect():
         try:
             code, confidence = _ondemand['engine'].detect(text)
-            return _normalize_language(code)
+            return ondemand.trusted_detection(text, _normalize_language(code), confidence)
         except Exception:
             return None
     try:
@@ -1374,11 +1374,9 @@ def _ondemand_start(text, app, empty_message, delayed=True):
     threading.Thread(target=_ondemand_translate, args=(text, app, started), daemon=True).start()
 
 def _ondemand_languages_message(app, swapped_notice=False):
+    # The language of each text is detected when it is translated; only the target is fixed.
     source, target = _ondemand_direction(app)
-    if _ondemand['swapped'] or get_source_lang(app) != 'auto':
-        source_label = _label_for_ui(source)
-    else:
-        source_label = _label_for_ui('auto')
+    source_label = _label_for_ui('auto')
     message = _('Langues inversées : de {source} vers {target}.') if swapped_notice else _('Traduction : de {source} vers {target}.')
     return message.format(source=source_label, target=_label_for_ui(target))
 

@@ -60,15 +60,36 @@ def choose_languages(source, target, configured_sources, swapped, detect):
     Returns (source, target). Both are equal when nothing has to be translated.
     """
     others = [code for code in configured_sources if code != target]
+    # The language to fall back on when the text is already in the target language,
+    # and the one the user gets by inverting the direction.
+    other = source if source not in ('auto', target) else (others[0] if others else None)
+    # The language of the text is always detected, whatever the configured source: the
+    # setting only serves when detection cannot tell.
+    detected = detect()
     if swapped:
-        back = source if source != 'auto' else (others[0] if others else None)
-        return (target, back) if back else (target, target)
-    if source == 'auto':
-        source = detect() or (others[0] if others else target)
-    if source == target and others:
-        # The text is already in the target language: translate it the other way round.
-        return target, others[0]
-    return source, target
+        spoken = detected or target
+        wanted = [other, target]
+    else:
+        spoken = detected or other or target
+        wanted = [target, other]
+    for goal in wanted:
+        if goal and goal != spoken:
+            return spoken, goal
+    return spoken, spoken
+
+
+# Below this, the detector's answer is too uncertain to overrule the configured language.
+DETECTION_CONFIDENCE = 0.5
+# Too short a text gives the detector nothing to work on.
+DETECTION_MIN_LETTERS = 12
+
+
+def trusted_detection(text, code, confidence):
+    """The detected language, or None when the detection should not be relied on."""
+    letters = sum(1 for character in text if character.isalpha())
+    if not code or letters < DETECTION_MIN_LETTERS or confidence < DETECTION_CONFIDENCE:
+        return None
+    return code
 
 
 def needs_window(text):
