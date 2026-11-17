@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpeechHistoryAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>SpeechHistoryAccess</h1>
+<p>SpeechHistoryAccess garde en mémoire ce que NVDA vient d'annoncer. Vous pouvez relire les annonces précédentes, les copier dans le presse-papiers, en enregistrer plusieurs d'un coup, ou afficher tout l'historique dans une fenêtre.</p>
+<p>L'extension s'affiche en français lorsque NVDA est en français, et en anglais dans toutes les autres langues.</p>
+
+<h2>Raccourcis clavier</h2>
+<ul>
+<li><kbd>NVDA+Maj+F10</kbd> : lire l'élément précédent de l'historique, c'est-à-dire une annonce plus ancienne.</li>
+<li><kbd>NVDA+Maj+F11</kbd> : lire l'élément suivant de l'historique, c'est-à-dire une annonce plus récente.</li>
+<li><kbd>NVDA+Maj+F12</kbd> : copier dans le presse-papiers l'élément sélectionné. Si vous n'avez pas parcouru l'historique, c'est la dernière annonce de NVDA.</li>
+<li><kbd>NVDA+Maj+F9</kbd> : démarrer l'enregistrement de la parole.</li>
+<li><kbd>NVDA+Maj+F8</kbd> : arrêter l'enregistrement et copier dans le presse-papiers tout ce qui a été annoncé entre-temps.</li>
+<li><kbd>NVDA+H</kbd> : afficher tout l'historique dans une fenêtre que vous parcourez avec les flèches.</li>
+</ul>
+<p>Un bip grave indique que vous avez atteint le début ou la fin de l'historique.</p>
+<p>Remarque : <kbd>NVDA+Maj+F9</kbd> est aussi une commande de NVDA, qui ramène le curseur de revue au marqueur de début de copie. Tant que l'extension est active, ce raccourci démarre l'enregistrement à la place.</p>
+
+<h3>Modifier les raccourcis</h3>
+<p>Ouvrez le menu NVDA, Préférences, Gestes de commandes. Les six commandes de l'extension se trouvent dans la rubrique « SpeechHistoryAccess ». Vous pouvez y changer ou retirer chaque raccourci.</p>
+
+<h2>Relire et copier une annonce</h2>
+<ol>
+<li>Appuyez sur <kbd>NVDA+Maj+F10</kbd> autant de fois que nécessaire pour remonter jusqu'à l'annonce voulue.</li>
+<li>Appuyez sur <kbd>NVDA+Maj+F12</kbd> pour la copier.</li>
+<li>Collez-la où vous voulez avec <kbd>Ctrl+V</kbd>.</li>
+</ol>
+<p>Dès que NVDA annonce quelque chose de nouveau, la sélection revient sur l'annonce la plus récente.</p>
+
+<h2>Enregistrer plusieurs annonces</h2>
+<ol>
+<li>Appuyez sur <kbd>NVDA+Maj+F9</kbd>. NVDA annonce « Enregistrement de la parole démarré ».</li>
+<li>Faites ce que vous voulez capturer : lire un texte, parcourir une fenêtre, etc.</li>
+<li>Appuyez sur <kbd>NVDA+Maj+F8</kbd>. Toutes les annonces faites entre-temps sont copiées dans le presse-papiers, une par ligne.</li>
+</ol>
+
+<h2>Réglages</h2>
+<p>Ouvrez le menu NVDA, Préférences, Paramètres, puis la catégorie « SpeechHistoryAccess ».</p>
+<ul>
+<li><strong>Nombre maximal d'entrées dans l'historique</strong> : 500 par défaut. Le changement prend effet au redémarrage de NVDA.</li>
+<li><strong>Après la copie</strong> : ce que fait NVDA pour confirmer une copie. Les choix sont Ne rien faire, Bip, Annoncer, ou Bip et annonce. Le réglage par défaut est Bip.</li>
+<li><strong>Fréquence du bip</strong> : 1500 Hz par défaut.</li>
+<li><strong>Durée du bip</strong> : 120 millisecondes par défaut.</li>
+<li><strong>Jouer un bip d'exemple</strong> : ce bouton fait entendre le bip avec la fréquence et la durée choisies.</li>
+<li><strong>Supprimer les espaces au début du texte copié</strong> : décochée par défaut.</li>
+<li><strong>Supprimer les espaces à la fin du texte copié</strong> : décochée par défaut.</li>
+<li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> : cochée par défaut.</li>
+<li><strong>Vérifier les mises à jour maintenant</strong> : ce bouton lance la vérification tout de suite.</li>
+</ul>
+<p>Les réglages du bip ne sont disponibles que si « Après la copie » utilise un bip.</p>
+
+<h2>Mises à jour</h2>
+<p>SpeechHistoryAccess ne passe pas par l'Add-on Store de NVDA. L'extension vérifie elle-même, peu après le démarrage de NVDA, si une nouvelle version est publiée. Si c'est le cas, une fenêtre vous propose de l'installer, puis de redémarrer NVDA.</p>
+<p>Cette vérification contacte uniquement GitHub. Pour la désactiver, décochez la case correspondante dans les réglages ; vous pourrez toujours vérifier à la main avec le bouton.</p>
+<p>Dans l'Add-on Store, l'extension apparaît avec le canal « Externe ». C'est normal pour une extension installée en dehors du Store.</p>
+
+<h2>Confidentialité</h2>
+<p>L'historique reste dans la mémoire de NVDA. Il n'est écrit dans aucun fichier et il est effacé à la fermeture de NVDA.</p>
+
+<h2>Crédits et licence</h2>
+<p>SpeechHistoryAccess est publié par ReaperAccessible. L'extension est basée sur Speech History, de Tyler Spivey et James Scholes.</p>
+<p>Elle est distribuée sous la licence publique générale GNU, version 2.</p>
+<p>Code source et nouvelles versions : <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>

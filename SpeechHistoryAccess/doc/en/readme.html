@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpeechHistoryAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>SpeechHistoryAccess</h1>
+<p>SpeechHistoryAccess remembers what NVDA has just said. You can review earlier announcements, copy them to the clipboard, record several of them at once, or show the whole history in a window.</p>
+<p>The add-on is displayed in French when NVDA is in French, and in English in every other language.</p>
+
+<h2>Keyboard shortcuts</h2>
+<ul>
+<li><kbd>NVDA+Shift+F10</kbd>: review the previous item in the history, that is, an older announcement.</li>
+<li><kbd>NVDA+Shift+F11</kbd>: review the next item in the history, that is, a more recent announcement.</li>
+<li><kbd>NVDA+Shift+F12</kbd>: copy the selected item to the clipboard. If you have not moved through the history, this is NVDA's last announcement.</li>
+<li><kbd>NVDA+Shift+F9</kbd>: start recording speech.</li>
+<li><kbd>NVDA+Shift+F8</kbd>: stop recording and copy everything announced in the meantime to the clipboard.</li>
+<li><kbd>NVDA+H</kbd>: show the whole history in a window that you read with the arrow keys.</li>
+</ul>
+<p>A low beep tells you that you have reached the start or the end of the history.</p>
+<p>Note: <kbd>NVDA+Shift+F9</kbd> is also an NVDA command, which moves the review cursor back to the start marker for copying. While the add-on is enabled, this shortcut starts recording instead.</p>
+
+<h3>Changing the shortcuts</h3>
+<p>Open the NVDA menu, Preferences, Input gestures. The add-on's six commands are in the "SpeechHistoryAccess" category. You can change or remove each shortcut there.</p>
+
+<h2>Reviewing and copying an announcement</h2>
+<ol>
+<li>Press <kbd>NVDA+Shift+F10</kbd> as many times as needed to go back to the announcement you want.</li>
+<li>Press <kbd>NVDA+Shift+F12</kbd> to copy it.</li>
+<li>Paste it wherever you like with <kbd>Ctrl+V</kbd>.</li>
+</ol>
+<p>As soon as NVDA says something new, the selection returns to the most recent announcement.</p>
+
+<h2>Recording several announcements</h2>
+<ol>
+<li>Press <kbd>NVDA+Shift+F9</kbd>. NVDA says "Started recording speech".</li>
+<li>Do whatever you want to capture: read a text, explore a window, and so on.</li>
+<li>Press <kbd>NVDA+Shift+F8</kbd>. Every announcement made in the meantime is copied to the clipboard, one per line.</li>
+</ol>
+
+<h2>Settings</h2>
+<p>Open the NVDA menu, Preferences, Settings, then the "SpeechHistoryAccess" category.</p>
+<ul>
+<li><strong>Maximum number of history entries</strong>: 500 by default. The change takes effect when NVDA restarts.</li>
+<li><strong>After copying speech</strong>: what NVDA does to confirm a copy. The choices are Do nothing, Beep, Speak, or Both beep and speak. The default is Beep.</li>
+<li><strong>Beep frequency</strong>: 1500 Hz by default.</li>
+<li><strong>Beep duration</strong>: 120 milliseconds by default.</li>
+<li><strong>Play example beep</strong>: this button plays the beep with the chosen frequency and duration.</li>
+<li><strong>Trim whitespace from start when copying text</strong>: unchecked by default.</li>
+<li><strong>Trim whitespace from end when copying text</strong>: unchecked by default.</li>
+<li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
+<li><strong>Check for updates now</strong>: this button starts the check right away.</li>
+</ul>
+<p>The beep settings are only available when "After copying speech" uses a beep.</p>
+
+<h2>Updates</h2>
+<p>SpeechHistoryAccess does not go through NVDA's Add-on Store. The add-on checks by itself, shortly after NVDA starts, whether a new version has been published. If so, a window offers to install it, then to restart NVDA.</p>
+<p>This check contacts GitHub only. To turn it off, uncheck the corresponding box in the settings; you can still check by hand with the button.</p>
+<p>In the Add-on Store, the add-on is listed with the "External" channel. This is normal for an add-on installed from outside the Store.</p>
+
+<h2>Privacy</h2>
+<p>The history stays in NVDA's memory. It is not written to any file and it is cleared when NVDA exits.</p>
+
+<h2>Credits and licence</h2>
+<p>SpeechHistoryAccess is published by ReaperAccessible. The add-on is based on Speech History, by Tyler Spivey and James Scholes.</p>
+<p>It is distributed under the GNU General Public License, version 2.</p>
+<p>Source code and new versions: <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>
