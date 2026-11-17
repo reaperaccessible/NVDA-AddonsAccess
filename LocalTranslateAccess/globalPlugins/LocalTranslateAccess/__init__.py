@@ -762,7 +762,20 @@ def _resolve_source(app, source, document, text):
     def report(code,system,confidence):
         timing['source_system']=system
         _source_report(app,code,system,confidence)
-    resolved=_app_languages.resolve(app, source, document, text, detect,report=report)
+    # The language of the text itself comes first: an application configured for English, or a
+    # page declaring English, may well show a message written in another language.
+    resolved=None
+    try:
+        code,confidence=detect(text)
+        resolved=ondemand.trusted_continuous(text,_normalize_language(code),confidence)
+    except Exception:
+        resolved=None
+    if resolved:
+        timing['source_mode']='auto'
+        report(resolved,'fasttext',confidence)
+    else:
+        # Too short or too uncertain to tell: fall back on what is configured or declared.
+        resolved=_app_languages.resolve(app, source, document, text, detect,report=report)
     _speech_context.resolution={'app':app,'source':resolved,'timing':timing}
     return resolved
 

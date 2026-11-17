@@ -98,6 +98,15 @@ CONTINUOUS_CONFIDENCE = 0.8
 CONTINUOUS_MIN_LETTERS = 20
 
 
+def trusted_continuous(text, code, confidence):
+    """The detected language when it is sure enough to overrule a configured or declared one
+    during continuous translation, else None."""
+    letters = sum(1 for character in text if character.isalpha())
+    if not code or letters < CONTINUOUS_MIN_LETTERS or (confidence or 0) < CONTINUOUS_CONFIDENCE:
+        return None
+    return code
+
+
 def worth_offering(text, origin, confidence, already_offered):
     """Whether a language missing during continuous translation deserves a question.
 
