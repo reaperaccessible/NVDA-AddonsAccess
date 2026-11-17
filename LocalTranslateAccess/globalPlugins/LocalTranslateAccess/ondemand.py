@@ -183,8 +183,8 @@ CLEAR = 0.5             # the detector leans clearly one way...
 CLEAR_RATIO = 2.0       # ...when its first guess is at least twice as likely as the second
 CONTEXT = 0.15          # enough for a language that was being read just before
 PLAUSIBLE = 0.35        # the least to accept a guess when nothing else is known
-MIN_LETTERS = 12        # below this, a text says too little about its language
-CONTEXT_LETTERS = 8
+MIN_LETTERS = 12        # below this, only a sure answer or the context can decide
+SHORT_LETTERS = 4       # below this, a text says nothing about its language
 RECENT_SECONDS = 120    # how long "just before" lasts
 
 
@@ -206,15 +206,16 @@ def decide_language(candidates, letters, fallback=None, recent=None):
     best, probability = usable[0]
     second = usable[1][1] if len(usable) > 1 else 0.0
     first_is_known = candidates[0][0] == best
+    if first_is_known and letters >= SHORT_LETTERS and probability >= STRONG:
+        # The detector is sure, even of a few words such as a greeting at the end of a message.
+        return best, letters >= CONTINUOUS_MIN_LETTERS
     if letters >= MIN_LETTERS and first_is_known:
-        if probability >= STRONG:
-            return best, letters >= CONTINUOUS_MIN_LETTERS
         if probability >= CLEAR and probability >= CLEAR_RATIO * second:
             # A sentence quoting a few words of another language lands here. It is not sure
             # enough to ask the user anything, but it does tell what is being read.
             _clear_decisions.add(best)
             return best, False
-    if recent and letters >= CONTEXT_LETTERS:
+    if recent and letters >= SHORT_LETTERS:
         # The same message goes on: an unsure sentence keeps the language of the previous one.
         for code, chance in usable:
             if code == recent and (chance >= CONTEXT or code == best):
