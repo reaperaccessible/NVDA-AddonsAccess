@@ -10,7 +10,7 @@
 <h1>LocalTranslateAccess</h1>
 <p>LocalTranslateAccess traduit ce que NVDA annonce. La traduction est calculée sur votre ordinateur : aucun texte n'est envoyé sur Internet.</p>
 <p>Vous pouvez traduire en continu tout ce que NVDA dit dans une application ou dans toutes, ou traduire ponctuellement un texte sélectionné, le presse-papiers ou la dernière annonce.</p>
-<p>Le français et l'anglais sont inclus et fonctionnent dès l'installation. Les autres langues s'ajoutent sous forme de packs de langues, téléchargés à votre demande.</p>
+<p>Le français et l'anglais sont inclus et fonctionnent dès l'installation. Les autres langues se téléchargent à votre demande, en quelques secondes.</p>
 <p>L'extension s'affiche en français lorsque NVDA est en français, et en anglais dans toutes les autres langues.</p>
 
 <h2>Le raccourci et le menu de traduction</h2>
@@ -24,6 +24,7 @@
 <li><strong>Copier la dernière traduction</strong> (C) : placer la dernière traduction dans le presse-papiers.</li>
 <li><strong>Inverser les langues</strong> (I) : traduire dans l'autre sens.</li>
 <li><strong>Annoncer les langues</strong> (L) : entendre la langue source et la langue cible actuelles.</li>
+<li><strong>Ajouter des langues</strong> (U) : télécharger d'autres langues.</li>
 <li><strong>Configuration de la traduction</strong> (F) : ouvrir les réglages de l'extension.</li>
 </ul>
 <h3>Attribuer vos propres raccourcis</h3>
@@ -37,19 +38,13 @@
 <p>C'est aussi dans cette rubrique que vous pouvez changer le raccourci du menu.</p>
 
 <h2>Traduire en continu</h2>
-<p>Choisissez « Traduction pour cette application » lorsqu'un seul programme est dans une autre langue, par exemple un jeu ou un logiciel non traduit. Les autres applications ne sont pas touchées, et chaque application garde ses propres langues.</p>
-<p>Choisissez « Traduction globale » pour traduire partout avec un seul réglage de langues.</p>
+<p>Choisissez « Traduction pour cette application » lorsqu'un seul programme est dans une autre langue, par exemple un jeu ou un logiciel non traduit. Les autres applications ne sont pas touchées.</p>
+<p>Choisissez « Traduction globale » pour traduire partout.</p>
 <p>Un bip et une annonce confirment l'activation. Refaites le même choix dans le menu pour désactiver la traduction.</p>
 
 <h3>Première activation</h3>
-<p>La première fois que vous activez la traduction pour une application, ou en mode global, un assistant s'ouvre. Tout se fait dans la même fenêtre.</p>
-<ol>
-<li>Choisissez une ou plusieurs langues sources avec les flèches et Espace. La langue détectée dans l'application est présélectionnée lorsqu'elle est connue.</li>
-<li>Choisissez la langue cible, puis « Ajouter ». Vous pouvez ajouter plusieurs paires de langues.</li>
-<li>Choisissez un modèle dans la liste. Ceux qui sont déjà prêts portent la mention « installé ».</li>
-<li>Si le bouton indique « Appliquer », validez : la traduction s'active. S'il indique « Télécharger », validez pour télécharger le pack de langues ; le bouton affiche la progression, puis devient « Appliquer ».</li>
-</ol>
-<p>Annuler ferme l'assistant sans activer la traduction. Ce qui a déjà été téléchargé reste disponible.</p>
+<p>Il n'y a rien à préparer : la traduction s'active tout de suite, avec les langues déjà installées, et traduit vers votre langue. La langue de ce que NVDA annonce est détectée automatiquement.</p>
+<p>Si aucune langue n'est encore installée pour votre langue, une fenêtre vous propose d'en ajouter.</p>
 
 <h2>Traduire un texte à la demande</h2>
 <p>Les entrées « Traduire la sélection », « Traduire le presse-papiers » et « Traduire la dernière annonce » fonctionnent même si la traduction en continu est désactivée.</p>
@@ -63,56 +58,45 @@
 
 <h2>Réglages</h2>
 <p>Ouvrez le menu NVDA, Préférences, Paramètres, puis la catégorie « LocalTranslateAccess ». Vous y arrivez aussi par « Configuration de la traduction » dans le menu de traduction.</p>
-<p>La catégorie contient quatre onglets, puis les réglages de mise à jour. La traduction en continu est suspendue pendant que cette catégorie est ouverte.</p>
-
-<h3>Onglet Langues</h3>
 <ul>
-<li><strong>Langue source pour la traduction globale</strong> : « Détection automatique » ou une langue précise.</li>
-<li><strong>Langue cible pour la traduction globale</strong> : la langue dans laquelle NVDA annonce les traductions.</li>
-<li><strong>Modèle pour la traduction globale</strong> : le modèle utilisé pour ces langues.</li>
-<li><strong>Applications avec une langue source configurée</strong> : la liste des applications que vous avez déjà réglées. Sélectionnez-en une pour modifier les trois réglages suivants.</li>
-<li><strong>Langue source, langue cible et modèle pour cette application</strong> : les mêmes choix, propres à l'application sélectionnée.</li>
-<li><strong>Utiliser la carte graphique pour accélérer la traduction</strong> : cette case apparaît seulement pour les modèles et les ordinateurs qui le permettent.</li>
-</ul>
-<p>Le bouton sous les onglets indique « Appliquer » quand tout est prêt, et « Télécharger » quand le modèle choisi n'est pas encore installé. Le bouton OK des Paramètres de NVDA enregistre aussi vos choix de langues, mais ne lance jamais de téléchargement.</p>
-<p>La première langue cible proposée est celle de la voix de NVDA. En détection automatique, une langue détectée pour laquelle aucun modèle n'est installé n'est pas traduite : le texte d'origine est annoncé.</p>
-
-<h3>Onglet Modèles installés</h3>
-<p>Cet onglet liste les modèles présents sur votre ordinateur, avec leur taille. C'est ici que vous gérez vos langues.</p>
-<ul>
-<li><strong>Ajouter une langue</strong> : ouvre la liste des langues disponibles, avec la taille de chacune. Cochez celles que vous voulez avec Espace, puis validez « Télécharger ». Vos réglages de traduction ne sont pas modifiés : les langues sont simplement disponibles.</li>
-<li><strong>Supprimer le modèle sélectionné</strong> : libère de la place sur votre disque.</li>
-<li><strong>Actualiser le catalogue des modèles</strong> : affiche les packs de langues ajoutés depuis l'installation de l'extension.</li>
-</ul>
-
-<h3>Onglet Cache de traduction</h3>
-<p>L'extension garde en mémoire les traductions déjà faites, pour les redonner immédiatement. Dans cet onglet, vous pouvez rechercher une traduction, la corriger, et exporter ou importer un cache pour le partager.</p>
-
-<h3>Onglet Performances</h3>
-<p>Cet onglet indique le temps de chargement des modèles et le temps moyen de traduction par paire de langues. Un bouton efface ces mesures.</p>
-
-<h3>Mises à jour</h3>
-<ul>
+<li><strong>Traduire vers</strong> : la langue dans laquelle vous voulez entendre les traductions. Par défaut, c'est celle de la voix de NVDA. Si vous choisissez une langue qui n'est pas installée, l'extension vous propose de la télécharger lorsque vous validez.</li>
+<li><strong>Langues installées</strong> : la liste des langues que l'extension sait traduire vers votre langue, avec la place qu'elles occupent.</li>
+<li><strong>Ajouter des langues</strong> : ouvre la liste des langues disponibles, avec la taille de chacune. Cochez celles que vous voulez avec Espace, puis validez « Télécharger ».</li>
+<li><strong>Supprimer la langue sélectionnée</strong> : libère la place occupée par la langue choisie dans la liste. L'anglais ne peut pas être supprimé, car il sert de passerelle aux autres langues.</li>
+<li><strong>Options avancées</strong> : ouvre une fenêtre pour les réglages dont la plupart des gens n'ont jamais besoin.</li>
 <li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> : cochée par défaut.</li>
-<li><strong>Vérifier les mises à jour maintenant</strong> : ce bouton lance la vérification tout de suite.</li>
+<li><strong>Vérifier les mises à jour maintenant</strong> : lance la vérification tout de suite.</li>
 </ul>
 
-<h2>Langues et packs de langues</h2>
-<p>Un pack de langues est téléchargé une seule fois, puis utilisé sans connexion. Il existe deux sortes de modèles.</p>
+<h2>Les langues</h2>
+<p>Le français et l'anglais sont inclus. Une autre langue se télécharge une seule fois, puis fonctionne sans connexion. Vous pouvez en ajouter de trois façons :</p>
 <ul>
-<li><strong>Firefox / Bergamot</strong> : un modèle par paire de langues, rapide, d'environ 25 à 50 Mo. C'est le modèle inclus pour le français et l'anglais. Pour deux langues autres que l'anglais, la traduction passe par l'anglais et demande donc deux packs.</li>
-<li><strong>Modèles multilingues</strong> (NLLB-200, SMaLL-100, M2M-100) : un seul téléchargement de 350 à 650 Mo couvre de nombreuses langues, y compris certaines que Bergamot ne propose pas. Ils sont plus lents.</li>
+<li>par « Ajouter des langues » dans le menu de traduction ;</li>
+<li>par le bouton « Ajouter des langues » des réglages ;</li>
+<li>en répondant Oui lorsque l'extension vous signale qu'une langue manque.</li>
 </ul>
+<p>La plupart des langues pèsent de 25 à 60 Mo. Quelques langues plus rares ne sont disponibles que dans un pack multilingue de plusieurs centaines de Mo, qui en apporte une centaine d'un coup ; sa taille est indiquée avant le téléchargement.</p>
+<p>La traduction en continu utilise les langues installées de la liste. Les langues apportées seulement par un pack multilingue servent à la traduction à la demande.</p>
+
+<h2>Options avancées</h2>
+<p>Cette fenêtre s'ouvre par le bouton « Options avancées » des réglages. Elle n'est utile que pour un besoin particulier. Elle contient quatre onglets :</p>
+<ul>
+<li><strong>Langues</strong> : donner à une application des langues différentes des autres, ou choisir vous-même le moteur de traduction.</li>
+<li><strong>Modèles installés</strong> : voir et supprimer les fichiers de traduction un par un, et actualiser la liste des langues disponibles.</li>
+<li><strong>Cache de traduction</strong> : l'extension garde en mémoire les traductions déjà faites. Vous pouvez en rechercher une, la corriger, et exporter ou importer un cache pour le partager.</li>
+<li><strong>Performances</strong> : le temps de chargement et le temps moyen de traduction. Un bouton efface ces mesures.</li>
+</ul>
+<p>La traduction en continu est suspendue pendant que cette fenêtre est ouverte.</p>
 
 <h2>Mises à jour de l'extension</h2>
 <p>LocalTranslateAccess ne passe pas par l'Add-on Store de NVDA. L'extension vérifie elle-même, peu après le démarrage de NVDA, si une nouvelle version est publiée. Si c'est le cas, une fenêtre vous propose de l'installer. Lorsque plusieurs extensions ReaperAccessible se mettent à jour ensemble, leurs fenêtres s'ouvrent l'une après l'autre et NVDA ne demande à redémarrer qu'une seule fois, à la fin.</p>
-<p>Vos langues, vos modèles et votre cache sont conservés lors d'une mise à jour.</p>
+<p>Vos réglages, vos langues installées et votre cache sont conservés lors d'une mise à jour.</p>
 <p>Dans l'Add-on Store, l'extension apparaît avec le canal « Externe ». C'est normal pour une extension installée en dehors du Store.</p>
 
 <h2>Confidentialité</h2>
 <ul>
 <li>Les textes à traduire et leurs traductions restent sur votre ordinateur.</li>
-<li>L'extension contacte Internet dans deux cas seulement : pour télécharger un pack de langues ou actualiser le catalogue, à votre demande, et pour vérifier les mises à jour. Ces échanges se font avec GitHub.</li>
+<li>L'extension contacte Internet dans deux cas seulement : pour télécharger une langue, à votre demande, et pour vérifier les mises à jour. Ces échanges se font avec GitHub.</li>
 <li>Les mesures de performances ne contiennent que des durées, jamais de texte.</li>
 </ul>
 

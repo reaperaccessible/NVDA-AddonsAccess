@@ -49,6 +49,26 @@ class Plan:
         return not self.missing and not self.runtimes
 
 
+class Item:
+    """One line of the list of installed languages."""
+
+    def __init__(self, kind, code, entries, size, count=1):
+        self.kind = kind          # 'language', or 'multilingual' for a pack of many languages
+        self.code = code          # the language code, or the engine name for a multilingual pack
+        self.entries = entries    # the files that removing this line deletes
+        self.size = size
+        self.count = count        # number of languages a multilingual pack brings
+
+    @property
+    def removable(self):
+        return bool(self.entries)
+
+
+def _owner(entry):
+    """The language a fast-engine file belongs to: the one of its pair that is not English."""
+    return entry['target'] if entry['source'] == 'en' else entry['source']
+
+
 class Packs:
     def __init__(self, store, machine=machine):
         self.store = store
@@ -114,6 +134,71 @@ class Packs:
             if plan is not None:
                 result.append((code, plan))
         return result
+
+    def _installed_entries(self):
+        return [entry for entry in self.store.installed_entries() if not entry.get('outdated')]
+
+    def continuous(self, target):
+        """(engine, languages) that continuous translation into `target` can use right now.
+
+        Continuous translation runs one engine at a time: the fast one whenever it has
+        a language to offer, otherwise a multilingual one. (None, []) when nothing is installed.
+        """
+        installed = self._installed_entries()
+        for family in ORDER:
+            if not self.store.runtime_ready(family):
+                continue
+            entries = [entry for entry in installed if entry['family'] == family]
+            if not entries:
+                continue
+            sources = []
+            for code in self.store.languages(family):
+                if code == target:
+                    continue
+                try:
+                    self.store._route(entries, code, target)
+                    sources.append(code)
+                except ValueError:
+                    pass
+            if sources:
+                return family, sources
+        return None, []
+
+    def inventory(self, target):
+        """What is installed, as the user sees it: languages, then multilingual packs."""
+        installed = self._installed_entries()
+        fast = [entry for entry in installed if entry['family'] == BERGAMOT]
+        items = []
+        if self.store.runtime_ready(BERGAMOT):
+            for code in self.store.languages(BERGAMOT):
+                if code == target:
+                    continue
+                try:
+                    self.store._route(fast, code, target)
+                except ValueError:
+                    continue
+                # A fast-engine file links English and one other language: it belongs to that
+                # other language. English itself owns none, so it can never be removed.
+                own = [entry for entry in fast if _owner(entry) == code]
+                items.append(Item('language', code, own, self._size(own)))
+        for family in MULTILINGUAL:
+            for entry in installed:
+                if entry['family'] == family:
+                    items.append(Item('multilingual', family, [entry], self._size([entry]), len(entry.get('languages', []))))
+        return items
+
+    def _size(self, entries):
+        total = 0
+        for entry in entries:
+            try:
+                total += sum(path.stat().st_size for path in self.store.path(entry['id']).rglob('*') if path.is_file())
+            except OSError:
+                pass
+        return total
+
+    def remove(self, item):
+        for entry in item.entries:
+            self.store.remove(entry)
 
     def download(self, plans, cancel, progress):
         """Install what the plans still miss. `progress(done, total)` gets bytes over all the files."""

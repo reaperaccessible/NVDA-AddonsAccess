@@ -2353,3 +2353,51 @@ msgstr "Translation into this language ({language}) is not installed. Do you wan
 
 msgid "Téléchargement : {language}"
 msgstr "Downloading: {language}"
+
+msgid "&Traduire vers :"
+msgstr "&Translate into:"
+
+msgid "Traduire vers"
+msgstr "Translate into"
+
+msgid "&Langues installées :"
+msgstr "Installed &languages:"
+
+msgid "Langues installées"
+msgstr "Installed languages"
+
+msgid "A&jouter des langues…"
+msgstr "&Add languages…"
+
+msgid "&Supprimer la langue sélectionnée"
+msgstr "&Remove the selected language"
+
+msgid "&Options avancées…"
+msgstr "Advanced &options…"
+
+msgid "Options avancées"
+msgstr "Advanced options"
+
+msgid "Pack multilingue : {count} langues"
+msgstr "Multilingual pack: {count} languages"
+
+msgid "Cette langue est nécessaire aux autres : elle ne peut pas être supprimée."
+msgstr "This language is needed by the others: it cannot be removed."
+
+msgid "Langue supprimée : {language}."
+msgstr "Language removed: {language}."
+
+msgid "La langue n’a pas pu être supprimée."
+msgstr "The language could not be removed."
+
+msgid "La langue choisie ({language}) ne peut pas être utilisée sur cet ordinateur."
+msgstr "The chosen language ({language}) cannot be used on this computer."
+
+msgid "La langue choisie ({language}) n’est pas installée. Voulez-vous la télécharger ? ({size})"
+msgstr "The chosen language ({language}) is not installed. Do you want to download it? ({size})"
+
+msgid "Aucune langue n’est installée pour traduire vers votre langue ({language}). Voulez-vous en ajouter ?"
+msgstr "No language is installed to translate into your language ({language}). Do you want to add some?"
+
+msgid "Ajouter des lang&ues…"
+msgstr "A&dd languages…"

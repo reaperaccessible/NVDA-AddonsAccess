@@ -110,6 +110,14 @@ class Store:
             else:self.settings['apps'][app]=value
             atomic_json(self.root/'settings.json',self.settings)
 
+    def configure_simple(self,app,family,sources,target):
+        """A configuration the add-on keeps up to date itself: every installed language, into one target."""
+        self.configure(app,family,sources,[target],target,pairs=[[source,target] for source in sources])
+        with self.lock:
+            value=self.settings['global'] if app=='global' else self.settings['apps'][app]
+            value['simple']=True
+            atomic_json(self.root/'settings.json',self.settings)
+
     def entries(self,family):return [x for x in self.catalog['entries'] if x['family']==family]
 
     def download_specs(self,entries):

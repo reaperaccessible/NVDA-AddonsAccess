@@ -1116,6 +1116,8 @@ def _show_model_manager(parent=None, app=None, activate=False, on_done=None):
         try:
             gui.mainFrame.prePopup()
             prepared = True
+            # A window is about to open: it must be announced, so the quiet period after the menu ends now.
+            _quiet.close()
             dlg=SetupWizard(parent or gui.mainFrame,_store,_telemetry,app,hooks,activate)
             accepted = dlg.ShowModal() == wx.ID_OK
         except Exception:
@@ -1158,24 +1160,13 @@ class LocalTranslateAccessSettingsPanel(gui.settingsDialogs.SettingsPanel):
     title = 'LocalTranslateAccess'
     # Set by the global plugin; None on secure screens.
     updater = None
-    MANAGER_SIZE = (680, 560)
 
     def makeSettings(self, settingsSizer):
-        global _settings_manager
-        self.manager = None
-        if _configuration_open():
-            # The first-use wizard, or another copy of this panel, is already editing the configuration.
-            settingsSizer.Add(wx.StaticText(self, label=_("La fenêtre LocalTranslate est déjà ouverte.")), 0, wx.ALL, 8)
-        else:
-            from .manager_dialog import ManagerPanel
-            if _dispatcher is not None:
-                _dispatcher.cancel()
-            app = _settings_application()
-            self.manager = ManagerPanel(self, _store, _telemetry, app, _manager_hooks(app))
-            self.manager.SetMinSize(self.MANAGER_SIZE)
-            settingsSizer.Add(self.manager, 1, wx.EXPAND)
-            _settings_manager = self.manager
-            self.Bind(wx.EVT_WINDOW_DESTROY, self.onDestroy)
+        from .simple_settings import SimpleSettings
+        self.simple = SimpleSettings(self, _packs, dict(
+            label=_label_for_ui, target=lambda: _target_for('global'), announce=_announce,
+            add_languages=_show_add_languages, remove=_remove_language, advanced=_show_advanced))
+        settingsSizer.Add(self.simple, 1, wx.EXPAND)
         helper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
         self.checkForUpdatesCB = helper.addItem(wx.CheckBox(self, label=_('Vérifier a&utomatiquement les mises à jour au démarrage de NVDA')))
         self.checkForUpdatesCB.SetValue(config.conf[CONFIG_SECTION]['checkForUpdates'])
@@ -1183,31 +1174,14 @@ class LocalTranslateAccessSettingsPanel(gui.settingsDialogs.SettingsPanel):
         self.Bind(wx.EVT_BUTTON, lambda event: self.updater.check(manual=True), self.checkNowButton)
         self.checkNowButton.Enable(self.updater is not None)
 
-    def closeManager(self):
-        """Stop the configuration panel's background work. Safe to call twice."""
-        global _settings_manager
-        manager, self.manager = self.manager, None
-        if manager is None:
-            return
-        try:
-            manager.shutdown()
-        except Exception:
-            log.exception('LocalTranslateAccess: closing the configuration panel failed')
-        if _settings_manager is manager:
-            _settings_manager = None
-
-    def onDestroy(self, event):
-        if event.GetEventObject() is self:
-            self.closeManager()
-        event.Skip()
-
     def onSave(self):
         config.conf[CONFIG_SECTION]['checkForUpdates'] = self.checkForUpdatesCB.GetValue()
-        if self.manager is not None:
-            self.manager.save_pending()
-
-    def onDiscard(self):
-        self.closeManager()
+        code = self.simple.chosen_target()
+        if code and code != _target_for('global'):
+            # May ask to download the language; if refused, the choice goes back to what it was.
+            if not _change_target(code, self):
+                self.simple.select_target(_target_for('global'))
+            self.simple.reload()
 
 # === Traduction à la demande (menu) ====================================
 import textInfos
@@ -1291,7 +1265,7 @@ def _ondemand_translate(text, app, started):
         translation = ''.join(result)
         _ondemand['last'] = translation
         if ondemand.needs_window(translation):
-            wx.CallAfter(ui.browseableMessage, translation, _('Traduction'))
+            wx.CallAfter(_show_translation_window, translation)
         else:
             _ondemand_say(translation, started)
     except Exception:
@@ -1318,7 +1292,7 @@ def _language_tools(parent=None):
     """What the language windows need: where to speak, what to do on errors and after a change."""
     return dict(announce=_announce,
         report_error=lambda: log.exception('LocalTranslateAccess: language download failed'),
-        changed=_manager_changed)
+        changed=_languages_changed)
 
 def _offer_language_install(text, app, source, target):
     """A text is in a language that is not installed: one plain question, then a direct download."""
@@ -1357,7 +1331,7 @@ def _offer_language_install(text, app, source, target):
         if prepared:
             gui.mainFrame.postPopup()
         _manager_open = False
-    _manager_changed()
+    _languages_changed()
     if error == 'cancelled':
         _announce(_('Téléchargement annulé.'))
     elif error is not None or _ondemand_family(app, source, target) is None:
@@ -1371,13 +1345,139 @@ def _show_add_languages(parent=None):
     """The list of languages to tick. Returns True when at least one language was added."""
     from . import language_ui
     tools = _language_tools()
-    dialog = language_ui.AddLanguagesDialog(parent or gui.mainFrame, _packs, _target_for('global'), _label_for_ui,
-        tools['announce'], tools['report_error'], tools['changed'])
+    # Opened on its own (from the menu), the window has to be brought to the front like any NVDA dialog.
+    standalone = parent is None
+    if standalone:
+        gui.mainFrame.prePopup()
+    dialog = None
     try:
+        dialog = language_ui.AddLanguagesDialog(parent or gui.mainFrame, _packs, _target_for('global'), _label_for_ui,
+            tools['announce'], tools['report_error'], tools['changed'])
         dialog.ShowModal()
         return dialog.added
     finally:
-        dialog.Destroy()
+        if dialog is not None:
+            dialog.Destroy()
+        if standalone:
+            gui.mainFrame.postPopup()
+
+def _show_translation_window(translation):
+    # The window must be announced: end the quiet period that follows the menu.
+    _quiet.close()
+    ui.browseableMessage(translation, _('Traduction'))
+
+def _languages_changed():
+    """Languages were added or removed: the configurations the add-on manages follow."""
+    _resync_simple()
+    _manager_changed()
+
+def _resync_simple():
+    target = _target_for('global')
+    family, sources = _packs.continuous(target)
+    if not sources:
+        return
+    for app in ['global'] + list(_store.settings['apps']):
+        if _store.config(app).get('simple'):
+            try:
+                _store.configure_simple(app, family, sources, target)
+            except ValueError:
+                log.exception('LocalTranslateAccess: automatic configuration failed for %s', app)
+
+def _simple_configure(app):
+    """Prepare continuous translation by itself: every installed language, into the user's language.
+
+    Returns False when no language is installed for that language yet.
+    """
+    target = _target_for('global')
+    family, sources = _packs.continuous(target)
+    if not sources:
+        return False
+    _store.configure_simple(app, family, sources, target)
+    # The language of what NVDA says is detected; nothing has to be confirmed by the user.
+    _manager_hooks(app)['configure'](app, 'auto', False, False)
+    return True
+
+def _remove_language(item):
+    """Remove an installed language. Returns an error text, or None."""
+    try:
+        # Nothing may still be using the files that are about to be deleted.
+        _ondemand_release()
+        _manager_stop()
+        _packs.remove(item)
+    except Exception:
+        log.exception('LocalTranslateAccess: removing a language failed')
+        return _('La langue n’a pas pu être supprimée.')
+    finally:
+        _languages_changed()
+    return None
+
+def _change_target(code, parent=None):
+    """The user chose another language to translate into. Returns True when it is in use."""
+    from . import language_ui
+    previous = _target_for('global')
+    if code == previous:
+        return True
+    family, sources = _packs.continuous(code)
+    if not sources:
+        # Nothing installed translates into this language yet: English is the way in.
+        plan = _packs.plan('en', code) if code != 'en' else _packs.plan(previous, code)
+        if plan is None:
+            gui.messageBox(_('La langue choisie ({language}) ne peut pas être utilisée sur cet ordinateur.').format(
+                language=_language_name(code)), _('Langue non installée'), wx.OK | wx.ICON_INFORMATION)
+            return False
+        message = _('La langue choisie ({language}) n’est pas installée. Voulez-vous la télécharger ? ({size})').format(
+            language=_language_name(code), size=language_ui.size_text(plan.size))
+        if gui.messageBox(message, _('Langue non installée'), wx.YES_NO | wx.ICON_QUESTION) != wx.YES:
+            return False
+        tools = _language_tools()
+        error = language_ui.download(parent or gui.mainFrame, _packs, [plan],
+            _('Téléchargement : {language}').format(language=_label_for_ui(code)), tools['announce'], tools['report_error'])
+        if error is not None or not _packs.continuous(code)[1]:
+            if error != 'cancelled':
+                gui.messageBox(_('Le téléchargement a échoué. Vérifiez votre connexion Internet, puis réessayez.'),
+                    _('Langue non installée'), wx.OK | wx.ICON_ERROR)
+            return False
+    _store.set_target('global', code)
+    for app in list(_store.settings['apps']):
+        if _store.config(app).get('simple'):
+            _store.set_target(app, code)
+    if not _store.config('global').get('configured') or _store.config('global').get('simple'):
+        _simple_configure('global')
+    _languages_changed()
+    return True
+
+def _show_advanced(parent=None):
+    """The settings most people never need: languages per application, cache, performance."""
+    global _manager_open
+    if _configuration_open():
+        _announce(_("La fenêtre LocalTranslate est déjà ouverte."))
+        return
+    from .manager_dialog import ManagerDialog
+    _manager_open = True
+    if _dispatcher is not None:
+        _dispatcher.cancel()
+    dialog = None
+    try:
+        app = _settings_application()
+        dialog = ManagerDialog(parent or gui.mainFrame, _store, _telemetry, app, _manager_hooks(app))
+        dialog.ShowModal()
+    except Exception:
+        log.exception('LocalTranslateAccess: advanced options failed')
+    finally:
+        if dialog is not None:
+            dialog.panel.shutdown()
+            dialog.Destroy()
+        _manager_open = False
+
+def _offer_first_language(app, retry):
+    """Translation was turned on but no language is installed for the user's language."""
+    _quiet.close()
+    message = _('Aucune langue n’est installée pour traduire vers votre langue ({language}). Voulez-vous en ajouter ?').format(
+        language=_language_name(_target_for('global')))
+    if gui.messageBox(message, _('Langue non installée'), wx.YES_NO | wx.ICON_QUESTION) != wx.YES:
+        return
+    if _show_add_languages() and _packs.continuous(_target_for('global'))[1]:
+        retry()
 
 def _ondemand_idle():
     if _ondemand['timer'] is not None:
@@ -1464,6 +1564,7 @@ def _translation_menu(plugin, context, selection, spoken):
         (_('&Inverser les langues'), lambda: _action_swap(app)),
         (_('Annoncer les &langues'), lambda: _action_announce_languages(app)),
         None,
+        (_('Ajouter des lang&ues…'), lambda: (_quiet.close(), wx.CallAfter(_show_add_languages))),
         (_('Con&figuration de la traduction…'), lambda: (_quiet.close(), _show_settings_dialog(gui.mainFrame))),
     ]
     menu = wx.Menu()
@@ -1589,15 +1690,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         if getattr(self, '_terminated', False):
             return
         if not _app_languages.settings(app)['confirmed'] or not _source_models_ready(app):
+            # No setup window: the add-on prepares itself with the languages already installed.
             _stop_beeper()
-            def configured(accepted):
-                if accepted and not getattr(self, '_terminated', False):
-                    if _source_models_ready(app):
-                        self._start_translation(app, on_started)
-                    else:
-                        _announce(_("Les modèles de cette application ne sont pas encore prêts."))
-            _show_model_manager(app=app, activate=True, on_done=configured)
-            return
+            if not _simple_configure(app):
+                _offer_first_language(app, lambda: self._start_translation(app, on_started))
+                return
+            if not _source_models_ready(app):
+                _announce(_("Impossible d’activer la traduction."))
+                return
         self._starting_app = app
         _start_beeper()
         started = self._ensure_started()

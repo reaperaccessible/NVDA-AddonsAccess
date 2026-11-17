@@ -10,7 +10,7 @@
 <h1>LocalTranslateAccess</h1>
 <p>LocalTranslateAccess translates what NVDA says. The translation is computed on your computer: no text is sent over the Internet.</p>
 <p>You can translate everything NVDA says in one application or in all of them, continuously, or translate a selected text, the clipboard or the last announcement on request.</p>
-<p>French and English are included and work as soon as the add-on is installed. Other languages are added as language packs, downloaded when you ask for them.</p>
+<p>French and English are included and work as soon as the add-on is installed. Other languages are downloaded when you ask for them, in a few seconds.</p>
 <p>The add-on is displayed in French when NVDA is in French, and in English in every other language.</p>
 
 <h2>The shortcut and the translation menu</h2>
@@ -24,6 +24,7 @@
 <li><strong>Copy the last translation</strong> (C): put the last translation on the clipboard.</li>
 <li><strong>Swap the languages</strong> (W): translate the other way round.</li>
 <li><strong>Announce the languages</strong> (A): hear the current source and target languages.</li>
+<li><strong>Add languages</strong> (D): download other languages.</li>
 <li><strong>Translation configuration</strong> (F): open the add-on's settings.</li>
 </ul>
 <h3>Assigning your own shortcuts</h3>
@@ -37,19 +38,13 @@
 <p>This category is also where you can change the shortcut of the menu.</p>
 
 <h2>Translating continuously</h2>
-<p>Choose "Translation for this application" when a single program is in another language, for example a game or software that has not been translated. Other applications are left alone, and each application keeps its own languages.</p>
-<p>Choose "Global translation" to translate everywhere with a single language setting.</p>
+<p>Choose "Translation for this application" when a single program is in another language, for example a game or software that has not been translated. Other applications are left alone.</p>
+<p>Choose "Global translation" to translate everywhere.</p>
 <p>A beep and an announcement confirm that translation is on. Choose the same item again to turn it off.</p>
 
 <h3>First activation</h3>
-<p>The first time you turn translation on for an application, or globally, a setup window opens. Everything is done in that one window.</p>
-<ol>
-<li>Choose one or more source languages with the arrow keys and Space. The language detected in the application is preselected when it is known.</li>
-<li>Choose the target language, then "Add". You can add several language pairs.</li>
-<li>Choose a model in the list. Those that are ready are marked "installed".</li>
-<li>If the button reads "Apply", press it: translation turns on. If it reads "Download", press it to download the language pack; the button shows the progress, then becomes "Apply".</li>
-</ol>
-<p>Cancel closes the window without turning translation on. Whatever was already downloaded stays available.</p>
+<p>There is nothing to prepare: translation turns on at once, with the languages already installed, and translates into your language. The language of what NVDA says is detected automatically.</p>
+<p>If no language is installed yet for your language, a window offers to add some.</p>
 
 <h2>Translating a text on request</h2>
 <p>"Translate the selection", "Translate the clipboard" and "Translate the last announcement" work even when continuous translation is off.</p>
@@ -63,56 +58,45 @@
 
 <h2>Settings</h2>
 <p>Open the NVDA menu, Preferences, Settings, then the "LocalTranslateAccess" category. "Translation configuration" in the translation menu takes you there too.</p>
-<p>The category holds four tabs, followed by the update settings. Continuous translation is paused while this category is open.</p>
-
-<h3>Languages tab</h3>
 <ul>
-<li><strong>Source language for global translation</strong>: "Automatic detection" or a specific language.</li>
-<li><strong>Target language for global translation</strong>: the language in which NVDA speaks the translations.</li>
-<li><strong>Model for global translation</strong>: the model used for these languages.</li>
-<li><strong>Applications with a configured source language</strong>: the applications you have already set up. Select one to change the next three settings.</li>
-<li><strong>Source language, target language and model for this application</strong>: the same choices, for the selected application only.</li>
-<li><strong>Use the graphics card to speed up translation</strong>: this box only appears for the models and computers that allow it.</li>
-</ul>
-<p>The button under the tabs reads "Apply" when everything is ready, and "Download" when the chosen model is not installed yet. The OK button of NVDA's Settings dialog also saves your language choices, but never starts a download.</p>
-<p>The first target language offered is that of NVDA's voice. With automatic detection, a detected language for which no model is installed is not translated: the original text is spoken.</p>
-
-<h3>Installed models tab</h3>
-<p>This tab lists the models on your computer, with their size. This is where you manage your languages.</p>
-<ul>
-<li><strong>Add a language</strong>: opens the list of available languages, with the size of each. Tick the ones you want with Space, then press "Download". Your translation settings are not changed: the languages are simply available.</li>
-<li><strong>Remove the selected model</strong>: frees some space on your disk.</li>
-<li><strong>Refresh the model catalogue</strong>: shows the language packs added since you installed the add-on.</li>
-</ul>
-
-<h3>Translation cache tab</h3>
-<p>The add-on remembers the translations it has already made, so that it can give them back at once. In this tab you can search for a translation, correct it, and export or import a cache to share it.</p>
-
-<h3>Performance tab</h3>
-<p>This tab shows how long the models take to load and the average translation time for each language pair. A button clears these measurements.</p>
-
-<h3>Updates</h3>
-<ul>
+<li><strong>Translate into</strong>: the language in which you want to hear the translations. By default it is that of NVDA's voice. If you choose a language that is not installed, the add-on offers to download it when you confirm.</li>
+<li><strong>Installed languages</strong>: the languages the add-on can translate into your language, with the space they take.</li>
+<li><strong>Add languages</strong>: opens the list of available languages, with the size of each. Tick the ones you want with Space, then press "Download".</li>
+<li><strong>Remove the selected language</strong>: frees the space taken by the language chosen in the list. English cannot be removed, because the other languages go through it.</li>
+<li><strong>Advanced options</strong>: opens a window for the settings most people never need.</li>
 <li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
-<li><strong>Check for updates now</strong>: this button starts the check right away.</li>
+<li><strong>Check for updates now</strong>: starts the check right away.</li>
 </ul>
 
-<h2>Languages and language packs</h2>
-<p>A language pack is downloaded once, then used without a connection. There are two kinds of models.</p>
+<h2>Languages</h2>
+<p>French and English are included. Another language is downloaded once, then works without a connection. You can add some in three ways:</p>
 <ul>
-<li><strong>Firefox / Bergamot</strong>: one model per language pair, fast, about 25 to 50 MB. This is the model included for French and English. Between two languages other than English, the translation goes through English and therefore needs two packs.</li>
-<li><strong>Multilingual models</strong> (NLLB-200, SMaLL-100, M2M-100): a single download of 350 to 650 MB covers many languages, including some that Bergamot does not offer. They are slower.</li>
+<li>with "Add languages" in the translation menu;</li>
+<li>with the "Add languages" button of the settings;</li>
+<li>by answering Yes when the add-on tells you that a language is missing.</li>
 </ul>
+<p>Most languages take 25 to 60 MB. A few rarer languages are only available in a multilingual pack of several hundred MB, which brings about a hundred of them at once; its size is given before the download.</p>
+<p>Continuous translation uses the installed languages of the list. The languages brought only by a multilingual pack are used for translation on request.</p>
+
+<h2>Advanced options</h2>
+<p>This window opens with the "Advanced options" button of the settings. It is only useful for a particular need. It holds four tabs:</p>
+<ul>
+<li><strong>Languages</strong>: give one application languages different from the others, or choose the translation engine yourself.</li>
+<li><strong>Installed models</strong>: see and remove the translation files one by one, and refresh the list of available languages.</li>
+<li><strong>Translation cache</strong>: the add-on remembers the translations it has already made. You can search for one, correct it, and export or import a cache to share it.</li>
+<li><strong>Performance</strong>: how long loading takes and the average translation time. A button clears these measurements.</li>
+</ul>
+<p>Continuous translation is paused while this window is open.</p>
 
 <h2>Updates of the add-on</h2>
 <p>LocalTranslateAccess does not go through NVDA's Add-on Store. The add-on checks by itself, shortly after NVDA starts, whether a new version has been published. If so, a window offers to install it. When several ReaperAccessible add-ons are updated together, their windows open one after the other and NVDA asks to restart only once, at the end.</p>
-<p>Your languages, your models and your cache are kept when the add-on is updated.</p>
+<p>Your settings, your installed languages and your cache are kept when the add-on is updated.</p>
 <p>In the Add-on Store, the add-on is listed with the "External" channel. This is normal for an add-on installed from outside the Store.</p>
 
 <h2>Privacy</h2>
 <ul>
 <li>The texts to translate and their translations stay on your computer.</li>
-<li>The add-on contacts the Internet in two cases only: to download a language pack or refresh the catalogue, when you ask for it, and to check for updates. These exchanges are with GitHub.</li>
+<li>The add-on contacts the Internet in two cases only: to download a language, when you ask for it, and to check for updates. These exchanges are with GitHub.</li>
 <li>The performance measurements hold durations only, never any text.</li>
 </ul>
 

@@ -17,6 +17,24 @@ MODEL_NAMES={'argos':'Argos Translate','bergamot':'Firefox / Bergamot','opus':'M
              'hy':'Hy-MT2 7B Q8','nllb':'NLLB-200 600M INT8',
              'small100':'SMaLL-100 330M INT8','m2m100':'M2M-100 418M INT8'}
 
+class ManagerDialog(wx.Dialog):
+    """The Advanced options window: it only hosts the panel below."""
+    def __init__(self,parent,store,telemetry,app,hooks):
+        super().__init__(parent,title=_('Options avancées'),size=(780,760),
+            style=wx.DEFAULT_DIALOG_STYLE|wx.RESIZE_BORDER)
+        set_window_direction(self)
+        self.panel=ManagerPanel(self,store,telemetry,app,hooks,finish=self.finish)
+        outer=wx.BoxSizer(wx.VERTICAL)
+        outer.Add(self.panel,1,wx.EXPAND)
+        close=wx.Button(self,wx.ID_CANCEL,label=_('Fermer'))
+        outer.Add(close,0,wx.ALL|wx.ALIGN_RIGHT,8)
+        self.SetSizer(outer)
+        close.Bind(wx.EVT_BUTTON,lambda event:self.finish(wx.ID_CANCEL))
+        self.Bind(wx.EVT_CLOSE,lambda event:self.finish(wx.ID_CANCEL))
+    def finish(self,result):
+        self.panel.shutdown()
+        if self.IsModal():self.EndModal(result)
+
 class ManagerPanel(wx.Panel):
     """The whole translation configuration: languages, installed models, cache and performance.
 
