@@ -2404,3 +2404,6 @@ msgstr "A&dd languages…"
 
 msgid "Langue installée : {language}."
 msgstr "Language installed: {language}."
+
+msgid "Téléchargement de la mise à jour : {percent} %"
+msgstr "Downloading the update: {percent}%"

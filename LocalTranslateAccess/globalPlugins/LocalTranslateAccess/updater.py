@@ -10,6 +10,7 @@ import os
 import re
 import tempfile
 import threading
+import time
 import urllib.request
 
 import wx
@@ -30,6 +31,7 @@ REQUEST_HEADERS = {'Accept': 'application/vnd.github+json', 'User-Agent': 'NVDA-
 TIMEOUT = 20 # seconds
 STARTUP_DELAY = 20000 # ms
 RETRY_DELAY = 3000 # ms
+PROGRESS_EVERY = 5.0 # seconds between two spoken percentages of a download
 # Shared by every add-on using this checker, so that only one of them updates at a time.
 SHARED_FLAG = '_addonsAccessUpdateInProgress'
 # Names of the add-ons waiting for their turn, and whether an installed update needs a restart.
@@ -75,6 +77,28 @@ def findUpdate(releases, addonName, currentVersion):
 		if url and (best is None or isNewer(version, best[0])):
 			best = (version, url, tag[len(prefix):].strip())
 	return (best[2], best[1]) if best else None
+
+
+class DownloadProgress:
+	"""Decides when a download's progress is worth saying: every ten percent, a few seconds apart.
+
+	A download that ends within a few seconds says nothing, and 100 % is never said:
+	the message that follows the installation tells it better.
+	"""
+
+	def __init__(self, total, say, clock=time.monotonic, every=PROGRESS_EVERY):
+		self.total, self.say, self.clock, self.every = total, say, clock, every
+		self.bucket = 0
+		self.last = clock()
+
+	def update(self, done):
+		if not self.total:
+			return
+		percent = min(99, int(done * 100 / self.total))
+		now = self.clock()
+		if percent // 10 > self.bucket and now - self.last >= self.every:
+			self.bucket, self.last = percent // 10, now
+			self.say(percent)
 
 
 class Updater:
@@ -212,11 +236,15 @@ class Updater:
 			with os.fdopen(handle, 'wb') as out, urllib.request.urlopen(request, timeout=TIMEOUT) as response:
 				if not response.geturl().startswith('https://'):
 					raise ValueError('Unexpected redirection')
+				progress = DownloadProgress(int(response.headers.get('Content-Length') or 0), self._sayProgress)
+				done = 0
 				while True:
 					block = response.read(1 << 16)
 					if not block:
 						break
 					out.write(block)
+					done += len(block)
+					progress.update(done)
 			# Refuse a file that is not this add-on, whatever the release says.
 			if addonHandler.AddonBundle(path).manifest['name'] != self.name:
 				raise ValueError('The downloaded file is another add-on')
@@ -228,6 +256,10 @@ class Updater:
 			wx.CallAfter(self._inform, _('La mise à jour n’a pas pu être téléchargée.'), wx.ICON_ERROR)
 			return
 		wx.CallAfter(self._install, path)
+
+	def _sayProgress(self, percent):
+		# Translators: Progress of the download of a new version. {percent} is a number from 10 to 99.
+		wx.CallAfter(ui.message, _('Téléchargement de la mise à jour : {percent} %').format(percent=percent))
 
 	def _install(self, path):
 		try:
