@@ -27,6 +27,7 @@ CONFIG_SPEC = {
 	'announce': 'boolean(default=true)',
 	'loopAtStart': 'boolean(default=false)',
 	'loopPause': f'integer(default={tuner.LOOP_DEFAULT_MS}, min={tuner.LOOP_MIN_MS}, max={tuner.LOOP_MAX_MS})',
+	'volume': f'integer(default={tuner.VOLUME_DEFAULT}, min={tuner.VOLUME_MIN}, max={tuner.VOLUME_MAX})',
 	'checkForUpdates': 'boolean(default=true)',
 }
 
@@ -96,6 +97,7 @@ def help_lines():
 		_('R: repeat in a loop, or stop the loop'),
 		_('A: lengthen the pause of the loop'),
 		_('D: shorten the pause of the loop'),
+		_('Up and down arrows: raise or lower the volume'),
 		_('F1: this help'),
 		_('Escape: stop the sound, or close the window when nothing is playing'),
 	]
@@ -125,6 +127,7 @@ class TunerDialog(wx.Dialog):
 		self.player = tuner.Player(play_file, stop_sound, lambda ms, callback: wx.CallLater(ms, callback))
 		self.player.loop = settings()['loopAtStart']
 		self.player.loop_ms = tuner.clamp_loop(settings()['loopPause'])
+		self.player.volume = tuner.clamp_volume(settings()['volume'])
 		self.player.on_item = self.announce_item
 		sizer = wx.BoxSizer(wx.VERTICAL)
 		# Translators: The first line of the tuner window.
@@ -133,6 +136,13 @@ class TunerDialog(wx.Dialog):
 		self.loop = wx.CheckBox(self, label=_('&Repeat in a loop'))
 		self.loop.SetValue(self.player.loop)
 		sizer.Add(self.loop, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 10)
+		# Translators: Label of the volume control of the tuner window.
+		sizer.Add(wx.StaticText(self, label=_('&Volume:')), 0, wx.LEFT | wx.RIGHT, 10)
+		self.volume = wx.Slider(self, value=self.player.volume, minValue=tuner.VOLUME_MIN, maxValue=tuner.VOLUME_MAX,
+			name=_('Volume'))
+		self.volume.SetLineSize(tuner.VOLUME_STEP)
+		self.volume.SetPageSize(tuner.VOLUME_STEP)
+		sizer.Add(self.volume, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 10)
 		buttons = wx.BoxSizer(wx.HORIZONTAL)
 		help_button = wx.Button(self, label=_('&Help (F1)'))
 		close = wx.Button(self, wx.ID_CLOSE, label=_('&Close'))
@@ -141,6 +151,7 @@ class TunerDialog(wx.Dialog):
 		sizer.Add(buttons, 0, wx.ALL | wx.ALIGN_RIGHT, 10)
 		self.SetSizerAndFit(sizer)
 		self.loop.Bind(wx.EVT_CHECKBOX, lambda event: self.toggle_loop(from_box=True))
+		self.volume.Bind(wx.EVT_SLIDER, lambda event: self.set_volume(self.volume.GetValue(), announce=False))
 		help_button.Bind(wx.EVT_BUTTON, lambda event: self.show_help())
 		close.Bind(wx.EVT_BUTTON, lambda event: self.Close())
 		self.Bind(wx.EVT_CHAR_HOOK, self.on_key)
@@ -171,6 +182,22 @@ class TunerDialog(wx.Dialog):
 			# Translators: Said when the pause of the loop changes.
 			message = _('Pause of the loop: {pause}')
 		ui.message(message.format(pause=text))
+
+	def set_volume(self, percent, announce=True):
+		before = self.player.volume
+		self.player.volume = tuner.clamp_volume(percent)
+		settings()['volume'] = self.player.volume   # remembered for the next time
+		if self.volume.GetValue() != self.player.volume:
+			self.volume.SetValue(self.player.volume)
+		if not announce:
+			return
+		if self.player.volume == before:
+			# Translators: Said when the volume cannot go further.
+			message = _('Volume already at its maximum: {percent}%') if percent > before else _('Volume already at its minimum: {percent}%')
+		else:
+			# Translators: Said when the volume changes in the tuner window.
+			message = _('Volume: {percent}%')
+		ui.message(message.format(percent=self.player.volume))
 
 	def show_help(self):
 		dialog = HelpDialog(self)
@@ -204,6 +231,16 @@ class TunerDialog(wx.Dialog):
 		for number in range(6):
 			actions[ord('1') + number] = lambda number=number: self.player.start([number])
 			actions[wx.WXK_NUMPAD1 + number] = lambda number=number: self.player.start([number])
+		if key in (wx.WXK_UP, wx.WXK_DOWN, wx.WXK_NUMPAD_UP, wx.WXK_NUMPAD_DOWN):
+			if self.FindFocus() is self.volume:
+				event.Skip()   # the control moves itself, and NVDA reads its new value
+			else:
+				step = tuner.VOLUME_STEP if key in (wx.WXK_UP, wx.WXK_NUMPAD_UP) else -tuner.VOLUME_STEP
+				self.set_volume(self.player.volume + step)
+			return
+		if self.FindFocus() is self.volume and key in (wx.WXK_LEFT, wx.WXK_RIGHT, wx.WXK_PAGEUP, wx.WXK_PAGEDOWN, wx.WXK_HOME, wx.WXK_END):
+			event.Skip()
+			return
 		action = actions.get(key)
 		if action is not None:
 			action()
@@ -257,6 +294,12 @@ class ToneTunerAccessSettingsPanel(gui.settingsDialogs.SettingsPanel):
 		self.pause = helper.addLabeledControl(_('&Pause between two repetitions of the loop:'), wx.Choice,
 			choices=[seconds_text(value) for value in self.pauses])
 		self.pause.SetSelection(self.pauses.index(tuner.clamp_loop(settings()['loopPause'])))
+		self.volumes = tuner.volume_choices()
+		# Translators: A setting: the volume of the reference sounds.
+		self.volume = helper.addLabeledControl(_('&Volume of the sounds:'), wx.Choice,
+			# Translators: A volume in the settings, such as 70%.
+			choices=[_('{percent}%').format(percent=value) for value in self.volumes])
+		self.volume.SetSelection(self.volumes.index(tuner.clamp_volume(settings()['volume'])))
 		self.checkForUpdates = helper.addItem(wx.CheckBox(self, label=_('Check for &updates automatically when NVDA starts')))
 		self.checkForUpdates.SetValue(settings()['checkForUpdates'])
 		self.checkNow = helper.addItem(wx.Button(self, label=_('Check for updates &now')))
@@ -267,6 +310,7 @@ class ToneTunerAccessSettingsPanel(gui.settingsDialogs.SettingsPanel):
 		settings()['announce'] = self.announce.GetValue()
 		settings()['loopAtStart'] = self.loopAtStart.GetValue()
 		settings()['loopPause'] = self.pauses[self.pause.GetSelection()]
+		settings()['volume'] = self.volumes[self.volume.GetSelection()]
 		settings()['checkForUpdates'] = self.checkForUpdates.GetValue()
 
 

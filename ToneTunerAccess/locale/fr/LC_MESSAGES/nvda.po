@@ -153,3 +153,27 @@ msgstr "Impossible de vérifier les mises à jour. Vérifiez votre connexion Int
 
 msgid "{name} is up to date (version {version})."
 msgstr "{name} est à jour (version {version})."
+
+msgid "Up and down arrows: raise or lower the volume"
+msgstr "Flèches haut et bas : monter ou baisser le volume"
+
+msgid "&Volume:"
+msgstr "&Volume :"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Volume already at its maximum: {percent}%"
+msgstr "Volume déjà au maximum : {percent} %"
+
+msgid "Volume already at its minimum: {percent}%"
+msgstr "Volume déjà au minimum : {percent} %"
+
+msgid "Volume: {percent}%"
+msgstr "Volume : {percent} %"
+
+msgid "&Volume of the sounds:"
+msgstr "V&olume des sons :"
+
+msgid "{percent}%"
+msgstr "{percent} %"
