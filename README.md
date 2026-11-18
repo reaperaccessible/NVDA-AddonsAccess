@@ -6,6 +6,7 @@ Extensions accessibles pour le lecteur d'écran NVDA, par ReaperAccessible.
 ## Add-ons
 
 - **LocalTranslateAccess** — translates what NVDA says, on your own computer. French and English are included; other languages are downloaded as language packs. NVDA+Shift+T translates the selected text; NVDA+Ctrl+Shift+T opens the translation menu.
+- **ToneTunerAccess** — reference tones to tune a guitar by ear: each string, all the strings or a chord, once or in a loop. NVDA+Ctrl+Shift+A opens the tuner. Based on Reference Tone Tuner by Leandro Souza (GPL v2).
 - **SpeechHistoryAccess** — review and copy NVDA's speech history. Interface in French when NVDA is in French, in English otherwise. Based on Speech History by Tyler Spivey and James Scholes (GPL v2).
 
 ## Installation

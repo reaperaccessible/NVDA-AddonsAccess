@@ -5,6 +5,7 @@
 !/README.md
 !/SpeechHistoryAccess/
 !/LocalTranslateAccess/
+!/ToneTunerAccess/
 
 # Bundled models and runtime: they ship in the release package, not in the source.
 /LocalTranslateAccess/data/

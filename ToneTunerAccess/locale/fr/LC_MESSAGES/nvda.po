@@ -1,0 +1,155 @@
+# French translation of ToneTunerAccess.
+msgid ""
+msgstr ""
+"Project-Id-Version: ToneTunerAccess\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "high E"
+msgstr "mi aigu"
+
+msgid "B"
+msgstr "si"
+
+msgid "G"
+msgstr "sol"
+
+msgid "D"
+msgstr "ré"
+
+msgid "A"
+msgstr "la"
+
+msgid "low E"
+msgstr "mi grave"
+
+msgid "G major chord"
+msgstr "accord de sol majeur"
+
+msgid "E major chord"
+msgstr "accord de mi majeur"
+
+msgid "."
+msgstr ","
+
+msgid "1 second"
+msgstr "1 seconde"
+
+msgid "{seconds} seconds"
+msgstr "{seconds} secondes"
+
+msgid "1 to 6: play a string, from 1 for the high E to 6 for the low E"
+msgstr "1 à 6 : jouer une corde, de 1 pour le mi aigu à 6 pour le mi grave"
+
+msgid "T: play all the strings, from the 6th to the 1st"
+msgstr "T : jouer toutes les cordes, de la 6e à la 1re"
+
+msgid "S: play the G major chord"
+msgstr "S : jouer l'accord de sol majeur"
+
+msgid "M: play the E major chord"
+msgstr "M : jouer l'accord de mi majeur"
+
+msgid "R: repeat in a loop, or stop the loop"
+msgstr "R : répéter en boucle, ou arrêter la boucle"
+
+msgid "A: lengthen the pause of the loop"
+msgstr "A : allonger la pause de la boucle"
+
+msgid "D: shorten the pause of the loop"
+msgstr "D : raccourcir la pause de la boucle"
+
+msgid "F1: this help"
+msgstr "F1 : cette aide"
+
+msgid "Escape: stop the sound, or close the window when nothing is playing"
+msgstr "Échap : arrêter le son, ou fermer la fenêtre quand rien ne joue"
+
+msgid "ToneTunerAccess help"
+msgstr "Aide de ToneTunerAccess"
+
+msgid "&Keys of the tuner window:"
+msgstr "&Touches de la fenêtre de l'accordeur :"
+
+msgid "&Close"
+msgstr "&Fermer"
+
+msgid "Press 1 to 6 to play a string, or F1 for the list of keys."
+msgstr "Appuyez sur 1 à 6 pour jouer une corde, ou sur F1 pour la liste des touches."
+
+msgid "&Repeat in a loop"
+msgstr "&Répéter en boucle"
+
+msgid "&Help (F1)"
+msgstr "&Aide (F1)"
+
+msgid "Loop on"
+msgstr "Boucle activée"
+
+msgid "Loop off"
+msgstr "Boucle désactivée"
+
+msgid "Pause of the loop already at its maximum: {pause}"
+msgstr "Pause de la boucle déjà au maximum : {pause}"
+
+msgid "Pause of the loop already at its minimum: {pause}"
+msgstr "Pause de la boucle déjà au minimum : {pause}"
+
+msgid "Pause of the loop: {pause}"
+msgstr "Pause de la boucle : {pause}"
+
+msgid "Stopped"
+msgstr "Arrêté"
+
+msgid "&Announce the name of the string played"
+msgstr "&Annoncer le nom de la corde jouée"
+
+msgid "Turn the &loop on when the tuner opens"
+msgstr "Activer la &boucle à l'ouverture de l'accordeur"
+
+msgid "&Pause between two repetitions of the loop:"
+msgstr "&Pause entre deux répétitions de la boucle :"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
+
+msgid "Check for updates &now"
+msgstr "&Vérifier les mises à jour maintenant"
+
+msgid "Opens the tuner."
+msgstr "Ouvre l'accordeur."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
+
+msgid "Downloading the update..."
+msgstr "Téléchargement de la mise à jour..."
+
+msgid "Checking for updates..."
+msgstr "Recherche de mises à jour..."
+
+msgid "{name} update"
+msgstr "Mise à jour de {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} est disponible. Vous avez la version {current}. Voulez-vous l'installer maintenant ?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."
+
+msgid "The update could not be downloaded."
+msgstr "La mise à jour n'a pas pu être téléchargée."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Téléchargement de la mise à jour : {percent} %"
+
+msgid "The update could not be installed."
+msgstr "La mise à jour n'a pas pu être installée."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Impossible de vérifier les mises à jour. Vérifiez votre connexion Internet."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} est à jour (version {version})."

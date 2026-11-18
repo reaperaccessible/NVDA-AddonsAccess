@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToneTunerAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>ToneTunerAccess</h1>
+<p>ToneTunerAccess vous aide à accorder une guitare à l'oreille. Il joue le son de référence de chaque corde, enregistré sur une vraie guitare : vous jouez la même corde sur votre instrument, et vous tournez la mécanique jusqu'à entendre la même note.</p>
+<p>L'extension ne détecte pas la note que vous jouez : c'est votre oreille qui compare. Elle couvre la guitare à six cordes en accordage standard, de la 6e à la 1re corde : mi grave, la, ré, sol, si, mi aigu.</p>
+<p>L'extension s'affiche en français lorsque NVDA est en français, et en anglais dans toutes les autres langues.</p>
+
+<h2>Ouvrir l'accordeur</h2>
+<ul>
+<li>Avec le raccourci <kbd>NVDA+Ctrl+Maj+A</kbd>.</li>
+<li>Ou par le menu NVDA, Outils, ToneTunerAccess.</li>
+</ul>
+<p>Pour changer le raccourci, ouvrez le menu NVDA, Préférences, Gestes de commandes, rubrique « ToneTunerAccess ».</p>
+
+<h2>Les touches de la fenêtre</h2>
+<ul>
+<li><kbd>1</kbd> à <kbd>6</kbd> : jouer une corde, de 1 pour le mi aigu à 6 pour le mi grave. Les chiffres du pavé numérique fonctionnent aussi.</li>
+<li><kbd>T</kbd> : jouer toutes les cordes, de la 6e à la 1re, à une seconde d'intervalle.</li>
+<li><kbd>S</kbd> : jouer l'accord de sol majeur.</li>
+<li><kbd>M</kbd> : jouer l'accord de mi majeur.</li>
+<li><kbd>R</kbd> : répéter le son en boucle, ou arrêter la boucle. C'est aussi la case « Répéter en boucle » de la fenêtre.</li>
+<li><kbd>A</kbd> : allonger la pause entre deux répétitions de la boucle.</li>
+<li><kbd>D</kbd> : raccourcir cette pause.</li>
+<li><kbd>F1</kbd> : afficher la liste de ces touches.</li>
+<li><kbd>Échap</kbd> : arrêter le son. Si rien ne joue, Échap ferme la fenêtre.</li>
+</ul>
+<p>Quand une corde ou un accord commence, NVDA annonce brièvement son nom, par exemple « mi grave ». Pendant une boucle, seul le premier passage est annoncé, pour ne pas couvrir le son. Vous pouvez couper cette annonce dans les réglages.</p>
+<p>La pause de la boucle va de 1 à 10 secondes, par quarts de seconde. Elle est retenue pour la prochaine ouverture de l'accordeur.</p>
+
+<h2>Accorder pas à pas</h2>
+<ol>
+<li>Ouvrez l'accordeur, puis appuyez sur <kbd>R</kbd> pour activer la boucle.</li>
+<li>Appuyez sur le chiffre de la corde à accorder, par exemple <kbd>6</kbd> pour le mi grave. Le son se répète.</li>
+<li>Jouez la même corde sur votre guitare et tournez la mécanique jusqu'à ce que les deux sons se confondent. Quand ils sont proches, on entend souvent un battement, comme une vibration lente : il ralentit à mesure qu'on s'approche, et disparaît quand la corde est juste.</li>
+<li>Passez à la corde suivante avec son chiffre, puis appuyez sur <kbd>Échap</kbd> quand vous avez fini.</li>
+</ol>
+<p>Pour vérifier l'ensemble, appuyez sur <kbd>T</kbd> pour entendre toutes les cordes, ou sur <kbd>S</kbd> et <kbd>M</kbd> pour comparer un accord.</p>
+
+<h2>Réglages</h2>
+<p>Ouvrez le menu NVDA, Préférences, Paramètres, puis la catégorie « ToneTunerAccess ».</p>
+<ul>
+<li><strong>Annoncer le nom de la corde jouée</strong> : cochée par défaut.</li>
+<li><strong>Activer la boucle à l'ouverture de l'accordeur</strong> : décochée par défaut. Cochez-la si vous accordez toujours en boucle.</li>
+<li><strong>Pause entre deux répétitions de la boucle</strong> : 2 secondes par défaut. Les touches <kbd>A</kbd> et <kbd>D</kbd> de la fenêtre modifient aussi ce réglage.</li>
+<li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> : cochée par défaut.</li>
+<li><strong>Vérifier les mises à jour maintenant</strong> : lance la vérification tout de suite.</li>
+</ul>
+
+<h2>Mises à jour</h2>
+<p>ToneTunerAccess ne passe pas par l'Add-on Store de NVDA. L'extension vérifie elle-même, peu après le démarrage de NVDA, si une nouvelle version est publiée, et vous propose de l'installer. Lorsque plusieurs extensions ReaperAccessible se mettent à jour ensemble, leurs fenêtres s'ouvrent l'une après l'autre et NVDA ne demande à redémarrer qu'une seule fois.</p>
+<p>Dans l'Add-on Store, l'extension apparaît avec le canal « Externe ». C'est normal pour une extension installée en dehors du Store.</p>
+
+<h2>Confidentialité</h2>
+<p>L'accordeur fonctionne sans connexion. L'extension ne contacte Internet que pour vérifier les mises à jour, auprès de GitHub.</p>
+
+<h2>Crédits et licence</h2>
+<p>ToneTunerAccess est publié par ReaperAccessible. L'extension est basée sur Reference Tone Tuner, de Leandro Souza, dont elle reprend les sons enregistrés.</p>
+<p>Elle est distribuée sous la licence publique générale GNU, version 2.</p>
+<p>Code source et nouvelles versions : <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>

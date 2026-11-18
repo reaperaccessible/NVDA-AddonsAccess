@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToneTunerAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>ToneTunerAccess</h1>
+<p>ToneTunerAccess helps you tune a guitar by ear. It plays the reference sound of each string, recorded on a real guitar: you play the same string on your instrument, and turn the tuning peg until you hear the same note.</p>
+<p>The add-on does not detect the note you play: your ear does the comparing. It covers the six-string guitar in standard tuning, from the 6th to the 1st string: low E, A, D, G, B, high E.</p>
+<p>The add-on is displayed in French when NVDA is in French, and in English in every other language.</p>
+
+<h2>Opening the tuner</h2>
+<ul>
+<li>With the <kbd>NVDA+Ctrl+Shift+A</kbd> shortcut.</li>
+<li>Or from the NVDA menu, Tools, ToneTunerAccess.</li>
+</ul>
+<p>To change the shortcut, open the NVDA menu, Preferences, Input gestures, "ToneTunerAccess" category.</p>
+
+<h2>The keys of the window</h2>
+<ul>
+<li><kbd>1</kbd> to <kbd>6</kbd>: play a string, from 1 for the high E to 6 for the low E. The numeric keypad digits work too.</li>
+<li><kbd>T</kbd>: play all the strings, from the 6th to the 1st, one second apart.</li>
+<li><kbd>S</kbd>: play the G major chord.</li>
+<li><kbd>M</kbd>: play the E major chord.</li>
+<li><kbd>R</kbd>: repeat the sound in a loop, or stop the loop. This is also the "Repeat in a loop" check box of the window.</li>
+<li><kbd>A</kbd>: lengthen the pause between two repetitions of the loop.</li>
+<li><kbd>D</kbd>: shorten this pause.</li>
+<li><kbd>F1</kbd>: show the list of these keys.</li>
+<li><kbd>Escape</kbd>: stop the sound. If nothing is playing, Escape closes the window.</li>
+</ul>
+<p>When a string or a chord starts, NVDA briefly says its name, for example "low E". During a loop, only the first pass is announced, so as not to cover the sound. You can turn this announcement off in the settings.</p>
+<p>The pause of the loop goes from 1 to 10 seconds, in quarters of a second. It is remembered for the next time the tuner opens.</p>
+
+<h2>Tuning step by step</h2>
+<ol>
+<li>Open the tuner, then press <kbd>R</kbd> to turn the loop on.</li>
+<li>Press the digit of the string to tune, for example <kbd>6</kbd> for the low E. The sound repeats.</li>
+<li>Play the same string on your guitar and turn the peg until both sounds merge. When they are close, you often hear a beat, like a slow wobble: it slows down as you get closer, and disappears when the string is in tune.</li>
+<li>Go on to the next string with its digit, then press <kbd>Escape</kbd> when you are done.</li>
+</ol>
+<p>To check everything, press <kbd>T</kbd> to hear all the strings, or <kbd>S</kbd> and <kbd>M</kbd> to compare a chord.</p>
+
+<h2>Settings</h2>
+<p>Open the NVDA menu, Preferences, Settings, then the "ToneTunerAccess" category.</p>
+<ul>
+<li><strong>Announce the name of the string played</strong>: checked by default.</li>
+<li><strong>Turn the loop on when the tuner opens</strong>: unchecked by default. Check it if you always tune with the loop.</li>
+<li><strong>Pause between two repetitions of the loop</strong>: 2 seconds by default. The <kbd>A</kbd> and <kbd>D</kbd> keys of the window change this setting too.</li>
+<li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
+<li><strong>Check for updates now</strong>: starts the check right away.</li>
+</ul>
+
+<h2>Updates</h2>
+<p>ToneTunerAccess does not go through NVDA's Add-on Store. The add-on checks by itself, shortly after NVDA starts, whether a new version has been published, and offers to install it. When several ReaperAccessible add-ons are updated together, their windows open one after the other and NVDA asks to restart only once.</p>
+<p>In the Add-on Store, the add-on is listed with the "External" channel. This is normal for an add-on installed from outside the Store.</p>
+
+<h2>Privacy</h2>
+<p>The tuner works without a connection. The add-on only contacts the Internet to check for updates, with GitHub.</p>
+
+<h2>Credits and licence</h2>
+<p>ToneTunerAccess is published by ReaperAccessible. The add-on is based on Reference Tone Tuner, by Leandro Souza, whose recorded sounds it uses.</p>
+<p>It is distributed under the GNU General Public License, version 2.</p>
+<p>Source code and new versions: <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>
