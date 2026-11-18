@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AudioManagerAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>AudioManagerAccess</h1>
+<p>AudioManagerAccess brings the sound of Windows together in one window: your audio outputs (speakers, headphones, sound card), your inputs (microphones), and each application playing sound, with its own volume and, if you wish, its own output and its own input. For example, you can send the browser to the headphones and REAPER to the sound card.</p>
+<p>The add-on is displayed in French when NVDA is in French, and in English in every other language.</p>
+
+<h2>The sound window</h2>
+<p><kbd>NVDA+Ctrl+Shift+P</kbd> opens the window, also found in the NVDA menu, Tools. It holds three lists, reached with Tab:</p>
+<ul>
+<li><strong>Outputs</strong>: each device with its volume, for example "OUT 1-2 (BEHRINGER X-USB), 80%, default".</li>
+<li><strong>Inputs</strong>: the microphones and inputs, in the same way.</li>
+<li><strong>Applications</strong>: each program playing or recording sound, with its volume, and its output or input if it has one of its own. "System sounds" are the sounds of Windows itself.</li>
+</ul>
+<p>In these three lists:</p>
+<ul>
+<li><strong>Left and Right arrows</strong> lower or raise the volume by 5%. NVDA announces the new volume.</li>
+<li><strong>Space</strong> cuts or restores the sound.</li>
+<li><strong>Enter</strong>, on an output or an input, makes it Windows' default device. On an application, Enter opens the choice of its devices.</li>
+<li><strong>F5</strong> updates the lists, for example after starting a program.</li>
+</ul>
+
+<h3>The output and input of an application</h3>
+<p>Enter on an application opens a small window with two lists: its output and its input. "Windows' default device" means the application follows the general setting. Choose another device, then OK. Windows saves this choice and remembers it for good. Most programs only use it once restarted: NVDA reminds you, for example "Devices of Google Chrome changed. Close and restart Google Chrome to hear it on these devices."</p>
+<p><strong>Important:</strong> this setting only applies to programs that follow Windows' default device, such as browsers, music players, Teams or Thunderbird. Programs that choose their output themselves in their own settings, such as NVDA, TalkAccess or REAPER, keep their choice: set them in their own settings. For NVDA, Enter takes you straight to the "Output of NVDA" choice.</p>
+<p>This feature is mostly for programs that have no choice of output at all, such as browsers: for example, sending Chrome to one output of your sound card while everything else plays on another.</p>
+<p>This is the same setting as "App volume and device preferences" in Windows' settings. An application can only have one output and one input at a time. To send an application to two outputs, or the sound of one application into another, a virtual audio cable program is needed.</p>
+
+<h3>At the bottom of the window</h3>
+<ul>
+<li><strong>Output of NVDA</strong>: the device NVDA speaks into. The change is immediate.</li>
+<li><strong>Lock the microphone volume</strong>: keeps the volume of the default microphone where it is. If a program such as Teams or Zoom changes it, it is put back at once. Changing the microphone volume in the window also changes the volume kept.</li>
+<li><strong>Reset the applications</strong>: every application goes back to the default devices, at full volume and not muted.</li>
+<li><strong>Assign keys to the commands</strong>: gives a key to the add-on's commands (see below).</li>
+<li><strong>Close</strong>, or Escape, closes the window.</li>
+</ul>
+
+<h2>The commands and their keys</h2>
+<p>These commands have no key by default:</p>
+<ul>
+<li>Sound off or on (the default output).</li>
+<li>Microphone off or on (the default input).</li>
+<li>Next, or previous, output as the default one.</li>
+<li>Next, or previous, input as the default one.</li>
+<li>Sound of the current application off or on.</li>
+<li>Lock or unlock the microphone volume.</li>
+<li>Next, or previous, output for NVDA.</li>
+</ul>
+<p>To give them a key, choose the "Assign keys to the commands" button in the sound window (Alt+K). Choose the command, press Enter, then the key you want, for example Ctrl+Alt+M: it is assigned at once. If the key is already used for something else, NVDA asks you first. Delete removes the key of a command. You also find them in the NVDA menu, Preferences, Input gestures, "AudioManagerAccess" category.</p>
+
+<h2>Good to know</h2>
+<ul>
+<li>Choosing the output and input of an application goes through a setting of Windows that Microsoft does not document, the same one used by well-known tools such as EarTrumpet. It works on Windows 10 and 11.</li>
+<li>An application only appears in the list once it has opened the sound, for example by playing something.</li>
+<li>The devices are named as in Windows' sound settings.</li>
+</ul>
+
+<h2>Settings</h2>
+<p>In the NVDA menu, Preferences, Settings, "AudioManagerAccess" category:</p>
+<ul>
+<li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
+<li><strong>Check for updates now</strong>: starts the check right away.</li>
+</ul>
+
+<h2>Updates</h2>
+<p>AudioManagerAccess does not go through NVDA's Add-on Store. The add-on checks by itself, shortly after NVDA starts, whether a new version has been published, and offers to install it. When several ReaperAccessible add-ons are updated together, their windows open one after the other and NVDA asks to restart only once.</p>
+<p>In the Add-on Store, the add-on is listed with the "External" channel. This is normal for an add-on installed from outside the Store.</p>
+
+<h2>Privacy</h2>
+<p>The add-on only contacts the Internet to check for updates, with GitHub.</p>
+
+<h2>Credits and licence</h2>
+<p>AudioManagerAccess is published by ReaperAccessible. The add-on is based on Audio Manager, by huaiyinfeilong. It uses pycaw, supplied with NVDA.</p>
+<p>It is distributed under the GNU General Public License, version 2.</p>
+<p>Source code and new versions: <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AudioManagerAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>AudioManagerAccess</h1>
+<p>AudioManagerAccess réunit le son de Windows dans une seule fenêtre : vos sorties audio (haut-parleurs, casque, carte son), vos entrées (micros), et chaque application qui fait du son, avec son propre volume et, si vous le voulez, sa propre sortie et sa propre entrée. Vous pouvez par exemple envoyer le navigateur dans le casque et REAPER dans la carte son.</p>
+<p>L'extension s'affiche en français lorsque NVDA est en français, et en anglais dans toutes les autres langues.</p>
+
+<h2>La fenêtre du son</h2>
+<p><kbd>NVDA+Ctrl+Maj+P</kbd> ouvre la fenêtre, que l'on trouve aussi dans le menu NVDA, Outils. Elle contient trois listes, que l'on parcourt avec Tab :</p>
+<ul>
+<li><strong>Sorties</strong> : chaque appareil avec son volume, par exemple « OUT 1-2 (BEHRINGER X-USB), 80 %, par défaut ».</li>
+<li><strong>Entrées</strong> : les micros et entrées, de la même façon.</li>
+<li><strong>Applications</strong> : chaque programme qui joue ou enregistre du son, avec son volume, et sa sortie ou son entrée s'il en a une à lui. Les « Sons système » sont les sons de Windows lui-même.</li>
+</ul>
+<p>Dans ces trois listes :</p>
+<ul>
+<li><strong>Flèche gauche et flèche droite</strong> baissent ou montent le volume de 5 %. NVDA annonce le nouveau volume.</li>
+<li><strong>Espace</strong> coupe ou rétablit le son.</li>
+<li><strong>Entrée</strong>, sur une sortie ou une entrée, en fait l'appareil par défaut de Windows. Sur une application, Entrée ouvre le choix de ses appareils.</li>
+<li><strong>F5</strong> met les listes à jour, par exemple après avoir lancé un programme.</li>
+</ul>
+
+<h3>La sortie et l'entrée d'une application</h3>
+<p>Entrée sur une application ouvre une petite fenêtre avec deux listes : sa sortie et son entrée. « Appareil par défaut de Windows » veut dire que l'application suit le réglage général. Choisissez un autre appareil, puis OK. Windows enregistre ce choix et s'en souvient pour toujours. La plupart des programmes ne l'utilisent qu'une fois relancés : NVDA vous le rappelle, par exemple « Appareils de Google Chrome modifiés. Fermez et relancez Google Chrome pour l'entendre sur ces appareils. »</p>
+<p><strong>Important :</strong> ce réglage ne vaut que pour les programmes qui suivent l'appareil par défaut de Windows, comme les navigateurs, les lecteurs de musique, Teams ou Thunderbird. Les programmes qui choisissent eux-mêmes leur sortie dans leurs propres paramètres, comme NVDA, TalkAccess ou REAPER, gardent leur choix : réglez-les dans leurs propres paramètres. Pour NVDA, Entrée vous amène directement au choix « Sortie de NVDA ».</p>
+<p>Cette fonction sert surtout aux programmes qui n'ont aucun choix de sortie, comme les navigateurs : par exemple, envoyer Chrome sur une sortie de votre carte son pendant que tout le reste joue sur une autre.</p>
+<p>C'est le même réglage que « Volume des applications et préférences des appareils » dans les paramètres de Windows. Une application ne peut avoir qu'une sortie et qu'une entrée à la fois. Pour envoyer une application vers deux sorties, ou le son d'une application dans une autre, il faut un logiciel de câbles audio virtuels.</p>
+
+<h3>En bas de la fenêtre</h3>
+<ul>
+<li><strong>Sortie de NVDA</strong> : l'appareil dans lequel NVDA parle. Le changement est immédiat.</li>
+<li><strong>Verrouiller le volume du micro</strong> : garde le volume du micro par défaut là où il est. Si un programme comme Teams ou Zoom le change, il est remis aussitôt. Changer le volume du micro dans la fenêtre change aussi le volume gardé.</li>
+<li><strong>Remettre les applications à zéro</strong> : toutes les applications reviennent aux appareils par défaut, à plein volume et sans coupure.</li>
+<li><strong>Assigner des touches aux commandes</strong> : donne une touche aux commandes de l'extension (voir plus bas).</li>
+<li><strong>Fermer</strong>, ou Échap, ferme la fenêtre.</li>
+</ul>
+
+<h2>Les commandes et leurs touches</h2>
+<p>Ces commandes n'ont aucune touche par défaut :</p>
+<ul>
+<li>Couper ou rétablir le son (la sortie par défaut).</li>
+<li>Couper ou rétablir le micro (l'entrée par défaut).</li>
+<li>Sortie suivante, ou précédente, comme sortie par défaut.</li>
+<li>Entrée suivante, ou précédente, comme entrée par défaut.</li>
+<li>Couper ou rétablir le son de l'application en cours.</li>
+<li>Verrouiller ou déverrouiller le volume du micro.</li>
+<li>Sortie suivante, ou précédente, pour NVDA.</li>
+</ul>
+<p>Pour leur donner une touche, choisissez le bouton « Assigner des touches aux commandes » dans la fenêtre du son (Alt+T). Choisissez la commande, appuyez sur Entrée, puis sur la touche voulue, par exemple Ctrl+Alt+M : elle est assignée aussitôt. Si la touche sert déjà à autre chose, NVDA vous le demande avant. Supprimer retire la touche d'une commande. Vous les retrouvez aussi dans le menu NVDA, Préférences, Gestes de commandes, rubrique « AudioManagerAccess ».</p>
+
+<h2>Bon à savoir</h2>
+<ul>
+<li>Le choix de la sortie et de l'entrée d'une application passe par un réglage de Windows que Microsoft ne documente pas, le même que celui qu'utilisent des outils connus comme EarTrumpet. Il fonctionne sous Windows 10 et 11.</li>
+<li>Une application n'apparaît dans la liste que lorsqu'elle a ouvert le son, par exemple en jouant quelque chose.</li>
+<li>Les appareils sont nommés comme dans les paramètres de son de Windows.</li>
+</ul>
+
+<h2>Réglages</h2>
+<p>Dans le menu NVDA, Préférences, Paramètres, catégorie « AudioManagerAccess » :</p>
+<ul>
+<li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> : cochée par défaut.</li>
+<li><strong>Vérifier les mises à jour maintenant</strong> : lance la vérification tout de suite.</li>
+</ul>
+
+<h2>Mises à jour</h2>
+<p>AudioManagerAccess ne passe pas par l'Add-on Store de NVDA. L'extension vérifie elle-même, peu après le démarrage de NVDA, si une nouvelle version est publiée, et vous propose de l'installer. Lorsque plusieurs extensions ReaperAccessible se mettent à jour ensemble, leurs fenêtres s'ouvrent l'une après l'autre et NVDA ne demande à redémarrer qu'une seule fois.</p>
+<p>Dans l'Add-on Store, l'extension apparaît avec le canal « Externe ». C'est normal pour une extension installée en dehors du Store.</p>
+
+<h2>Confidentialité</h2>
+<p>L'extension ne contacte Internet que pour vérifier les mises à jour, auprès de GitHub.</p>
+
+<h2>Crédits et licence</h2>
+<p>AudioManagerAccess est publié par ReaperAccessible. L'extension est basée sur Audio Manager, de huaiyinfeilong. Elle utilise pycaw, fourni avec NVDA.</p>
+<p>Elle est distribuée sous la licence publique générale GNU, version 2.</p>
+<p>Code source et nouvelles versions : <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>

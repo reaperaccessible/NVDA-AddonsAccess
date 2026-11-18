@@ -1,0 +1,242 @@
+# French translation of AudioManagerAccess.
+msgid ""
+msgstr ""
+"Project-Id-Version: AudioManagerAccess\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Sound off or on"
+msgstr "Couper ou rétablir le son"
+
+msgid "Microphone off or on"
+msgstr "Couper ou rétablir le micro"
+
+msgid "Next output as the default one"
+msgstr "Sortie suivante comme sortie par défaut"
+
+msgid "Previous output as the default one"
+msgstr "Sortie précédente comme sortie par défaut"
+
+msgid "Next input as the default one"
+msgstr "Entrée suivante comme entrée par défaut"
+
+msgid "Previous input as the default one"
+msgstr "Entrée précédente comme entrée par défaut"
+
+msgid "Sound of the current application off or on"
+msgstr "Couper ou rétablir le son de l'application en cours"
+
+msgid "Lock or unlock the microphone volume"
+msgstr "Verrouiller ou déverrouiller le volume du micro"
+
+msgid "Next output for NVDA"
+msgstr "Sortie suivante pour NVDA"
+
+msgid "Previous output for NVDA"
+msgstr "Sortie précédente pour NVDA"
+
+msgid "This could not be done."
+msgstr "Cela n'a pas pu se faire."
+
+msgid "{name}, {volume}%"
+msgstr "{name}, {volume} %"
+
+msgid ", default"
+msgstr ", par défaut"
+
+msgid ", muted"
+msgstr ", coupé"
+
+msgid ", output: {device}"
+msgstr ", sortie : {device}"
+
+msgid ", input: {device}"
+msgstr ", entrée : {device}"
+
+msgid "System sounds"
+msgstr "Sons système"
+
+msgid "Devices of {name}"
+msgstr "Appareils de {name}"
+
+msgid "Windows' default device"
+msgstr "Appareil par défaut de Windows"
+
+msgid "&Output:"
+msgstr "&Sortie :"
+
+msgid "&Input:"
+msgstr "&Entrée :"
+
+msgid "In the lists: Left and Right arrows change the volume, Space cuts or restores the sound, Enter makes a device the default one or chooses the devices of an application."
+msgstr "Dans les listes : les flèches gauche et droite changent le volume, Espace coupe ou rétablit le son, Entrée fait d'un appareil l'appareil par défaut ou choisit les appareils d'une application."
+
+msgid "&Outputs:"
+msgstr "&Sorties :"
+
+msgid "&Inputs:"
+msgstr "&Entrées :"
+
+msgid "&Applications:"
+msgstr "&Applications :"
+
+msgid "Output of &NVDA:"
+msgstr "Sortie de &NVDA :"
+
+msgid "&Lock the microphone volume"
+msgstr "&Verrouiller le volume du micro"
+
+msgid "&Reset the applications"
+msgstr "&Remettre les applications à zéro"
+
+msgid "Assign &keys to the commands…"
+msgstr "Assigner des &touches aux commandes…"
+
+msgid "{volume}%"
+msgstr "{volume} %"
+
+msgid "Muted"
+msgstr "Coupé"
+
+msgid "Unmuted"
+msgstr "Rétabli"
+
+msgid "{name} is now the default device."
+msgstr "{name} est maintenant l'appareil par défaut."
+
+msgid "The devices of the system sounds follow the default devices."
+msgstr "Les sons système suivent les appareils par défaut."
+
+msgid "Devices of {name} changed. Close and restart {name} to hear it on these devices."
+msgstr "Appareils de {name} modifiés. Fermez et relancez {name} pour l'entendre sur ces appareils."
+
+msgid "Every application is back to the default devices, at full volume."
+msgstr "Toutes les applications sont revenues aux appareils par défaut, à plein volume."
+
+msgid "Keys of {name}"
+msgstr "Touches de {name}"
+
+msgid "Opens the sound window: outputs, inputs and applications."
+msgstr "Ouvre la fenêtre du son : sorties, entrées et applications."
+
+msgid "Microphone volume locked at {volume}%."
+msgstr "Volume du micro verrouillé à {volume} %."
+
+msgid "Microphone volume unlocked."
+msgstr "Volume du micro déverrouillé."
+
+msgid "No device."
+msgstr "Aucun appareil."
+
+msgid "NVDA chooses its output by itself: choose it here."
+msgstr "NVDA choisit lui-même sa sortie : choisissez-la ici."
+
+msgid "Sound off"
+msgstr "Son coupé"
+
+msgid "Sound on"
+msgstr "Son rétabli"
+
+msgid "Microphone off"
+msgstr "Micro coupé"
+
+msgid "Microphone on"
+msgstr "Micro rétabli"
+
+msgid "This application is not playing any sound."
+msgstr "Cette application ne joue aucun son."
+
+msgid "{name}: muted"
+msgstr "{name} : coupé"
+
+msgid "{name}: sound on"
+msgstr "{name} : son rétabli"
+
+msgid "Co&mmands (Enter to assign a key):"
+msgstr "&Commandes (Entrée pour assigner une touche) :"
+
+msgid "Press the key for {action}, or Escape to cancel."
+msgstr "Appuyez sur la touche pour : {action}, ou sur Échap pour annuler."
+
+msgid "{key} is needed to type or to move around. Press another key, or a combination with Ctrl or Alt."
+msgstr "{key} sert à écrire ou à se déplacer. Appuyez sur une autre touche, ou sur une combinaison avec Ctrl ou Alt."
+
+msgid "{key} is already the key of {action}."
+msgstr "{key} est déjà la touche de : {action}."
+
+msgid "{key} now does: {action}."
+msgstr "{key} fait maintenant : {action}."
+
+msgid "Key removed from {action}."
+msgstr "Touche retirée de : {action}."
+
+msgid "{action} has no key."
+msgstr "{action} : aucune touche."
+
+msgid "&Close"
+msgstr "&Fermer"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
+
+msgid "Check for updates &now"
+msgstr "&Vérifier les mises à jour maintenant"
+
+msgid "Assi&gn a key"
+msgstr "Assi&gner une touche"
+
+msgid "&Remove the key"
+msgstr "&Retirer la touche"
+
+msgid "no key"
+msgstr "aucune touche"
+
+msgid "Press a key of the keyboard."
+msgstr "Appuyez sur une touche du clavier."
+
+msgid "Cancelled."
+msgstr "Annulé."
+
+msgid "{key} is already used for: {command}\n\nUse it for {action} instead?"
+msgstr "{key} sert déjà à : {command}\n\nL'utiliser plutôt pour {action} ?"
+
+msgid " or "
+msgstr " ou "
+
+msgid "{action}: {key}"
+msgstr "{action} : {key}"
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
+
+msgid "Downloading the update..."
+msgstr "Téléchargement de la mise à jour..."
+
+msgid "Checking for updates..."
+msgstr "Recherche de mises à jour..."
+
+msgid "{name} update"
+msgstr "Mise à jour de {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} est disponible. Vous avez la version {current}. Voulez-vous l'installer maintenant ?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."
+
+msgid "The update could not be downloaded."
+msgstr "La mise à jour n'a pas pu être téléchargée."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Téléchargement de la mise à jour : {percent} %"
+
+msgid "The update could not be installed."
+msgstr "La mise à jour n'a pas pu être installée."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Impossible de vérifier les mises à jour. Vérifiez votre connexion Internet."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} est à jour (version {version})."
