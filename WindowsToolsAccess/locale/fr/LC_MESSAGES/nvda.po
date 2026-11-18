@@ -1,0 +1,599 @@
+# French translation of WindowsToolsAccess.
+msgid ""
+msgstr ""
+"Project-Id-Version: WindowsToolsAccess\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Opens the window of Windows tools."
+msgstr "Ouvre la fenêtre des outils de Windows."
+
+msgid "Quick tools"
+msgstr "Outils rapides"
+
+msgid "Cleaning"
+msgstr "Nettoyage"
+
+msgid "Startup"
+msgstr "Démarrage"
+
+msgid "Services"
+msgstr "Services"
+
+msgid "Windows panels"
+msgstr "Fenêtres de Windows"
+
+msgid "Advanced"
+msgstr "Avancé"
+
+msgid "&Quick tools (Enter to run):"
+msgstr "&Outils rapides (Entrée pour lancer) :"
+
+msgid "C&leaning (Enter to run):"
+msgstr "&Nettoyage (Entrée pour lancer) :"
+
+msgid "Windows &panels (Enter to open):"
+msgstr "Fenêtres de &Windows (Entrée pour ouvrir) :"
+
+msgid "&Advanced (Enter to run):"
+msgstr "&Avancé (Entrée pour lancer) :"
+
+msgid "Applying changes. A Windows permission prompt may appear."
+msgstr "Application des changements. Windows peut demander votre autorisation."
+
+msgid "Startup Manager"
+msgstr "Gestionnaire de démarrage"
+
+msgid "Manage Services"
+msgstr "Gérer les services"
+
+msgid "No program"
+msgstr "Aucun programme"
+
+msgid "Enabled"
+msgstr "Activé"
+
+msgid "This could not be done."
+msgstr "Cela n'a pas pu se faire."
+
+msgid "&Details"
+msgstr "&Détails"
+
+msgid "Disable &all safe services"
+msgstr "Désa&ctiver tous les services sûrs"
+
+msgid "&Enable all"
+msgstr "Tout &réactiver"
+
+msgid "&Refresh"
+msgstr "&Actualiser"
+
+msgid "Loading services, please wait..."
+msgstr "Chargement des services, veuillez patienter..."
+
+msgid "Safe"
+msgstr "Sûr"
+
+msgid "Caution"
+msgstr "Prudence"
+
+msgid "Nothing to change."
+msgstr "Rien à changer."
+
+msgid "Disable {count} services rated Safe? Services marked Caution are not included. A Windows permission prompt will appear."
+msgstr "Désactiver {count} services marqués Sûr ? Ceux marqués Prudence ne sont pas compris. Windows va demander votre autorisation."
+
+msgid "Confirm"
+msgstr "Confirmer"
+
+msgid "Assign &keys to the commands…"
+msgstr "Assigner des &touches aux commandes…"
+
+msgid "&Close"
+msgstr "&Fermer"
+
+msgid "&Programs started with Windows (Enter to enable or disable):"
+msgstr "&Programmes lancés avec Windows (Entrée pour activer ou désactiver) :"
+
+msgid "{name}, {status}, {type}"
+msgstr "{name}, {status}, {type}"
+
+msgid "&Services (Enter to disable or enable):"
+msgstr "&Services (Entrée pour désactiver ou activer) :"
+
+msgid "{name} is not installed on this system."
+msgstr "{name} n'est pas installé sur ce système."
+
+msgid "No description available."
+msgstr "Aucune description disponible."
+
+msgid "{name} is marked Caution: {note}\n\nDisable it anyway?"
+msgstr "{name} est marqué Prudence : {note}\n\nLe désactiver quand même ?"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
+
+msgid "Check for updates &now"
+msgstr "&Vérifier les mises à jour maintenant"
+
+msgid "Keys of {name}"
+msgstr "Touches de {name}"
+
+msgid "{name} disabled"
+msgstr "{name} désactivé"
+
+msgid "{name} enabled"
+msgstr "{name} activé"
+
+msgid "{count} services listed."
+msgstr "{count} services listés."
+
+msgid "Service name: {name}"
+msgstr "Nom du service : {name}"
+
+msgid "Startup type: {value}"
+msgstr "Type de démarrage : {value}"
+
+msgid "Status: {value}"
+msgstr "État : {value}"
+
+msgid "{changed} changed, {failed} failed: {names}"
+msgstr "{changed} modifiés, {failed} échecs : {names}"
+
+msgid "Caution: {note}"
+msgstr "Prudence : {note}"
+
+msgid "{changed} services changed."
+msgstr "{changed} services modifiés."
+
+msgid "Failed to back up Open With associations."
+msgstr "Échec de la sauvegarde des associations Ouvrir avec."
+
+msgid "The selected backup file no longer exists."
+msgstr "Le fichier de sauvegarde sélectionné n'existe plus."
+
+msgid "Failed to restore Open With associations."
+msgstr "Échec de la restauration des associations Ouvrir avec."
+
+msgid "No changeable services were selected."
+msgstr "Aucun service modifiable n'a été sélectionné."
+
+msgid "Could not create the backup folder."
+msgstr "Impossible de créer le dossier de sauvegarde."
+
+msgid "Could not track the elevated service change."
+msgstr "Impossible de suivre la modification du service avec élévation de privilèges."
+
+msgid "The service change took too long to finish."
+msgstr "La modification du service a pris trop de temps."
+
+msgid "User cancelled the UAC elevation prompt."
+msgstr "L'utilisateur a annulé l'invite d'élévation UAC."
+
+msgid "Exception occurred: {error}"
+msgstr "Une exception s'est produite : {error}"
+
+msgid "Could not start the elevated service change. Error code: {code}"
+msgstr "Impossible de démarrer la modification du service avec élévation de privilèges. Code d'erreur : {code}"
+
+msgid "This could not be started. Error code: {code}"
+msgstr "Cela n'a pas pu démarrer. Code d'erreur : {code}"
+
+msgid "Kill Process"
+msgstr "Tuer le processus"
+
+msgid "Kill Not Responding Apps"
+msgstr "Fermer les applications qui ne répondent pas"
+
+msgid "&Kill Process of Selected Window"
+msgstr "&Tuer le processus de la fenêtre sélectionnée"
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "No window selected."
+msgstr "Aucune fenêtre sélectionnée."
+
+msgid "Cannot open process. Access denied."
+msgstr "Impossible d'ouvrir le processus. Accès refusé."
+
+msgid "Process terminated."
+msgstr "Processus terminé."
+
+msgid "Failed to terminate process. Insufficient privileges."
+msgstr "Échec de la terminaison du processus. Privilèges insuffisants."
+
+msgid "Could not open kill dialog. See log for details."
+msgstr "Impossible d'ouvrir la boîte de dialogue de terminaison. Voir le journal pour plus de détails."
+
+msgid "Window closed."
+msgstr "Fenêtre fermée."
+
+msgid "Failed to close window."
+msgstr "Échec de la fermeture de la fenêtre."
+
+msgid "Cannot kill system process: {}"
+msgstr "Impossible de tuer le processus système : {}"
+
+msgid "Assi&gn a key"
+msgstr "Assi&gner une touche"
+
+msgid "&Remove the key"
+msgstr "&Retirer la touche"
+
+msgid "no key"
+msgstr "aucune touche"
+
+msgid "Press a key of the keyboard."
+msgstr "Appuyez sur une touche du clavier."
+
+msgid "Cancelled."
+msgstr "Annulé."
+
+msgid "Co&mmands (Enter to assign a key):"
+msgstr "&Commandes (Entrée pour assigner une touche) :"
+
+msgid "Press the key for {action}, or Escape to cancel."
+msgstr "Appuyez sur la touche pour : {action}, ou sur Échap pour annuler."
+
+msgid "{key} is already used for: {command}\n\nUse it for {action} instead?"
+msgstr "{key} sert déjà à : {command}\n\nL'utiliser plutôt pour {action} ?"
+
+msgid "{key} now does: {action}."
+msgstr "{key} fait maintenant : {action}."
+
+msgid " or "
+msgstr " ou "
+
+msgid "{action}: {key}"
+msgstr "{action} : {key}"
+
+msgid "{key} is needed to type or to move around. Press another key, or a combination with Ctrl or Alt."
+msgstr "{key} sert à écrire ou à se déplacer. Appuyez sur une autre touche, ou sur une combinaison avec Ctrl ou Alt."
+
+msgid "{key} is already the key of {action}."
+msgstr "{key} est déjà la touche de : {action}."
+
+msgid "Key removed from {action}."
+msgstr "Touche retirée de : {action}."
+
+msgid "{action} has no key."
+msgstr "{action} : aucune touche."
+
+msgid "The computer will restart at once into its BIOS or UEFI settings. Save your work first. Restart now?"
+msgstr "L'ordinateur va redémarrer aussitôt dans ses réglages BIOS ou UEFI. Enregistrez d'abord votre travail. Redémarrer maintenant ?"
+
+msgid "Internet on or off"
+msgstr "Internet activé ou coupé"
+
+msgid "Disconnect Internet"
+msgstr "Déconnecter Internet"
+
+msgid "Connect Internet"
+msgstr "Connecter Internet"
+
+msgid "Internet connected."
+msgstr "Internet connecté."
+
+msgid "Restarting Windows Explorer, please wait..."
+msgstr "Redémarrage de l'Explorateur Windows, veuillez patienter..."
+
+msgid "Cleaning temporary files, please wait..."
+msgstr "Nettoyage des fichiers temporaires, veuillez patienter..."
+
+msgid "Backing up Open With associations, please wait..."
+msgstr "Sauvegarde de Ouvrir avec, veuillez patienter..."
+
+msgid "Which backup do you want to restore?"
+msgstr "Quelle sauvegarde voulez-vous restaurer ?"
+
+msgid "Restore Open With"
+msgstr "Restaurer Ouvrir avec"
+
+msgid "Restoring Open With associations, please wait..."
+msgstr "Restauration de Ouvrir avec, veuillez patienter..."
+
+msgid "Internet disconnected."
+msgstr "Internet déconnecté."
+
+msgid "No disabled network adapter found."
+msgstr "Aucun adaptateur réseau désactivé trouvé."
+
+msgid "Failed to connect internet."
+msgstr "Échec de la connexion à Internet."
+
+msgid "No USB drives found."
+msgstr "Aucun lecteur USB trouvé."
+
+msgid "Which drive do you want to remove?"
+msgstr "Quelle clé voulez-vous retirer ?"
+
+msgid "Safely Remove USB"
+msgstr "Retirer la clé USB en toute sécurité"
+
+msgid "Failed to toggle search web results."
+msgstr "Échec de l'activation ou de la désactivation des résultats de recherche Web."
+
+msgid "Search web results disabled. Restarting Explorer to apply changes..."
+msgstr "Résultats de recherche web désactivés. Redémarrage de l'Explorateur pour appliquer les modifications..."
+
+msgid "Search web results enabled. Restarting Explorer to apply changes..."
+msgstr "Résultats de recherche web activés. Redémarrage de l'Explorateur pour appliquer les modifications..."
+
+msgid "Restart to BIOS/UEFI Settings"
+msgstr "Redémarrer dans le BIOS ou l'UEFI"
+
+msgid "Failed to restart to BIOS. Your system may not support this feature via Windows."
+msgstr "Échec du redémarrage vers le BIOS. Votre système peut ne pas prendre en charge cette fonctionnalité via Windows."
+
+msgid "No Open With backups found"
+msgstr "Aucune sauvegarde d'Ouvrir avec"
+
+msgid "System Tray"
+msgstr "Zone de notification"
+
+msgid "Bluetooth on or off"
+msgstr "Bluetooth activé ou éteint"
+
+msgid "Copy the Wi-Fi password"
+msgstr "Copier le mot de passe Wi-Fi"
+
+msgid "Restart Windows Explorer"
+msgstr "Redémarrer l'Explorateur Windows"
+
+msgid "Empty Recycle Bin"
+msgstr "Vider la corbeille"
+
+msgid "Clean Temp"
+msgstr "Nettoyer les fichiers temporaires"
+
+msgid "Clean Windows Run History"
+msgstr "Effacer l'historique de la commande Exécuter"
+
+msgid "Disk Cleanup"
+msgstr "Nettoyage de disque"
+
+msgid "Optimize and defragment drive"
+msgstr "Optimiser les lecteurs"
+
+msgid "Control Panel"
+msgstr "Panneau de configuration"
+
+msgid "Programs and Features"
+msgstr "Programmes et fonctionnalités"
+
+msgid "Folder Options"
+msgstr "Options des dossiers"
+
+msgid "Environment Variables"
+msgstr "Variables d'environnement"
+
+msgid "Regedit"
+msgstr "Éditeur du Registre"
+
+msgid "Windows Defender"
+msgstr "Sécurité Windows (Defender)"
+
+msgid "Microsoft Windows Malicious Software Removal Tool"
+msgstr "Outil de suppression de logiciels malveillants de Microsoft"
+
+msgid "Open Services"
+msgstr "Fenêtre Services de Windows"
+
+msgid "Run DISM"
+msgstr "DISM, réparer Windows"
+
+msgid "Run SFC Scannow"
+msgstr "SFC, vérifier les fichiers de Windows"
+
+msgid "Run Chkdsk on C:"
+msgstr "Chkdsk sur C:"
+
+msgid "Check Disk Status"
+msgstr "État des disques"
+
+msgid "Power Diagnostic (Battery Report)"
+msgstr "Rapport de batterie"
+
+msgid "Run Windows Defender Full Scan"
+msgstr "Analyse complète de Windows Defender"
+
+msgid "Windows Defender Full Scan Low"
+msgstr "Analyse complète de Windows Defender à basse priorité"
+
+msgid "Backup Open With"
+msgstr "Sauvegarder Ouvrir avec"
+
+msgid "No active network adapter found."
+msgstr "Aucun adaptateur réseau actif trouvé."
+
+msgid "Failed to disconnect internet."
+msgstr "Échec de la déconnexion d'Internet."
+
+msgid "No Wi-Fi network is currently connected."
+msgstr "Aucun réseau Wi-Fi n'est actuellement connecté."
+
+msgid "Failed to clean temporary files."
+msgstr "Échec du nettoyage des fichiers temporaires."
+
+msgid "Failed to clear Run history."
+msgstr "L'historique de la commande Exécuter n'a pas pu être effacé."
+
+msgid "User Account Control changed. Restart Windows for the change to take effect."
+msgstr "Le contrôle de compte d'utilisateur a changé. Redémarrez Windows pour que la modification prenne effet."
+
+msgid "Failed to toggle UAC."
+msgstr "Le contrôle de compte d'utilisateur n'a pas pu être changé."
+
+msgid "Open With associations backed up successfully. Note: this restores reliably only on this same Windows installation and user account, not after a Windows reinstall."
+msgstr "Ouvrir avec est sauvegardé. La restauration ne fonctionne que sur cette installation de Windows et ce compte, pas après une réinstallation."
+
+msgid "Open With associations restored. Restart Windows Explorer or sign out and back in for the change to take effect."
+msgstr "Ouvrir avec est restauré. Redémarrez l'Explorateur Windows, ou fermez puis rouvrez votre session, pour l'appliquer."
+
+msgid "{name}: accept the permission prompt of Windows."
+msgstr "{name} : acceptez la demande d'autorisation de Windows."
+
+msgid "Wi-Fi password for {ssid} copied to clipboard."
+msgstr "Mot de passe Wi-Fi pour {ssid} copié dans le presse-papiers."
+
+msgid "Windows Explorer has been restarted."
+msgstr "L'Explorateur Windows a été redémarré."
+
+msgid "Failed to restart Windows Explorer."
+msgstr "Échec du redémarrage de l'Explorateur Windows."
+
+msgid "Disable User Account Control"
+msgstr "Désactiver le contrôle de compte d'utilisateur"
+
+msgid "Enable User Account Control"
+msgstr "Activer le contrôle de compte d'utilisateur"
+
+msgid "Enable Search Web Results"
+msgstr "Activer les résultats web de la recherche"
+
+msgid "Disable Search Web Results"
+msgstr "Désactiver les résultats web de la recherche"
+
+msgid "User Account Control on or off"
+msgstr "Contrôle de compte d'utilisateur activé ou désactivé"
+
+msgid "Search web results on or off"
+msgstr "Résultats web de la recherche activés ou désactivés"
+
+msgid "{name}: finished."
+msgstr "{name} : terminé."
+
+msgid "The Wi-Fi network '{ssid}' is open (no password)."
+msgstr "Le réseau Wi-Fi '{ssid}' est ouvert (sans mot de passe)."
+
+msgid "USB drive {drive} ejected safely."
+msgstr "Lecteur USB {drive} éjecté en toute sécurité."
+
+msgid "Failed to eject {drive}."
+msgstr "Échec de l'éjection de {drive}."
+
+msgid "Temporary files cleaned: {count} items removed. Files in use or changed in the last day are kept."
+msgstr "Fichiers temporaires nettoyés : {count} éléments supprimés. Les fichiers ouverts ou modifiés depuis moins d'un jour sont gardés."
+
+msgid "Windows Run history cleared. {count} items removed."
+msgstr "Historique de la commande Exécuter effacé. {count} éléments supprimés."
+
+msgid "{name}: running in the background. NVDA will tell you when it is finished."
+msgstr "{name} : en cours, en arrière-plan. NVDA vous dira quand ce sera terminé."
+
+msgid "{name}: finished. The report is open."
+msgstr "{name} : terminé. Le rapport est ouvert."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
+
+msgid "Downloading the update..."
+msgstr "Téléchargement de la mise à jour..."
+
+msgid "Checking for updates..."
+msgstr "Recherche de mises à jour..."
+
+msgid "{name} update"
+msgstr "Mise à jour de {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} est disponible. Vous avez la version {current}. Voulez-vous l'installer maintenant ?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."
+
+msgid "The update could not be downloaded."
+msgstr "La mise à jour n'a pas pu être téléchargée."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Téléchargement de la mise à jour : {percent} %"
+
+msgid "The update could not be installed."
+msgstr "La mise à jour n'a pas pu être installée."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Impossible de vérifier les mises à jour. Vérifiez votre connexion Internet."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} est à jour (version {version})."
+
+msgid "Needed for printing, including braille embossers"
+msgstr "Nécessaire pour l'impression, y compris les embosseuses braille"
+
+msgid "Disabling slows Start menu and File Explorer search"
+msgstr "La désactivation ralentit la recherche du menu Démarrer et de l'Explorateur de fichiers"
+
+msgid "Disabling stops Windows security updates"
+msgstr "La désactivation arrête les mises à jour de sécurité de Windows"
+
+msgid "Needed by Windows troubleshooters, including the audio one"
+msgstr "Requis par les utilitaires de résolution des problèmes de Windows, y compris celui de l'audio"
+
+msgid "Needed for Xbox controllers, including the Adaptive Controller"
+msgstr "Nécessaire pour les manettes Xbox, y compris la manette adaptative"
+
+msgid "Needed for touch keyboard, handwriting and voice typing"
+msgstr "Nécessaire pour le clavier tactile, l'écriture manuscrite et la saisie vocale"
+
+msgid "Needed for smart card sign-in and some banking cards"
+msgstr "Nécessaire pour la connexion par carte à puce et certaines cartes bancaires"
+
+msgid "Needed for scanners and cameras, including scanning documents for OCR"
+msgstr "Nécessaire pour les scanners et les appareils photo, y compris la numérisation de documents pour la reconnaissance optique de caractères"
+
+msgid "Unknown"
+msgstr "Inconnu"
+
+msgid "Could not find or change Bluetooth status."
+msgstr "Impossible de trouver ou de modifier l'état du Bluetooth."
+
+msgid "Nothing to change - the selected services are already in that state."
+msgstr "Rien à modifier : les services sélectionnés sont déjà dans cet état."
+
+msgid "Bluetooth turned off."
+msgstr "Bluetooth désactivé."
+
+msgid "Failed to toggle Bluetooth."
+msgstr "Échec de la bascule du Bluetooth."
+
+msgid "Failed to empty recycle bin."
+msgstr "Échec de la vidange de la corbeille."
+
+msgid "Disabled"
+msgstr "Désactivé"
+
+msgid "Manual"
+msgstr "Manuel"
+
+msgid "Automatic"
+msgstr "Automatique"
+
+msgid "Automatic (Delayed Start)"
+msgstr "Automatique (début différé)"
+
+msgid "USB Drive"
+msgstr "Lecteur USB"
+
+msgid "Bluetooth turned on."
+msgstr "Bluetooth activé."
+
+msgid "Recycle bin is already empty."
+msgstr "La corbeille est déjà vide."
+
+msgid "Running"
+msgstr "En cours d'exécution"
+
+msgid "Not installed"
+msgstr "Non installé"
+
+msgid "Stopped"
+msgstr "Arrêté"
+
+msgid "Recycle bin emptied. {count} items removed."
+msgstr "Corbeille vidée. {count} éléments supprimés."
+
+msgid "Other"
+msgstr "Autre"

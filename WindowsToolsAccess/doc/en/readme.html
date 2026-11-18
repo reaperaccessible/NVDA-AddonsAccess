@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WindowsToolsAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>WindowsToolsAccess</h1>
+<p>WindowsToolsAccess brings Windows maintenance tools together in one window: turn the Internet or Bluetooth off, remove a USB drive, clean unneeded files, choose the programs started with Windows, manage services, open Windows panels, repair Windows with DISM or SFC, and much more.</p>
+<p>The add-on speaks French when NVDA is in French, and English in every other language.</p>
+
+<h2>The window</h2>
+<p><kbd>NVDA+Ctrl+Shift+W</kbd> opens the window, also found in the NVDA menu, Tools. It has six tabs:</p>
+<ul>
+<li>The window opens on the tabs: <strong>Left and Right arrows</strong> go to the previous or next tab, and <strong>Tab</strong> goes into the tab, on its list. <strong>Shift+Tab</strong> comes back.</li>
+<li><strong>Ctrl+Tab</strong> and <strong>Ctrl+Shift+Tab</strong> go to the next or previous tab from anywhere in the window.</li>
+<li><strong>Ctrl+1</strong> to <strong>Ctrl+6</strong> go straight to a tab.</li>
+<li>In a list, <strong>Enter</strong> runs the selected tool.</li>
+<li><strong>Escape</strong> closes the window. It opens again on the last tab used.</li>
+</ul>
+<p>Long tools, such as DISM, SFC, Defender or cleaning, work in the background: NVDA tells you when they start and when they end, and the window stays usable meanwhile. Many tools first ask for Windows' permission: accept it to go on.</p>
+
+<h2>1. Quick tools</h2>
+<ul>
+<li><strong>System Tray</strong>: closes the window and takes you to Windows' notification area, with the hidden icons shown.</li>
+<li><strong>Disconnect Internet</strong> or <strong>Connect Internet</strong>: turns the network adapter in use off or on. The name follows the state of the connection.</li>
+<li><strong>Bluetooth on or off</strong>.</li>
+<li><strong>Copy the Wi-Fi password</strong>: copies the password of the Wi-Fi network in use, to give it to someone.</li>
+<li><strong>Safely Remove USB</strong>: with one drive, it is removed at once; with several, you choose which one.</li>
+<li><strong>Kill Not Responding Apps</strong>: opens the list of frozen programs, to close them.</li>
+<li><strong>Restart Windows Explorer</strong>: useful when the taskbar or the desktop stop responding.</li>
+<li><strong>Empty Recycle Bin</strong>.</li>
+</ul>
+
+<h2>2. Cleaning</h2>
+<ul>
+<li><strong>Clean Temp</strong>: removes temporary files. Files in use or changed in the last day are kept, so programs at work are not disturbed.</li>
+<li><strong>Clean Windows Run History</strong>.</li>
+<li><strong>Disk Cleanup</strong>: opens Windows' tool, to choose yourself what to clean.</li>
+<li><strong>Optimize and defragment drive</strong>: opens Windows' tool.</li>
+</ul>
+
+<h2>3. Startup</h2>
+<p>The list of programs started with Windows, for example "Discord, Enabled, Registry". Enter disables or enables the selected program; NVDA tells the result. A disabled program is set aside, not deleted.</p>
+
+<h2>4. Services</h2>
+<p>The list of Windows services that can be stopped to lighten the computer, each with its startup type, its state, and <strong>Safe</strong> or <strong>Caution</strong>. The list loads the first time you open the tab.</p>
+<ul>
+<li><strong>Enter</strong> disables the selected service, or enables it if it is disabled. For a service marked Caution, NVDA first tells what it is for and asks you to confirm.</li>
+<li><strong>Details</strong>: the name, state and description of the service.</li>
+<li><strong>Disable all safe services</strong>: only those marked Safe, after a confirmation.</li>
+<li><strong>Enable all</strong>: each service gets back the startup type it had before.</li>
+<li><strong>Refresh</strong> loads the list again.</li>
+</ul>
+
+<h2>5. Windows panels</h2>
+<p>Opens directly: Control Panel, Programs and Features, Folder Options, the Registry Editor, Windows Security (Defender), Microsoft's Malicious Software Removal Tool, and Windows' Services window.</p>
+
+<h2>6. Advanced</h2>
+<ul>
+<li><strong>Disable or Enable User Account Control</strong>: the change counts after Windows restarts.</li>
+<li><strong>Disable or Enable Search Web Results</strong>: the Start menu search looks only in the computer, or on the Internet too. Explorer restarts to apply it.</li>
+<li><strong>Restart to BIOS/UEFI Settings</strong>: after a confirmation, the computer restarts at once into its startup settings. Save your work first.</li>
+<li><strong>Run DISM</strong>: repairs the Windows image. It can take 15 to 30 minutes.</li>
+<li><strong>Run SFC Scannow</strong>: checks and repairs Windows files.</li>
+<li><strong>Run Chkdsk on C:</strong>: as the system drive is in use, the check is usually set for the next restart.</li>
+<li><strong>Check Disk Status</strong>: the health of each disk.</li>
+<li><strong>Power Diagnostic (Battery Report)</strong>.</li>
+<li><strong>Run Windows Defender Full Scan</strong>, and <strong>Windows Defender Full Scan Low</strong>, which slows the computer down less. It can take a long time.</li>
+<li><strong>Backup Open With</strong> and <strong>Restore Open With</strong>: keeps the program chosen to open each type of file, and puts it back. Restoring only works on the same Windows installation and user account.</li>
+<li><strong>Environment Variables</strong>: opens Windows' window where the folder paths Windows gives to programs are set, such as Path. A wrong change can stop some programs from starting.</li>
+</ul>
+<p>When a long tool ends, NVDA says so and opens its report in Notepad (or the browser for the battery report).</p>
+
+<h2>Commands and their keys</h2>
+<p>Only opening the window has a key by default. Each tool is also a command, without a key, as are "Startup Manager" and "Manage Services", which open the window on their tab.</p>
+<p>To give them a key, choose the "Assign keys to the commands" button at the bottom of each tab (Alt+K). Choose the command, press Enter, then the key you want: it is assigned at once. If the key is already used, NVDA asks you first. Delete removes the key of a command. You also find them in the NVDA menu, Preferences, Input gestures, category "WindowsToolsAccess".</p>
+
+<h2>Settings</h2>
+<p>In the NVDA menu, Preferences, Settings, category "WindowsToolsAccess":</p>
+<ul>
+<li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
+<li><strong>Check for updates now</strong>: checks at once.</li>
+</ul>
+
+<h2>Updates</h2>
+<p>WindowsToolsAccess does not go through NVDA's Add-on Store. The add-on checks itself, shortly after NVDA starts, whether a new version is published, and offers to install it. When several ReaperAccessible add-ons update together, their windows open one after the other and NVDA asks to restart only once.</p>
+<p>In the Add-on Store, the add-on shows the "External" channel. This is normal for an add-on installed outside the Store.</p>
+
+<h2>Privacy</h2>
+<p>The add-on checks for updates with GitHub. To know whether the Internet is connected, it sends a simple ping to the address 8.8.8.8 when the window opens. Nothing else leaves the computer. Reports and backups stay in NVDA's configuration folder, under "WindowsToolsAccess".</p>
+
+<h2>Credits and license</h2>
+<p>WindowsToolsAccess is published by ReaperAccessible. The add-on is based on AbsoluteWindows, by Chai Chaimee and Peera Pilarit.</p>
+<p>It is distributed under the GNU General Public License, version 2.</p>
+<p>Source code and new versions: <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>

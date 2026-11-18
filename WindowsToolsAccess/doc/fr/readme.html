@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WindowsToolsAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>WindowsToolsAccess</h1>
+<p>WindowsToolsAccess réunit les outils d'entretien de Windows dans une seule fenêtre : couper Internet ou le Bluetooth, retirer une clé USB, nettoyer les fichiers inutiles, choisir les programmes lancés avec Windows, gérer les services, ouvrir les panneaux de Windows, réparer Windows avec DISM ou SFC, et bien d'autres.</p>
+<p>L'extension s'affiche en français lorsque NVDA est en français, et en anglais dans toutes les autres langues.</p>
+
+<h2>La fenêtre</h2>
+<p><kbd>NVDA+Ctrl+Maj+W</kbd> ouvre la fenêtre, que l'on trouve aussi dans le menu NVDA, Outils. Elle a six onglets :</p>
+<ul>
+<li>La fenêtre s'ouvre sur les onglets : les <strong>flèches gauche et droite</strong> passent à l'onglet précédent ou suivant, et <strong>Tab</strong> entre dans l'onglet, sur sa liste. <strong>Maj+Tab</strong> revient aux onglets.</li>
+<li><strong>Ctrl+Tab</strong> et <strong>Ctrl+Maj+Tab</strong> passent à l'onglet suivant ou précédent depuis n'importe où dans la fenêtre.</li>
+<li><strong>Ctrl+1</strong> à <strong>Ctrl+6</strong> vont directement à un onglet.</li>
+<li>Dans une liste, <strong>Entrée</strong> lance l'outil choisi.</li>
+<li><strong>Échap</strong> ferme la fenêtre. Elle se rouvre sur le dernier onglet utilisé.</li>
+</ul>
+<p>Les outils longs, comme DISM, SFC, Defender ou le nettoyage, travaillent en arrière-plan : NVDA annonce le début et la fin, et la fenêtre reste utilisable pendant ce temps. Beaucoup d'outils demandent d'abord l'autorisation de Windows : acceptez-la pour continuer.</p>
+
+<h2>1. Outils rapides</h2>
+<ul>
+<li><strong>Zone de notification</strong> : ferme la fenêtre et vous place dans la zone de notification de Windows, avec les icônes cachées dépliées.</li>
+<li><strong>Déconnecter Internet</strong> ou <strong>Connecter Internet</strong> : coupe ou rétablit la carte réseau en usage. Le nom suit l'état de la connexion.</li>
+<li><strong>Bluetooth</strong> : l'allume ou l'éteint.</li>
+<li><strong>Copier le mot de passe Wi-Fi</strong> : copie le mot de passe du réseau Wi-Fi en usage, pour le donner à quelqu'un.</li>
+<li><strong>Retirer la clé USB en toute sécurité</strong> : s'il n'y a qu'une clé, elle est retirée aussitôt ; s'il y en a plusieurs, vous choisissez laquelle.</li>
+<li><strong>Fermer les applications qui ne répondent pas</strong> : ouvre la liste des programmes bloqués, pour les fermer.</li>
+<li><strong>Redémarrer l'Explorateur Windows</strong> : utile quand la barre des tâches ou le bureau ne répondent plus.</li>
+<li><strong>Vider la corbeille</strong>.</li>
+</ul>
+
+<h2>2. Nettoyage</h2>
+<ul>
+<li><strong>Nettoyer les fichiers temporaires</strong> : supprime les fichiers temporaires. Les fichiers ouverts ou modifiés depuis moins d'un jour sont gardés, pour ne pas déranger les programmes au travail.</li>
+<li><strong>Effacer l'historique de la commande Exécuter</strong>.</li>
+<li><strong>Nettoyage de disque</strong> : ouvre l'outil de Windows, pour choisir vous-même quoi nettoyer.</li>
+<li><strong>Optimiser les lecteurs</strong> : ouvre l'outil de Windows qui optimise et défragmente les disques.</li>
+</ul>
+
+<h2>3. Démarrage</h2>
+<p>La liste des programmes lancés avec Windows, par exemple « Discord, Activé, Registre ». Entrée désactive ou réactive le programme choisi ; NVDA annonce le résultat. Un programme désactivé est mis de côté, pas supprimé.</p>
+
+<h2>4. Services</h2>
+<p>La liste des services de Windows que l'on peut sans risque arrêter pour alléger l'ordinateur, chacun avec son type de démarrage, son état, et la mention <strong>Sûr</strong> ou <strong>Prudence</strong>. La liste se charge la première fois que vous ouvrez l'onglet.</p>
+<ul>
+<li><strong>Entrée</strong> désactive le service choisi, ou le réactive s'il est désactivé. Pour un service marqué Prudence, NVDA vous dit d'abord à quoi il sert et vous demande de confirmer.</li>
+<li><strong>Détails</strong> : le nom, l'état et la description du service.</li>
+<li><strong>Désactiver tous les services sûrs</strong> : seulement ceux marqués Sûr, après confirmation.</li>
+<li><strong>Tout réactiver</strong> : chaque service retrouve le démarrage qu'il avait avant.</li>
+<li><strong>Actualiser</strong> recharge la liste.</li>
+</ul>
+
+<h2>5. Fenêtres de Windows</h2>
+<p>Ouvre directement : le Panneau de configuration, Programmes et fonctionnalités, les Options des dossiers, l'Éditeur du Registre, la Sécurité Windows (Defender), l'Outil de suppression de logiciels malveillants de Microsoft, et la fenêtre Services de Windows.</p>
+
+<h2>6. Avancé</h2>
+<ul>
+<li><strong>Désactiver ou Activer le contrôle de compte d'utilisateur</strong> : le changement compte après le redémarrage de Windows.</li>
+<li><strong>Désactiver ou Activer les résultats web de la recherche</strong> : la recherche du menu Démarrer cherche seulement dans l'ordinateur, ou aussi sur Internet. L'Explorateur redémarre pour l'appliquer.</li>
+<li><strong>Redémarrer dans le BIOS ou l'UEFI</strong> : après une confirmation, l'ordinateur redémarre aussitôt dans ses réglages de démarrage. Enregistrez votre travail avant.</li>
+<li><strong>DISM</strong> : répare l'image de Windows. Cela peut durer de 15 à 30 minutes.</li>
+<li><strong>SFC</strong> : vérifie et répare les fichiers de Windows.</li>
+<li><strong>Chkdsk sur C:</strong> : le disque système étant en usage, la vérification est en général prévue pour le prochain redémarrage.</li>
+<li><strong>État des disques</strong> : la santé de chaque disque.</li>
+<li><strong>Rapport de batterie</strong>.</li>
+<li><strong>Analyse complète de Windows Defender</strong>, et la même <strong>à basse priorité</strong>, qui ralentit moins l'ordinateur. Elle peut durer longtemps.</li>
+<li><strong>Sauvegarder Ouvrir avec</strong> et <strong>Restaurer Ouvrir avec</strong> : garde le programme choisi pour ouvrir chaque type de fichier, et le remet. La restauration ne fonctionne que sur la même installation de Windows et le même compte.</li>
+<li><strong>Variables d'environnement</strong> : ouvre la fenêtre de Windows où l'on règle les chemins de dossiers que Windows donne aux programmes, comme Path. Une mauvaise modification peut empêcher certains programmes de démarrer.</li>
+</ul>
+<p>Quand un outil long se termine, NVDA l'annonce et ouvre son rapport dans le Bloc-notes (ou le navigateur pour le rapport de batterie).</p>
+
+<h2>Les commandes et leurs touches</h2>
+<p>Seule l'ouverture de la fenêtre a une touche par défaut. Chaque outil existe aussi comme commande, sans touche, ainsi que « Gestionnaire de démarrage » et « Gérer les services », qui ouvrent la fenêtre sur leur onglet.</p>
+<p>Pour leur donner une touche, choisissez le bouton « Assigner des touches aux commandes », en bas de chaque onglet (Alt+T). Choisissez la commande, appuyez sur Entrée, puis sur la touche voulue : elle est assignée aussitôt. Si la touche sert déjà à autre chose, NVDA vous le demande avant. Supprimer retire la touche d'une commande. Vous les retrouvez aussi dans le menu NVDA, Préférences, Gestes de commandes, rubrique « WindowsToolsAccess ».</p>
+
+<h2>Réglages</h2>
+<p>Dans le menu NVDA, Préférences, Paramètres, catégorie « WindowsToolsAccess » :</p>
+<ul>
+<li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> : cochée par défaut.</li>
+<li><strong>Vérifier les mises à jour maintenant</strong> : lance la vérification tout de suite.</li>
+</ul>
+
+<h2>Mises à jour</h2>
+<p>WindowsToolsAccess ne passe pas par l'Add-on Store de NVDA. L'extension vérifie elle-même, peu après le démarrage de NVDA, si une nouvelle version est publiée, et vous propose de l'installer. Lorsque plusieurs extensions ReaperAccessible se mettent à jour ensemble, leurs fenêtres s'ouvrent l'une après l'autre et NVDA ne demande à redémarrer qu'une seule fois.</p>
+<p>Dans l'Add-on Store, l'extension apparaît avec le canal « Externe ». C'est normal pour une extension installée en dehors du Store.</p>
+
+<h2>Confidentialité</h2>
+<p>L'extension vérifie les mises à jour auprès de GitHub. Pour savoir si Internet est connecté, elle envoie un simple ping à l'adresse 8.8.8.8 quand la fenêtre s'ouvre. Rien d'autre ne quitte l'ordinateur. Les rapports et sauvegardes restent dans le dossier de configuration de NVDA, sous « WindowsToolsAccess ».</p>
+
+<h2>Crédits et licence</h2>
+<p>WindowsToolsAccess est publié par ReaperAccessible. L'extension est basée sur AbsoluteWindows, de Chai Chaimee et Peera Pilarit.</p>
+<p>Elle est distribuée sous la licence publique générale GNU, version 2.</p>
+<p>Code source et nouvelles versions : <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>
