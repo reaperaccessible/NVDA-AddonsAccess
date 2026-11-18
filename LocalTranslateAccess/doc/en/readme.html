@@ -14,28 +14,31 @@
 <p>The add-on is displayed in French when NVDA is in French, and in English in every other language.</p>
 
 <h2>The shortcut and the translation menu</h2>
-<p>The add-on has a single shortcut: <kbd>NVDA+Ctrl+Shift+T</kbd>. It opens the translation menu. Browse it with the arrow keys and press Enter, or press the letter given below.</p>
+<p>The add-on has two shortcuts. <kbd>NVDA+Shift+T</kbd> translates the selected text at once. <kbd>NVDA+Ctrl+Shift+T</kbd> opens the translation menu, which gives access to everything else. Browse it with the arrow keys and press Enter, or press the letter given below.</p>
 <ul>
+<li><strong>Stop the translation</strong> (O): only appears while a long text is being translated, at the top of the menu, with the percentage already translated.</li>
 <li><strong>Translation for this application</strong> (T): turn the translation of everything NVDA says in the current application on or off. The item is checked while translation is on.</li>
 <li><strong>Global translation</strong> (G): turn translation on or off in every application. The item is checked while translation is on.</li>
 <li><strong>Translate the selection</strong> (S): translate the selected text.</li>
 <li><strong>Translate the clipboard</strong> (P): translate the text you copied.</li>
 <li><strong>Translate the last announcement</strong> (L): translate what NVDA has just said.</li>
 <li><strong>Copy the last translation</strong> (C): put the last translation on the clipboard.</li>
+<li><strong>History of translations</strong> (H): review and copy the translations made since NVDA started.</li>
 <li><strong>Swap the languages</strong> (W): translate the other way round.</li>
 <li><strong>Announce the languages</strong> (A): hear the current source and target languages.</li>
+<li><strong>Translate into</strong> (I): choose one of your favourite languages, with the digits 1 to 0.</li>
 <li><strong>Add languages</strong> (D): download other languages.</li>
 <li><strong>Translation configuration</strong> (F): open the add-on's settings.</li>
 </ul>
 <h3>Assigning your own shortcuts</h3>
-<p>Each action of the menu also exists as a separate command, with no key assigned by default. If you use an action often, you can give it a direct shortcut and do without the menu.</p>
+<p>Each action of the menu also exists as a separate command, with no key assigned by default, except "Translate the selected text", on <kbd>NVDA+Shift+T</kbd>. If you use an action often, you can give it a direct shortcut and do without the menu.</p>
 <ol>
 <li>Open the NVDA menu, Preferences, Input gestures.</li>
 <li>Expand the "LocalTranslateAccess" category.</li>
 <li>Select the command you want, choose "Add", then press the shortcut you wish.</li>
 </ol>
-<p>The available commands are: open the translation menu, turn translation on or off for the current application, turn global translation on or off, translate the selected text, translate the clipboard, translate the last announcement, copy the last translation, swap the languages, announce the languages, and open the configuration.</p>
-<p>This category is also where you can change the shortcut of the menu.</p>
+<p>The available commands are: open the translation menu, turn translation on or off for the current application, turn global translation on or off, translate the selected text, translate the clipboard, translate the last announcement, copy the last translation, swap the languages, announce the languages, open the configuration, announce the previous or next translation of the history, open the history of translations, announce the state of the translation in progress, stop the translation in progress, and choose each of the ten favourite languages.</p>
+<p>This category is also where you can change these two shortcuts.</p>
 
 <h2>Translating continuously</h2>
 <p>Choose "Translation for this application" when a single program is in another language, for example a game or software that has not been translated. Other applications are left alone.</p>
@@ -57,14 +60,36 @@
 </ul>
 <p>The language of the text is always detected automatically, whatever your source language setting. The text is translated into the target language configured for the current application, or into the global target language if the application has no setting of its own. For a very short text, detection is not reliable: your configured source language is used instead.</p>
 
+<h3>The history of translations</h3>
+<p>The add-on remembers the translations made on request, up to 100, the most recent first. Continuous translations are not included. The history is cleared when NVDA exits: nothing is written to the disk.</p>
+<ul>
+<li>"History of translations" in the menu opens a list. The arrow keys read each translation, and the "Original text" field shows the text that was translated. Enter copies the translation to the clipboard; another button copies the original text.</li>
+<li>The "Previous translation" and "Next translation" commands step through the history without opening a window. They have no default shortcut: assign one in Input gestures.</li>
+</ul>
+
+<h3>Favourite languages</h3>
+<p>You can save up to ten favourite languages, in the settings. Choosing a favourite changes the translation language everywhere, on request and continuously, and NVDA announces the new language.</p>
+<ul>
+<li>In the menu, "Translate into" lists your favourites, numbered from 1 to 9, then 0 for the tenth. Press the digit to choose one.</li>
+<li>Each favourite can also impose the language of the texts to translate, when automatic detection gets it wrong, for example on very short texts. A favourite without an imposed language keeps automatic detection.</li>
+<li>If the language is not installed, the add-on offers to download it.</li>
+<li>The "Favourite language 1" to "Favourite language 10" commands exist too, without a default shortcut.</li>
+</ul>
+
+<h3>Stopping a long translation</h3>
+<p>While a long text is being translated, choose "Stop the translation" at the top of the menu. The "Announce the state of the translation" command says how far it has got, for example "Translating: 3 parts of 8, 37%". Both commands also exist without a default shortcut.</p>
+
 <h2>Settings</h2>
 <p>Open the NVDA menu, Preferences, Settings, then the "LocalTranslateAccess" category. "Translation configuration" in the translation menu takes you there too.</p>
 <ul>
-<li><strong>Translate into</strong>: the language in which you want to hear the translations. By default it is that of NVDA's voice. If you choose a language that is not installed, the add-on offers to download it when you confirm.</li>
+<li><strong>Translate into</strong>: the language in which you want to hear the translations. Changing it here also brings back the automatic detection of the language of the texts, if a favourite had imposed one. By default it is that of NVDA's voice. If you choose a language that is not installed, the add-on offers to download it when you confirm.</li>
 <li><strong>Installed languages</strong>: the languages the add-on can translate into your language, with the space they take.</li>
 <li><strong>Add languages</strong>: opens the list of available languages, with the size of each. Tick the ones you want with Space, then press "Download".</li>
 <li><strong>Remove the selected language</strong>: frees the space taken by the language chosen in the list. English cannot be removed, because the other languages go through it.</li>
 <li><strong>Advanced options</strong>: opens a window for the settings most people never need.</li>
+<li><strong>Favourite languages</strong>: the list of your favourites, with the "Add a favourite language", "Delete", "Move up" and "Move down" buttons. The order of the list gives each one its digit in the menu.</li>
+<li><strong>Copy each translation on request to the clipboard automatically</strong>: unchecked by default. Continuous translations are not copied, so as not to overwrite the clipboard all the time.</li>
+<li><strong>Replace underscores with spaces before translating</strong>: unchecked by default. Useful for file names such as "my_final_file". Applies to every translation.</li>
 <li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
 <li><strong>Check for updates now</strong>: starts the check right away.</li>
 </ul>

@@ -14,28 +14,31 @@
 <p>L'extension s'affiche en français lorsque NVDA est en français, et en anglais dans toutes les autres langues.</p>
 
 <h2>Le raccourci et le menu de traduction</h2>
-<p>L'extension n'a qu'un seul raccourci : <kbd>NVDA+Ctrl+Maj+T</kbd>. Il ouvre le menu de traduction. Parcourez-le avec les flèches et validez avec Entrée, ou appuyez directement sur la lettre indiquée.</p>
+<p>L'extension a deux raccourcis. <kbd>NVDA+Maj+T</kbd> traduit directement le texte sélectionné. <kbd>NVDA+Ctrl+Maj+T</kbd> ouvre le menu de traduction, qui donne accès à tout le reste. Parcourez-le avec les flèches et validez avec Entrée, ou appuyez directement sur la lettre indiquée.</p>
 <ul>
+<li><strong>Arrêter la traduction</strong> (R) : n'apparaît que pendant la traduction d'un texte long, en tête du menu, avec le pourcentage déjà traduit.</li>
 <li><strong>Traduction pour cette application</strong> (A) : activer ou désactiver la traduction de tout ce que NVDA annonce dans l'application en cours. L'entrée est cochée lorsque la traduction est active.</li>
 <li><strong>Traduction globale</strong> (G) : activer ou désactiver la traduction dans toutes les applications. L'entrée est cochée lorsque la traduction est active.</li>
 <li><strong>Traduire la sélection</strong> (S) : traduire le texte sélectionné.</li>
 <li><strong>Traduire le presse-papiers</strong> (P) : traduire le texte que vous avez copié.</li>
 <li><strong>Traduire la dernière annonce</strong> (D) : traduire ce que NVDA vient de dire.</li>
 <li><strong>Copier la dernière traduction</strong> (C) : placer la dernière traduction dans le presse-papiers.</li>
+<li><strong>Historique des traductions</strong> (H) : relire et copier les traductions faites depuis le démarrage de NVDA.</li>
 <li><strong>Inverser les langues</strong> (I) : traduire dans l'autre sens.</li>
 <li><strong>Annoncer les langues</strong> (L) : entendre la langue source et la langue cible actuelles.</li>
+<li><strong>Traduire vers</strong> (V) : choisir l'une de vos langues favorites, avec les chiffres 1 à 0.</li>
 <li><strong>Ajouter des langues</strong> (U) : télécharger d'autres langues.</li>
 <li><strong>Configuration de la traduction</strong> (F) : ouvrir les réglages de l'extension.</li>
 </ul>
 <h3>Attribuer vos propres raccourcis</h3>
-<p>Chaque action du menu existe aussi comme commande séparée, sans touche attribuée par défaut. Si vous utilisez souvent une action, vous pouvez lui donner un raccourci direct et vous passer du menu.</p>
+<p>Chaque action du menu existe aussi comme commande séparée, sans touche attribuée par défaut, sauf « Traduire le texte sélectionné », sur <kbd>NVDA+Maj+T</kbd>. Si vous utilisez souvent une action, vous pouvez lui donner un raccourci direct et vous passer du menu.</p>
 <ol>
 <li>Ouvrez le menu NVDA, Préférences, Gestes de commandes.</li>
 <li>Développez la rubrique « LocalTranslateAccess ».</li>
 <li>Sélectionnez la commande voulue, choisissez « Ajouter », puis appuyez sur le raccourci souhaité.</li>
 </ol>
-<p>Les commandes disponibles sont : ouvrir le menu de traduction, activer ou désactiver la traduction pour l'application en cours, activer ou désactiver la traduction globale, traduire le texte sélectionné, traduire le presse-papiers, traduire la dernière annonce, copier la dernière traduction, inverser les langues, annoncer les langues, et ouvrir la configuration.</p>
-<p>C'est aussi dans cette rubrique que vous pouvez changer le raccourci du menu.</p>
+<p>Les commandes disponibles sont : ouvrir le menu de traduction, activer ou désactiver la traduction pour l'application en cours, activer ou désactiver la traduction globale, traduire le texte sélectionné, traduire le presse-papiers, traduire la dernière annonce, copier la dernière traduction, inverser les langues, annoncer les langues, ouvrir la configuration, annoncer la traduction précédente ou suivante de l'historique, ouvrir l'historique des traductions, annoncer l'état de la traduction en cours, arrêter la traduction en cours, et choisir chacune des dix langues favorites.</p>
+<p>C'est aussi dans cette rubrique que vous pouvez changer ces deux raccourcis.</p>
 
 <h2>Traduire en continu</h2>
 <p>Choisissez « Traduction pour cette application » lorsqu'un seul programme est dans une autre langue, par exemple un jeu ou un logiciel non traduit. Les autres applications ne sont pas touchées.</p>
@@ -57,14 +60,36 @@
 </ul>
 <p>La langue du texte est toujours détectée automatiquement, quel que soit votre réglage de langue source. Le texte est traduit vers la langue cible configurée pour l'application en cours, ou vers la langue cible globale si l'application n'a pas de réglage propre. Pour un texte très court, la détection n'est pas fiable : votre langue source configurée est alors utilisée.</p>
 
+<h3>L'historique des traductions</h3>
+<p>L'extension garde en mémoire les traductions faites à la demande, jusqu'à 100, la plus récente en premier. Les traductions en continu n'y figurent pas. L'historique s'efface quand NVDA s'arrête : rien n'est écrit sur le disque.</p>
+<ul>
+<li>« Historique des traductions » dans le menu ouvre une liste. Les flèches lisent chaque traduction, et le champ « Texte d'origine » montre le texte traduit. Entrée copie la traduction dans le presse-papiers ; un autre bouton copie le texte d'origine.</li>
+<li>Les commandes « Traduction précédente » et « Traduction suivante » parcourent l'historique sans ouvrir de fenêtre. Elles n'ont pas de raccourci par défaut : attribuez-leur-en un dans Gestes de commandes.</li>
+</ul>
+
+<h3>Les langues favorites</h3>
+<p>Vous pouvez enregistrer jusqu'à dix langues favorites, dans les réglages. Choisir une favorite change la langue de traduction partout, à la demande comme en continu, et NVDA annonce la nouvelle langue.</p>
+<ul>
+<li>Dans le menu, « Traduire vers » liste vos favorites, numérotées de 1 à 9 puis 0 pour la dixième. Appuyez sur le chiffre pour la choisir.</li>
+<li>Chaque favorite peut aussi imposer la langue des textes à traduire, quand la détection automatique se trompe, par exemple sur des textes très courts. Une favorite sans langue imposée garde la détection automatique.</li>
+<li>Si la langue n'est pas installée, l'extension vous propose de la télécharger.</li>
+<li>Les commandes « Langue favorite 1 » à « Langue favorite 10 » existent aussi, sans raccourci par défaut.</li>
+</ul>
+
+<h3>Arrêter une traduction longue</h3>
+<p>Pendant la traduction d'un texte long, choisissez « Arrêter la traduction » en tête du menu. La commande « Annoncer l'état de la traduction » dit où elle en est, par exemple « Traduction en cours : 3 parties sur 8, 37 % ». Ces deux commandes existent aussi sans raccourci par défaut.</p>
+
 <h2>Réglages</h2>
 <p>Ouvrez le menu NVDA, Préférences, Paramètres, puis la catégorie « LocalTranslateAccess ». Vous y arrivez aussi par « Configuration de la traduction » dans le menu de traduction.</p>
 <ul>
-<li><strong>Traduire vers</strong> : la langue dans laquelle vous voulez entendre les traductions. Par défaut, c'est celle de la voix de NVDA. Si vous choisissez une langue qui n'est pas installée, l'extension vous propose de la télécharger lorsque vous validez.</li>
+<li><strong>Traduire vers</strong> : la langue dans laquelle vous voulez entendre les traductions. La changer ici rétablit aussi la détection automatique de la langue des textes, si une favorite l'avait imposée. Par défaut, c'est celle de la voix de NVDA. Si vous choisissez une langue qui n'est pas installée, l'extension vous propose de la télécharger lorsque vous validez.</li>
 <li><strong>Langues installées</strong> : la liste des langues que l'extension sait traduire vers votre langue, avec la place qu'elles occupent.</li>
 <li><strong>Ajouter des langues</strong> : ouvre la liste des langues disponibles, avec la taille de chacune. Cochez celles que vous voulez avec Espace, puis validez « Télécharger ».</li>
 <li><strong>Supprimer la langue sélectionnée</strong> : libère la place occupée par la langue choisie dans la liste. L'anglais ne peut pas être supprimé, car il sert de passerelle aux autres langues.</li>
 <li><strong>Options avancées</strong> : ouvre une fenêtre pour les réglages dont la plupart des gens n'ont jamais besoin.</li>
+<li><strong>Langues favorites</strong> : la liste de vos favorites, avec les boutons « Ajouter une langue favorite », « Retirer », « Monter » et « Descendre ». L'ordre de la liste donne le chiffre de chacune dans le menu.</li>
+<li><strong>Copier automatiquement chaque traduction à la demande dans le presse-papiers</strong> : décochée par défaut. Les traductions en continu ne sont pas copiées, pour ne pas écraser sans cesse le presse-papiers.</li>
+<li><strong>Remplacer les tirets bas par des espaces avant de traduire</strong> : décochée par défaut. Utile pour les noms de fichiers comme « mon_fichier_final ». S'applique à toutes les traductions.</li>
 <li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> : cochée par défaut.</li>
 <li><strong>Vérifier les mises à jour maintenant</strong> : lance la vérification tout de suite.</li>
 </ul>

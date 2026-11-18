@@ -263,3 +263,101 @@ class RecentLanguage:
             if entry is None or self._clock() - entry[1] > self._lifetime:
                 return None
             return entry[0]
+
+
+# --- the history of translations made on request
+HISTORY_SIZE = 100
+
+
+class TranslationHistory:
+    """The translations made on request since NVDA started, the most recent first. Memory only."""
+
+    def __init__(self, size=HISTORY_SIZE):
+        self._items = deque(maxlen=size)
+        self._lock = threading.Lock()
+        self._cursor = None
+
+    def add(self, original, translation):
+        with self._lock:
+            self._items.appendleft((original, translation))
+            self._cursor = None   # stepping starts again from the newest
+
+    def items(self):
+        with self._lock:
+            return list(self._items)
+
+    def step(self, older):
+        """Move one translation older (or newer). Returns (item, moved): item is None when empty."""
+        with self._lock:
+            if not self._items:
+                return None, False
+            if self._cursor is None:
+                self._cursor = 0
+                return self._items[0], True
+            target = self._cursor + (1 if older else -1)
+            if not 0 <= target < len(self._items):
+                return self._items[self._cursor], False
+            self._cursor = target
+            return self._items[target], True
+
+
+# --- favourite languages: "source>target", the source being 'auto' when detected
+MAX_FAVORITES = 10
+
+
+def parse_favorites(values):
+    result = []
+    for value in values or ():
+        if not isinstance(value, str) or '>' not in value:
+            continue
+        source, target = (part.strip() for part in value.split('>', 1))
+        if target and (source, target) not in result:
+            result.append((source or 'auto', target))
+    return result[:MAX_FAVORITES]
+
+
+def format_favorites(favorites):
+    return [f'{source}>{target}' for source, target in favorites[:MAX_FAVORITES]]
+
+
+def favorite_key(index):
+    """The digit that chooses a favourite in the menu: 1 to 9, then 0 for the tenth."""
+    return str((index + 1) % 10)
+
+
+# --- progress of a translation on request, which can be stopped between two pieces
+class Progress:
+    def __init__(self):
+        self._lock = threading.Lock()
+        self.stop = threading.Event()
+        self._done = self._total = 0
+        self.running = False
+
+    def begin(self, total):
+        with self._lock:
+            self.stop.clear(); self._done, self._total, self.running = 0, total, True
+
+    def set_total(self, total):
+        """Once the text is cut into pieces; a stop asked meanwhile is kept."""
+        with self._lock:
+            self._total = total
+
+    def advance(self):
+        with self._lock:
+            self._done += 1
+
+    def end(self):
+        with self._lock:
+            self.running = False
+
+    def status(self):
+        """(done, total, percent), or None when nothing is being translated."""
+        with self._lock:
+            if not self.running:
+                return None
+            percent = int(self._done * 100 / self._total) if self._total else 0
+            return self._done, self._total, percent
+
+
+def without_underscores(text):
+    return text.replace('_', ' ')

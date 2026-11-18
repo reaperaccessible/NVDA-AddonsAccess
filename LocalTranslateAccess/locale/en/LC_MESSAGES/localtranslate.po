@@ -2407,3 +2407,132 @@ msgstr "Language installed: {language}."
 
 msgid "Téléchargement de la mise à jour : {percent} %"
 msgstr "Downloading the update: {percent}%"
+
+msgid "Historique des traductions"
+msgstr "Translation history"
+
+msgid "L’historique des traductions est vide."
+msgstr "The translation history is empty."
+
+msgid "&Traductions, la plus récente en premier :"
+msgstr "&Translations, the most recent first:"
+
+msgid "Texte d’&origine :"
+msgstr "&Original text:"
+
+msgid "&Copier la traduction"
+msgstr "&Copy the translation"
+
+msgid "Copier le texte d’o&rigine"
+msgstr "Copy the o&riginal text"
+
+msgid "Texte d’origine copié dans le presse-papiers."
+msgstr "Original text copied to the clipboard."
+
+msgid "{target}, depuis : {source}"
+msgstr "{target}, from: {source}"
+
+msgid "Ajouter une langue favorite"
+msgstr "Add a favourite language"
+
+msgid "Traduire &vers :"
+msgstr "Translate &into:"
+
+msgid "Langue des textes à traduire :"
+msgstr "Language of the texts to translate:"
+
+msgid "Langues &favorites :"
+msgstr "&Favourite languages:"
+
+msgid "Langues favorites"
+msgstr "Favourite languages"
+
+msgid "&Ajouter une langue favorite…"
+msgstr "Add a fa&vourite language…"
+
+msgid "&Retirer"
+msgstr "D&elete"
+
+msgid "&Monter"
+msgstr "Move u&p"
+
+msgid "&Descendre"
+msgstr "Move do&wn"
+
+msgid "{key} : {language}"
+msgstr "{key}: {language}"
+
+msgid "Aucune langue favorite."
+msgstr "No favourite language."
+
+msgid "Dix langues favorites au maximum."
+msgstr "Ten favourite languages at most."
+
+msgid "Cette langue favorite existe déjà."
+msgstr "This favourite language already exists."
+
+msgid "Aucune traduction plus ancienne."
+msgstr "No older translation."
+
+msgid "Aucune traduction plus récente."
+msgstr "No more recent translation."
+
+msgid "Aucune langue favorite numéro {number}."
+msgstr "No favourite language number {number}."
+
+msgid "Langue de traduction : {target}."
+msgstr "Translation language: {target}."
+
+msgid "Langue de traduction : {target}, depuis : {source}."
+msgstr "Translation language: {target}, from: {source}."
+
+msgid "Aucune traduction en cours."
+msgstr "No translation in progress."
+
+msgid "Traduction en cours : {done} parties sur {total}, {percent} %."
+msgstr "Translating: {done} parts of {total}, {percent}%."
+
+msgid "Traduction en cours."
+msgstr "Translation in progress."
+
+msgid "Traduction arrêtée."
+msgstr "Translation stopped."
+
+msgid "A&rrêter la traduction ({percent} %)"
+msgstr "St&op the translation ({percent}%)"
+
+msgid "A&rrêter la traduction"
+msgstr "St&op the translation"
+
+msgid "&Historique des traductions…"
+msgstr "&History of translations…"
+
+msgid "Traduire &vers"
+msgstr "Translate &into"
+
+msgid "Aucune langue favorite : en ajouter…"
+msgstr "No favourite language: add some…"
+
+msgid "Annonce la traduction précédente de l’historique."
+msgstr "Announces the previous translation of the history."
+
+msgid "Annonce la traduction suivante de l’historique."
+msgstr "Announces the next translation of the history."
+
+msgid "Ouvre l’historique des traductions."
+msgstr "Opens the history of translations."
+
+msgid "Annonce l’état de la traduction en cours."
+msgstr "Announces the state of the translation in progress."
+
+msgid "Arrête la traduction en cours."
+msgstr "Stops the translation in progress."
+
+msgid "Traduit vers la langue favorite {number}."
+msgstr "Translates into favourite language {number}."
+
+msgid "&Copier automatiquement chaque traduction à la demande dans le presse-papiers"
+msgstr "&Copy each translation on request to the clipboard automatically"
+
+msgid "Remplacer les tirets &bas par des espaces avant de traduire"
+msgstr "Replace under&scores with spaces before translating"

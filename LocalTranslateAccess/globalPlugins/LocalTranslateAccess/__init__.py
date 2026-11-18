@@ -626,6 +626,8 @@ def _request_translate(text, src, tgt, timeout=None, app=None):
     if family is None:
         _continuous_language_missing(text, app, src, tgt)
         raise ValueError('language not installed')
+    if _setting('replaceUnderscores'):
+        text = ondemand.without_underscores(text)
     return _engine.translate(text, src, tgt, app=app, family=family, **timing)
 
 _continuous_offered = set()
@@ -771,6 +773,12 @@ def _resolve_source(app, source, document, text):
         report(own,'manual',None)
         _speech_context.resolution={'app':app,'source':own,'timing':timing}
         return own
+    # A favourite may impose the language of the texts: then nothing is detected.
+    forced=_forced_source()
+    if forced:
+        report(forced,'manual',None)
+        _speech_context.resolution={'app':app,'source':forced,'timing':timing}
+        return forced
     # What is configured for the application or declared by the page: only a fallback.
     try:
         fallback=_app_languages.resolve(app, source, document, text, detect,report=report)
@@ -1234,7 +1242,14 @@ class LocalTranslateAccessSettingsPanel(gui.settingsDialogs.SettingsPanel):
             label=_label_for_ui, target=lambda: _target_for('global'), announce=_announce,
             add_languages=_show_add_languages, remove=_remove_language, advanced=_show_advanced))
         settingsSizer.Add(self.simple, 1, wx.EXPAND)
+        from .favorites_ui import FavoritesEditor
+        self.favorites = FavoritesEditor(self, _favorites(), list(_store.languages()), _label_for_ui, _announce)
+        settingsSizer.Add(self.favorites, 0, wx.EXPAND)
         helper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
+        self.copyCB = helper.addItem(wx.CheckBox(self, label=_('&Copier automatiquement chaque traduction à la demande dans le presse-papiers')))
+        self.copyCB.SetValue(bool(_setting('copyTranslation')))
+        self.underscoresCB = helper.addItem(wx.CheckBox(self, label=_('Remplacer les tirets &bas par des espaces avant de traduire')))
+        self.underscoresCB.SetValue(bool(_setting('replaceUnderscores')))
         self.checkForUpdatesCB = helper.addItem(wx.CheckBox(self, label=_('Vérifier a&utomatiquement les mises à jour au démarrage de NVDA')))
         self.checkForUpdatesCB.SetValue(config.conf[CONFIG_SECTION]['checkForUpdates'])
         self.checkNowButton = helper.addItem(wx.Button(self, label=_('&Vérifier les mises à jour maintenant')))
@@ -1243,8 +1258,13 @@ class LocalTranslateAccessSettingsPanel(gui.settingsDialogs.SettingsPanel):
 
     def onSave(self):
         config.conf[CONFIG_SECTION]['checkForUpdates'] = self.checkForUpdatesCB.GetValue()
+        config.conf[CONFIG_SECTION]['copyTranslation'] = self.copyCB.GetValue()
+        config.conf[CONFIG_SECTION]['replaceUnderscores'] = self.underscoresCB.GetValue()
+        config.conf[CONFIG_SECTION]['favorites'] = ondemand.format_favorites(self.favorites.favorites)
         code = self.simple.chosen_target()
         if code and code != _target_for('global'):
+            # A language chosen here is detected again in the texts, whatever a favourite imposed.
+            config.conf[CONFIG_SECTION]['activeSource'] = 'auto'
             # May ask to download the language; if refused, the choice goes back to what it was.
             if not _change_target(code, self):
                 self.simple.select_target(_target_for('global'))
@@ -1263,6 +1283,22 @@ ONDEMAND_IDLE_MS = 120000   # the models used on request are unloaded after two 
 ONDEMAND_SPEECH_DELAY = 0.5 # lets NVDA announce the focus coming back from the menu first
 
 _quiet = ondemand.QuietWindow()
+_history = ondemand.TranslationHistory()
+_progress = ondemand.Progress()
+
+def _setting(key):
+    try:
+        return config.conf[CONFIG_SECTION][key]
+    except Exception:
+        return None
+
+def _forced_source():
+    """The language imposed by a favourite for the texts to translate, or None when it is detected."""
+    value = _setting('activeSource')
+    return None if not value or value == 'auto' else value
+
+def _favorites():
+    return ondemand.parse_favorites(_setting('favorites'))
 
 def _remember_speech(speechSequence=None, **kwargs):
     # The menu's own items and the focus coming back are not announcements worth translating.
@@ -1291,8 +1327,10 @@ def _selected_text():
 
 def _ondemand_direction(app, detect=lambda: None):
     config = _store.config(app)
-    return ondemand.choose_languages(get_source_lang(app).strip().lower(), _target_for(app).strip().lower(),
-        config.get('sources', []), _ondemand['swapped'], detect)
+    forced = _forced_source()
+    source = forced or get_source_lang(app).strip().lower()
+    return ondemand.choose_languages(source, _target_for(app).strip().lower(),
+        config.get('sources', []), _ondemand['swapped'], (lambda: forced) if forced else detect)
 
 def _ondemand_release():
     engine, _ondemand['engine'], _ondemand['timer'] = _ondemand['engine'], None, None
@@ -1313,6 +1351,7 @@ def _ondemand_translate(text, app, started):
             return code
         except Exception:
             return None
+    _progress.begin(1)
     try:
         if _ondemand['engine'] is None:
             _ondemand['engine'] = NativeEngine()
@@ -1326,15 +1365,25 @@ def _ondemand_translate(text, app, started):
             # Nothing installed translates this pair: offer to install it, on the main thread.
             wx.CallAfter(_offer_language_install, text, app, source, target)
             return
-        pieces = ondemand.split_text(text)
+        work = ondemand.without_underscores(text) if _setting('replaceUnderscores') else text
+        pieces = ondemand.split_text(work)
+        _progress.set_total(len(pieces))
         if len(pieces) > 1:
             _ondemand_say(_('Traduction en cours…'), started)
         result = []
         for piece in pieces:
+            if _progress.stop.is_set():
+                return   # "Traduction arrêtée." was already said by the stop command
             body = piece.rstrip()
             result.append((engine.translate(body, source, target, app=app, family=family) if body.strip() else body) + piece[len(body):])
+            _progress.advance()
+        if _progress.stop.is_set():
+            return
         translation = ''.join(result)
         _ondemand['last'] = translation
+        _history.add(text, translation)
+        if _setting('copyTranslation'):
+            wx.CallAfter(api.copyToClip, translation)
         if ondemand.needs_window(translation):
             wx.CallAfter(_show_translation_window, translation)
         else:
@@ -1343,6 +1392,7 @@ def _ondemand_translate(text, app, started):
         log.exception('LocalTranslateAccess: translation on request failed')
         _ondemand_say(_('La traduction a échoué.'), started)
     finally:
+        _progress.end()
         _ondemand['busy'] = False
         wx.CallAfter(_ondemand_idle)
 
@@ -1576,7 +1626,7 @@ def _ondemand_start(text, app, empty_message, delayed=True):
 def _ondemand_languages_message(app, swapped_notice=False):
     # The language of each text is detected when it is translated; only the target is fixed.
     source, target = _ondemand_direction(app)
-    source_label = _label_for_ui('auto')
+    source_label = _label_for_ui(source) if _forced_source() or _ondemand['swapped'] else _label_for_ui('auto')
     message = _('Langues inversées : de {source} vers {target}.') if swapped_notice else _('Traduction : de {source} vers {target}.')
     return message.format(source=source_label, target=_label_for_ui(target))
 
@@ -1625,6 +1675,85 @@ def _action_swap(app, delayed=True):
 def _action_announce_languages(app, delayed=True):
     _ondemand_say(_ondemand_languages_message(app), time.monotonic() if delayed else None)
 
+def _action_history(older, delayed=True):
+    """Step through the history of translations, as AbsoluteTranslate did."""
+    started = time.monotonic() if delayed else None
+    item, moved = _history.step(older)
+    if item is None:
+        _ondemand_say(_('L’historique des traductions est vide.'), started)
+    elif not moved:
+        _ondemand_say(_('Aucune traduction plus ancienne.') if older else _('Aucune traduction plus récente.'), started)
+    else:
+        _ondemand_say(item[1], started)
+
+def _show_history():
+    from .history_ui import HistoryDialog
+    _quiet.close()
+    dialog = None
+    gui.mainFrame.prePopup()
+    try:
+        dialog = HistoryDialog(gui.mainFrame, _history.items(), api.copyToClip, _announce)
+        dialog.ShowModal()
+    except Exception:
+        log.exception('LocalTranslateAccess: history window failed')
+    finally:
+        if dialog is not None:
+            dialog.Destroy()
+        gui.mainFrame.postPopup()
+
+def _use_favorite(index, started=None):
+    """Translate into a favourite language from now on, everywhere."""
+    favorites = _favorites()
+    if index >= len(favorites):
+        _ondemand_say(_('Aucune langue favorite numéro {number}.').format(number=index + 1), started)
+        return
+    source, target = favorites[index]
+    if target != _target_for('global') and not _packs.continuous(target)[1]:
+        _quiet.close()   # the language has to be downloaded first: that question must be heard
+    if not _change_target(target):
+        return
+    config.conf[CONFIG_SECTION]['activeSource'] = source
+    _ondemand['swapped'] = False
+    if source == 'auto':
+        message = _('Langue de traduction : {target}.').format(target=_label_for_ui(target))
+    else:
+        message = _('Langue de traduction : {target}, depuis : {source}.').format(target=_label_for_ui(target), source=_label_for_ui(source))
+    _ondemand_say(message, started)
+
+def _action_status(delayed=True):
+    started = time.monotonic() if delayed else None
+    status = _progress.status()
+    if status is None:
+        _ondemand_say(_('Aucune traduction en cours.'), started)
+    elif status[1] > 1:
+        _ondemand_say(_('Traduction en cours : {done} parties sur {total}, {percent} %.').format(
+            done=status[0], total=status[1], percent=status[2]), started)
+    else:
+        _ondemand_say(_('Traduction en cours.'), started)
+
+def _action_stop(delayed=True):
+    started = time.monotonic() if delayed else None
+    if _progress.status() is None:
+        _ondemand_say(_('Aucune traduction en cours.'), started)
+        return
+    _progress.stop.set()
+    _ondemand_say(_('Traduction arrêtée.'), started)
+
+def _favorites_menu(chosen):
+    """The favourite languages, chosen with the digits 1 to 0."""
+    from .favorites_ui import favorite_label
+    submenu = wx.Menu()
+    favorites = _favorites()
+    current = (_forced_source() or 'auto', _target_for('global'))
+    for index, (source, target) in enumerate(favorites):
+        item = submenu.AppendCheckItem(wx.ID_ANY, '&' + ondemand.favorite_key(index) + ' ' + favorite_label(source, target, _label_for_ui))
+        item.Check((source, target) == current)
+        submenu.Bind(wx.EVT_MENU, lambda event, index=index: chosen.append(lambda: _use_favorite(index, time.monotonic())), item)
+    if not favorites:
+        item = submenu.Append(wx.ID_ANY, _('Aucune langue favorite : en ajouter…'))
+        submenu.Bind(wx.EVT_MENU, lambda event: chosen.append(lambda: (_quiet.close(), _show_settings_dialog(gui.mainFrame))), item)
+    return submenu
+
 def _translation_menu(plugin, context, selection, spoken):
     """Build and show the menu. Everything it needs was read before it took the focus."""
     app = context['key']
@@ -1634,13 +1763,19 @@ def _translation_menu(plugin, context, selection, spoken):
         (_('Traduction &globale'), plugin.translationGlobalEnabled,
             lambda: wx.CallLater(MENU_TOGGLE_DELAY_MS, plugin.script_toggleTranslateGlobal, None)),
     ]
-    actions = [
+    status = _progress.status()
+    actions = [] if status is None else [
+        (_('A&rrêter la traduction ({percent} %)').format(percent=status[2]) if status[1] > 1 else _('A&rrêter la traduction'),
+            _action_stop), None]
+    actions += [
         (_('Traduire la &sélection'), lambda: _action_translate_selection(app, selection)),
         (_('Traduire le &presse-papiers'), lambda: _action_translate_clipboard(app)),
         (_('Traduire la &dernière annonce'), lambda: _action_translate_last(app, spoken)),
         (_('&Copier la dernière traduction'), _action_copy_last),
+        (_('&Historique des traductions…'), lambda: (_quiet.close(), wx.CallAfter(_show_history))),
         (_('&Inverser les langues'), lambda: _action_swap(app)),
         (_('Annoncer les &langues'), lambda: _action_announce_languages(app)),
+        'favorites',
         None,
         (_('Ajouter des lang&ues…'), lambda: (_quiet.close(), wx.CallAfter(_show_add_languages))),
         (_('Con&figuration de la traduction…'), lambda: (_quiet.close(), _show_settings_dialog(gui.mainFrame))),
@@ -1655,6 +1790,9 @@ def _translation_menu(plugin, context, selection, spoken):
     for action in actions:
         if action is None:
             menu.AppendSeparator()
+            continue
+        if action == 'favorites':
+            menu.AppendSubMenu(_favorites_menu(chosen), _('Traduire &vers'))
             continue
         item = menu.Append(wx.ID_ANY, action[0])
         menu.Bind(wx.EVT_MENU, lambda event, run=action[1]: chosen.append(run), item)
@@ -1676,8 +1814,10 @@ def _translation_menu(plugin, context, selection, spoken):
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
     """Point d’entrée NVDA : gère les raccourcis, le hook de parole, et le worker."""
     __gestures = {
-        # The add-on's only shortcut: everything else is in the menu it opens.
+        # The menu holds everything; translating the selection is used so often that it has its own key
+        # (Lee's choice, 2026-11-18). Every other command has no key by default.
         "kb:NVDA+control+shift+t": "translationMenu",
+        "kb:NVDA+shift+t": "translateSelection",
     }
     # The add-on's own category in NVDA's Input Gestures dialog, never translated.
     scriptCategory = 'LocalTranslateAccess'
@@ -1694,7 +1834,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         _app_monitor = AppMonitor(_schedule, _sync_model_lifetime, report_error=_lifetime_error)
         # No entry in the Preferences menu: every setting is in NVDA's Settings dialog.
         # No update check on secure screens (logon, UAC), where nothing may be installed.
-        config.conf.spec[CONFIG_SECTION] = {'checkForUpdates': 'boolean(default=true)'}
+        config.conf.spec[CONFIG_SECTION] = {'checkForUpdates': 'boolean(default=true)',
+            'copyTranslation': 'boolean(default=false)', 'replaceUnderscores': 'boolean(default=false)',
+            'favorites': 'string_list(default=list())', 'activeSource': 'string(default=auto)'}
         self.updater = None
         if not globalVars.appArgs.secure:
             self.updater = Updater(addonHandler.getCodeAddon())
@@ -1836,6 +1978,26 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         _show_settings_dialog()
     script_openConfiguration.__doc__ = _('Ouvre la configuration de la traduction dans les Paramètres de NVDA.')
 
+    def script_previousTranslation(self, gesture):
+        _action_history(True, delayed=False)
+    script_previousTranslation.__doc__ = _('Annonce la traduction précédente de l’historique.')
+
+    def script_nextTranslation(self, gesture):
+        _action_history(False, delayed=False)
+    script_nextTranslation.__doc__ = _('Annonce la traduction suivante de l’historique.')
+
+    def script_showTranslationHistory(self, gesture):
+        wx.CallAfter(_show_history)
+    script_showTranslationHistory.__doc__ = _('Ouvre l’historique des traductions.')
+
+    def script_translationStatus(self, gesture):
+        _action_status(delayed=False)
+    script_translationStatus.__doc__ = _('Annonce l’état de la traduction en cours.')
+
+    def script_stopTranslation(self, gesture):
+        _action_stop(delayed=False)
+    script_stopTranslation.__doc__ = _('Arrête la traduction en cours.')
+
     def script_translationMenu(self, gesture):
         # Read the context now: the menu takes the focus and NVDA announces its items.
         wx.CallAfter(_translation_menu, self, _capture_app_context(), _selected_text(), _speech_memory.latest())
@@ -1870,6 +2032,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 GlobalPlugin.script_toggleTranslateForApp.__doc__ = _('Active ou désactive la traduction pour l’application en cours.')
 GlobalPlugin.script_toggleTranslateGlobal.__doc__ = _('Active ou désactive la traduction globale.')
+
+def _make_favorite_script(index):
+    def script(self, gesture):
+        # A question may appear if the language is missing: never open it from inside a script.
+        wx.CallAfter(_use_favorite, index, None)
+    script.__name__ = 'script_useFavorite%d' % (index + 1)
+    script.__doc__ = _('Traduit vers la langue favorite {number}.').format(number=index + 1)
+    return script
+
+for _index in range(ondemand.MAX_FAVORITES):
+    _script = _make_favorite_script(_index)
+    setattr(GlobalPlugin, _script.__name__, _script)
+del _index, _script
 
 # === sortie propre =====================================================
 def _cleanup_on_exit():
