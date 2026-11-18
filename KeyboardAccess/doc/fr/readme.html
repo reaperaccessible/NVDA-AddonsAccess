@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KeyboardAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>KeyboardAccess</h1>
+<p>KeyboardAccess rassemble trois outils pour le clavier :</p>
+<ul>
+<li>il redonne la touche Applications, celle qui ouvre le menu contextuel, aux claviers qui n'en ont pas, surtout sur les ordinateurs portables ;</li>
+<li>il clique sur l'élément sélectionné, avec le bouton gauche ou droit de la souris, ou double-clique ;</li>
+<li>il change la langue du clavier parmi toutes celles que Windows connaît, sans avoir à les ajouter dans les paramètres de Windows.</li>
+</ul>
+<p>L'extension s'affiche en français lorsque NVDA est en français, et en anglais dans toutes les autres langues.</p>
+
+<h2>La fenêtre du clavier</h2>
+<p><kbd>NVDA+Ctrl+Maj+K</kbd> ouvre la fenêtre, que l'on trouve aussi dans le menu NVDA, Outils. Elle contient deux listes : les actions, chacune avec sa touche, puis les langues du clavier. Tab passe de l'une à l'autre.</p>
+<p>La liste des actions :</p>
+<ul>
+<li><strong>Touche Applications</strong> : ouvre le menu contextuel de l'élément sélectionné. Comme sur un vrai clavier, Maj avec cette touche ouvre le menu contextuel étendu, qui propose plus de choix (sous Windows 11, c'est lui qui donne l'ancien menu complet).</li>
+<li><strong>Clic gauche</strong> : clique sur l'élément sélectionné.</li>
+<li><strong>Double-clic</strong> : double-clique sur l'élément sélectionné, par exemple pour ouvrir un élément quand Entrée ne fonctionne pas.</li>
+<li><strong>Clic droit</strong> : fait un clic droit sur l'élément sélectionné.</li>
+<li><strong>Changer de clavier</strong> : passe de votre clavier à la dernière langue de clavier choisie dans la fenêtre, et inversement (voir plus bas).</li>
+</ul>
+<p>Au départ, aucune action n'a de touche.</p>
+
+<h3>Assigner une touche</h3>
+<ol>
+<li>Choisissez l'action dans la liste avec les flèches.</li>
+<li>Appuyez sur Entrée, ou sur le bouton « Assigner une touche ».</li>
+<li>NVDA dit « Appuyez sur la touche à utiliser… ». Appuyez sur la touche voulue, par exemple Impression écran.</li>
+<li>NVDA confirme, par exemple « impression écran est maintenant la touche Applications. Avec Maj, elle ouvre le menu étendu. » C'est fini : la touche fonctionne tout de suite, dans tous vos programmes.</li>
+</ol>
+<p>Échap annule l'attente. Les touches qui servent à écrire ou à se déplacer, utilisées seules (une lettre, un chiffre, Entrée, Tab, Espace, les flèches…), sont refusées : NVDA vous demande alors d'en choisir une autre.</p>
+<p>Pour la touche Applications, seule une touche seule est acceptée, sans Ctrl, Alt, Maj ni NVDA : c'est ce qui permet à Maj avec cette touche d'ouvrir le menu étendu. Les touches seules qui conviennent le mieux sont AltGr (Alt droite), Ctrl droite, Impression écran, Pause et Arrêt défilement.</p>
+<p>Avec AltGr ou Ctrl droite, la touche Applications fonctionne quand vous appuyez puis relâchez la touche sans rien d'autre. Utilisée avec une autre touche, elle garde son rôle habituel : AltGr+2 donne toujours @, par exemple. Si vous la gardez enfoncée plus d'une seconde, rien ne se passe. Pour les clics, vous pouvez aussi choisir une combinaison, par exemple Ctrl+Alt+K.</p>
+<p>Si la touche sert déjà à une autre commande de NVDA ou d'une extension, NVDA vous le dit et vous demande si vous voulez l'utiliser quand même. Chaque action a une seule touche : en assigner une nouvelle remplace l'ancienne.</p>
+
+<h3>Retirer une touche</h3>
+<p>Choisissez l'action, puis appuyez sur Supprimer, ou sur le bouton « Retirer la touche ».</p>
+
+<h3>Le son des clics</h3>
+<p>La case « Jouer un son à chaque clic » fait entendre un petit clic de confirmation. Elle est cochée par défaut.</p>
+<h3>La langue du clavier</h3>
+<p>La liste « Langue du clavier » commence par votre clavier, par exemple « Votre clavier : Français (Canada) », puis donne toutes les dispositions de clavier de Windows, plus de deux cents, par ordre alphabétique. Tapez la première lettre d'un nom pour y aller directement. La disposition en cours est suivie de « (en cours) ».</p>
+<p>Entrée sur une langue l'active aussitôt dans tous vos programmes, et NVDA confirme, par exemple « Clavier : Anglais (États-Unis) ». Tout fonctionne exactement comme si vous l'aviez ajoutée dans les paramètres de Windows, les combinaisons comme Ctrl+Z et les touches mortes comprises, parce que c'est vraiment la disposition de Windows qui est utilisée. Rien n'est téléchargé.</p>
+<p>Entrée sur « Votre clavier » vous ramène à votre clavier. Les langues que l'extension avait ajoutées sont alors retirées de Windows. Celles que vous aviez vous-même ajoutées dans les paramètres de Windows restent.</p>
+<p>L'action « Changer de clavier », dans la liste des actions, passe d'une seule touche de votre clavier à la dernière langue choisie, et inversement. Donnez-lui une touche pour aller et venir sans ouvrir la fenêtre.</p>
+<p>Échap ou le bouton « Fermer » ferment la fenêtre. Fermez-la, puis utilisez vos touches et votre clavier dans vos programmes.</p>
+
+<h2>Bon à savoir</h2>
+<ul>
+<li>Les touches assignées sont enregistrées dans les gestes de commandes de NVDA. Vous les retrouvez aussi dans le menu NVDA, Préférences, Gestes de commandes, rubrique « KeyboardAccess ».</li>
+<li>Si vous assignez à un clic une combinaison avec Ctrl, Alt ou Maj, l'extension attend que vous relâchiez ces touches avant de cliquer.</li>
+<li>La touche Applications et Maj avec elle apparaissent aussi séparément dans les Gestes de commandes de NVDA, sauf AltGr et Ctrl droite, que NVDA ne sait pas assigner seules : l'extension les surveille elle-même.</li>
+<li>Si un logiciel comme SharpKeys a déjà remplacé une touche dans Windows, retirez d'abord ce remplacement.</li>
+<li>Pour cliquer, l'extension place le pointeur de la souris sur l'élément sélectionné. Si l'élément n'est pas visible à l'écran, NVDA le dit et ne clique pas.</li>
+<li>Dans la plupart des programmes, Maj+F10 ouvre aussi le menu contextuel, sans extension.</li>
+<li>Votre clavier est celui que vous utilisiez la première fois que vous avez changé de langue avec l'extension.</li>
+<li>Pendant qu'une langue ajoutée par l'extension est active, elle apparaît aussi dans le sélecteur de langue de Windows (Windows+Espace). Elle en disparaît quand vous revenez à votre clavier.</li>
+<li>Le changement de langue suit le réglage de Windows : par défaut, la même langue de clavier vaut pour tous les programmes.</li>
+</ul>
+
+<h2>Réglages</h2>
+<p>Dans le menu NVDA, Préférences, Paramètres, catégorie « KeyboardAccess » :</p>
+<ul>
+<li><strong>Jouer un son à chaque clic</strong> : cochée par défaut.</li>
+<li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> : cochée par défaut.</li>
+<li><strong>Vérifier les mises à jour maintenant</strong> : lance la vérification tout de suite.</li>
+</ul>
+
+<h2>Mises à jour</h2>
+<p>KeyboardAccess ne passe pas par l'Add-on Store de NVDA. L'extension vérifie elle-même, peu après le démarrage de NVDA, si une nouvelle version est publiée, et vous propose de l'installer. Lorsque plusieurs extensions ReaperAccessible se mettent à jour ensemble, leurs fenêtres s'ouvrent l'une après l'autre et NVDA ne demande à redémarrer qu'une seule fois.</p>
+<p>Dans l'Add-on Store, l'extension apparaît avec le canal « Externe ». C'est normal pour une extension installée en dehors du Store.</p>
+
+<h2>Confidentialité</h2>
+<p>L'extension ne contacte Internet que pour vérifier les mises à jour, auprès de GitHub.</p>
+
+<h2>Crédits et licence</h2>
+<p>KeyboardAccess est publié par ReaperAccessible. L'extension est basée sur Remap Applications Key, de Rui Fontes, Ângelo Abrantes et Héctor J. Benítez Corredera.</p>
+<p>Elle est distribuée sous la licence publique générale GNU, version 2.</p>
+<p>Code source et nouvelles versions : <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>

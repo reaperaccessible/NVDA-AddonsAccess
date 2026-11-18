@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KeyboardAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>KeyboardAccess</h1>
+<p>KeyboardAccess brings together three keyboard tools:</p>
+<ul>
+<li>it gives back the Applications key, the key that opens the context menu, to keyboards that do not have one, especially on laptops;</li>
+<li>it clicks the selected item, with the left or right mouse button, or double-clicks it;</li>
+<li>it changes the keyboard language among all those Windows knows, without having to add them in Windows' settings.</li>
+</ul>
+<p>The add-on is displayed in French when NVDA is in French, and in English in every other language.</p>
+
+<h2>The keyboard window</h2>
+<p><kbd>NVDA+Ctrl+Shift+K</kbd> opens the window, also found in the NVDA menu, Tools. It holds two lists: the actions, each with its key, then the keyboard languages. Tab moves from one to the other.</p>
+<p>The list of actions:</p>
+<ul>
+<li><strong>Applications key</strong>: opens the context menu of the selected item. As on a real keyboard, Shift with this key opens the extended context menu, which offers more choices (on Windows 11, it gives the former full menu).</li>
+<li><strong>Left click</strong>: clicks the selected item.</li>
+<li><strong>Double click</strong>: double-clicks the selected item, for example to open an item when Enter does not work.</li>
+<li><strong>Right click</strong>: right-clicks the selected item.</li>
+<li><strong>Switch keyboard</strong>: switches between your keyboard and the last keyboard language chosen in the window (see below).</li>
+</ul>
+<p>At first, no action has a key.</p>
+
+<h3>Assigning a key</h3>
+<ol>
+<li>Choose the action in the list with the arrow keys.</li>
+<li>Press Enter, or the "Assign a key" button.</li>
+<li>NVDA says "Press the key to use…". Press the key you want, for example Print Screen.</li>
+<li>NVDA confirms, for example "print screen is now the Applications key. With Shift, it opens the extended menu." That is all: the key works right away, in all your programs.</li>
+</ol>
+<p>Escape cancels the waiting. Keys used to type or to move around, pressed alone (a letter, a digit, Enter, Tab, Space, the arrows…), are refused: NVDA then asks you to choose another one.</p>
+<p>For the Applications key, only a key alone is accepted, without Ctrl, Alt, Shift or NVDA: this is what lets Shift with this key open the extended menu. The keys alone that suit best are AltGr (Right Alt), Right Ctrl, Print Screen, Pause and Scroll Lock.</p>
+<p>With AltGr or Right Ctrl, the Applications key works when you press and release the key with nothing else. Used with another key, it keeps its usual role: AltGr+2 still types @, for example. If you hold it down for more than a second, nothing happens. For the clicks, you may also choose a combination, for example Ctrl+Alt+K.</p>
+<p>If the key is already used by another command of NVDA or of an add-on, NVDA tells you and asks whether you want to use it anyway. Each action has a single key: assigning a new one replaces the old one.</p>
+
+<h3>Removing a key</h3>
+<p>Choose the action, then press Delete, or the "Remove the key" button.</p>
+
+<h3>The sound of the clicks</h3>
+<p>The "Play a sound for each click" check box plays a small confirmation click. It is checked by default.</p>
+<h3>The keyboard language</h3>
+<p>The "Keyboard language" list starts with your keyboard, for example "Your keyboard: French (Canada)", then gives every keyboard layout of Windows, more than two hundred, in alphabetical order. Type the first letter of a name to go straight to it. The layout in use is followed by "(in use)".</p>
+<p>Enter on a language turns it on at once in all your programs, and NVDA confirms, for example "Keyboard: English (United States)". Everything works exactly as if you had added it in Windows' settings, combinations such as Ctrl+Z and dead keys included, because it really is Windows' layout that is used. Nothing is downloaded.</p>
+<p>Enter on "Your keyboard" brings you back to your keyboard. The languages the add-on had added are then removed from Windows. Those you had added yourself in Windows' settings stay.</p>
+<p>The "Switch keyboard" action, in the list of actions, switches with a single key from your keyboard to the last language chosen, and back. Give it a key to go back and forth without opening the window.</p>
+<p>Escape or the "Close" button close the window. Close it, then use your keys and your keyboard in your programs.</p>
+
+<h2>Good to know</h2>
+<ul>
+<li>The keys assigned are saved in NVDA's input gestures. You also find them in the NVDA menu, Preferences, Input gestures, "KeyboardAccess" category.</li>
+<li>If you assign a combination with Ctrl, Alt or Shift to a click, the add-on waits until you release these keys before clicking.</li>
+<li>The Applications key and Shift with it also appear separately in NVDA's Input gestures, except AltGr and Right Ctrl, which NVDA cannot assign alone: the add-on watches them itself.</li>
+<li>If a program such as SharpKeys has already remapped a key in Windows, remove that remapping first.</li>
+<li>To click, the add-on puts the mouse pointer on the selected item. If the item is not visible on the screen, NVDA says so and does not click.</li>
+<li>In most programs, Shift+F10 also opens the context menu, without any add-on.</li>
+<li>Your keyboard is the one you were using the first time you changed language with the add-on.</li>
+<li>While a language added by the add-on is in use, it also appears in Windows' language switcher (Windows+Space). It disappears from it when you go back to your keyboard.</li>
+<li>The change of language follows Windows' setting: by default, the same keyboard language applies to every program.</li>
+</ul>
+
+<h2>Settings</h2>
+<p>In the NVDA menu, Preferences, Settings, "KeyboardAccess" category:</p>
+<ul>
+<li><strong>Play a sound for each click</strong>: checked by default.</li>
+<li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
+<li><strong>Check for updates now</strong>: starts the check right away.</li>
+</ul>
+
+<h2>Updates</h2>
+<p>KeyboardAccess does not go through NVDA's Add-on Store. The add-on checks by itself, shortly after NVDA starts, whether a new version has been published, and offers to install it. When several ReaperAccessible add-ons are updated together, their windows open one after the other and NVDA asks to restart only once.</p>
+<p>In the Add-on Store, the add-on is listed with the "External" channel. This is normal for an add-on installed from outside the Store.</p>
+
+<h2>Privacy</h2>
+<p>The add-on only contacts the Internet to check for updates, with GitHub.</p>
+
+<h2>Credits and licence</h2>
+<p>KeyboardAccess is published by ReaperAccessible. The add-on is based on Remap Applications Key, by Rui Fontes, Ângelo Abrantes and Héctor J. Benítez Corredera.</p>
+<p>It is distributed under the GNU General Public License, version 2.</p>
+<p>Source code and new versions: <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>

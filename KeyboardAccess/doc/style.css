@@ -1,0 +1,5 @@
+body { font-family: Segoe UI, Arial, sans-serif; font-size: 1.05em; line-height: 1.5; max-width: 50em; margin: 1em auto; padding: 0 1em; color: #111; background: #fff; }
+h1, h2, h3 { line-height: 1.25; }
+li { margin-bottom: 0.4em; }
+kbd { font-family: Consolas, monospace; font-weight: bold; }
+@media (prefers-color-scheme: dark) { body { color: #eee; background: #121212; } a { color: #8ab4f8; } }

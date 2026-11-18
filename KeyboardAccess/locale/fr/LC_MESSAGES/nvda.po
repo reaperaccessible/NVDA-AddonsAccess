@@ -1,0 +1,167 @@
+# French translation of KeyboardAccess.
+msgid ""
+msgstr ""
+"Project-Id-Version: KeyboardAccess\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Applications key"
+msgstr "Touche Applications"
+
+msgid "Presses the Applications key: opens the context menu of the selected item."
+msgstr "Appuie sur la touche Applications : ouvre le menu contextuel de l'élément sélectionné."
+
+msgid "Shift+Applications key"
+msgstr "Maj+touche Applications"
+
+msgid "Presses Shift+Applications key: opens the extended context menu of the selected item."
+msgstr "Appuie sur Maj+touche Applications : ouvre le menu contextuel étendu de l'élément sélectionné."
+
+msgid "Left click"
+msgstr "Clic gauche"
+
+msgid "Clicks the selected item with the left mouse button."
+msgstr "Clique sur l'élément sélectionné avec le bouton gauche de la souris."
+
+msgid "Double click"
+msgstr "Double-clic"
+
+msgid "Double-clicks the selected item with the left mouse button."
+msgstr "Double-clique sur l'élément sélectionné avec le bouton gauche de la souris."
+
+msgid "Right click"
+msgstr "Clic droit"
+
+msgid "Clicks the selected item with the right mouse button."
+msgstr "Clique sur l'élément sélectionné avec le bouton droit de la souris."
+
+msgid "This item has no place on the screen: it cannot be clicked."
+msgstr "Cet élément n'a pas de place à l'écran : impossible de cliquer dessus."
+
+msgid "Play a &sound for each click"
+msgstr "Jouer un &son à chaque clic"
+
+msgid "&Actions (Enter to assign a key):"
+msgstr "&Actions (Entrée pour assigner une touche) :"
+
+msgid "Assi&gn a key"
+msgstr "Assi&gner une touche"
+
+msgid "&Remove the key"
+msgstr "&Retirer la touche"
+
+msgid " or "
+msgstr " ou "
+
+msgid "no key"
+msgstr "aucune touche"
+
+msgid "{action}: {key}"
+msgstr "{action} : {key}"
+
+msgid "Press the key to use as {action}, or Escape to cancel."
+msgstr "Appuyez sur la touche à utiliser comme {action}, ou sur Échap pour annuler."
+
+msgid "Press a key of the keyboard."
+msgstr "Appuyez sur une touche du clavier."
+
+msgid "Cancelled."
+msgstr "Annulé."
+
+msgid "{key} is needed to type or to move around. Press another key, for example Print Screen, or a combination with Ctrl or Alt."
+msgstr "{key} sert à écrire ou à se déplacer. Appuyez sur une autre touche, par exemple Impression écran, ou sur une combinaison avec Ctrl ou Alt."
+
+msgid "{key} is already the key of {action}."
+msgstr "{key} est déjà la touche de {action}."
+
+msgid "{key} is already used for: {command}\n\nUse it for {action} instead?"
+msgstr "{key} sert déjà à : {command}\n\nL'utiliser plutôt pour {action} ?"
+
+msgid "{key} now does: {action}."
+msgstr "{key} fait maintenant : {action}."
+
+msgid "Key removed from {action}."
+msgstr "Touche retirée de {action}."
+
+msgid "{action} has no key."
+msgstr "{action} n'a pas de touche."
+
+msgid "Opens the keyboard window: Applications key, clicks and keyboard language."
+msgstr "Ouvre la fenêtre du clavier : touche Applications, clics et langue du clavier."
+
+msgid "Switch keyboard"
+msgstr "Changer de clavier"
+
+msgid "Switches between your keyboard and the last keyboard language chosen in the window."
+msgstr "Passe de votre clavier à la dernière langue de clavier choisie dans la fenêtre, et inversement."
+
+msgid "This keyboard could not be loaded."
+msgstr "Ce clavier n'a pas pu être chargé."
+
+msgid "Keyboard: {name}."
+msgstr "Clavier : {name}."
+
+msgid "Back to your keyboard: {name}."
+msgstr "Retour à votre clavier : {name}."
+
+msgid "Choose a keyboard language in the window first: NVDA+Ctrl+Shift+K."
+msgstr "Choisissez d'abord une langue de clavier dans la fenêtre : NVDA+Ctrl+Maj+K."
+
+msgid "&Keyboard language (Enter to use it):"
+msgstr "&Langue du clavier (Entrée pour l'utiliser) :"
+
+msgid "Your keyboard: {name}"
+msgstr "Votre clavier : {name}"
+
+msgid " (in use)"
+msgstr " (en cours)"
+
+msgid "For the Applications key, press a key alone, without Ctrl, Alt, Shift or NVDA: Shift with this key will open the extended menu, as on a keyboard that has the Applications key."
+msgstr "Pour la touche Applications, appuyez sur une touche seule, sans Ctrl, Alt, Maj ni NVDA : Maj avec cette touche ouvrira le menu étendu, comme sur un clavier qui a la touche Applications."
+
+msgid "{key} is now the Applications key. With Shift, it opens the extended menu."
+msgstr "{key} est maintenant la touche Applications. Avec Maj, elle ouvre le menu étendu."
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
+
+msgid "Check for updates &now"
+msgstr "&Vérifier les mises à jour maintenant"
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
+
+msgid "Downloading the update..."
+msgstr "Téléchargement de la mise à jour..."
+
+msgid "Checking for updates..."
+msgstr "Recherche de mises à jour..."
+
+msgid "{name} update"
+msgstr "Mise à jour de {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} est disponible. Vous avez la version {current}. Voulez-vous l'installer maintenant ?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."
+
+msgid "The update could not be downloaded."
+msgstr "La mise à jour n'a pas pu être téléchargée."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Téléchargement de la mise à jour : {percent} %"
+
+msgid "The update could not be installed."
+msgstr "La mise à jour n'a pas pu être installée."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Impossible de vérifier les mises à jour. Vérifiez votre connexion Internet."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} est à jour (version {version})."
+
+msgid "&Close"
+msgstr "&Fermer"
