@@ -3,6 +3,7 @@
 # Based on Audio Manager, Copyright huaiyinfeilong <https://github.com/huaiyinfeilong/audiomanager>.
 # This add-on is free software, licensed under the terms of the GNU General Public License (version 2).
 
+import threading
 import time
 
 import wx
@@ -83,6 +84,8 @@ def commands():
 		('toggleMicrophoneLock', _('Lock or unlock the microphone volume')),
 		('nextNVDAOutput', _('Next output for NVDA')),
 		('previousNVDAOutput', _('Previous output for NVDA')),
+		('restartAudioService', _('Restart Windows sound')),
+		('openSoundPanel', _("Open Windows' Sound panel")),
 	]
 
 
@@ -94,6 +97,37 @@ def nvda_outputs():
 	return [(device.id, device.friendlyName) for device in mmdevice.getOutputDevices(includeDefault=True)]
 
 
+def restart_windows_sound():
+	"""Restart Windows' audio service in the background (Windows asks for permission), then NVDA's voice."""
+	# Translators: Said when the restart of Windows' audio service starts.
+	ui.message(_('Restarting Windows sound. Accept the permission prompt of Windows.'))
+
+	def work():
+		try:
+			result = audio.restart_service()
+		except Exception:
+			log.error('AudioManagerAccess: restarting the audio service failed', exc_info=True)
+			result = False
+
+		def done():
+			if result:
+				try:
+					reload_nvda_audio()
+				except Exception:
+					log.error('AudioManagerAccess: reopening NVDA audio failed', exc_info=True)
+				# Translators: Said when Windows' audio service has restarted.
+				ui.message(_('Windows sound has restarted.'))
+			elif result is None:
+				ui.message(_('Cancelled.'))
+			else:
+				# Translators: Said when Windows' audio service could not be restarted.
+				ui.message(_('Windows sound could not be restarted.'))
+			if _window:
+				_window.refresh()
+		wx.CallAfter(done)
+	threading.Thread(target=work, daemon=True, name='AudioManagerAccess').start()
+
+
 def nvda_output():
 	return config.conf['audio']['outputDevice']
 
@@ -102,6 +136,11 @@ def set_nvda_output(value):
 	if config.conf['audio']['outputDevice'] == value:
 		return
 	config.conf['audio']['outputDevice'] = value
+	reload_nvda_audio()
+
+
+def reload_nvda_audio():
+	"""Reopen NVDA's voice and beeps on its output, as when it is changed in NVDA's settings."""
 	import synthDriverHandler
 	import tones
 	synthDriverHandler.setSynth(synthDriverHandler.getSynth().name)
@@ -138,6 +177,13 @@ def app_text(app, names):
 def system_sounds():
 	# Translators: The sounds of Windows itself, in the list of applications.
 	return _('System sounds')
+
+
+def open_sound_panel():
+	try:
+		audio.open_sound_panel()
+	except Exception:
+		_failed()
 
 
 class AppDevicesDialog(wx.Dialog):
@@ -200,8 +246,12 @@ class AudioWindow(wx.Dialog):
 		reset = wx.Button(self, label=_('&Reset the applications'))
 		# Translators: A button opening the window to assign keys to the commands.
 		keys_button = wx.Button(self, label=_('Assign &keys to the commands…'))
+		# Translators: A button: stops and starts Windows' audio service, when the sound is lost or stuck.
+		restart_button = wx.Button(self, label=_('Restart &Windows sound'))
+		# Translators: A button opening the classic Sound window of Windows (mmsys.cpl).
+		panel_button = wx.Button(self, label=_("Open Windows' Sound &panel"))
 		close = wx.Button(self, wx.ID_CLOSE, label=_('&Close'))
-		for button in (reset, keys_button, close):
+		for button in (reset, restart_button, panel_button, keys_button, close):
 			buttons.Add(button, 0, wx.RIGHT, 10)
 		sizer.Add(buttons, 0, wx.ALL, 10)
 		self.SetSizer(sizer)
@@ -213,6 +263,8 @@ class AudioWindow(wx.Dialog):
 		self.nvdaOutput.Bind(wx.EVT_CHOICE, self.on_nvda_output)
 		self.micLock.Bind(wx.EVT_CHECKBOX, lambda event: self.plugin.set_mic_lock(self.micLock.GetValue()))
 		reset.Bind(wx.EVT_BUTTON, lambda event: self.reset())
+		restart_button.Bind(wx.EVT_BUTTON, lambda event: restart_windows_sound())
+		panel_button.Bind(wx.EVT_BUTTON, lambda event: open_sound_panel())
 		keys_button.Bind(wx.EVT_BUTTON, lambda event: self.plugin.show_shortcuts(self))
 		close.Bind(wx.EVT_BUTTON, lambda event: self.Close())
 		self.Bind(wx.EVT_CHAR_HOOK, self.on_key)
@@ -555,6 +607,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self._toggle_current_application()
 			elif name == 'toggleMicrophoneLock':
 				self.set_mic_lock(not settings()['micLock'])
+			elif name == 'restartAudioService':
+				restart_windows_sound()
+			elif name == 'openSoundPanel':
+				open_sound_panel()
 			elif name in ('nextNVDAOutput', 'previousNVDAOutput'):
 				outputs = nvda_outputs()
 				values = [value for value, label in outputs]

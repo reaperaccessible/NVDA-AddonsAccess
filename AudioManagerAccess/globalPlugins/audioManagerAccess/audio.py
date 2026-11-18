@@ -238,3 +238,44 @@ def reset_applications():
 			set_app_mute(app, False)
 		except Exception:
 			pass
+
+
+# --- Windows' audio service, and its classic Sound panel
+class _SHELLEXECUTEINFOW(ctypes.Structure):
+	_fields_ = (('cbSize', wintypes.DWORD), ('fMask', ctypes.c_ulong), ('hwnd', wintypes.HWND), ('lpVerb', wintypes.LPCWSTR),
+		('lpFile', wintypes.LPCWSTR), ('lpParameters', wintypes.LPCWSTR), ('lpDirectory', wintypes.LPCWSTR), ('nShow', ctypes.c_int),
+		('hInstApp', wintypes.HINSTANCE), ('lpIDList', ctypes.c_void_p), ('lpClass', wintypes.LPCWSTR), ('hkeyClass', wintypes.HKEY),
+		('dwHotKey', wintypes.DWORD), ('hIconOrMonitor', wintypes.HANDLE), ('hProcess', wintypes.HANDLE))
+
+
+SEE_MASK_NOCLOSEPROCESS = 0x00000040
+ERROR_CANCELLED = 1223
+
+
+def restart_service(timeout_ms=60000):
+	"""Stop and start Windows' audio service, with Windows' permission (it asks the user). Waits for the end.
+	Returns True when done, False when it failed, None when the user refused the permission."""
+	kernel32 = ctypes.WinDLL('kernel32', use_last_error=True)
+	shell32 = ctypes.WinDLL('shell32', use_last_error=True)
+	info = _SHELLEXECUTEINFOW()
+	info.cbSize = ctypes.sizeof(info)
+	info.fMask = SEE_MASK_NOCLOSEPROCESS
+	info.lpVerb = 'runas'
+	info.lpFile = 'cmd.exe'
+	info.lpParameters = '/c net stop Audiosrv /y && net start Audiosrv'
+	info.nShow = 0
+	if not shell32.ShellExecuteExW(ctypes.byref(info)):
+		return None if ctypes.get_last_error() == ERROR_CANCELLED else False
+	try:
+		kernel32.WaitForSingleObject(info.hProcess, timeout_ms)
+		code = wintypes.DWORD()
+		kernel32.GetExitCodeProcess(info.hProcess, ctypes.byref(code))
+		return code.value == 0
+	finally:
+		kernel32.CloseHandle(info.hProcess)
+
+
+def open_sound_panel():
+	"""The classic Sound window of Windows (mmsys.cpl): Playback, Recording, Sounds, Communications."""
+	import subprocess
+	subprocess.Popen(['control.exe', 'mmsys.cpl'])

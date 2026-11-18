@@ -130,6 +130,27 @@ msgstr "Volume du micro déverrouillé."
 msgid "No device."
 msgstr "Aucun appareil."
 
+msgid "Restart Windows sound"
+msgstr "Redémarrer le son de Windows"
+
+msgid "Open Windows' Sound panel"
+msgstr "Ouvrir le panneau Son de Windows"
+
+msgid "Restart &Windows sound"
+msgstr "Redémarrer le son de &Windows"
+
+msgid "Open Windows' Sound &panel"
+msgstr "Ouvrir le &panneau Son de Windows"
+
+msgid "Restarting Windows sound. Accept the permission prompt of Windows."
+msgstr "Redémarrage du son de Windows. Acceptez la demande d'autorisation de Windows."
+
+msgid "Windows sound has restarted."
+msgstr "Le son de Windows a redémarré."
+
+msgid "Windows sound could not be restarted."
+msgstr "Le son de Windows n'a pas pu redémarrer."
+
 msgid "NVDA chooses its output by itself: choose it here."
 msgstr "NVDA choisit lui-même sa sortie : choisissez-la ici."
 
@@ -184,6 +205,9 @@ msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
 msgid "Check for updates &now"
 msgstr "&Vérifier les mises à jour maintenant"
 
+msgid "Cancelled."
+msgstr "Annulé."
+
 msgid "Assi&gn a key"
 msgstr "Assi&gner une touche"
 
@@ -195,9 +219,6 @@ msgstr "aucune touche"
 
 msgid "Press a key of the keyboard."
 msgstr "Appuyez sur une touche du clavier."
-
-msgid "Cancelled."
-msgstr "Annulé."
 
 msgid "{key} is already used for: {command}\n\nUse it for {action} instead?"
 msgstr "{key} sert déjà à : {command}\n\nL'utiliser plutôt pour {action} ?"
