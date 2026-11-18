@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ResourceMonitorAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>ResourceMonitorAccess</h1>
+<p>ResourceMonitorAccess vous annonce l'état de votre ordinateur : la charge du processeur, la mémoire utilisée, la place sur les disques, la connexion Wi-Fi, la version de Windows, le temps depuis le démarrage de Windows et la carte graphique. Il vous signale aussi les connexions et déconnexions Wi-Fi.</p>
+<p>L'extension s'affiche en français lorsque NVDA est en français, et en anglais dans toutes les autres langues. Les tailles s'écrivent dans votre langue : « 12,5 Go » en français, « 12.5 GB » en anglais.</p>
+
+<h2>Le raccourci et la fenêtre des ressources</h2>
+<p><kbd>NVDA+Ctrl+Maj+M</kbd> ouvre la fenêtre des ressources. Elle contient une liste : choisissez une information avec les flèches, ou en tapant sa première lettre, puis appuyez sur Entrée pour l'entendre. La fenêtre reste ouverte : vous pouvez en écouter une autre aussitôt, ou réécouter la même pour voir son évolution. Échap ou le bouton « Fermer » ferment la fenêtre.</p>
+<ul>
+<li><strong>Résumé</strong> : la mémoire utilisée et la charge du processeur.</li>
+<li><strong>Processeur</strong> : la charge moyenne, puis celle de chaque cœur.</li>
+<li><strong>Applications les plus gourmandes</strong> : les 5 applications qui utilisent le plus le processeur, avec la mémoire de chacune, par exemple « reaper : processeur 23 %, mémoire 2,1 Go ». Quand rien ne travaille, ce sont celles qui utilisent le plus de mémoire. Les fenêtres et onglets d'une même application sont comptés ensemble.</li>
+<li><strong>Mémoire</strong> : la mémoire physique, puis la mémoire virtuelle, utilisées et totales.</li>
+<li><strong>Disques</strong> : la place utilisée sur chaque disque, y compris les disques amovibles et réseau.</li>
+<li><strong>Connexion réseau</strong> : si l'ordinateur est connecté par câble ou par Wi-Fi, si Internet est accessible, et la vitesse du moment en téléchargement et en envoi.</li>
+<li><strong>Test de vitesse Internet</strong> : mesure la vitesse maximale de votre connexion Internet, en téléchargement et en envoi, ainsi que le temps de réponse. Le test dure 15 secondes au plus, moins sur une connexion rapide ; NVDA annonce qu'il commence, puis le résultat, par exemple « Téléchargement : 245 mégabits par seconde. Envoi : 38 mégabits par seconde. Temps de réponse : 13 millisecondes. » Vous pouvez continuer à utiliser l'ordinateur pendant ce temps.</li>
+<li><strong>Wi-Fi</strong> : le réseau auquel vous êtes connecté, la force du signal et le type de sécurité.</li>
+<li><strong>Batterie</strong> : sur un ordinateur portable seulement, le niveau de la batterie, si l'ordinateur est branché et, sinon, le temps restant.</li>
+<li><strong>Version de Windows</strong> : la version, l'architecture du processeur et le numéro de build.</li>
+<li><strong>Temps depuis le démarrage de Windows</strong> : par exemple « Windows a démarré il y a 2 jours, 3 heures, 12 minutes ».</li>
+<li><strong>Carte graphique</strong> : son utilisation et sa température.</li>
+<li><strong>Mémoire de la carte graphique</strong> : la mémoire utilisée sur la carte graphique.</li>
+<li><strong>Copier la dernière information</strong> : place dans le presse-papiers la dernière information annoncée. <kbd>Ctrl+C</kbd> fait la même chose depuis n'importe où dans la fenêtre.</li>
+<li><strong>Configuration</strong> : ferme la fenêtre et ouvre les réglages de l'extension.</li>
+</ul>
+<p>La carte graphique n'est lue que si c'est une carte NVIDIA. Elle n'est pas lue sur les écrans sécurisés, comme l'écran de connexion de Windows.</p>
+
+<h3>Attribuer vos propres raccourcis</h3>
+<p>Chaque information de la fenêtre existe aussi comme commande séparée, sans touche attribuée par défaut. Ouvrez le menu NVDA, Préférences, Gestes de commandes, rubrique « ResourceMonitorAccess », sélectionnez la commande voulue, choisissez « Ajouter », puis appuyez sur le raccourci souhaité.</p>
+<p>Avec une telle commande, un appui annonce l'information, et deux appuis rapides la copient dans le presse-papiers. Pour le test de vitesse, qui est long, deux appuis ne relancent pas le test : copiez son résultat avec « Copier la dernière information ». Ces commandes fonctionnent aussi en mode parole à la demande.</p>
+
+<h2>Les connexions Wi-Fi</h2>
+<p>Quand votre ordinateur se connecte à un réseau Wi-Fi ou s'en déconnecte, ou quand une carte Wi-Fi est activée ou désactivée, NVDA l'annonce et joue un son. Vous pouvez choisir ce comportement dans les réglages.</p>
+
+<h2>Réglages</h2>
+<p>Ouvrez le menu NVDA, Préférences, Paramètres, puis la catégorie « ResourceMonitorAccess », ou choisissez « Configuration » dans la fenêtre des ressources.</p>
+<ul>
+<li><strong>Connexions et déconnexions Wi-Fi</strong> : ne rien dire, les annoncer, jouer un son, ou les annoncer et jouer un son. Par défaut, les annoncer et jouer un son.</li>
+<li><strong>Température de la carte graphique en</strong> : degrés Celsius ou degrés Fahrenheit. Par défaut, Celsius.</li>
+<li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> : cochée par défaut.</li>
+<li><strong>Vérifier les mises à jour maintenant</strong> : lance la vérification tout de suite.</li>
+</ul>
+
+<h2>Bon à savoir</h2>
+<ul>
+<li>La charge du processeur est donnée par processeur logique. Sur un processeur à hyperthreading, il y a donc deux fois plus de « cœurs » annoncés que de cœurs physiques.</li>
+<li>Pendant une forte activité des disques, ou si un disque réseau tarde à répondre, l'annonce des disques peut prendre quelques secondes. NVDA reste utilisable pendant ce temps.</li>
+<li>Pour savoir si Internet est accessible, l'extension demande à Windows ce qu'il sait déjà : elle ne contacte aucun serveur.</li>
+<li>Les tailles sont calculées comme dans l'Explorateur de fichiers de Windows.</li>
+<li>Si l'extension Resource Monitor d'origine est aussi installée, désinstallez-la : les deux annonceraient chaque connexion Wi-Fi.</li>
+</ul>
+
+<h2>Mises à jour</h2>
+<p>ResourceMonitorAccess ne passe pas par l'Add-on Store de NVDA. L'extension vérifie elle-même, peu après le démarrage de NVDA, si une nouvelle version est publiée, et vous propose de l'installer. Lorsque plusieurs extensions ReaperAccessible se mettent à jour ensemble, leurs fenêtres s'ouvrent l'une après l'autre et NVDA ne demande à redémarrer qu'une seule fois.</p>
+<p>Dans l'Add-on Store, l'extension apparaît avec le canal « Externe ». C'est normal pour une extension installée en dehors du Store.</p>
+
+<h2>Confidentialité</h2>
+<p>Les informations restent sur votre ordinateur. L'extension ne contacte Internet que pour vérifier les mises à jour, auprès de GitHub, et pour le test de vitesse, auprès du service de test de vitesse de Cloudflare, uniquement quand vous le demandez. Pour ménager les connexions limitées, un test échange au plus 450 Mo environ.</p>
+
+<h2>Crédits et licence</h2>
+<p>ResourceMonitorAccess est publié par ReaperAccessible. L'extension est basée sur Resource Monitor, d'Alex Hall, Joseph Lee, Kefas Lungu, Beqa Gozalishvili, Tuukka Ojala, Ethin Probst, Kevin Derome et d'autres contributeurs de NVDA. Elle utilise psutil, fourni avec NVDA.</p>
+<p>Elle est distribuée sous la licence publique générale GNU, version 2.</p>
+<p>Code source et nouvelles versions : <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>

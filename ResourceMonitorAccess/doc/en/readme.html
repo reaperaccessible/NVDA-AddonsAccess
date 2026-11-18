@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ResourceMonitorAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>ResourceMonitorAccess</h1>
+<p>ResourceMonitorAccess tells you the state of your computer: the processor load, the memory used, the space on the drives, the Wi-Fi connection, the Windows version, the time since Windows started and the graphics card. It also reports Wi-Fi connections and disconnections.</p>
+<p>The add-on is displayed in French when NVDA is in French, and in English in every other language. Sizes are written in your language: "12.5 GB" in English, "12,5 Go" in French.</p>
+
+<h2>The shortcut and the resource window</h2>
+<p><kbd>NVDA+Ctrl+Shift+M</kbd> opens the resource window. It holds a list: choose a piece of information with the arrow keys, or by typing its first letter, then press Enter to hear it. The window stays open: you can listen to another one right away, or listen to the same one again to follow how it changes. Escape or the "Close" button close the window.</p>
+<ul>
+<li><strong>Summary</strong>: the memory used and the processor load.</li>
+<li><strong>Processor</strong>: the average load, then that of each core.</li>
+<li><strong>Applications using the most</strong>: the 5 applications using the most processor, with the memory of each, for example "reaper: processor 23%, memory 2.1 GB". When nothing is working, these are the ones using the most memory. The windows and tabs of one application are counted together.</li>
+<li><strong>Memory</strong>: the physical memory, then the virtual memory, used and total.</li>
+<li><strong>Drives</strong>: the space used on each drive, including removable and network drives.</li>
+<li><strong>Network connection</strong>: whether the computer is connected by cable or by Wi-Fi, whether the Internet is reachable, and the current download and upload speed.</li>
+<li><strong>Internet speed test</strong>: measures the top speed of your Internet connection, for download and upload, and the response time. The test takes 15 seconds at most, less on a fast connection; NVDA says that it is starting, then gives the result, for example "Download: 245 megabits per second. Upload: 38 megabits per second. Response time: 13 milliseconds." You can keep using the computer meanwhile.</li>
+<li><strong>Wi-Fi</strong>: the network you are connected to, the signal strength and the type of security.</li>
+<li><strong>Battery</strong>: on a laptop only, the battery level, whether the computer is plugged in and, if not, the time left.</li>
+<li><strong>Windows version</strong>: the version, the processor architecture and the build number.</li>
+<li><strong>Time since Windows started</strong>: for example "Windows started 2 days, 3 hours, 12 minutes ago".</li>
+<li><strong>Graphics card</strong>: its use and its temperature.</li>
+<li><strong>Graphics card memory</strong>: the memory used on the graphics card.</li>
+<li><strong>Copy the last information</strong>: puts the last information announced on the clipboard. <kbd>Ctrl+C</kbd> does the same from anywhere in the window.</li>
+<li><strong>Configuration</strong>: closes the window and opens the add-on's settings.</li>
+</ul>
+<p>The graphics card is only read when it is an NVIDIA card. It is not read on secure screens, such as the Windows sign-in screen.</p>
+
+<h3>Assigning your own shortcuts</h3>
+<p>Each piece of information in the window also exists as a separate command, with no key assigned by default. Open the NVDA menu, Preferences, Input gestures, "ResourceMonitorAccess" category, select the command you want, choose "Add", then press the shortcut you wish.</p>
+<p>With such a command, one press announces the information, and two quick presses copy it to the clipboard. For the speed test, which is long, two presses do not run it again: copy its result with "Copy the last information". These commands also work in speak on demand mode.</p>
+
+<h2>Wi-Fi connections</h2>
+<p>When your computer connects to a Wi-Fi network or disconnects from it, or when a Wi-Fi adapter is turned on or off, NVDA says so and plays a sound. You can choose this behaviour in the settings.</p>
+
+<h2>Settings</h2>
+<p>Open the NVDA menu, Preferences, Settings, then the "ResourceMonitorAccess" category, or choose "Configuration" in the resource window.</p>
+<ul>
+<li><strong>Wi-Fi connections and disconnections</strong>: say nothing, announce them, play a sound, or announce them and play a sound. By default, announce them and play a sound.</li>
+<li><strong>Temperature of the graphics card in</strong>: degrees Celsius or degrees Fahrenheit. By default, Celsius.</li>
+<li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
+<li><strong>Check for updates now</strong>: starts the check right away.</li>
+</ul>
+
+<h2>Good to know</h2>
+<ul>
+<li>The processor load is given per logical processor. On a processor with hyper-threading, twice as many "cores" are therefore announced as there are physical cores.</li>
+<li>During heavy drive activity, or if a network drive is slow to answer, announcing the drives can take a few seconds. NVDA stays usable meanwhile.</li>
+<li>To know whether the Internet is reachable, the add-on asks Windows what it already knows: it does not contact any server.</li>
+<li>Sizes are counted as in Windows File Explorer.</li>
+<li>If the original Resource Monitor add-on is also installed, uninstall it: both would announce each Wi-Fi connection.</li>
+</ul>
+
+<h2>Updates</h2>
+<p>ResourceMonitorAccess does not go through NVDA's Add-on Store. The add-on checks by itself, shortly after NVDA starts, whether a new version has been published, and offers to install it. When several ReaperAccessible add-ons are updated together, their windows open one after the other and NVDA asks to restart only once.</p>
+<p>In the Add-on Store, the add-on is listed with the "External" channel. This is normal for an add-on installed from outside the Store.</p>
+
+<h2>Privacy</h2>
+<p>The information stays on your computer. The add-on only contacts the Internet to check for updates, with GitHub, and for the speed test, with Cloudflare's speed test service, only when you ask for it. To spare limited connections, a test exchanges about 450 MB at most.</p>
+
+<h2>Credits and licence</h2>
+<p>ResourceMonitorAccess is published by ReaperAccessible. The add-on is based on Resource Monitor, by Alex Hall, Joseph Lee, Kefas Lungu, Beqa Gozalishvili, Tuukka Ojala, Ethin Probst, Kevin Derome and other NVDA contributors. It uses psutil, supplied with NVDA.</p>
+<p>It is distributed under the GNU General Public License, version 2.</p>
+<p>Source code and new versions: <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>

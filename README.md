@@ -7,6 +7,7 @@ Extensions accessibles pour le lecteur d'écran NVDA, par ReaperAccessible.
 
 - **LocalTranslateAccess** — translates what NVDA says, on your own computer. French and English are included; other languages are downloaded as language packs. NVDA+Shift+T translates the selected text; NVDA+Ctrl+Shift+T opens the translation menu.
 - **ToneTunerAccess** — reference tones to tune a guitar by ear: each string, all the strings or a chord, once or in a loop. NVDA+Ctrl+Shift+A opens the tuner. Based on Reference Tone Tuner by Leandro Souza (GPL v2).
+- **ResourceMonitorAccess** — announces the state of the computer: processor, applications using the most, memory, drives, network connection, Internet speed test, Wi-Fi, battery, Windows version, time since Windows started and NVIDIA graphics card; reports Wi-Fi connections and disconnections. NVDA+Ctrl+Shift+M opens the resource window. Based on Resource Monitor by Alex Hall, Joseph Lee, Kefas Lungu and other NVDA contributors (GPL v2).
 - **SpeechHistoryAccess** — review and copy NVDA's speech history. Interface in French when NVDA is in French, in English otherwise. Based on Speech History by Tyler Spivey and James Scholes (GPL v2).
 
 ## Installation

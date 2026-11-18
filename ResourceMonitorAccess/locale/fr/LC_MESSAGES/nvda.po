@@ -1,0 +1,365 @@
+# French translation of ResourceMonitorAccess.
+msgid ""
+msgstr ""
+"Project-Id-Version: ResourceMonitorAccess\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Opens the resource window: processor, memory, drives, Wi-Fi, Windows, graphics card."
+msgstr "Ouvre la fenêtre des ressources : processeur, mémoire, disques, Wi-Fi, Windows, carte graphique."
+
+msgid "Copies the last information to the clipboard."
+msgstr "Copie la dernière information dans le presse-papiers."
+
+msgid "Announces the memory used and the processor load. Pressed twice, copies it."
+msgstr "Annonce la mémoire utilisée et la charge du processeur. Appuyé deux fois, la copie."
+
+msgid "Announces the processor load, on average and for each core. Pressed twice, copies it."
+msgstr "Annonce la charge du processeur, en moyenne et pour chaque cœur. Appuyé deux fois, la copie."
+
+msgid "Announces the physical and virtual memory used. Pressed twice, copies it."
+msgstr "Annonce la mémoire physique et virtuelle utilisée. Appuyé deux fois, la copie."
+
+msgid "Announces the space used on each drive. Pressed twice, copies it."
+msgstr "Annonce l'espace utilisé sur chaque disque. Appuyé deux fois, le copie."
+
+msgid "Announces the Wi-Fi network, its signal and its security. Pressed twice, copies it."
+msgstr "Annonce le réseau Wi-Fi, son signal et sa sécurité. Appuyé deux fois, le copie."
+
+msgid "Announces the version of Windows. Pressed twice, copies it."
+msgstr "Annonce la version de Windows. Appuyé deux fois, la copie."
+
+msgid "Announces how long ago Windows started. Pressed twice, copies it."
+msgstr "Annonce depuis combien de temps Windows a démarré. Appuyé deux fois, le copie."
+
+msgid "Announces the use and temperature of the graphics card. Pressed twice, copies it."
+msgstr "Annonce l'utilisation et la température de la carte graphique. Appuyé deux fois, les copie."
+
+msgid "Announces the memory used on the graphics card. Pressed twice, copies it."
+msgstr "Annonce la mémoire utilisée sur la carte graphique. Appuyé deux fois, la copie."
+
+msgid "&Wi-Fi connections and disconnections:"
+msgstr "Connexions et déconnexions &Wi-Fi :"
+
+msgid "&Temperature of the graphics card in:"
+msgstr "&Température de la carte graphique en :"
+
+msgid "Not available on secure screens."
+msgstr "Indisponible sur les écrans sécurisés."
+
+msgid "Copy the last information"
+msgstr "Copier la dernière information"
+
+msgid "Summary"
+msgstr "Résumé"
+
+msgid "Processor"
+msgstr "Processeur"
+
+msgid "Memory"
+msgstr "Mémoire"
+
+msgid "Drives"
+msgstr "Disques"
+
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+msgid "Windows version"
+msgstr "Version de Windows"
+
+msgid "Time since Windows started"
+msgstr "Temps depuis le démarrage de Windows"
+
+msgid "Graphics card"
+msgstr "Carte graphique"
+
+msgid "Graphics card memory"
+msgstr "Mémoire de la carte graphique"
+
+msgid "&Information (Enter to hear it):"
+msgstr "&Informations (Entrée pour l'entendre) :"
+
+msgid "&Close"
+msgstr "&Fermer"
+
+msgid "No information to copy yet."
+msgstr "Aucune information à copier pour le moment."
+
+msgid "Configuration…"
+msgstr "Configuration…"
+
+msgid "Say nothing"
+msgstr "Ne rien dire"
+
+msgid "Announce them"
+msgstr "Les annoncer"
+
+msgid "Play a sound"
+msgstr "Jouer un son"
+
+msgid "Announce them and play a sound"
+msgstr "Les annoncer et jouer un son"
+
+msgid "degrees Celsius"
+msgstr "degrés Celsius"
+
+msgid "degrees Fahrenheit"
+msgstr "degrés Fahrenheit"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
+
+msgid "Check for updates &now"
+msgstr "&Vérifier les mises à jour maintenant"
+
+msgid "Copied to the clipboard."
+msgstr "Copié dans le presse-papiers."
+
+msgid "This information could not be read."
+msgstr "Cette information n'a pas pu être lue."
+
+msgid "fixed drive"
+msgstr "disque fixe"
+
+msgid "."
+msgstr ","
+
+msgid "network drive"
+msgstr "disque réseau"
+
+msgid "removable drive"
+msgstr "disque amovible"
+
+msgid "optical drive"
+msgstr "lecteur optique"
+
+msgid "No drive found."
+msgstr "Aucun disque trouvé."
+
+msgid "The time since Windows started is not known."
+msgstr "Le temps depuis le démarrage de Windows est inconnu."
+
+msgid "The graphics card could not be read."
+msgstr "La carte graphique n'a pas pu être lue."
+
+msgid "{value} TB"
+msgstr "{value} To"
+
+msgid "{value} GB"
+msgstr "{value} Go"
+
+msgid "{value} MB"
+msgstr "{value} Mo"
+
+msgid "{value} KB"
+msgstr "{value} Ko"
+
+msgid "{value} bytes"
+msgstr "{value} octets"
+
+msgid "Memory {memory}% used, processor at {processor}%."
+msgstr "Mémoire utilisée à {memory} %, processeur à {processor} %."
+
+msgid "Processor at {load}% on average; {cores}."
+msgstr "Processeur à {load} % en moyenne ; {cores}."
+
+msgid "{used} of {total} used ({percent}%)"
+msgstr "{used} utilisés sur {total} ({percent} %)"
+
+msgid "{name} ({architecture}), build {build}."
+msgstr "{name} ({architecture}), build {build}."
+
+msgid "1 day"
+msgstr "1 jour"
+
+msgid "{count} days"
+msgstr "{count} jours"
+
+msgid "1 hour"
+msgstr "1 heure"
+
+msgid "{count} hours"
+msgstr "{count} heures"
+
+msgid "1 minute"
+msgstr "1 minute"
+
+msgid "{count} minutes"
+msgstr "{count} minutes"
+
+msgid "1 second"
+msgstr "1 seconde"
+
+msgid "{count} seconds"
+msgstr "{count} secondes"
+
+msgid "Windows started {duration} ago."
+msgstr "Windows a démarré il y a {duration}."
+
+msgid "{value} degrees Celsius"
+msgstr "{value} degrés Celsius"
+
+msgid "{value} degrees Fahrenheit"
+msgstr "{value} degrés Fahrenheit"
+
+msgid "No information on the graphics card: only NVIDIA cards can be read."
+msgstr "Aucune information sur la carte graphique : seules les cartes NVIDIA peuvent être lues."
+
+msgid "Processor at {load}%."
+msgstr "Processeur à {load} %."
+
+msgid "Physical memory: {usage}."
+msgstr "Mémoire physique : {usage}."
+
+msgid "core {number}: {load}%"
+msgstr "cœur {number} : {load} %"
+
+msgid "{drive} ({kind}): {usage}."
+msgstr "{drive} ({kind}) : {usage}."
+
+msgid "Graphics card {number}: in use at {usage}%, {temperature}."
+msgstr "Carte graphique {number} : utilisée à {usage} %, {temperature}."
+
+msgid "Virtual memory: {usage}."
+msgstr "Mémoire virtuelle : {usage}."
+
+msgid "Graphics card {number} memory: {usage}."
+msgstr "Mémoire de la carte graphique {number} : {usage}."
+
+msgid "{drive} ({kind}): not available."
+msgstr "{drive} ({kind}) : indisponible."
+
+msgid "open network, no password"
+msgstr "réseau ouvert, sans mot de passe"
+
+msgid "No Wi-Fi adapter."
+msgstr "Aucune carte Wi-Fi."
+
+msgid "The Wi-Fi information could not be read."
+msgstr "Les informations Wi-Fi n'ont pas pu être lues."
+
+msgid "Not connected to any Wi-Fi network."
+msgstr "Connecté à aucun réseau Wi-Fi."
+
+msgid "A Wi-Fi adapter has been turned on"
+msgstr "Une carte Wi-Fi a été activée"
+
+msgid "Connected to {network}"
+msgstr "Connecté à {network}"
+
+msgid "Disconnected from {network}"
+msgstr "Déconnecté de {network}"
+
+msgid "A Wi-Fi adapter has been turned off"
+msgstr "Une carte Wi-Fi a été désactivée"
+
+msgid "Connected to {network}, signal {signal}%, security {security}."
+msgstr "Connecté à {network}, signal {signal} %, sécurité {security}."
+
+msgid "Applications using the most"
+msgstr "Applications les plus gourmandes"
+
+msgid "Network connection"
+msgstr "Connexion réseau"
+
+msgid "Battery"
+msgstr "Batterie"
+
+msgid "{name}: processor {load}%, memory {memory}."
+msgstr "{name} : processeur {load} %, mémoire {memory}."
+
+msgid "No network connection."
+msgstr "Aucune connexion réseau."
+
+msgid "Connected by Wi-Fi"
+msgstr "Connecté par Wi-Fi"
+
+msgid "Connected by cable"
+msgstr "Connecté par câble"
+
+msgid "{way}, the Internet is reachable."
+msgstr "{way}, Internet est accessible."
+
+msgid "{way}, but the Internet is not reachable."
+msgstr "{way}, mais Internet est inaccessible."
+
+msgid "Downloading {received} per second, sending {sent} per second."
+msgstr "Téléchargement : {received} par seconde, envoi : {sent} par seconde."
+
+msgid "No battery."
+msgstr "Aucune batterie."
+
+msgid "Battery at {level}%, plugged in."
+msgstr "Batterie à {level} %, branchée."
+
+msgid "Battery at {level}%, {duration} left."
+msgstr "Batterie à {level} %, il reste {duration}."
+
+msgid "Battery at {level}%, not plugged in."
+msgstr "Batterie à {level} %, non branchée."
+
+msgid "Announces the applications using the most processor and memory. Pressed twice, copies it."
+msgstr "Annonce les applications qui utilisent le plus de processeur et de mémoire. Appuyé deux fois, les copie."
+
+msgid "Announces how the computer is connected, whether the Internet is reachable, and the current speed. Pressed twice, copies it."
+msgstr "Annonce comment l'ordinateur est connecté, si Internet est accessible, et la vitesse du moment. Appuyé deux fois, le copie."
+
+msgid "Announces the battery level of a laptop. Pressed twice, copies it."
+msgstr "Annonce le niveau de la batterie d'un portable. Appuyé deux fois, le copie."
+
+msgid "Internet speed test"
+msgstr "Test de vitesse Internet"
+
+msgid "A speed test is already running."
+msgstr "Un test de vitesse est déjà en cours."
+
+msgid "Speed test running, 15 seconds at most."
+msgstr "Test de vitesse en cours, 15 secondes au plus."
+
+msgid "Tests the speed of the Internet connection, in 15 seconds at most."
+msgstr "Teste la vitesse de la connexion Internet, en 15 secondes au plus."
+
+msgid "{value} megabits per second"
+msgstr "{value} mégabits par seconde"
+
+msgid "The speed test could not be done: the Internet is not reachable."
+msgstr "Le test de vitesse n'a pas pu se faire : Internet est inaccessible."
+
+msgid "Download: {down}. Upload: {up}. Response time: {latency} milliseconds."
+msgstr "Téléchargement : {down}. Envoi : {up}. Temps de réponse : {latency} millisecondes."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
+
+msgid "Downloading the update..."
+msgstr "Téléchargement de la mise à jour..."
+
+msgid "Checking for updates..."
+msgstr "Recherche de mises à jour..."
+
+msgid "{name} update"
+msgstr "Mise à jour de {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} est disponible. Vous avez la version {current}. Voulez-vous l'installer maintenant ?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."
+
+msgid "The update could not be downloaded."
+msgstr "La mise à jour n'a pas pu être téléchargée."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Téléchargement de la mise à jour : {percent} %"
+
+msgid "The update could not be installed."
+msgstr "La mise à jour n'a pas pu être installée."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Impossible de vérifier les mises à jour. Vérifiez votre connexion Internet."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} est à jour (version {version})."
