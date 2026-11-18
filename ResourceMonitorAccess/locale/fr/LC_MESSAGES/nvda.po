@@ -331,6 +331,18 @@ msgstr "Le test de vitesse n'a pas pu se faire : Internet est inaccessible."
 msgid "Download: {down}. Upload: {up}. Response time: {latency} milliseconds."
 msgstr "Téléchargement : {down}. Envoi : {up}. Temps de réponse : {latency} millisecondes."
 
+msgid "The speed test could not be done. Try again later."
+msgstr "Le test de vitesse n'a pas pu se faire. Réessayez plus tard."
+
+msgid "Download: {down}. Upload: could not be measured. Response time: {latency} milliseconds."
+msgstr "Téléchargement : {down}. Envoi : impossible à mesurer. Temps de réponse : {latency} millisecondes."
+
+msgid "The speed test service limits tests that are too frequent. Try again in {duration}."
+msgstr "Le service de test de vitesse limite les tests trop fréquents. Réessayez dans {duration}."
+
+msgid "The speed test service limits tests that are too frequent. Try again later."
+msgstr "Le service de test de vitesse limite les tests trop fréquents. Réessayez plus tard."
+
 msgid "The update is installed. NVDA must restart to finish. Restart now?"
 msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
 

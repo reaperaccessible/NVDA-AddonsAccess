@@ -260,8 +260,10 @@ SPEED_HOST = 'speed.cloudflare.com'
 SPEED_HEADERS = {'User-Agent': 'ResourceMonitorAccess'}
 SPEED_STREAMS = 4          # several connections at once, as a browser does: one alone underestimates fast lines
 SPEED_SECONDS = 6          # each direction is measured for at most this long...
-SPEED_DOWN_LIMIT = 300e6   # ...or until this much has been received (bytes), to spare limited connections
-SPEED_UP_LIMIT = 150e6     # ...or sent
+# ...or until this much has been received or sent (bytes): to spare limited connections, and because the
+# service refuses for a while the downloads of an address that has asked for too much.
+SPEED_DOWN_LIMIT = 150e6
+SPEED_UP_LIMIT = 75e6
 SPEED_PIECE = 25000000     # the largest download the service gives at once
 SPEED_UP_PIECE = 1024 * 1024
 
@@ -293,7 +295,7 @@ def _latency():
 
 def _transfer(work, limit):
 	"""Run work(counter, deadline, limit) on several connections; returns megabits per second."""
-	counter = {'bytes': 0, 'lock': threading.Lock()}
+	counter = {'bytes': 0, 'lock': threading.Lock(), 'refused': None}
 	started = time.perf_counter()
 	deadline = started + SPEED_SECONDS
 	threads = [threading.Thread(target=work, args=(counter, deadline, limit), daemon=True) for stream in range(SPEED_STREAMS)]
@@ -302,7 +304,7 @@ def _transfer(work, limit):
 	for thread in threads:
 		thread.join(SPEED_SECONDS + 20)
 	elapsed = time.perf_counter() - started
-	return counter['bytes'] * 8 / elapsed / 1e6
+	return counter['bytes'] * 8 / elapsed / 1e6, counter['refused']
 
 
 def _add(counter, amount, deadline, limit):
@@ -312,6 +314,15 @@ def _add(counter, amount, deadline, limit):
 		return counter['bytes'] < limit and time.perf_counter() < deadline
 
 
+def _refused(counter, response):
+	"""The service refuses (too many tests): keep how many seconds it asks to wait, 0 if it does not say."""
+	if response.status == 429:
+		try:
+			counter['refused'] = max(counter['refused'] or 0, int(response.getheader('retry-after') or 0))
+		except ValueError:
+			counter['refused'] = counter['refused'] or 0
+
+
 def _download(counter, deadline, limit):
 	connection = _connection()
 	try:
@@ -319,6 +330,7 @@ def _download(counter, deadline, limit):
 			connection.request('GET', '/__down?bytes=%d' % SPEED_PIECE, headers=SPEED_HEADERS)
 			response = connection.getresponse()
 			if response.status != 200:
+				_refused(counter, response)
 				return
 			while True:
 				piece = response.read(65536)
@@ -342,6 +354,7 @@ def _upload(counter, deadline, limit):
 			response = connection.getresponse()
 			response.read()
 			if response.status != 200:
+				_refused(counter, response)
 				return
 			# Only what the server confirmed it received is counted.
 			if not _add(counter, len(body), deadline, limit):
@@ -364,13 +377,28 @@ def speed_test():
 	except Exception:
 		# Translators: Said when the speed test cannot reach the Internet.
 		return _('The speed test could not be done: the Internet is not reachable.')
-	down = _transfer(_download, SPEED_DOWN_LIMIT)
-	up = _transfer(_upload, SPEED_UP_LIMIT)
-	if down <= 0 and up <= 0:
-		return _('The speed test could not be done: the Internet is not reachable.')
+	down, refused = _transfer(_download, SPEED_DOWN_LIMIT)
+	if refused is not None and down <= 0:
+		return _too_frequent(refused)
+	if down <= 0:
+		# Translators: Said when the speed test fails although the Internet is reachable.
+		return _('The speed test could not be done. Try again later.')
+	up, refused = _transfer(_upload, SPEED_UP_LIMIT)
+	if up <= 0:
+		# Translators: The result of the speed test when the upload could not be measured.
+		return _('Download: {down}. Upload: could not be measured. Response time: {latency} milliseconds.').format(
+			down=speed(down), latency=number(latency, 0))
 	# Translators: The result of the speed test.
 	return _('Download: {down}. Upload: {up}. Response time: {latency} milliseconds.').format(
 		down=speed(down), up=speed(up), latency=number(latency, 0))
+
+
+def _too_frequent(seconds):
+	if seconds > 0:
+		# Translators: Said when the speed test service refuses for a while, as in "Try again in 58 minutes."
+		return _('The speed test service limits tests that are too frequent. Try again in {duration}.').format(
+			duration=duration(-(-seconds // 60) * 60))
+	return _('The speed test service limits tests that are too frequent. Try again later.')
 
 
 def has_battery():
