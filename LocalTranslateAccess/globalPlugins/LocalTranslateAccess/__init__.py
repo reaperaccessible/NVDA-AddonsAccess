@@ -764,6 +764,13 @@ def _resolve_source(app, source, document, text):
         _source_report(app,code,system,confidence)
     # The language of the text itself comes first: an application configured for English, or a
     # page declaring English, may well show a message written in another language.
+    # NVDA's own words ("blank", "check box", "not checked"...) are in NVDA's language, whatever
+    # is being read: their language is known, there is nothing to guess.
+    own=_nvda_own_language(text)
+    if own:
+        report(own,'manual',None)
+        _speech_context.resolution={'app':app,'source':own,'timing':timing}
+        return own
     # What is configured for the application or declared by the page: only a fallback.
     try:
         fallback=_app_languages.resolve(app, source, document, text, detect,report=report)
@@ -789,6 +796,27 @@ def _resolve_source(app, source, document, text):
     return resolved
 
 _source_reports = {}
+_nvda_own_messages = None
+
+def _nvda_own_language(text):
+    """NVDA's language when the text is one of NVDA's own interface messages, else None."""
+    global _nvda_own_messages
+    if _nvda_own_messages is None:
+        from . import nvda_messages
+        try:
+            language=languageHandler.getLanguage()
+            directory=os.path.join(getattr(globalVars,'appDir',None) or os.path.dirname(sys.executable),'locale')
+            if not os.path.isdir(directory):
+                directory=_nvda_core_locale_dir()
+            messages=nvda_messages.load(directory,language)
+            code=_normalize_language(language)
+        except Exception:
+            log.exception('LocalTranslateAccess: NVDA messages unavailable')
+            messages,code=(),None
+        _nvda_own_messages=(messages,code)
+    messages,code=_nvda_own_messages
+    return code if code and text in messages else None
+
 _activation_tokens = {}
 
 def _source_report(app,code,system,confidence):
