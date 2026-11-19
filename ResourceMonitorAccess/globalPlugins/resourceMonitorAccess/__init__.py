@@ -247,7 +247,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		GlobalPlugin._speedTestRunning = True
 		try:
 			# Translators: Said when the speed test starts.
-			wx.CallAfter(say, _('Speed test running, 15 seconds at most.'), False)
+			wx.CallAfter(say, _('Starting the Internet speed test. Please wait, it can take up to 15 seconds. Avoid using the Internet meanwhile: it would lower the result, which will be announced by itself.'), False)
 			return info.speed_test()
 		finally:
 			GlobalPlugin._speedTestRunning = False

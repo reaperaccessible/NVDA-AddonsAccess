@@ -319,8 +319,8 @@ msgstr "Veuillez patienter."
 msgid "A speed test is already running."
 msgstr "Un test de vitesse est déjà en cours."
 
-msgid "Speed test running, 15 seconds at most."
-msgstr "Test de vitesse en cours, 15 secondes au plus."
+msgid "Starting the Internet speed test. Please wait, it can take up to 15 seconds. Avoid using the Internet meanwhile: it would lower the result, which will be announced by itself."
+msgstr "Démarrage du test de vitesse Internet. Veuillez patienter, cela peut prendre jusqu'à 15 secondes. Évitez d'utiliser Internet pendant ce temps : le résultat serait faussé. Il sera annoncé de lui-même."
 
 msgid "Tests the speed of the Internet connection, in 15 seconds at most."
 msgstr "Teste la vitesse de la connexion Internet, en 15 secondes au plus."
