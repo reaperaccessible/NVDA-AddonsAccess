@@ -445,8 +445,8 @@ msgstr "12 mois"
 msgid "&Reminders:"
 msgstr "&Rappels :"
 
-msgid "{appointment}, {date}"
-msgstr "{appointment}, {date}"
+msgid "{date}, {appointment}"
+msgstr "{date}, {appointment}"
 
 msgid "Appointment added: {date}, {appointment}."
 msgstr "Rendez-vous ajouté : {date}, {appointment}."
@@ -532,8 +532,8 @@ msgstr "Reprendre les rappels maintenant (en pause jusqu'à {time})"
 msgid "1 hour"
 msgstr "1 heure"
 
-msgid "No appointment, {date}"
-msgstr "Aucun rendez-vous, {date}"
+msgid "{date}, no appointment"
+msgstr "{date}, aucun rendez-vous"
 
 msgid "Advanced options of {name}"
 msgstr "Options avancées de {name}"

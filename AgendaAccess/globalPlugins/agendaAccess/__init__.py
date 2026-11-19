@@ -738,12 +738,13 @@ class AgendaWindow(wx.Dialog):
 		previous = self.selected()
 		select = select or (previous['id'] if previous else None)
 		self.shown = agenda.day_appointments(store().appointments, self.day)
-		date = words.relative_date_text(self.day, today())
-		# Translators: A line of the agenda window: the appointment, then its date.
-		lines = [_('{appointment}, {date}').format(appointment=words.appointment_text(a), date=date) for a in self.shown]
+		date = words.date_text(self.day)
+		date = date[:1].upper() + date[1:]   # 'Mercredi 9 décembre 2026' at the start of the line
+		# Translators: A line of the agenda window: the date, then the appointment.
+		lines = [_('{date}, {appointment}').format(date=date, appointment=words.appointment_text(a)) for a in self.shown]
 		if not lines:
 			# Translators: The only line of the list of a day without appointments.
-			lines = [_('No appointment, {date}').format(date=date)]
+			lines = [_('{date}, no appointment').format(date=date)]
 		self.list.Set(lines)
 		self.SetTitle('%s - %s' % (ADDON_NAME, date))
 		index = next((i for i, a in enumerate(self.shown) if a['id'] == select), 0)
