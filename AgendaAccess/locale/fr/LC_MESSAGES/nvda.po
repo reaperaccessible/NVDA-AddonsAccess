@@ -1,0 +1,899 @@
+# French translation of AgendaAccess.
+msgid ""
+msgstr ""
+"Project-Id-Version: AgendaAccess\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Up and down arrows: the appointments of the day"
+msgstr "Flèches haut et bas : les rendez-vous du jour"
+
+msgid "Left and right arrows: the day before or after"
+msgstr "Flèches gauche et droite : le jour précédent ou suivant"
+
+msgid "Control with left and right arrows: the week before or after"
+msgstr "Ctrl avec les flèches gauche et droite : la semaine précédente ou suivante"
+
+msgid "Page up and page down: the month before or after"
+msgstr "Page précédente et page suivante : le mois précédent ou suivant"
+
+msgid "Control with page up and page down: the year before or after"
+msgstr "Ctrl avec page précédente et page suivante : l'année précédente ou suivante"
+
+msgid "J and Shift+J: the next or previous day with appointments"
+msgstr "J et Maj+J : le jour suivant ou précédent qui a des rendez-vous"
+
+msgid "S and Shift+S: week after week, up to a day with appointments"
+msgstr "S et Maj+S : de semaine en semaine, jusqu'à un jour qui a des rendez-vous"
+
+msgid "Space: the next free day"
+msgstr "Espace : le prochain jour libre"
+
+msgid "Control+Home: today"
+msgstr "Ctrl+Origine : aujourd'hui"
+
+msgid "Control+G: go to a date"
+msgstr "Ctrl+G : aller à une date"
+
+msgid "Enter: edit the appointment, or create one on an empty day"
+msgstr "Entrée : modifier le rendez-vous, ou en créer un sur un jour vide"
+
+msgid "Control+N: new appointment on the day shown"
+msgstr "Ctrl+N : nouveau rendez-vous au jour affiché"
+
+msgid "N: read the note of the appointment"
+msgstr "N : lire la note du rendez-vous"
+
+msgid "Delete: delete the appointment"
+msgstr "Suppr : supprimer le rendez-vous"
+
+msgid "Shift+Delete: delete every appointment of the day"
+msgstr "Maj+Suppr : supprimer tous les rendez-vous du jour"
+
+msgid "Control+U: the upcoming appointments"
+msgstr "Ctrl+U : les prochains rendez-vous"
+
+msgid "Control+L: all the appointments, with a search"
+msgstr "Ctrl+L : tous les rendez-vous, avec une recherche"
+
+msgid "Control+J: the journal of past appointments"
+msgstr "Ctrl+J : le journal des rendez-vous passés"
+
+msgid "Control+P: pause the reminders"
+msgstr "Ctrl+P : mettre les rappels en pause"
+
+msgid "F1: this help"
+msgstr "F1 : cette aide"
+
+msgid "Escape: close the window"
+msgstr "Échap : fermer la fenêtre"
+
+msgid "Sounds (*.wav, *.mp3)"
+msgstr "Sons (*.wav, *.mp3)"
+
+msgid "Agenda (*.json)"
+msgstr "Agenda (*.json)"
+
+msgid "Chime"
+msgstr "Carillon"
+
+msgid "Westminster bells"
+msgstr "Cloches de Westminster"
+
+msgid "Bell"
+msgstr "Cloche"
+
+msgid "Marimba"
+msgstr "Marimba"
+
+msgid "Harp"
+msgstr "Harpe"
+
+msgid "Notification"
+msgstr "Notification"
+
+msgid "Soft beeps"
+msgstr "Bips doux"
+
+msgid "Digital alarm clock"
+msgstr "Réveil numérique"
+
+msgid "Gong"
+msgstr "Gong"
+
+msgid "alarm"
+msgstr "alarme"
+
+msgid "wake-up"
+msgstr "réveil"
+
+msgid "notification"
+msgstr "notification"
+
+msgid "soft"
+msgstr "doux"
+
+msgid "ringtone"
+msgstr "sonnerie"
+
+msgid "&Day:"
+msgstr "&Jour :"
+
+msgid "M&onth:"
+msgstr "M&ois :"
+
+msgid "&Year:"
+msgstr "&Année :"
+
+msgid "Open the agenda"
+msgstr "Ouvrir l'agenda"
+
+msgid "New appointment"
+msgstr "Nouveau rendez-vous"
+
+msgid "Announce today's appointments"
+msgstr "Annoncer les rendez-vous d'aujourd'hui"
+
+msgid "Announce tomorrow's appointments"
+msgstr "Annoncer les rendez-vous de demain"
+
+msgid "Announce the next appointment"
+msgstr "Annoncer le prochain rendez-vous"
+
+msgid "Show the upcoming appointments"
+msgstr "Afficher les prochains rendez-vous"
+
+msgid "Show all the appointments"
+msgstr "Afficher tous les rendez-vous"
+
+msgid "Show the journal of past appointments"
+msgstr "Afficher le journal des rendez-vous passés"
+
+msgid "Pause the reminders"
+msgstr "Mettre les rappels en pause"
+
+msgid "Every how many days:"
+msgstr "Tous les combien de jours :"
+
+msgid "Every how many weeks:"
+msgstr "Toutes les combien de semaines :"
+
+msgid "Every how many months:"
+msgstr "Tous les combien de mois :"
+
+msgid "Every how many years:"
+msgstr "Tous les combien d'ans :"
+
+msgid "Appointment saved."
+msgstr "Rendez-vous enregistré."
+
+msgid "Only &this day"
+msgstr "Seulement &ce jour-là"
+
+msgid "&Every day"
+msgstr "&Tous les jours"
+
+msgid "&Cancel"
+msgstr "&Annuler"
+
+msgid "Save the text report"
+msgstr "Enregistrer le rapport texte"
+
+msgid "Export the agenda"
+msgstr "Exporter l'agenda"
+
+msgid "Import an agenda"
+msgstr "Importer un agenda"
+
+msgid "&Keys of the agenda window:"
+msgstr "&Touches de la fenêtre de l'agenda :"
+
+msgid "Once"
+msgstr "Une seule fois"
+
+msgid "3 times, a minute apart, until its window is closed"
+msgstr "3 fois, à une minute d'intervalle, tant que sa fenêtre n'est pas fermée"
+
+msgid "5 times, a minute apart, until its window is closed"
+msgstr "5 fois, à une minute d'intervalle, tant que sa fenêtre n'est pas fermée"
+
+msgid "10 times, a minute apart, until its window is closed"
+msgstr "10 fois, à une minute d'intervalle, tant que sa fenêtre n'est pas fermée"
+
+msgid "V&olume of the reminder sounds:"
+msgstr "V&olume des sons des rappels :"
+
+msgid "Where to keep the agenda"
+msgstr "Où garder l'agenda"
+
+msgid "No past appointment this last year."
+msgstr "Aucun rendez-vous passé depuis un an."
+
+msgid "Choose a sound file…"
+msgstr "Choisir un fichier son…"
+
+msgid "Choose a sound"
+msgstr "Choisir un son"
+
+msgid "Interval:"
+msgstr "Intervalle :"
+
+msgid "Count the weeks from the end of the month (as the last Friday)"
+msgstr "Compter les semaines depuis la fin du mois (comme le dernier vendredi)"
+
+msgid "Last day:"
+msgstr "Dernier jour :"
+
+msgid "Last month:"
+msgstr "Dernier mois :"
+
+msgid "Last year:"
+msgstr "Dernière année :"
+
+msgid "Write what the appointment is."
+msgstr "Écrivez de quoi il s'agit."
+
+msgid "Check at least one day of the week."
+msgstr "Cochez au moins un jour de la semaine."
+
+msgid "The repetition cannot stop before the appointment."
+msgstr "La répétition ne peut pas finir avant le rendez-vous."
+
+msgid "Go to a date"
+msgstr "Aller à une date"
+
+msgid "&Close"
+msgstr "&Fermer"
+
+msgid "All the appointments"
+msgstr "Tous les rendez-vous"
+
+msgid "&Edit"
+msgstr "&Modifier"
+
+msgid "De&lete"
+msgstr "&Supprimer"
+
+msgid "All"
+msgstr "Toutes"
+
+msgid "Text report"
+msgstr "Rapport texte"
+
+msgid "&New appointment"
+msgstr "&Nouveau rendez-vous"
+
+msgid "Go to a &date…"
+msgstr "Aller à une &date…"
+
+msgid "&Upcoming appointments…"
+msgstr "&Prochains rendez-vous…"
+
+msgid "&More actions…"
+msgstr "Plus d'a&ctions…"
+
+msgid "&Help (F1)"
+msgstr "&Aide (F1)"
+
+msgid "No appointment"
+msgstr "Aucun rendez-vous"
+
+msgid "No appointment to delete."
+msgstr "Aucun rendez-vous à supprimer."
+
+msgid "Delete {appointment}?"
+msgstr "Supprimer {appointment} ?"
+
+msgid "Delete {appointment} and every day it repeats?"
+msgstr "Supprimer {appointment} et tous les jours où il se répète ?"
+
+msgid "Delete the {count} appointments of {date}? The ones that repeat keep their other days."
+msgstr "Supprimer les {count} rendez-vous du {date} ? Ceux qui se répètent gardent leurs autres jours."
+
+msgid "No note."
+msgstr "Pas de note."
+
+msgid "Text (*.txt)"
+msgstr "Texte (*.txt)"
+
+msgid "agenda.txt"
+msgstr "agenda.txt"
+
+msgid "agenda copy.json"
+msgstr "copie agenda.json"
+
+msgid "All the appointments, with a search	Ctrl+L"
+msgstr "Tous les rendez-vous, avec une recherche	Ctrl+L"
+
+msgid "Journal of past appointments	Ctrl+J"
+msgstr "Journal des rendez-vous passés	Ctrl+J"
+
+msgid "Pause the reminders…	Ctrl+P"
+msgstr "Mettre les rappels en pause…	Ctrl+P"
+
+msgid "Save a text report…"
+msgstr "Enregistrer un rapport texte…"
+
+msgid "Export the agenda…"
+msgstr "Exporter l'agenda…"
+
+msgid "Import an agenda…"
+msgstr "Importer un agenda…"
+
+msgid "Assign keys to the commands…"
+msgstr "Attribuer des touches aux commandes…"
+
+msgid "&Play it"
+msgstr "&L'écouter"
+
+msgid "&Night mode: no sound and no repetition at night"
+msgstr "Mode &nuit : ni son ni répétition la nuit"
+
+msgid "The agenda now uses this file. The appointments already in it were kept and joined to yours."
+msgstr "L'agenda utilise maintenant ce fichier. Les rendez-vous qu'il contenait déjà sont gardés et réunis aux vôtres."
+
+msgid "The agenda now uses this file."
+msgstr "L'agenda utilise maintenant ce fichier."
+
+msgid "The reminders are back."
+msgstr "Les rappels reprennent."
+
+msgid "Upcoming appointments"
+msgstr "Prochains rendez-vous"
+
+msgid "&Upcoming appointments (Enter to show the day):"
+msgstr "&Prochains rendez-vous (Entrée pour afficher le jour) :"
+
+msgid "Journal of past appointments"
+msgstr "Journal des rendez-vous passés"
+
+msgid "&Past appointments, the most recent first (Enter to show the day):"
+msgstr "&Rendez-vous passés, du plus récent au plus ancien (Entrée pour afficher le jour) :"
+
+msgid "The usual sound"
+msgstr "Le son habituel"
+
+msgid "No sound"
+msgstr "Aucun son"
+
+msgid "Edit the appointment"
+msgstr "Modifier le rendez-vous"
+
+msgid "&What:"
+msgstr "&Quoi :"
+
+msgid "Cate&gory (optional):"
+msgstr "&Catégorie (facultatif) :"
+
+msgid "&Hour:"
+msgstr "&Heure :"
+
+msgid "Mi&nutes:"
+msgstr "Mi&nutes :"
+
+msgid "&Repeat:"
+msgstr "&Répétition :"
+
+msgid "Days of the week:"
+msgstr "Jours de la semaine :"
+
+msgid "&End of the repetition:"
+msgstr "&Fin de la répétition :"
+
+msgid "Never"
+msgstr "Jamais"
+
+msgid "On a date"
+msgstr "À une date"
+
+msgid "After a number of times"
+msgstr "Après un nombre de fois"
+
+msgid "Number of times:"
+msgstr "Nombre de fois :"
+
+msgid "Re&minders:"
+msgstr "Rappe&ls :"
+
+msgid "&Sound of its reminders:"
+msgstr "&Son de ses rappels :"
+
+msgid "No&te (optional):"
+msgstr "No&te (facultatif) :"
+
+msgid "Settings taken from the category {name}."
+msgstr "Réglages repris de la catégorie {name}."
+
+msgid "&Search:"
+msgstr "&Rechercher :"
+
+msgid "&Category:"
+msgstr "&Catégorie :"
+
+msgid "&Order:"
+msgstr "&Ordre :"
+
+msgid "By date"
+msgstr "Par date"
+
+msgid "Alphabetical"
+msgstr "Alphabétique"
+
+msgid "&Appointments (Enter to edit):"
+msgstr "&Rendez-vous (Entrée pour modifier) :"
+
+msgid "No appointment found"
+msgstr "Aucun rendez-vous trouvé"
+
+msgid "30 minutes"
+msgstr "30 minutes"
+
+msgid "&No reminder for:"
+msgstr "&Aucun rappel pendant :"
+
+msgid "&Appointments of the next:"
+msgstr "&Rendez-vous des prochains :"
+
+msgid "30 days"
+msgstr "30 jours"
+
+msgid "3 months"
+msgstr "3 mois"
+
+msgid "12 months"
+msgstr "12 mois"
+
+msgid "&Reminders:"
+msgstr "&Rappels :"
+
+msgid "Appointment added: {date}, {appointment}."
+msgstr "Rendez-vous ajouté : {date}, {appointment}."
+
+msgid "Deleted."
+msgstr "Supprimé."
+
+msgid "{appointment} repeats. Delete only this day, or every day?"
+msgstr "{appointment} se répète. Supprimer seulement ce jour-là, ou tous les jours ?"
+
+msgid "Deleted. {heading}"
+msgstr "Supprimé. {heading}"
+
+msgid "This file cannot be written."
+msgstr "Ce fichier ne peut pas être écrit."
+
+msgid "Report saved: {count} appointments."
+msgstr "Rapport enregistré : {count} rendez-vous."
+
+msgid "Agenda exported."
+msgstr "Agenda exporté."
+
+msgid "This file is not an agenda of AgendaAccess."
+msgstr "Ce fichier n'est pas un agenda d'AgendaAccess."
+
+msgid "{count} appointments added."
+msgstr "{count} rendez-vous ajoutés."
+
+msgid "{name} help"
+msgstr "Aide de {name}"
+
+msgid "No day found."
+msgstr "Aucun jour trouvé."
+
+msgid "Usual &sound of the reminders:"
+msgstr "&Son habituel des rappels :"
+
+msgid "&Give each reminder:"
+msgstr "&Donner chaque rappel :"
+
+msgid "Night &from (hour):"
+msgstr "Nuit &de (heure) :"
+
+msgid "&to (hour):"
+msgstr "&à (heure) :"
+
+msgid "File of the agenda:"
+msgstr "Fichier de l'agenda :"
+
+msgid "&Choose where to keep the agenda…"
+msgstr "&Choisir où garder l'agenda…"
+
+msgid "&Announce today's appointments when NVDA starts"
+msgstr "&Annoncer les rendez-vous du jour au démarrage de NVDA"
+
+msgid "Play a &sound with the reminders"
+msgstr "Jouer un &son avec les rappels"
+
+msgid "Also show the reminders in a &window that stays until closed"
+msgstr "Afficher aussi les rappels dans une &fenêtre qui reste jusqu'à ce que vous la fermiez"
+
+msgid "Ad&vanced options…"
+msgstr "Options a&vancées…"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
+
+msgid "Check for updates &now"
+msgstr "&Vérifier les mises à jour maintenant"
+
+msgid "No appointment in the next {days} days."
+msgstr "Aucun rendez-vous dans les {days} prochains jours."
+
+msgid "Keys of {name}"
+msgstr "Touches de {name}"
+
+msgid "{name} ({kind})"
+msgstr "{name} ({kind})"
+
+msgid "Start the reminders again now (paused until {time})"
+msgstr "Reprendre les rappels maintenant (en pause jusqu'à {time})"
+
+msgid "1 hour"
+msgstr "1 heure"
+
+msgid "Advanced options of {name}"
+msgstr "Options avancées de {name}"
+
+msgid "No reminder until {time}."
+msgstr "Aucun rappel jusqu'à {time}."
+
+msgid "{percent}%"
+msgstr "{percent} %"
+
+msgid "{hours} hours"
+msgstr "{hours} heures"
+
+msgid "Assi&gn a key"
+msgstr "Assi&gner une touche"
+
+msgid "&Remove the key"
+msgstr "&Retirer la touche"
+
+msgid "no key"
+msgstr "aucune touche"
+
+msgid "Press a key of the keyboard."
+msgstr "Appuyez sur une touche du clavier."
+
+msgid "Cancelled."
+msgstr "Annulé."
+
+msgid "Co&mmands (Enter to assign a key):"
+msgstr "&Commandes (Entrée pour assigner une touche) :"
+
+msgid "Press the key for {action}, or Escape to cancel."
+msgstr "Appuyez sur la touche pour : {action}, ou sur Échap pour annuler."
+
+msgid "{key} is already used for: {command}\n\nUse it for {action} instead?"
+msgstr "{key} sert déjà à : {command}\n\nL'utiliser plutôt pour {action} ?"
+
+msgid "{key} now does: {action}."
+msgstr "{key} fait maintenant : {action}."
+
+msgid " or "
+msgstr " ou "
+
+msgid "{action}: {key}"
+msgstr "{action} : {key}"
+
+msgid "{key} is needed to type or to move around. Press another key, or a combination with Ctrl or Alt."
+msgstr "{key} sert à écrire ou à se déplacer. Appuyez sur une autre touche, ou sur une combinaison avec Ctrl ou Alt."
+
+msgid "{key} is already the key of {action}."
+msgstr "{key} est déjà la touche de : {action}."
+
+msgid "Key removed from {action}."
+msgstr "Touche retirée de : {action}."
+
+msgid "{action} has no key."
+msgstr "{action} : aucune touche."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
+
+msgid "Downloading the update..."
+msgstr "Téléchargement de la mise à jour..."
+
+msgid "Checking for updates..."
+msgstr "Recherche de mises à jour..."
+
+msgid "{name} update"
+msgstr "Mise à jour de {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} est disponible. Vous avez la version {current}. Voulez-vous l'installer maintenant ?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."
+
+msgid "The update could not be downloaded."
+msgstr "La mise à jour n'a pas pu être téléchargée."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Téléchargement de la mise à jour : {percent} %"
+
+msgid "The update could not be installed."
+msgstr "La mise à jour n'a pas pu être installée."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Impossible de vérifier les mises à jour. Vérifiez votre connexion Internet."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} est à jour (version {version})."
+
+msgid "Monday"
+msgstr "lundi"
+
+msgid "Tuesday"
+msgstr "mardi"
+
+msgid "Wednesday"
+msgstr "mercredi"
+
+msgid "Thursday"
+msgstr "jeudi"
+
+msgid "Friday"
+msgstr "vendredi"
+
+msgid "Saturday"
+msgstr "samedi"
+
+msgid "Sunday"
+msgstr "dimanche"
+
+msgid "January"
+msgstr "janvier"
+
+msgid "February"
+msgstr "février"
+
+msgid "March"
+msgstr "mars"
+
+msgid "April"
+msgstr "avril"
+
+msgid "May"
+msgstr "mai"
+
+msgid "June"
+msgstr "juin"
+
+msgid "July"
+msgstr "juillet"
+
+msgid "August"
+msgstr "août"
+
+msgid "September"
+msgstr "septembre"
+
+msgid "October"
+msgstr "octobre"
+
+msgid "November"
+msgstr "novembre"
+
+msgid "December"
+msgstr "décembre"
+
+msgid "Today"
+msgstr "Aujourd'hui"
+
+msgid "Tomorrow"
+msgstr "Demain"
+
+msgid "Yesterday"
+msgstr "Hier"
+
+msgid "At the time of the appointment"
+msgstr "À l'heure du rendez-vous"
+
+msgid "5 minutes before"
+msgstr "5 minutes avant"
+
+msgid "15 minutes before"
+msgstr "15 minutes avant"
+
+msgid "30 minutes before"
+msgstr "30 minutes avant"
+
+msgid "1 hour before"
+msgstr "1 heure avant"
+
+msgid "2 hours before"
+msgstr "2 heures avant"
+
+msgid "The day before"
+msgstr "La veille"
+
+msgid "2 days before"
+msgstr "2 jours avant"
+
+msgid "3 days before"
+msgstr "3 jours avant"
+
+msgid "1 week before"
+msgstr "1 semaine avant"
+
+msgid "{weekday}, {month} {day}, {year}"
+msgstr "{weekday} {day} {month} {year}"
+
+msgid "{hour}:{minute}"
+msgstr "{hour} h {minute}"
+
+msgid "1st"
+msgstr "1er"
+
+msgid "2nd"
+msgstr "2e"
+
+msgid "3rd"
+msgstr "3e"
+
+msgid "4th"
+msgstr "4e"
+
+msgid "5th"
+msgstr "5e"
+
+msgid "last"
+msgstr "dernier"
+
+msgid "second to last"
+msgstr "avant-dernier"
+
+msgid "third to last"
+msgstr "3e en partant de la fin"
+
+msgid "fourth to last"
+msgstr "4e en partant de la fin"
+
+msgid "fifth to last"
+msgstr "5e en partant de la fin"
+
+msgid "Does not repeat"
+msgstr "Ne se répète pas"
+
+msgid "Every day, or every few days"
+msgstr "Chaque jour, ou tous les quelques jours"
+
+msgid "Monday to Friday"
+msgstr "Du lundi au vendredi"
+
+msgid "Every week, or every few weeks, on chosen days"
+msgstr "Chaque semaine, ou toutes les quelques semaines, les jours choisis"
+
+msgid "Every month, on the same date"
+msgstr "Chaque mois, à la même date"
+
+msgid "Every month, on the same day of the week (as the 2nd Tuesday)"
+msgstr "Chaque mois, le même jour de la semaine (comme le 2e mardi)"
+
+msgid "Every year, on the same date"
+msgstr "Chaque année, à la même date"
+
+msgid "Every year, on the same day of the week (as the 2nd Tuesday of November)"
+msgstr "Chaque année, le même jour de la semaine (comme le 2e mardi de novembre)"
+
+msgid "every day"
+msgstr "chaque jour"
+
+msgid "with a note"
+msgstr "avec une note"
+
+msgid "{date}: {count} appointments: {items}."
+msgstr "{date} : {count} rendez-vous : {items}."
+
+msgid "{date}: {count} appointments."
+msgstr "{date} : {count} rendez-vous."
+
+msgid "{date}: {appointment}"
+msgstr "{date} : {appointment}"
+
+msgid "in 1 hour"
+msgstr "dans 1 heure"
+
+msgid "in 1 minute"
+msgstr "dans 1 minute"
+
+msgid "Reminder: {text}, {delay}, at {time}."
+msgstr "Rappel : {text}, {delay}, à {time}."
+
+msgid "Next appointment: {entry}."
+msgstr "Prochain rendez-vous : {entry}."
+
+msgid "{name}, {date}"
+msgstr "{name}, {date}"
+
+msgid "{hour}:00"
+msgstr "{hour} h"
+
+msgid " and "
+msgstr " et "
+
+msgid "every year on the {which} {weekday} of {month}"
+msgstr "chaque année le {which} {weekday} du mois de {month}"
+
+msgid "every {count} years on the {which} {weekday} of {month}"
+msgstr "tous les {count} ans le {which} {weekday} du mois de {month}"
+
+msgid "{count} times"
+msgstr "{count} fois"
+
+msgid "until {date}"
+msgstr "jusqu'au {date}"
+
+msgid "no reminder"
+msgstr "sans rappel"
+
+msgid "{date}: no appointment."
+msgstr "{date} : aucun rendez-vous."
+
+msgid "{date}: 1 appointment: {items}."
+msgstr "{date} : 1 rendez-vous : {items}."
+
+msgid "{date}: 1 appointment."
+msgstr "{date} : 1 rendez-vous."
+
+msgid "{entry}. Note: {note}"
+msgstr "{entry}. Note : {note}"
+
+msgid "Reminder: {text}, now, at {time}."
+msgstr "Rappel : {text}, maintenant, à {time}."
+
+msgid "Reminder: {text}, tomorrow at {time}."
+msgstr "Rappel : {text}, demain à {time}."
+
+msgid "Reminder: {text}, in {days} days, on {date} at {time}."
+msgstr "Rappel : {text}, dans {days} jours, le {date} à {time}."
+
+msgid "every {count} days"
+msgstr "tous les {count} jours"
+
+msgid "every week on {days}"
+msgstr "chaque semaine le {days}"
+
+msgid "every {count} weeks on {days}"
+msgstr "toutes les {count} semaines le {days}"
+
+msgid "every month on day {day}"
+msgstr "chaque mois le {day}"
+
+msgid "every {count} months on day {day}"
+msgstr "tous les {count} mois le {day}"
+
+msgid "every month on the {which} {weekday}"
+msgstr "chaque mois le {which} {weekday}"
+
+msgid "every {count} months on the {which} {weekday}"
+msgstr "tous les {count} mois le {which} {weekday}"
+
+msgid "every year on {month} {day}"
+msgstr "chaque année le {day} {month}"
+
+msgid "every {count} years on {month} {day}"
+msgstr "tous les {count} ans le {day} {month}"
+
+msgid "next: {date} at {time}"
+msgstr "prochain : {date} à {time}"
+
+msgid "over, last on {date}"
+msgstr "terminé, dernier le {date}"
+
+msgid "in {hours} hours"
+msgstr "dans {hours} heures"
+
+msgid "in {minutes} minutes"
+msgstr "dans {minutes} minutes"
+
+msgid "{date}, {time}, {text}"
+msgstr "{date}, {time}, {text}"
+
+msgid "reminder {when}"
+msgstr "rappel {when}"
+
+msgid "Note: {note}"
+msgstr "Note : {note}"

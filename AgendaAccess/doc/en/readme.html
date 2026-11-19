@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgendaAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>AgendaAccess</h1>
+<p>AgendaAccess is an agenda made for NVDA. You write down your appointments, which can repeat in many ways, and NVDA reminds you of them in advance. Everything is done with the keyboard, and each day can be heard at once. Your agenda can also be shared between several computers, for example with Dropbox.</p>
+<p>The add-on is in French when NVDA is in French, and in English in every other language.</p>
+
+<h2>Opening the agenda</h2>
+<p><kbd>NVDA+Ctrl+Shift+Enter</kbd> opens the agenda on today. If the window is already open, the shortcut brings it back to the front.</p>
+
+<h2>The agenda window</h2>
+<p>The window shows the list of the appointments of one day, in order of time. Each line gives the time, the description, the repetition, the reminders, the category and whether there is a note, for example "10:30, Dentist, every week on Thursday, reminder 15 minutes before, Health, with a note". A day without appointments shows the line "No appointment".</p>
+<p>When you change the day, NVDA says the date and the number of appointments, for example "Tomorrow, Friday, November 20, 2026: 2 appointments". The up and down arrows then read them one by one.</p>
+<h3>Moving in time</h3>
+<ul>
+<li><kbd>Left and right arrows</kbd>: the day before or after.</li>
+<li><kbd>Control</kbd> with the <kbd>left and right arrows</kbd>: the week before or after.</li>
+<li><kbd>Page up</kbd> and <kbd>page down</kbd>: the month before or after.</li>
+<li><kbd>Control</kbd> with <kbd>page up</kbd> and <kbd>page down</kbd>: the year before or after.</li>
+<li><kbd>J</kbd> and <kbd>Shift+J</kbd>: the next or previous day with appointments.</li>
+<li><kbd>S</kbd> and <kbd>Shift+S</kbd>: week after week, on the same day of the week, up to a day with appointments.</li>
+<li><kbd>Space</kbd>: the next free day, without appointments.</li>
+<li><kbd>Control+Home</kbd>: back to today.</li>
+<li><kbd>Control+G</kbd>: go to a date.</li>
+</ul>
+<h3>Acting on the appointments</h3>
+<ul>
+<li><kbd>Enter</kbd>: edit the chosen appointment, or create one on an empty day.</li>
+<li><kbd>Control+N</kbd>: new appointment on the day shown.</li>
+<li><kbd>N</kbd>: read the note of the chosen appointment.</li>
+<li><kbd>Delete</kbd>: delete the chosen appointment.</li>
+<li><kbd>Shift+Delete</kbd>: delete every appointment of the day, after a confirmation. The ones that repeat keep their other days.</li>
+<li><kbd>Control+U</kbd>: the upcoming appointments.</li>
+<li><kbd>Control+L</kbd>: all the appointments, with a search.</li>
+<li><kbd>Control+J</kbd>: the journal of past appointments.</li>
+<li><kbd>Control+P</kbd>: pause the reminders.</li>
+<li><kbd>F1</kbd>: the list of these keys.</li>
+<li><kbd>Escape</kbd>: close the window.</li>
+</ul>
+<p>Below the list, the buttons New appointment, Edit, Delete, Go to a date, Upcoming appointments, More actions, Help and Close do the same. The "More actions" button opens a menu: all the appointments, the journal, the pause of the reminders, the text report, export, import, and assigning keys to the commands.</p>
+
+<h2>Creating or editing an appointment</h2>
+<p>Everything is set in one window. The fields that do not apply to the chosen repetition are greyed out, and Tab skips them.</p>
+<ul>
+<li><strong>What</strong>: the description of the appointment, for example "Dentist". It is required.</li>
+<li><strong>Category</strong>: optional, for example "Health" or "Work". Type a new one, or choose with the arrows a category already used. For a new appointment, choosing a category already used takes the settings of its last appointment: the time, the repetition, the reminders and the sound. Often only the date is left to change.</li>
+<li><strong>Day, Month, Year</strong>: the date. The day and the year change with the up and down arrows, or by typing the number; the month is chosen in a list. A 31st in a shorter month becomes its last day.</li>
+<li><strong>Hour, Minutes</strong>: the time of the appointment, in the same way.</li>
+<li><strong>Repeat</strong>:
+<ul>
+<li>Does not repeat.</li>
+<li>Every day, or every few days: then set "Every how many days", for example 3 for every 3 days.</li>
+<li>Monday to Friday.</li>
+<li>Every week, or every few weeks, on chosen days: set "Every how many weeks", then check with the space bar the days of the week you want, for example Tuesday and Thursday.</li>
+<li>Every month, on the same date: for example the 15th of every month, or every 3 months with "Every how many months". An appointment on the 31st happens on the last day of the shorter months.</li>
+<li>Every month, on the same day of the week: for example the 2nd Tuesday of the month, from the date chosen. Check "Count the weeks from the end of the month" for the last or second to last Tuesday.</li>
+<li>Every year, on the same date: an appointment on February 29 happens on February 28 in the other years.</li>
+<li>Every year, on the same day of the week: for example the 2nd Monday of October.</li>
+</ul></li>
+<li><strong>End of the repetition</strong>: Never, On a date (then choose the last day, month and year), or After a number of times (for example 20 for a course held 20 times).</li>
+<li><strong>Reminders</strong>: a list of check boxes, checked with the space bar: at the time of the appointment, 5, 15 or 30 minutes before, 1 or 2 hours before, the day before, 2 or 3 days before, or a week before. You can check several. A new appointment has a reminder 15 minutes before.</li>
+<li><strong>Sound of its reminders</strong>: the usual sound, no sound, one of the ringtones of AgendaAccess, or a WAV or MP3 sound file of your choice, for this appointment only. Each sound is heard as soon as you reach it with the arrows.</li>
+<li><strong>Note</strong>: optional, as long as you want, for example the address or what to bring. The N key of the list reads it.</li>
+</ul>
+<p>The OK button, or <kbd>Control+Enter</kbd> from any field, saves the appointment. Escape cancels.</p>
+<p>Editing an appointment that repeats changes all its repetitions. The date shown is then the day it started.</p>
+
+<h2>Deleting an appointment</h2>
+<p>For a single appointment, NVDA asks you to confirm. For an appointment that repeats, you choose between "Only this day", which keeps the other days, and "Every day", which deletes the whole repetition.</p>
+
+<h2>All the appointments</h2>
+<p>This window, opened with <kbd>Control+L</kbd>, shows each appointment once, with its next date, its repetition and its category. An appointment that is over gives its last date.</p>
+<ul>
+<li><strong>Search</strong>: type one or more words; the list keeps only the appointments that contain them, in the description, the note or the category.</li>
+<li><strong>Category</strong>: All, or one category only.</li>
+<li><strong>Order</strong>: by date, the nearest first, or alphabetical.</li>
+</ul>
+<p>In the list, Enter edits the appointment and Delete deletes it with all its repetitions, after a confirmation.</p>
+
+<h2>The upcoming appointments and the journal</h2>
+<p>The upcoming appointments (<kbd>Control+U</kbd>) are those of the next 30 days, the nearest first. The journal (<kbd>Control+J</kbd>) lists the appointments of the last year, the most recent first, with their notes: a record of your activities. In both, Enter shows the day of the appointment in the agenda.</p>
+
+<h2>The reminders</h2>
+<p>When a reminder is due, NVDA says it, for example "Reminder: Dentist, in 15 minutes, at 10:30.", and a short chime plays. The reminder is also shown in a window that stays open until you close it with Enter or Escape, so that it is not missed if you were away from the computer. If other reminders come while it is open, they are added to it.</p>
+<p>The reminders are only given while NVDA is running. If the computer was asleep, a reminder at most 10 minutes late is still given when it wakes up; an older one is not.</p>
+<h3>Pausing the reminders</h3>
+<p><kbd>Control+P</kbd> in the agenda, or "Pause the reminders" in the More actions menu, stops every reminder for 30 minutes, 1, 2, 4 or 8 hours, for example during a meeting or a film. The reminders of that time are not given later. During a pause, the same window offers to start the reminders again at once.</p>
+
+<h2>When NVDA starts</h2>
+<p>A few seconds after NVDA starts, if there are appointments today, NVDA says them, for example "Today, Thursday, November 19, 2026: 2 appointments: 10:30, Dentist; 14:00, Call". You can turn this off in the settings.</p>
+
+<h2>Sharing your agenda between several computers</h2>
+<p>Your appointments are kept in one file. By default, it is in NVDA's configuration folder, but you can put it wherever you want, for example in your Dropbox or OneDrive folder, to have the same agenda on all your computers:</p>
+<ol>
+<li>On the first computer, open the settings of AgendaAccess and choose the button "Choose where to keep the agenda". Go to your Dropbox folder and confirm. Your appointments are copied there at once.</li>
+<li>On each other computer, do the same and choose the agenda file already in your Dropbox folder. Its appointments are kept, and those this computer already had are added to it: nothing is lost.</li>
+</ol>
+<p>From then on, a change made on one computer appears on the others as soon as Dropbox has synchronised the file, usually within a minute, without doing anything. Each save joins your changes to the latest version of the file, instead of overwriting it. If Dropbox makes a "conflicted copy" because two computers wrote at the same time, AgendaAccess joins it to your agenda and puts it away with its backups.</p>
+<p>Each computer gives the reminders of your shared agenda.</p>
+
+<h2>Backup, export, import and report</h2>
+<ul>
+<li><strong>Automatic backups</strong>: every day, a copy of your agenda is made in the folder <code>agendaAccess-backups</code> of NVDA's configuration folder of this computer. The last 14 are kept. To get one back, use "Import an agenda".</li>
+<li><strong>Export the agenda</strong>: saves a copy of your whole agenda in the file of your choice, for example on a USB drive.</li>
+<li><strong>Import an agenda</strong>: adds to your agenda the appointments of an exported file or of a backup. Those you already have are not copied twice.</li>
+<li><strong>Save a text report</strong>: a text file of your appointments of the next 30 days, 3 months or 12 months, one line per appointment with its note, for example "Thursday, November 19, 2026, 10:30, Dentist". You can print it, or read it on a mobile device.</li>
+</ul>
+
+<h2>Commands and shortcuts</h2>
+<p>Only opening the agenda has a shortcut by default. These commands have none, and you can give them one:</p>
+<ul>
+<li>New appointment.</li>
+<li>Announce today's appointments.</li>
+<li>Announce tomorrow's appointments.</li>
+<li>Announce the next appointment.</li>
+<li>Show the upcoming appointments.</li>
+<li>Show all the appointments.</li>
+<li>Show the journal of past appointments.</li>
+<li>Pause the reminders.</li>
+</ul>
+<p>To give them a key, choose "Assign keys to the commands" in the More actions menu of the agenda. Choose the command, press Enter, then the key you want: it is assigned at once. If the key is already used, NVDA asks you first. Delete removes the key of a command. You also find them in the NVDA menu, Preferences, Input gestures, category "AgendaAccess".</p>
+
+<h2>Settings</h2>
+<p>Open the NVDA menu, Preferences, Settings, then the category "AgendaAccess".</p>
+<ul>
+<li><strong>File of the agenda</strong>: where the file of your appointments is, and the button <strong>Choose where to keep the agenda</strong>, described above.</li>
+<li><strong>Announce today's appointments when NVDA starts</strong>: checked by default.</li>
+<li><strong>Play a sound with the reminders</strong>: checked by default. An appointment with its own sound file still plays it.</li>
+<li><strong>Volume of the reminder sounds</strong>: from 10 to 100%, 80% by default. It applies to every sound, ringtones and your own files alike. Each volume is heard as soon as you reach it with the arrows.</li>
+<li><strong>Also show the reminders in a window that stays until closed</strong>: checked by default. Uncheck it to have the reminders only spoken.</li>
+<li><strong>Advanced options</strong>: opens a window with:
+<ul>
+<li><strong>Usual sound of the reminders</strong>: one of the ringtones of AgendaAccess, or a WAV or MP3 sound file of your choice. The ringtones are: Chime (the default), Westminster bells, Bell, Marimba, Harp, Notification, Soft beeps, Digital alarm clock and Gong, then a collection of 35 sounds, each followed by its kind: alarm, wake-up, notification, soft or ringtone, for example "Rush (alarm)". The alarms and wake-up sounds last from 10 seconds to more than a minute. Each sound is heard as soon as you reach it with the arrows, and the "Play it" button plays it again.</li>
+<li><strong>Give each reminder</strong>: once, or 3, 5 or 10 times, a minute apart, until its window is closed.</li>
+<li><strong>Night mode</strong>: between the two hours chosen, 22 and 7 by default, the reminders are spoken and shown, but without sound or repetition.</li>
+</ul></li>
+<li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
+<li><strong>Check for updates now</strong>: checks at once.</li>
+</ul>
+
+<h2>Updates</h2>
+<p>AgendaAccess does not go through NVDA's Add-on Store. The add-on itself checks, shortly after NVDA starts, whether a new version is published, and offers to install it. When several ReaperAccessible add-ons are updated together, their windows open one after the other and NVDA asks to restart only once.</p>
+<p>In the Add-on Store, the add-on appears with the "External" channel. This is normal for an add-on installed outside the Store.</p>
+<p>Your appointments are never in the add-on's folder: they stay after an update, and even after the add-on is removed.</p>
+
+<h2>Privacy</h2>
+<p>Your appointments stay in the file you chose: AgendaAccess sends them nowhere. If you put it in Dropbox or OneDrive, that service copies it to your other computers. They are not read on Windows' secure screens, such as the sign-in screen. The add-on only contacts the Internet to check for updates, on GitHub.</p>
+
+<h2>Credits and license</h2>
+<p>AgendaAccess is published by ReaperAccessible. The add-on is inspired by Agenda, by Abel Passos do Nascimento Jr, Ângelo Abrantes and Rui Fontes, and by Mon agenda, by Louis-Rock Lampron. Part of the sounds of the collection comes from notificationsounds.com.</p>
+<p>It is distributed under the GNU General Public License, version 2.</p>
+<p>Source code and new versions: <a href="https://github.com/reaperaccessible/NVDA-AddonsAccess">github.com/reaperaccessible/NVDA-AddonsAccess</a></p>
+</body>
+</html>
