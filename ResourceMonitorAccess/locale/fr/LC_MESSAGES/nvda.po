@@ -313,6 +313,9 @@ msgstr "Annonce le niveau de la batterie d'un portable. Appuyé deux fois, le co
 msgid "Internet speed test"
 msgstr "Test de vitesse Internet"
 
+msgid "Please wait."
+msgstr "Veuillez patienter."
+
 msgid "A speed test is already running."
 msgstr "Un test de vitesse est déjà en cours."
 

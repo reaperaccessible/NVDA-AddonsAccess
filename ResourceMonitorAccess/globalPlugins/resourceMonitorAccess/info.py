@@ -14,28 +14,17 @@ import psutil
 addonHandler.initTranslation()
 
 UNIT = 1024.0   # sizes are counted like Windows Explorer counts them
-# A load (processor, applications, network) is measured between two readings, MEASURE seconds apart.
-# A reading older than MAX_AGE is taken again first: compared with it, the load would be the average
-# since then (hours, after a long pause), and after the computer has slept Windows can even report 0%.
-MEASURE = 0.5
-MAX_AGE = 5
-_readings = {}
-_lock = threading.Lock()
+# A load (processor, applications, network) cannot be read at once: Windows only counts the work done
+# since it started. It is read when the user asks, then again MEASURE seconds later, and the two compared.
+MEASURE = 1.0   # as the Task Manager does
 
 
-def _measure(key, read):
-	"""(seconds, previous value, new value): a reading, compared with one taken just before it."""
-	with _lock:
-		then, before = _readings.get(key, (None, None))
-		if then is None or time.monotonic() - then > MAX_AGE:
-			then, before = time.monotonic(), read()
-		wait = MEASURE - (time.monotonic() - then)
-		if wait > 0:
-			time.sleep(wait)
-		value = read()
-		now = time.monotonic()
-		_readings[key] = (now, value)
-		return now - then, before, value
+def _measure(read):
+	"""(seconds, value when asked, value MEASURE seconds later)."""
+	then, before = time.monotonic(), read()
+	time.sleep(MEASURE)
+	value = read()
+	return time.monotonic() - then, before, value
 
 
 def _cpu_total():
@@ -103,12 +92,12 @@ def percent(value):
 def summary():
 	# Translators: The overall state of the computer. {memory} and {processor} are percentages.
 	return _('Memory {memory}% used, processor at {processor}%.').format(
-		memory=percent(psutil.virtual_memory().percent), processor=percent(_measure('total', _cpu_total)[2]))
+		memory=percent(psutil.virtual_memory().percent), processor=percent(_measure(_cpu_total)[2]))
 
 
 def processor():
 	# The average is taken from the same reading as the cores, so that both always agree.
-	loads = _measure('cores', _cpu_cores)[2]
+	loads = _measure(_cpu_cores)[2]
 	average = sum(loads) / len(loads)
 	if len(loads) == 1:
 		# Translators: The load of a single-core processor.
@@ -122,7 +111,7 @@ def processor():
 
 
 def applications(count=5):
-	apps = sorted(_measure('apps', _applications)[2].values(), key=lambda app: (-round(app[1]), -app[2]))[:count]
+	apps = sorted(_measure(_applications)[2].values(), key=lambda app: (-round(app[1]), -app[2]))[:count]
 	cores = psutil.cpu_count() or 1
 	# Translators: One of the applications using the most, as in "reaper: processor 23%, memory 2.1 GB".
 	return ' '.join(_('{name}: processor {load}%, memory {memory}.').format(
@@ -237,7 +226,7 @@ def network():
 		parts = [_('{way}, but the Internet is not reachable.').format(way=way)]
 	else:
 		parts = [way + '.']
-	seconds, before, now = _measure('net', _net)
+	seconds, before, now = _measure(_net)
 	if name in before and name in now and seconds > 0:
 		received = max(0, now[name].bytes_recv - before[name].bytes_recv) / seconds
 		sent = max(0, now[name].bytes_sent - before[name].bytes_sent) / seconds

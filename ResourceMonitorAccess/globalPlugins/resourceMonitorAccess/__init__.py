@@ -12,14 +12,17 @@ import wx
 
 import addonHandler
 import api
+import braille
 import config
 import globalPluginHandler
 import globalVars
 import gui
 import queueHandler
 import scriptHandler
+import speech
 import ui
 from logHandler import log
+from speech.commands import CallbackCommand
 
 from . import info
 from .gpu import getGpuProviders
@@ -51,6 +54,27 @@ def say(text, remember=True):
 	if remember:
 		_state['last'] = text
 	ui.message(text)
+
+
+# The information measured over a second: "Please wait" is said first, and the result only once it is finished.
+LOADS = ('announceSummary', 'announceProcessor', 'announceApplications', 'announceNetwork')
+# Longest wait for "Please wait" to be spoken: its end is never reported if the user cuts the speech.
+WAIT_SPOKEN = 5
+
+
+def say_please_wait(spoken):
+	"""Say "Please wait", then set spoken once it has been fully spoken, whatever the speech rate."""
+	# Translators: Said while a load (processor, network) is measured, during one second.
+	text = _('Please wait.')
+	try:
+		if speech.getState().speechMode == speech.SpeechMode.talk:
+			speech.speak([text, CallbackCommand(spoken.set, name=ADDON_NAME)])
+			braille.handler.message(text)
+			return
+	except Exception:
+		log.debugWarning('ResourceMonitorAccess: speaking with a callback failed', exc_info=True)
+	ui.message(text)
+	spoken.set()
 
 
 def _notify_wifi(text, sound):
@@ -106,7 +130,7 @@ class ResourceWindow(wx.Dialog):
 		super().__init__(parent, title=ADDON_NAME)
 		self.plugin = plugin
 		# (text of the entry, what Enter does)
-		self.entries = [(label, lambda gather=gather: plugin.report(gather)) for name, label, gather in plugin.topics()]
+		self.entries = [(label, lambda name=name: plugin.run_topic(name)) for name, label, gather in plugin.topics()]
 		# Translators: An entry of the resource window.
 		self.entries.append((_('Copy the last information'), plugin.copy_last))
 		if not globalVars.appArgs.secure:
@@ -239,11 +263,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return _('Not available on secure screens.')
 		return info.gpu_memory(self.gpuProviders)
 
-	def report(self, gather, copy=False):
-		"""Gather a piece of information in the background, then say it, or copy it."""
+	def report(self, gather, copy=False, measured=False):
+		"""Gather a piece of information in the background, then say it, or copy it.
+		measured: a load, read over a second, during which "Please wait" is said."""
+		spoken = threading.Event()
+		if measured:
+			say_please_wait(spoken)
+		else:
+			spoken.set()
+
 		def work():
 			try:
 				text = gather()
+				spoken.wait(WAIT_SPOKEN)
 				failed = False
 				if text is None:   # already said
 					return
@@ -264,7 +296,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Pressed twice: the information is read again, fresh, and copied instead of being said.
 		# The speed test is long: pressed twice, it is not run again (Copy the last information gives its result).
 		copy = gesture is not None and scriptHandler.getLastScriptRepeatCount() > 0 and name != 'announceSpeedTest'
-		self.report(gather, copy=copy)
+		self.report(gather, copy=copy, measured=name in LOADS)
 
 	def copy_last(self):
 		if not _state['last']:
