@@ -14,20 +14,21 @@ import psutil
 addonHandler.initTranslation()
 
 UNIT = 1024.0   # sizes are counted like Windows Explorer counts them
-# A load (processor, applications, network) is measured between two readings. A reading taken right
-# after the previous one would be meaningless: the add-on then waits until this many seconds have passed.
+# A load (processor, applications, network) is measured between two readings, MEASURE seconds apart.
+# A reading older than MAX_AGE is taken again first: compared with it, the load would be the average
+# since then (hours, after a long pause), and after the computer has slept Windows can even report 0%.
 MEASURE = 0.5
+MAX_AGE = 5
 _readings = {}
 _lock = threading.Lock()
 
 
 def _measure(key, read):
-	"""(seconds, previous value, new value): a reading, compared with the one before it.
-	The readings are taken ahead of time (prime), so there is usually nothing to wait for."""
+	"""(seconds, previous value, new value): a reading, compared with one taken just before it."""
 	with _lock:
-		if key not in _readings:
-			_readings[key] = (time.monotonic(), read())
-		then, before = _readings[key]
+		then, before = _readings.get(key, (None, None))
+		if then is None or time.monotonic() - then > MAX_AGE:
+			then, before = time.monotonic(), read()
 		wait = MEASURE - (time.monotonic() - then)
 		if wait > 0:
 			time.sleep(wait)
@@ -67,16 +68,6 @@ def _applications():
 		entry[1] += load
 		entry[2] += memory
 	return apps
-
-
-def prime():
-	"""Take the first readings, so that the first announcements are immediate. Off NVDA's thread."""
-	for key, read in (('total', _cpu_total), ('cores', _cpu_cores), ('net', _net), ('apps', _applications)):
-		try:
-			with _lock:
-				_readings[key] = (time.monotonic(), read())
-		except Exception:
-			pass
 
 
 def number(value, decimals=1):

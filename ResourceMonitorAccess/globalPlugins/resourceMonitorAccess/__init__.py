@@ -167,8 +167,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.updater = None
 		self.gpuProviders = getGpuProviders()
 		self.hasBattery = info.has_battery()
-		# The first readings of the loads, so that the first announcements are immediate.
-		threading.Thread(target=info.prime, daemon=True, name='ResourceMonitorAccess').start()
 		self.wifi = WifiMonitor(_notify_wifi)
 		if globalVars.appArgs.secure:
 			return
