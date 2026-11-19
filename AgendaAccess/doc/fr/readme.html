@@ -92,6 +92,17 @@
 <h3>Mettre les rappels en pause</h3>
 <p><kbd>Ctrl+P</kbd> dans l'agenda, ou « Mettre les rappels en pause » dans le menu Plus d'actions, coupe tous les rappels pendant 30 minutes, 1, 2, 4 ou 8 heures, par exemple pendant une réunion ou un film. Les rappels de cette période ne sont pas donnés plus tard. Pendant une pause, la même fenêtre propose de reprendre les rappels tout de suite.</p>
 
+<h2>Recevoir les rappels sur votre téléphone</h2>
+<p>AgendaAccess peut aussi envoyer chaque rappel à votre téléphone, avec ntfy, une application gratuite pour Android et iPhone. Il n'y a ni compte ni mot de passe : votre téléphone s'abonne à un nom secret, et reçoit ce qui est envoyé à ce nom. Le rappel arrive comme une notification, lue par TalkBack ou VoiceOver.</p>
+<ol>
+<li>Sur votre téléphone, installez l'application ntfy depuis le Play Store ou l'App Store.</li>
+<li>Sur l'ordinateur, ouvrez les réglages d'AgendaAccess, puis Options avancées. Cochez « Envoyer aussi les rappels sur mon téléphone, avec l'application ntfy ». Un nom secret est déjà proposé, par exemple « agenda-k3x9p2m7q1wz » ; le bouton « Créer un nouveau nom secret » en fabrique un autre, et NVDA l'épelle.</li>
+<li>Dans l'application ntfy du téléphone, abonnez-vous à ce nom secret, en le tapant exactement.</li>
+<li>Choisissez « Envoyer un essai au téléphone » : votre téléphone doit recevoir « Essai d'AgendaAccess : vos rappels arriveront ici. ». Validez ensuite avec OK.</li>
+</ol>
+<p>Les rappels partent sur le téléphone en même temps qu'ils sont annoncés, même la nuit : c'est le mode Ne pas déranger du téléphone qui décide s'il sonne. Pendant une pause des rappels, rien n'est envoyé. Si votre agenda est partagé entre plusieurs ordinateurs, cochez cette case sur un seul d'entre eux, sinon chaque rappel arrivera en double.</p>
+<p>Gardez votre nom secret pour vous : quiconque le connaît peut recevoir vos rappels. Le texte des rappels passe par le serveur gratuit ntfy.sh. Si vous avez votre propre serveur ntfy, indiquez son adresse dans le champ « Serveur » : vos rappels ne passeront alors que par lui.</p>
+
 <h2>Au démarrage de NVDA</h2>
 <p>Quelques secondes après le démarrage de NVDA, s'il y a des rendez-vous aujourd'hui, NVDA les annonce, par exemple « Aujourd'hui, jeudi 19 novembre 2026 : 2 rendez-vous : 10 h 30, Dentiste; 14 h, Appel ». Vous pouvez désactiver cette annonce dans les réglages.</p>
 
@@ -139,6 +150,7 @@
 <li><strong>Son habituel des rappels</strong> : une des sonneries d'AgendaAccess, ou un fichier son WAV ou MP3 de votre choix. Les sonneries sont : Carillon (le son par défaut), Cloches de Westminster, Cloche, Marimba, Harpe, Notification, Bips doux, Réveil numérique et Gong, puis une collection de 35 sons, chacun suivi de son genre : alarme, réveil, notification, doux ou sonnerie, par exemple « Rush (alarme) ». Les alarmes et les réveils durent de 10 secondes à plus d'une minute. Chaque son se fait entendre dès que vous passez dessus avec les flèches, et le bouton « L'écouter » le fait entendre à nouveau.</li>
 <li><strong>Donner chaque rappel</strong> : une seule fois, ou 3, 5 ou 10 fois, à une minute d'intervalle, tant que sa fenêtre n'est pas fermée.</li>
 <li><strong>Mode nuit</strong> : entre les deux heures choisies, 22 h et 7 h par défaut, les rappels sont annoncés et affichés, mais sans son ni répétition.</li>
+<li><strong>Envoyer aussi les rappels sur mon téléphone</strong>, avec son <strong>nom secret</strong> et son <strong>serveur</strong> : décochée par défaut. Voir « Recevoir les rappels sur votre téléphone ».</li>
 </ul></li>
 <li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> : cochée par défaut.</li>
 <li><strong>Vérifier les mises à jour maintenant</strong> : lance la vérification tout de suite.</li>
@@ -150,7 +162,7 @@
 <p>Vos rendez-vous ne sont jamais dans le dossier de l'extension : ils restent après une mise à jour, et même après une désinstallation.</p>
 
 <h2>Confidentialité</h2>
-<p>Vos rendez-vous restent dans le fichier que vous avez choisi : AgendaAccess ne les envoie nulle part. Si vous le mettez dans Dropbox ou OneDrive, c'est ce service qui le copie sur vos autres ordinateurs. Ils ne sont pas lus sur les écrans sécurisés de Windows, comme l'écran de connexion. L'extension ne contacte Internet que pour vérifier les mises à jour, auprès de GitHub.</p>
+<p>Vos rendez-vous restent dans le fichier que vous avez choisi : AgendaAccess ne les envoie nulle part. Seuls les rappels partent vers votre téléphone, et seulement si vous l'avez activé. Si vous le mettez dans Dropbox ou OneDrive, c'est ce service qui le copie sur vos autres ordinateurs. Ils ne sont pas lus sur les écrans sécurisés de Windows, comme l'écran de connexion. L'extension ne contacte Internet que pour vérifier les mises à jour, auprès de GitHub, et pour les rappels envoyés au téléphone.</p>
 
 <h2>Crédits et licence</h2>
 <p>AgendaAccess est publié par ReaperAccessible. L'extension s'inspire d'Agenda, d'Abel Passos do Nascimento Jr, Ângelo Abrantes et Rui Fontes, et de Mon agenda, de Louis-Rock Lampron. Une partie des sons de la collection vient de notificationsounds.com.</p>

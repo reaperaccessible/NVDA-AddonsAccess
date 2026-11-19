@@ -7,6 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "The secret name can only have letters without accents, digits, - and _, up to 64."
+msgstr "Le nom secret ne peut contenir que des lettres sans accents, des chiffres, - et _, 64 au plus."
+
 msgid "Up and down arrows: the appointments of the day"
 msgstr "Flèches haut et bas : les rendez-vous du jour"
 
@@ -202,6 +205,12 @@ msgstr "5 fois, à une minute d'intervalle, tant que sa fenêtre n'est pas ferm�
 msgid "10 times, a minute apart, until its window is closed"
 msgstr "10 fois, à une minute d'intervalle, tant que sa fenêtre n'est pas fermée"
 
+msgid "Sending the test…"
+msgstr "Envoi de l'essai…"
+
+msgid "Test of AgendaAccess: your reminders will come here."
+msgstr "Essai d'AgendaAccess : vos rappels arriveront ici."
+
 msgid "V&olume of the reminder sounds:"
 msgstr "V&olume des sons des rappels :"
 
@@ -327,6 +336,15 @@ msgstr "&L'écouter"
 
 msgid "&Night mode: no sound and no repetition at night"
 msgstr "Mode &nuit : ni son ni répétition la nuit"
+
+msgid "Also send the reminders to my p&hone, with the ntfy app"
+msgstr "Envoyer aussi les rappels sur mon télé&phone, avec l'application ntfy"
+
+msgid "Create a ne&w secret name"
+msgstr "Créer un nouveau nom secre&t"
+
+msgid "S&end a test to the phone"
+msgstr "Envo&yer un essai au téléphone"
 
 msgid "The agenda now uses this file. The appointments already in it were kept and joined to yours."
 msgstr "L'agenda utilise maintenant ce fichier. Les rendez-vous qu'il contenait déjà sont gardés et réunis aux vôtres."
@@ -488,10 +506,25 @@ msgid "&Give each reminder:"
 msgstr "&Donner chaque rappel :"
 
 msgid "Night &from (hour):"
-msgstr "Nuit &de (heure) :"
+msgstr "Nuit d&e (heure) :"
 
 msgid "&to (hour):"
 msgstr "&à (heure) :"
+
+msgid "Secret na&me to type in the ntfy app:"
+msgstr "No&m secret à taper dans l'application ntfy :"
+
+msgid "Ser&ver (leave it as it is, unless you have your own):"
+msgstr "Ser&veur (à laisser tel quel, sauf si vous avez le vôtre) :"
+
+msgid "New secret name: {name}. Type it in the ntfy app of your phone."
+msgstr "Nouveau nom secret : {name}. Tapez-le dans l'application ntfy de votre téléphone."
+
+msgid "The test could not be sent. Check the Internet connection and the server."
+msgstr "L'essai n'a pas pu être envoyé. Vérifiez la connexion Internet et le serveur."
+
+msgid "Test sent. If your phone did not get it, check that the ntfy app is subscribed to this secret name."
+msgstr "Essai envoyé. Si votre téléphone ne l'a pas reçu, vérifiez que l'application ntfy est abonnée à ce nom secret."
 
 msgid "File of the agenda:"
 msgstr "Fichier de l'agenda :"

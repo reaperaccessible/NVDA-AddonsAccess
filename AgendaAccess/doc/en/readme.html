@@ -92,6 +92,17 @@
 <h3>Pausing the reminders</h3>
 <p><kbd>Control+P</kbd> in the agenda, or "Pause the reminders" in the More actions menu, stops every reminder for 30 minutes, 1, 2, 4 or 8 hours, for example during a meeting or a film. The reminders of that time are not given later. During a pause, the same window offers to start the reminders again at once.</p>
 
+<h2>Getting the reminders on your phone</h2>
+<p>AgendaAccess can also send each reminder to your phone, with ntfy, a free app for Android and iPhone. There is no account and no password: your phone subscribes to a secret name, and gets what is sent to that name. The reminder comes as a notification, read by TalkBack or VoiceOver.</p>
+<ol>
+<li>On your phone, install the ntfy app from the Play Store or the App Store.</li>
+<li>On the computer, open the settings of AgendaAccess, then Advanced options. Check "Also send the reminders to my phone, with the ntfy app". A secret name is already given, for example "agenda-k3x9p2m7q1wz"; the "Create a new secret name" button makes another one, and NVDA spells it.</li>
+<li>In the ntfy app of the phone, subscribe to this secret name, typing it exactly.</li>
+<li>Choose "Send a test to the phone": your phone should get "Test of AgendaAccess: your reminders will come here.". Then confirm with OK.</li>
+</ol>
+<p>The reminders go to the phone as they are spoken, even at night: the phone's Do not disturb mode decides whether it rings. During a pause of the reminders, nothing is sent. If your agenda is shared between several computers, check this box on one of them only, or each reminder will come twice.</p>
+<p>Keep your secret name to yourself: whoever knows it can get your reminders. The text of the reminders goes through the free ntfy.sh server. If you have your own ntfy server, give its address in the "Server" field: your reminders will then only go through it.</p>
+
 <h2>When NVDA starts</h2>
 <p>A few seconds after NVDA starts, if there are appointments today, NVDA says them, for example "Today, Thursday, November 19, 2026: 2 appointments: 10:30, Dentist; 14:00, Call". You can turn this off in the settings.</p>
 
@@ -139,6 +150,7 @@
 <li><strong>Usual sound of the reminders</strong>: one of the ringtones of AgendaAccess, or a WAV or MP3 sound file of your choice. The ringtones are: Chime (the default), Westminster bells, Bell, Marimba, Harp, Notification, Soft beeps, Digital alarm clock and Gong, then a collection of 35 sounds, each followed by its kind: alarm, wake-up, notification, soft or ringtone, for example "Rush (alarm)". The alarms and wake-up sounds last from 10 seconds to more than a minute. Each sound is heard as soon as you reach it with the arrows, and the "Play it" button plays it again.</li>
 <li><strong>Give each reminder</strong>: once, or 3, 5 or 10 times, a minute apart, until its window is closed.</li>
 <li><strong>Night mode</strong>: between the two hours chosen, 22 and 7 by default, the reminders are spoken and shown, but without sound or repetition.</li>
+<li><strong>Also send the reminders to my phone</strong>, with its <strong>secret name</strong> and its <strong>server</strong>: unchecked by default. See "Getting the reminders on your phone".</li>
 </ul></li>
 <li><strong>Check for updates automatically when NVDA starts</strong>: checked by default.</li>
 <li><strong>Check for updates now</strong>: checks at once.</li>
@@ -150,7 +162,7 @@
 <p>Your appointments are never in the add-on's folder: they stay after an update, and even after the add-on is removed.</p>
 
 <h2>Privacy</h2>
-<p>Your appointments stay in the file you chose: AgendaAccess sends them nowhere. If you put it in Dropbox or OneDrive, that service copies it to your other computers. They are not read on Windows' secure screens, such as the sign-in screen. The add-on only contacts the Internet to check for updates, on GitHub.</p>
+<p>Your appointments stay in the file you chose: AgendaAccess sends them nowhere. Only the reminders go to your phone, and only if you turned it on. If you put it in Dropbox or OneDrive, that service copies it to your other computers. They are not read on Windows' secure screens, such as the sign-in screen. The add-on only contacts the Internet to check for updates, on GitHub, and for the reminders sent to the phone.</p>
 
 <h2>Credits and license</h2>
 <p>AgendaAccess is published by ReaperAccessible. The add-on is inspired by Agenda, by Abel Passos do Nascimento Jr, Ângelo Abrantes and Rui Fontes, and by Mon agenda, by Louis-Rock Lampron. Part of the sounds of the collection comes from notificationsounds.com.</p>

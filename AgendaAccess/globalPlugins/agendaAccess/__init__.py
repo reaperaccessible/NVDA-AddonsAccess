@@ -20,7 +20,7 @@ import gui
 import ui
 from logHandler import log
 
-from . import agenda, sound, words
+from . import agenda, phone, sound, words
 from .shortcuts import Shortcuts, ShortcutsDialog
 from .updater import Updater
 
@@ -41,6 +41,9 @@ CONFIG_SPEC = {
 	'nightStart': 'integer(default=22, min=0, max=23)',
 	'nightEnd': 'integer(default=7, min=0, max=23)',
 	'pausedUntil': 'string(default="")',
+	'phoneEnabled': 'boolean(default=false)',
+	'phoneName': 'string(default="")',
+	'phoneServer': 'string(default="")',
 	'checkForUpdates': 'boolean(default=true)',
 }
 DATA_FILE = 'agendaAccess.json'           # in NVDA's configuration folder, unless another place is chosen
@@ -1075,6 +1078,11 @@ class AgendaWindow(wx.Dialog):
 _window = None
 
 
+def bad_name():
+	# Translators: Said when the secret name for the phone is not valid.
+	return _('The secret name can only have letters without accents, digits, - and _, up to 64.')
+
+
 class AdvancedDialog(wx.Dialog):
 	"""The options few people need: the sound file, the repetition of the reminders, the night."""
 
@@ -1114,10 +1122,32 @@ class AdvancedDialog(wx.Dialog):
 		self.nightEnd = wx.SpinCtrl(self, min=0, max=23, initial=settings()['nightEnd'], size=(70, -1))
 		row.Add(self.nightEnd, 0, wx.LEFT, 4)
 		sizer.Add(row, 0, wx.ALL, 10)
+		# Translators: A check box: the reminders are also sent to a phone, with the free ntfy app.
+		self.phone = wx.CheckBox(self, label=_('Also send the reminders to my p&hone, with the ntfy app'))
+		self.phone.SetValue(settings()['phoneEnabled'])
+		sizer.Add(self.phone, 0, pad | wx.TOP, 10)
+		# Translators: Label of the secret name the phone subscribes to in the ntfy app.
+		sizer.Add(wx.StaticText(self, label=_('Secret na&me to type in the ntfy app:')), 0, pad | wx.TOP, 6)
+		self.phoneName = wx.TextCtrl(self, value=settings()['phoneName'] or phone.new_name())
+		sizer.Add(self.phoneName, 0, pad | wx.EXPAND, 10)
+		buttons = wx.BoxSizer(wx.HORIZONTAL)
+		# Translators: Buttons of the reminders sent to a phone.
+		self.newName = wx.Button(self, label=_('Create a ne&w secret name'))
+		self.test = wx.Button(self, label=_('S&end a test to the phone'))
+		buttons.Add(self.newName, 0, wx.RIGHT, 6)
+		buttons.Add(self.test, 0)
+		sizer.Add(buttons, 0, pad | wx.TOP, 6)
+		# Translators: Label of the address of the ntfy server; only people with their own server change it.
+		sizer.Add(wx.StaticText(self, label=_('Ser&ver (leave it as it is, unless you have your own):')), 0, pad | wx.TOP, 6)
+		self.phoneServer = wx.TextCtrl(self, value=settings()['phoneServer'] or phone.DEFAULT_SERVER)
+		sizer.Add(self.phoneServer, 0, pad | wx.EXPAND, 10)
 		sizer.Add(self.CreateButtonSizer(wx.OK | wx.CANCEL), 0, wx.ALL | wx.ALIGN_RIGHT, 10)
 		self.SetSizerAndFit(sizer)
 		test.Bind(wx.EVT_BUTTON, lambda event: play(self.sound.value()))
 		self.night.Bind(wx.EVT_CHECKBOX, lambda event: self.update())
+		self.phone.Bind(wx.EVT_CHECKBOX, lambda event: self.update())
+		self.newName.Bind(wx.EVT_BUTTON, lambda event: self.new_name())
+		self.test.Bind(wx.EVT_BUTTON, lambda event: self.send_test())
 		self.Bind(wx.EVT_BUTTON, self.on_ok, id=wx.ID_OK)
 		self.update()
 		self.sound.choice.SetFocus()
@@ -1125,8 +1155,44 @@ class AdvancedDialog(wx.Dialog):
 	def update(self):
 		self.nightStart.Enable(self.night.GetValue())
 		self.nightEnd.Enable(self.night.GetValue())
+		for control in (self.phoneName, self.newName, self.test, self.phoneServer):
+			control.Enable(self.phone.GetValue())
+
+	def new_name(self):
+		self.phoneName.SetValue(phone.new_name())
+		self.phoneName.SetFocus()
+		# Translators: Said when a new secret name is created; the user then types it in the ntfy app.
+		say(_('New secret name: {name}. Type it in the ntfy app of your phone.').format(name=' '.join(self.phoneName.GetValue())))
+
+	def send_test(self):
+		name = self.phoneName.GetValue().strip()
+		if not phone.valid_name(name):
+			say(bad_name())
+			self.phoneName.SetFocus()
+			return
+		# Translators: Said while the test is being sent to the phone.
+		say(_('Sending the test…'))
+		def done(problem):
+			if problem:
+				log.warning('AgendaAccess: the test to the phone was not sent: %s' % problem)
+				# Translators: Said when the test cannot be sent to the phone.
+				wx.CallAfter(say, _('The test could not be sent. Check the Internet connection and the server.'))
+			else:
+				# Translators: Said when the test has been sent to the phone.
+				wx.CallAfter(say, _('Test sent. If your phone did not get it, check that the ntfy app is subscribed to this secret name.'))
+		# Translators: The text of the test sent to the phone.
+		phone.send_later(self.phoneServer.GetValue(), name, ADDON_NAME, _('Test of AgendaAccess: your reminders will come here.'), done)
 
 	def on_ok(self, event):
+		name = self.phoneName.GetValue().strip()
+		if self.phone.GetValue() and not phone.valid_name(name):
+			say(bad_name())
+			self.phoneName.SetFocus()
+			return
+		settings()['phoneEnabled'] = self.phone.GetValue()
+		settings()['phoneName'] = name
+		server = self.phoneServer.GetValue().strip()
+		settings()['phoneServer'] = '' if server.rstrip('/') == phone.DEFAULT_SERVER else server
 		settings()['soundFile'] = self.sound.value()
 		settings()['repeatTimes'] = REPEAT_CHOICES[self.repeat.GetSelection()]
 		settings()['nightMode'] = self.night.GetValue()
@@ -1320,6 +1386,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			night = self.is_night(moment)
 			chosen = False if night else self.sound_of(due[0][2])
 			self.give(texts, chosen)
+			self.send_to_phone(texts)
 			if settings()['reminderWindow']:
 				self.show_reminders(texts)
 			times = 1 if night else settings()['repeatTimes']
@@ -1330,6 +1397,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.repeating['next'] = moment + REPEAT_EVERY
 			if self.repeating['left'] <= 0:
 				self.repeating = None
+
+	def send_to_phone(self, texts):
+		"""With ntfy, when turned on: in the background, so that a slow connection never holds NVDA."""
+		if not settings()['phoneEnabled'] or not phone.valid_name(settings()['phoneName']):
+			return
+		def done(problem):
+			if problem:
+				log.warning('AgendaAccess: a reminder was not sent to the phone: %s' % problem)
+		phone.send_later(settings()['phoneServer'], settings()['phoneName'], ADDON_NAME, ' '.join(texts), done)
 
 	def give(self, texts, chosen):
 		if chosen is not False:
