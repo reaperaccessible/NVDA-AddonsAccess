@@ -247,6 +247,28 @@ def due_reminders(appointments, since, now):
 	return sorted(found, key=lambda item: (item[0], -item[1]))
 
 
+def missed_reminders(appointments, since, until, now):
+	"""The reminders that fell between since and until while NVDA was closed, for the appointments still to come:
+	(when, minutes before, appointment), one per appointment, the latest of its reminders."""
+	if since >= until:
+		return []
+	latest = {}
+	longest = datetime.timedelta(minutes=max(REMINDERS))
+	day = since.date()
+	while day <= (until + longest).date():
+		for appointment in day_appointments(appointments, day):
+			when = datetime.datetime.combine(day, start_time(appointment))
+			if when <= now:
+				continue
+			for minutes in appointment.get('reminders', ()):
+				ring = when - datetime.timedelta(minutes=minutes)
+				key = (appointment['id'], when)
+				if since < ring <= until and (key not in latest or minutes < latest[key][1]):
+					latest[key] = (when, minutes, appointment)
+		day += datetime.timedelta(days=1)
+	return sorted(latest.values(), key=lambda item: item[0])
+
+
 def shift_month(day, months):
 	"""The same day some months later or earlier; the last day of a shorter month."""
 	index = day.year * 12 + day.month - 1 + months

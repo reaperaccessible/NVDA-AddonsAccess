@@ -7,6 +7,7 @@
 
 import calendar
 import datetime
+import json
 import os
 import time
 
@@ -46,6 +47,7 @@ CONFIG_SPEC = {
 	'phoneServer': 'string(default="")',
 	'checkForUpdates': 'boolean(default=true)',
 }
+STATE_FILE = 'agendaAccess-state.json'  # in NVDA's configuration folder: when the reminders were last looked at
 DATA_FILE = 'agendaAccess.json'           # in NVDA's configuration folder, unless another place is chosen
 BACKUP_FOLDER = 'agendaAccess-backups'    # always in NVDA's configuration folder: copies of this computer
 CHECK_EVERY = 15000       # ms between two looks at the reminders and at the file
@@ -1306,11 +1308,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			log.error('AgendaAccess: cannot register the speech filter', exc_info=True)
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(AgendaAccessSettingsPanel)
 		self.lastCheck = now()
+		# The reminders missed while NVDA was closed are given a few seconds after it starts.
+		self.closedSince = self.read_state()
+		self.startedAt = self.lastCheck
 		self.timer = wx.Timer()
 		self.timer.Bind(wx.EVT_TIMER, lambda event: self.tick())
 		self.timer.Start(CHECK_EVERY)
 		if settings()['announceAtStart']:
 			wx.CallLater(STARTUP_ANNOUNCE, self.announce_at_start)
+		wx.CallLater(STARTUP_ANNOUNCE, self.give_missed)
 		self.updater = Updater(addonHandler.getCodeAddon())
 		AgendaAccessSettingsPanel.updater = self.updater
 		if settings()['checkForUpdates']:
@@ -1319,6 +1325,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def terminate(self, *args, **kwargs):
 		if self.timer is not None:
 			self.timer.Stop()
+			self.write_state()
 		if self.updater is not None:
 			self.updater.cancel()
 		sound.stop()
@@ -1370,6 +1377,39 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return False
 		return settings()['soundFile']
 
+	def state_path(self):
+		return os.path.join(globalVars.appArgs.configPath, STATE_FILE)
+
+	def read_state(self):
+		"""When the reminders were last looked at, before NVDA was closed; None the first time."""
+		try:
+			with open(self.state_path(), encoding='utf-8') as file:
+				return datetime.datetime.fromisoformat(json.load(file)['lastCheck'])
+		except Exception:
+			return None
+
+	def write_state(self):
+		try:
+			with open(self.state_path(), 'w', encoding='utf-8') as file:
+				json.dump({'lastCheck': self.lastCheck.isoformat(timespec='seconds')}, file)
+		except OSError:
+			pass
+
+	def give_missed(self):
+		"""The reminders that fell while NVDA was closed, for the appointments that are still to come."""
+		since, self.closedSince = self.closedSince, None
+		if since is None or store() is None or paused_until():
+			return
+		moment = now()
+		try:
+			missed = agenda.missed_reminders(store().appointments, since, self.startedAt, moment)
+		except Exception:
+			log.error('AgendaAccess: checking the missed reminders failed', exc_info=True)
+			return
+		if missed:
+			# The minutes 1 gives "in 20 minutes" from now, not "now": the time is said as it is when given.
+			self.deliver([words.reminder_text(when, minutes or 1, appointment, moment) for when, minutes, appointment in missed], missed[0][2], moment)
+
 	def check_reminders(self):
 		moment = now()
 		try:
@@ -1378,25 +1418,29 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			log.error('AgendaAccess: checking the reminders failed', exc_info=True)
 			due = []
 		self.lastCheck = moment
+		self.write_state()
 		if paused_until():
 			self.repeating = None
 			return
 		if due:
-			texts = [words.reminder_text(when, minutes, appointment, moment) for when, minutes, appointment in due]
-			night = self.is_night(moment)
-			chosen = False if night else self.sound_of(due[0][2])
-			self.give(texts, chosen)
-			self.send_to_phone(texts)
-			if settings()['reminderWindow']:
-				self.show_reminders(texts)
-			times = 1 if night else settings()['repeatTimes']
-			self.repeating = {'texts': texts, 'sound': chosen, 'left': times - 1, 'next': moment + REPEAT_EVERY} if times > 1 else None
+			self.deliver([words.reminder_text(when, minutes, appointment, moment) for when, minutes, appointment in due], due[0][2], moment)
 		elif self.repeating and moment >= self.repeating['next']:
 			self.give(self.repeating['texts'], self.repeating['sound'])
 			self.repeating['left'] -= 1
 			self.repeating['next'] = moment + REPEAT_EVERY
 			if self.repeating['left'] <= 0:
 				self.repeating = None
+
+	def deliver(self, texts, appointment, moment):
+		"""Give reminders: said, with their sound, sent to the phone, shown in their window, repeated if chosen."""
+		night = self.is_night(moment)
+		chosen = False if night else self.sound_of(appointment)
+		self.give(texts, chosen)
+		self.send_to_phone(texts)
+		if settings()['reminderWindow']:
+			self.show_reminders(texts)
+		times = 1 if night else settings()['repeatTimes']
+		self.repeating = {'texts': texts, 'sound': chosen, 'left': times - 1, 'next': moment + REPEAT_EVERY} if times > 1 else None
 
 	def send_to_phone(self, texts):
 		"""With ntfy, when turned on: in the background, so that a slow connection never holds NVDA."""

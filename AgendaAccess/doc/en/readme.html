@@ -88,23 +88,70 @@
 
 <h2>The reminders</h2>
 <p>When a reminder is due, NVDA says it, for example "Reminder: Dentist, in 15 minutes, at 10:30.", and a short chime plays. The reminder is also shown in a window that stays open until you close it with Enter or Escape, so that it is not missed if you were away from the computer. If other reminders come while it is open, they are added to it.</p>
-<p>The reminders are only given while NVDA is running. If the computer was asleep, a reminder at most 10 minutes late is still given when it wakes up; an older one is not.</p>
+<p>The reminders are given by NVDA: the computer must be on and NVDA running. If a reminder falls while NVDA is closed, it is not lost: it is given a few seconds after NVDA next starts, if the appointment is not over yet, with the time left, for example "Reminder: Dentist, in 9 minutes, at 10:30.". If several reminders of one appointment were missed, only the latest is given. A reminder is never given twice, even if you restart NVDA.</p>
+<p>If the computer was asleep, a reminder at most 10 minutes late is still given when it wakes up; an older one is not.</p>
 <h3>Pausing the reminders</h3>
 <p><kbd>Control+P</kbd> in the agenda, or "Pause the reminders" in the More actions menu, stops every reminder for 30 minutes, 1, 2, 4 or 8 hours, for example during a meeting or a film. The reminders of that time are not given later. During a pause, the same window offers to start the reminders again at once.</p>
 
 <h2>Getting the reminders on your phone</h2>
-<p>AgendaAccess can also send each reminder to your phone, with ntfy, a free app for Android and iPhone. There is no account and no password: your phone subscribes to a secret name, and gets what is sent to that name. The reminder comes as a notification, read by TalkBack or VoiceOver.</p>
+<p>AgendaAccess can also send each reminder to your phone, with ntfy (said "notify"), a free app for Android and iPhone. The reminder comes as a notification, read to you by TalkBack or VoiceOver, for example "Reminder: Dentist, in 15 minutes, at 10:30.".</p>
+<p>There is no account to create and no password. Your phone subscribes to a secret name, for example "agenda-k3x9p2m7q1wz", a bit like a mailbox: whatever AgendaAccess sends to that name comes to your phone.</p>
+<p>Important: the reminders leave from the computer. For them to reach the phone, the computer must be on, not asleep, and NVDA must be running. A reminder that fell while NVDA was closed is sent when NVDA next starts, if the appointment is not over yet.</p>
+
+<h3>Step 1: install ntfy on the phone</h3>
 <ol>
-<li>On your phone, install the ntfy app from the Play Store or the App Store.</li>
-<li>On the computer, open the settings of AgendaAccess, then Advanced options. Check "Also send the reminders to my phone, with the ntfy app". A secret name is already given, for example "agenda-k3x9p2m7q1wz"; the "Create a new secret name" button makes another one, and NVDA spells it.</li>
-<li>In the ntfy app of the phone, subscribe to this secret name, typing it exactly.</li>
-<li>Choose "Send a test to the phone": your phone should get "Test of AgendaAccess: your reminders will come here.". Then confirm with OK.</li>
+<li>On Android, open the Play Store; on iPhone, the App Store. Search for "ntfy" and install the free app of that name.</li>
+<li>Open the app. If it asks for permission to show notifications, accept: without it, no reminder will show.</li>
 </ol>
-<p>The reminders go to the phone as they are spoken, even at night: the phone's Do not disturb mode decides whether it rings. During a pause of the reminders, nothing is sent. If your agenda is shared between several computers, check this box on one of them only, or each reminder will come twice.</p>
-<p>Keep your secret name to yourself: whoever knows it can get your reminders. The text of the reminders goes through the free ntfy.sh server. If you have your own ntfy server, give its address in the "Server" field: your reminders will then only go through it.</p>
+
+<h3>Step 2: turn the option on, on the computer</h3>
+<ol>
+<li>Open the NVDA menu, Preferences, Settings, then the category "AgendaAccess".</li>
+<li>Choose the "Advanced options" button.</li>
+<li>Check the box "Also send the reminders to my phone, with the ntfy app".</li>
+<li>In the field "Secret name to type in the ntfy app", a name is already given. You can keep it. For another name, choose the "Create a new secret name" button: NVDA says the new name, spelling it letter by letter. If you already have a name of your own, clear the field and type yours.</li>
+<li>To hear the name letter by letter again, go to the name field and move with the left and right arrows. The name only has lowercase letters without accents, digits and dashes.</li>
+<li>Do not close this window yet: you will need it in step 4.</li>
+</ol>
+
+<h3>Step 3: subscribe to the secret name on the phone</h3>
+<ol>
+<li>In the ntfy app, find the button to add a subscription. On Android, it is a "+" button at the bottom right of the screen; on iPhone, a "+" button at the top of the screen. It may also be called "Subscribe to topic" or "Add".</li>
+<li>In the "Topic" field, type the secret name exactly as in AgendaAccess: in lowercase, without spaces, with its dashes.</li>
+<li>Leave the default server. If there is a "Use another server" box, do not check it.</li>
+<li>Confirm with the "Subscribe" button. The subscription then shows in the list of the app.</li>
+</ol>
+
+<h3>Step 4: send a test</h3>
+<ol>
+<li>Back on the computer, in the Advanced options, choose the "Send a test to the phone" button. NVDA says "Sending the test", then "Test sent".</li>
+<li>Within a few seconds, your phone should get an "AgendaAccess" notification saying: "Test of AgendaAccess: your reminders will come here.".</li>
+<li>If so, confirm the Advanced options with OK, then NVDA's settings with OK. You are done.</li>
+</ol>
+
+<h3>If the test does not arrive</h3>
+<ul>
+<li>If NVDA says "The test could not be sent", the computer could not reach the server: check the computer's Internet connection, and that the "Server" field holds https://ntfy.sh.</li>
+<li>If NVDA says "Test sent" but nothing arrives, check that the secret name is the same, letter for letter, in AgendaAccess and in the ntfy app.</li>
+<li>Check in the phone's settings that the ntfy app is allowed to show notifications, and that Do not disturb is off.</li>
+<li>Open the ntfy app, then the subscription: the messages received are there, even if the notification did not ring.</li>
+<li>Check that the phone is connected to the Internet, by Wi-Fi or mobile data.</li>
+</ul>
+
+<h3>Good to know</h3>
+<ul>
+<li>The reminders go to the phone as they are spoken on the computer, once only, even if you chose to repeat the reminders.</li>
+<li>At night, they still go: your phone's Do not disturb mode decides whether it rings.</li>
+<li>During a pause of the reminders, nothing is sent to the phone.</li>
+<li>If your agenda is shared between several computers, check this option on one of them only, or each reminder will come twice.</li>
+<li>To stop, simply uncheck the box in the Advanced options. You can also unsubscribe in the ntfy app.</li>
+<li>Keep your secret name to yourself: whoever knows it can get your reminders. If you think it is known, create a new one and subscribe to it on the phone.</li>
+<li>The text of the reminders goes through the free ntfy.sh server. If you have your own ntfy server, give its address in the "Server" field of the Advanced options, and choose the same server in the app: your reminders will then only go through it.</li>
+</ul>
 
 <h2>When NVDA starts</h2>
 <p>A few seconds after NVDA starts, if there are appointments today, NVDA says them, for example "Today, Thursday, November 19, 2026: 2 appointments: 10:30, Dentist; 14:00, Call". You can turn this off in the settings.</p>
+<p>At the same time, the reminders that fell while NVDA was closed are given, if any, as explained in "The reminders". They are also sent to the phone if that option is on.</p>
 
 <h2>Sharing your agenda between several computers</h2>
 <p>Your appointments are kept in one file. By default, it is in NVDA's configuration folder, but you can put it wherever you want, for example in your Dropbox or OneDrive folder, to have the same agenda on all your computers:</p>
@@ -162,7 +209,7 @@
 <p>Your appointments are never in the add-on's folder: they stay after an update, and even after the add-on is removed.</p>
 
 <h2>Privacy</h2>
-<p>Your appointments stay in the file you chose: AgendaAccess sends them nowhere. Only the reminders go to your phone, and only if you turned it on. If you put it in Dropbox or OneDrive, that service copies it to your other computers. They are not read on Windows' secure screens, such as the sign-in screen. The add-on only contacts the Internet to check for updates, on GitHub, and for the reminders sent to the phone.</p>
+<p>Your appointments stay in the file you chose: AgendaAccess sends them nowhere. If you put this file in Dropbox or OneDrive, that service copies it to your other computers. Only the text of the reminders goes to your phone, and only if you turned this option on. Your appointments are not read on Windows' secure screens, such as the sign-in screen. The add-on only contacts the Internet to check for updates, on GitHub, and for the reminders sent to the phone.</p>
 
 <h2>Credits and license</h2>
 <p>AgendaAccess is published by ReaperAccessible. The add-on is inspired by Agenda, by Abel Passos do Nascimento Jr, Ângelo Abrantes and Rui Fontes, and by Mon agenda, by Louis-Rock Lampron. Part of the sounds of the collection comes from notificationsounds.com.</p>
