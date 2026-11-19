@@ -277,9 +277,6 @@ msgstr "Plus d'a&ctions…"
 msgid "&Help (F1)"
 msgstr "&Aide (F1)"
 
-msgid "No appointment"
-msgstr "Aucun rendez-vous"
-
 msgid "No appointment to delete."
 msgstr "Aucun rendez-vous à supprimer."
 
@@ -448,6 +445,9 @@ msgstr "12 mois"
 msgid "&Reminders:"
 msgstr "&Rappels :"
 
+msgid "{appointment}, {date}"
+msgstr "{appointment}, {date}"
+
 msgid "Appointment added: {date}, {appointment}."
 msgstr "Rendez-vous ajouté : {date}, {appointment}."
 
@@ -531,6 +531,9 @@ msgstr "Reprendre les rappels maintenant (en pause jusqu'à {time})"
 
 msgid "1 hour"
 msgstr "1 heure"
+
+msgid "No appointment, {date}"
+msgstr "Aucun rendez-vous, {date}"
 
 msgid "Advanced options of {name}"
 msgstr "Options avancées de {name}"

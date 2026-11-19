@@ -738,11 +738,14 @@ class AgendaWindow(wx.Dialog):
 		previous = self.selected()
 		select = select or (previous['id'] if previous else None)
 		self.shown = agenda.day_appointments(store().appointments, self.day)
-		lines = [words.appointment_text(a) for a in self.shown]
+		date = words.relative_date_text(self.day, today())
+		# Translators: A line of the agenda window: the appointment, then its date.
+		lines = [_('{appointment}, {date}').format(appointment=words.appointment_text(a), date=date) for a in self.shown]
 		if not lines:
 			# Translators: The only line of the list of a day without appointments.
-			lines = [_('No appointment')]
+			lines = [_('No appointment, {date}').format(date=date)]
 		self.list.Set(lines)
+		self.SetTitle('%s - %s' % (ADDON_NAME, date))
 		index = next((i for i, a in enumerate(self.shown) if a['id'] == select), 0)
 		self.list.SetSelection(index)
 
@@ -1044,6 +1047,13 @@ class AgendaWindow(wx.Dialog):
 				# Translators: Said when J, S or Space find no day to go to.
 				say(_('No day found.'))
 			return True
+		if key in (wx.WXK_UP, wx.WXK_DOWN) and modifiers == wx.MOD_NONE:
+			# At the first or last line (or the only one), the list would stay silent: its line is said again.
+			index, last = self.list.GetSelection(), self.list.GetCount() - 1
+			if (key == wx.WXK_UP and index <= 0) or (key == wx.WXK_DOWN and index >= last):
+				say(self.list.GetString(max(0, index)))
+				return True
+			return False
 		actions = {
 			(wx.WXK_RETURN, wx.MOD_NONE): self.edit, (wx.WXK_NUMPAD_ENTER, wx.MOD_NONE): self.edit,
 			(wx.WXK_DELETE, wx.MOD_NONE): self.delete, (wx.WXK_NUMPAD_DELETE, wx.MOD_NONE): self.delete,
