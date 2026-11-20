@@ -34,6 +34,7 @@
 <li><kbd>Enter</kbd>: edit the chosen appointment, or create one on an empty day.</li>
 <li><kbd>Control+N</kbd>: new appointment on the day shown.</li>
 <li><kbd>N</kbd>: read the note of the chosen appointment.</li>
+<li><kbd>O</kbd>: open the meeting link of the chosen appointment, if it has one.</li>
 <li><kbd>Delete</kbd>: delete the chosen appointment.</li>
 <li><kbd>Shift+Delete</kbd>: delete every appointment of the day, after a confirmation. The ones that repeat keep their other days.</li>
 <li><kbd>Control+U</kbd>: the upcoming appointments.</li>
@@ -49,9 +50,13 @@
 <p>Everything is set in one window. The fields that do not apply to the chosen repetition are greyed out, and Tab skips them.</p>
 <ul>
 <li><strong>What</strong>: the description of the appointment, for example "Dentist". It is required.</li>
+<li><strong>Agenda</strong>: only if you have several agendas of your own (see "Several agendas"): the one the appointment goes to. Your agenda is chosen by default.</li>
 <li><strong>Category</strong>: optional, for example "Health" or "Work". Type a new one, or choose with the arrows a category already used. For a new appointment, choosing a category already used takes the settings of its last appointment: the time, the repetition, the reminders and the sound. Often only the date is left to change.</li>
+<li><strong>Location</strong>: optional, for example the address. It is said after the description.</li>
 <li><strong>Day, Month, Year</strong>: the date. The day and the year change with the up and down arrows, or by typing the number; the month is chosen in a list. A 31st in a shorter month becomes its last day.</li>
+<li><strong>All day</strong>: check this box for an appointment without a time, such as a birthday or a day off. The time is then greyed out, and this appointment comes first in the list of the day.</li>
 <li><strong>Hour, Minutes</strong>: the time of the appointment, in the same way.</li>
+<li><strong>With an end</strong>: check this box to give the appointment an end, then choose the end day, month and year, and the end hour and minutes. An end on the same day gives for example "13:30 to 14:30". An end on another day makes an appointment of several days: it shows on each day, with for example "continued, until 17:00, day 2 of 3". For an all-day appointment, only the last day counts, for example for holidays from July 3 to 10: "all day, day 2 of 8". If the appointment repeats, each time lasts as long.</li>
 <li><strong>Repeat</strong>:
 <ul>
 <li>Does not repeat.</li>
@@ -65,11 +70,19 @@
 </ul></li>
 <li><strong>End of the repetition</strong>: Never, On a date (then choose the last day, month and year), or After a number of times (for example 20 for a course held 20 times).</li>
 <li><strong>Reminders</strong>: a list of check boxes, checked with the space bar: at the time of the appointment, 5, 15 or 30 minutes before, 1 or 2 hours before, the day before, 2 or 3 days before, or a week before. You can check several. A new appointment has a reminder 15 minutes before.</li>
+<li><strong>More reminders</strong>: this button opens a window for the reminders that are not in the list. For any delay, set "Delay", for example 45, choose minutes, hours, days or weeks before, then "Add this delay". For a reminder at a time of day, set the days before (0 for the same day, 1 for the day before) and the time, then "Add this time", for example "the day before at 20:00". The list at the top shows these reminders; Delete or "Remove this reminder" takes one away. An all-day appointment has no time: it only has reminders at a time of day, and gets one on the day at 8:00 by default, which you can change here.</li>
 <li><strong>Sound of its reminders</strong>: the usual sound, no sound, one of the ringtones of AgendaAccess, or a WAV or MP3 sound file of your choice, for this appointment only. Each sound is heard as soon as you reach it with the arrows.</li>
 <li><strong>Note</strong>: optional, as long as you want, for example the address or what to bring. The N key of the list reads it.</li>
+<li><strong>Other details</strong>: this button opens a window for what few appointments need:<ul><li><strong>Other categories</strong>: besides the main category, check with the space bar the ones that fit, in a ready-made list (Personal, Work, Family, Friends, Medical, Meeting, Birthday, Holidays, Travel, Day off, Sport, Leisure, School, Training, Bank and money, Home, Car, Shopping, Volunteering, Show, Important…) and the ones you already used. "New category" and "Add it" create one.</li><li><strong>Importance</strong>: normal, high or low. An important appointment is said "important", and its reminder starts with "Important".</li><li><strong>Status</strong>: confirmed, tentative (said "to be confirmed") or cancelled. A cancelled appointment stays in the agenda, said "cancelled", but gives no reminder any more.</li><li><strong>Availability</strong>: busy, free, tentative or away. When you add or change a "busy" appointment at the same time as another "busy" one, NVDA warns you: "Careful: at the same time as…".</li><li><strong>Private</strong>: the subject of the appointment is not sent to the phone (it becomes "private appointment" there), nor written in the text report, nor in the public copy of your agenda.</li><li><strong>Organizer</strong> and <strong>Meeting link</strong>: for example the name of who organizes it, and the address of a Teams or Zoom meeting. The O key of the list opens this link.</li><li><strong>Time zone</strong>: for an appointment whose date and time are those of another country, for example a call with Paris at 16:00, Paris time. Choose the Paris zone; the agenda shows and reminds this appointment at the time of your computer, for example "10:00 (16:00 Brussels, Copenhagen, Madrid, Paris time)", following the summer times of both countries. By default, it is the time of this computer.</li></ul></li>
 </ul>
 <p>The OK button, or <kbd>Control+Enter</kbd> from any field, saves the appointment. Escape cancels.</p>
-<p>Editing an appointment that repeats changes all its repetitions. The date shown is then the day it started.</p>
+<p>When you edit one day of an appointment that repeats, NVDA asks what you want to change:</p>
+<ul>
+<li><strong>Only this one</strong>: that day alone changes, for example this week's course moved to 15:00. The other days do not move, and this day is said "changed for this day". The repetition cannot be changed here.</li>
+<li><strong>This one and the following ones</strong>: from that day on, the series changes, for example a new room from November. The days before stay as they were.</li>
+<li><strong>Every one, the whole series</strong>: the whole series changes; the date shown is then the day it started. What was changed for one day alone stays changed, except what you change for the whole series that this day had not changed.</li>
+</ul>
+<p>From the list of all the appointments (Control+L), editing always changes the whole series.</p>
 
 <h2>Deleting an appointment</h2>
 <p>For a single appointment, NVDA asks you to confirm. For an appointment that repeats, you choose between "Only this day", which keeps the other days, and "Every day", which deletes the whole repetition.</p>
@@ -88,6 +101,7 @@
 
 <h2>The reminders</h2>
 <p>When a reminder is due, NVDA says it, for example "Reminder: Dentist, in 15 minutes, at 10:30.", and a short chime plays. The reminder is also shown in a window that stays open until you close it with Enter or Escape, so that it is not missed if you were away from the computer. If other reminders come while it is open, they are added to it.</p>
+<p>In this window, "Remind me again in" and the "Remind me again" button give the reminders again later: in 5, 10, 15 or 30 minutes, or in 1 hour. The "Dismiss" button, Enter or Escape close the window without giving the reminders again.</p>
 <p>The reminders are given by NVDA: the computer must be on and NVDA running. If a reminder falls while NVDA is closed, it is not lost: it is given a few seconds after NVDA next starts, if the appointment is not over yet, with the time left, for example "Reminder: Dentist, in 9 minutes, at 10:30.". If several reminders of one appointment were missed, only the latest is given. A reminder is never given twice, even if you restart NVDA.</p>
 <p>If the computer was asleep, a reminder at most 10 minutes late is still given when it wakes up; an older one is not.</p>
 <h3>Pausing the reminders</h3>
@@ -153,6 +167,23 @@
 <p>A few seconds after NVDA starts, if there are appointments today, NVDA says them, for example "Today, Thursday, November 19, 2026: 2 appointments: 10:30, Dentist; 14:00, Call". You can turn this off in the settings.</p>
 <p>At the same time, the reminders that fell while NVDA was closed are given, if any, as explained in "The reminders". They are also sent to the phone if that option is on.</p>
 
+<h2>Several agendas, and someone else's agenda</h2>
+<p>Besides yours, AgendaAccess can show other agendas, together in the same lists. Each appointment of another agenda is said with its name, for example "agenda Marie". Open the settings of AgendaAccess, then the <strong>Agendas</strong> button. The list shows your agenda, then the others, with their kind and whether they are shown and give reminders.</p>
+<ul>
+<li><strong>Add an agenda file</strong>: choose an agenda file of AgendaAccess (.json) or an .ics file, then give it a name. For a file of AgendaAccess, NVDA asks whether it is someone else's agenda, that you only read (Yes), or one of your agendas, for example Work or Family, that you can change (No). An .ics file is always read only.</li>
+<li><strong>Add an online agenda</strong>: paste the .ics address that Outlook, Google Calendar or another service gives to share an agenda (it often starts with https:// or webcal://), then give it a name. It is read again every 30 minutes, and stays read only.</li>
+<li><strong>Rename</strong>, <strong>Show or hide</strong>, <strong>Reminders on or off</strong>, <strong>Remove from the list</strong>: for the agenda chosen in the list. Removing an agenda never deletes its file. Your own agenda is always shown, with its reminders; you can only rename it.</li>
+</ul>
+<p>An agenda read only is never changed nor written by AgendaAccess: its appointments cannot be changed nor deleted, and give reminders only if you turn them on. Your own agendas besides yours (Work, Family) are changed like yours; when creating an appointment, the "Agenda" field chooses where it goes, and changing it later moves it.</p>
+<h3>Sharing your agenda with someone</h3>
+<p>For someone else to see your agenda in their AgendaAccess, check in the Agendas window "Write a public copy of my agenda", and choose where to write it, for example in a Dropbox folder shared with that person. This copy is updated at each change. Your private appointments are only "Busy" there, without subject, location or note, and it has no reminders. The person adds this file as an agenda read only.</p>
+<h3>Exchanging with Outlook, Thunderbird, Google or the iPhone</h3>
+<p>The More actions menu of the agenda has:</p>
+<ul>
+<li><strong>Export to an .ics file</strong>: all the appointments shown, with their repetitions, reminders, days removed and days changed alone, in a file these programs can import.</li>
+<li><strong>Import an .ics file</strong>: the appointments of a file exported from one of these programs are added to your agenda. Importing the same file a second time updates the appointments instead of copying them twice. A repetition AgendaAccess cannot read becomes a single appointment, and its note says so.</li>
+</ul>
+
 <h2>Sharing your agenda between several computers</h2>
 <p>Your appointments are kept in one file. By default, it is in NVDA's configuration folder, but you can put it wherever you want, for example in your Dropbox or OneDrive folder, to have the same agenda on all your computers:</p>
 <ol>
@@ -161,6 +192,7 @@
 </ol>
 <p>From then on, a change made on one computer appears on the others as soon as Dropbox has synchronised the file, usually within a minute, without doing anything. Each save joins your changes to the latest version of the file, instead of overwriting it. If Dropbox makes a "conflicted copy" because two computers wrote at the same time, AgendaAccess joins it to your agenda and puts it away with its backups.</p>
 <p>Each computer gives the reminders of your shared agenda.</p>
+<p>Update AgendaAccess on every computer that shares the agenda. A computer left on an old version (2026.6 or before) that edits an appointment can erase its location, its end and its other reminders. When a computer has an older version than the one that wrote the agenda, AgendaAccess says so when opening the agenda.</p>
 
 <h2>Backup, export, import and report</h2>
 <ul>

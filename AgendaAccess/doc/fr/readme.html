@@ -34,6 +34,7 @@
 <li><kbd>Entrée</kbd> : modifier le rendez-vous choisi, ou en créer un sur un jour vide.</li>
 <li><kbd>Ctrl+N</kbd> : nouveau rendez-vous au jour affiché.</li>
 <li><kbd>N</kbd> : lire la note du rendez-vous choisi.</li>
+<li><kbd>O</kbd> : ouvrir le lien de réunion du rendez-vous choisi, s'il en a un.</li>
 <li><kbd>Suppr</kbd> : supprimer le rendez-vous choisi.</li>
 <li><kbd>Maj+Suppr</kbd> : supprimer tous les rendez-vous du jour, après confirmation. Ceux qui se répètent gardent leurs autres jours.</li>
 <li><kbd>Ctrl+U</kbd> : les prochains rendez-vous.</li>
@@ -49,9 +50,13 @@
 <p>Tout se règle dans une seule fenêtre. Les champs qui ne servent pas pour la répétition choisie sont grisés, et la touche Tab les saute.</p>
 <ul>
 <li><strong>Quoi</strong> : la description du rendez-vous, par exemple « Dentiste ». Elle est obligatoire.</li>
+<li><strong>Agenda</strong> : seulement si vous avez plusieurs agendas à vous (voir « Plusieurs agendas ») : celui où va le rendez-vous. Votre agenda est choisi d'office.</li>
 <li><strong>Catégorie</strong> : facultative, par exemple « Santé » ou « Travail ». Tapez-en une nouvelle, ou choisissez avec les flèches une catégorie déjà utilisée. Pour un nouveau rendez-vous, choisir une catégorie déjà utilisée reprend les réglages de son dernier rendez-vous : l'heure, la répétition, les rappels et le son. Il ne reste souvent qu'à changer la date.</li>
+<li><strong>Lieu</strong> : facultatif, par exemple l'adresse. Il est annoncé après la description.</li>
 <li><strong>Jour, Mois, Année</strong> : la date. Le jour et l'année se changent avec les flèches haut et bas, ou en tapant le nombre ; le mois se choisit dans une liste. Un 31 dans un mois plus court devient le dernier jour de ce mois.</li>
+<li><strong>Toute la journée</strong> : cochez cette case pour un rendez-vous sans heure, comme un anniversaire ou un congé. L'heure est alors grisée, et ce rendez-vous apparaît en tête de la liste du jour.</li>
 <li><strong>Heure, Minutes</strong> : l'heure du rendez-vous, de la même façon.</li>
+<li><strong>Avec une fin</strong> : cochez cette case pour donner une fin au rendez-vous, puis choisissez le jour, le mois et l'année de fin, l'heure et les minutes de fin. Une fin le même jour donne par exemple « de 13 h 30 à 14 h 30 ». Une fin un autre jour fait un rendez-vous sur plusieurs jours : il apparaît chaque jour, avec par exemple « suite, jusqu'à 17 h, jour 2 sur 3 ». Pour un rendez-vous toute la journée, seul le dernier jour compte, par exemple pour des vacances du 3 au 10 juillet : « toute la journée, jour 2 sur 8 ». Si le rendez-vous se répète, chaque fois dure autant.</li>
 <li><strong>Répétition</strong> :
 <ul>
 <li>Ne se répète pas.</li>
@@ -65,11 +70,19 @@
 </ul></li>
 <li><strong>Fin de la répétition</strong> : Jamais, À une date (choisissez alors le dernier jour, mois et année), ou Après un nombre de fois (par exemple 20 pour un cours qui a lieu 20 fois).</li>
 <li><strong>Rappels</strong> : une liste de cases à cocher avec la barre d'espace : à l'heure du rendez-vous, 5, 15 ou 30 minutes avant, 1 ou 2 heures avant, la veille, 2 ou 3 jours avant, ou une semaine avant. Vous pouvez en cocher plusieurs. Un nouveau rendez-vous a un rappel 15 minutes avant.</li>
+<li><strong>Autres rappels</strong> : ce bouton ouvre une fenêtre pour les rappels qui ne sont pas dans la liste. Pour un délai au choix, réglez « Délai », par exemple 45, choisissez minutes, heures, jours ou semaines avant, puis « Ajouter ce délai ». Pour un rappel à une heure précise, réglez les jours avant (0 pour le jour même, 1 pour la veille) et l'heure, puis « Ajouter cette heure », par exemple « la veille à 20 h ». La liste du haut montre ces rappels ; Suppr ou « Retirer ce rappel » en enlève un. Un rendez-vous toute la journée n'a pas d'heure : il n'a que des rappels à une heure précise, et reçoit d'office un rappel le jour même à 8 h, que vous pouvez changer ici.</li>
 <li><strong>Son de ses rappels</strong> : le son habituel, aucun son, une des sonneries d'AgendaAccess, ou un fichier son WAV ou MP3 de votre choix, propre à ce rendez-vous. Chaque son se fait entendre dès que vous passez dessus avec les flèches.</li>
 <li><strong>Note</strong> : facultative, aussi longue que vous voulez, par exemple l'adresse ou ce qu'il faut apporter. La touche N de la liste la lit.</li>
+<li><strong>Autres détails</strong> : ce bouton ouvre une fenêtre pour ce que peu de rendez-vous demandent :<ul><li><strong>Autres catégories</strong> : en plus de la catégorie principale, cochez avec la barre d'espace celles qui conviennent, parmi une liste toute prête (Personnel, Travail, Famille, Amis, Médical, Réunion, Anniversaire, Vacances, Voyage, Congé, Sport, Loisirs, École, Formation, Banque et finances, Maison, Voiture, Courses, Bénévolat, Spectacle, Important…) et celles que vous avez déjà utilisées. « Nouvelle catégorie » et « Ajouter » en créent une.</li><li><strong>Importance</strong> : normale, haute ou basse. Un rendez-vous important est annoncé « important », et son rappel commence par « Important ».</li><li><strong>Statut</strong> : confirmé, provisoire (annoncé « à confirmer ») ou annulé. Un rendez-vous annulé reste dans l'agenda, annoncé « annulé », mais ne donne plus de rappel.</li><li><strong>Disponibilité</strong> : occupé, libre, provisoire ou absent. Quand vous ajoutez ou modifiez un rendez-vous « occupé » qui tombe en même temps qu'un autre rendez-vous « occupé », NVDA vous prévient : « Attention : en même temps que… ».</li><li><strong>Privé</strong> : le sujet du rendez-vous n'est pas envoyé au téléphone (il y devient « rendez-vous privé »), ni écrit dans le rapport texte, ni dans la copie publique de votre agenda.</li><li><strong>Organisateur</strong> et <strong>Lien de réunion</strong> : par exemple le nom de la personne qui organise, et l'adresse d'une réunion Teams ou Zoom. La touche O de la liste ouvre ce lien.</li><li><strong>Fuseau horaire</strong> : pour un rendez-vous dont la date et l'heure sont celles d'un autre pays, par exemple un appel avec Paris à 16 h, heure de Paris. Choisissez le fuseau de Paris ; l'agenda montre et rappelle ce rendez-vous à l'heure de votre ordinateur, par exemple « 10 h (16 h, heure de Bruxelles, Copenhague, Madrid, Paris) », en tenant compte des heures d'été des deux pays. Par défaut, c'est l'heure de cet ordinateur.</li></ul></li>
 </ul>
 <p>Le bouton OK, ou <kbd>Ctrl+Entrée</kbd> depuis n'importe quel champ, enregistre le rendez-vous. Échap annule.</p>
-<p>Modifier un rendez-vous qui se répète modifie toutes ses répétitions. La date affichée est alors celle de son début.</p>
+<p>Quand vous modifiez un jour d'un rendez-vous qui se répète, NVDA vous demande ce que vous voulez changer :</p>
+<ul>
+<li><strong>Seulement celui-ci</strong> : ce jour-là seul change, par exemple le cours de cette semaine déplacé à 15 h. Les autres jours ne bougent pas, et ce jour est annoncé « modifié pour ce jour ». La répétition n'est pas modifiable ici.</li>
+<li><strong>Celui-ci et les suivants</strong> : à partir de ce jour, la série change, par exemple une nouvelle salle à partir de novembre. Les jours d'avant restent comme ils étaient.</li>
+<li><strong>Tous, toute la série</strong> : toute la série change ; la date montrée est alors celle de son début. Ce qui a été changé pour un seul jour reste changé, sauf ce que vous changez pour toute la série et que ce jour n'avait pas changé.</li>
+</ul>
+<p>Depuis la liste de tous les rendez-vous (Ctrl+L), modifier change toujours toute la série.</p>
 
 <h2>Supprimer un rendez-vous</h2>
 <p>Pour un rendez-vous unique, NVDA vous demande de confirmer. Pour un rendez-vous qui se répète, vous choisissez entre « Seulement ce jour-là », qui garde les autres jours, et « Tous les jours », qui supprime toute la répétition.</p>
@@ -88,6 +101,7 @@
 
 <h2>Les rappels</h2>
 <p>Quand un rappel arrive, NVDA l'annonce, par exemple « Rappel : Dentiste, dans 15 minutes, à 10 h 30. », et un petit carillon sonne. Le rappel s'affiche aussi dans une fenêtre qui reste ouverte jusqu'à ce que vous la fermiez avec Entrée ou Échap, pour ne pas le manquer si vous étiez loin de l'ordinateur. Si d'autres rappels arrivent pendant qu'elle est ouverte, ils s'y ajoutent.</p>
+<p>Dans cette fenêtre, « Rappeler dans » et le bouton « Rappeler plus tard » redonnent les rappels plus tard : dans 5, 10, 15 ou 30 minutes, ou dans 1 heure. Le bouton « Ignorer », Entrée ou Échap ferment la fenêtre sans redonner les rappels.</p>
 <p>Les rappels sont donnés par NVDA : l'ordinateur doit être allumé et NVDA doit fonctionner. Si un rappel tombe pendant que NVDA est fermé, il n'est pas perdu : il est donné quelques secondes après le prochain démarrage de NVDA, si le rendez-vous n'est pas encore passé, avec le temps qui reste, par exemple « Rappel : Dentiste, dans 9 minutes, à 10 h 30. ». Si plusieurs rappels d'un même rendez-vous ont été manqués, seul le plus récent est donné. Un rappel n'est jamais donné deux fois, même si vous redémarrez NVDA.</p>
 <p>Si l'ordinateur était en veille, un rappel en retard de 10 minutes au plus est encore donné à son réveil ; un rappel plus ancien ne l'est plus.</p>
 <h3>Mettre les rappels en pause</h3>
@@ -153,6 +167,23 @@
 <p>Quelques secondes après le démarrage de NVDA, s'il y a des rendez-vous aujourd'hui, NVDA les annonce, par exemple « Aujourd'hui, jeudi 19 novembre 2026 : 2 rendez-vous : 10 h 30, Dentiste; 14 h, Appel ». Vous pouvez désactiver cette annonce dans les réglages.</p>
 <p>Au même moment, les rappels tombés pendant que NVDA était fermé sont donnés, s'il y en a, comme expliqué dans « Les rappels ». Ils sont aussi envoyés au téléphone si cette option est activée.</p>
 
+<h2>Plusieurs agendas, et l'agenda de quelqu'un d'autre</h2>
+<p>En plus du vôtre, AgendaAccess peut montrer d'autres agendas, ensemble dans les mêmes listes. Chaque rendez-vous d'un autre agenda est annoncé avec son nom, par exemple « agenda Marie ». Ouvrez les réglages d'AgendaAccess, puis le bouton <strong>Agendas</strong>. La liste montre votre agenda, puis les autres, avec leur genre et s'ils sont affichés et donnent des rappels.</p>
+<ul>
+<li><strong>Ajouter un fichier d'agenda</strong> : choisissez un fichier d'agenda d'AgendaAccess (.json) ou un fichier .ics, puis donnez-lui un nom. Pour un fichier d'AgendaAccess, NVDA vous demande s'il s'agit de l'agenda de quelqu'un d'autre, que vous lisez seulement (Oui), ou d'un de vos agendas, par exemple Travail ou Famille, que vous pouvez modifier (Non). Un fichier .ics est toujours en lecture seule.</li>
+<li><strong>Ajouter un agenda en ligne</strong> : collez l'adresse .ics qu'Outlook, Google Agenda ou un autre service donne pour partager un agenda (elle commence souvent par https:// ou webcal://), puis donnez-lui un nom. Il est lu de nouveau toutes les 30 minutes, et reste en lecture seule.</li>
+<li><strong>Renommer</strong>, <strong>Afficher ou masquer</strong>, <strong>Rappels activés ou non</strong>, <strong>Retirer de la liste</strong> : pour l'agenda choisi dans la liste. Retirer un agenda ne supprime jamais son fichier. Votre propre agenda est toujours affiché, avec ses rappels ; vous pouvez seulement le renommer.</li>
+</ul>
+<p>Un agenda en lecture seule n'est jamais modifié ni écrit par AgendaAccess : ses rendez-vous ne peuvent être ni modifiés ni supprimés, et ne donnent des rappels que si vous les activez. Vos propres agendas en plus du vôtre (Travail, Famille) se modifient comme le vôtre ; à la création d'un rendez-vous, le champ « Agenda » choisit où il va, et le changer plus tard le déplace.</p>
+<h3>Partager votre agenda avec quelqu'un</h3>
+<p>Pour qu'une autre personne voie votre agenda dans son AgendaAccess, cochez dans la fenêtre Agendas « Écrire une copie publique de mon agenda », et choisissez où l'écrire, par exemple dans un dossier Dropbox partagé avec cette personne. Cette copie est mise à jour à chaque modification. Vos rendez-vous privés y sont seulement « Occupé », sans sujet, lieu ni note, et elle ne contient aucun rappel. La personne ajoute ce fichier comme agenda en lecture seule.</p>
+<h3>Échanger avec Outlook, Thunderbird, Google ou l'iPhone</h3>
+<p>Le menu Plus d'actions de l'agenda contient :</p>
+<ul>
+<li><strong>Exporter vers un fichier .ics</strong> : tous les rendez-vous affichés, avec leurs répétitions, rappels, jours supprimés et jours modifiés seuls, dans un fichier que ces logiciels savent importer.</li>
+<li><strong>Importer un fichier .ics</strong> : les rendez-vous d'un fichier exporté d'un de ces logiciels sont ajoutés à votre agenda. Importer le même fichier une seconde fois met à jour les rendez-vous au lieu de les copier en double. Une répétition qu'AgendaAccess ne sait pas lire devient un seul rendez-vous, et sa note le dit.</li>
+</ul>
+
 <h2>Partager votre agenda entre plusieurs ordinateurs</h2>
 <p>Vos rendez-vous sont gardés dans un seul fichier. Par défaut, il se trouve dans le dossier de configuration de NVDA, mais vous pouvez le mettre où vous voulez, par exemple dans votre dossier Dropbox ou OneDrive, pour retrouver le même agenda sur tous vos ordinateurs :</p>
 <ol>
@@ -161,6 +192,7 @@
 </ol>
 <p>Ensuite, une modification faite sur un ordinateur apparaît sur les autres dès que Dropbox a synchronisé le fichier, en moins d'une minute en général, sans rien faire. Chaque enregistrement réunit vos modifications à la dernière version du fichier, au lieu de l'écraser. Si Dropbox crée une « copie en conflit » parce que deux ordinateurs ont écrit en même temps, AgendaAccess la réunit à votre agenda et la range dans ses sauvegardes.</p>
 <p>Chaque ordinateur donne les rappels de votre agenda partagé.</p>
+<p>Mettez AgendaAccess à jour sur tous les ordinateurs qui partagent l'agenda. Un ordinateur resté sur une version ancienne (2026.6 ou avant) qui modifie un rendez-vous peut en effacer le lieu, la fin et les autres rappels. Quand un ordinateur a une version plus ancienne que celle qui a écrit l'agenda, AgendaAccess le dit en ouvrant l'agenda.</p>
 
 <h2>Sauvegarde, export, import et rapport</h2>
 <ul>

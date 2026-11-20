@@ -10,6 +10,12 @@ msgstr ""
 msgid "The secret name can only have letters without accents, digits, - and _, up to 64."
 msgstr "Le nom secret ne peut contenir que des lettres sans accents, des chiffres, - et _, 64 au plus."
 
+msgid "My agenda"
+msgstr "Mon agenda"
+
+msgid "This appointment belongs to an agenda you can only read."
+msgstr "Ce rendez-vous appartient à un agenda que vous pouvez seulement lire."
+
 msgid "Up and down arrows: the appointments of the day"
 msgstr "Flèches haut et bas : les rendez-vous du jour"
 
@@ -48,6 +54,9 @@ msgstr "Ctrl+N : nouveau rendez-vous au jour affiché"
 
 msgid "N: read the note of the appointment"
 msgstr "N : lire la note du rendez-vous"
+
+msgid "O: open the meeting link of the appointment"
+msgstr "O : ouvrir le lien de réunion du rendez-vous"
 
 msgid "Delete: delete the appointment"
 msgstr "Suppr : supprimer le rendez-vous"
@@ -130,6 +139,9 @@ msgstr "M&ois :"
 msgid "&Year:"
 msgstr "&Année :"
 
+msgid "Busy"
+msgstr "Occupé"
+
 msgid "Open the agenda"
 msgstr "Ouvrir l'agenda"
 
@@ -157,6 +169,9 @@ msgstr "Afficher le journal des rendez-vous passés"
 msgid "Pause the reminders"
 msgstr "Mettre les rappels en pause"
 
+msgid "Edit this day only"
+msgstr "Modifier ce jour seulement"
+
 msgid "Every how many days:"
 msgstr "Tous les combien de jours :"
 
@@ -168,6 +183,27 @@ msgstr "Tous les combien de mois :"
 
 msgid "Every how many years:"
 msgstr "Tous les combien d'ans :"
+
+msgid "Reminder removed."
+msgstr "Rappel retiré."
+
+msgid "&Importance:"
+msgstr "&Importance :"
+
+msgid "&Status:"
+msgstr "S&tatut :"
+
+msgid "&Availability:"
+msgstr "&Disponibilité :"
+
+msgid "This one and the following ones"
+msgstr "Celui-ci et les suivants"
+
+msgid "Every one, the whole series"
+msgstr "Tous, toute la série"
+
+msgid "This appointment repeats. What do you want to change?"
+msgstr "Ce rendez-vous se répète. Que voulez-vous modifier ?"
 
 msgid "Appointment saved."
 msgstr "Rendez-vous enregistré."
@@ -190,8 +226,32 @@ msgstr "Exporter l'agenda"
 msgid "Import an agenda"
 msgstr "Importer un agenda"
 
+msgid "Export to an .ics file"
+msgstr "Exporter vers un fichier .ics"
+
+msgid "Import an .ics file"
+msgstr "Importer un fichier .ics"
+
 msgid "&Keys of the agenda window:"
 msgstr "&Touches de la fenêtre de l'agenda :"
+
+msgid "online, read only"
+msgstr "en ligne, lecture seule"
+
+msgid "Choose an agenda file"
+msgstr "Choisir un fichier d'agenda"
+
+msgid "Name of this agenda (as Work, or the name of the person):"
+msgstr "Nom de cet agenda (comme Travail, ou le nom de la personne) :"
+
+msgid "Address of the online agenda (.ics), as given by Outlook or Google:"
+msgstr "Adresse de l'agenda en ligne (.ics), telle que donnée par Outlook ou Google :"
+
+msgid "New name of this agenda:"
+msgstr "Nouveau nom de cet agenda :"
+
+msgid "Where to write the public copy"
+msgstr "Où écrire la copie publique"
 
 msgid "Once"
 msgstr "Une seule fois"
@@ -226,6 +286,24 @@ msgstr "Choisir un fichier son…"
 msgid "Choose a sound"
 msgstr "Choisir un son"
 
+msgid "Edit the appointment"
+msgstr "Modifier le rendez-vous"
+
+msgid "All day (no time)"
+msgstr "Toute la journée (sans heure)"
+
+msgid "With an end (end time, or last day for several days)"
+msgstr "Avec une fin (heure de fin, ou dernier jour pour plusieurs jours)"
+
+msgid "End day:"
+msgstr "Jour de fin :"
+
+msgid "End month:"
+msgstr "Mois de fin :"
+
+msgid "End year:"
+msgstr "Année de fin :"
+
 msgid "Interval:"
 msgstr "Intervalle :"
 
@@ -241,6 +319,15 @@ msgstr "Dernier mois :"
 msgid "Last year:"
 msgstr "Dernière année :"
 
+msgid "More rem&inders…"
+msgstr "Autres ra&ppels…"
+
+msgid "Other &details…"
+msgstr "Autres &détails…"
+
+msgid "Reminder on the day at 8:00 added. More reminders changes it."
+msgstr "Rappel le jour même à 8 h ajouté. Autres rappels permet de le changer."
+
 msgid "Write what the appointment is."
 msgstr "Écrivez de quoi il s'agit."
 
@@ -249,6 +336,27 @@ msgstr "Cochez au moins un jour de la semaine."
 
 msgid "The repetition cannot stop before the appointment."
 msgstr "La répétition ne peut pas finir avant le rendez-vous."
+
+msgid "More reminders"
+msgstr "Autres rappels"
+
+msgid "&Remove this reminder"
+msgstr "&Retirer ce rappel"
+
+msgid "&Add this delay"
+msgstr "&Ajouter ce délai"
+
+msgid "Add this &time"
+msgstr "Ajouter cette &heure"
+
+msgid "Other details"
+msgstr "Autres détails"
+
+msgid "&Add it"
+msgstr "&Ajouter"
+
+msgid "&Private: subject hidden on the phone and in the text report"
+msgstr "&Privé : sujet caché sur le téléphone et dans le rapport texte"
 
 msgid "Go to a date"
 msgstr "Aller à une date"
@@ -270,6 +378,12 @@ msgstr "Toutes"
 
 msgid "Text report"
 msgstr "Rapport texte"
+
+msgid "Re&mind me again"
+msgstr "Rappeler &plus tard"
+
+msgid "&Dismiss"
+msgstr "&Ignorer"
 
 msgid "&New appointment"
 msgstr "&Nouveau rendez-vous"
@@ -298,6 +412,12 @@ msgstr "Supprimer {appointment} et tous les jours où il se répète ?"
 msgid "Delete the {count} appointments of {date}? The ones that repeat keep their other days."
 msgstr "Supprimer les {count} rendez-vous du {date} ? Ceux qui se répètent gardent leurs autres jours."
 
+msgid "No meeting link."
+msgstr "Pas de lien de réunion."
+
+msgid "Opening the meeting link."
+msgstr "Ouverture du lien de réunion."
+
 msgid "No note."
 msgstr "Pas de note."
 
@@ -309,6 +429,18 @@ msgstr "agenda.txt"
 
 msgid "agenda copy.json"
 msgstr "copie agenda.json"
+
+msgid "Calendar (*.ics)"
+msgstr "Calendrier (*.ics)"
+
+msgid "agenda.ics"
+msgstr "agenda.ics"
+
+msgid "No appointment found in this file."
+msgstr "Aucun rendez-vous trouvé dans ce fichier."
+
+msgid "These appointments are already in your agenda."
+msgstr "Ces rendez-vous sont déjà dans votre agenda."
 
 msgid "All the appointments, with a search	Ctrl+L"
 msgstr "Tous les rendez-vous, avec une recherche	Ctrl+L"
@@ -328,8 +460,71 @@ msgstr "Exporter l'agenda…"
 msgid "Import an agenda…"
 msgstr "Importer un agenda…"
 
+msgid "Export to an .ics file (Outlook, Google, iPhone)…"
+msgstr "Exporter vers un fichier .ics (Outlook, Google, iPhone)…"
+
+msgid "Import an .ics file…"
+msgstr "Importer un fichier .ics…"
+
 msgid "Assign keys to the commands…"
 msgstr "Attribuer des touches aux commandes…"
+
+msgid "Agendas"
+msgstr "Agendas"
+
+msgid "Add an agenda &file (.json or .ics)…"
+msgstr "Ajouter un &fichier d'agenda (.json ou .ics)…"
+
+msgid "Add an &online agenda (.ics address)…"
+msgstr "Ajouter un agenda en &ligne (adresse .ics)…"
+
+msgid "&Rename…"
+msgstr "&Renommer…"
+
+msgid "&Show or hide"
+msgstr "Affic&her ou masquer"
+
+msgid "Reminders &on or off"
+msgstr "Ra&ppels activés ou non"
+
+msgid "Re&move from the list"
+msgstr "Re&tirer de la liste"
+
+msgid "Write a &public copy of my agenda, private appointments shown as Busy"
+msgstr "Écrire une copie p&ublique de mon agenda, les rendez-vous privés y étant Occupé"
+
+msgid "&Choose where to write it…"
+msgstr "&Choisir où l'écrire…"
+
+msgid "file, read only"
+msgstr "fichier, lecture seule"
+
+msgid "file"
+msgstr "fichier"
+
+msgid "shown"
+msgstr "affiché"
+
+msgid "hidden"
+msgstr "masqué"
+
+msgid "reminders on"
+msgstr "rappels activés"
+
+msgid "reminders off"
+msgstr "rappels désactivés"
+
+msgid "Agenda (*.json; *.ics)"
+msgstr "Agenda (*.json; *.ics)"
+
+msgid "Your own agenda is always shown, with its reminders."
+msgstr "Votre propre agenda est toujours affiché, avec ses rappels."
+
+msgid "Your own agenda cannot be removed."
+msgstr "Votre propre agenda ne peut pas être retiré."
+
+msgid "agenda public.json"
+msgstr "agenda public.json"
 
 msgid "&Play it"
 msgstr "&L'écouter"
@@ -355,6 +550,9 @@ msgstr "L'agenda utilise maintenant ce fichier."
 msgid "The reminders are back."
 msgstr "Les rappels reprennent."
 
+msgid "This agenda comes from a newer version of AgendaAccess: update AgendaAccess on this computer, or some details could be lost."
+msgstr "Cet agenda vient d'une version plus récente d'AgendaAccess : mettez AgendaAccess à jour sur cet ordinateur, sinon des détails pourraient se perdre."
+
 msgid "Upcoming appointments"
 msgstr "Prochains rendez-vous"
 
@@ -373,20 +571,26 @@ msgstr "Le son habituel"
 msgid "No sound"
 msgstr "Aucun son"
 
-msgid "Edit the appointment"
-msgstr "Modifier le rendez-vous"
-
 msgid "&What:"
 msgstr "&Quoi :"
 
 msgid "Cate&gory (optional):"
 msgstr "&Catégorie (facultatif) :"
 
+msgid "&Location (optional):"
+msgstr "Lie&u (facultatif) :"
+
 msgid "&Hour:"
 msgstr "&Heure :"
 
 msgid "Mi&nutes:"
 msgstr "Mi&nutes :"
+
+msgid "End hour:"
+msgstr "Heure de fin :"
+
+msgid "End minutes:"
+msgstr "Minutes de fin :"
 
 msgid "&Repeat:"
 msgstr "&Répétition :"
@@ -420,6 +624,60 @@ msgstr "No&te (facultatif) :"
 
 msgid "Settings taken from the category {name}."
 msgstr "Réglages repris de la catégorie {name}."
+
+msgid "The end must be after the start."
+msgstr "La fin doit être après le début."
+
+msgid "&Other reminders (Delete to remove):"
+msgstr "&Autres rappels (Suppr pour retirer) :"
+
+msgid "&Delay:"
+msgstr "&Délai :"
+
+msgid "minutes before"
+msgstr "minutes avant"
+
+msgid "hours before"
+msgstr "heures avant"
+
+msgid "days before"
+msgstr "jours avant"
+
+msgid "weeks before"
+msgstr "semaines avant"
+
+msgid "Days &before (0: on the day):"
+msgstr "Jours a&vant (0 : le jour même) :"
+
+msgid "at &hour:"
+msgstr "à l'heure :"
+
+msgid "mi&nutes:"
+msgstr "mi&nutes :"
+
+msgid "No other reminder"
+msgstr "Aucun autre rappel"
+
+msgid "Reminder added: {when}."
+msgstr "Rappel ajouté : {when}."
+
+msgid "Other &categories (space bar to check):"
+msgstr "Autres &catégories (barre d'espace pour cocher) :"
+
+msgid "&New category:"
+msgstr "&Nouvelle catégorie :"
+
+msgid "&Organizer (optional):"
+msgstr "&Organisateur (facultatif) :"
+
+msgid "Meeting &link (optional):"
+msgstr "&Lien de réunion (facultatif) :"
+
+msgid "Time &zone of the date and time:"
+msgstr "&Fuseau horaire de la date et de l'heure :"
+
+msgid "Category {name} added and checked."
+msgstr "Catégorie {name} ajoutée et cochée."
 
 msgid "&Search:"
 msgstr "&Rechercher :"
@@ -463,11 +721,32 @@ msgstr "12 mois"
 msgid "&Reminders:"
 msgstr "&Rappels :"
 
+msgid "Remind me again &in:"
+msgstr "&Rappeler dans :"
+
+msgid "5 minutes"
+msgstr "5 minutes"
+
+msgid "10 minutes"
+msgstr "10 minutes"
+
+msgid "15 minutes"
+msgstr "15 minutes"
+
+msgid "1 hour"
+msgstr "1 heure"
+
+msgid "Reminded again in {delay}."
+msgstr "Rappel de nouveau dans {delay}."
+
 msgid "{date}, {appointment}"
 msgstr "{date}, {appointment}"
 
 msgid "Appointment added: {date}, {appointment}."
 msgstr "Rendez-vous ajouté : {date}, {appointment}."
+
+msgid "Only this one, on {date}"
+msgstr "Seulement celui-ci, le {date}"
 
 msgid "Deleted."
 msgstr "Supprimé."
@@ -477,6 +756,9 @@ msgstr "{appointment} se répète. Supprimer seulement ce jour-là, ou tous les 
 
 msgid "Deleted. {heading}"
 msgstr "Supprimé. {heading}"
+
+msgid "This link cannot be opened."
+msgstr "Ce lien ne peut pas être ouvert."
 
 msgid "This file cannot be written."
 msgstr "Ce fichier ne peut pas être écrit."
@@ -493,11 +775,29 @@ msgstr "Ce fichier n'est pas un agenda d'AgendaAccess."
 msgid "{count} appointments added."
 msgstr "{count} rendez-vous ajoutés."
 
+msgid "{count} appointments exported."
+msgstr "{count} rendez-vous exportés."
+
+msgid "This file cannot be read."
+msgstr "Ce fichier ne peut pas être lu."
+
+msgid "{count} appointments added, {changed} updated."
+msgstr "{count} rendez-vous ajoutés, {changed} mis à jour."
+
 msgid "{name} help"
 msgstr "Aide de {name}"
 
 msgid "No day found."
 msgstr "Aucun jour trouvé."
+
+msgid "&Agendas:"
+msgstr "&Agendas :"
+
+msgid "Is this agenda someone else's, that you only read? Yes: you can only read it. No: it is one of your agendas, that you can change."
+msgstr "Cet agenda est-il celui de quelqu'un d'autre, que vous lisez seulement ? Oui : vous pourrez seulement le lire. Non : c'est un de vos agendas, que vous pourrez modifier."
+
+msgid "{name} removed from the list. Its file is not deleted."
+msgstr "{name} retiré de la liste. Son fichier n'est pas supprimé."
 
 msgid "Usual &sound of the reminders:"
 msgstr "&Son habituel des rappels :"
@@ -544,6 +844,9 @@ msgstr "Afficher aussi les rappels dans une &fenêtre qui reste jusqu'à ce que 
 msgid "Ad&vanced options…"
 msgstr "Options a&vancées…"
 
+msgid "A&gendas…"
+msgstr "A&gendas…"
+
 msgid "Check for &updates automatically when NVDA starts"
 msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
 
@@ -559,14 +862,20 @@ msgstr "Touches de {name}"
 msgid "{name} ({kind})"
 msgstr "{name} ({kind})"
 
+msgid "A&genda:"
+msgstr "A&genda :"
+
+msgid "The time of this computer"
+msgstr "L'heure de cet ordinateur"
+
 msgid "Start the reminders again now (paused until {time})"
 msgstr "Reprendre les rappels maintenant (en pause jusqu'à {time})"
 
-msgid "1 hour"
-msgstr "1 heure"
-
 msgid "{date}, no appointment"
 msgstr "{date}, aucun rendez-vous"
+
+msgid "{name}, your agenda, always shown"
+msgstr "{name}, votre agenda, toujours affiché"
 
 msgid "Advanced options of {name}"
 msgstr "Options avancées de {name}"
@@ -574,11 +883,17 @@ msgstr "Options avancées de {name}"
 msgid "No reminder until {time}."
 msgstr "Aucun rappel jusqu'à {time}."
 
+msgid "Careful: at the same time as {others}."
+msgstr "Attention : en même temps que {others}."
+
 msgid "{percent}%"
 msgstr "{percent} %"
 
 msgid "{hours} hours"
 msgstr "{hours} heures"
+
+msgid "This appointment repeated in a way AgendaAccess cannot read: only its first day is here."
+msgstr "Ce rendez-vous se répétait d'une façon qu'AgendaAccess ne sait pas lire : seul son premier jour est ici."
 
 msgid "Assi&gn a key"
 msgstr "Assi&gner une touche"
@@ -724,6 +1039,99 @@ msgstr "Demain"
 msgid "Yesterday"
 msgstr "Hier"
 
+msgid "Personal"
+msgstr "Personnel"
+
+msgid "Work"
+msgstr "Travail"
+
+msgid "Family"
+msgstr "Famille"
+
+msgid "Friends"
+msgstr "Amis"
+
+msgid "Medical"
+msgstr "Médical"
+
+msgid "Appointment"
+msgstr "Rendez-vous"
+
+msgid "Meeting"
+msgstr "Réunion"
+
+msgid "Birthday"
+msgstr "Anniversaire"
+
+msgid "Party"
+msgstr "Fête"
+
+msgid "Holidays"
+msgstr "Vacances"
+
+msgid "Travel"
+msgstr "Voyage"
+
+msgid "Day off"
+msgstr "Congé"
+
+msgid "Sport"
+msgstr "Sport"
+
+msgid "Leisure"
+msgstr "Loisirs"
+
+msgid "School"
+msgstr "École"
+
+msgid "Training"
+msgstr "Formation"
+
+msgid "Bank and money"
+msgstr "Banque et finances"
+
+msgid "Home"
+msgstr "Maison"
+
+msgid "Car"
+msgstr "Voiture"
+
+msgid "Shopping"
+msgstr "Courses"
+
+msgid "Volunteering"
+msgstr "Bénévolat"
+
+msgid "Show"
+msgstr "Spectacle"
+
+msgid "Important"
+msgstr "Important"
+
+msgid "Normal"
+msgstr "Normale"
+
+msgid "High"
+msgstr "Haute"
+
+msgid "Low"
+msgstr "Basse"
+
+msgid "Confirmed"
+msgstr "Confirmé"
+
+msgid "Tentative"
+msgstr "Provisoire"
+
+msgid "Cancelled"
+msgstr "Annulé"
+
+msgid "Free"
+msgstr "Libre"
+
+msgid "Away"
+msgstr "Absent"
+
 msgid "At the time of the appointment"
 msgstr "À l'heure du rendez-vous"
 
@@ -753,6 +1161,9 @@ msgstr "3 jours avant"
 
 msgid "1 week before"
 msgstr "1 semaine avant"
+
+msgid "private appointment"
+msgstr "rendez-vous privé"
 
 msgid "{weekday}, {month} {day}, {year}"
 msgstr "{weekday} {day} {month} {year}"
@@ -817,6 +1228,30 @@ msgstr "Chaque année, le même jour de la semaine (comme le 2e mardi de novembr
 msgid "every day"
 msgstr "chaque jour"
 
+msgid "cancelled"
+msgstr "annulé"
+
+msgid "important"
+msgstr "important"
+
+msgid "private"
+msgstr "privé"
+
+msgid "with a meeting link"
+msgstr "avec un lien de réunion"
+
+msgid "{count} minutes before"
+msgstr "{count} minutes avant"
+
+msgid "{count} days before at {time}"
+msgstr "{count} jours avant à {time}"
+
+msgid "all day"
+msgstr "toute la journée"
+
+msgid "{start}, until {date} at {end}"
+msgstr "{start}, jusqu'au {date} à {end}"
+
 msgid "with a note"
 msgstr "avec une note"
 
@@ -862,8 +1297,44 @@ msgstr "{count} fois"
 msgid "until {date}"
 msgstr "jusqu'au {date}"
 
+msgid "to be confirmed"
+msgstr "à confirmer"
+
+msgid "of low importance"
+msgstr "peu important"
+
+msgid "{count} weeks before"
+msgstr "{count} semaines avant"
+
+msgid "{count} days before"
+msgstr "{count} jours avant"
+
+msgid "{count} hours before"
+msgstr "{count} heures avant"
+
+msgid "on the day at {time}"
+msgstr "le jour même à {time}"
+
+msgid "the day before at {time}"
+msgstr "la veille à {time}"
+
+msgid "all day, from {start} to {end}"
+msgstr "toute la journée, du {start} au {end}"
+
+msgid "{here} ({there} {zone} time)"
+msgstr "{here} ({there}, heure de {zone})"
+
+msgid "{start} to {end}"
+msgstr "de {start} à {end}"
+
+msgid "continued, until {end}, day {number} of {count}"
+msgstr "suite, jusqu'à {end}, jour {number} sur {count}"
+
 msgid "no reminder"
 msgstr "sans rappel"
+
+msgid "changed for this day"
+msgstr "modifié pour ce jour"
 
 msgid "{date}: no appointment."
 msgstr "{date} : aucun rendez-vous."
@@ -876,6 +1347,12 @@ msgstr "{date} : 1 rendez-vous."
 
 msgid "{entry}. Note: {note}"
 msgstr "{entry}. Note : {note}"
+
+msgid "Important. {reminder}"
+msgstr "Important. {reminder}"
+
+msgid "Reminder: {text}, in {days} days, on {date}, all day."
+msgstr "Rappel : {text}, dans {days} jours, le {date}, toute la journée."
 
 msgid "Reminder: {text}, now, at {time}."
 msgstr "Rappel : {text}, maintenant, à {time}."
@@ -913,11 +1390,26 @@ msgstr "chaque année le {day} {month}"
 msgid "every {count} years on {month} {day}"
 msgstr "tous les {count} ans le {day} {month}"
 
-msgid "next: {date} at {time}"
-msgstr "prochain : {date} à {time}"
+msgid "available: {state}"
+msgstr "disponibilité : {state}"
+
+msgid "organized by {name}"
+msgstr "organisé par {name}"
+
+msgid "all day, day {number} of {count}"
+msgstr "toute la journée, jour {number} sur {count}"
+
+msgid "next: {date}, {time}"
+msgstr "prochain : {date}, {time}"
 
 msgid "over, last on {date}"
 msgstr "terminé, dernier le {date}"
+
+msgid "Reminder: {text}, today, all day."
+msgstr "Rappel : {text}, aujourd'hui, toute la journée."
+
+msgid "Reminder: {text}, tomorrow, all day."
+msgstr "Rappel : {text}, demain, toute la journée."
 
 msgid "in {hours} hours"
 msgstr "dans {hours} heures"
@@ -930,6 +1422,9 @@ msgstr "{date}, {time}, {text}"
 
 msgid "reminder {when}"
 msgstr "rappel {when}"
+
+msgid "agenda {name}"
+msgstr "agenda {name}"
 
 msgid "Note: {note}"
 msgstr "Note : {note}"
