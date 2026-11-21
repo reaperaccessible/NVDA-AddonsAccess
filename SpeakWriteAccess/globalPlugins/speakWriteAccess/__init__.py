@@ -324,7 +324,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(
 		# Translators: the description of the command that starts or stops the dictation, in Input Gestures.
 		description=_('Starts or stops the dictation: what you say into the microphone is written where the cursor is.'),
-		gesture='kb:NVDA+control+shift+d')
+		gesture='kb:NVDA+control+shift+l')
 	def script_toggleDictation(self, gesture):
 		if globalVars.appArgs.secure:
 			return
@@ -344,6 +344,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return
 		# Translators: said when the dictation starts.
 		ui.message(_('Dictation on'))
+
+	@script(
+		# Translators: the description of the command that opens the settings of SpeakWriteAccess, in Input Gestures.
+		description=_('Opens the settings of SpeakWriteAccess.'),
+		gesture='kb:NVDA+control+l')
+	def script_openSettings(self, gesture):
+		if globalVars.appArgs.secure:
+			return
+		wx.CallAfter(gui.mainFrame.popupSettingsDialog, gui.settingsDialogs.NVDASettingsDialog, SettingsPanel)
 
 
 class SettingsPanel(gui.settingsDialogs.SettingsPanel):

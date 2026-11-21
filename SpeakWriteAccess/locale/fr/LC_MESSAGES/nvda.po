@@ -87,6 +87,9 @@ msgstr "Corrige le texte sélectionné."
 msgid "Starts or stops the dictation: what you say into the microphone is written where the cursor is."
 msgstr "Démarre ou arrête la dictée : ce que vous dites au micro s'écrit là où se trouve le curseur."
 
+msgid "Opens the settings of SpeakWriteAccess."
+msgstr "Ouvre les réglages de SpeakWriteAccess."
+
 msgid "Dictation on"
 msgstr "Dictée activée"
 
