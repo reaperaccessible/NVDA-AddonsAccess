@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>BeMyAssistantAccess</title>
+</head>
+<body>
+<h1>BeMyAssistantAccess</h1>
+
+<p>BeMyAssistantAccess adalah asisten kecerdasan buatan untuk pembaca layar NVDA. Ia menjelaskan layar atau sebuah objek, membaca dokumen dan gambar, menerjemahkan, mentranskripsikan, menuliskan ucapan Anda, mengobrol dengan Anda, memberi nama pada tombol yang tidak berlabel, menganalisis video, dan bisa mengeklik serta mengetik untuk Anda di program yang tidak dapat dibaca NVDA.</p>
+<p>Ia bekerja dengan dua cara, sesuai pilihan Anda: dengan AI yang berjalan sepenuhnya di komputer Anda, atau dengan layanan daring seperti Google Gemini.</p>
+
+<h2>1. Memulai</h2>
+
+<h3>1.1 Memilih AI</h3>
+<p>Buka menu NVDA, lalu Preferensi, Pengaturan, dan kategori BeMyAssistantAccess. Pada "Layanan AI", ada dua pilihan utama.</p>
+<ul>
+<li><strong>AI lokal, di komputer ini:</strong> semuanya terjadi di komputer Anda sendiri, gratis dan tanpa batas. Ia membutuhkan komputer yang cukup kuat, dan dipasang secara terpisah, dengan ReaperAccessible Installer Manager. Lihat bagian 2.</li>
+<li><strong>Google Gemini:</strong> layanan yang paling lengkap, dan satu-satunya untuk beberapa fitur (bagian 2.4). Ia berjalan di komputer mana pun, tetapi mengirim apa yang Anda minta ke Google. Google menyediakan kunci akses gratis, dengan jumlah permintaan per hari yang terbatas: aktifkan tombol "Dapatkan kunci Gemini gratis", buat kunci di halaman Google, lalu tempelkan di kolom "Kunci akses layanan ini".</li>
+</ul>
+<p>Layanan lain, OpenAI, Mistral AI, Groq, MiniMax, dan Custom, bekerja dengan cara yang sama dengan kunci akses masing-masing. Setiap layanan menyimpan kuncinya sendiri: saat Anda mengganti layanan, kunci yang pernah Anda berikan kembali muncul. Anda dapat memberikan beberapa kunci yang dipisahkan koma: ketika satu kunci mencapai batas hariannya, add-on memakai kunci berikutnya.</p>
+
+<h3>1.2 Pengaturan sederhana lainnya</h3>
+<ul>
+<li><strong>Bahasa jawaban:</strong> bahasa yang dipakai AI untuk menjawab Anda. Pertama kali, bahasanya mengikuti NVDA.</li>
+<li><strong>Periksa pembaruan secara otomatis:</strong> jika dicentang, add-on mencari versi baru beberapa detik setelah NVDA mulai. Tombol "Periksa sekarang" melakukannya seketika.</li>
+<li><strong>Opsi lanjutan:</strong> membuka semua pengaturan lainnya. Lihat bagian 14.</li>
+</ul>
+
+<h3>1.3 Memakai perintah</h3>
+<p>Semua perintah lewat satu tombol saja, sehingga tidak pernah mengganggu add-on lain:</p>
+<ol>
+<li>Tekan <strong>NVDA+Control+Shift+V</strong>. Anda mendengar bunyi bip dan kata "Perintah".</li>
+<li>Lepaskan, lalu tekan satu huruf. Misalnya <strong>O</strong> untuk menjelaskan seluruh layar, atau <strong>V</strong> untuk menjelaskan objek di bawah kursor NVDA.</li>
+</ol>
+<p>Lapisan tertutup setelah satu perintah. Tombol yang bukan perintah memberi bip rendah dan juga menutupnya. Huruf <strong>H</strong> mendaftar semua perintah. Bagian 3 menjelaskannya.</p>
+<p>Setiap perintah juga bisa diberi pintasan sendiri: menu NVDA, Preferensi, Gestur masukan, kategori BeMyAssistantAccess.</p>
+
+<h3>1.4 Menu</h3>
+<p>Menu NVDA, lalu Alat, memuat submenu BeMyAssistantAccess yang berisi: Pembaca Dokumen, Percakapan Langsung, Transkripsi dan Sulih Suara Media, Analisis Video, Asisten Langsung, Operator AI (Langsung), Pengamat Lingkungan, Pengelola Kunci API Gemini, Pengaturan, Periksa Pembaruan dan Dokumentasi.</p>
+
+<h3>1.5 Bunyi</h3>
+<ul>
+<li>Bip tinggi: hasil sudah siap, atau suatu tindakan selesai.</li>
+<li>Bip sedang: perekaman atau pengambilan layar dimulai.</li>
+<li>Bip rendah: ada yang gagal, atau tombol itu bukan perintah.</li>
+<li>Dua bip yang berbeda menandai awal dan akhir Asisten Langsung dan Pengamat Lingkungan.</li>
+</ul>
+<p>Huruf <strong>I</strong> menyebutkan kapan saja apa yang sedang dilakukan add-on.</p>
+
+<h3>1.6 Tirai Layar dan layar yang dilindungi</h3>
+<p>Perintah yang melihat layar menolak selama Tirai Layar NVDA aktif, dan menyuruh Anda mematikannya dengan NVDA+Control+Escape. Operator juga menolak di desktop yang terkunci dan di layar aman Windows. Di layar aman itu, add-on sama sekali tidak melakukan apa pun.</p>
+
+<h2>2. AI lokal</h2>
+
+<h3>2.1 Yang dibutuhkan</h3>
+<ul>
+<li>Memori minimal 30 GB.</li>
+<li>Kartu grafis dengan memori minimal 6 GB, merek apa pun: NVIDIA, AMD, atau Intel.</li>
+<li>Ruang disk sekitar 23 GB.</li>
+</ul>
+<p>AI memakai sekitar 4 GB di kartu grafis. Sisa modelnya berada di memori komputer.</p>
+
+<h3>2.2 Memasangnya</h3>
+<ol>
+<li>Buka ReaperAccessible Installer Manager. Jika belum punya, pilih "AI lokal, di komputer ini" di pengaturan add-on, lalu aktifkan tombol "Cara memasang AI lokal", kemudian "Unduh Manager".</li>
+<li>Di Manager, pilih jenis "NVDA Add-on", lalu "BeMyAssistantAccess, local AI", dan pasang. Unduhannya sekitar 23 GB.</li>
+<li>Di pengaturan add-on, pilih "AI lokal, di komputer ini", lalu OK.</li>
+</ol>
+<p>Pemasangan menolak dilanjutkan jika BeMyAssistantAccess belum terpasang di NVDA, atau jika memori komputer tidak cukup. Ia kemudian menyebutkan alasannya. Selama AI lokal dipilih tetapi belum terpasang, setiap permintaan add-on menjelaskan cara mendapatkannya.</p>
+<p>Untuk menghapusnya, buka Pengaturan Windows, Aplikasi terpasang, "BeMyAssistantAccess - Local AI".</p>
+
+<h3>2.3 Penantian pertama</h3>
+<p>Sebelum jawaban pertamanya, AI harus dimuat ke memori: dari beberapa detik hingga sekitar tiga puluh detik. Setelah itu, ia menjawab dengan cepat. Ia mulai dimuat begitu Anda menekan NVDA+Control+Shift+V, selagi Anda memilih huruf.</p>
+<p>Pengaturan "Siapkan AI lokal terus", di bagian atas opsi lanjutan, menentukan kapan memori dibebaskan:</p>
+<ul>
+<li><strong>15 menit setelah permintaan terakhir:</strong> bawaan.</li>
+<li><strong>1 jam setelah permintaan terakhir.</strong></li>
+<li><strong>Selalu, sejak NVDA dimulai:</strong> tidak pernah menunggu lagi, tetapi AI memakai memori sepanjang waktu, bahkan saat Anda tidak memakainya.</li>
+</ul>
+<p>Ia selalu berhenti saat NVDA ditutup.</p>
+
+<h3>2.4 Apa yang berfungsi dengan tiap jenis AI</h3>
+<p>AI lokal menjelaskan layar dan objek, membaca teks di gambar dan dokumen, menerjemahkan, memperbaiki dan meringkas teks, mengobrol dengan Anda, memberi nama tombol, dan menjalankan pilot langkah demi langkah serta UI Explorer.</p>
+<p>Fitur-fitur ini membutuhkan Google Gemini, atau layanan Custom bertipe "Kompatibel dengan Gemini": Asisten Langsung, Operator Langsung, Pengamat Lingkungan, analisis video, analisis rekaman layar, deskripsi audio, dan sulih suara.</p>
+<p>Dikte Cerdas, terjemahan suara, dan transkripsi file audio membutuhkan AI yang memahami suara: fitur-fitur itu belum berfungsi dengan AI lokal.</p>
+<p>Membacakan dokumen sebagai file audio berfungsi dengan Google Gemini, OpenAI, MiniMax, dan layanan Custom, tetapi tidak dengan Mistral AI, Groq, atau AI lokal.</p>
+
+<h2>3. Perintah</h2>
+<p>Tekan dulu NVDA+Control+Shift+V, lalu salah satu tombol ini. Bagian-bagian berikutnya menjelaskan setiap fitur secara rinci.</p>
+
+<h3>3.1 Melihat layar</h3>
+<ul>
+<li><strong>O:</strong> menjelaskan seluruh layar dan membaca teksnya.</li>
+<li><strong>V:</strong> menjelaskan objek di bawah kursor NVDA.</li>
+<li><strong>E:</strong> UI Explorer, yang mendaftar apa saja yang bisa diklik dan mengekliknya untuk Anda. Bagian 6.</li>
+<li><strong>L:</strong> memberi nama pada tombol atau gambar tak berlabel di bawah kursor. Bagian 6.</li>
+<li><strong>Shift+L:</strong> mengelola nama yang sudah diberikan, atau sekaligus memberi nama semua elemen jendela yang belum bernama. Bagian 6.</li>
+</ul>
+
+<h3>3.2 Bertindak untuk Anda</h3>
+<ul>
+<li><strong>Shift+A:</strong> pilot langkah demi langkah. Bagian 4.</li>
+<li><strong>Control+Shift+A:</strong> Operator AI, yang merangkai beberapa tindakan sendiri. Bagian 5.</li>
+<li><strong>Control+A:</strong> Operator Langsung, dengan suara. Hanya Google Gemini. Bagian 5.</li>
+<li><strong>C:</strong> pemecah CAPTCHA. Bagian 5.</li>
+</ul>
+
+<h3>3.3 Teks dan terjemahan</h3>
+<ul>
+<li><strong>T:</strong> menerjemahkan teks yang dipilih atau objek di bawah kursor.</li>
+<li><strong>Shift+T:</strong> menerjemahkan teks di papan klip.</li>
+<li><strong>R:</strong> menu untuk meringkas, memperbaiki, menerjemahkan, atau menjelaskan teks yang dipilih, atau menjalankan salah satu Prompt Anda.</li>
+<li><strong>S:</strong> Dikte Cerdas.</li>
+<li><strong>Control+T:</strong> terjemahan suara.</li>
+</ul>
+<p>Bagian 7 menjelaskannya.</p>
+
+<h3>3.4 Dokumen dan file</h3>
+<ul>
+<li><strong>D:</strong> Pembaca Dokumen. Bagian 8.</li>
+<li><strong>F:</strong> membaca atau menjelaskan file gambar atau PDF yang dipilih di File Explorer. Bagian 8.</li>
+<li><strong>M:</strong> mentranskripsikan, menerjemahkan, atau menyulihsuarakan file audio atau video. Bagian 9.</li>
+<li><strong>Shift+V:</strong> menganalisis video, dan membuat deskripsi audio. Hanya Google Gemini. Bagian 9.</li>
+<li><strong>Control+V:</strong> merekam layar, lalu meminta rekaman itu dijelaskan. Hanya Google Gemini. Bagian 9.</li>
+</ul>
+
+<h3>3.5 Mengobrol</h3>
+<ul>
+<li><strong>Shift+C:</strong> Percakapan Langsung dengan AI. Bagian 10.</li>
+<li><strong>Spasi:</strong> membuka kembali hasil terakhir. Bagian 10.</li>
+<li><strong>Control+H:</strong> Riwayat. Bagian 10.</li>
+<li><strong>Control+L:</strong> Asisten Langsung. Hanya Google Gemini. Bagian 11.</li>
+<li><strong>Shift+O:</strong> Pengamat Lingkungan. Hanya Google Gemini. Bagian 11.</li>
+</ul>
+
+<h3>3.6 Tombol lainnya</h3>
+<ul>
+<li><strong>I:</strong> menyebutkan apa yang sedang dilakukan add-on.</li>
+<li><strong>H:</strong> daftar semua perintah.</li>
+<li><strong>U:</strong> mencari pembaruan.</li>
+<li><strong>Alt+S:</strong> membuka pengaturan.</li>
+<li><strong>G:</strong> Pengelola Kunci API Gemini. Bagian 13.</li>
+<li><strong>Alt+Q:</strong> kunci Gemini yang kuota hariannya sudah habis. Bagian 13.</li>
+<li><strong>Alt+M:</strong> menyebutkan model AI yang dipilih untuk setiap tugas pada perutean lanjutan.</li>
+<li><strong>Panah atas dan panah bawah, panah kiri dan panah kanan:</strong> pengaturan cepat. Bagian 15.</li>
+</ul>
+
+<h2>4. Pilot langkah demi langkah</h2>
+<p>Pilot langkah demi langkah mengeklik dan mengetik untuk Anda di tempat yang tidak bisa dijangkau NVDA: program yang tidak dapat diakses, atau jendela yang terbuat dari gambar. Anda yang memutuskan setiap tindakan; AI hanya mencari letak elemennya.</p>
+<ol>
+<li>Tekan NVDA+Control+Shift+V, lalu Shift+A.</li>
+<li>Ucapkan satu tindakan, misalnya "click Online games", "double-click the file Report", atau "right-click the icon".</li>
+<li>Untuk mengetik, taruh teksnya di antara tanda kutip: type "hello" in the Name field.</li>
+<li>Add-on berkata "Mencari...", lalu bertanya, misalnya "Klik: tombol Online games?". Jawab Ya atau Tidak.</li>
+<li>Setelah tindakan, ia memberi tahu apa yang kini terlihat di layar.</li>
+</ol>
+<p>Aturan yang melindungi Anda:</p>
+<ul>
+<li>Add-on hanya mengetik teks yang Anda taruh di antara tanda kutip. Jika Anda menyuruhnya mengetik tanpa memberi teks, ia menjelaskan caranya.</li>
+<li>Tidak ada yang terjadi tanpa jawaban Ya dari Anda.</li>
+<li>Jika elemen tidak ditemukan, ia mengatakannya, bukan mengeklik sembarangan.</li>
+<li>Kata sandi selalu Anda ketik sendiri: minta ia hanya mengeklik di kolomnya, lalu ketik atau tempel kata sandi Anda.</li>
+<li>Satu tindakan setiap kali: Shift+A tidak melakukan apa-apa selama ada tindakan yang sedang berjalan.</li>
+</ul>
+<p>Pilot ini bekerja dengan AI lokal dan layanan daring, dan juga di program yang dijalankan sebagai administrator, karena add-on bertindak dari dalam NVDA.</p>
+
+<h2>5. Operator dan pemecah CAPTCHA</h2>
+
+<h3>5.1 Operator AI (Control+Shift+A)</h3>
+<p>Operator AI, yang berasal dari Vision Assistant Pro, mengerjakan satu tugas penuh sendiri: Anda menjelaskannya dalam satu kalimat, lalu AI melihat layar dan merangkai hingga sepuluh tindakan, seperti mengeklik, mengeklik dua kali, mengeklik kanan, mengetik, menggulir, menyeret, atau menekan tombol. Ia menyebutkan apa yang akan dilakukan sebelum setiap tindakan, tetapi tidak meminta konfirmasi. Tekan Control+Shift+A lagi untuk menghentikannya.</p>
+<p>Setelah selesai, jawabannya terbuka di jendela obrolan, tempat Anda bisa memberinya instruksi baru. Ia kurang aman dibandingkan pilot langkah demi langkah, terutama dengan AI lokal, dan setiap langkah mengirim gambar layar ke AI.</p>
+
+<h3>5.2 Operator Langsung (Control+A)</h3>
+<p>Operator Langsung memulai percakapan Asisten Langsung yang di dalamnya AI dapat bertindak di komputer Anda selagi Anda berbicara kepadanya (hanya Google Gemini). Mintalah sesuatu dengan bahasa biasa, misalnya "buka folder Downloads". Ia bekerja langkah demi langkah, hingga sepuluh langkah per permintaan, dan menyebutkan setiap langkah dengan suara. Ia memberi tahu Anda saat tugas selesai, dibatalkan, membutuhkan tindakan Anda, atau telah mencapai batasnya.</p>
+<ul>
+<li>Tombol "Hentikan tindakan operator" di jendela Asisten Langsung membatalkan tugas yang sedang berjalan tanpa mengakhiri percakapan.</li>
+<li>Tekan Control+A lagi untuk mengakhiri sesi.</li>
+<li>Kamera web tidak tersedia selama operator aktif.</li>
+<li>Saat CAPTCHA muncul, ia mencoba pemecah CAPTCHA lebih dulu; jika tidak, ia meminta Anda menyelesaikan tantangan yang aksesibel.</li>
+</ul>
+
+<h3>5.3 Pemecah CAPTCHA (C)</h3>
+<p>Pemecah CAPTCHA membaca tes "Saya bukan robot" yang tampil di layar.</p>
+<ul>
+<li><strong>CAPTCHA berupa teks atau angka:</strong> ia membacanya, mengucapkan "CAPTCHA:" diikuti jawabannya, dan mengetikkan jawaban itu.</li>
+<li><strong>CAPTCHA berupa gambar,</strong> seperti kotak-kotak gambar atau kotak yang harus dicentang: ia mencoba menyelesaikannya dengan mengeklik, hingga 15 percobaan, dan menyebutkan saat berhasil atau saat menyerah. Tekan C lagi untuk menghentikannya.</li>
+</ul>
+<p>Di tab CAPTCHA pada opsi lanjutan, Anda dapat mematikan pemecah gambar, dan memilih apakah CAPTCHA teks dibaca dari objek di bawah kursor atau dari seluruh layar.</p>
+
+<h2>6. Melihat layar</h2>
+
+<h3>6.1 Menjelaskan (O dan V)</h3>
+<p>O menjelaskan seluruh layar dan membaca teksnya; V hanya menjelaskan objek di bawah kursor NVDA. Jawabannya terbuka di sebuah jendela tempat Anda bisa mengajukan pertanyaan lanjutan tentang gambar yang sama, atau langsung diucapkan jika "Keluaran Langsung" aktif (bagian 14).</p>
+
+<h3>6.2 UI Explorer (E)</h3>
+<p>AI mendaftar semua yang bisa diklik di layar, tanpa bilah tugas dan jendela NVDA sendiri. Di daftar "Pilih elemen", pilih satu, lalu:</p>
+<ul>
+<li><strong>Klik:</strong> add-on mengekliknya, lalu melihat layar lagi dua detik kemudian, sehingga Anda bisa melanjutkan.</li>
+<li><strong>Tambah Label:</strong> memberikan nama itu kepada elemen, sehingga NVDA mengumumkannya mulai sekarang.</li>
+<li><strong>Batal:</strong> menutup explorer. E sekali lagi juga menghentikannya.</li>
+</ul>
+
+<h3>6.3 Label (L)</h3>
+<p>Pada tombol atau gambar tanpa nama, L bertanya kepada AI apa itu, dan memberinya nama permanen: NVDA akan selalu mengumumkannya dengan nama itu di program tersebut. Nama itu tetap ada ketika ukuran jendela berubah, ketika Anda berpindah layar, dan ketika program diperbarui. Jika elemen sudah punya nama, add-on mengatakannya. Label tidak berfungsi di peramban web.</p>
+
+<h3>6.4 Pengelola Label (Shift+L)</h3>
+<p>Jika program sudah punya label, Shift+L membuka Pengelola Label: daftar nama yang telah diberikan, beserta jenisnya. Anda dapat mencentang item, lalu "Hapus yang Dicentang"; memilih satu dan "Ganti nama"; "Pilih Semua" atau "Batalkan Pilihan Semua" (Control+A di daftar mencentang semuanya); dan "Pindai Ulang" untuk mencari lagi elemen yang belum bernama.</p>
+<p>Jika program belum punya label, Shift+L sekaligus memberi nama semua elemen jendela yang belum bernama: tombol, kotak centang, tautan, tab, item daftar, ikon, dan lainnya.</p>
+
+<h2>7. Teks, terjemahan, dan dikte</h2>
+
+<h3>7.1 Menerjemahkan (T dan Shift+T)</h3>
+<p>T menerjemahkan teks yang dipilih. Tanpa pilihan, ia mengambil teks dari kolom tempat Anda berada, atau dari objek di bawah kursor NVDA. Shift+T menerjemahkan isi papan klip. Terjemahan diucapkan, lalu ditampilkan di sebuah jendela, kecuali "Keluaran Langsung" aktif.</p>
+<p>Add-on menerjemahkan ke bahasa "Target". Dengan <strong>Pertukaran Cerdas</strong>, teks yang sudah berbahasa Target diterjemahkan ke bahasa "Sumber", atau ke bahasa Inggris jika sumbernya "Deteksi otomatis". Kode dan alamat web tidak diterjemahkan. Bahasa-bahasa ini diatur di tab Bahasa Terjemahan, atau dengan pengaturan cepat.</p>
+
+<h3>7.2 Menu teks (R)</h3>
+<p>R membuka menu untuk teks yang dipilih: Buat Ringkasan, Perbaiki Tata Bahasa, Perbaiki Tata Bahasa &amp; Terjemahkan, Jelaskan, lalu setiap Prompt Anda (bagian 12). Jika sebuah prompt membutuhkan file, pemilih file terbuka lebih dulu. Jawabannya terbuka di jendela tempat Anda bisa bertanya lebih lanjut, atau mengikuti pilihan yang dibuat untuk prompt itu.</p>
+
+<h3>7.3 Dikte Cerdas (S) dan terjemahan suara (Control+T)</h3>
+<ol>
+<li>Tekan S: satu bip dan "Mendengarkan". Berbicaralah.</li>
+<li>Tekan S lagi: "Mengetik". Teks ditulis di tempat kursor Anda berada.</li>
+</ol>
+<p>Control+T bekerja dengan cara yang sama, tetapi teksnya diterjemahkan dari bahasa Sumber ke bahasa Target sebelum ditulis. Add-on memakai mikrofon bawaan Windows. Ucapan yang kurang dari satu detik menghasilkan "Tidak ada ucapan yang terdeteksi". Teks ditulis lewat papan klip, yang isinya akan digantikan. Kedua fitur ini membutuhkan layanan daring yang memahami suara.</p>
+
+<h2>8. Pembaca Dokumen dan file</h2>
+
+<h3>8.1 Membuka dokumen (D)</h3>
+<p>D membuka, dengan urutan prioritas ini:</p>
+<ol>
+<li>file yang dipilih di File Explorer, dibaca bersama sebagai satu dokumen: PDF, gambar, TIFF, foto iPhone (HEIC), file teks dan HTML;</li>
+<li>jika tidak ada, gambar di papan klip;</li>
+<li>jika tidak ada, daftar dokumen terakhir, dengan tombol Buka, Hapus, Hapus Semua, Buka File (Control+O) dan Tutup. Tanpa riwayat, pemilih file langsung terbuka.</li>
+</ol>
+<p>D saat pembacaan sedang berjalan menghentikannya. File teks dan HTML terbuka seketika, tanpa AI. Ketika pembacaan sebelumnya terputus, add-on menawarkan untuk melanjutkan dari tempat terhenti, bahkan setelah dimulai ulang.</p>
+
+<h3>8.2 Jendela pilihan</h3>
+<p>Sebelum membaca dokumen berhalaman banyak, jendela Pilihan menampilkan jumlah total halaman dan menawarkan:</p>
+<ul>
+<li><strong>Dari dan Sampai:</strong> halaman yang akan dibaca.</li>
+<li><strong>Terjemahkan Keluaran,</strong> dengan bahasa target.</li>
+<li><strong>Deskripsikan gambar di dalam teks selama OCR:</strong> gambar dalam dokumen dijelaskan di dalam teks.</li>
+<li><strong>Kompres halaman PDF sebelum diproses:</strong> membuat halaman pindaian yang besar menjadi lebih ringan sebelum dikirim.</li>
+</ul>
+<p>Lalu tekan Mulai. Halaman dibaca di latar belakang, beberapa sekaligus; Anda bisa menutup jendela dan kembali nanti. Add-on mengumumkan setiap halaman yang sudah siap. Dokumen yang sudah pernah dibaca terbuka seketika, tanpa dibaca ulang.</p>
+
+<h3>8.3 Jendela pembacaan</h3>
+<ul>
+<li><strong>Control+Page Down dan Control+Page Up,</strong> atau tombol Berikutnya dan Sebelumnya: berpindah halaman. Panah bawah di baris terakhir dan panah atas di baris pertama juga berpindah halaman.</li>
+<li><strong>Ke halaman:</strong> daftar nomor halaman.</li>
+<li><strong>Tanya AI (Alt+A):</strong> mengajukan pertanyaan tentang dokumen.</li>
+<li><strong>Pindai ulang dengan AI (Alt+R):</strong> membaca ulang halaman saat ini, atau semua halaman, dengan AI.</li>
+<li><strong>Coba Lagi:</strong> muncul ketika beberapa halaman gagal karena layanan sedang sibuk, dan hanya membaca ulang halaman-halaman itu.</li>
+<li><strong>Hasilkan Audio (Alt+G):</strong> menyimpan halaman saat ini, atau semua halaman, sebagai file MP3 atau WAV, dengan suara yang dipilih. Hanya ada jika layanan bisa berbicara.</li>
+<li><strong>Lihat dalam Format:</strong> menampilkan seluruh dokumen sebagai teks berformat, dengan judul.</li>
+<li><strong>Simpan (Alt+S atau Control+S):</strong> menyimpan teks sebagai file teks atau HTML, dengan nomor halaman jika pengaturan itu aktif. Jika ada halaman yang belum ada, add-on mengatakannya lebih dulu.</li>
+<li><strong>Tutup:</strong> tempat Anda berhenti disimpan di Riwayat.</li>
+</ul>
+
+<h3>8.4 Tiga mesin OCR</h3>
+<p>Mesin OCR, di tab Pembaca Dokumen, menentukan cara teks pada gambar dan halaman pindaian dibaca:</p>
+<ul>
+<li><strong>Chrome (Cepat):</strong> cepat, tetapi mengirim halaman ke layanan Google, apa pun AI yang Anda pilih, dan menerjemahkannya dengan Google Translate. Ini bawaan untuk layanan daring.</li>
+<li><strong>AI (Lanjutan):</strong> memakai AI yang dipilih, mempertahankan tata letak, tautan, dan deskripsi gambar. Memilih AI lokal otomatis memilih mesin ini, sehingga tidak ada yang keluar dari komputer Anda.</li>
+<li><strong>Tanpa OCR (Ekstrak Lapisan Teks):</strong> hanya membaca teks yang sudah ada di PDF yang dapat dicari, tanpa membaca gambar apa pun.</li>
+</ul>
+
+<h3>8.5 Membaca atau menjelaskan file (F)</h3>
+<p>F bekerja pada file gambar atau PDF yang dipilih di File Explorer, atau pada gambar di papan klip, tanpa pemilih file. Untuk satu gambar dengan mesin AI, ia bertanya apakah teksnya akan diekstrak atau gambarnya dijelaskan. PDF berhalaman banyak menampilkan jendela pilihan. Jawabannya terbuka di jendela obrolan. F sekali lagi menghentikannya.</p>
+
+<h2>9. Media dan video</h2>
+
+<h3>9.1 Transkripsi dan sulih suara (M)</h3>
+<p>M bekerja pada file audio atau video yang dipilih di File Explorer, atau membuka pemilih file. Tiga pilihan:</p>
+<ul>
+<li><strong>Transkripsikan (Bahasa Asli):</strong> menuliskan apa yang diucapkan.</li>
+<li><strong>Transkripsikan dan Terjemahkan (Bahasa Target):</strong> menuliskannya dalam bahasa lain.</li>
+<li><strong>Sulih Suara dan Terjemahkan (Bahasa Target):</strong> membuat file MP3 yang ucapannya diganti dengan suara dalam bahasa yang dipilih. Hanya Google Gemini.</li>
+</ul>
+<p>Sulih suara membutuhkan alat ffmpeg yang gratis: add-on menawarkan untuk mengunduhnya sekali, sekitar 70 MB.</p>
+
+<h3>9.2 Analisis video (Shift+V)</h3>
+<p>Shift+V bekerja pada video yang dipilih di File Explorer, atau pada alamat video yang disalin ke papan klip: YouTube, Instagram, Twitter (X), atau TikTok. Jika tidak, jendela Analisis Video terbuka, tempat Anda menempelkan alamat atau menelusuri file. Dua tindakan:</p>
+<ul>
+<li><strong>Analisis Video Umum:</strong> deskripsi lengkap tentang adegan, orang, dan apa yang terjadi, dengan ringkasan suaranya.</li>
+<li><strong>Hasilkan Deskripsi Audio (File SRT):</strong> file deskripsi bertanda waktu, yang ditempatkan pada jeda di antara dialog.</li>
+</ul>
+<p>Untuk deskripsi audio, Anda dapat menambahkan daftar karakter sebagai subtitel pertama, menambahkan peringatan bahwa teksnya berasal dari AI, dan memilih serial atau film agar add-on mengenali karakternya (bagian 9.4). Untuk video YouTube, ia menanyakan durasi video dalam menit. Video yang diunggah tetap tersedia selama 48 jam: Anda dapat membuat file lain darinya tanpa mengunggahnya lagi.</p>
+
+<h3>9.3 Deskripsi audio dan narasi</h3>
+<p>Jendela deskripsi audio menampilkan kemajuan dan teksnya. Lalu:</p>
+<ul>
+<li><strong>Simpan SRT:</strong> menyimpan file subtitel. Beri nama yang sama dengan videonya, di folder yang sama, dan pemutar media Anda akan bisa membacakannya ke pembaca layar Anda.</li>
+<li><strong>Buat Narasi Tersinkron (MP3):</strong> mengubah deskripsi menjadi ucapan, dengan suara pilihan Anda: eSpeak, suara Windows, atau suara Gemini. eSpeak-NG dapat diunduh dari jendela itu.</li>
+<li><strong>Hasilkan Ulang</strong> dan <strong>Coba Lagi:</strong> mulai lagi, atau melanjutkan setelah kesalahan sementara.</li>
+</ul>
+<p>Untuk file video di komputer Anda, ada dua jenis narasi:</p>
+<ul>
+<li><strong>Standar:</strong> suaranya dicampur di atas suara video. Add-on bertanya apakah suara latar perlu diperkecil selama deskripsi.</li>
+<li><strong>Diperpanjang:</strong> suara video berhenti sejenak selama setiap deskripsi, sehingga tidak ada yang terlewat. Add-on memakai model kecil pendeteksi jeda hening, yang diunduh sekali dengan izin Anda, sekitar 70 MB.</li>
+</ul>
+<p>Untuk video daring, MP3 hanya berisi suara deskripsi.</p>
+
+<h3>9.4 Kamus karakter</h3>
+<p>Untuk setiap serial atau film, add-on dapat menyimpan daftar karakter, sehingga nama mereka tetap sama dari satu episode ke episode berikutnya. Buka dengan "Kelola Karakter" di tab Video atau di jendela video. Anda dapat menambah karakter beserta catatan, seperti perannya; mengeditnya dengan F2; menghapusnya dengan Delete; mengimpor daftar, satu nama per baris; atau menghapus satu serial seluruhnya. AI menambahkan sendiri karakter yang ditemukannya, dan menjelaskan masing-masing hanya saat pertama kali muncul.</p>
+
+<h3>9.5 Rekaman layar (Control+V)</h3>
+<p>Control+V mulai merekam jendela aktif, diam-diam dan tanpa suara. Tekan Control+V lagi untuk berhenti: add-on menyebutkan durasinya, lalu meminta rekaman itu dijelaskan. Ia membutuhkan ffmpeg, yang add-on tawarkan untuk diunduh.</p>
+
+<h2>10. Mengobrol, hasil, dan Riwayat</h2>
+
+<h3>10.1 Percakapan Langsung (Shift+C)</h3>
+<p>Obrolan dengan AI. Ketik di kolom "Ajukan pertanyaan" dan tekan Enter untuk mengirim; Shift+Enter menambah baris. Tombol "Lampirkan File" menambahkan gambar, file PDF, atau suara ke pertanyaan Anda. Tombol lainnya: Lihat dalam Format, Simpan Konten (jawaban terakhir, sebagai HTML), Simpan Obrolan (seluruh obrolan, sebagai teks), dan Tutup.</p>
+<p>Di setiap jendela obrolan: Alt+Panah bawah membaca pesan berikutnya, Alt+Panah atas pesan sebelumnya, dan Alt+C menyalin pesan. Add-on menyebutkan saat Anda mencapai pesan pertama atau terakhir.</p>
+
+<h3>10.2 Hasil terakhir (Spasi)</h3>
+<p>Spasi membuka kembali jawaban terakhir AI: deskripsi, terjemahan, menu teks, obrolan dokumen, operator, atau percakapan Asisten Langsung.</p>
+
+<h3>10.3 Riwayat (Control+H)</h3>
+<p>Riwayat menyimpan obrolan dan dokumen Anda, hingga 100. Daftar "Tampilkan" menyaringnya: Semua, Obrolan, atau Dokumen.</p>
+<ul>
+<li><strong>Buka</strong> (atau Enter): obrolan terbuka kembali beserta file-nya, dokumen di halaman tempat Anda berhenti.</li>
+<li><strong>Hapus</strong> (atau tombol Delete): menghapus satu item. Untuk dokumen, Anda memilih menghapusnya dari Riwayat saja, atau juga teks yang sudah dibaca, sehingga pembukaan berikutnya membacanya lagi.</li>
+<li><strong>Hapus Semua:</strong> mengosongkan daftar yang sedang ditampilkan.</li>
+</ul>
+<p>Pengaturan "Simpan obrolan ke riwayat" dan "Simpan dokumen ke riwayat" menentukan apa yang disimpan.</p>
+
+<h2>11. Asisten Langsung dan Pengamat Lingkungan</h2>
+<p>Kedua fitur ini membutuhkan Google Gemini.</p>
+
+<h3>11.1 Asisten Langsung (Control+L)</h3>
+<p>Percakapan lisan: Anda berbicara ke mikrofon, AI melihat layar Anda dan menjawab dengan suara. Tanyakan misalnya "apa yang sedang saya lihat?" atau "bacakan paragraf ketiga". Tekan Control+L lagi untuk mengakhiri.</p>
+<p>Jendela Asisten Langsung menawarkan:</p>
+<ul>
+<li><strong>Suara TTS:</strong> suara AI. Mengubahnya memulai ulang percakapan.</li>
+<li><strong>Kedalaman Berpikir:</strong> seberapa banyak AI berpikir sebelum menjawab, untuk model yang mendukungnya.</li>
+<li><strong>Perangkat Audio:</strong> kartu suara tujuan suara.</li>
+<li><strong>Tekan untuk Bicara:</strong> mikrofon tetap tertutup sampai Anda menahan tombol yang dipilih di pengaturan. Berguna di tempat yang bising.</li>
+<li><strong>Gunakan Kamera Web:</strong> mengirim kamera sebagai ganti layar, untuk bertanya tentang benda, kertas cetak, atau sekitar Anda. Ia membutuhkan ffmpeg. Tombol "Pengaturan Privasi Kamera" membuka pengaturan Windows jika kamera diblokir.</li>
+<li><strong>Akhiri</strong> atau <strong>Mulai.</strong> Escape menutup jendela dan mengakhiri percakapan.</li>
+</ul>
+
+<h3>11.2 Pengamat Lingkungan (Shift+O)</h3>
+<p>Pengamat Lingkungan bekerja di latar belakang, tanpa percakapan: ia melaporkan apa yang berubah dan diam saat tidak ada yang terjadi. Shift+O membuka jendelanya; Shift+O lagi menghentikannya. Tiga mode:</p>
+<ul>
+<li><strong>Hanya Terjemahan Audio:</strong> menerjemahkan apa yang didengarnya, dari mikrofon atau dari suara komputer. Suara komputer membutuhkan pustaka kecil, yang diunduh sekali dengan izin Anda.</li>
+<li><strong>Hanya Pemantau Layar:</strong> memberi tahu apa yang berubah di layar. Ia mengirim gambar hanya saat layar benar-benar berubah.</li>
+<li><strong>Hanya Pemantau Kamera Web:</strong> membuka Asisten Langsung dengan kamera, sehingga Anda bisa bertanya apa yang dilihatnya.</li>
+</ul>
+<p>"Tentang kegiatan saya" membuat laporan lebih berguna. Untuk layar: Umum, menonton film atau serial, siaran langsung atau presentasi, rapat atau panggilan daring, atau gim. Untuk kamera: Umum, memeriksa penampilan atau riasan Anda, warna atau padu padan pakaian, membaca dokumen atau label, tanggal kedaluwarsa atau label makanan, kemasan obat, tulisan tangan atau formulir yang telah diisi, layar perangkat, lampu indikator, mengidentifikasi objek, atau melihat keadaan di sekitar. Anda juga dapat mengetik teks sendiri. Laporannya bisa ringkas, satu kalimat, atau terperinci. Jendela mengingat pilihan terakhir Anda.</p>
+
+<h2>12. Prompt</h2>
+<p>Prompt adalah instruksi yang diberikan kepada AI. Buka Pengelola Prompt dari opsi lanjutan, tab Prompt, "Kelola Prompt".</p>
+
+<h3>12.1 Prompt bawaan add-on</h3>
+<p>Tab "Prompt Bawaan" mendaftar instruksi setiap fitur, yang bisa Anda ubah: ringkasan, koreksi, terjemahan, deskripsi, video, transkripsi, dikte, OCR, CAPTCHA, gaya dan konteks laporan pengamat. Daftar "Filter" menampilkan satu kelompok sekali waktu. "Terapkan pada yang Dipilih" menyimpan perubahan, "Atur Ulang yang Dipilih" atau "Atur Ulang Semua" mengembalikan teks aslinya. Beberapa prompt diperlukan oleh suatu fitur: add-on memperingatkan Anda sebelum Anda mengubahnya.</p>
+
+<h3>12.2 Prompt Anda sendiri</h3>
+<p>Tab "Prompt Kustom" memuat permintaan Anda sendiri, dengan urutan menu R: Tambah, Edit, Hapus, Pindah ke Atas, Pindah ke Bawah. Untuk setiap prompt:</p>
+<ul>
+<li><strong>Nama</strong> dan <strong>Teks Prompt.</strong></li>
+<li><strong>Tombol Pintasan:</strong> tekan tombolnya untuk merekamnya; Backspace menghapus. Satu huruf, angka, atau F1 sampai F12 berfungsi di lapisan perintah, dan di mana saja dengan NVDA+Control+Shift dan tombol itu. Kombinasi, seperti Alt+1 atau Control+Shift+1, berfungsi di mana saja sesuai yang ditekan. Tombol yang sudah dipakai oleh perintah, atau oleh prompt lain, ditolak.</li>
+<li><strong>Perilaku umpan balik:</strong> mengikuti pengaturan umum, menyalin jawaban ke papan klip, mengucapkannya langsung, melakukan keduanya, atau selalu membuka jendela obrolan.</li>
+</ul>
+
+<h3>12.3 Variabel</h3>
+<p>Sebuah prompt dapat berisi kata dalam kurung, yang diganti saat dijalankan. Tombol "Panduan Variabel" mendaftarnya.</p>
+<ul>
+<li><strong>Teks:</strong> [selection] teks yang dipilih, [clipboard] papan klip, [text] teks di kolom tempat Anda berada (tidak pernah kata sandi), [currentURL] alamat halaman di Chrome, Edge, atau Firefox, [clipboard_image] gambar di papan klip.</li>
+<li><strong>Layar:</strong> [screen_obj] objek di bawah kursor, [screen_fg_obj] jendela aktif, [screen_full] seluruh layar.</li>
+<li><strong>File:</strong> [file_ocr] meminta gambar atau PDF untuk dibaca, [file_read] dokumen, [file_audio] file suara.</li>
+<li><strong>Bahasa:</strong> {target_lang}, {source_lang}, {response_lang}, {swap_target} dan {swap_instruction}.</li>
+<li><strong>Pengamat Lingkungan:</strong> [ambient_screen], [ambient_webcam] atau [ambient_audio] memulai pengamat, yang dihentikan oleh pintasan yang sama; [mic] atau [loopback] memilih suara, [brief] atau [detailed] gayanya, dan misalnya [lang:fr] bahasanya.</li>
+</ul>
+<p>Add-on menolak prompt yang variabelnya tidak cocok satu sama lain, dan menyebutkan alasannya.</p>
+
+<h2>13. Kunci Google Gemini</h2>
+
+<h3>13.1 Pengelola Kunci API Gemini (G)</h3>
+<p>Ia membuatkan kunci Gemini untuk Anda, dengan Google Gemini sebagai layanannya. Pertama kali, "Masuk dan Buka Browser" membuka halaman masuk Google di peramban Anda: masuklah, dan centang kotak izin yang ditampilkan Google. Lalu:</p>
+<ul>
+<li><strong>Proyek dan Kunci Baru,</strong> atau <strong>Buat Kunci untuk Proyek Terpilih:</strong> kunci dibuat, disalin ke papan klip, dan add-on menawarkan untuk memakainya.</li>
+<li><strong>Salin Kunci Terpilih, Salin Kunci Terakhir yang Dibuat, Gunakan di BeMyAssistantAccess.</strong></li>
+<li><strong>Hapus Kunci:</strong> menghapusnya di Google, setelah konfirmasi, dan membuangnya dari add-on.</li>
+<li><strong>Ekspor Kunci Tersimpan:</strong> menyimpannya dalam sebuah file.</li>
+<li><strong>Keluar:</strong> melupakan sesi masuk Google.</li>
+</ul>
+<p>Kunci yang dibuat disimpan di komputer Anda sebagai teks biasa: lindungi akses ke komputer itu.</p>
+
+<h3>13.2 Kunci yang habis (Alt+Q)</h3>
+<p>Alt+Q menampilkan kunci Gemini yang kuota hariannya sudah habis, dan kapan kunci itu bisa dipakai lagi. Ketika sebuah kunci habis, add-on berpindah sendiri ke kunci berikutnya.</p>
+
+<h2>14. Pengaturan</h2>
+<p>Pengaturan sederhana dijelaskan di bagian 1. Tombol "Opsi lanjutan" membuka jendela yang berisi, di bagian atas, pengaturan "Siapkan AI lokal terus" (bagian 2.3), lalu tab-tab. Beberapa tab hanya muncul pada layanan tertentu. Konfirmasi dengan OK, atau batalkan dengan Batal.</p>
+<p>AI lokal muncul di sana sebagai layanan "Custom": biarkan pengaturannya apa adanya.</p>
+
+<h3>14.1 Koneksi</h3>
+<ul>
+<li><strong>Penyedia</strong> dan <strong>Kunci API,</strong> dengan "Tampilkan Kunci API" untuk membacanya.</li>
+<li><strong>Dapatkan Kunci API Gemini:</strong> pengelola kunci pada bagian 13.</li>
+<li><strong>Ambil Model</strong> dan <strong>Model AI:</strong> daftar model layanan; mengetik di daftar akan menyaringnya.</li>
+<li><strong>Perutean Model Lanjutan:</strong> model berbeda untuk setiap tugas: OCR dan penglihatan, ucapan ke teks, teks ke ucapan, Operator AI dan CAPTCHA, analisis video, Asisten Langsung.</li>
+<li><strong>Pengaturan Penyedia Kustom,</strong> untuk layanan Custom: alamat dan jenis layanan ("Kompatibel dengan OpenAI" atau "Kompatibel dengan Gemini"), nama model, unggah file, dan alamat terpisah untuk setiap tugas. Tombol "Siapkan AI Lokal" untuk program yang Anda jalankan sendiri, seperti Ollama atau LM Studio; AI lokal bawaan add-on tidak membutuhkannya.</li>
+<li><strong>Proksi:</strong> Deteksi otomatis, SOCKS5, HTTP, atau Proksi Balik, dengan alamat, nama pengguna, dan kata sandinya. "Uji Koneksi Proksi" memeriksanya dan menyebutkan waktu tundanya.</li>
+<li><strong>Periksa pembaruan saat mulai.</strong></li>
+<li><strong>Bersihkan Markdown dalam Obrolan:</strong> menghapus tanda pemformatan dari jawaban.</li>
+<li><strong>Salin respons AI ke papan klip.</strong></li>
+<li><strong>Simpan obrolan ke riwayat.</strong></li>
+<li><strong>Keluaran Langsung (Tanpa Jendela Obrolan):</strong> jawaban diucapkan, bukan membuka jendela.</li>
+</ul>
+
+<h3>14.2 Asisten Langsung (hanya Google Gemini)</h3>
+<ul>
+<li><strong>Perangkat Keluaran Audio:</strong> kartu suara untuk Asisten Langsung dan pengamat.</li>
+<li><strong>Interval Bingkai:</strong> seberapa sering, dari 1 sampai 10 detik, gambar layar dikirim.</li>
+<li><strong>Kedalaman Berpikir:</strong> dari yang tercepat sampai yang terdalam.</li>
+<li><strong>Keluaran Langsung (Tanpa Jendela):</strong> Asisten Langsung bekerja tanpa jendelanya.</li>
+<li><strong>Tekan untuk Bicara</strong> dan tombolnya: tekan tombolnya untuk merekam, misalnya F12 atau Control+F12. Tombol pengubah yang ditahan sendirian juga berfungsi.</li>
+<li><strong>Mode Pengamat, Sumber Audio</strong> dan <strong>Gaya Pelaporan</strong> dari Pengamat Lingkungan.</li>
+</ul>
+
+<h3>14.3 Perilaku AI (layanan selain Google Gemini)</h3>
+<p><strong>Kreativitas:</strong> dari 0, sangat stabil, sampai 2, sangat bebas. Ini tidak memengaruhi OCR atau terjemahan.</p>
+
+<h3>14.4 Bahasa Terjemahan</h3>
+<p><strong>Sumber</strong> (atau Deteksi otomatis), <strong>Target,</strong> <strong>Respons AI,</strong> dan <strong>Pertukaran Cerdas</strong> (bagian 7.1).</p>
+
+<h3>14.5 Pembaca Dokumen</h3>
+<ul>
+<li><strong>Mesin OCR</strong> (bagian 8.4).</li>
+<li><strong>Ukuran Batch OCR:</strong> jumlah halaman yang dikirim sekaligus, untuk layanan yang menerima file utuh.</li>
+<li><strong>Deskripsikan gambar di dalam teks selama OCR dokumen.</strong></li>
+<li><strong>Sertakan nomor halaman saat mengekspor dokumen.</strong></li>
+<li><strong>Simpan dokumen ke riwayat.</strong></li>
+<li><strong>Suara TTS:</strong> suara untuk file audio dokumen.</li>
+</ul>
+
+<h3>14.6 Video (hanya Google Gemini)</h3>
+<ul>
+<li><strong>Ukuran Potongan Video:</strong> durasi, dalam menit, setiap potongan video yang dikirim untuk deskripsi audio. Lebih pendek berarti lebih teliti; 0 mengirimnya utuh.</li>
+<li><strong>Tambahkan daftar karakter sebagai subtitel pertama</strong> dan <strong>Tambahkan penafian AI di awal.</strong></li>
+<li><strong>Kelola Karakter</strong> (bagian 9.4).</li>
+</ul>
+
+<h3>14.7 CAPTCHA</h3>
+<p><strong>Aktifkan Pemecah CAPTCHA Visual,</strong> dan <strong>Metode CAPTCHA Teks:</strong> objek di bawah kursor atau seluruh layar.</p>
+
+<h3>14.8 Prompt</h3>
+<p>Tombol "Kelola Prompt" (bagian 12), dan jumlah prompt.</p>
+
+<h3>14.9 Lanjutan</h3>
+<ul>
+<li><strong>Pengelolaan Log:</strong> file log add-on, mati secara bawaan, dengan tingkat kerincian dan lama penyimpanannya, serta tombol Buka File Log, Buka Folder Log dan Hapus File Log. Berguna untuk melaporkan masalah.</li>
+<li><strong>Pencadangan dan Pemulihan:</strong> bagian 16.</li>
+</ul>
+
+<h2>15. Pengaturan cepat</h2>
+<p>Di lapisan perintah, panah atas dan panah bawah bergerak di antara 25 pengaturan, dan panah kiri dan panah kanan mengubah pengaturan yang sedang Anda pilih. Setiap perubahan langsung disimpan. Add-on mengumumkan misalnya "Model AI, saat ini: … Gunakan panah kiri dan kanan untuk mengubahnya."</p>
+<ul>
+<li><strong>Penyedia AI:</strong> hanya layanan yang punya kunci, ditambah Custom.</li>
+<li><strong>Model AI,</strong> lalu model setiap tugas: Model OCR, Model STT, Model TTS, Model Operator / CAPTCHA, Model Video, Model Langsung. Mengubah salah satunya mengaktifkan perutean lanjutan.</li>
+<li><strong>Suara TTS.</strong></li>
+<li><strong>Keluaran Langsung Mode Langsung (Tanpa Jendela)</strong> dan <strong>Perangkat Keluaran Audio Gemini Live.</strong></li>
+<li><strong>Bahasa Sumber, Bahasa Target</strong> dan <strong>Bahasa Respons AI.</strong></li>
+<li><strong>Pemecah CAPTCHA Visual</strong> dan <strong>Metode CAPTCHA Teks.</strong></li>
+<li><strong>Mesin OCR.</strong></li>
+<li><strong>Deskripsi Gambar dalam OCR, Nomor Halaman Ekspor Dokumen, Salin respons AI ke papan klip, Keluaran Langsung (Tanpa Jendela Obrolan), Bersihkan Markdown dalam Obrolan, Simpan obrolan ke riwayat, Simpan dokumen ke riwayat, Pertukaran Cerdas:</strong> hidup atau mati.</li>
+</ul>
+
+<h2>16. Cadangan, data, dan unduhan</h2>
+
+<h3>16.1 Mencadangkan dan memulihkan</h3>
+<p>Di tab Lanjutan, "Cadangkan" menyimpan semuanya (pengaturan, label, dokumen yang sedang dikerjakan, Riwayat, karakter), atau hanya pengaturan, dalam sebuah file. "Pulihkan" mengembalikannya, setelah konfirmasi, dan menggantikan pengaturan dan data saat ini. Cadangan berisi kunci akses dan kata sandi proksi Anda sebagai teks biasa: simpan di tempat yang aman.</p>
+
+<h3>16.2 Di mana data berada</h3>
+<p>Add-on menyimpan datanya di folder BeMyAssistantAccess dalam konfigurasi NVDA: label, Riwayat, dokumen yang sedang dikerjakan, karakter, kunci Gemini, dan log. AI lokal berada di folder data aplikasi lokal Windows, di bawah ReaperAccessible, BeMyAssistantAccess.</p>
+
+<h3>16.3 Unduhan</h3>
+<p>Beberapa fitur membutuhkan alat gratis, yang diunduh sekali ke dalam add-on, selalu setelah izin Anda: ffmpeg untuk sulih suara, perekaman, dan kamera web; model pendeteksi jeda hening untuk narasi yang diperpanjang; pustaka untuk suara komputer di pengamat; eSpeak-NG untuk suara narasi.</p>
+
+<h2>17. Pembaruan</h2>
+<p>Add-on memperbarui dirinya sendiri dari repositori GitHub ReaperAccessible. Saat ada versi baru, ia menawarkannya; setelah terpasang, NVDA harus dimulai ulang. AI lokal tidak diperbarui bersama add-on: ia diperbarui lewat Manager.</p>
+
+<h2>18. Privasi</h2>
+<ul>
+<li><strong>Dengan layanan daring,</strong> apa yang Anda minta, termasuk gambar layar, dokumen, dan suara, dikirim ke layanan itu. Hindari untuk layar yang menampilkan informasi pribadi.</li>
+<li><strong>Dengan AI lokal,</strong> jawaban AI dihitung di komputer Anda. Fitur-fitur ini tetap memakai Internet: mesin OCR Chrome jika Anda memilihnya, pemeriksaan pembaruan, pengelola kunci Gemini, unduhan alat, dan video daring.</li>
+<li>Kunci akses tetap berada di konfigurasi NVDA, di komputer Anda, dan di cadangan Anda.</li>
+</ul>
+
+<h2>19. Penghargaan</h2>
+<p>BeMyAssistantAccess diterbitkan oleh ReaperAccessible. Ia didasarkan pada Vision Assistant Pro, karya Mahmood Hozhabri, yang merancang sebagian besar fiturnya. AI lokal memakai mesin llama.cpp dan model Qwen 3.5 dari Alibaba.</p>
+</body>
+</html>

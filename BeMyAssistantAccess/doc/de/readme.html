@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>BeMyAssistantAccess</title>
+</head>
+<body>
+<h1>BeMyAssistantAccess</h1>
+
+<p>BeMyAssistantAccess ist ein Assistent mit künstlicher Intelligenz für den Screenreader NVDA. Er beschreibt den Bildschirm oder ein Objekt, liest Dokumente und Bilder vor, übersetzt, transkribiert, nimmt Diktate auf, unterhält sich mit Ihnen, gibt unbeschrifteten Schaltflächen einen Namen, analysiert Videos und kann in Programmen, die NVDA nicht lesen kann, für Sie klicken und tippen.</p>
+<p>Er arbeitet auf zwei Arten, ganz nach Ihrer Wahl: mit einer KI, die vollständig auf Ihrem Computer läuft, oder mit einem Online-Dienst wie Google Gemini.</p>
+
+<h2>1. Erste Schritte</h2>
+
+<h3>1.1 Die KI auswählen</h3>
+<p>Öffnen Sie das NVDA-Menü, dann Optionen, Einstellungen und die Kategorie BeMyAssistantAccess. Bei „KI-Dienst“ gibt es zwei Hauptmöglichkeiten.</p>
+<ul>
+<li><strong>Lokale KI, auf diesem Computer:</strong> Alles geschieht bei Ihnen zu Hause, kostenlos und ohne Begrenzung. Sie braucht einen ziemlich leistungsfähigen Computer und wird getrennt installiert, mit dem ReaperAccessible Installer Manager. Siehe Abschnitt 2.</li>
+<li><strong>Google Gemini:</strong> der umfassendste Dienst, und für manche Funktionen der einzige (Abschnitt 2.4). Er läuft auf jedem Computer, sendet aber das, was Sie fragen, an Google. Google bietet einen kostenlosen Zugangsschlüssel mit einer begrenzten Zahl von Anfragen pro Tag an: Aktivieren Sie die Schaltfläche „Kostenlosen Gemini-Schlüssel holen“, erstellen Sie den Schlüssel auf der Seite von Google und fügen Sie ihn dann in das Feld „Zugangsschlüssel dieses Dienstes“ ein.</li>
+</ul>
+<p>Die anderen Dienste, OpenAI, Mistral AI, Groq, MiniMax und Custom, funktionieren genauso mit ihrem eigenen Zugangsschlüssel. Jeder Dienst behält seinen Schlüssel: Wenn Sie den Dienst wechseln, kommt der Schlüssel zurück, den Sie ihm gegeben hatten. Sie können mehrere Schlüssel durch Kommas getrennt eingeben: Wenn einer sein Tageslimit erreicht, nimmt das Add-on den nächsten.</p>
+
+<h3>1.2 Die anderen einfachen Einstellungen</h3>
+<ul>
+<li><strong>Sprache der Antworten:</strong> die Sprache, in der die KI Ihnen antwortet. Beim ersten Mal ist es die Sprache von NVDA.</li>
+<li><strong>Automatisch nach Updates suchen:</strong> Wenn das Kontrollkästchen aktiviert ist, sucht das Add-on einige Sekunden nach dem Start von NVDA nach einer neuen Version. Die Schaltfläche „Jetzt prüfen“ tut es sofort.</li>
+<li><strong>Erweiterte Optionen:</strong> öffnet alle anderen Einstellungen. Siehe Abschnitt 14.</li>
+</ul>
+
+<h3>1.3 Die Befehle benutzen</h3>
+<p>Alle Befehle laufen über eine einzige Taste, damit sie nie mit anderen Add-ons in Konflikt geraten:</p>
+<ol>
+<li>Drücken Sie <strong>NVDA+Strg+Umschalt+V</strong>. Sie hören einen Piepton und das Wort „Befehle“.</li>
+<li>Lassen Sie los und drücken Sie dann einen einzelnen Buchstaben. Zum Beispiel <strong>O</strong>, um den ganzen Bildschirm zu beschreiben, oder <strong>V</strong>, um das Objekt unter dem Cursor von NVDA zu beschreiben.</li>
+</ol>
+<p>Die Ebene schließt sich nach einem Befehl. Eine Taste, die kein Befehl ist, ergibt einen tiefen Piepton und schließt sie ebenfalls. Der Buchstabe <strong>H</strong> listet alle Befehle auf. Abschnitt 3 beschreibt sie.</p>
+<p>Jeder Befehl kann auch eine eigene Tastenkombination bekommen: NVDA-Menü, Optionen, Tastenbefehle, Kategorie BeMyAssistantAccess.</p>
+
+<h3>1.4 Das Menü</h3>
+<p>Das NVDA-Menü, dann Werkzeuge, enthält ein Untermenü BeMyAssistantAccess mit: Dokumentenleser, Direkter Chat, Medien-Transkription und -Synchronisation, Video analysieren, Live-Assistent, KI-Operator (Live), Umgebungsbeobachter, Gemini-API-Schlüssel-Verwaltung, Einstellungen, Nach Updates suchen und Dokumentation.</p>
+
+<h3>1.5 Die Töne</h3>
+<ul>
+<li>Ein hoher Piepton: Ein Ergebnis ist fertig, oder eine Aktion ist erledigt.</li>
+<li>Ein mittlerer Piepton: Eine Aufnahme oder eine Erfassung beginnt.</li>
+<li>Ein tiefer Piepton: Etwas ist fehlgeschlagen, oder die Taste ist kein Befehl.</li>
+<li>Zwei verschiedene Pieptöne markieren den Beginn und das Ende des Live-Assistenten und des Umgebungsbeobachters.</li>
+</ul>
+<p>Der Buchstabe <strong>I</strong> sagt jederzeit, was das Add-on gerade tut.</p>
+
+<h3>1.6 Bildschirmvorhang und geschützte Bildschirme</h3>
+<p>Die Befehle, die den Bildschirm ansehen, verweigern ihren Dienst, solange der Bildschirmvorhang von NVDA eingeschaltet ist, und sagen, dass Sie ihn mit NVDA+Strg+Esc ausschalten sollen. Die Operatoren verweigern sich auch auf einem gesperrten Desktop und auf den sicheren Bildschirmen von Windows. Auf diesen sicheren Bildschirmen tut das Add-on überhaupt nichts.</p>
+
+<h2>2. Die lokale KI</h2>
+
+<h3>2.1 Was sie braucht</h3>
+<ul>
+<li>Mindestens 30 GB Arbeitsspeicher.</li>
+<li>Eine Grafikkarte mit mindestens 6 GB Speicher, von beliebiger Marke: NVIDIA, AMD oder Intel.</li>
+<li>Etwa 23 GB Festplattenplatz.</li>
+</ul>
+<p>Die KI belegt etwa 4 GB auf der Grafikkarte. Der Rest des Modells liegt im Arbeitsspeicher des Computers.</p>
+
+<h3>2.2 Sie installieren</h3>
+<ol>
+<li>Öffnen Sie den ReaperAccessible Installer Manager. Wenn Sie ihn nicht haben, wählen Sie in den Einstellungen des Add-ons „Lokale KI, auf diesem Computer“, aktivieren Sie dann die Schaltfläche „So installieren Sie die lokale KI“ und danach „Den Manager herunterladen“.</li>
+<li>Wählen Sie im Manager den Typ „NVDA Add-on“, dann „BeMyAssistantAccess, local AI“, und installieren Sie es. Der Download ist etwa 23 GB groß.</li>
+<li>Wählen Sie in den Einstellungen des Add-ons „Lokale KI, auf diesem Computer“, dann OK.</li>
+</ol>
+<p>Die Installation verweigert den Fortgang, wenn BeMyAssistantAccess nicht in NVDA installiert ist oder wenn der Computer nicht genug Arbeitsspeicher hat. Sie sagt dann, warum. Solange die lokale KI ausgewählt, aber nicht installiert ist, erklärt jede Anfrage des Add-ons, wie man sie bekommt.</p>
+<p>Um sie zu entfernen, gehen Sie in die Windows-Einstellungen, Installierte Apps, „BeMyAssistantAccess - Local AI“.</p>
+
+<h3>2.3 Das erste Warten</h3>
+<p>Vor ihrer ersten Antwort muss die KI in den Arbeitsspeicher geladen werden: von einigen Sekunden bis etwa dreißig Sekunden. Danach antwortet sie schnell. Sie beginnt zu laden, sobald Sie NVDA+Strg+Umschalt+V drücken, während Sie den Buchstaben wählen.</p>
+<p>Die Einstellung „Lokale KI bereithalten“ ganz oben in den erweiterten Optionen bestimmt, wann sie den Speicher wieder freigibt:</p>
+<ul>
+<li><strong>15 Minuten nach der letzten Anfrage:</strong> die Voreinstellung.</li>
+<li><strong>1 Stunde nach der letzten Anfrage.</strong></li>
+<li><strong>Immer, ab dem Start von NVDA:</strong> nie wieder Warten, aber die KI belegt ständig Arbeitsspeicher, auch wenn Sie sie nicht benutzen.</li>
+</ul>
+<p>Sie hält immer an, wenn NVDA beendet wird.</p>
+
+<h3>2.4 Was mit welcher Art von KI funktioniert</h3>
+<p>Die lokale KI beschreibt den Bildschirm und Objekte, liest den Text in Bildern und Dokumenten, übersetzt, korrigiert und fasst Text zusammen, unterhält sich mit Ihnen, benennt Schaltflächen und steuert den Schritt-für-Schritt-Pilot und den UI-Explorer.</p>
+<p>Diese Funktionen brauchen Google Gemini oder einen Custom-Dienst vom Typ „Gemini Compatible“: den Live-Assistenten, den Live-Operator, den Umgebungsbeobachter, die Videoanalyse, die Analyse von Bildschirmaufnahmen, die Audiobeschreibung und die Synchronisation.</p>
+<p>Intelligentes Diktieren, Sprachübersetzung und die Transkription von Audiodateien brauchen eine KI, die Ton versteht: Mit der lokalen KI funktionieren sie noch nicht.</p>
+<p>Ein Dokument als Audiodatei vorzulesen funktioniert mit Google Gemini, OpenAI, MiniMax und einem Custom-Dienst, aber nicht mit Mistral AI, Groq oder der lokalen KI.</p>
+
+<h2>3. Die Befehle</h2>
+<p>Drücken Sie zuerst NVDA+Strg+Umschalt+V, dann eine dieser Tasten. Die folgenden Abschnitte erklären jede Funktion im Einzelnen.</p>
+
+<h3>3.1 Den Bildschirm ansehen</h3>
+<ul>
+<li><strong>O:</strong> beschreibt den ganzen Bildschirm und liest seinen Text.</li>
+<li><strong>V:</strong> beschreibt das Objekt unter dem Cursor von NVDA.</li>
+<li><strong>E:</strong> der UI-Explorer, der auflistet, was man anklicken kann, und für Sie klickt. Abschnitt 6.</li>
+<li><strong>L:</strong> gibt der unbeschrifteten Schaltfläche oder dem Bild unter dem Cursor einen Namen. Abschnitt 6.</li>
+<li><strong>Umschalt+L:</strong> verwaltet die bereits vergebenen Namen oder benennt auf einmal alle unbenannten Elemente des Fensters. Abschnitt 6.</li>
+</ul>
+
+<h3>3.2 Für Sie handeln</h3>
+<ul>
+<li><strong>Umschalt+A:</strong> der Schritt-für-Schritt-Pilot. Abschnitt 4.</li>
+<li><strong>Strg+Umschalt+A:</strong> der KI-Operator, der mehrere Aktionen von allein aneinanderreiht. Abschnitt 5.</li>
+<li><strong>Strg+A:</strong> der Live-Operator, per Sprache. Nur Google Gemini. Abschnitt 5.</li>
+<li><strong>C:</strong> der CAPTCHA-Löser. Abschnitt 5.</li>
+</ul>
+
+<h3>3.3 Text und Übersetzung</h3>
+<ul>
+<li><strong>T:</strong> übersetzt den markierten Text oder das Objekt unter dem Cursor.</li>
+<li><strong>Umschalt+T:</strong> übersetzt den Text in der Zwischenablage.</li>
+<li><strong>R:</strong> ein Menü, um den markierten Text zusammenzufassen, zu korrigieren, zu übersetzen oder zu erklären, oder um einen Ihrer Prompts auszuführen.</li>
+<li><strong>S:</strong> Intelligentes Diktieren.</li>
+<li><strong>Strg+T:</strong> Sprachübersetzung.</li>
+</ul>
+<p>Abschnitt 7 erklärt sie.</p>
+
+<h3>3.4 Dokumente und Dateien</h3>
+<ul>
+<li><strong>D:</strong> der Dokumentenleser. Abschnitt 8.</li>
+<li><strong>F:</strong> liest oder beschreibt die im Explorer ausgewählte Bild- oder PDF-Datei. Abschnitt 8.</li>
+<li><strong>M:</strong> transkribiert, übersetzt oder synchronisiert eine Audio- oder Videodatei. Abschnitt 9.</li>
+<li><strong>Umschalt+V:</strong> analysiert ein Video und erstellt Audiobeschreibungen. Nur Google Gemini. Abschnitt 9.</li>
+<li><strong>Strg+V:</strong> nimmt den Bildschirm auf und lässt die Aufnahme dann beschreiben. Nur Google Gemini. Abschnitt 9.</li>
+</ul>
+
+<h3>3.5 Unterhalten</h3>
+<ul>
+<li><strong>Umschalt+C:</strong> Direkter Chat mit der KI. Abschnitt 10.</li>
+<li><strong>Leertaste:</strong> öffnet das letzte Ergebnis erneut. Abschnitt 10.</li>
+<li><strong>Strg+H:</strong> der Verlauf. Abschnitt 10.</li>
+<li><strong>Strg+L:</strong> der Live-Assistent. Nur Google Gemini. Abschnitt 11.</li>
+<li><strong>Umschalt+O:</strong> der Umgebungsbeobachter. Nur Google Gemini. Abschnitt 11.</li>
+</ul>
+
+<h3>3.6 Die anderen Tasten</h3>
+<ul>
+<li><strong>I:</strong> sagt, was das Add-on gerade tut.</li>
+<li><strong>H:</strong> die Liste aller Befehle.</li>
+<li><strong>U:</strong> sucht nach einem Update.</li>
+<li><strong>Alt+S:</strong> öffnet die Einstellungen.</li>
+<li><strong>G:</strong> die Gemini-API-Schlüssel-Verwaltung. Abschnitt 13.</li>
+<li><strong>Alt+Q:</strong> die Gemini-Schlüssel, deren Tageskontingent aufgebraucht ist. Abschnitt 13.</li>
+<li><strong>Alt+M:</strong> sagt, welche KI-Modelle im erweiterten Routing für jede Aufgabe gewählt sind.</li>
+<li><strong>Pfeil nach oben und Pfeil nach unten, Pfeil nach links und Pfeil nach rechts:</strong> die Schnelleinstellungen. Abschnitt 15.</li>
+</ul>
+
+<h2>4. Der Schritt-für-Schritt-Pilot</h2>
+<p>Der Schritt-für-Schritt-Pilot klickt und tippt für Sie, wo NVDA nichts ausrichten kann: ein unzugängliches Programm, ein Fenster aus Bildern. Sie entscheiden über jede Aktion; die KI findet nur, wo das Element ist.</p>
+<ol>
+<li>Drücken Sie NVDA+Strg+Umschalt+V, dann Umschalt+A.</li>
+<li>Nennen Sie eine Aktion, zum Beispiel „Klicke auf Online-Spiele“, „Doppelklicke auf die Datei Bericht“ oder „Rechtsklick auf das Symbol“.</li>
+<li>Um zu tippen, setzen Sie den Text in Anführungszeichen: Tippe „Hallo“ in das Feld Name.</li>
+<li>Das Add-on sagt „Ich suche...“ und fragt dann zum Beispiel „Klicken: Schaltfläche Online-Spiele?“. Antworten Sie mit Ja oder Nein.</li>
+<li>Nach der Aktion sagt es Ihnen, was der Bildschirm jetzt zeigt.</li>
+</ol>
+<p>Die Regeln, die Sie schützen:</p>
+<ul>
+<li>Das Add-on tippt immer nur den Text, den Sie in Anführungszeichen gesetzt haben. Wenn Sie es bitten zu tippen, ohne einen Text zu nennen, erklärt es, wie es geht.</li>
+<li>Ohne Ihr Ja geschieht nichts.</li>
+<li>Wenn das Element nicht gefunden wird, sagt es das, statt auf gut Glück zu klicken.</li>
+<li>Passwörter tippen Sie immer selbst: Bitten Sie nur darum, in das Feld zu klicken, und tippen oder fügen Sie dann Ihr Passwort ein.</li>
+<li>Eine Aktion nach der anderen: Umschalt+A tut nichts, solange eine Aktion läuft.</li>
+</ul>
+<p>Der Pilot funktioniert mit der lokalen KI und mit Online-Diensten, auch in Programmen, die als Administrator laufen, weil das Add-on von innen aus NVDA heraus handelt.</p>
+
+<h2>5. Die Operatoren und der CAPTCHA-Löser</h2>
+
+<h3>5.1 KI-Operator (Strg+Umschalt+A)</h3>
+<p>Der KI-Operator, der aus Vision Assistant Pro stammt, erledigt eine ganze Aufgabe von allein: Sie beschreiben sie in einem Satz, und die KI sieht sich den Bildschirm an und reiht bis zu zehn Aktionen aneinander, etwa klicken, doppelklicken, rechtsklicken, tippen, scrollen, ziehen oder Tasten drücken. Sie sagt vor jeder Aktion, was sie tut, fragt aber nicht nach Bestätigung. Drücken Sie noch einmal Strg+Umschalt+A, um ihn anzuhalten.</p>
+<p>Wenn er fertig ist, öffnet sich seine Antwort in einem Chatfenster, in dem Sie ihm eine neue Anweisung geben können. Er ist weniger sicher als der Schritt-für-Schritt-Pilot, besonders mit der lokalen KI, und jeder Schritt sendet ein Bild des Bildschirms an die KI.</p>
+
+<h3>5.2 Live-Operator (Strg+A)</h3>
+<p>Der Live-Operator startet ein Gespräch mit dem Live-Assistenten, in dem die KI auf Ihrem Computer handeln kann, während Sie mit ihr sprechen (nur Google Gemini). Bitten Sie sie in einfacher Sprache um etwas, zum Beispiel „öffne den Ordner Downloads“. Sie arbeitet Schritt für Schritt, bis zu zehn Schritte pro Anfrage, und sagt jeden Schritt laut. Sie sagt Ihnen, wenn die Aufgabe erledigt oder abgebrochen ist, wenn sie Ihre Hilfe braucht oder wenn sie ihre Grenze erreicht hat.</p>
+<ul>
+<li>Die Schaltfläche „Bedieneraktion stoppen“ im Fenster des Live-Assistenten bricht die laufende Aufgabe ab, ohne das Gespräch zu beenden.</li>
+<li>Drücken Sie noch einmal Strg+A, um die Sitzung zu beenden.</li>
+<li>Die Webcam ist nicht verfügbar, solange der Operator eingeschaltet ist.</li>
+<li>Wenn ein CAPTCHA erscheint, versucht er zuerst den CAPTCHA-Löser; andernfalls bittet er Sie, die barrierefreie Aufgabe zu lösen.</li>
+</ul>
+
+<h3>5.3 CAPTCHA-Löser (C)</h3>
+<p>Der CAPTCHA-Löser liest den auf dem Bildschirm gezeigten Test „Ich bin kein Roboter“.</p>
+<ul>
+<li><strong>Ein Text- oder Zahlen-CAPTCHA:</strong> Er liest es, sagt „Captcha:“ gefolgt von der Antwort und tippt die Antwort ein.</li>
+<li><strong>Ein Bild-CAPTCHA,</strong> etwa ein Raster aus Bildern oder ein Kästchen zum Anhaken: Er versucht, es durch Klicken zu lösen, bis zu 15 Versuche, und sagt, wenn es gelöst ist oder wenn er aufgibt. Drücken Sie noch einmal C, um ihn anzuhalten.</li>
+</ul>
+<p>Auf der Registerkarte CAPTCHA der erweiterten Optionen können Sie den Bildlöser ausschalten und wählen, ob Text-CAPTCHAs vom Objekt unter dem Cursor oder vom ganzen Bildschirm gelesen werden.</p>
+
+<h2>6. Den Bildschirm ansehen</h2>
+
+<h3>6.1 Beschreiben (O und V)</h3>
+<p>O beschreibt den ganzen Bildschirm und liest seinen Text; V beschreibt nur das Objekt unter dem Cursor von NVDA. Die Antwort öffnet sich in einem Fenster, in dem Sie Folgefragen zum selben Bild stellen können, oder sie wird direkt gesprochen, wenn „Direkte Ausgabe (ohne Chatfenster)“ eingeschaltet ist (Abschnitt 14).</p>
+
+<h3>6.2 UI-Explorer (E)</h3>
+<p>Die KI listet alles auf, was auf dem Bildschirm angeklickt werden kann, ohne die Taskleiste und die eigenen Fenster von NVDA. Wählen Sie in der Liste „Element auswählen“ eines aus, dann:</p>
+<ul>
+<li><strong>Klicken:</strong> Das Add-on klickt darauf und sieht sich den Bildschirm zwei Sekunden später erneut an, damit Sie weitermachen können.</li>
+<li><strong>Beschriftung hinzufügen:</strong> gibt dem Element diesen Namen, sodass NVDA es von nun an so ansagt.</li>
+<li><strong>Abbrechen:</strong> schließt den Explorer. Auch E noch einmal hält ihn an.</li>
+</ul>
+
+<h3>6.3 Beschriftungen (L)</h3>
+<p>Bei einer Schaltfläche oder einem Bild ohne Namen fragt L die KI, was es ist, und gibt ihm einen dauerhaften Namen: NVDA sagt es in diesem Programm immer unter diesem Namen an. Der Name bleibt erhalten, wenn das Fenster seine Größe ändert, wenn Sie den Bildschirm wechseln und wenn das Programm aktualisiert wird. Wenn das Element schon einen Namen hat, sagt das Add-on es. In Webbrowsern funktionieren Beschriftungen nicht.</p>
+
+<h3>6.4 Beschriftungsmanager (Umschalt+L)</h3>
+<p>Wenn das Programm schon Beschriftungen hat, öffnet Umschalt+L den Beschriftungsmanager: eine Liste der vergebenen Namen mit ihrem Typ. Sie können Einträge markieren und dann „Lösche Auswahl“ wählen; einen auswählen und „Umbenennen“; „Alles wählen“ oder „Alles abwählen“ (Strg+A in der Liste markiert alles); und „Erneut scannen“, um erneut nach unbenannten Elementen zu suchen.</p>
+<p>Wenn das Programm noch keine Beschriftung hat, benennt Umschalt+L auf einmal alle unbenannten Elemente des Fensters: Schaltflächen, Kontrollkästchen, Links, Registerkarten, Listeneinträge, Symbole und anderes.</p>
+
+<h2>7. Text, Übersetzung und Diktat</h2>
+
+<h3>7.1 Übersetzen (T und Umschalt+T)</h3>
+<p>T übersetzt den markierten Text. Ohne Markierung nimmt es den Text des Feldes, in dem Sie sind, oder des Objekts unter dem Cursor von NVDA. Umschalt+T übersetzt die Zwischenablage. Die Übersetzung wird gesprochen und dann in einem Fenster angezeigt, außer wenn „Direkte Ausgabe (ohne Chatfenster)“ eingeschaltet ist.</p>
+<p>Das Add-on übersetzt in die Zielsprache. Mit dem <strong>Intelligenten Tausch</strong> wird ein Text, der schon in der Zielsprache vorliegt, stattdessen in die Quellsprache übersetzt, oder ins Englische, wenn die Quelle „Automatische Erkennung“ ist. Code und Webadressen werden nicht übersetzt. Diese Sprachen werden auf der Registerkarte Übersetzungssprachen oder mit den Schnelleinstellungen festgelegt.</p>
+
+<h3>7.2 Das Textmenü (R)</h3>
+<p>R öffnet ein Menü für den markierten Text: Zusammenfassen, Grammatik korrigieren, Grammatik und Übersetzung korrigieren, Erklären, dann jeder Ihrer Prompts (Abschnitt 12). Wenn ein Prompt eine Datei braucht, öffnet sich zuerst eine Dateiauswahl. Die Antwort öffnet sich in einem Fenster, in dem Sie weitere Fragen stellen können, oder folgt der für diesen Prompt getroffenen Wahl.</p>
+
+<h3>7.3 Intelligentes Diktieren (S) und Sprachübersetzung (Strg+T)</h3>
+<ol>
+<li>Drücken Sie S: ein Piepton und „Ich höre zu“. Sprechen Sie.</li>
+<li>Drücken Sie noch einmal S: „Ich tippe“. Der Text wird dort geschrieben, wo Ihr Cursor steht.</li>
+</ol>
+<p>Strg+T funktioniert genauso, aber der Text wird vor dem Schreiben von der Quellsprache in die Zielsprache übersetzt. Das Add-on benutzt das Standardmikrofon von Windows. Weniger als eine Sekunde Sprache ergibt „Keine Sprache erkannt“. Der Text wird über die Zwischenablage geschrieben, deren Inhalt er ersetzt. Diese beiden Funktionen brauchen einen Online-Dienst, der Ton versteht.</p>
+
+<h2>8. Der Dokumentenleser und Dateien</h2>
+
+<h3>8.1 Ein Dokument öffnen (D)</h3>
+<p>D öffnet, in dieser Reihenfolge der Priorität:</p>
+<ol>
+<li>die im Explorer ausgewählten Dateien, zusammen als ein einziges Dokument gelesen: PDF, Bilder, TIFF, iPhone-Fotos (HEIC), Text- und HTML-Dateien;</li>
+<li>sonst ein Bild in der Zwischenablage;</li>
+<li>sonst die Liste der zuletzt verwendeten Dokumente, mit den Schaltflächen Offen, Löschen, Alles löschen, Datei öffnen (Strg+O) und Schließen. Ohne Verlauf öffnet sich direkt die Dateiauswahl.</li>
+</ol>
+<p>D während des Lesens hält es an. Text- und HTML-Dateien öffnen sich sofort, ohne die KI. Wenn ein früheres Lesen unterbrochen wurde, bietet das Add-on an, dort fortzufahren, wo es aufgehört hat, sogar nach einem Neustart.</p>
+
+<h3>8.2 Das Optionsfenster</h3>
+<p>Vor dem Lesen eines Dokuments mit mehreren Seiten zeigt das Fenster Optionen die Gesamtzahl der Seiten und bietet an:</p>
+<ul>
+<li><strong>Von und Bis:</strong> die zu lesenden Seiten.</li>
+<li><strong>Ausgabe übersetzen,</strong> mit der Zielsprache.</li>
+<li><strong>Bilder im Textfluss bei der Texterkennung (OCR) beschreiben:</strong> Die Bilder des Dokuments werden im Text beschrieben.</li>
+<li><strong>PDF-Seiten vor der Verarbeitung komprimieren:</strong> macht große gescannte Seiten leichter, bevor sie gesendet werden.</li>
+</ul>
+<p>Drücken Sie dann Start. Die Seiten werden im Hintergrund gelesen, mehrere gleichzeitig; Sie können das Fenster schließen und später wiederkommen. Das Add-on sagt jede fertige Seite an. Ein bereits gelesenes Dokument öffnet sich sofort wieder, ohne erneut gelesen zu werden.</p>
+
+<h3>8.3 Das Lesefenster</h3>
+<ul>
+<li><strong>Strg+Bild ab und Strg+Bild auf,</strong> oder die Schaltflächen Weiter und Zurück: wechseln die Seite. Pfeil nach unten in der letzten Zeile und Pfeil nach oben in der ersten Zeile wechseln ebenfalls die Seite.</li>
+<li><strong>Gehen Sie zu:</strong> die Liste der Seitenzahlen.</li>
+<li><strong>Fragen Sie KI (Alt+A):</strong> stellt eine Frage zum Dokument.</li>
+<li><strong>Erneut scannen mit KI (Alt+R):</strong> liest die aktuelle Seite oder alle Seiten noch einmal mit der KI.</li>
+<li><strong>Erneut versuchen:</strong> erscheint, wenn einige Seiten fehlgeschlagen sind, weil der Dienst ausgelastet war, und liest nur diese noch einmal.</li>
+<li><strong>Audio generieren (Alt+G):</strong> speichert die aktuelle Seite oder alle Seiten als MP3- oder WAV-Datei mit der gewählten Stimme. Nur vorhanden, wenn der Dienst sprechen kann.</li>
+<li><strong>Formatiert anzeigen:</strong> zeigt das ganze Dokument als formatierten Text mit Überschriften.</li>
+<li><strong>Speichern (Alt+S oder Strg+S):</strong> speichert den Text als Text- oder HTML-Datei, mit den Seitenzahlen, wenn diese Einstellung eingeschaltet ist. Wenn Seiten fehlen, sagt das Add-on es zuerst.</li>
+<li><strong>Schließen:</strong> Die Stelle, an der Sie waren, wird im Verlauf gespeichert.</li>
+</ul>
+
+<h3>8.4 Die drei OCR-Engines</h3>
+<p>Die OCR-Engine auf der Registerkarte Dokumentenleser bestimmt, wie der Text von Bildern und gescannten Seiten gelesen wird:</p>
+<ul>
+<li><strong>Chrome (schnell):</strong> schnell, sendet die Seiten aber an einen Google-Dienst, egal welche KI Sie gewählt haben, und übersetzt sie mit Google Translate. Bei den Online-Diensten ist es die Voreinstellung.</li>
+<li><strong>KI (fortgeschritten):</strong> benutzt die gewählte KI, behält das Layout, die Links und die Beschreibungen der Bilder. Wenn Sie die lokale KI wählen, wird diese Engine automatisch ausgewählt, damit nichts Ihren Computer verlässt.</li>
+<li><strong>Keine (Textebene extrahieren):</strong> liest nur den Text, der schon in einem durchsuchbaren PDF vorhanden ist, ohne irgendein Bild zu lesen.</li>
+</ul>
+
+<h3>8.5 Eine Datei lesen oder beschreiben (F)</h3>
+<p>F wirkt auf die im Explorer ausgewählte Bild- oder PDF-Datei oder auf ein Bild in der Zwischenablage, ohne Dateiauswahl. Bei einem einzelnen Bild mit der KI-Engine fragt es, ob der Text extrahiert oder das Bild beschrieben werden soll. Ein PDF mit mehreren Seiten zeigt das Optionsfenster. Die Antwort öffnet sich in einem Chatfenster. F noch einmal hält es an.</p>
+
+<h2>9. Medien und Video</h2>
+
+<h3>9.1 Transkription und Synchronisation (M)</h3>
+<p>M wirkt auf die im Explorer ausgewählte Audio- oder Videodatei oder öffnet eine Dateiauswahl. Drei Möglichkeiten:</p>
+<ul>
+<li><strong>Transkribieren (Originalsprache):</strong> schreibt auf, was gesagt wird.</li>
+<li><strong>Transkribieren und übersetzen (Zielsprache):</strong> schreibt es in einer anderen Sprache auf.</li>
+<li><strong>Synchronisieren und übersetzen (Zielsprache):</strong> erstellt eine MP3-Datei, in der die Sprache durch eine Stimme in der gewählten Sprache ersetzt ist. Nur Google Gemini.</li>
+</ul>
+<p>Die Synchronisation braucht das kostenlose Werkzeug ffmpeg: Das Add-on bietet an, es einmalig herunterzuladen, etwa 70 MB.</p>
+
+<h3>9.2 Videoanalyse (Umschalt+V)</h3>
+<p>Umschalt+V wirkt auf das im Explorer ausgewählte Video oder auf eine in die Zwischenablage kopierte Videoadresse: YouTube, Instagram, Twitter (X) oder TikTok. Sonst öffnet sich das Fenster Video analysieren, in dem Sie eine Adresse einfügen oder nach einer Datei suchen. Zwei Aktionen:</p>
+<ul>
+<li><strong>Allgemeine Videoanalyse:</strong> eine vollständige Beschreibung der Szenen, der Personen und dessen, was geschieht, mit einer Zusammenfassung des Tons.</li>
+<li><strong>Audiobeschreibung generieren (SRT-Datei):</strong> eine Datei mit zeitlich festgelegten Beschreibungen, die in die Pausen zwischen den Dialogen gesetzt werden.</li>
+</ul>
+<p>Für die Audiobeschreibung können Sie die Liste der Charaktere als ersten Untertitel hinzufügen, einen Hinweis hinzufügen, dass der Text von einer KI stammt, und eine Serie oder einen Film wählen, damit das Add-on dessen Charaktere erkennt (Abschnitt 9.4). Bei einem YouTube-Video fragt es nach der Länge des Videos in Minuten. Ein hochgeladenes Video bleibt 48 Stunden lang verfügbar: Sie können daraus weitere Dateien erstellen, ohne es erneut hochzuladen.</p>
+
+<h3>9.3 Audiobeschreibung und Kommentar</h3>
+<p>Das Fenster der Audiobeschreibung zeigt den Fortschritt und den Text. Dann:</p>
+<ul>
+<li><strong>SRT speichern:</strong> speichert die Untertiteldatei. Geben Sie ihr denselben Namen wie dem Video, im selben Ordner, dann kann Ihr Mediaplayer sie Ihrem Screenreader vorlesen lassen.</li>
+<li><strong>Synchronisierten Kommentar generieren (MP3):</strong> verwandelt die Beschreibungen in Sprache, mit einer Stimme Ihrer Wahl: eSpeak, eine Windows-Stimme oder die Gemini-Stimmen. eSpeak-NG kann aus dem Fenster heruntergeladen werden.</li>
+<li><strong>Neu generieren</strong> und <strong>Erneut versuchen:</strong> beginnen von vorn oder machen nach einem vorübergehenden Fehler weiter.</li>
+</ul>
+<p>Für eine Videodatei auf Ihrem Computer gibt es zwei Arten von Kommentar:</p>
+<ul>
+<li><strong>Standard:</strong> Die Stimme wird über den Ton des Videos gemischt. Das Add-on fragt, ob der Hintergrundton während der Beschreibungen leiser werden soll.</li>
+<li><strong>Erweitert:</strong> Der Ton des Videos pausiert während jeder Beschreibung, damit Ihnen nichts entgeht. Das Add-on benutzt ein kleines Modell zur Stilleerkennung, das einmalig mit Ihrer Erlaubnis heruntergeladen wird, etwa 70 MB.</li>
+</ul>
+<p>Bei einem Online-Video enthält die MP3-Datei nur die Stimme der Beschreibungen.</p>
+
+<h3>9.4 Charakterverzeichnis</h3>
+<p>Für jede Serie oder jeden Film kann das Add-on eine Liste von Charakteren führen, damit ihre Namen von einer Folge zur nächsten gleich bleiben. Öffnen Sie sie mit „Charaktere verwalten“ auf der Registerkarte Video oder im Videofenster. Sie können einen Charakter mit einer Notiz hinzufügen, etwa seiner Rolle; ihn mit F2 bearbeiten; ihn mit Entf entfernen; eine Liste importieren, ein Name pro Zeile; oder eine ganze Serie löschen. Die KI fügt die Charaktere, die sie entdeckt, von selbst hinzu und beschreibt jeden nur beim ersten Auftreten.</p>
+
+<h3>9.5 Bildschirmaufnahme (Strg+V)</h3>
+<p>Strg+V beginnt, das aktive Fenster aufzunehmen, still und ohne Ton. Drücken Sie noch einmal Strg+V, um zu beenden: Das Add-on sagt die Länge und lässt die Aufnahme dann beschreiben. Es braucht ffmpeg, das das Add-on zum Herunterladen anbietet.</p>
+
+<h2>10. Chatten, Ergebnisse und der Verlauf</h2>
+
+<h3>10.1 Direkter Chat (Umschalt+C)</h3>
+<p>Ein Chat mit der KI. Schreiben Sie in das Feld „Frage“ und drücken Sie die Eingabetaste zum Senden; Umschalt+Eingabetaste fügt eine Zeile hinzu. Die Schaltfläche „Datei anhängen“ fügt Ihrer Frage Bilder, PDF-Dateien oder Töne hinzu. Die anderen Schaltflächen: Formatiert anzeigen, Inhalt speichern (die letzte Antwort, als HTML), Chat speichern (der ganze Chat, als Text) und Schließen.</p>
+<p>In jedem Chatfenster: Alt+Pfeil nach unten liest die nächste Nachricht, Alt+Pfeil nach oben die vorherige, und Alt+C kopiert die Nachricht. Das Add-on sagt, wenn Sie die erste oder die letzte Nachricht erreichen.</p>
+
+<h3>10.2 Das letzte Ergebnis (Leertaste)</h3>
+<p>Die Leertaste öffnet die letzte Antwort der KI erneut: Beschreibung, Übersetzung, Textmenü, Dokumentchat, Operator oder das Gespräch des Live-Assistenten.</p>
+
+<h3>10.3 Der Verlauf (Strg+H)</h3>
+<p>Der Verlauf bewahrt Ihre Chats und Ihre Dokumente auf, bis zu 100. Die Liste „Zeigen“ filtert sie: Alle, Chats oder Dokumente.</p>
+<ul>
+<li><strong>Offen</strong> (oder Eingabetaste): Ein Chat öffnet sich wieder mit seinen Dateien, ein Dokument auf der Seite, auf der Sie waren.</li>
+<li><strong>Löschen</strong> (oder die Taste Entf): entfernt einen Eintrag. Bei einem Dokument wählen Sie, ob es nur aus dem Verlauf entfernt wird oder auch der schon gelesene Text, sodass es beim nächsten Öffnen neu gelesen wird.</li>
+<li><strong>Alles löschen:</strong> leert die angezeigte Liste.</li>
+</ul>
+<p>Die Einstellungen „Chats im Verlauf speichern“ und „Dokumente im Verlauf speichern“ bestimmen, was aufbewahrt wird.</p>
+
+<h2>11. Live-Assistent und Umgebungsbeobachter</h2>
+<p>Diese beiden Funktionen brauchen Google Gemini.</p>
+
+<h3>11.1 Live-Assistent (Strg+L)</h3>
+<p>Ein gesprochenes Gespräch: Sie sprechen ins Mikrofon, die KI sieht Ihren Bildschirm und antwortet laut. Fragen Sie zum Beispiel „Was sehe ich gerade?“ oder „Lies mir den dritten Absatz vor“. Drücken Sie noch einmal Strg+L, um zu beenden.</p>
+<p>Das Fenster des Live-Assistenten bietet:</p>
+<ul>
+<li><strong>Stimme:</strong> die Stimme der KI. Wenn Sie sie ändern, beginnt das Gespräch von vorn.</li>
+<li><strong>Gründliches Denken:</strong> wie viel die KI nachdenkt, bevor sie antwortet, bei den Modellen, die das erlauben.</li>
+<li><strong>Audiogerät:</strong> die Soundkarte, auf die die Stimme ausgegeben wird.</li>
+<li><strong>Drücken zum Sprechen:</strong> Das Mikrofon bleibt geschlossen, bis Sie die in den Einstellungen gewählte Taste gedrückt halten. Nützlich an einem lauten Ort.</li>
+<li><strong>Webcam verwenden:</strong> sendet die Kamera statt des Bildschirms, um nach Gegenständen, gedruckten Papieren oder Ihrer Umgebung zu fragen. Es braucht ffmpeg. Die Schaltfläche „Kamera-Datenschutzeinstellungen“ öffnet die Einstellungen von Windows, wenn die Kamera gesperrt ist.</li>
+<li><strong>Ende</strong> oder <strong>Start.</strong> Esc schließt das Fenster und beendet das Gespräch.</li>
+</ul>
+
+<h3>11.2 Umgebungsbeobachter (Umschalt+O)</h3>
+<p>Der Umgebungsbeobachter arbeitet im Hintergrund, ohne Gespräch: Er meldet, was sich ändert, und schweigt, wenn nichts geschieht. Umschalt+O öffnet sein Fenster; Umschalt+O noch einmal hält ihn an. Drei Modi:</p>
+<ul>
+<li><strong>Nur Audioübersetzung:</strong> übersetzt, was er hört, vom Mikrofon oder vom Ton des Computers. Für den Ton des Computers braucht er eine kleine Bibliothek, die einmalig mit Ihrer Erlaubnis heruntergeladen wird.</li>
+<li><strong>Nur Bildschirmbeobachter:</strong> sagt Ihnen, was sich auf dem Bildschirm ändert. Er sendet nur dann ein Bild, wenn sich der Bildschirm wirklich geändert hat.</li>
+<li><strong>Nur Webcam-Überwachung:</strong> öffnet den Live-Assistenten mit der Kamera, damit Sie fragen können, was er sieht.</li>
+</ul>
+<p>„Was ich gerade tue“ macht die Meldungen nützlicher. Für den Bildschirm: Allgemein, einen Film oder eine Serie ansehen, einen Livestream oder eine Präsentation, an einer Online-Besprechung oder einem Anruf teilnehmen, oder ein Spiel spielen. Für die Kamera: Allgemein, mein Aussehen oder mein Make-up überprüfen, eine Farbe prüfen oder Kleidung aufeinander abstimmen, ein Dokument oder eine Beschriftung lesen, ein Ablaufdatum oder ein Lebensmitteletikett, eine Medikamentenpackung, Handschrift oder ein ausgefülltes Formular, die Anzeige eines Geräts, Kontrollleuchten, ein Objekt identifizieren oder meine Umgebung erkunden. Sie können auch einen eigenen Text schreiben. Die Meldungen können kurz, einen Satz lang oder ausführlich sein. Das Fenster merkt sich Ihre letzten Auswahlen.</p>
+
+<h2>12. Prompts</h2>
+<p>Prompts sind die Anweisungen, die der KI gegeben werden. Öffnen Sie den Prompt-Manager in den erweiterten Optionen, Registerkarte Prompts, „Prompts verwalten“.</p>
+
+<h3>12.1 Die Prompts des Add-ons</h3>
+<p>Die Registerkarte „Standard-Prompts“ listet die Anweisungen jeder Funktion auf, die Sie ändern können: Zusammenfassung, Korrektur, Übersetzung, Beschreibung, Video, Transkription, Diktat, OCR, CAPTCHA, die Berichtsstile und Kontexte des Beobachters. Eine Liste „Filter“ zeigt jeweils eine Gruppe. „Auf Auswahl anwenden“ speichert die Änderung, „Auswahl zurücksetzen“ oder „Alles zurücksetzen“ bringt den ursprünglichen Text zurück. Manche Prompts werden von einer Funktion gebraucht: Das Add-on warnt Sie, bevor Sie sie ändern.</p>
+
+<h3>12.2 Ihre eigenen Prompts</h3>
+<p>Die Registerkarte „Benutzerdefinierte Prompts“ enthält Ihre eigenen Anfragen, in der Reihenfolge des Menüs R: Hinzufügen, Bearbeiten, Entfernen, Nach oben bewegen, Nach unten bewegen. Für jeden Prompt:</p>
+<ul>
+<li><strong>Name</strong> und <strong>Aufforderungstext.</strong></li>
+<li><strong>Tastenkombination:</strong> Drücken Sie die Tasten, um sie aufzuzeichnen; die Rücktaste löscht. Ein einzelner Buchstabe, eine Ziffer oder F1 bis F12 funktioniert in der Befehlsebene und überall mit NVDA+Strg+Umschalt und dieser Taste. Eine Kombination, etwa Alt+1 oder Strg+Umschalt+1, funktioniert überall so, wie sie getippt wird. Eine Taste, die schon von einem Befehl oder von einem anderen Prompt benutzt wird, wird abgelehnt.</li>
+<li><strong>Feedbackverhalten:</strong> der allgemeinen Einstellung folgen, die Antwort in die Zwischenablage kopieren, sie direkt sprechen, beides tun oder immer ein Chatfenster öffnen.</li>
+</ul>
+
+<h3>12.3 Variablen</h3>
+<p>Ein Prompt kann Wörter in eckigen Klammern enthalten, die beim Ausführen ersetzt werden. Die Schaltfläche „Leitfaden für Variablen“ listet sie auf.</p>
+<ul>
+<li><strong>Text:</strong> [selection] der markierte Text, [clipboard] die Zwischenablage, [text] der Text des Feldes, in dem Sie sind (nie ein Passwort), [currentURL] die Adresse der Seite in Chrome, Edge oder Firefox, [clipboard_image] das Bild in der Zwischenablage.</li>
+<li><strong>Bildschirm:</strong> [screen_obj] das Objekt unter dem Cursor, [screen_fg_obj] das aktive Fenster, [screen_full] der ganze Bildschirm.</li>
+<li><strong>Dateien:</strong> [file_ocr] fragt nach einem Bild oder PDF zum Lesen, [file_read] ein Dokument, [file_audio] eine Tondatei.</li>
+<li><strong>Sprachen:</strong> {target_lang}, {source_lang}, {response_lang}, {swap_target} und {swap_instruction}.</li>
+<li><strong>Umgebungsbeobachter:</strong> [ambient_screen], [ambient_webcam] oder [ambient_audio] starten den Beobachter, den dieselbe Tastenkombination anhält; [mic] oder [loopback] wählen den Ton, [brief] oder [detailed] den Stil und zum Beispiel [lang:fr] die Sprache.</li>
+</ul>
+<p>Das Add-on lehnt einen Prompt ab, dessen Variablen nicht zusammenpassen, und sagt, warum.</p>
+
+<h2>13. Google-Gemini-Schlüssel</h2>
+
+<h3>13.1 Gemini-API-Schlüssel-Verwaltung (G)</h3>
+<p>Sie erstellt Gemini-Schlüssel für Sie, mit Google Gemini als Dienst. Beim ersten Mal öffnet „Anmelden und Browser öffnen“ die Anmeldeseite von Google in Ihrem Browser: Melden Sie sich an und haken Sie das Berechtigungskästchen an, das Google zeigt. Dann:</p>
+<ul>
+<li><strong>Neues Projekt und Schlüssel</strong> oder <strong>Schlüssel für das ausgewählte Projekt erstellen:</strong> Der Schlüssel wird erstellt, in die Zwischenablage kopiert, und das Add-on bietet an, ihn zu verwenden.</li>
+<li><strong>Ausgewählten Schlüssel kopieren, Zuletzt erstellten Schlüssel kopieren, In BeMyAssistantAccess verwenden.</strong></li>
+<li><strong>Schlüssel löschen:</strong> löscht ihn bei Google, nach Bestätigung, und entfernt ihn aus dem Add-on.</li>
+<li><strong>Gespeicherte Schlüssel exportieren:</strong> speichert sie in einer Datei.</li>
+<li><strong>Abmelden:</strong> vergisst die Anmeldung bei Google.</li>
+</ul>
+<p>Die erstellten Schlüssel werden im Klartext auf Ihrem Computer aufbewahrt: Schützen Sie den Zugang dazu.</p>
+
+<h3>13.2 Aufgebrauchte Schlüssel (Alt+Q)</h3>
+<p>Alt+Q zeigt die Gemini-Schlüssel, deren Tageskontingent aufgebraucht ist, und wann sie wieder benutzbar sind. Wenn ein Schlüssel aufgebraucht ist, wechselt das Add-on von selbst zum nächsten.</p>
+
+<h2>14. Die Einstellungen</h2>
+<p>Die einfachen Einstellungen sind in Abschnitt 1 beschrieben. Die Schaltfläche „Erweiterte Optionen“ öffnet ein Fenster mit der Einstellung „Lokale KI bereithalten“ (Abschnitt 2.3) ganz oben und dann den Registerkarten. Manche Registerkarten erscheinen nur bei bestimmten Diensten. Bestätigen Sie mit OK oder brechen Sie mit Abbrechen ab.</p>
+<p>Die lokale KI erscheint dort als Dienst „Custom“: Lassen Sie ihre Einstellungen, wie sie sind.</p>
+
+<h3>14.1 Verbindung</h3>
+<ul>
+<li><strong>Anbieter</strong> und <strong>API-Schlüssel,</strong> mit „API-Schlüssel anzeigen“, um ihn zu lesen.</li>
+<li><strong>Einen Gemini-API-Schlüssel anfordern:</strong> die Schlüsselverwaltung aus Abschnitt 13.</li>
+<li><strong>Modelle abrufen</strong> und <strong>KI-Modell:</strong> die Liste der Modelle des Dienstes; Tippen in der Liste filtert sie.</li>
+<li><strong>Erweitertes Modellrouting:</strong> ein anderes Modell für jede Aufgabe: OCR und Bildverarbeitung, Spracherkennung, Sprachausgabe, KI-Operator und CAPTCHA, Videoanalyse, Live-Assistent.</li>
+<li><strong>Benutzerdefinierte Anbietereinstellungen,</strong> für den Custom-Dienst: die Adresse und der Typ des Dienstes („OpenAI Compatible“ oder „Gemini Compatible“), der Modellname, das Hochladen von Dateien und getrennte Adressen für jede Aufgabe. Die Schaltfläche „Lokale KI einrichten“ ist für Programme, die Sie selbst starten, etwa Ollama oder LM Studio; die eigene lokale KI des Add-ons braucht sie nicht.</li>
+<li><strong>Proxy:</strong> Automatische Erkennung, SOCKS5, HTTP oder Reverse-Proxy, mit Adresse, Benutzername und Passwort. „Proxy-Verbindung testen“ prüft ihn und gibt die Verzögerung an.</li>
+<li><strong>Automatisch nach Updates suchen</strong> beim Start.</li>
+<li><strong>Bereinigen von Markdown im Chat:</strong> entfernt die Formatierungszeichen aus den Antworten.</li>
+<li><strong>Antwort in die Zwischenablage kopieren.</strong></li>
+<li><strong>Chats im Verlauf speichern.</strong></li>
+<li><strong>Direkte Ausgabe (ohne Chatfenster):</strong> Die Antworten werden gesprochen, statt ein Fenster zu öffnen.</li>
+</ul>
+
+<h3>14.2 Live-Assistent (nur Google Gemini)</h3>
+<ul>
+<li><strong>Audio-Ausgabegerät:</strong> die Soundkarte des Live-Assistenten und des Beobachters.</li>
+<li><strong>Bildintervall:</strong> wie oft, von 1 bis 10 Sekunden, ein Bild des Bildschirms gesendet wird.</li>
+<li><strong>Gründliches Denken:</strong> von am schnellsten bis am gründlichsten.</li>
+<li><strong>Direkte Ausgabe (kein Fenster):</strong> Der Live-Assistent arbeitet ohne sein Fenster.</li>
+<li><strong>Drücken zum Sprechen</strong> und seine Taste: Drücken Sie die Tasten, um sie aufzuzeichnen, zum Beispiel F12 oder Strg+F12. Eine allein gehaltene Zusatztaste funktioniert ebenfalls.</li>
+<li><strong>Beobachter-Modus, Audioquelle</strong> und <strong>Ansagestil</strong> des Umgebungsbeobachters.</li>
+</ul>
+
+<h3>14.3 KI-Verhalten (andere Dienste als Google Gemini)</h3>
+<p><strong>Kreativität:</strong> von 0, sehr gleichmäßig, bis 2, sehr frei. Sie hat keinen Einfluss auf OCR oder Übersetzung.</p>
+
+<h3>14.4 Übersetzungssprachen</h3>
+<p><strong>Quellsprache</strong> (oder Automatische Erkennung), <strong>Zielsprache,</strong> <strong>Sprache der KI-Antwort</strong> und <strong>Intelligenter Tausch</strong> (Abschnitt 7.1).</p>
+
+<h3>14.5 Dokumentenleser</h3>
+<ul>
+<li><strong>OCR-Engine</strong> (Abschnitt 8.4).</li>
+<li><strong>OCR-Stapelgröße:</strong> die Zahl der gleichzeitig gesendeten Seiten, für die Dienste, die ganze Dateien annehmen.</li>
+<li><strong>Bilder, die durch Texterkennung erkannt werden, direkt im Textfluss beschreiben.</strong></li>
+<li><strong>Seitenzahlen beim Exportieren von Dokumenten hinzufügen.</strong></li>
+<li><strong>Dokumente im Verlauf speichern.</strong></li>
+<li><strong>Stimme:</strong> die Stimme der Audiodateien von Dokumenten.</li>
+</ul>
+
+<h3>14.6 Video (nur Google Gemini)</h3>
+<ul>
+<li><strong>Größe der Videoabschnitte:</strong> die Länge in Minuten jedes für die Audiobeschreibung gesendeten Videostücks. Kürzer ist genauer; 0 sendet es ganz.</li>
+<li><strong>Liste der Charaktere als ersten Untertitel hinzufügen</strong> und <strong>Fügen Sie am Anfang den KI-Haftungsausschluss hinzu.</strong></li>
+<li><strong>Charaktere verwalten</strong> (Abschnitt 9.4).</li>
+</ul>
+
+<h3>14.7 CAPTCHA</h3>
+<p><strong>Visuellen CAPTCHA-Löser aktivieren</strong> und <strong>Text-CAPTCHA-Methode:</strong> das Objekt unter dem Cursor oder der ganze Bildschirm.</p>
+
+<h3>14.8 Prompts</h3>
+<p>Die Schaltfläche „Prompts verwalten“ (Abschnitt 12) und die Zahl der Prompts.</p>
+
+<h3>14.9 Fortgeschritten</h3>
+<ul>
+<li><strong>Protokollverwaltung:</strong> eine Protokolldatei des Add-ons, standardmäßig ausgeschaltet, mit ihrem Detailgrad und ihrer Aufbewahrungsdauer sowie den Schaltflächen Protokolldatei öffnen, Protokollordner öffnen und Protokolldatei leeren. Nützlich, um ein Problem zu melden.</li>
+<li><strong>Sicherung und Wiederherstellung:</strong> Abschnitt 16.</li>
+</ul>
+
+<h2>15. Die Schnelleinstellungen</h2>
+<p>In der Befehlsebene gehen Pfeil nach oben und Pfeil nach unten durch 25 Einstellungen, und Pfeil nach links und Pfeil nach rechts ändern die, auf der Sie stehen. Jede Änderung wird sofort gespeichert. Das Add-on sagt zum Beispiel „KI-Modell, Aktuell: … Mit den Pfeiltasten nach links und rechts ändern.“</p>
+<ul>
+<li><strong>KI-Anbieter:</strong> nur die Dienste, die einen Schlüssel haben, plus Custom.</li>
+<li><strong>KI-Modell,</strong> dann das Modell jeder Aufgabe: OCR-Modell, STT-Modell, TTS-Modell, Operator-/CAPTCHA-Modell, Video-Modell, Live-Modell. Wenn Sie eines ändern, wird das erweiterte Routing eingeschaltet.</li>
+<li><strong>Stimme.</strong></li>
+<li><strong>Direkte Live-Ausgabe (ohne Fenster)</strong> und <strong>Audio-Ausgabegerät für Gemini Live.</strong></li>
+<li><strong>Quellsprache, Zielsprache</strong> und <strong>Sprache der KI-Antwort.</strong></li>
+<li><strong>Visueller CAPTCHA-Löser</strong> und <strong>Text-CAPTCHA-Methode.</strong></li>
+<li><strong>OCR-Engine.</strong></li>
+<li><strong>Bildbeschreibung bei OCR, Seitenzahlen beim Dokumentexport, Antwort in die Zwischenablage kopieren, Direkte Ausgabe (ohne Chatfenster), Markdown im Chat bereinigen, Chats im Verlauf speichern, Dokumente im Verlauf speichern, Intelligenter Tausch:</strong> ein oder aus.</li>
+</ul>
+
+<h2>16. Sicherung, Daten und Downloads</h2>
+
+<h3>16.1 Sichern und wiederherstellen</h3>
+<p>Auf der Registerkarte Fortgeschritten speichert „Sicherung“ in einer Datei entweder alles (Einstellungen, Beschriftungen, laufende Dokumente, Verlauf, Charaktere) oder nur die Einstellungen. „Wiederherstellen“ bringt sie nach einer Bestätigung zurück und ersetzt die aktuellen Einstellungen und Daten. Die Sicherung enthält Ihre Zugangsschlüssel und Ihr Proxy-Passwort im Klartext: Bewahren Sie sie an einem sicheren Ort auf.</p>
+
+<h3>16.2 Wo die Daten liegen</h3>
+<p>Das Add-on bewahrt seine Daten in einem Ordner BeMyAssistantAccess in der Konfiguration von NVDA auf: Beschriftungen, Verlauf, laufende Dokumente, Charaktere, Gemini-Schlüssel und das Protokoll. Die lokale KI liegt im Windows-Ordner für lokale Anwendungsdaten, unter ReaperAccessible, BeMyAssistantAccess.</p>
+
+<h3>16.3 Downloads</h3>
+<p>Manche Funktionen brauchen ein kostenloses Werkzeug, das einmalig in das Add-on heruntergeladen wird, immer nach Ihrer Erlaubnis: ffmpeg für Synchronisation, Aufnahme und Webcam; das Modell zur Stilleerkennung für den erweiterten Kommentar; die Bibliothek für den Ton des Computers im Beobachter; eSpeak-NG für die Kommentarstimmen.</p>
+
+<h2>17. Updates</h2>
+<p>Das Add-on aktualisiert sich selbst aus dem GitHub-Repository von ReaperAccessible. Wenn eine neue Version existiert, bietet es sie an; nach der Installation muss NVDA neu gestartet werden. Die lokale KI wird nicht mit dem Add-on aktualisiert: Sie wird über den Manager aktualisiert.</p>
+
+<h2>18. Datenschutz</h2>
+<ul>
+<li><strong>Mit einem Online-Dienst</strong> wird das, was Sie fragen, einschließlich Bildern des Bildschirms, Dokumenten und Tönen, an diesen Dienst gesendet. Vermeiden Sie das bei Bildschirmen, die persönliche Informationen zeigen.</li>
+<li><strong>Mit der lokalen KI</strong> werden die Antworten der KI auf Ihrem Computer berechnet. Diese Funktionen nutzen trotzdem das Internet: die OCR-Engine Chrome, wenn Sie sie wählen, die Suche nach Updates, die Gemini-Schlüsselverwaltung, die Downloads von Werkzeugen und Online-Videos.</li>
+<li>Zugangsschlüssel bleiben in der Konfiguration von NVDA, auf Ihrem Computer, und in Ihren Sicherungen.</li>
+</ul>
+
+<h2>19. Danksagung</h2>
+<p>BeMyAssistantAccess wird von ReaperAccessible veröffentlicht. Es beruht auf Vision Assistant Pro von Mahmood Hozhabri, der die meisten seiner Funktionen entworfen hat. Die lokale KI verwendet die Engine llama.cpp und das Modell Qwen 3.5 von Alibaba.</p>
+</body>
+</html>

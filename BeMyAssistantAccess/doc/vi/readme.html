@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>BeMyAssistantAccess</title>
+</head>
+<body>
+<h1>BeMyAssistantAccess</h1>
+
+<p>BeMyAssistantAccess là trợ lý trí tuệ nhân tạo dành cho trình đọc màn hình NVDA. Nó mô tả màn hình hoặc một đối tượng, đọc tài liệu và hình ảnh, dịch, chuyển giọng nói thành văn bản, nhận đọc chính tả, trò chuyện với bạn, đặt tên cho các nút chưa có nhãn, phân tích video, và có thể nhấp chuột, gõ phím thay bạn trong những chương trình mà NVDA không đọc được.</p>
+<p>Nó làm việc theo hai cách, tùy bạn chọn: với một AI chạy hoàn toàn trên máy tính của bạn, hoặc với một dịch vụ trực tuyến như Google Gemini.</p>
+
+<h2>1. Bắt đầu</h2>
+
+<h3>1.1 Chọn AI</h3>
+<p>Mở menu NVDA, rồi Tùy chọn, Cài đặt, và danh mục BeMyAssistantAccess. Ở mục "Dịch vụ AI", có hai lựa chọn chính.</p>
+<ul>
+<li><strong>AI cục bộ, trên máy tính này:</strong> mọi việc diễn ra ngay trên máy của bạn, miễn phí và không giới hạn. Nó cần một máy tính khá mạnh, và được cài riêng, bằng ReaperAccessible Installer Manager. Xem phần 2.</li>
+<li><strong>Google Gemini:</strong> dịch vụ đầy đủ nhất, và là dịch vụ duy nhất cho một số tính năng (phần 2.4). Nó chạy trên mọi máy tính, nhưng gửi những gì bạn yêu cầu cho Google. Google cung cấp một khóa truy cập miễn phí, với số yêu cầu mỗi ngày có giới hạn: kích hoạt nút "Lấy khóa Gemini miễn phí", tạo khóa trên trang của Google, rồi dán vào ô "Khóa truy cập của dịch vụ này".</li>
+</ul>
+<p>Các dịch vụ khác, OpenAI, Mistral AI, Groq, MiniMax và Custom, hoạt động giống như vậy với khóa truy cập riêng của từng dịch vụ. Mỗi dịch vụ giữ khóa riêng của nó: khi đổi dịch vụ, khóa bạn đã nhập cho dịch vụ đó sẽ hiện lại. Bạn có thể nhập nhiều khóa, cách nhau bằng dấu phẩy: khi một khóa đạt giới hạn trong ngày, add-on dùng khóa kế tiếp.</p>
+
+<h3>1.2 Các cài đặt đơn giản khác</h3>
+<ul>
+<li><strong>Ngôn ngữ trả lời:</strong> ngôn ngữ mà AI dùng để trả lời bạn. Lần đầu, đó là ngôn ngữ của NVDA.</li>
+<li><strong>Tự động kiểm tra bản cập nhật:</strong> khi được chọn, add-on tìm bản mới vài giây sau khi NVDA khởi động. Nút "Kiểm tra ngay" làm việc đó ngay lập tức.</li>
+<li><strong>Tùy chọn nâng cao:</strong> mở tất cả các cài đặt còn lại. Xem phần 14.</li>
+</ul>
+
+<h3>1.3 Dùng các lệnh</h3>
+<p>Mọi lệnh đều đi qua một phím duy nhất, nên không bao giờ cản trở các add-on khác:</p>
+<ol>
+<li>Nhấn <strong>NVDA+Control+Shift+V</strong>. Bạn nghe một tiếng bíp và từ "Lệnh".</li>
+<li>Thả ra, rồi nhấn một chữ cái. Ví dụ <strong>O</strong> để mô tả toàn bộ màn hình, hoặc <strong>V</strong> để mô tả đối tượng dưới con trỏ của NVDA.</li>
+</ol>
+<p>Lớp lệnh đóng lại sau một lệnh. Một phím không phải lệnh sẽ phát tiếng bíp thấp và cũng đóng lớp lệnh. Chữ <strong>H</strong> liệt kê mọi lệnh. Phần 3 mô tả chúng.</p>
+<p>Mỗi lệnh cũng có thể có phím tắt riêng: menu NVDA, Tùy chọn, Cử chỉ đầu vào, danh mục BeMyAssistantAccess.</p>
+
+<h3>1.4 Menu</h3>
+<p>Menu NVDA, rồi Công cụ, có một menu con BeMyAssistantAccess gồm: Trình đọc tài liệu, Trò chuyện trực tiếp, Chuyển âm thanh và lồng tiếng đa phương tiện, Phân tích video, Trợ lý trực tiếp, AI Operator (Trực tiếp), Quan sát môi trường, Quản lý khóa API Gemini, Cài đặt, Kiểm tra cập nhật và Tài liệu hướng dẫn.</p>
+
+<h3>1.5 Âm thanh</h3>
+<ul>
+<li>Tiếng bíp cao: một kết quả đã sẵn sàng, hoặc một thao tác đã xong.</li>
+<li>Tiếng bíp vừa: một bản ghi âm hoặc một lần chụp bắt đầu.</li>
+<li>Tiếng bíp thấp: có việc bị lỗi, hoặc phím đó không phải lệnh.</li>
+<li>Hai tiếng bíp khác nhau đánh dấu lúc bắt đầu và lúc kết thúc của Trợ lý trực tiếp và của Quan sát môi trường.</li>
+</ul>
+<p>Chữ <strong>I</strong> cho biết bất cứ lúc nào add-on đang làm gì.</p>
+
+<h3>1.6 Màn hình tối và các màn hình được bảo vệ</h3>
+<p>Các lệnh nhìn vào màn hình sẽ từ chối khi Màn hình tối của NVDA đang bật, và bảo bạn tắt nó bằng NVDA+Control+Escape. Các operator cũng từ chối trên màn hình nền đã khóa và trên các màn hình bảo mật của Windows. Trên những màn hình bảo mật đó, add-on hoàn toàn không làm gì.</p>
+
+<h2>2. AI cục bộ</h2>
+
+<h3>2.1 Cần những gì</h3>
+<ul>
+<li>Ít nhất 30 GB bộ nhớ.</li>
+<li>Một card đồ họa có ít nhất 6 GB bộ nhớ, hãng nào cũng được: NVIDIA, AMD hoặc Intel.</li>
+<li>Khoảng 23 GB dung lượng ổ đĩa.</li>
+</ul>
+<p>AI chiếm khoảng 4 GB trên card đồ họa. Phần còn lại của mô hình nằm trong bộ nhớ của máy tính.</p>
+
+<h3>2.2 Cài đặt</h3>
+<ol>
+<li>Mở ReaperAccessible Installer Manager. Nếu chưa có, hãy chọn "AI cục bộ, trên máy tính này" trong cài đặt của add-on, rồi kích hoạt nút "Cách cài AI cục bộ", sau đó "Tải Manager".</li>
+<li>Trong Manager, chọn loại "NVDA Add-on", rồi "BeMyAssistantAccess, local AI", và cài đặt. Dung lượng tải khoảng 23 GB.</li>
+<li>Trong cài đặt của add-on, chọn "AI cục bộ, trên máy tính này", rồi OK.</li>
+</ol>
+<p>Việc cài đặt từ chối tiếp tục khi BeMyAssistantAccess chưa được cài trong NVDA, hoặc khi máy tính không đủ bộ nhớ. Khi đó nó nói rõ lý do. Trong lúc AI cục bộ được chọn nhưng chưa cài, mọi yêu cầu của add-on đều giải thích cách để có nó.</p>
+<p>Để gỡ bỏ, vào Cài đặt của Windows, Ứng dụng đã cài, "BeMyAssistantAccess - Local AI".</p>
+
+<h3>2.3 Lần chờ đầu tiên</h3>
+<p>Trước câu trả lời đầu tiên, AI phải được nạp vào bộ nhớ: từ vài giây đến khoảng ba mươi giây. Sau đó, nó trả lời nhanh. Nó bắt đầu nạp ngay khi bạn nhấn NVDA+Control+Shift+V, trong lúc bạn chọn chữ cái.</p>
+<p>Cài đặt "Giữ AI cục bộ luôn sẵn sàng", ở đầu phần tùy chọn nâng cao, quyết định lúc nào nó giải phóng bộ nhớ:</p>
+<ul>
+<li><strong>15 phút sau yêu cầu cuối cùng:</strong> mặc định.</li>
+<li><strong>1 giờ sau yêu cầu cuối cùng.</strong></li>
+<li><strong>Luôn luôn, từ khi NVDA khởi động:</strong> không bao giờ phải chờ nữa, nhưng AI chiếm bộ nhớ mọi lúc, cả khi bạn không dùng.</li>
+</ul>
+<p>Nó luôn dừng khi NVDA đóng.</p>
+
+<h3>2.4 Mỗi loại AI làm được những gì</h3>
+<p>AI cục bộ mô tả màn hình và đối tượng, đọc chữ trong hình ảnh và tài liệu, dịch, sửa và tóm tắt văn bản, trò chuyện với bạn, đặt tên cho các nút, và điều khiển chế độ dẫn đường từng bước cùng UI Explorer.</p>
+<p>Những tính năng này cần Google Gemini, hoặc một dịch vụ Custom thuộc loại "Tương thích Gemini": Trợ lý trực tiếp, Live Operator, Quan sát môi trường, phân tích video, phân tích bản ghi màn hình, thuyết minh mô tả âm thanh và lồng tiếng.</p>
+<p>Đọc chính tả thông minh, dịch bằng giọng nói và chuyển các tệp âm thanh thành văn bản cần một AI hiểu được âm thanh: các tính năng này chưa hoạt động với AI cục bộ.</p>
+<p>Đọc to một tài liệu thành tệp âm thanh hoạt động với Google Gemini, OpenAI, MiniMax và một dịch vụ Custom, nhưng không hoạt động với Mistral AI, Groq hay AI cục bộ.</p>
+
+<h2>3. Các lệnh</h2>
+<p>Trước hết nhấn NVDA+Control+Shift+V, rồi một trong các phím này. Các phần tiếp theo giải thích từng tính năng chi tiết.</p>
+
+<h3>3.1 Xem màn hình</h3>
+<ul>
+<li><strong>O:</strong> mô tả toàn bộ màn hình và đọc chữ trên đó.</li>
+<li><strong>V:</strong> mô tả đối tượng dưới con trỏ của NVDA.</li>
+<li><strong>E:</strong> UI Explorer, liệt kê những gì có thể nhấp và nhấp thay bạn. Phần 6.</li>
+<li><strong>L:</strong> đặt tên cho nút hoặc hình ảnh chưa có nhãn dưới con trỏ. Phần 6.</li>
+<li><strong>Shift+L:</strong> quản lý các tên đã đặt, hoặc đặt tên cùng lúc cho mọi thành phần chưa có tên của cửa sổ. Phần 6.</li>
+</ul>
+
+<h3>3.2 Làm thay bạn</h3>
+<ul>
+<li><strong>Shift+A:</strong> chế độ dẫn đường từng bước. Phần 4.</li>
+<li><strong>Control+Shift+A:</strong> AI Operator, tự nối nhiều thao tác lại với nhau. Phần 5.</li>
+<li><strong>Control+A:</strong> Live Operator, bằng giọng nói. Chỉ Google Gemini. Phần 5.</li>
+<li><strong>C:</strong> trình giải CAPTCHA. Phần 5.</li>
+</ul>
+
+<h3>3.3 Văn bản và dịch thuật</h3>
+<ul>
+<li><strong>T:</strong> dịch văn bản đang chọn hoặc đối tượng dưới con trỏ.</li>
+<li><strong>Shift+T:</strong> dịch văn bản trong clipboard.</li>
+<li><strong>R:</strong> một menu để tóm tắt, sửa, dịch hoặc giải thích văn bản đang chọn, hoặc để chạy một trong các Prompt của bạn.</li>
+<li><strong>S:</strong> Đọc chính tả thông minh.</li>
+<li><strong>Control+T:</strong> dịch bằng giọng nói.</li>
+</ul>
+<p>Phần 7 giải thích chúng.</p>
+
+<h3>3.4 Tài liệu và tệp</h3>
+<ul>
+<li><strong>D:</strong> Trình đọc tài liệu. Phần 8.</li>
+<li><strong>F:</strong> đọc hoặc mô tả tệp hình ảnh hay PDF đang chọn trong File Explorer. Phần 8.</li>
+<li><strong>M:</strong> chuyển thành văn bản, dịch hoặc lồng tiếng một tệp âm thanh hoặc video. Phần 9.</li>
+<li><strong>Shift+V:</strong> phân tích video, và tạo thuyết minh mô tả âm thanh. Chỉ Google Gemini. Phần 9.</li>
+<li><strong>Control+V:</strong> ghi lại màn hình, rồi nhờ mô tả bản ghi. Chỉ Google Gemini. Phần 9.</li>
+</ul>
+
+<h3>3.5 Trò chuyện</h3>
+<ul>
+<li><strong>Shift+C:</strong> Trò chuyện trực tiếp với AI. Phần 10.</li>
+<li><strong>Space:</strong> mở lại kết quả cuối cùng. Phần 10.</li>
+<li><strong>Control+H:</strong> Lịch sử. Phần 10.</li>
+<li><strong>Control+L:</strong> Trợ lý trực tiếp. Chỉ Google Gemini. Phần 11.</li>
+<li><strong>Shift+O:</strong> Quan sát môi trường. Chỉ Google Gemini. Phần 11.</li>
+</ul>
+
+<h3>3.6 Các phím khác</h3>
+<ul>
+<li><strong>I:</strong> cho biết add-on đang làm gì.</li>
+<li><strong>H:</strong> danh sách mọi lệnh.</li>
+<li><strong>U:</strong> tìm bản cập nhật.</li>
+<li><strong>Alt+S:</strong> mở cài đặt.</li>
+<li><strong>G:</strong> Quản lý khóa API Gemini. Phần 13.</li>
+<li><strong>Alt+Q:</strong> các khóa Gemini đã dùng hết hạn ngạch hàng ngày. Phần 13.</li>
+<li><strong>Alt+M:</strong> cho biết các mô hình AI được chọn cho từng tác vụ trong định tuyến nâng cao.</li>
+<li><strong>Mũi tên lên và mũi tên xuống, mũi tên trái và mũi tên phải:</strong> các cài đặt nhanh. Phần 15.</li>
+</ul>
+
+<h2>4. Chế độ dẫn đường từng bước</h2>
+<p>Chế độ dẫn đường từng bước nhấp chuột và gõ phím thay bạn ở những nơi NVDA không làm được gì: một chương trình không truy cập được, một cửa sổ làm bằng hình ảnh. Bạn quyết định từng thao tác; AI chỉ tìm xem thành phần đó nằm ở đâu.</p>
+<ol>
+<li>Nhấn NVDA+Control+Shift+V, rồi Shift+A.</li>
+<li>Nói một thao tác, ví dụ "click Online games", "double-click the file Report", hoặc "right-click the icon".</li>
+<li>Để gõ chữ, đặt đoạn chữ giữa dấu ngoặc kép: type "hello" in the Name field.</li>
+<li>Add-on nói "Đang tìm...", rồi hỏi, ví dụ "Nhấp: nút Online games?". Trả lời Có hoặc Không.</li>
+<li>Sau thao tác, nó cho bạn biết màn hình đang hiển thị gì.</li>
+</ol>
+<p>Các quy tắc bảo vệ bạn:</p>
+<ul>
+<li>Add-on chỉ gõ đúng đoạn chữ bạn đặt giữa dấu ngoặc kép. Nếu bạn bảo nó gõ mà không đưa đoạn chữ, nó giải thích cách làm.</li>
+<li>Không có gì xảy ra nếu bạn chưa nói Có.</li>
+<li>Khi không tìm thấy thành phần, nó nói như vậy thay vì nhấp bừa.</li>
+<li>Mật khẩu luôn do chính bạn gõ: chỉ nhờ nó nhấp vào ô, rồi tự gõ hoặc dán mật khẩu.</li>
+<li>Mỗi lần một thao tác: Shift+A không làm gì khi một thao tác đang chạy.</li>
+</ul>
+<p>Chế độ dẫn đường hoạt động với AI cục bộ và với các dịch vụ trực tuyến, và cũng trong các chương trình chạy với quyền quản trị, vì add-on hoạt động từ bên trong NVDA.</p>
+
+<h2>5. Các operator và trình giải CAPTCHA</h2>
+
+<h3>5.1 AI Operator (Control+Shift+A)</h3>
+<p>AI Operator, vốn đến từ Vision Assistant Pro, tự làm trọn một tác vụ: bạn mô tả nó trong một câu, và AI nhìn màn hình rồi nối tới mười thao tác, như nhấp, nhấp đúp, nhấp phải, gõ chữ, cuộn, kéo hoặc nhấn phím. Trước mỗi thao tác, nó nói ra việc sắp làm, nhưng không xin xác nhận. Nhấn lại Control+Shift+A để dừng nó.</p>
+<p>Khi xong, câu trả lời của nó mở trong một cửa sổ trò chuyện, nơi bạn có thể ra chỉ thị mới. Nó kém an toàn hơn chế độ dẫn đường từng bước, nhất là với AI cục bộ, và mỗi bước gửi một ảnh chụp màn hình cho AI.</p>
+
+<h3>5.2 Live Operator (Control+A)</h3>
+<p>Live Operator bắt đầu một cuộc trò chuyện Trợ lý trực tiếp, trong đó AI có thể thao tác trên máy tính của bạn trong lúc bạn nói chuyện với nó (chỉ Google Gemini). Hãy yêu cầu bằng lời bình thường, ví dụ "mở thư mục Downloads". Nó làm từng bước, tối đa mười bước cho mỗi yêu cầu, và nói to từng bước. Nó báo khi tác vụ xong, bị hủy, cần bạn thao tác, hoặc đã chạm giới hạn.</p>
+<ul>
+<li>Nút "Dừng hành động của người vận hành" của cửa sổ Trợ lý trực tiếp hủy tác vụ hiện tại mà không kết thúc cuộc trò chuyện.</li>
+<li>Nhấn lại Control+A để kết thúc phiên.</li>
+<li>Webcam không dùng được khi operator đang bật.</li>
+<li>Khi một CAPTCHA xuất hiện, trước hết nó thử trình giải CAPTCHA; nếu không được, nó nhờ bạn hoàn thành thử thách có hỗ trợ truy cập.</li>
+</ul>
+
+<h3>5.3 Trình giải CAPTCHA (C)</h3>
+<p>Trình giải CAPTCHA đọc bài kiểm tra "Tôi không phải người máy" hiển thị trên màn hình.</p>
+<ul>
+<li><strong>CAPTCHA là chữ hoặc số:</strong> nó đọc, nói "Captcha:" rồi đến đáp án, và gõ đáp án vào.</li>
+<li><strong>CAPTCHA là hình ảnh,</strong> như một lưới hình ảnh hoặc một ô để đánh dấu: nó cố giải bằng cách nhấp chuột, tối đa 15 lần thử, và cho biết khi giải xong hoặc khi bỏ cuộc. Nhấn lại C để dừng.</li>
+</ul>
+<p>Trong tab CAPTCHA của phần tùy chọn nâng cao, bạn có thể tắt trình giải hình ảnh, và chọn CAPTCHA chữ được đọc từ đối tượng dưới con trỏ hay từ toàn bộ màn hình.</p>
+
+<h2>6. Xem màn hình</h2>
+
+<h3>6.1 Mô tả (O và V)</h3>
+<p>O mô tả toàn bộ màn hình và đọc chữ trên đó; V chỉ mô tả đối tượng dưới con trỏ của NVDA. Câu trả lời mở trong một cửa sổ, nơi bạn có thể hỏi thêm về cùng bức hình, hoặc được đọc thẳng nếu "Đầu ra trực tiếp" đang bật (phần 14).</p>
+
+<h3>6.2 UI Explorer (E)</h3>
+<p>AI liệt kê mọi thứ có thể nhấp trên màn hình, không kể thanh tác vụ và các cửa sổ của chính NVDA. Trong danh sách "Chọn một thành phần", chọn một mục, rồi:</p>
+<ul>
+<li><strong>Nhấp chuột:</strong> add-on nhấp vào nó, rồi nhìn lại màn hình hai giây sau, để bạn có thể tiếp tục.</li>
+<li><strong>Thêm nhãn:</strong> gán tên đó cho thành phần, để NVDA đọc nó từ nay về sau.</li>
+<li><strong>Hủy:</strong> đóng explorer. Nhấn lại E cũng dừng nó.</li>
+</ul>
+
+<h3>6.3 Nhãn (L)</h3>
+<p>Trên một nút hoặc hình ảnh chưa có tên, L hỏi AI đó là gì, và đặt cho nó một tên vĩnh viễn: NVDA sẽ luôn đọc nó bằng tên đó trong chương trình đó. Tên vẫn còn khi cửa sổ đổi kích thước, khi bạn chuyển màn hình, và khi chương trình được cập nhật. Nếu thành phần đã có tên, add-on cho biết. Nhãn không hoạt động trong trình duyệt web.</p>
+
+<h3>6.4 Trình quản lý nhãn (Shift+L)</h3>
+<p>Nếu chương trình đã có nhãn, Shift+L mở Trình quản lý nhãn: một danh sách các tên đã đặt, kèm loại của chúng. Bạn có thể đánh dấu các mục, rồi "Xóa các mục đã chọn"; chọn một mục và "Đổi tên"; "Chọn tất cả" hoặc "Bỏ chọn tất cả" (Control+A trong danh sách đánh dấu tất cả); và "Quét lại" để tìm lại các thành phần chưa có tên.</p>
+<p>Nếu chương trình chưa có nhãn nào, Shift+L đặt tên cùng lúc cho mọi thành phần chưa có tên của cửa sổ: nút, hộp kiểm, liên kết, tab, mục danh sách, biểu tượng và các thành phần khác.</p>
+
+<h2>7. Văn bản, dịch thuật và đọc chính tả</h2>
+
+<h3>7.1 Dịch (T và Shift+T)</h3>
+<p>T dịch văn bản đang chọn. Nếu không có gì được chọn, nó lấy chữ của ô bạn đang đứng, hoặc của đối tượng dưới con trỏ của NVDA. Shift+T dịch clipboard. Bản dịch được đọc lên, rồi hiển thị trong một cửa sổ, trừ khi "Đầu ra trực tiếp" đang bật.</p>
+<p>Add-on dịch sang ngôn ngữ "Đích". Với <strong>Chuyển đổi thông minh</strong>, một văn bản đã ở ngôn ngữ Đích sẽ được dịch sang ngôn ngữ "Nguồn", hoặc sang tiếng Anh nếu nguồn là "Tự động phát hiện". Mã lệnh và địa chỉ web không được dịch. Các ngôn ngữ này được đặt trong tab Ngôn ngữ dịch, hoặc bằng các cài đặt nhanh.</p>
+
+<h3>7.2 Menu văn bản (R)</h3>
+<p>R mở một menu cho văn bản đang chọn: Tóm tắt, Sửa ngữ pháp, Sửa ngữ pháp &amp; Dịch, Giải thích, rồi từng Prompt của bạn (phần 12). Nếu một prompt cần tệp, một hộp chọn tệp mở ra trước. Câu trả lời mở trong một cửa sổ, nơi bạn có thể hỏi thêm, hoặc theo lựa chọn đã đặt cho prompt đó.</p>
+
+<h3>7.3 Đọc chính tả thông minh (S) và dịch bằng giọng nói (Control+T)</h3>
+<ol>
+<li>Nhấn S: một tiếng bíp và "Đang nghe". Hãy nói.</li>
+<li>Nhấn lại S: "Đang gõ". Văn bản được viết vào chỗ con trỏ của bạn.</li>
+</ol>
+<p>Control+T hoạt động tương tự, nhưng văn bản được dịch từ ngôn ngữ Nguồn sang ngôn ngữ Đích trước khi được viết ra. Add-on dùng micrô mặc định của Windows. Nói chưa đến một giây sẽ cho ra "Không phát hiện thấy giọng nói". Văn bản được viết qua clipboard, và nó sẽ thay nội dung clipboard. Hai tính năng này cần một dịch vụ trực tuyến hiểu được âm thanh.</p>
+
+<h2>8. Trình đọc tài liệu và các tệp</h2>
+
+<h3>8.1 Mở một tài liệu (D)</h3>
+<p>D mở, theo thứ tự ưu tiên này:</p>
+<ol>
+<li>các tệp đang chọn trong File Explorer, được đọc cùng nhau như một tài liệu duy nhất: PDF, hình ảnh, TIFF, ảnh iPhone (HEIC), tệp văn bản và HTML;</li>
+<li>nếu không có, một hình ảnh trong clipboard;</li>
+<li>nếu không có, danh sách tài liệu gần đây, với các nút Mở, Xóa, Xóa tất cả, Mở tệp (Control+O) và Đóng. Nếu chưa có lịch sử, hộp chọn tệp mở thẳng.</li>
+</ol>
+<p>D trong lúc đang đọc sẽ dừng việc đọc. Tệp văn bản và HTML mở ngay, không qua AI. Khi một lần đọc trước bị gián đoạn, add-on đề nghị tiếp tục từ chỗ đã dừng, kể cả sau khi khởi động lại.</p>
+
+<h3>8.2 Cửa sổ tùy chọn</h3>
+<p>Trước khi đọc một tài liệu nhiều trang, cửa sổ Tùy chọn cho biết tổng số trang và đưa ra:</p>
+<ul>
+<li><strong>Từ và Đến:</strong> các trang cần đọc.</li>
+<li><strong>Dịch đầu ra,</strong> kèm ngôn ngữ đích.</li>
+<li><strong>Mô tả hình ảnh trực tiếp trong quá trình OCR:</strong> các hình trong tài liệu được mô tả ngay trong văn bản.</li>
+<li><strong>Nén các trang PDF trước khi xử lý:</strong> làm các trang quét lớn nhẹ hơn trước khi gửi đi.</li>
+</ul>
+<p>Rồi nhấn Bắt đầu. Các trang được đọc ở chế độ nền, vài trang cùng lúc; bạn có thể đóng cửa sổ và quay lại sau. Add-on thông báo từng trang đã sẵn sàng. Một tài liệu đã đọc rồi sẽ mở ngay, không phải đọc lại.</p>
+
+<h3>8.3 Cửa sổ đọc</h3>
+<ul>
+<li><strong>Control+Page Down và Control+Page Up,</strong> hoặc các nút Tiếp và Trước: đổi trang. Mũi tên xuống ở dòng cuối và mũi tên lên ở dòng đầu cũng đổi trang.</li>
+<li><strong>Đến trang:</strong> danh sách các số trang.</li>
+<li><strong>Hỏi AI (Alt+A):</strong> đặt một câu hỏi về tài liệu.</li>
+<li><strong>Quét lại bằng AI (Alt+R):</strong> đọc lại trang hiện tại, hoặc tất cả các trang, bằng AI.</li>
+<li><strong>Thử lại:</strong> xuất hiện khi một số trang bị lỗi do dịch vụ bận, và chỉ đọc lại những trang đó.</li>
+<li><strong>Tạo âm thanh (Alt+G):</strong> lưu trang hiện tại, hoặc tất cả các trang, thành tệp MP3 hoặc WAV, với giọng đã chọn. Chỉ có khi dịch vụ biết nói.</li>
+<li><strong>Xem định dạng:</strong> hiển thị toàn bộ tài liệu dưới dạng văn bản có định dạng, kèm các đề mục.</li>
+<li><strong>Lưu (Alt+S hoặc Control+S):</strong> lưu văn bản thành tệp văn bản hoặc HTML, kèm số trang nếu cài đặt đó đang bật. Nếu thiếu một số trang, add-on báo trước.</li>
+<li><strong>Đóng:</strong> vị trí bạn đang đọc được giữ trong Lịch sử.</li>
+</ul>
+
+<h3>8.4 Ba công cụ OCR</h3>
+<p>Công cụ OCR, trong tab Trình đọc tài liệu, quyết định cách đọc chữ của hình ảnh và các trang quét:</p>
+<ul>
+<li><strong>Chrome (Nhanh):</strong> nhanh, nhưng gửi các trang đến một dịch vụ của Google, dù bạn đã chọn AI nào, và dịch chúng bằng Google Dịch. Đây là mặc định với các dịch vụ trực tuyến.</li>
+<li><strong>AI (Nâng cao):</strong> dùng AI đã chọn, giữ nguyên bố cục, các liên kết và phần mô tả hình ảnh. Chọn AI cục bộ sẽ tự động chọn công cụ này, để không có gì rời khỏi máy tính của bạn.</li>
+<li><strong>None (Lớp trích xuất văn bản):</strong> chỉ đọc phần chữ đã có sẵn trong một PDF có thể tìm kiếm, không đọc hình ảnh nào.</li>
+</ul>
+
+<h3>8.5 Đọc hoặc mô tả một tệp (F)</h3>
+<p>F hoạt động trên tệp hình ảnh hoặc PDF đang chọn trong File Explorer, hoặc trên một hình ảnh trong clipboard, không cần hộp chọn tệp. Với một hình ảnh đơn lẻ dùng công cụ AI, nó hỏi bạn muốn trích xuất chữ hay mô tả hình. Một PDF nhiều trang hiển thị cửa sổ tùy chọn. Câu trả lời mở trong một cửa sổ trò chuyện. Nhấn lại F để dừng.</p>
+
+<h2>9. Đa phương tiện và video</h2>
+
+<h3>9.1 Chuyển thành văn bản và lồng tiếng (M)</h3>
+<p>M hoạt động trên tệp âm thanh hoặc video đang chọn trong File Explorer, hoặc mở một hộp chọn tệp. Ba lựa chọn:</p>
+<ul>
+<li><strong>Chuyển thành văn bản (Ngôn ngữ gốc):</strong> viết ra những gì được nói.</li>
+<li><strong>Chuyển thành văn bản và dịch (Ngôn ngữ đích):</strong> viết ra bằng một ngôn ngữ khác.</li>
+<li><strong>Lồng tiếng và dịch (Ngôn ngữ đích):</strong> tạo một tệp MP3 trong đó lời nói được thay bằng một giọng đọc ở ngôn ngữ đã chọn. Chỉ Google Gemini.</li>
+</ul>
+<p>Lồng tiếng cần công cụ ffmpeg miễn phí: add-on đề nghị tải nó một lần, khoảng 70 MB.</p>
+
+<h3>9.2 Phân tích video (Shift+V)</h3>
+<p>Shift+V hoạt động trên video đang chọn trong File Explorer, hoặc trên địa chỉ video đã sao chép vào clipboard: YouTube, Instagram, Twitter (X) hoặc TikTok. Nếu không, cửa sổ Phân tích video mở ra, nơi bạn dán một địa chỉ hoặc duyệt tìm một tệp. Hai thao tác:</p>
+<ul>
+<li><strong>Phân tích video chung:</strong> mô tả đầy đủ các cảnh, các nhân vật và những gì xảy ra, kèm tóm tắt âm thanh.</li>
+<li><strong>Tạo thuyết minh mô tả âm thanh (Tệp SRT):</strong> một tệp các mô tả có mốc thời gian, đặt vào các quãng lặng giữa các đoạn hội thoại.</li>
+</ul>
+<p>Với phần thuyết minh mô tả âm thanh, bạn có thể thêm danh sách nhân vật làm phụ đề đầu tiên, thêm lời cảnh báo rằng văn bản đến từ AI, và chọn một bộ phim bộ hoặc một bộ phim để add-on nhận ra các nhân vật của nó (phần 9.4). Với video YouTube, nó hỏi độ dài video tính bằng phút. Một video đã tải lên vẫn dùng được trong 48 giờ: bạn có thể tạo các tệp khác từ nó mà không phải tải lên lại.</p>
+
+<h3>9.3 Thuyết minh mô tả âm thanh và lời dẫn</h3>
+<p>Cửa sổ thuyết minh mô tả âm thanh hiển thị tiến trình và văn bản. Sau đó:</p>
+<ul>
+<li><strong>Lưu SRT:</strong> lưu tệp phụ đề. Hãy đặt cùng tên với video, trong cùng thư mục, và trình phát đa phương tiện của bạn sẽ có thể đọc nó cho trình đọc màn hình của bạn.</li>
+<li><strong>Tạo lời thuyết minh đồng bộ (MP3):</strong> biến các mô tả thành giọng nói, với giọng bạn chọn: eSpeak, một giọng Windows, hoặc các giọng Gemini. Có thể tải eSpeak-NG ngay từ cửa sổ.</li>
+<li><strong>Tạo lại</strong> và <strong>Thử lại:</strong> bắt đầu lại, hoặc tiếp tục sau một lỗi tạm thời.</li>
+</ul>
+<p>Với một tệp video trên máy tính của bạn, có hai kiểu lời dẫn:</p>
+<ul>
+<li><strong>Tiêu chuẩn:</strong> giọng đọc được trộn lên trên âm thanh của video. Add-on hỏi có hạ nhỏ âm thanh nền trong lúc đọc các mô tả hay không.</li>
+<li><strong>Mở rộng:</strong> âm thanh của video tạm dừng trong mỗi lần mô tả, để bạn không bỏ lỡ gì. Add-on dùng một mô hình nhỏ phát hiện quãng lặng, tải một lần với sự cho phép của bạn, khoảng 70 MB.</li>
+</ul>
+<p>Với video trực tuyến, tệp MP3 chỉ chứa giọng đọc của các mô tả.</p>
+
+<h3>9.4 Từ điển nhân vật</h3>
+<p>Với mỗi bộ phim bộ hoặc bộ phim, add-on có thể giữ một danh sách nhân vật, để tên của họ luôn giống nhau từ tập này sang tập khác. Mở nó bằng "Quản lý nhân vật" trong tab Video hoặc trong cửa sổ video. Bạn có thể thêm một nhân vật kèm ghi chú, chẳng hạn vai trò của họ; sửa bằng F2; xóa bằng Delete; nhập một danh sách, mỗi dòng một tên; hoặc xóa cả một bộ phim bộ. AI tự thêm những nhân vật mà nó phát hiện, và chỉ mô tả mỗi người trong lần đầu họ xuất hiện.</p>
+
+<h3>9.5 Ghi màn hình (Control+V)</h3>
+<p>Control+V bắt đầu ghi cửa sổ đang hoạt động, lặng lẽ và không có âm thanh. Nhấn lại Control+V để dừng: add-on cho biết độ dài, rồi nhờ mô tả bản ghi. Nó cần ffmpeg, và add-on đề nghị tải về.</p>
+
+<h2>10. Trò chuyện, kết quả và Lịch sử</h2>
+
+<h3>10.1 Trò chuyện trực tiếp (Shift+C)</h3>
+<p>Một cuộc trò chuyện với AI. Gõ vào ô "Hỏi" và nhấn Enter để gửi; Shift+Enter thêm một dòng. Nút "Đính kèm tệp" thêm hình ảnh, tệp PDF hoặc âm thanh vào câu hỏi của bạn. Các nút khác: Xem định dạng, Lưu nội dung (câu trả lời cuối, dạng HTML), Lưu trò chuyện (toàn bộ cuộc trò chuyện, dạng văn bản) và Đóng.</p>
+<p>Trong mọi cửa sổ trò chuyện: Alt+Mũi tên xuống đọc tin nhắn kế tiếp, Alt+Mũi tên lên đọc tin nhắn trước, và Alt+C sao chép tin nhắn. Add-on cho biết khi bạn đến tin nhắn đầu tiên hoặc cuối cùng.</p>
+
+<h3>10.2 Kết quả cuối cùng (Space)</h3>
+<p>Space mở lại câu trả lời cuối của AI: mô tả, bản dịch, menu văn bản, cuộc trò chuyện về tài liệu, operator, hoặc cuộc trò chuyện của Trợ lý trực tiếp.</p>
+
+<h3>10.3 Lịch sử (Control+H)</h3>
+<p>Lịch sử giữ các cuộc trò chuyện và tài liệu của bạn, tối đa 100 mục. Danh sách "Hiển thị" lọc chúng: Tất cả, Cuộc trò chuyện hoặc Tài liệu.</p>
+<ul>
+<li><strong>Mở</strong> (hoặc Enter): một cuộc trò chuyện mở lại cùng các tệp của nó, một tài liệu mở ở trang bạn đang đọc.</li>
+<li><strong>Xóa</strong> (hoặc phím Delete): xóa một mục. Với tài liệu, bạn chọn chỉ xóa khỏi Lịch sử, hay xóa cả phần văn bản đã đọc, để lần mở sau nó được đọc lại.</li>
+<li><strong>Xóa tất cả:</strong> làm trống danh sách đang hiển thị.</li>
+</ul>
+<p>Các cài đặt "Lưu các cuộc trò chuyện vào lịch sử" và "Lưu tài liệu vào lịch sử" quyết định những gì được giữ lại.</p>
+
+<h2>11. Trợ lý trực tiếp và Quan sát môi trường</h2>
+<p>Hai tính năng này cần Google Gemini.</p>
+
+<h3>11.1 Trợ lý trực tiếp (Control+L)</h3>
+<p>Một cuộc trò chuyện bằng giọng nói: bạn nói vào micrô, AI nhìn thấy màn hình của bạn và trả lời bằng tiếng nói. Hãy hỏi chẳng hạn "tôi đang nhìn vào cái gì?" hoặc "đọc cho tôi đoạn thứ ba". Nhấn lại Control+L để kết thúc.</p>
+<p>Cửa sổ Trợ lý trực tiếp có:</p>
+<ul>
+<li><strong>Giọng nói TTS:</strong> giọng của AI. Đổi giọng sẽ khởi động lại cuộc trò chuyện.</li>
+<li><strong>Độ sâu suy nghĩ:</strong> AI suy nghĩ nhiều đến đâu trước khi trả lời, với các mô hình cho phép điều đó.</li>
+<li><strong>Thiết bị âm thanh:</strong> card âm thanh mà giọng nói được phát ra.</li>
+<li><strong>Nhấn để nói (Push to Talk):</strong> micrô vẫn đóng cho đến khi bạn giữ phím đã chọn trong cài đặt. Hữu ích ở nơi ồn ào.</li>
+<li><strong>Dùng Webcam:</strong> gửi hình từ camera thay cho màn hình, để hỏi về đồ vật, giấy tờ in hoặc xung quanh bạn. Nó cần ffmpeg. Nút "Cài đặt quyền riêng tư của máy ảnh" mở cài đặt của Windows nếu camera bị chặn.</li>
+<li><strong>Kết thúc</strong> hoặc <strong>Bắt đầu.</strong> Escape đóng cửa sổ và kết thúc cuộc trò chuyện.</li>
+</ul>
+
+<h3>11.2 Quan sát môi trường (Shift+O)</h3>
+<p>Quan sát môi trường làm việc ở chế độ nền, không trò chuyện: nó báo những gì thay đổi và im lặng khi không có gì xảy ra. Shift+O mở cửa sổ của nó; nhấn lại Shift+O để dừng. Ba chế độ:</p>
+<ul>
+<li><strong>Chỉ dịch âm thanh:</strong> dịch những gì nó nghe thấy, từ micrô hoặc từ âm thanh của máy tính. Âm thanh của máy tính cần một thư viện nhỏ, tải một lần với sự cho phép của bạn.</li>
+<li><strong>Chỉ theo dõi màn hình:</strong> cho bạn biết những gì thay đổi trên màn hình. Nó chỉ gửi ảnh khi màn hình thực sự đã thay đổi.</li>
+<li><strong>Chỉ theo dõi webcam:</strong> mở Trợ lý trực tiếp với camera, để bạn có thể hỏi nó thấy gì.</li>
+</ul>
+<p>"Mô tả việc tôi đang làm" giúp các báo cáo hữu ích hơn. Với màn hình: Chung, xem phim hoặc phim bộ, xem phát trực tiếp hoặc bài thuyết trình, theo dõi một cuộc họp hoặc cuộc gọi trực tuyến, hoặc chơi trò chơi. Với camera: Chung, kiểm tra diện mạo hoặc lớp trang điểm của bạn, kiểm tra màu sắc hoặc phối đồ, đọc tài liệu hoặc nhãn dán, đọc hạn sử dụng hoặc nhãn thực phẩm, đọc hộp thuốc, đọc chữ viết tay hoặc biểu mẫu đã điền, màn hình của một thiết bị, đèn báo, nhận diện đồ vật, hoặc quan sát xung quanh. Bạn cũng có thể gõ nội dung riêng của mình. Các báo cáo có thể ngắn gọn, một câu, hoặc chi tiết. Cửa sổ nhớ các lựa chọn gần nhất của bạn.</p>
+
+<h2>12. Prompt</h2>
+<p>Prompt là những chỉ dẫn đưa cho AI. Mở Quản lý prompt từ phần tùy chọn nâng cao, tab Prompt, "Quản lý Prompt".</p>
+
+<h3>12.1 Các prompt của add-on</h3>
+<p>Tab "Prompt mặc định" liệt kê chỉ dẫn của từng tính năng, và bạn có thể thay đổi: tóm tắt, sửa lỗi, dịch, mô tả, video, chuyển thành văn bản, đọc chính tả, OCR, CAPTCHA, các kiểu báo cáo và ngữ cảnh của bộ quan sát. Một danh sách "Bộ lọc" hiển thị từng nhóm một. "Áp dụng cho mục đã chọn" lưu thay đổi, "Đặt lại mục đã chọn" hoặc "Đặt lại tất cả" đưa văn bản gốc trở lại. Một số prompt là cần thiết cho một tính năng: add-on cảnh báo bạn trước khi bạn thay đổi chúng.</p>
+
+<h3>12.2 Các prompt của riêng bạn</h3>
+<p>Tab "Prompt tùy chỉnh" chứa các yêu cầu riêng của bạn, theo thứ tự trong menu R: Thêm, Sửa, Xóa, Di chuyển lên, Di chuyển xuống. Với mỗi prompt:</p>
+<ul>
+<li><strong>Tên</strong> và <strong>Văn bản prompt.</strong></li>
+<li><strong>Phím tắt:</strong> nhấn các phím để ghi lại; Backspace xóa. Một chữ cái, một chữ số hoặc F1 đến F12 hoạt động trong lớp lệnh, và ở mọi nơi với NVDA+Control+Shift cùng phím đó. Một tổ hợp phím, như Alt+1 hoặc Control+Shift+1, hoạt động ở mọi nơi đúng như khi nhấn. Một phím đã được dùng bởi một lệnh, hoặc bởi một prompt khác, sẽ bị từ chối.</li>
+<li><strong>Hành vi phản hồi:</strong> theo cài đặt chung, sao chép câu trả lời vào clipboard, đọc thẳng, làm cả hai, hoặc luôn mở cửa sổ trò chuyện.</li>
+</ul>
+
+<h3>12.3 Biến</h3>
+<p>Một prompt có thể chứa những từ đặt trong ngoặc, sẽ được thay thế khi chạy. Nút "Hướng dẫn về biến" liệt kê chúng.</p>
+<ul>
+<li><strong>Văn bản:</strong> [selection] văn bản đang chọn, [clipboard] clipboard, [text] chữ của ô bạn đang đứng (không bao giờ là mật khẩu), [currentURL] địa chỉ của trang trong Chrome, Edge hoặc Firefox, [clipboard_image] hình ảnh trong clipboard.</li>
+<li><strong>Màn hình:</strong> [screen_obj] đối tượng dưới con trỏ, [screen_fg_obj] cửa sổ đang hoạt động, [screen_full] toàn bộ màn hình.</li>
+<li><strong>Tệp:</strong> [file_ocr] yêu cầu một hình ảnh hoặc PDF để đọc, [file_read] một tài liệu, [file_audio] một tệp âm thanh.</li>
+<li><strong>Ngôn ngữ:</strong> {target_lang}, {source_lang}, {response_lang}, {swap_target} và {swap_instruction}.</li>
+<li><strong>Quan sát môi trường:</strong> [ambient_screen], [ambient_webcam] hoặc [ambient_audio] khởi động bộ quan sát, và cùng phím tắt đó sẽ dừng nó; [mic] hoặc [loopback] chọn âm thanh, [brief] hoặc [detailed] chọn kiểu, và [lang:fr], chẳng hạn, chọn ngôn ngữ.</li>
+</ul>
+<p>Add-on từ chối một prompt có các biến không đi cùng nhau được, và nói rõ lý do.</p>
+
+<h2>13. Các khóa Google Gemini</h2>
+
+<h3>13.1 Quản lý khóa API Gemini (G)</h3>
+<p>Nó tạo khóa Gemini cho bạn, với Google Gemini là dịch vụ. Lần đầu, "Đăng nhập và mở trình duyệt" mở trang đăng nhập của Google trong trình duyệt của bạn: hãy đăng nhập, và đánh dấu hộp cấp quyền mà Google hiển thị. Sau đó:</p>
+<ul>
+<li><strong>Dự án mới và khóa,</strong> hoặc <strong>Tạo khóa cho dự án được chọn:</strong> khóa được tạo, sao chép vào clipboard, và add-on đề nghị dùng nó.</li>
+<li><strong>Sao chép khóa được chọn, Sao chép khóa tạo gần nhất, Dùng trong BeMyAssistantAccess.</strong></li>
+<li><strong>Xóa khóa:</strong> xóa nó tại Google, sau khi xác nhận, và gỡ nó khỏi add-on.</li>
+<li><strong>Xuất các khóa đã lưu:</strong> lưu chúng vào một tệp.</li>
+<li><strong>Đăng xuất:</strong> quên phiên đăng nhập Google.</li>
+</ul>
+<p>Các khóa đã tạo được lưu trên máy tính của bạn dưới dạng văn bản thường: hãy bảo vệ quyền truy cập vào máy.</p>
+
+<h3>13.2 Các khóa đã hết (Alt+Q)</h3>
+<p>Alt+Q hiển thị các khóa Gemini đã dùng hết hạn ngạch hàng ngày, và khi nào chúng dùng lại được. Khi một khóa đã hết, add-on tự chuyển sang khóa kế tiếp.</p>
+
+<h2>14. Các cài đặt</h2>
+<p>Các cài đặt đơn giản được mô tả ở phần 1. Nút "Tùy chọn nâng cao" mở một cửa sổ có, ở đầu, cài đặt "Giữ AI cục bộ luôn sẵn sàng" (phần 2.3), rồi đến các tab. Một số tab chỉ xuất hiện với một số dịch vụ. Xác nhận bằng OK, hoặc hủy bằng Hủy.</p>
+<p>AI cục bộ xuất hiện ở đó như dịch vụ "Custom": hãy để nguyên các cài đặt của nó.</p>
+
+<h3>14.1 Kết nối</h3>
+<ul>
+<li><strong>Nhà cung cấp</strong> và <strong>Khóa API,</strong> với "Hiển thị Khóa API" để đọc nó.</li>
+<li><strong>Lấy khóa API Gemini:</strong> trình quản lý khóa ở phần 13.</li>
+<li><strong>Tải mô hình</strong> và <strong>Mô hình AI:</strong> danh sách các mô hình của dịch vụ; gõ vào danh sách để lọc.</li>
+<li><strong>Định tuyến mô hình nâng cao:</strong> một mô hình khác nhau cho từng tác vụ: OCR và thị giác, giọng nói thành văn bản, văn bản thành giọng nói, AI Operator và CAPTCHA, phân tích video, Trợ lý trực tiếp.</li>
+<li><strong>Cài đặt nhà cung cấp tùy chỉnh,</strong> cho dịch vụ Custom: địa chỉ và loại dịch vụ ("Tương thích OpenAI" hoặc "Tương thích Gemini"), tên mô hình, tải tệp lên, và các địa chỉ riêng cho từng tác vụ. Nút "Thiết lập AI cục bộ (Local AI)" dành cho các chương trình bạn tự chạy, như Ollama hoặc LM Studio; AI cục bộ riêng của add-on không cần đến nó.</li>
+<li><strong>Proxy:</strong> Tự động phát hiện, SOCKS5, HTTP hoặc Proxy ngược (Reverse Proxy), cùng địa chỉ, tên người dùng và mật khẩu. "Kiểm tra kết nối Proxy" kiểm tra nó và cho biết độ trễ.</li>
+<li><strong>Kiểm tra cập nhật khi khởi động.</strong></li>
+<li><strong>Làm sạch Markdown trong trò chuyện:</strong> bỏ các ký hiệu định dạng khỏi câu trả lời.</li>
+<li><strong>Sao chép phản hồi của AI vào clipboard.</strong></li>
+<li><strong>Lưu các cuộc trò chuyện vào lịch sử.</strong></li>
+<li><strong>Đầu ra trực tiếp (Không có cửa sổ trò chuyện):</strong> câu trả lời được đọc lên thay vì mở cửa sổ.</li>
+</ul>
+
+<h3>14.2 Trợ lý trực tiếp (chỉ Google Gemini)</h3>
+<ul>
+<li><strong>Thiết bị âm thanh đầu ra:</strong> card âm thanh của Trợ lý trực tiếp và của bộ quan sát.</li>
+<li><strong>Khoảng thời gian chụp khung hình:</strong> bao lâu, từ 1 đến 10 giây, thì một ảnh chụp màn hình được gửi đi.</li>
+<li><strong>Độ sâu suy nghĩ:</strong> từ nhanh nhất đến sâu nhất.</li>
+<li><strong>Đầu ra trực tiếp (Không mở cửa sổ):</strong> Trợ lý trực tiếp làm việc mà không có cửa sổ.</li>
+<li><strong>Nhấn để nói (Push to Talk)</strong> và phím của nó: nhấn các phím để ghi lại, ví dụ F12 hoặc Control+F12. Một phím bổ trợ giữ riêng một mình cũng dùng được.</li>
+<li><strong>Chế độ quan sát, Nguồn âm thanh</strong> và <strong>Kiểu báo cáo</strong> của Quan sát môi trường.</li>
+</ul>
+
+<h3>14.3 Hành vi của AI (các dịch vụ khác ngoài Google Gemini)</h3>
+<p><strong>Độ sáng tạo:</strong> từ 0, rất ổn định, đến 2, rất tự do. Nó không ảnh hưởng đến OCR hay dịch thuật.</p>
+
+<h3>14.4 Ngôn ngữ dịch</h3>
+<p><strong>Nguồn</strong> (hoặc Tự động phát hiện), <strong>Đích,</strong> <strong>Phản hồi của AI,</strong> và <strong>Chuyển đổi thông minh</strong> (phần 7.1).</p>
+
+<h3>14.5 Trình đọc tài liệu</h3>
+<ul>
+<li><strong>Công cụ OCR</strong> (phần 8.4).</li>
+<li><strong>Kích thước lô OCR:</strong> số trang gửi cùng lúc, cho các dịch vụ chấp nhận cả tệp.</li>
+<li><strong>Mô tả hình ảnh trực tiếp trong quá trình OCR tài liệu.</strong></li>
+<li><strong>Kèm theo số trang khi xuất tài liệu.</strong></li>
+<li><strong>Lưu tài liệu vào lịch sử.</strong></li>
+<li><strong>Giọng nói TTS:</strong> giọng đọc của các tệp âm thanh của tài liệu.</li>
+</ul>
+
+<h3>14.6 Video (chỉ Google Gemini)</h3>
+<ul>
+<li><strong>Kích thước đoạn video:</strong> độ dài, tính bằng phút, của mỗi đoạn video gửi đi cho phần thuyết minh mô tả âm thanh. Ngắn hơn thì chính xác hơn; 0 là gửi nguyên cả video.</li>
+<li><strong>Thêm danh sách nhân vật làm phụ đề đầu tiên</strong> và <strong>Thêm thông báo từ chối trách nhiệm AI ở phần đầu.</strong></li>
+<li><strong>Quản lý nhân vật</strong> (phần 9.4).</li>
+</ul>
+
+<h3>14.7 CAPTCHA</h3>
+<p><strong>Bật bộ giải CAPTCHA hình ảnh,</strong> và <strong>Phương thức giải CAPTCHA văn bản:</strong> đối tượng dưới con trỏ hoặc toàn bộ màn hình.</p>
+
+<h3>14.8 Prompt</h3>
+<p>Nút "Quản lý Prompt" (phần 12), và số lượng prompt.</p>
+
+<h3>14.9 Nâng cao</h3>
+<ul>
+<li><strong>Quản lý nhật ký (Log):</strong> một tệp nhật ký của add-on, mặc định tắt, với mức độ chi tiết và thời gian lưu giữ, cùng các nút Mở tệp log, Mở thư mục log và Xóa tệp log. Hữu ích để báo lỗi.</li>
+<li><strong>Sao lưu và phục hồi:</strong> phần 16.</li>
+</ul>
+
+<h2>15. Các cài đặt nhanh</h2>
+<p>Trong lớp lệnh, mũi tên lên và mũi tên xuống di chuyển qua 25 cài đặt, còn mũi tên trái và mũi tên phải đổi cài đặt bạn đang đứng. Mỗi thay đổi được lưu ngay. Add-on thông báo chẳng hạn "Mô hình AI, Hiện tại: … Dùng mũi tên trái và phải để thay đổi."</p>
+<ul>
+<li><strong>Nhà cung cấp AI:</strong> chỉ những dịch vụ có khóa, cộng với Custom.</li>
+<li><strong>Mô hình AI,</strong> rồi mô hình của từng tác vụ: Mô hình OCR, Mô hình STT, Mô hình TTS, Mô hình Operator / CAPTCHA, Mô hình video, Mô hình trực tiếp. Đổi một mô hình sẽ bật định tuyến nâng cao.</li>
+<li><strong>Giọng nói TTS.</strong></li>
+<li><strong>Đầu ra trực tiếp Live (Không có cửa sổ)</strong> và <strong>Thiết bị âm thanh đầu ra Gemini Live.</strong></li>
+<li><strong>Ngôn ngữ nguồn, Ngôn ngữ đích</strong> và <strong>Ngôn ngữ phản hồi của AI.</strong></li>
+<li><strong>Giải CAPTCHA hình ảnh</strong> và <strong>Phương thức giải CAPTCHA văn bản.</strong></li>
+<li><strong>Công cụ OCR.</strong></li>
+<li><strong>Mô tả hình ảnh trong OCR, Số trang khi xuất tài liệu, Sao chép phản hồi của AI vào clipboard, Đầu ra trực tiếp (Không có cửa sổ trò chuyện), Làm sạch Markdown trong trò chuyện, Lưu các cuộc trò chuyện vào lịch sử, Lưu tài liệu vào lịch sử, Chuyển đổi thông minh:</strong> bật hoặc tắt.</li>
+</ul>
+
+<h2>16. Sao lưu, dữ liệu và các tệp tải về</h2>
+
+<h3>16.1 Sao lưu và phục hồi</h3>
+<p>Trong tab Nâng cao, "Sao lưu" lưu vào một tệp hoặc toàn bộ (cài đặt, nhãn, các tài liệu đang xử lý, Lịch sử, nhân vật), hoặc chỉ riêng cài đặt. "Phục hồi" đưa nó trở lại, sau khi xác nhận, và thay thế các cài đặt và dữ liệu hiện tại. Bản sao lưu chứa các khóa truy cập và mật khẩu proxy của bạn dưới dạng văn bản thường: hãy giữ nó ở nơi an toàn.</p>
+
+<h3>16.2 Dữ liệu nằm ở đâu</h3>
+<p>Add-on giữ dữ liệu của mình trong một thư mục BeMyAssistantAccess của cấu hình NVDA: nhãn, Lịch sử, các tài liệu đang xử lý, nhân vật, các khóa Gemini và nhật ký. AI cục bộ nằm trong thư mục dữ liệu ứng dụng cục bộ của Windows, dưới ReaperAccessible, BeMyAssistantAccess.</p>
+
+<h3>16.3 Các tệp tải về</h3>
+<p>Một số tính năng cần một công cụ miễn phí, tải một lần vào add-on, luôn sau khi bạn cho phép: ffmpeg cho lồng tiếng, ghi màn hình và webcam; mô hình phát hiện quãng lặng cho lời dẫn mở rộng; thư viện cho âm thanh của máy tính trong bộ quan sát; eSpeak-NG cho các giọng đọc lời dẫn.</p>
+
+<h2>17. Cập nhật</h2>
+<p>Add-on tự cập nhật từ kho GitHub của ReaperAccessible. Khi có phiên bản mới, nó đề nghị cài; sau khi cài xong, phải khởi động lại NVDA. AI cục bộ không được cập nhật cùng add-on: nó được cập nhật qua Manager.</p>
+
+<h2>18. Quyền riêng tư</h2>
+<ul>
+<li><strong>Với một dịch vụ trực tuyến,</strong> những gì bạn yêu cầu, gồm cả ảnh chụp màn hình, tài liệu và âm thanh, được gửi đến dịch vụ đó. Hãy tránh dùng với những màn hình hiển thị thông tin cá nhân.</li>
+<li><strong>Với AI cục bộ,</strong> các câu trả lời của AI được tính ngay trên máy tính của bạn. Những tính năng này vẫn dùng Internet: công cụ OCR Chrome nếu bạn chọn, việc kiểm tra cập nhật, trình quản lý khóa Gemini, việc tải các công cụ, và các video trực tuyến.</li>
+<li>Các khóa truy cập nằm trong cấu hình của NVDA, trên máy tính của bạn, và trong các bản sao lưu của bạn.</li>
+</ul>
+
+<h2>19. Ghi công</h2>
+<p>BeMyAssistantAccess được ReaperAccessible phát hành. Nó dựa trên Vision Assistant Pro của Mahmood Hozhabri, người đã thiết kế phần lớn các tính năng của nó. AI cục bộ dùng công cụ llama.cpp và mô hình Qwen 3.5 của Alibaba.</p>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>BeMyAssistantAccess</title>
+</head>
+<body>
+<h1>BeMyAssistantAccess</h1>
+
+<p>BeMyAssistantAccess is an artificial intelligence assistant for the NVDA screen reader. It describes the screen or an object, reads documents and images, translates, transcribes, takes dictation, chats with you, names unlabeled buttons, analyzes videos, and can click and type for you in programs that NVDA cannot read.</p>
+<p>It works in two ways, as you choose: with an AI that runs entirely on your computer, or with an online service such as Google Gemini.</p>
+
+<h2>1. Getting started</h2>
+
+<h3>1.1 Choosing the AI</h3>
+<p>Open the NVDA menu, then Preferences, Settings, and the BeMyAssistantAccess category. In "AI service", there are two main choices.</p>
+<ul>
+<li><strong>Local AI, on this computer:</strong> everything happens at home, free and without limits. It needs a fairly powerful computer, and is installed separately, with the ReaperAccessible Installer Manager. See section 2.</li>
+<li><strong>Google Gemini:</strong> the most complete service, and the only one for some features (section 2.4). It works on any computer, but it sends what you ask to Google. Google offers a free access key, with a limited number of requests a day: activate the button "Get a free Gemini key", create the key on Google's page, then paste it in the field "Access key of this service".</li>
+</ul>
+<p>The other services, OpenAI, Mistral AI, Groq, MiniMax and Custom, work the same way with their own access key. Each service keeps its own key: changing the service brings back the key you had given it. You can give several keys separated by commas: when one reaches its daily limit, the add-on uses the next one.</p>
+
+<h3>1.2 The other simple settings</h3>
+<ul>
+<li><strong>Language of the answers:</strong> the language the AI answers you in. The first time, it is NVDA's language.</li>
+<li><strong>Check for updates automatically:</strong> when checked, the add-on looks for a new version a few seconds after NVDA starts. The button "Check now" does it at once.</li>
+<li><strong>Advanced options:</strong> opens every other setting. See section 14.</li>
+</ul>
+
+<h3>1.3 Using the commands</h3>
+<p>All the commands go through a single key, so they never get in the way of other add-ons:</p>
+<ol>
+<li>Press <strong>NVDA+Control+Shift+V</strong>. You hear a beep and the word "Commands".</li>
+<li>Release, then press a single letter. For example <strong>O</strong> to describe the whole screen, or <strong>V</strong> to describe the object under NVDA's cursor.</li>
+</ol>
+<p>The layer closes after one command. A key that is not a command gives a low beep and closes it too. The letter <strong>H</strong> lists every command. Section 3 describes them.</p>
+<p>Each command can also get its own shortcut: NVDA menu, Preferences, Input gestures, category BeMyAssistantAccess.</p>
+
+<h3>1.4 The menu</h3>
+<p>The NVDA menu, then Tools, holds a BeMyAssistantAccess submenu with: Document Reader, Direct Chat, Media Transcription and Dubbing, Analyze Video, Live Assistant, AI Operator (Live), Ambient Observer, Gemini API Key Manager, Settings, Check for Update and Documentation.</p>
+
+<h3>1.5 The sounds</h3>
+<ul>
+<li>A high beep: a result is ready, or an action is done.</li>
+<li>A medium beep: a recording or a capture starts.</li>
+<li>A low beep: something failed, or the key is not a command.</li>
+<li>Two different beeps mark the start and the end of the Live Assistant and of the Ambient Observer.</li>
+</ul>
+<p>The letter <strong>I</strong> says at any time what the add-on is doing.</p>
+
+<h3>1.6 Screen Curtain and protected screens</h3>
+<p>The commands that look at the screen refuse while NVDA's Screen Curtain is on, and say to turn it off with NVDA+Control+Escape. The operators also refuse on a locked desktop and on Windows' secure screens. On those secure screens, the add-on does nothing at all.</p>
+
+<h2>2. The local AI</h2>
+
+<h3>2.1 What it needs</h3>
+<ul>
+<li>At least 30 GB of memory.</li>
+<li>A graphics card with at least 6 GB of memory, of any brand: NVIDIA, AMD or Intel.</li>
+<li>About 23 GB of disk space.</li>
+</ul>
+<p>The AI takes about 4 GB on the graphics card. The rest of the model goes in the computer's memory.</p>
+
+<h3>2.2 Installing it</h3>
+<ol>
+<li>Open the ReaperAccessible Installer Manager. If you do not have it, choose "Local AI, on this computer" in the settings of the add-on, then activate the button "How to install the local AI", then "Download the Manager".</li>
+<li>In the Manager, choose the type "NVDA Add-on", then "BeMyAssistantAccess, local AI", and install it. The download is about 23 GB.</li>
+<li>In the settings of the add-on, choose "Local AI, on this computer", then OK.</li>
+</ol>
+<p>The installation refuses to go ahead when BeMyAssistantAccess is not installed in NVDA, or when the computer does not have enough memory. It then says why. While the local AI is chosen but not installed, every request of the add-on explains how to get it.</p>
+<p>To remove it, go to Windows Settings, Installed apps, "BeMyAssistantAccess - Local AI".</p>
+
+<h3>2.3 The first wait</h3>
+<p>Before its first answer, the AI must load into memory: from a few seconds to about thirty seconds. After that, it answers quickly. It starts loading as soon as you press NVDA+Control+Shift+V, while you choose the letter.</p>
+<p>The setting "Keep the local AI ready", at the top of the advanced options, decides when it frees the memory:</p>
+<ul>
+<li><strong>15 minutes after the last request:</strong> the default.</li>
+<li><strong>1 hour after the last request.</strong></li>
+<li><strong>Always, from the start of NVDA:</strong> never a wait again, but the AI uses the memory all the time, even when you are not using it.</li>
+</ul>
+<p>It always stops when NVDA closes.</p>
+
+<h3>2.4 What works with each kind of AI</h3>
+<p>The local AI describes the screen and objects, reads the text in images and documents, translates, corrects and summarizes text, chats with you, names buttons, and drives the step-by-step pilot and the UI Explorer.</p>
+<p>These features need Google Gemini, or a Custom service of the "Gemini Compatible" type: the Live Assistant, the Live Operator, the Ambient Observer, video analysis, screen recording analysis, audio description and dubbing.</p>
+<p>Smart Dictation, voice translation and the transcription of audio files need an AI that understands sound: they do not work with the local AI yet.</p>
+<p>Reading a document aloud as an audio file works with Google Gemini, OpenAI, MiniMax and a Custom service, but not with Mistral AI, Groq or the local AI.</p>
+
+<h2>3. The commands</h2>
+<p>First press NVDA+Control+Shift+V, then one of these keys. The sections that follow explain each feature in detail.</p>
+
+<h3>3.1 Seeing the screen</h3>
+<ul>
+<li><strong>O:</strong> describes the whole screen and reads its text.</li>
+<li><strong>V:</strong> describes the object under NVDA's cursor.</li>
+<li><strong>E:</strong> the UI Explorer, which lists what can be clicked and clicks it for you. Section 6.</li>
+<li><strong>L:</strong> gives a name to the unlabeled button or image under the cursor. Section 6.</li>
+<li><strong>Shift+L:</strong> manages the names already given, or names at once every unnamed element of the window. Section 6.</li>
+</ul>
+
+<h3>3.2 Acting for you</h3>
+<ul>
+<li><strong>Shift+A:</strong> the step-by-step pilot. Section 4.</li>
+<li><strong>Control+Shift+A:</strong> the AI Operator, which chains several actions on its own. Section 5.</li>
+<li><strong>Control+A:</strong> the Live Operator, by voice. Google Gemini only. Section 5.</li>
+<li><strong>C:</strong> the CAPTCHA solver. Section 5.</li>
+</ul>
+
+<h3>3.3 Text and translation</h3>
+<ul>
+<li><strong>T:</strong> translates the selected text or the object under the cursor.</li>
+<li><strong>Shift+T:</strong> translates the text in the clipboard.</li>
+<li><strong>R:</strong> a menu to summarize, correct, translate or explain the selected text, or to run one of your Prompts.</li>
+<li><strong>S:</strong> Smart Dictation.</li>
+<li><strong>Control+T:</strong> voice translation.</li>
+</ul>
+<p>Section 7 explains them.</p>
+
+<h3>3.4 Documents and files</h3>
+<ul>
+<li><strong>D:</strong> the Document Reader. Section 8.</li>
+<li><strong>F:</strong> reads or describes the image or PDF file selected in File Explorer. Section 8.</li>
+<li><strong>M:</strong> transcribes, translates or dubs an audio or video file. Section 9.</li>
+<li><strong>Shift+V:</strong> analyzes a video, and makes audio descriptions. Google Gemini only. Section 9.</li>
+<li><strong>Control+V:</strong> records the screen, then has the recording described. Google Gemini only. Section 9.</li>
+</ul>
+
+<h3>3.5 Chatting</h3>
+<ul>
+<li><strong>Shift+C:</strong> Direct Chat with the AI. Section 10.</li>
+<li><strong>Space:</strong> reopens the last result. Section 10.</li>
+<li><strong>Control+H:</strong> the History. Section 10.</li>
+<li><strong>Control+L:</strong> the Live Assistant. Google Gemini only. Section 11.</li>
+<li><strong>Shift+O:</strong> the Ambient Observer. Google Gemini only. Section 11.</li>
+</ul>
+
+<h3>3.6 The other keys</h3>
+<ul>
+<li><strong>I:</strong> says what the add-on is doing.</li>
+<li><strong>H:</strong> the list of every command.</li>
+<li><strong>U:</strong> looks for an update.</li>
+<li><strong>Alt+S:</strong> opens the settings.</li>
+<li><strong>G:</strong> the Gemini API Key Manager. Section 13.</li>
+<li><strong>Alt+Q:</strong> the Gemini keys that have used up their daily quota. Section 13.</li>
+<li><strong>Alt+M:</strong> says which AI models are chosen for each task in the advanced routing.</li>
+<li><strong>Up and Down Arrows, Left and Right Arrows:</strong> the quick settings. Section 15.</li>
+</ul>
+
+<h2>4. The step-by-step pilot</h2>
+<p>The step-by-step pilot clicks and types for you where NVDA can do nothing: an inaccessible program, a window made of pictures. You decide each action; the AI only finds where the element is.</p>
+<ol>
+<li>Press NVDA+Control+Shift+V, then Shift+A.</li>
+<li>Say one action, for example "click Online games", "double-click the file Report", or "right-click the icon".</li>
+<li>To type, put the text between quotes: type "hello" in the Name field.</li>
+<li>The add-on says "Looking", then asks for example "Click: Online games button?". Answer Yes or No.</li>
+<li>After the action, it tells you what the screen shows now.</li>
+</ol>
+<p>The rules that protect you:</p>
+<ul>
+<li>The add-on only ever types the text you put between quotes. If you ask it to type without giving a text, it explains how to do it.</li>
+<li>Nothing happens without your Yes.</li>
+<li>When the element is not found, it says so instead of clicking at random.</li>
+<li>You always type passwords yourself: only ask it to click in the field, then type or paste your password.</li>
+<li>One action at a time: Shift+A does nothing while an action is in progress.</li>
+</ul>
+<p>The pilot works with the local AI and with online services, and also in programs run as administrator, because the add-on acts from inside NVDA.</p>
+
+<h2>5. The operators and the CAPTCHA solver</h2>
+
+<h3>5.1 AI Operator (Control+Shift+A)</h3>
+<p>The AI Operator, which comes from Vision Assistant Pro, does a whole task on its own: you describe it in a sentence, and the AI looks at the screen and chains up to ten actions, such as clicking, double-clicking, right-clicking, typing, scrolling, dragging or pressing keys. It says what it does before each action, but does not ask for confirmation. Press Control+Shift+A again to stop it.</p>
+<p>When it finishes, its answer opens in a chat window, where you can give it a new instruction. It is less safe than the step-by-step pilot, especially with the local AI, and each step sends a picture of the screen to the AI.</p>
+
+<h3>5.2 Live Operator (Control+A)</h3>
+<p>The Live Operator starts a Live Assistant conversation in which the AI can act on your computer while you talk to it (Google Gemini only). Ask it something in plain language, for example "open the Downloads folder". It works step by step, up to ten steps per request, and says each step aloud. It tells you when the task is done, cancelled, needs your action, or has reached its limit.</p>
+<ul>
+<li>The button "Stop operator action" of the Live Assistant window cancels the current task without ending the conversation.</li>
+<li>Press Control+A again to end the session.</li>
+<li>The webcam is not available while the operator is on.</li>
+<li>When a CAPTCHA appears, it first tries the CAPTCHA solver; otherwise it asks you to complete the accessible challenge.</li>
+</ul>
+
+<h3>5.3 CAPTCHA solver (C)</h3>
+<p>The CAPTCHA solver reads the "I am not a robot" test shown on the screen.</p>
+<ul>
+<li><strong>A text or number CAPTCHA:</strong> it reads it, says "Captcha:" followed by the answer, and types the answer in.</li>
+<li><strong>A picture CAPTCHA,</strong> such as a grid of images or a box to tick: it tries to solve it by clicking, up to 15 attempts, and says when it is solved or when it gives up. Press C again to stop it.</li>
+</ul>
+<p>In the CAPTCHA tab of the advanced options, you can turn off the picture solver, and choose whether text CAPTCHAs are read from the object under the cursor or from the whole screen.</p>
+
+<h2>6. Seeing the screen</h2>
+
+<h3>6.1 Describing (O and V)</h3>
+<p>O describes the whole screen and reads its text; V describes only the object under NVDA's cursor. The answer opens in a window where you can ask follow-up questions about the same picture, or is spoken directly if "Direct Output" is on (section 14).</p>
+
+<h3>6.2 UI Explorer (E)</h3>
+<p>The AI lists everything that can be clicked on the screen, without the taskbar and NVDA's own windows. In the list "Select an element", choose one, then:</p>
+<ul>
+<li><strong>Click:</strong> the add-on clicks it, then looks at the screen again two seconds later, so you can keep going.</li>
+<li><strong>Add Label:</strong> gives that name to the element, so NVDA announces it from now on.</li>
+<li><strong>Cancel:</strong> closes the explorer. E again also stops it.</li>
+</ul>
+
+<h3>6.3 Labels (L)</h3>
+<p>On a button or an image without a name, L asks the AI what it is, and gives it a permanent name: NVDA will always announce it by that name in that program. The name survives when the window changes size, when you change screens, and when the program is updated. If the element already has a name, the add-on says so. Labels do not work in web browsers.</p>
+
+<h3>6.4 Label Manager (Shift+L)</h3>
+<p>If the program already has labels, Shift+L opens the Label Manager: a list of the names given, with their type. You can check items, then "Delete Checked"; select one and "Rename" it; "Select All" or "Deselect All" (Control+A in the list checks everything); and "Rescan" to look again for unnamed elements.</p>
+<p>If the program has no label yet, Shift+L names at once every unnamed element of the window: buttons, checkboxes, links, tabs, list items, icons and others.</p>
+
+<h2>7. Text, translation and dictation</h2>
+
+<h3>7.1 Translating (T and Shift+T)</h3>
+<p>T translates the selected text. Without a selection, it takes the text of the field you are in, or of the object under NVDA's cursor. Shift+T translates the clipboard. The translation is spoken, then shown in a window, unless "Direct Output" is on.</p>
+<p>The add-on translates into the "Target" language. With <strong>Smart Swap</strong>, a text that is already in the Target language is translated into the "Source" language instead, or into English if the source is "Auto-detect". Code and web addresses are not translated. These languages are set in the Translation Languages tab, or with the quick settings.</p>
+
+<h3>7.2 The text menu (R)</h3>
+<p>R opens a menu for the selected text: Summarize, Fix Grammar, Fix Grammar &amp; Translate, Explain, then each of your Prompts (section 12). If a prompt needs a file, a file chooser opens first. The answer opens in a window where you can ask more questions, or follows the choice made for that prompt.</p>
+
+<h3>7.3 Smart Dictation (S) and voice translation (Control+T)</h3>
+<ol>
+<li>Press S: a beep and "Listening". Speak.</li>
+<li>Press S again: "Typing". The text is written where your cursor is.</li>
+</ol>
+<p>Control+T works the same way, but the text is translated from the Source language into the Target language before it is written. The add-on uses Windows' default microphone. Less than a second of speech gives "No speech detected". The text is written through the clipboard, which it replaces. These two features need an online service that understands sound.</p>
+
+<h2>8. The Document Reader and files</h2>
+
+<h3>8.1 Opening a document (D)</h3>
+<p>D opens, in this order of priority:</p>
+<ol>
+<li>the files selected in File Explorer, read together as a single document: PDF, images, TIFF, iPhone photos (HEIC), text and HTML files;</li>
+<li>otherwise, an image in the clipboard;</li>
+<li>otherwise, the list of recent documents, with the buttons Open, Delete, Clear All, Open File (Control+O) and Close. Without history, the file chooser opens directly.</li>
+</ol>
+<p>D during a reading stops it. Text and HTML files open at once, without the AI. When an earlier reading was interrupted, the add-on offers to resume where it stopped, even after a restart.</p>
+
+<h3>8.2 The options window</h3>
+<p>Before reading a document of several pages, the Options window shows the total number of pages and offers:</p>
+<ul>
+<li><strong>From and To:</strong> the pages to read.</li>
+<li><strong>Translate Output,</strong> with the target language.</li>
+<li><strong>Describe images inline during OCR:</strong> the pictures of the document are described in the text.</li>
+<li><strong>Compress PDF pages before processing:</strong> makes large scanned pages lighter before sending them.</li>
+</ul>
+<p>Then press Start. The pages are read in the background, several at a time; you can close the window and come back later. The add-on announces each page that is ready. A document already read reopens at once, without being read again.</p>
+
+<h3>8.3 The reading window</h3>
+<ul>
+<li><strong>Control+Page Down and Control+Page Up,</strong> or the buttons Next and Previous: change the page. Down Arrow on the last line and Up Arrow on the first line also change the page.</li>
+<li><strong>Go to:</strong> the list of page numbers.</li>
+<li><strong>Ask AI (Alt+A):</strong> asks a question about the document.</li>
+<li><strong>Re-scan with AI (Alt+R):</strong> reads the current page, or all the pages, again with the AI.</li>
+<li><strong>Try Again:</strong> appears when some pages failed because the service was busy, and reads only those again.</li>
+<li><strong>Generate Audio (Alt+G):</strong> saves the current page, or all the pages, as an MP3 or WAV file, with the chosen voice. Present only when the service can speak.</li>
+<li><strong>View Formatted:</strong> shows the whole document as formatted text, with headings.</li>
+<li><strong>Save (Alt+S or Control+S):</strong> saves the text as a text or HTML file, with the page numbers if that setting is on. If some pages are missing, the add-on says so first.</li>
+<li><strong>Close:</strong> the place where you were is kept in the History.</li>
+</ul>
+
+<h3>8.4 The three OCR engines</h3>
+<p>The OCR engine, in the Document Reader tab, decides how the text of images and scanned pages is read:</p>
+<ul>
+<li><strong>Chrome (Fast):</strong> fast, but sends the pages to a Google service, whatever AI you have chosen, and translates them with Google Translate. It is the default with the online services.</li>
+<li><strong>AI (Advanced):</strong> uses the chosen AI, keeps the layout, the links and the descriptions of the pictures. Choosing the local AI selects this engine automatically, so that nothing leaves your computer.</li>
+<li><strong>None (Extract Text Layer):</strong> only reads the text already present in a searchable PDF, without reading any image.</li>
+</ul>
+
+<h3>8.5 Reading or describing a file (F)</h3>
+<p>F works on the image or PDF file selected in File Explorer, or on an image in the clipboard, without a file chooser. For a single image with the AI engine, it asks whether to extract the text or describe the image. A PDF of several pages shows the options window. The answer opens in a chat window. F again stops it.</p>
+
+<h2>9. Media and video</h2>
+
+<h3>9.1 Transcription and dubbing (M)</h3>
+<p>M works on the audio or video file selected in File Explorer, or opens a file chooser. Three choices:</p>
+<ul>
+<li><strong>Transcribe (Original Language):</strong> writes what is said.</li>
+<li><strong>Transcribe and Translate (Target Language):</strong> writes it in another language.</li>
+<li><strong>Dub and Translate (Target Language):</strong> makes an MP3 file where the speech is replaced by a voice in the chosen language. Google Gemini only.</li>
+</ul>
+<p>Dubbing needs the free ffmpeg tool: the add-on offers to download it once, about 70 MB.</p>
+
+<h3>9.2 Video analysis (Shift+V)</h3>
+<p>Shift+V works on the video selected in File Explorer, or on a video address copied to the clipboard: YouTube, Instagram, Twitter (X) or TikTok. Otherwise, the Analyze Video window opens, where you paste an address or browse for a file. Two actions:</p>
+<ul>
+<li><strong>General Video Analysis:</strong> a full description of the scenes, the people and what happens, with a summary of the sound.</li>
+<li><strong>Generate Audio Description (SRT File):</strong> a file of timed descriptions, placed in the silences between the dialogues.</li>
+</ul>
+<p>For the audio description, you can add the list of characters as the first subtitle, add a warning that the text comes from an AI, and choose a series or a film so the add-on recognizes its characters (section 9.4). For a YouTube video, it asks the length of the video in minutes. An uploaded video stays available for 48 hours: you can make other files from it without uploading it again.</p>
+
+<h3>9.3 Audio description and narration</h3>
+<p>The audio description window shows the progress and the text. Then:</p>
+<ul>
+<li><strong>Save SRT:</strong> saves the subtitle file. Give it the same name as the video, in the same folder, and your media player will be able to read it to your screen reader.</li>
+<li><strong>Generate Synced Narration (MP3):</strong> turns the descriptions into speech, with a voice of your choice: eSpeak, a Windows voice, or the Gemini voices. eSpeak-NG can be downloaded from the window.</li>
+<li><strong>Regenerate</strong> and <strong>Try Again:</strong> start again, or continue after a temporary error.</li>
+</ul>
+<p>For a video file on your computer, two kinds of narration:</p>
+<ul>
+<li><strong>Standard:</strong> the voice is mixed over the sound of the video. The add-on asks whether to lower the background sound during the descriptions.</li>
+<li><strong>Extended:</strong> the video's sound pauses during each description, so you miss nothing. The add-on uses a small silence detection model, downloaded once with your permission, about 70 MB.</li>
+</ul>
+<p>For an online video, the MP3 only holds the voice of the descriptions.</p>
+
+<h3>9.4 Character dictionary</h3>
+<p>For each series or film, the add-on can keep a list of characters, so their names stay the same from one episode to the next. Open it with "Manage Characters" in the Video tab or in the video window. You can add a character with a note, such as its role; edit it with F2; remove it with Delete; import a list, one name per line; or delete a whole series. The AI adds the characters it discovers by itself, and describes each one only the first time it appears.</p>
+
+<h3>9.5 Screen recording (Control+V)</h3>
+<p>Control+V starts recording the active window, silently and without sound. Press Control+V again to stop: the add-on says the length, then has the recording described. It needs ffmpeg, which the add-on offers to download.</p>
+
+<h2>10. Chatting, results and the History</h2>
+
+<h3>10.1 Direct Chat (Shift+C)</h3>
+<p>A chat with the AI. Type in the "Ask" field and press Enter to send; Shift+Enter adds a line. The button "Attach File" adds pictures, PDF files or sounds to your question. The other buttons: View Formatted, Save Content (the last answer, as HTML), Save Chat (the whole chat, as text) and Close.</p>
+<p>In every chat window: Alt+Down Arrow reads the next message, Alt+Up Arrow the previous one, and Alt+C copies the message. The add-on says when you reach the first or the last message.</p>
+
+<h3>10.2 The last result (Space)</h3>
+<p>Space reopens the last answer of the AI: description, translation, text menu, document chat, operator, or the Live Assistant conversation.</p>
+
+<h3>10.3 The History (Control+H)</h3>
+<p>The History keeps your chats and your documents, up to 100. The "Show" list filters them: All, Chats or Documents.</p>
+<ul>
+<li><strong>Open</strong> (or Enter): a chat reopens with its files, a document at the page where you were.</li>
+<li><strong>Delete</strong> (or the Delete key): removes an item. For a document, you choose to remove it from the History only, or also the text already read, so the next opening reads it again.</li>
+<li><strong>Clear All:</strong> empties the list shown.</li>
+</ul>
+<p>The settings "Save chats to history" and "Save documents to history" decide what is kept.</p>
+
+<h2>11. Live Assistant and Ambient Observer</h2>
+<p>These two features need Google Gemini.</p>
+
+<h3>11.1 Live Assistant (Control+L)</h3>
+<p>A spoken conversation: you speak into the microphone, the AI sees your screen and answers aloud. Ask for example "what am I looking at?" or "read me the third paragraph". Press Control+L again to end.</p>
+<p>The Live Assistant window offers:</p>
+<ul>
+<li><strong>TTS Voice:</strong> the voice of the AI. Changing it restarts the conversation.</li>
+<li><strong>Thinking Depth:</strong> how much the AI thinks before answering, for the models that allow it.</li>
+<li><strong>Audio Device:</strong> the sound card the voice goes to.</li>
+<li><strong>Push to Talk:</strong> the microphone stays closed until you hold down the key chosen in the settings. Useful in a noisy place.</li>
+<li><strong>Use Webcam:</strong> sends the camera instead of the screen, to ask about objects, printed papers or your surroundings. It needs ffmpeg. The button "Camera Privacy Settings" opens Windows' settings if the camera is blocked.</li>
+<li><strong>End</strong> or <strong>Start.</strong> Escape closes the window and ends the conversation.</li>
+</ul>
+
+<h3>11.2 Ambient Observer (Shift+O)</h3>
+<p>The Ambient Observer works in the background, without a conversation: it reports what changes and stays silent when nothing happens. Shift+O opens its window; Shift+O again stops it. Three modes:</p>
+<ul>
+<li><strong>Audio Translation Only:</strong> translates what it hears, from the microphone or from the computer's sound. The computer's sound needs a small library, downloaded once with your permission.</li>
+<li><strong>Screen Watcher Only:</strong> tells you what changes on the screen. It sends a picture only when the screen has really changed.</li>
+<li><strong>Webcam Watcher Only:</strong> opens the Live Assistant with the camera, so you can ask what it sees.</li>
+</ul>
+<p>"About what I am doing" makes the reports more useful. For the screen: General, watching a film or series, a live stream or presentation, an online meeting or call, or a game. For the camera: General, checking your appearance or your makeup, a colour or matching clothes, reading a document or label, an expiry date or food label, a medicine box, handwriting or a filled form, a device display, indicator lights, identifying an object, or looking around. You can also type your own text. The reports can be brief, one sentence, or detailed. The window remembers your last choices.</p>
+
+<h2>12. Prompts</h2>
+<p>Prompts are the instructions given to the AI. Open the Prompt Manager from the advanced options, Prompts tab, "Manage Prompts".</p>
+
+<h3>12.1 The add-on's prompts</h3>
+<p>The "Default Prompts" tab lists the instructions of each feature, which you can change: summary, correction, translation, description, video, transcription, dictation, OCR, CAPTCHA, the observer's report styles and contexts. A "Filter" list shows one family at a time. "Apply to Selected" saves the change, "Reset Selected" or "Reset All" brings back the original text. Some prompts are needed by a feature: the add-on warns you before you change them.</p>
+
+<h3>12.2 Your own prompts</h3>
+<p>The "Custom Prompts" tab holds your own requests, in the order of the R menu: Add, Edit, Remove, Move Up, Move Down. For each prompt:</p>
+<ul>
+<li><strong>Name</strong> and <strong>Prompt Text.</strong></li>
+<li><strong>Shortcut Key:</strong> press the keys to record them; Backspace clears. A single letter, digit or F1 to F12 works in the command layer, and everywhere with NVDA+Control+Shift and that key. A combination, such as Alt+1 or Control+Shift+1, works everywhere as typed. A key already used by a command, or by another prompt, is refused.</li>
+<li><strong>Feedback behavior:</strong> follow the general setting, copy the answer to the clipboard, speak it directly, do both, or always open a chat window.</li>
+</ul>
+
+<h3>12.3 Variables</h3>
+<p>A prompt can contain words in brackets, replaced when it runs. The button "Variables Guide" lists them.</p>
+<ul>
+<li><strong>Text:</strong> [selection] the selected text, [clipboard] the clipboard, [text] the text of the field you are in (never a password), [currentURL] the address of the page in Chrome, Edge or Firefox, [clipboard_image] the image in the clipboard.</li>
+<li><strong>Screen:</strong> [screen_obj] the object under the cursor, [screen_fg_obj] the active window, [screen_full] the whole screen.</li>
+<li><strong>Files:</strong> [file_ocr] asks for an image or PDF to read, [file_read] a document, [file_audio] a sound file.</li>
+<li><strong>Languages:</strong> {target_lang}, {source_lang}, {response_lang}, {swap_target} and {swap_instruction}.</li>
+<li><strong>Ambient Observer:</strong> [ambient_screen], [ambient_webcam] or [ambient_audio] start the observer, which the same shortcut stops; [mic] or [loopback] choose the sound, [brief] or [detailed] the style, and [lang:fr], for example, the language.</li>
+</ul>
+<p>The add-on refuses a prompt whose variables do not go together, and says why.</p>
+
+<h2>13. Google Gemini keys</h2>
+
+<h3>13.1 Gemini API Key Manager (G)</h3>
+<p>It creates Gemini keys for you, with Google Gemini as the service. The first time, "Sign In and Open Browser" opens Google's sign-in page in your browser: sign in, and tick the permission box Google shows. Then:</p>
+<ul>
+<li><strong>New Project and Key,</strong> or <strong>Create Key for Selected Project:</strong> the key is created, copied to the clipboard, and the add-on offers to use it.</li>
+<li><strong>Copy Selected Key, Copy Last Created Key, Use in BeMyAssistantAccess.</strong></li>
+<li><strong>Delete Key:</strong> deletes it at Google, after confirmation, and removes it from the add-on.</li>
+<li><strong>Export Saved Keys:</strong> saves them in a file.</li>
+<li><strong>Sign Out:</strong> forgets the Google sign-in.</li>
+</ul>
+<p>The keys created are kept on your computer in plain text: protect access to it.</p>
+
+<h3>13.2 Exhausted keys (Alt+Q)</h3>
+<p>Alt+Q shows the Gemini keys that have used up their daily quota, and when they become usable again. When a key is used up, the add-on moves to the next one by itself.</p>
+
+<h2>14. The settings</h2>
+<p>The simple settings are described in section 1. The button "Advanced options" opens a window with, at the top, the setting "Keep the local AI ready" (section 2.3), then the tabs. Some tabs only appear with some services. Confirm with OK, or cancel with Cancel.</p>
+<p>The local AI appears there as the "Custom" service: leave its settings as they are.</p>
+
+<h3>14.1 Connection</h3>
+<ul>
+<li><strong>Provider</strong> and <strong>API Key,</strong> with "Show API Key" to read it.</li>
+<li><strong>Get a Gemini API Key:</strong> the key manager of section 13.</li>
+<li><strong>Fetch Models</strong> and <strong>AI Model:</strong> the list of the service's models; typing in the list filters it.</li>
+<li><strong>Advanced Model Routing:</strong> a different model for each task: OCR and vision, speech to text, text to speech, AI Operator and CAPTCHA, video analysis, Live Assistant.</li>
+<li><strong>Custom Provider Settings,</strong> for the Custom service: the address and type of the service ("OpenAI Compatible" or "Gemini Compatible"), the model name, file upload, and separate addresses for each task. The button "Setup Local AI" is for programs you run yourself, such as Ollama or LM Studio; the add-on's own local AI does not need it.</li>
+<li><strong>Proxy:</strong> Auto-detect, SOCKS5, HTTP or Reverse Proxy, with its address, user name and password. "Test Proxy Connection" checks it and gives the delay.</li>
+<li><strong>Check for updates on startup.</strong></li>
+<li><strong>Clean Markdown in Chat:</strong> removes the formatting signs from the answers.</li>
+<li><strong>Copy AI responses to clipboard.</strong></li>
+<li><strong>Save chats to history.</strong></li>
+<li><strong>Direct Output (No Chat Window):</strong> the answers are spoken instead of opening a window.</li>
+</ul>
+
+<h3>14.2 Live Assistant (Google Gemini only)</h3>
+<ul>
+<li><strong>Audio Output Device:</strong> the sound card of the Live Assistant and of the observer.</li>
+<li><strong>Frame Interval:</strong> how often, from 1 to 10 seconds, a picture of the screen is sent.</li>
+<li><strong>Thinking Depth:</strong> from fastest to deepest.</li>
+<li><strong>Direct Output (No Window):</strong> the Live Assistant works without its window.</li>
+<li><strong>Push to Talk</strong> and its key: press the keys to record them, for example F12 or Control+F12. A modifier key held alone also works.</li>
+<li><strong>Observer Mode, Audio Source</strong> and <strong>Reporting Style</strong> of the Ambient Observer.</li>
+</ul>
+
+<h3>14.3 AI Behavior (services other than Google Gemini)</h3>
+<p><strong>Creativity:</strong> from 0, very steady, to 2, very free. It does not affect the OCR or the translation.</p>
+
+<h3>14.4 Translation Languages</h3>
+<p><strong>Source</strong> (or Auto-detect), <strong>Target,</strong> <strong>AI Response,</strong> and <strong>Smart Swap</strong> (section 7.1).</p>
+
+<h3>14.5 Document Reader</h3>
+<ul>
+<li><strong>OCR Engine</strong> (section 8.4).</li>
+<li><strong>OCR Batch Size:</strong> the number of pages sent at once, for the services that accept whole files.</li>
+<li><strong>Describe images inline during document OCR.</strong></li>
+<li><strong>Include page numbers when exporting documents.</strong></li>
+<li><strong>Save documents to history.</strong></li>
+<li><strong>TTS Voice:</strong> the voice of the audio files of documents.</li>
+</ul>
+
+<h3>14.6 Video (Google Gemini only)</h3>
+<ul>
+<li><strong>Video Chunk Size:</strong> the length, in minutes, of each piece of video sent for the audio description. Shorter is more precise; 0 sends it whole.</li>
+<li><strong>Add character list as first subtitle</strong> and <strong>Add AI disclaimer at the beginning.</strong></li>
+<li><strong>Manage Characters</strong> (section 9.4).</li>
+</ul>
+
+<h3>14.7 CAPTCHA</h3>
+<p><strong>Enable Visual CAPTCHA Solver,</strong> and <strong>Text CAPTCHA Method:</strong> the object under the cursor or the whole screen.</p>
+
+<h3>14.8 Prompts</h3>
+<p>The button "Manage Prompts" (section 12), and the number of prompts.</p>
+
+<h3>14.9 Advanced</h3>
+<ul>
+<li><strong>Log Management:</strong> a log file of the add-on, off by default, with its level of detail and how long it is kept, and the buttons Open Log File, Open Log Folder and Clear Log File. Useful to report a problem.</li>
+<li><strong>Backup and Restore:</strong> section 16.</li>
+</ul>
+
+<h2>15. The quick settings</h2>
+<p>In the command layer, Up and Down Arrows move through 25 settings, and Left and Right Arrows change the one you are on. Each change is saved at once. The add-on announces for example "AI Model, Current: … Use left and right arrows to change."</p>
+<ul>
+<li><strong>AI Provider:</strong> only the services that have a key, plus Custom.</li>
+<li><strong>AI Model,</strong> then the model of each task: OCR, STT, TTS, Operator and CAPTCHA, Video, Live. Changing one turns on the advanced routing.</li>
+<li><strong>TTS Voice.</strong></li>
+<li><strong>Live Direct Output (No Window)</strong> and <strong>Gemini Live Audio Output Device.</strong></li>
+<li><strong>Source Language, Target Language</strong> and <strong>AI Response Language.</strong></li>
+<li><strong>Visual CAPTCHA Solver</strong> and <strong>Text CAPTCHA Method.</strong></li>
+<li><strong>OCR Engine.</strong></li>
+<li><strong>Image Description in OCR, Document Export Page Numbers, Copy AI responses to clipboard, Direct Output (No Chat Window), Clean Markdown in Chat, Save Chats to History, Save Documents to History, Smart Swap:</strong> on or off.</li>
+</ul>
+
+<h2>16. Backup, data and downloads</h2>
+
+<h3>16.1 Backup and restore</h3>
+<p>In the Advanced tab, "Backup" saves either everything (settings, labels, documents in progress, History, characters), or the settings only, in a file. "Restore" brings it back, after confirmation, and replaces the current settings and data. The backup contains your access keys and your proxy password in plain text: keep it in a safe place.</p>
+
+<h3>16.2 Where the data is</h3>
+<p>The add-on keeps its data in a BeMyAssistantAccess folder of NVDA's configuration: labels, History, documents in progress, characters, Gemini keys, and the log. The local AI is in the Windows folder of local application data, under ReaperAccessible, BeMyAssistantAccess.</p>
+
+<h3>16.3 Downloads</h3>
+<p>Some features need a free tool, downloaded once into the add-on, always after your permission: ffmpeg for dubbing, recording and the webcam; the silence detection model for the extended narration; the library for the computer's sound in the observer; eSpeak-NG for the narration voices.</p>
+
+<h2>17. Updates</h2>
+<p>The add-on updates itself from ReaperAccessible's GitHub repository. When a new version exists, it offers it; once it is installed, NVDA must restart. The local AI is not updated with the add-on: it is updated through the Manager.</p>
+
+<h2>18. Privacy</h2>
+<ul>
+<li><strong>With an online service,</strong> what you ask, including pictures of the screen, documents and sounds, is sent to that service. Avoid it for screens that show personal information.</li>
+<li><strong>With the local AI,</strong> the AI's answers are computed on your computer. These features still use the Internet: the Chrome OCR engine if you choose it, the update check, the Gemini key manager, the downloads of tools, and online videos.</li>
+<li>Access keys stay in NVDA's configuration, on your computer, and in your backups.</li>
+</ul>
+
+<h2>19. Credits</h2>
+<p>BeMyAssistantAccess is published by ReaperAccessible. It is based on Vision Assistant Pro, by Mahmood Hozhabri, who designed most of its features. The local AI uses the llama.cpp engine and Alibaba's Qwen 3.5 model.</p>
+</body>
+</html>

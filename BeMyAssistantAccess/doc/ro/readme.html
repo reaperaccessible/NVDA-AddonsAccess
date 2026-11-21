@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>BeMyAssistantAccess</title>
+</head>
+<body>
+<h1>BeMyAssistantAccess</h1>
+
+<p>BeMyAssistantAccess este un asistent de inteligență artificială pentru cititorul de ecran NVDA. Descrie ecranul sau un obiect, citește documente și imagini, traduce, transcrie, scrie ce îi dictezi, discută cu tine, dă nume butoanelor fără etichetă, analizează videoclipuri și poate face clic și scrie în locul tău în programe pe care NVDA nu le poate citi.</p>
+<p>Funcționează în două feluri, la alegerea ta: cu o IA care rulează integral pe calculatorul tău, sau cu un serviciu online, precum Google Gemini.</p>
+
+<h2>1. Primii pași</h2>
+
+<h3>1.1 Alegerea IA</h3>
+<p>Deschide meniul NVDA, apoi Preferințe, Setări și categoria BeMyAssistantAccess. La «Serviciul de IA» sunt două alegeri principale.</p>
+<ul>
+<li><strong>IA locală, pe acest calculator:</strong> totul se petrece acasă, gratuit și fără limite. Are nevoie de un calculator destul de puternic și se instalează separat, cu ReaperAccessible Installer Manager. Vezi secțiunea 2.</li>
+<li><strong>Google Gemini:</strong> cel mai complet serviciu și singurul pentru unele funcții (secțiunea 2.4). Funcționează pe orice calculator, dar trimite la Google ce ceri. Google oferă o cheie de acces gratuită, cu un număr limitat de cereri pe zi: activează butonul «Obține o cheie Gemini gratuită», creează cheia pe pagina Google, apoi lipește-o în câmpul «Cheia de acces a acestui serviciu».</li>
+</ul>
+<p>Celelalte servicii, OpenAI, Mistral AI, Groq, MiniMax și Personalizat, funcționează la fel, cu propria cheie de acces. Fiecare serviciu își păstrează cheia: când schimbi serviciul, revine cheia pe care i-o dăduseși. Poți da mai multe chei separate prin virgulă: când una atinge limita zilnică, suplimentul o folosește pe următoarea.</p>
+
+<h3>1.2 Celelalte setări simple</h3>
+<ul>
+<li><strong>Limba răspunsurilor:</strong> limba în care îți răspunde IA. Prima dată este limba NVDA.</li>
+<li><strong>Caută actualizări automat:</strong> când este bifată, suplimentul caută o versiune nouă la câteva secunde după pornirea NVDA. Butonul «Verifică acum» o face imediat.</li>
+<li><strong>Opțiuni avansate:</strong> deschide toate celelalte setări. Vezi secțiunea 14.</li>
+</ul>
+
+<h3>1.3 Folosirea comenzilor</h3>
+<p>Toate comenzile trec printr-o singură tastă, așa că nu încurcă niciodată alte suplimente:</p>
+<ol>
+<li>Apasă <strong>NVDA+Control+Shift+V</strong>. Auzi un semnal sonor și cuvântul «Comenzi».</li>
+<li>Eliberează, apoi apasă o singură literă. De exemplu <strong>O</strong> pentru a descrie tot ecranul, sau <strong>V</strong> pentru a descrie obiectul de sub cursorul NVDA.</li>
+</ol>
+<p>Stratul se închide după o comandă. O tastă care nu este o comandă dă un semnal grav și îl închide și pe el. Litera <strong>H</strong> enumeră toate comenzile. Secțiunea 3 le descrie.</p>
+<p>Fiecare comandă poate avea și propria scurtătură: meniul NVDA, Preferințe, Gesturi de intrare, categoria BeMyAssistantAccess.</p>
+
+<h3>1.4 Meniul</h3>
+<p>Meniul NVDA, apoi Instrumente, conține un submeniu BeMyAssistantAccess cu: Cititor documente, Chat direct, Transcriere și dublare media, Analizează video, Asistent live, AI Operator (Live), Observator ambiental, Manager de chei API Gemini, Setări, Verifică actualizări și Documentație.</p>
+
+<h3>1.5 Sunetele</h3>
+<ul>
+<li>Un semnal sonor acut: un rezultat este gata, sau o acțiune s-a încheiat.</li>
+<li>Un semnal sonor mediu: începe o înregistrare sau o captură.</li>
+<li>Un semnal sonor grav: ceva a eșuat, sau tasta nu este o comandă.</li>
+<li>Două semnale sonore diferite marchează începutul și sfârșitul Asistentului live și al Observatorului ambiental.</li>
+</ul>
+<p>Litera <strong>I</strong> spune oricând ce face suplimentul.</p>
+
+<h3>1.6 Perdeaua de ecran și ecranele protejate</h3>
+<p>Comenzile care se uită la ecran refuză să funcționeze cât timp Perdeaua de ecran a NVDA este activată și spun să o dezactivezi cu NVDA+Control+Escape. Operatorii refuză și pe un desktop blocat și pe ecranele securizate ale Windows. Pe aceste ecrane securizate, suplimentul nu face absolut nimic.</p>
+
+<h2>2. IA locală</h2>
+
+<h3>2.1 De ce are nevoie</h3>
+<ul>
+<li>Cel puțin 30 GB de memorie.</li>
+<li>O placă video cu cel puțin 6 GB de memorie, de orice marcă: NVIDIA, AMD sau Intel.</li>
+<li>Aproximativ 23 GB de spațiu pe disc.</li>
+</ul>
+<p>IA ocupă aproximativ 4 GB pe placa video. Restul modelului merge în memoria calculatorului.</p>
+
+<h3>2.2 Instalarea</h3>
+<ol>
+<li>Deschide ReaperAccessible Installer Manager. Dacă nu îl ai, alege «IA locală, pe acest calculator» în setările suplimentului, activează butonul «Cum se instalează IA locală», apoi «Descarcă Managerul».</li>
+<li>În Manager, alege tipul «NVDA Add-on», apoi «BeMyAssistantAccess, local AI», și instalează-l. Descărcarea are aproximativ 23 GB.</li>
+<li>În setările suplimentului, alege «IA locală, pe acest calculator», apoi OK.</li>
+</ol>
+<p>Instalarea refuză să continue când BeMyAssistantAccess nu este instalat în NVDA, sau când calculatorul nu are destulă memorie. Atunci spune de ce. Cât timp IA locală este aleasă, dar neinstalată, fiecare cerere a suplimentului explică cum să o obții.</p>
+<p>Pentru a o elimina, mergi la Setările Windows, Aplicații instalate, «BeMyAssistantAccess - Local AI».</p>
+
+<h3>2.3 Prima așteptare</h3>
+<p>Înainte de primul răspuns, IA trebuie încărcată în memorie: de la câteva secunde până la aproximativ treizeci de secunde. După aceea, răspunde repede. Începe să se încarce îndată ce apeși NVDA+Control+Shift+V, cât timp alegi litera.</p>
+<p>Setarea «Păstrează IA locală pregătită», în partea de sus a opțiunilor avansate, hotărăște când eliberează memoria:</p>
+<ul>
+<li><strong>15 minute după ultima cerere:</strong> valoarea implicită.</li>
+<li><strong>1 oră după ultima cerere.</strong></li>
+<li><strong>Întotdeauna, de la pornirea NVDA:</strong> niciodată o așteptare, dar IA folosește memoria tot timpul, chiar și când nu o folosești.</li>
+</ul>
+<p>Se oprește întotdeauna când se închide NVDA.</p>
+
+<h3>2.4 Ce funcționează cu fiecare fel de IA</h3>
+<p>IA locală descrie ecranul și obiectele, citește textul din imagini și documente, traduce, corectează și rezumă texte, discută cu tine, dă nume butoanelor și conduce pilotul pas cu pas și UI Explorer.</p>
+<p>Aceste funcții au nevoie de Google Gemini sau de un serviciu Personalizat de tipul «Compatibil Gemini»: Asistentul live, Operatorul live, Observatorul ambiental, analiza video, analiza înregistrărilor de ecran, descrierea audio și dublarea.</p>
+<p>Dictarea inteligentă, traducerea vocală și transcrierea fișierelor audio au nevoie de o IA care înțelege sunetul: încă nu funcționează cu IA locală.</p>
+<p>Citirea unui document cu voce tare ca fișier audio funcționează cu Google Gemini, OpenAI, MiniMax și un serviciu Personalizat, dar nu cu Mistral AI, Groq sau IA locală.</p>
+
+<h2>3. Comenzile</h2>
+<p>Apasă mai întâi NVDA+Control+Shift+V, apoi una dintre aceste taste. Secțiunile următoare explică fiecare funcție în detaliu.</p>
+
+<h3>3.1 Vederea ecranului</h3>
+<ul>
+<li><strong>O:</strong> descrie tot ecranul și îi citește textul.</li>
+<li><strong>V:</strong> descrie obiectul de sub cursorul NVDA.</li>
+<li><strong>E:</strong> UI Explorer, care enumeră ce se poate apăsa și face clic în locul tău. Secțiunea 6.</li>
+<li><strong>L:</strong> dă un nume butonului sau imaginii fără etichetă de sub cursor. Secțiunea 6.</li>
+<li><strong>Shift+L:</strong> gestionează numele deja date sau dă dintr-o dată nume tuturor elementelor fără nume din fereastră. Secțiunea 6.</li>
+</ul>
+
+<h3>3.2 Acțiuni în locul tău</h3>
+<ul>
+<li><strong>Shift+A:</strong> pilotul pas cu pas. Secțiunea 4.</li>
+<li><strong>Control+Shift+A:</strong> AI Operator, care înlănțuie singur mai multe acțiuni. Secțiunea 5.</li>
+<li><strong>Control+A:</strong> Operatorul live, prin voce. Doar cu Google Gemini. Secțiunea 5.</li>
+<li><strong>C:</strong> rezolvitorul de CAPTCHA. Secțiunea 5.</li>
+</ul>
+
+<h3>3.3 Text și traducere</h3>
+<ul>
+<li><strong>T:</strong> traduce textul selectat sau obiectul de sub cursor.</li>
+<li><strong>Shift+T:</strong> traduce textul din clipboard.</li>
+<li><strong>R:</strong> un meniu pentru a rezuma, corecta, traduce sau explica textul selectat, sau pentru a rula unul dintre Prompturile tale.</li>
+<li><strong>S:</strong> Dictare inteligentă.</li>
+<li><strong>Control+T:</strong> traducere vocală.</li>
+</ul>
+<p>Secțiunea 7 le explică.</p>
+
+<h3>3.4 Documente și fișiere</h3>
+<ul>
+<li><strong>D:</strong> Cititorul de documente. Secțiunea 8.</li>
+<li><strong>F:</strong> citește sau descrie imaginea sau fișierul PDF selectat în Explorer. Secțiunea 8.</li>
+<li><strong>M:</strong> transcrie, traduce sau dublează un fișier audio sau video. Secțiunea 9.</li>
+<li><strong>Shift+V:</strong> analizează un videoclip și face descrieri audio. Doar cu Google Gemini. Secțiunea 9.</li>
+<li><strong>Control+V:</strong> înregistrează ecranul, apoi pune înregistrarea să fie descrisă. Doar cu Google Gemini. Secțiunea 9.</li>
+</ul>
+
+<h3>3.5 Discuția</h3>
+<ul>
+<li><strong>Shift+C:</strong> Chat direct cu IA. Secțiunea 10.</li>
+<li><strong>Spațiu:</strong> redeschide ultimul rezultat. Secțiunea 10.</li>
+<li><strong>Control+H:</strong> Istoricul. Secțiunea 10.</li>
+<li><strong>Control+L:</strong> Asistentul live. Doar cu Google Gemini. Secțiunea 11.</li>
+<li><strong>Shift+O:</strong> Observatorul ambiental. Doar cu Google Gemini. Secțiunea 11.</li>
+</ul>
+
+<h3>3.6 Celelalte taste</h3>
+<ul>
+<li><strong>I:</strong> spune ce face suplimentul.</li>
+<li><strong>H:</strong> lista tuturor comenzilor.</li>
+<li><strong>U:</strong> caută o actualizare.</li>
+<li><strong>Alt+S:</strong> deschide setările.</li>
+<li><strong>G:</strong> Managerul de chei API Gemini. Secțiunea 13.</li>
+<li><strong>Alt+Q:</strong> cheile Gemini care și-au epuizat cota zilnică. Secțiunea 13.</li>
+<li><strong>Alt+M:</strong> spune ce modele de IA sunt alese pentru fiecare sarcină în rutarea avansată.</li>
+<li><strong>Săgeată sus și Săgeată jos, Săgeată stânga și Săgeată dreapta:</strong> setările rapide. Secțiunea 15.</li>
+</ul>
+
+<h2>4. Pilotul pas cu pas</h2>
+<p>Pilotul pas cu pas face clic și scrie în locul tău acolo unde NVDA nu poate face nimic: un program inaccesibil, o fereastră făcută din imagini. Tu decizi fiecare acțiune; IA doar găsește unde se află elementul.</p>
+<ol>
+<li>Apasă NVDA+Control+Shift+V, apoi Shift+A.</li>
+<li>Spune o acțiune, de exemplu «clic pe Jocuri online», «dublu clic pe fișierul Raport» sau «clic dreapta pe pictogramă».</li>
+<li>Pentru a scrie, pune textul între ghilimele: scrie "bună" în câmpul Nume.</li>
+<li>Suplimentul spune «Se caută», apoi întreabă, de exemplu, «Clic: butonul Jocuri online?». Răspunde Da sau Nu.</li>
+<li>După acțiune, îți spune ce arată acum ecranul.</li>
+</ol>
+<p>Regulile care te protejează:</p>
+<ul>
+<li>Suplimentul scrie doar textul pe care îl pui între ghilimele. Dacă îi ceri să scrie fără să dai un text, îți explică cum să faci.</li>
+<li>Nu se întâmplă nimic fără Da-ul tău.</li>
+<li>Când elementul nu este găsit, spune asta în loc să facă clic la întâmplare.</li>
+<li>Parolele le scrii întotdeauna tu: cere-i doar să facă clic în câmp, apoi scrie sau lipește parola.</li>
+<li>O singură acțiune pe rând: Shift+A nu face nimic cât timp o acțiune este în curs.</li>
+</ul>
+<p>Pilotul funcționează cu IA locală și cu serviciile online, și în programe rulate ca administrator, pentru că suplimentul acționează din interiorul NVDA.</p>
+
+<h2>5. Operatorii și rezolvitorul de CAPTCHA</h2>
+
+<h3>5.1 AI Operator (Control+Shift+A)</h3>
+<p>AI Operator, care provine din Vision Assistant Pro, face singur o sarcină întreagă: o descrii într-o propoziție, iar IA se uită la ecran și înlănțuie până la zece acțiuni, precum clic, dublu clic, clic dreapta, scris, derulare, tragere sau apăsarea de taste. Spune ce face înainte de fiecare acțiune, dar nu cere confirmare. Apasă din nou Control+Shift+A pentru a-l opri.</p>
+<p>Când termină, răspunsul lui se deschide într-o fereastră de chat, unde îi poți da o nouă instrucțiune. Este mai puțin sigur decât pilotul pas cu pas, mai ales cu IA locală, și fiecare pas trimite IA o imagine a ecranului.</p>
+
+<h3>5.2 Operator live (Control+A)</h3>
+<p>Operatorul live pornește o conversație a Asistentului live în care IA poate acționa pe calculatorul tău cât timp vorbești cu ea (doar cu Google Gemini). Cere-i ceva în limbaj obișnuit, de exemplu «deschide folderul Descărcări». Lucrează pas cu pas, până la zece pași pe cerere, și spune fiecare pas cu voce tare. Te anunță când sarcina este încheiată, anulată, are nevoie de o acțiune a ta sau și-a atins limita.</p>
+<ul>
+<li>Butonul «Oprește acțiunea operatorului» din fereastra Asistentului live anulează sarcina curentă fără să încheie conversația.</li>
+<li>Apasă din nou Control+A pentru a încheia sesiunea.</li>
+<li>Camera web nu este disponibilă cât timp operatorul este activ.</li>
+<li>Când apare un CAPTCHA, încearcă mai întâi rezolvitorul de CAPTCHA; altfel, te roagă să completezi provocarea accesibilă.</li>
+</ul>
+
+<h3>5.3 Rezolvitor de CAPTCHA (C)</h3>
+<p>Rezolvitorul de CAPTCHA citește testul «Nu sunt un robot» afișat pe ecran.</p>
+<ul>
+<li><strong>Un CAPTCHA cu text sau cifre:</strong> îl citește, spune «Captcha:» urmat de răspuns și scrie răspunsul.</li>
+<li><strong>Un CAPTCHA cu imagini,</strong> precum o grilă de imagini sau o căsuță de bifat: încearcă să îl rezolve făcând clic, până la 15 încercări, și spune când este rezolvat sau când renunță. Apasă din nou C pentru a-l opri.</li>
+</ul>
+<p>În fila CAPTCHA a opțiunilor avansate, poți dezactiva rezolvitorul de imagini și poți alege dacă CAPTCHA-urile cu text sunt citite de la obiectul de sub cursor sau de pe tot ecranul.</p>
+
+<h2>6. Vederea ecranului</h2>
+
+<h3>6.1 Descrierea (O și V)</h3>
+<p>O descrie tot ecranul și îi citește textul; V descrie doar obiectul de sub cursorul NVDA. Răspunsul se deschide într-o fereastră unde poți pune întrebări suplimentare despre aceeași imagine, sau este rostit direct dacă «Ieșire directă» este activată (secțiunea 14).</p>
+
+<h3>6.2 UI Explorer (E)</h3>
+<p>IA enumeră tot ce se poate apăsa pe ecran, fără bara de activități și fără ferestrele proprii ale NVDA. În lista «Selectează un element», alege unul, apoi:</p>
+<ul>
+<li><strong>Clic:</strong> suplimentul face clic pe el, apoi se uită din nou la ecran după două secunde, ca să poți continua.</li>
+<li><strong>Adaugă etichetă:</strong> dă acel nume elementului, pentru ca NVDA să îl anunțe de acum încolo.</li>
+<li><strong>Anulează:</strong> închide exploratorul. E din nou îl oprește și el.</li>
+</ul>
+
+<h3>6.3 Etichetele (L)</h3>
+<p>Pe un buton sau o imagine fără nume, L întreabă IA ce este și îi dă un nume permanent: NVDA îl va anunța mereu cu acel nume în acel program. Numele rămâne când fereastra își schimbă dimensiunea, când schimbi ecranul și când programul este actualizat. Dacă elementul are deja un nume, suplimentul spune asta. Etichetele nu funcționează în browserele web.</p>
+
+<h3>6.4 Manager de etichete (Shift+L)</h3>
+<p>Dacă programul are deja etichete, Shift+L deschide Managerul de etichete: o listă a numelor date, cu tipul lor. Poți bifa elemente, apoi «Șterge cele bifate»; selecta unul și alege «Redenumește»; «Selectează tot» sau «Deselectează tot» (Control+A în listă bifează tot); și «Rescanează» pentru a căuta din nou elemente fără nume.</p>
+<p>Dacă programul nu are încă nicio etichetă, Shift+L dă dintr-o dată nume tuturor elementelor fără nume din fereastră: butoane, căsuțe de bifat, linkuri, file, elemente de listă, pictograme și altele.</p>
+
+<h2>7. Text, traducere și dictare</h2>
+
+<h3>7.1 Traducerea (T și Shift+T)</h3>
+<p>T traduce textul selectat. Fără selecție, ia textul câmpului în care te afli sau al obiectului de sub cursorul NVDA. Shift+T traduce clipboardul. Traducerea este rostită, apoi afișată într-o fereastră, dacă nu este activată «Ieșire directă».</p>
+<p>Suplimentul traduce în limba «Țintă». Cu <strong>Schimbare inteligentă</strong>, un text care este deja în limba țintă este tradus în limba «Sursă», sau în engleză dacă sursa este «Detectare automată». Codul și adresele web nu sunt traduse. Aceste limbi se stabilesc în fila Limbi de traducere sau cu setările rapide.</p>
+
+<h3>7.2 Meniul de text (R)</h3>
+<p>R deschide un meniu pentru textul selectat: Rezumă, Corectează gramatica, Corectează gramatica și traduce, Explică, apoi fiecare dintre Prompturile tale (secțiunea 12). Dacă un prompt are nevoie de un fișier, se deschide mai întâi un selector de fișiere. Răspunsul se deschide într-o fereastră unde poți pune alte întrebări, sau urmează alegerea făcută pentru acel prompt.</p>
+
+<h3>7.3 Dictare inteligentă (S) și traducere vocală (Control+T)</h3>
+<ol>
+<li>Apasă S: un semnal sonor și «Ascult». Vorbește.</li>
+<li>Apasă din nou S: «Scriu». Textul este scris unde se află cursorul tău.</li>
+</ol>
+<p>Control+T funcționează la fel, dar textul este tradus din limba Sursă în limba Țintă înainte de a fi scris. Suplimentul folosește microfonul implicit al Windows. Mai puțin de o secundă de vorbire dă «Nu s-a detectat vorbire». Textul este scris prin clipboard, pe care îl înlocuiește. Aceste două funcții au nevoie de un serviciu online care înțelege sunetul.</p>
+
+<h2>8. Cititorul de documente și fișierele</h2>
+
+<h3>8.1 Deschiderea unui document (D)</h3>
+<p>D deschide, în această ordine de prioritate:</p>
+<ol>
+<li>fișierele selectate în Explorer, citite împreună ca un singur document: PDF, imagini, TIFF, fotografii de iPhone (HEIC), fișiere text și HTML;</li>
+<li>altfel, o imagine din clipboard;</li>
+<li>altfel, lista documentelor recente, cu butoanele Deschide, Șterge, Șterge tot, Deschide fișier (Control+O) și Închide. Fără istoric, selectorul de fișiere se deschide direct.</li>
+</ol>
+<p>D în timpul unei citiri o oprește. Fișierele text și HTML se deschid imediat, fără IA. Când o citire anterioară a fost întreruptă, suplimentul propune reluarea de unde s-a oprit, chiar și după o repornire.</p>
+
+<h3>8.2 Fereastra de opțiuni</h3>
+<p>Înainte de a citi un document cu mai multe pagini, fereastra Opțiuni arată numărul total de pagini și oferă:</p>
+<ul>
+<li><strong>De la și Până la:</strong> paginile de citit.</li>
+<li><strong>Tradu ieșirea,</strong> cu limba țintă.</li>
+<li><strong>Descrie imaginile în linie în timpul OCR:</strong> imaginile documentului sunt descrise în interiorul textului.</li>
+<li><strong>Comprimă paginile PDF înainte de procesare:</strong> face mai ușoare paginile scanate mari înainte de a le trimite.</li>
+</ul>
+<p>Apoi apasă Pornește. Paginile sunt citite în fundal, mai multe deodată; poți închide fereastra și reveni mai târziu. Suplimentul anunță fiecare pagină care este gata. Un document deja citit se redeschide imediat, fără să fie citit din nou.</p>
+
+<h3>8.3 Fereastra de citire</h3>
+<ul>
+<li><strong>Control+Page Down și Control+Page Up,</strong> sau butoanele Următor și Anterior: schimbă pagina. Săgeată jos pe ultima linie și Săgeată sus pe prima linie schimbă și ele pagina.</li>
+<li><strong>Mergi la:</strong> lista numerelor de pagină.</li>
+<li><strong>Întreabă AI (Alt+A):</strong> pune o întrebare despre document.</li>
+<li><strong>Scanează din nou cu AI (Alt+R):</strong> citește din nou, cu IA, pagina curentă sau toate paginile.</li>
+<li><strong>Încearcă din nou:</strong> apare când unele pagini au eșuat pentru că serviciul era ocupat și citește din nou doar acele pagini.</li>
+<li><strong>Generează audio (Alt+G):</strong> salvează pagina curentă sau toate paginile ca fișier MP3 sau WAV, cu vocea aleasă. Este prezent doar când serviciul poate vorbi.</li>
+<li><strong>Vizualizează formatat:</strong> afișează tot documentul ca text formatat, cu titluri.</li>
+<li><strong>Salvează (Alt+S sau Control+S):</strong> salvează textul ca fișier text sau HTML, cu numerele paginilor dacă acea setare este activată. Dacă lipsesc pagini, suplimentul spune asta mai întâi.</li>
+<li><strong>Închide:</strong> locul unde ai rămas este păstrat în Istoric.</li>
+</ul>
+
+<h3>8.4 Cele trei motoare OCR</h3>
+<p>Motorul OCR, în fila Cititor documente, hotărăște cum este citit textul imaginilor și al paginilor scanate:</p>
+<ul>
+<li><strong>Chrome (rapid):</strong> rapid, dar trimite paginile la un serviciu Google, indiferent ce IA ai ales, și le traduce cu Google Translate. Este valoarea implicită cu serviciile online.</li>
+<li><strong>AI (avansat):</strong> folosește IA aleasă, păstrează aspectul, linkurile și descrierile imaginilor. Când alegi IA locală, acest motor este selectat automat, pentru ca nimic să nu iasă de pe calculatorul tău.</li>
+<li><strong>Niciunul (extrage stratul de text):</strong> citește doar textul deja prezent într-un PDF cu text căutabil, fără să citească nicio imagine.</li>
+</ul>
+
+<h3>8.5 Citirea sau descrierea unui fișier (F)</h3>
+<p>F lucrează pe imaginea sau fișierul PDF selectat în Explorer, sau pe o imagine din clipboard, fără selector de fișiere. Pentru o singură imagine cu motorul AI, întreabă dacă să extragă textul sau să descrie imaginea. Un PDF cu mai multe pagini arată fereastra de opțiuni. Răspunsul se deschide într-o fereastră de chat. F din nou îl oprește.</p>
+
+<h2>9. Media și video</h2>
+
+<h3>9.1 Transcriere și dublare (M)</h3>
+<p>M lucrează pe fișierul audio sau video selectat în Explorer sau deschide un selector de fișiere. Trei alegeri:</p>
+<ul>
+<li><strong>Transcrie (limba originală):</strong> scrie ce se spune.</li>
+<li><strong>Transcrie și traduce (limba țintă):</strong> scrie în altă limbă.</li>
+<li><strong>Dublează și traduce (limba țintă):</strong> face un fișier MP3 în care vorbirea este înlocuită cu o voce în limba aleasă. Doar cu Google Gemini.</li>
+</ul>
+<p>Dublarea are nevoie de instrumentul gratuit ffmpeg: suplimentul propune să îl descarce o dată, aproximativ 70 MB.</p>
+
+<h3>9.2 Analiza video (Shift+V)</h3>
+<p>Shift+V lucrează pe videoclipul selectat în Explorer sau pe o adresă de videoclip copiată în clipboard: YouTube, Instagram, Twitter (X) sau TikTok. Altfel, se deschide fereastra Analizează video, unde lipești o adresă sau cauți un fișier. Două acțiuni:</p>
+<ul>
+<li><strong>Analiză video generală:</strong> o descriere completă a scenelor, a persoanelor și a ceea ce se întâmplă, cu un rezumat al sunetului.</li>
+<li><strong>Generează descriere audio (fișier SRT):</strong> un fișier de descrieri cronometrate, așezate în tăcerile dintre dialoguri.</li>
+</ul>
+<p>Pentru descrierea audio, poți adăuga lista de personaje ca primă subtitrare, poți adăuga un avertisment că textul provine de la o IA și poți alege un serial sau un film pentru ca suplimentul să recunoască personajele lui (secțiunea 9.4). Pentru un videoclip YouTube, întreabă durata videoclipului în minute. Un videoclip încărcat rămâne disponibil 48 de ore: poți face alte fișiere din el fără să îl încarci din nou.</p>
+
+<h3>9.3 Descriere audio și narațiune</h3>
+<p>Fereastra descrierii audio arată progresul și textul. Apoi:</p>
+<ul>
+<li><strong>Salvează SRT:</strong> salvează fișierul de subtitrări. Dă-i același nume ca videoclipului, în același folder, iar playerul tău media îl va putea citi cititorului tău de ecran.</li>
+<li><strong>Generează narațiune sincronizată (MP3):</strong> transformă descrierile în vorbire, cu o voce la alegerea ta: eSpeak, o voce Windows sau vocile Gemini. eSpeak-NG poate fi descărcat din fereastră.</li>
+<li><strong>Regenerează</strong> și <strong>Încearcă din nou:</strong> reiau de la capăt sau continuă după o eroare temporară.</li>
+</ul>
+<p>Pentru un fișier video de pe calculatorul tău, două feluri de narațiune:</p>
+<ul>
+<li><strong>Standard:</strong> vocea este mixată peste sunetul videoclipului. Suplimentul întreabă dacă să coboare sunetul de fundal în timpul descrierilor.</li>
+<li><strong>Extinsă:</strong> sunetul videoclipului face pauză în timpul fiecărei descrieri, ca să nu pierzi nimic. Suplimentul folosește un mic model de detectare a tăcerii, descărcat o dată cu permisiunea ta, aproximativ 70 MB.</li>
+</ul>
+<p>Pentru un videoclip online, MP3-ul conține doar vocea descrierilor.</p>
+
+<h3>9.4 Dicționarul de personaje</h3>
+<p>Pentru fiecare serial sau film, suplimentul poate păstra o listă de personaje, pentru ca numele lor să rămână aceleași de la un episod la altul. Deschide-l cu «Gestionează personaje» în fila Video sau în fereastra video. Poți adăuga un personaj cu o notă, de exemplu rolul lui; îl poți edita cu F2; îl poți elimina cu Delete; poți importa o listă, un nume pe linie; sau poți șterge un serial întreg. IA adaugă singură personajele pe care le descoperă și descrie fiecare personaj doar prima dată când apare.</p>
+
+<h3>9.5 Înregistrarea ecranului (Control+V)</h3>
+<p>Control+V începe să înregistreze fereastra activă, în tăcere și fără sunet. Apasă din nou Control+V pentru a opri: suplimentul spune durata, apoi pune înregistrarea să fie descrisă. Are nevoie de ffmpeg, pe care suplimentul propune să îl descarce.</p>
+
+<h2>10. Discuția, rezultatele și Istoricul</h2>
+
+<h3>10.1 Chat direct (Shift+C)</h3>
+<p>Un chat cu IA. Scrie în câmpul «Întreabă» și apasă Enter pentru a trimite; Shift+Enter adaugă o linie. Butonul «Atașează fișier» adaugă imagini, fișiere PDF sau sunete la întrebarea ta. Celelalte butoane: Vizualizează formatat, Salvează conținutul (ultimul răspuns, ca HTML), Salvează chatul (tot chatul, ca text) și Închide.</p>
+<p>În fiecare fereastră de chat: Alt+Săgeată jos citește mesajul următor, Alt+Săgeată sus pe cel anterior, iar Alt+C copiază mesajul. Suplimentul spune când ajungi la primul sau la ultimul mesaj.</p>
+
+<h3>10.2 Ultimul rezultat (Spațiu)</h3>
+<p>Spațiu redeschide ultimul răspuns al IA: descriere, traducere, meniu de text, chat de document, operator sau conversația Asistentului live.</p>
+
+<h3>10.3 Istoricul (Control+H)</h3>
+<p>Istoricul păstrează chaturile și documentele tale, până la 100. Lista «Afișează» le filtrează: Toate, Chaturi sau Documente.</p>
+<ul>
+<li><strong>Deschide</strong> (sau Enter): un chat se redeschide cu fișierele lui, un document la pagina unde ai rămas.</li>
+<li><strong>Șterge</strong> (sau tasta Delete): elimină un element. Pentru un document, alegi dacă îl elimini doar din Istoric sau și textul deja citit, astfel încât următoarea deschidere să îl citească din nou.</li>
+<li><strong>Șterge tot:</strong> golește lista afișată.</li>
+</ul>
+<p>Setările «Salvează chaturile în istoric» și «Salvează documentele în istoric» hotărăsc ce se păstrează.</p>
+
+<h2>11. Asistent live și Observator ambiental</h2>
+<p>Aceste două funcții au nevoie de Google Gemini.</p>
+
+<h3>11.1 Asistent live (Control+L)</h3>
+<p>O conversație vorbită: vorbești la microfon, IA îți vede ecranul și răspunde cu voce tare. Întreabă, de exemplu, «la ce mă uit?» sau «citește-mi al treilea paragraf». Apasă din nou Control+L pentru a încheia.</p>
+<p>Fereastra Asistentului live oferă:</p>
+<ul>
+<li><strong>Voce TTS:</strong> vocea IA. Schimbarea ei repornește conversația.</li>
+<li><strong>Profunzime de gândire:</strong> cât gândește IA înainte de a răspunde, pentru modelele care permit asta.</li>
+<li><strong>Dispozitiv audio:</strong> placa de sunet spre care merge vocea.</li>
+<li><strong>Apasă pentru a vorbi:</strong> microfonul rămâne închis până ții apăsată tasta aleasă în setări. Util într-un loc zgomotos.</li>
+<li><strong>Folosește camera web:</strong> trimite camera în loc de ecran, pentru a întreba despre obiecte, hârtii tipărite sau împrejurimile tale. Are nevoie de ffmpeg. Butonul «Setări de confidențialitate pentru cameră» deschide setările Windows dacă camera este blocată.</li>
+<li><strong>Încheie</strong> sau <strong>Pornește.</strong> Escape închide fereastra și încheie conversația.</li>
+</ul>
+
+<h3>11.2 Observator ambiental (Shift+O)</h3>
+<p>Observatorul ambiental lucrează în fundal, fără conversație: raportează ce se schimbă și tace când nu se întâmplă nimic. Shift+O îi deschide fereastra; Shift+O din nou îl oprește. Trei moduri:</p>
+<ul>
+<li><strong>Doar traducere audio:</strong> traduce ce aude, de la microfon sau din sunetul calculatorului. Sunetul calculatorului are nevoie de o mică bibliotecă, descărcată o dată cu permisiunea ta.</li>
+<li><strong>Doar monitorizarea ecranului:</strong> îți spune ce se schimbă pe ecran. Trimite o imagine doar când ecranul s-a schimbat cu adevărat.</li>
+<li><strong>Doar monitorizarea camerei web:</strong> deschide Asistentul live cu camera, ca să poți întreba ce vede.</li>
+</ul>
+<p>«Despre ceea ce fac» face rapoartele mai utile. Pentru ecran: General, vizionarea unui film sau serial, o transmisiune live sau o prezentare, o ședință sau un apel online, sau un joc. Pentru cameră: General, verificarea aspectului tău sau a machiajului, o culoare sau haine care se potrivesc, citirea unui document sau a unei etichete, o dată de expirare sau eticheta unui aliment, o cutie de medicament, scris de mână sau un formular completat, afișajul unui aparat, luminile indicatoare, identificarea unui obiect sau privitul în jur. Poți scrie și propriul text. Rapoartele pot fi concise, de o propoziție, sau detaliate. Fereastra ține minte ultimele tale alegeri.</p>
+
+<h2>12. Prompturi</h2>
+<p>Prompturile sunt instrucțiunile date IA. Deschide Managerul de prompturi din opțiunile avansate, fila Prompturi, «Gestionează prompturi».</p>
+
+<h3>12.1 Prompturile suplimentului</h3>
+<p>Fila «Prompturi implicite» enumeră instrucțiunile fiecărei funcții, pe care le poți schimba: rezumat, corectură, traducere, descriere, video, transcriere, dictare, OCR, CAPTCHA, stilurile de raportare și contextele observatorului. O listă «Filtru» arată câte o familie pe rând. «Aplică la selecție» salvează modificarea, «Resetează selecția» sau «Resetează tot» readuce textul original. Unele prompturi sunt necesare unei funcții: suplimentul te avertizează înainte să le modifici.</p>
+
+<h3>12.2 Prompturile tale</h3>
+<p>Fila «Prompturi personalizate» conține propriile tale cereri, în ordinea meniului R: Adaugă, Editează, Elimină, Mută în sus, Mută în jos. Pentru fiecare prompt:</p>
+<ul>
+<li><strong>Nume</strong> și <strong>Textul promptului.</strong></li>
+<li><strong>Scurtătură de tastatură:</strong> apasă tastele pentru a le înregistra; Backspace șterge. O singură literă, o cifră sau de la F1 la F12 funcționează în stratul de comenzi și oriunde cu NVDA+Control+Shift și acea tastă. O combinație, precum Alt+1 sau Control+Shift+1, funcționează oriunde exact cum este apăsată. O tastă deja folosită de o comandă sau de alt prompt este refuzată.</li>
+<li><strong>Comportamentul feedbackului:</strong> urmează setarea generală, copiază răspunsul în clipboard, rostește-l direct, fă ambele lucruri sau deschide întotdeauna o fereastră de chat.</li>
+</ul>
+
+<h3>12.3 Variabile</h3>
+<p>Un prompt poate conține cuvinte între paranteze drepte, înlocuite când rulează. Butonul «Ghid pentru variabile» le enumeră.</p>
+<ul>
+<li><strong>Text:</strong> [selection] textul selectat, [clipboard] clipboardul, [text] textul câmpului în care te afli (niciodată o parolă), [currentURL] adresa paginii din Chrome, Edge sau Firefox, [clipboard_image] imaginea din clipboard.</li>
+<li><strong>Ecran:</strong> [screen_obj] obiectul de sub cursor, [screen_fg_obj] fereastra activă, [screen_full] tot ecranul.</li>
+<li><strong>Fișiere:</strong> [file_ocr] cere o imagine sau un PDF de citit, [file_read] un document, [file_audio] un fișier de sunet.</li>
+<li><strong>Limbi:</strong> {target_lang}, {source_lang}, {response_lang}, {swap_target} și {swap_instruction}.</li>
+<li><strong>Observator ambiental:</strong> [ambient_screen], [ambient_webcam] sau [ambient_audio] pornesc observatorul, pe care aceeași scurtătură îl oprește; [mic] sau [loopback] aleg sunetul, [brief] sau [detailed] stilul, iar [lang:fr], de exemplu, limba.</li>
+</ul>
+<p>Suplimentul refuză un prompt ale cărui variabile nu se potrivesc între ele și spune de ce.</p>
+
+<h2>13. Cheile Google Gemini</h2>
+
+<h3>13.1 Manager de chei API Gemini (G)</h3>
+<p>Creează chei Gemini pentru tine, cu Google Gemini ca serviciu. Prima dată, «Autentifică-te și deschide browserul» deschide pagina de autentificare Google în browserul tău: autentifică-te și bifează căsuța de permisiune pe care o arată Google. Apoi:</p>
+<ul>
+<li><strong>Proiect și cheie noi,</strong> sau <strong>Creează o cheie pentru proiectul selectat:</strong> cheia este creată, copiată în clipboard, iar suplimentul propune să o folosești.</li>
+<li><strong>Copiază cheia selectată, Copiază ultima cheie creată, Folosește în BeMyAssistantAccess.</strong></li>
+<li><strong>Șterge cheia:</strong> o șterge la Google, după confirmare, și o elimină din supliment.</li>
+<li><strong>Exportă cheile salvate:</strong> le salvează într-un fișier.</li>
+<li><strong>Deconectează-te:</strong> uită autentificarea Google.</li>
+</ul>
+<p>Cheile create sunt păstrate pe calculatorul tău în text simplu: protejează accesul la el.</p>
+
+<h3>13.2 Chei epuizate (Alt+Q)</h3>
+<p>Alt+Q arată cheile Gemini care și-au epuizat cota zilnică și când pot fi folosite din nou. Când o cheie este epuizată, suplimentul trece singur la următoarea.</p>
+
+<h2>14. Setările</h2>
+<p>Setările simple sunt descrise în secțiunea 1. Butonul «Opțiuni avansate» deschide o fereastră cu, în partea de sus, setarea «Păstrează IA locală pregătită» (secțiunea 2.3), apoi filele. Unele file apar doar cu anumite servicii. Confirmă cu OK sau anulează cu Anulează.</p>
+<p>IA locală apare acolo ca serviciul «Personalizat»: lasă setările ei așa cum sunt.</p>
+
+<h3>14.1 Conexiune</h3>
+<ul>
+<li><strong>Furnizor</strong> și <strong>Cheie API,</strong> cu «Afișează cheia API» pentru a o citi.</li>
+<li><strong>Obține o cheie API Gemini:</strong> managerul de chei din secțiunea 13.</li>
+<li><strong>Preia modelele</strong> și <strong>Model AI:</strong> lista modelelor serviciului; scrisul în listă o filtrează.</li>
+<li><strong>Rutare avansată a modelelor:</strong> un model diferit pentru fiecare sarcină: OCR și viziune, voce în text, text în voce, AI Operator și CAPTCHA, analiză video, Asistent live.</li>
+<li><strong>Setări furnizor personalizat,</strong> pentru serviciul Personalizat: adresa și tipul serviciului («Compatibil OpenAI» sau «Compatibil Gemini»), numele modelului, încărcarea de fișiere și adrese separate pentru fiecare sarcină. Butonul «Configurează AI local» este pentru programele pe care le rulezi tu însuți, precum Ollama sau LM Studio; IA locală a suplimentului nu are nevoie de el.</li>
+<li><strong>Proxy:</strong> Detectare automată, SOCKS5, HTTP sau Proxy invers, cu adresa, numele de utilizator și parola. «Testează conexiunea proxy» o verifică și dă întârzierea.</li>
+<li><strong>Verifică actualizările la pornire.</strong></li>
+<li><strong>Curăță Markdown în chat:</strong> elimină semnele de formatare din răspunsuri.</li>
+<li><strong>Copiază răspunsurile AI în clipboard.</strong></li>
+<li><strong>Salvează chaturile în istoric.</strong></li>
+<li><strong>Ieșire directă (fără fereastră de chat):</strong> răspunsurile sunt rostite în loc să deschidă o fereastră.</li>
+</ul>
+
+<h3>14.2 Asistent live (doar Google Gemini)</h3>
+<ul>
+<li><strong>Dispozitiv de ieșire audio:</strong> placa de sunet a Asistentului live și a observatorului.</li>
+<li><strong>Interval între cadre:</strong> cât de des, de la 1 la 10 secunde, este trimisă o imagine a ecranului.</li>
+<li><strong>Profunzime de gândire:</strong> de la cea mai rapidă la cea mai profundă.</li>
+<li><strong>Ieșire directă (fără fereastră):</strong> Asistentul live funcționează fără fereastra lui.</li>
+<li><strong>Apasă pentru a vorbi</strong> și tasta lui: apasă tastele pentru a le înregistra, de exemplu F12 sau Control+F12. O tastă modificatoare ținută singură funcționează și ea.</li>
+<li><strong>Mod de observare, Sursă audio</strong> și <strong>Stil de raportare</strong> ale Observatorului ambiental.</li>
+</ul>
+
+<h3>14.3 Comportament AI (alte servicii decât Google Gemini)</h3>
+<p><strong>Creativitate:</strong> de la 0, foarte stabil, la 2, foarte liber. Nu afectează OCR-ul sau traducerea.</p>
+
+<h3>14.4 Limbi de traducere</h3>
+<p><strong>Sursă</strong> (sau Detectare automată), <strong>Țintă,</strong> <strong>Răspuns AI</strong> și <strong>Schimbare inteligentă</strong> (secțiunea 7.1).</p>
+
+<h3>14.5 Cititor documente</h3>
+<ul>
+<li><strong>Motor OCR</strong> (secțiunea 8.4).</li>
+<li><strong>Dimensiune lot OCR:</strong> numărul de pagini trimise deodată, pentru serviciile care acceptă fișiere întregi.</li>
+<li><strong>Descrie imaginile în linie în timpul OCR pentru documente.</strong></li>
+<li><strong>Include numerele paginilor la exportarea documentelor.</strong></li>
+<li><strong>Salvează documentele în istoric.</strong></li>
+<li><strong>Voce TTS:</strong> vocea fișierelor audio ale documentelor.</li>
+</ul>
+
+<h3>14.6 Video (doar Google Gemini)</h3>
+<ul>
+<li><strong>Dimensiunea segmentului video:</strong> durata, în minute, a fiecărei bucăți de videoclip trimise pentru descrierea audio. Mai scurt este mai precis; 0 îl trimite întreg.</li>
+<li><strong>Adaugă lista de personaje ca primă subtitrare</strong> și <strong>Adaugă avertismentul AI la început.</strong></li>
+<li><strong>Gestionează personaje</strong> (secțiunea 9.4).</li>
+</ul>
+
+<h3>14.7 CAPTCHA</h3>
+<p><strong>Activează rezolvitorul CAPTCHA vizual,</strong> și <strong>Metodă CAPTCHA text:</strong> obiectul de sub cursor sau tot ecranul.</p>
+
+<h3>14.8 Prompturi</h3>
+<p>Butonul «Gestionează prompturi» (secțiunea 12) și numărul de prompturi.</p>
+
+<h3>14.9 Avansat</h3>
+<ul>
+<li><strong>Gestionare jurnale:</strong> un fișier jurnal al suplimentului, dezactivat implicit, cu nivelul de detaliu și cât timp este păstrat, și butoanele Deschide fișierul jurnal, Deschide folderul jurnalelor și Golește fișierul jurnal. Util pentru a raporta o problemă.</li>
+<li><strong>Copie de rezervă și restaurare:</strong> secțiunea 16.</li>
+</ul>
+
+<h2>15. Setările rapide</h2>
+<p>În stratul de comenzi, Săgeată sus și Săgeată jos parcurg 25 de setări, iar Săgeată stânga și Săgeată dreapta o schimbă pe cea la care te afli. Fiecare schimbare este salvată imediat. Suplimentul anunță, de exemplu, «Model AI, Curent: … Folosește săgețile stânga și dreapta pentru a schimba.»</p>
+<ul>
+<li><strong>Furnizor AI:</strong> doar serviciile care au o cheie, plus Personalizat.</li>
+<li><strong>Model AI,</strong> apoi modelul fiecărei sarcini: OCR, STT, TTS, Operator și CAPTCHA, Video, Live. Schimbarea unuia activează rutarea avansată.</li>
+<li><strong>Voce TTS.</strong></li>
+<li><strong>Ieșire directă live (fără fereastră)</strong> și <strong>Dispozitiv de ieșire audio Gemini Live.</strong></li>
+<li><strong>Limba sursă, Limba țintă</strong> și <strong>Limba răspunsului AI.</strong></li>
+<li><strong>Rezolvitor CAPTCHA vizual</strong> și <strong>Metodă CAPTCHA text.</strong></li>
+<li><strong>Motor OCR.</strong></li>
+<li><strong>Descrierea imaginilor în OCR, Numerele paginilor la exportul documentelor, Copiază răspunsurile AI în clipboard, Ieșire directă (fără fereastră de chat), Curăță Markdown în chat, Salvează chaturile în istoric, Salvează documentele în istoric, Schimbare inteligentă:</strong> activat sau dezactivat.</li>
+</ul>
+
+<h2>16. Copie de rezervă, date și descărcări</h2>
+
+<h3>16.1 Copie de rezervă și restaurare</h3>
+<p>În fila Avansat, «Creează o copie de rezervă» salvează într-un fișier fie tot (setări, etichete, documente în curs, Istoric, personaje), fie doar setările. «Restaurează» le readuce, după confirmare, și înlocuiește setările și datele curente. Copia de rezervă conține cheile tale de acces și parola proxy în text simplu: păstreaz-o într-un loc sigur.</p>
+
+<h3>16.2 Unde sunt datele</h3>
+<p>Suplimentul își păstrează datele într-un folder BeMyAssistantAccess din configurația NVDA: etichete, Istoric, documente în curs, personaje, chei Gemini și jurnalul. IA locală se află în folderul Windows cu datele locale ale aplicațiilor, la ReaperAccessible, BeMyAssistantAccess.</p>
+
+<h3>16.3 Descărcări</h3>
+<p>Unele funcții au nevoie de un instrument gratuit, descărcat o dată în supliment, întotdeauna cu permisiunea ta: ffmpeg pentru dublare, înregistrare și camera web; modelul de detectare a tăcerii pentru narațiunea extinsă; biblioteca pentru sunetul calculatorului în observator; eSpeak-NG pentru vocile de narațiune.</p>
+
+<h2>17. Actualizări</h2>
+<p>Suplimentul se actualizează singur din depozitul GitHub al ReaperAccessible. Când există o versiune nouă, o propune; după ce este instalată, NVDA trebuie repornit. IA locală nu este actualizată odată cu suplimentul: se actualizează prin Manager.</p>
+
+<h2>18. Confidențialitate</h2>
+<ul>
+<li><strong>Cu un serviciu online,</strong> ce ceri, inclusiv imagini ale ecranului, documente și sunete, este trimis acelui serviciu. Evită-l pentru ecranele care arată informații personale.</li>
+<li><strong>Cu IA locală,</strong> răspunsurile IA sunt calculate pe calculatorul tău. Aceste funcții folosesc totuși Internetul: motorul OCR Chrome dacă îl alegi, verificarea actualizărilor, managerul de chei Gemini, descărcările de instrumente și videoclipurile online.</li>
+<li>Cheile de acces rămân în configurația NVDA, pe calculatorul tău, și în copiile tale de rezervă.</li>
+</ul>
+
+<h2>19. Mulțumiri</h2>
+<p>BeMyAssistantAccess este publicat de ReaperAccessible. Se bazează pe Vision Assistant Pro, de Mahmood Hozhabri, care a conceput cea mai mare parte din funcțiile lui. IA locală folosește motorul llama.cpp și modelul Qwen 3.5 al companiei Alibaba.</p>
+</body>
+</html>

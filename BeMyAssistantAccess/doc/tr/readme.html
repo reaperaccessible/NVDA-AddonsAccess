@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>BeMyAssistantAccess</title>
+</head>
+<body>
+<h1>BeMyAssistantAccess</h1>
+
+<p>BeMyAssistantAccess, NVDA ekran okuyucusu için bir yapay zeka asistanıdır. Ekranı veya bir nesneyi betimler, belgeleri ve resimleri okur, çeviri yapar, konuşmaları yazıya döker, dikte alır, sizinle sohbet eder, etiketi olmayan düğmelere ad verir, videoları analiz eder ve NVDA'nın okuyamadığı programlarda sizin yerinize tıklayıp yazabilir.</p>
+<p>İki şekilde çalışır, seçim sizin: tamamen bilgisayarınızda çalışan bir yapay zekayla ya da Google Gemini gibi çevrimiçi bir hizmetle.</p>
+
+<h2>1. Başlarken</h2>
+
+<h3>1.1 Yapay zekayı seçmek</h3>
+<p>NVDA menüsünü, sonra Seçenekler, Ayarlar ve BeMyAssistantAccess kategorisini açın. "Yapay zeka hizmeti" alanında iki ana seçenek vardır.</p>
+<ul>
+<li><strong>Yerel yapay zeka, bu bilgisayarda:</strong> her şey evde olur, ücretsizdir ve sınırsızdır. Oldukça güçlü bir bilgisayar gerektirir ve ReaperAccessible Installer Manager ile ayrıca kurulur. Bölüm 2'ye bakın.</li>
+<li><strong>Google Gemini:</strong> en eksiksiz hizmettir ve bazı özellikler için tek seçenektir (bölüm 2.4). Her bilgisayarda çalışır, ancak istediklerinizi Google'a gönderir. Google, günlük istek sayısı sınırlı ücretsiz bir erişim anahtarı sunar: "Ücretsiz Gemini anahtarı al" düğmesini etkinleştirin, anahtarı Google'ın sayfasında oluşturun, sonra "Bu hizmetin erişim anahtarı" alanına yapıştırın.</li>
+</ul>
+<p>Diğer hizmetler, OpenAI, Mistral AI, Groq, MiniMax ve Özel, kendi erişim anahtarlarıyla aynı şekilde çalışır. Her hizmet kendi anahtarını saklar: hizmeti değiştirdiğinizde, ona verdiğiniz anahtar geri gelir. Virgülle ayırarak birkaç anahtar verebilirsiniz: biri günlük sınırına ulaştığında eklenti bir sonrakini kullanır.</p>
+
+<h3>1.2 Diğer basit ayarlar</h3>
+<ul>
+<li><strong>Yanıt dili:</strong> yapay zekanın size yanıt verdiği dil. İlk seferde NVDA'nın dilidir.</li>
+<li><strong>Güncellemeleri otomatik olarak denetle:</strong> işaretliyse, eklenti NVDA başladıktan birkaç saniye sonra yeni bir sürüm arar. "Şimdi denetle" düğmesi bunu hemen yapar.</li>
+<li><strong>Gelişmiş seçenekler:</strong> diğer tüm ayarları açar. Bölüm 14'e bakın.</li>
+</ul>
+
+<h3>1.3 Komutları kullanmak</h3>
+<p>Tüm komutlar tek bir tuştan geçer, böylece diğer eklentileri hiç engellemez:</p>
+<ol>
+<li><strong>NVDA+Control+Shift+V</strong> tuşlarına basın. Bir bip sesi ve "Komutlar" sözcüğünü duyarsınız.</li>
+<li>Bırakın, sonra tek bir harfe basın. Örneğin tüm ekranı betimlemek için <strong>O</strong>, NVDA'nın imlecinin altındaki nesneyi betimlemek için <strong>V</strong>.</li>
+</ol>
+<p>Katman bir komuttan sonra kapanır. Komut olmayan bir tuş alçak bir bip sesi verir ve katmanı o da kapatır. <strong>H</strong> harfi tüm komutları listeler. Bölüm 3 bunları anlatır.</p>
+<p>Her komuta kendi kısayolu da verilebilir: NVDA menüsü, Seçenekler, Girdi hareketleri, BeMyAssistantAccess kategorisi.</p>
+
+<h3>1.4 Menü</h3>
+<p>NVDA menüsü, sonra Araçlar, şu öğeleri içeren bir BeMyAssistantAccess alt menüsü barındırır: Belge Okuyucu, Doğrudan Sohbet, Medya Transkripsiyon ve Dublaj, Videoyu analiz et, Canlı Asistan, YZ Operatörü (Canlı), Ortam Gözlemcisi, Gemini API Anahtar Yöneticisi, Ayarlar, Güncellemeleri Denetle ve Yardım.</p>
+
+<h3>1.5 Sesler</h3>
+<ul>
+<li>Yüksek bir bip: bir sonuç hazır ya da bir eylem tamamlandı.</li>
+<li>Orta bir bip: bir kayıt veya bir yakalama başladı.</li>
+<li>Alçak bir bip: bir şey başarısız oldu ya da tuş bir komut değil.</li>
+<li>İki farklı bip, Canlı Asistan'ın ve Ortam Gözlemcisi'nin başlangıcını ve bitişini belirtir.</li>
+</ul>
+<p><strong>I</strong> harfi, eklentinin o anda ne yaptığını istediğiniz zaman söyler.</p>
+
+<h3>1.6 Ekran Perdesi ve korumalı ekranlar</h3>
+<p>Ekrana bakan komutlar, NVDA'nın Ekran Perdesi açıkken reddeder ve NVDA+Control+Escape ile kapatmanızı söyler. Operatörler ayrıca kilitli bir masaüstünde ve Windows'un güvenli ekranlarında da reddeder. Bu güvenli ekranlarda eklenti hiçbir şey yapmaz.</p>
+
+<h2>2. Yerel yapay zeka</h2>
+
+<h3>2.1 Neye ihtiyaç duyar</h3>
+<ul>
+<li>En az 30 GB bellek.</li>
+<li>En az 6 GB belleği olan, herhangi bir marka bir ekran kartı: NVIDIA, AMD veya Intel.</li>
+<li>Yaklaşık 23 GB disk alanı.</li>
+</ul>
+<p>Yapay zeka ekran kartında yaklaşık 4 GB yer kaplar. Modelin geri kalanı bilgisayarın belleğine gider.</p>
+
+<h3>2.2 Kurulumu</h3>
+<ol>
+<li>ReaperAccessible Installer Manager'ı açın. Yoksa, eklentinin ayarlarında "Yerel yapay zeka, bu bilgisayarda" seçeneğini seçin, sonra "Yerel yapay zeka nasıl kurulur" düğmesini, ardından "Yöneticiyi indir" düğmesini etkinleştirin.</li>
+<li>Manager'da "NVDA Add-on" türünü, sonra "BeMyAssistantAccess, local AI" öğesini seçin ve kurun. İndirme yaklaşık 23 GB'tır.</li>
+<li>Eklentinin ayarlarında "Yerel yapay zeka, bu bilgisayarda" seçeneğini seçin, sonra Tamam'a basın.</li>
+</ol>
+<p>BeMyAssistantAccess NVDA'da kurulu değilse ya da bilgisayarda yeterli bellek yoksa kurulum devam etmeyi reddeder. Bu durumda nedenini söyler. Yerel yapay zeka seçilmiş ama kurulmamışken, eklentinin her isteği nasıl edinileceğini açıklar.</p>
+<p>Kaldırmak için Windows Ayarları'na, Yüklü uygulamalar'a, "BeMyAssistantAccess - Local AI" öğesine gidin.</p>
+
+<h3>2.3 İlk bekleme</h3>
+<p>İlk yanıtından önce yapay zekanın belleğe yüklenmesi gerekir: birkaç saniyeden yaklaşık otuz saniyeye kadar. Bundan sonra hızlı yanıt verir. Siz harfi seçerken, NVDA+Control+Shift+V tuşlarına bastığınız anda yüklenmeye başlar.</p>
+<p>Gelişmiş seçeneklerin en üstündeki "Yerel yapay zekayı hazır tut" ayarı, belleği ne zaman boşalttığını belirler:</p>
+<ul>
+<li><strong>Son istekten 15 dakika sonra:</strong> varsayılan.</li>
+<li><strong>Son istekten 1 saat sonra.</strong></li>
+<li><strong>Her zaman, NVDA başladığından beri:</strong> bir daha asla bekleme olmaz, ama yapay zeka, kullanmadığınız zamanlarda bile belleği sürekli kullanır.</li>
+</ul>
+<p>NVDA kapandığında her zaman durur.</p>
+
+<h3>2.4 Her yapay zeka türüyle neler çalışır</h3>
+<p>Yerel yapay zeka ekranı ve nesneleri betimler, resimlerdeki ve belgelerdeki metni okur, metni çevirir, düzeltir ve özetler, sizinle sohbet eder, düğmelere ad verir ve adım adım pilotu ile Kullanıcı Arayüzü Gezgini'ni yönetir.</p>
+<p>Şu özellikler Google Gemini'yi ya da "Gemini Uyumlu" türünde bir Özel hizmeti gerektirir: Canlı Asistan, Canlı Operatör, Ortam Gözlemcisi, video analizi, ekran kaydı analizi, sesli betimleme ve dublaj.</p>
+<p>Akıllı Dikte, sesli çeviri ve ses dosyalarının yazıya dökülmesi sesi anlayan bir yapay zeka gerektirir: yerel yapay zekayla henüz çalışmazlar.</p>
+<p>Bir belgenin ses dosyası olarak sesli okunması Google Gemini, OpenAI, MiniMax ve bir Özel hizmetle çalışır, ama Mistral AI, Groq veya yerel yapay zekayla çalışmaz.</p>
+
+<h2>3. Komutlar</h2>
+<p>Önce NVDA+Control+Shift+V tuşlarına, sonra şu tuşlardan birine basın. Sonraki bölümler her özelliği ayrıntılı açıklar.</p>
+
+<h3>3.1 Ekranı görmek</h3>
+<ul>
+<li><strong>O:</strong> tüm ekranı betimler ve metnini okur.</li>
+<li><strong>V:</strong> NVDA'nın imlecinin altındaki nesneyi betimler.</li>
+<li><strong>E:</strong> tıklanabilen her şeyi listeleyen ve sizin yerinize tıklayan Kullanıcı Arayüzü Gezgini. Bölüm 6.</li>
+<li><strong>L:</strong> imlecin altındaki etiketsiz düğmeye veya resme bir ad verir. Bölüm 6.</li>
+<li><strong>Shift+L:</strong> verilmiş adları yönetir ya da penceredeki adı olmayan tüm öğelere bir seferde ad verir. Bölüm 6.</li>
+</ul>
+
+<h3>3.2 Sizin yerinize eylemde bulunmak</h3>
+<ul>
+<li><strong>Shift+A:</strong> adım adım pilot. Bölüm 4.</li>
+<li><strong>Control+Shift+A:</strong> birkaç eylemi kendi başına zincirleyen YZ Operatörü. Bölüm 5.</li>
+<li><strong>Control+A:</strong> sesle çalışan Canlı Operatör. Yalnızca Google Gemini. Bölüm 5.</li>
+<li><strong>C:</strong> CAPTCHA çözücü. Bölüm 5.</li>
+</ul>
+
+<h3>3.3 Metin ve çeviri</h3>
+<ul>
+<li><strong>T:</strong> seçili metni ya da imlecin altındaki nesneyi çevirir.</li>
+<li><strong>Shift+T:</strong> panodaki metni çevirir.</li>
+<li><strong>R:</strong> seçili metni özetlemek, düzeltmek, çevirmek veya açıklamak ya da İstemlerinizden birini çalıştırmak için bir menü.</li>
+<li><strong>S:</strong> Akıllı Dikte.</li>
+<li><strong>Control+T:</strong> sesli çeviri.</li>
+</ul>
+<p>Bölüm 7 bunları açıklar.</p>
+
+<h3>3.4 Belgeler ve dosyalar</h3>
+<ul>
+<li><strong>D:</strong> Belge Okuyucu. Bölüm 8.</li>
+<li><strong>F:</strong> Dosya Gezgini'nde seçili resim veya PDF dosyasını okur ya da betimler. Bölüm 8.</li>
+<li><strong>M:</strong> bir ses veya video dosyasını yazıya döker, çevirir ya da dublajlar. Bölüm 9.</li>
+<li><strong>Shift+V:</strong> bir videoyu analiz eder ve sesli betimlemeler yapar. Yalnızca Google Gemini. Bölüm 9.</li>
+<li><strong>Control+V:</strong> ekranı kaydeder, sonra kaydı betimletir. Yalnızca Google Gemini. Bölüm 9.</li>
+</ul>
+
+<h3>3.5 Sohbet etmek</h3>
+<ul>
+<li><strong>Shift+C:</strong> yapay zekayla Doğrudan Sohbet. Bölüm 10.</li>
+<li><strong>Boşluk:</strong> son sonucu yeniden açar. Bölüm 10.</li>
+<li><strong>Control+H:</strong> Geçmiş. Bölüm 10.</li>
+<li><strong>Control+L:</strong> Canlı Asistan. Yalnızca Google Gemini. Bölüm 11.</li>
+<li><strong>Shift+O:</strong> Ortam Gözlemcisi. Yalnızca Google Gemini. Bölüm 11.</li>
+</ul>
+
+<h3>3.6 Diğer tuşlar</h3>
+<ul>
+<li><strong>I:</strong> eklentinin ne yaptığını söyler.</li>
+<li><strong>H:</strong> tüm komutların listesi.</li>
+<li><strong>U:</strong> güncelleme arar.</li>
+<li><strong>Alt+S:</strong> ayarları açar.</li>
+<li><strong>G:</strong> Gemini API Anahtar Yöneticisi. Bölüm 13.</li>
+<li><strong>Alt+Q:</strong> günlük kotasını tüketmiş Gemini anahtarları. Bölüm 13.</li>
+<li><strong>Alt+M:</strong> gelişmiş yönlendirmede her görev için hangi yapay zeka modellerinin seçildiğini söyler.</li>
+<li><strong>Yukarı ok ve Aşağı ok, Sol ok ve Sağ ok:</strong> hızlı ayarlar. Bölüm 15.</li>
+</ul>
+
+<h2>4. Adım adım pilot</h2>
+<p>Adım adım pilot, NVDA'nın hiçbir şey yapamadığı yerlerde sizin yerinize tıklar ve yazar: erişilemeyen bir program, resimlerden oluşan bir pencere. Her eylemi siz belirlersiniz; yapay zeka yalnızca öğenin nerede olduğunu bulur.</p>
+<ol>
+<li>NVDA+Control+Shift+V tuşlarına, sonra Shift+A'ya basın.</li>
+<li>Tek bir eylem söyleyin, örneğin "Çevrimiçi oyunlar'a tıkla", "Rapor dosyasına çift tıkla" ya da "simgeye sağ tıkla".</li>
+<li>Yazmak için metni tırnak içine alın: Ad alanına "merhaba" yaz.</li>
+<li>Eklenti "Bakıyorum" der, sonra örneğin "Tıkla: Çevrimiçi oyunlar düğmesi?" diye sorar. Evet ya da Hayır yanıtını verin.</li>
+<li>Eylemden sonra ekranın şimdi neyi gösterdiğini söyler.</li>
+</ol>
+<p>Sizi koruyan kurallar:</p>
+<ul>
+<li>Eklenti yalnızca tırnak içine aldığınız metni yazar. Metin vermeden yazmasını isterseniz, nasıl yapılacağını açıklar.</li>
+<li>Sizin Evet'iniz olmadan hiçbir şey olmaz.</li>
+<li>Öğe bulunamazsa, gelişigüzel tıklamak yerine bunu söyler.</li>
+<li>Parolaları her zaman kendiniz yazarsınız: yalnızca alana tıklamasını isteyin, sonra parolanızı yazın ya da yapıştırın.</li>
+<li>Bir seferde tek eylem: bir eylem sürerken Shift+A hiçbir şey yapmaz.</li>
+</ul>
+<p>Pilot yerel yapay zekayla ve çevrimiçi hizmetlerle çalışır, ayrıca yönetici olarak çalıştırılan programlarda da çalışır, çünkü eklenti NVDA'nın içinden eylemde bulunur.</p>
+
+<h2>5. Operatörler ve CAPTCHA çözücü</h2>
+
+<h3>5.1 YZ Operatörü (Control+Shift+A)</h3>
+<p>Vision Assistant Pro'dan gelen YZ Operatörü, bir görevin tamamını kendi başına yapar: onu bir cümleyle anlatırsınız, yapay zeka ekrana bakar ve en fazla on eylemi zincirler; tıklama, çift tıklama, sağ tıklama, yazma, kaydırma, sürükleme veya tuşlara basma gibi. Her eylemden önce ne yaptığını söyler, ama onay istemez. Durdurmak için Control+Shift+A'ya yeniden basın.</p>
+<p>Bitirdiğinde yanıtı, ona yeni bir talimat verebileceğiniz bir sohbet penceresinde açılır. Adım adım pilottan daha az güvenlidir, özellikle yerel yapay zekayla, ve her adım yapay zekaya ekranın bir resmini gönderir.</p>
+
+<h3>5.2 Canlı Operatör (Control+A)</h3>
+<p>Canlı Operatör, siz konuşurken yapay zekanın bilgisayarınızda eylemde bulunabildiği bir Canlı Asistan sohbeti başlatır (yalnızca Google Gemini). Ondan sade bir dille bir şey isteyin, örneğin "İndirilenler klasörünü aç". Adım adım çalışır, istek başına en fazla on adım, ve her adımı sesli söyler. Görevin ne zaman tamamlandığını, iptal edildiğini, sizin eyleminizi gerektirdiğini ya da sınırına ulaştığını size bildirir.</p>
+<ul>
+<li>Canlı Asistan penceresindeki "Operatör eylemini durdur" düğmesi, sohbeti bitirmeden mevcut görevi iptal eder.</li>
+<li>Oturumu bitirmek için Control+A'ya yeniden basın.</li>
+<li>Operatör açıkken web kamerası kullanılamaz.</li>
+<li>Bir CAPTCHA çıktığında önce CAPTCHA çözücüyü dener; olmazsa erişilebilir sınamayı sizin tamamlamanızı ister.</li>
+</ul>
+
+<h3>5.3 CAPTCHA çözücü (C)</h3>
+<p>CAPTCHA çözücü, ekranda gösterilen "Ben robot değilim" testini okur.</p>
+<ul>
+<li><strong>Metin ya da sayı CAPTCHA'sı:</strong> onu okur, "Captcha:" ve ardından yanıtı söyler ve yanıtı yazar.</li>
+<li><strong>Resimli CAPTCHA,</strong> örneğin resim ızgarası ya da işaretlenecek bir kutu: tıklayarak çözmeye çalışır, en fazla 15 deneme, ve çözüldüğünü ya da pes ettiğini söyler. Durdurmak için C'ye yeniden basın.</li>
+</ul>
+<p>Gelişmiş seçeneklerin CAPTCHA sekmesinde resim çözücüyü kapatabilir ve metin CAPTCHA'larının imlecin altındaki nesneden mi yoksa tüm ekrandan mı okunacağını seçebilirsiniz.</p>
+
+<h2>6. Ekranı görmek</h2>
+
+<h3>6.1 Betimlemek (O ve V)</h3>
+<p>O tüm ekranı betimler ve metnini okur; V yalnızca NVDA'nın imlecinin altındaki nesneyi betimler. Yanıt, aynı resim hakkında ek sorular sorabileceğiniz bir pencerede açılır ya da "Doğrudan Çıktı" açıksa doğrudan sesli okunur (bölüm 14).</p>
+
+<h3>6.2 Kullanıcı Arayüzü Gezgini (E)</h3>
+<p>Yapay zeka, görev çubuğu ve NVDA'nın kendi pencereleri hariç, ekranda tıklanabilen her şeyi listeler. "Bir öğe seçin" listesinde birini seçin, sonra:</p>
+<ul>
+<li><strong>Tıkla:</strong> eklenti ona tıklar, sonra iki saniye sonra ekrana yeniden bakar, böylece devam edebilirsiniz.</li>
+<li><strong>Etiket Ekle:</strong> öğeye bu adı verir, böylece NVDA artık onu bu adla duyurur.</li>
+<li><strong>İptal:</strong> gezgini kapatır. E'ye yeniden basmak da durdurur.</li>
+</ul>
+
+<h3>6.3 Etiketler (L)</h3>
+<p>Adı olmayan bir düğmede ya da resimde L, yapay zekaya ne olduğunu sorar ve ona kalıcı bir ad verir: NVDA onu o programda her zaman bu adla duyurur. Ad, pencere yeniden boyutlandığında, ekranları değiştirdiğinizde ve program güncellendiğinde kalır. Öğenin zaten bir adı varsa eklenti bunu söyler. Etiketler web tarayıcılarında çalışmaz.</p>
+
+<h3>6.4 Etiket Yöneticisi (Shift+L)</h3>
+<p>Programın zaten etiketleri varsa, Shift+L Etiket Yöneticisi'ni açar: verilmiş adların, türleriyle birlikte, bir listesi. Öğeleri işaretleyip "İşaretlileri Sil" diyebilirsiniz; birini seçip "Yeniden Adlandır" diyebilirsiniz; "Tümünü Seç" ya da "Tüm işaretleri temizle" (listedeki Control+A hepsini işaretler); ve adı olmayan öğeleri yeniden aramak için "Yeniden tara".</p>
+<p>Programın henüz etiketi yoksa, Shift+L penceredeki adı olmayan her öğeye bir seferde ad verir: düğmeler, onay kutuları, bağlantılar, sekmeler, liste öğeleri, simgeler ve diğerleri.</p>
+
+<h2>7. Metin, çeviri ve dikte</h2>
+
+<h3>7.1 Çeviri (T ve Shift+T)</h3>
+<p>T seçili metni çevirir. Seçim yoksa, içinde bulunduğunuz alanın ya da NVDA'nın imlecinin altındaki nesnenin metnini alır. Shift+T panoyu çevirir. Çeviri sesli okunur, sonra "Doğrudan Çıktı" açık değilse bir pencerede gösterilir.</p>
+<p>Eklenti "Hedef" dile çevirir. <strong>Akıllı Takas</strong> ile, zaten Hedef dilde olan bir metin bunun yerine "Kaynak" dile, kaynak "Otomatik Algıla" ise İngilizceye çevrilir. Kod ve web adresleri çevrilmez. Bu diller Çeviri Dilleri sekmesinde ya da hızlı ayarlarla belirlenir.</p>
+
+<h3>7.2 Metin menüsü (R)</h3>
+<p>R, seçili metin için bir menü açar: Özetle, Dilbilgisini Düzelt, Dil Bilgisini Düzelt ve Çevir, Açıklama, sonra İstemlerinizin her biri (bölüm 12). Bir istem dosya gerektiriyorsa önce bir dosya seçici açılır. Yanıt, daha fazla soru sorabileceğiniz bir pencerede açılır ya da o istem için yapılan seçime uyar.</p>
+
+<h3>7.3 Akıllı Dikte (S) ve sesli çeviri (Control+T)</h3>
+<ol>
+<li>S'ye basın: bir bip ve "Dinliyorum". Konuşun.</li>
+<li>S'ye yeniden basın: "Yazıyorum". Metin imlecinizin bulunduğu yere yazılır.</li>
+</ol>
+<p>Control+T aynı şekilde çalışır, ama metin yazılmadan önce Kaynak dilden Hedef dile çevrilir. Eklenti Windows'un varsayılan mikrofonunu kullanır. Bir saniyeden kısa konuşma "Konuşma algılanmadı" sonucunu verir. Metin, yerine geçtiği pano aracılığıyla yazılır. Bu iki özellik sesi anlayan çevrimiçi bir hizmet gerektirir.</p>
+
+<h2>8. Belge Okuyucu ve dosyalar</h2>
+
+<h3>8.1 Bir belge açmak (D)</h3>
+<p>D, şu öncelik sırasıyla açar:</p>
+<ol>
+<li>Dosya Gezgini'nde seçili dosyalar, tek bir belge olarak birlikte okunur: PDF, resimler, TIFF, iPhone fotoğrafları (HEIC), metin ve HTML dosyaları;</li>
+<li>değilse, panodaki bir resim;</li>
+<li>değilse, son belgelerin listesi; Aç, Sil, Tümünü Temizle, Dosya Aç (Control+O) ve Kapat düğmeleriyle. Geçmiş yoksa doğrudan dosya seçici açılır.</li>
+</ol>
+<p>Okuma sırasında D, okumayı durdurur. Metin ve HTML dosyaları yapay zeka olmadan hemen açılır. Önceki bir okuma yarıda kesilmişse, eklenti yeniden başlatmadan sonra bile kaldığı yerden devam etmeyi önerir.</p>
+
+<h3>8.2 Seçenekler penceresi</h3>
+<p>Birkaç sayfalık bir belgeyi okumadan önce Seçenekler penceresi toplam sayfa sayısını gösterir ve şunları sunar:</p>
+<ul>
+<li><strong>Kaynak ve İle:</strong> okunacak sayfalar.</li>
+<li><strong>Çeviri Çıktısı,</strong> hedef dille birlikte.</li>
+<li><strong>OCR işlemi sırasında resimleri satır içi olarak betimle:</strong> belgenin resimleri metnin içinde betimlenir.</li>
+<li><strong>İşleme başlamadan önce PDF sayfalarını sıkıştır:</strong> büyük taranmış sayfaları göndermeden önce hafifletir.</li>
+</ul>
+<p>Sonra Başlat'a basın. Sayfalar arka planda, aynı anda birkaç tane okunur; pencereyi kapatıp sonra dönebilirsiniz. Eklenti hazır olan her sayfayı duyurur. Daha önce okunmuş bir belge yeniden okunmadan hemen açılır.</p>
+
+<h3>8.3 Okuma penceresi</h3>
+<ul>
+<li><strong>Control+Page Down ve Control+Page Up,</strong> ya da Sonraki ve Önceki düğmeleri: sayfayı değiştirir. Son satırda Aşağı ok ve ilk satırda Yukarı ok da sayfayı değiştirir.</li>
+<li><strong>Şuraya git:</strong> sayfa numaralarının listesi.</li>
+<li><strong>Yapay zekaya sor (Alt+A):</strong> belge hakkında bir soru sorar.</li>
+<li><strong>YZ ile yeniden tara (Alt+R):</strong> geçerli sayfayı ya da tüm sayfaları yapay zekayla yeniden okur.</li>
+<li><strong>Tekrar dene:</strong> bazı sayfalar hizmet meşgul olduğu için başarısız olduğunda görünür ve yalnızca onları yeniden okur.</li>
+<li><strong>Ses Oluştur (Alt+G):</strong> geçerli sayfayı ya da tüm sayfaları seçilen sesle bir MP3 veya WAV dosyası olarak kaydeder. Yalnızca hizmet konuşabiliyorsa bulunur.</li>
+<li><strong>Biçimlendirilmiş olarak görüntüle:</strong> tüm belgeyi başlıklarla biçimlendirilmiş metin olarak gösterir.</li>
+<li><strong>Kaydet (Alt+S veya Control+S):</strong> metni, ayar açıksa sayfa numaralarıyla birlikte, metin ya da HTML dosyası olarak kaydeder. Bazı sayfalar eksikse eklenti önce bunu söyler.</li>
+<li><strong>Kapat:</strong> kaldığınız yer Geçmiş'te saklanır.</li>
+</ul>
+
+<h3>8.4 Üç OCR motoru</h3>
+<p>Belge Okuyucu sekmesindeki OCR motoru, resimlerin ve taranmış sayfaların metninin nasıl okunacağını belirler:</p>
+<ul>
+<li><strong>Chrome (Hızlı):</strong> hızlıdır, ama hangi yapay zekayı seçmiş olursanız olun sayfaları bir Google hizmetine gönderir ve Google Translate ile çevirir. Çevrimiçi hizmetlerde varsayılandır.</li>
+<li><strong>YZ (Gelişmiş):</strong> seçilen yapay zekayı kullanır, düzeni, bağlantıları ve resim betimlemelerini korur. Yerel yapay zekayı seçmek bu motoru otomatik olarak seçer, böylece hiçbir şey bilgisayarınızdan çıkmaz.</li>
+<li><strong>Yok (Metin Katmanını Çıkart):</strong> yalnızca aranabilir bir PDF'de zaten bulunan metni okur, hiçbir resmi okumaz.</li>
+</ul>
+
+<h3>8.5 Bir dosyayı okumak ya da betimlemek (F)</h3>
+<p>F, Dosya Gezgini'nde seçili resim veya PDF dosyası üzerinde ya da panodaki bir resim üzerinde, dosya seçici olmadan çalışır. YZ motoruyla tek bir resim için metnin mi çıkarılacağını yoksa resmin mi betimleneceğini sorar. Birkaç sayfalık bir PDF için seçenekler penceresi gösterilir. Yanıt bir sohbet penceresinde açılır. F'ye yeniden basmak durdurur.</p>
+
+<h2>9. Medya ve video</h2>
+
+<h3>9.1 Transkripsiyon ve dublaj (M)</h3>
+<p>M, Dosya Gezgini'nde seçili ses ya da video dosyası üzerinde çalışır ya da bir dosya seçici açar. Üç seçenek:</p>
+<ul>
+<li><strong>Metne Dönüştür (Orijinal Dil):</strong> söylenenleri yazar.</li>
+<li><strong>Metne Dönüştür ve Çevir (Hedef Dil):</strong> bunu başka bir dilde yazar.</li>
+<li><strong>Dublaj ve Çeviri (Hedef Dil):</strong> konuşmanın seçilen dildeki bir sesle değiştirildiği bir MP3 dosyası yapar. Yalnızca Google Gemini.</li>
+</ul>
+<p>Dublaj ücretsiz ffmpeg aracını gerektirir: eklenti bir kez indirmeyi önerir, yaklaşık 70 MB.</p>
+
+<h3>9.2 Video analizi (Shift+V)</h3>
+<p>Shift+V, Dosya Gezgini'nde seçili video üzerinde ya da panoya kopyalanmış bir video adresi üzerinde çalışır: YouTube, Instagram, Twitter (X) veya TikTok. Değilse, bir adres yapıştırabileceğiniz ya da bir dosya seçebileceğiniz Videoyu analiz et penceresi açılır. İki eylem:</p>
+<ul>
+<li><strong>Genel Video Analizi:</strong> sahnelerin, kişilerin ve olanların tam bir betimlemesi, sesin bir özetiyle birlikte.</li>
+<li><strong>Sesli Betimleme Oluştur (SRT Dosyası):</strong> diyalogların arasındaki sessizliklere yerleştirilmiş, zaman damgalı betimlemelerden oluşan bir dosya.</li>
+</ul>
+<p>Sesli betimleme için karakter listesini ilk alt başlık olarak ekleyebilir, metnin bir yapay zekadan geldiğini belirten bir uyarı ekleyebilir ve eklentinin karakterlerini tanıması için bir dizi ya da film seçebilirsiniz (bölüm 9.4). Bir YouTube videosu için videonun uzunluğunu dakika olarak sorar. Yüklenen bir video 48 saat kullanılabilir kalır: yeniden yüklemeden ondan başka dosyalar yapabilirsiniz.</p>
+
+<h3>9.3 Sesli betimleme ve seslendirme</h3>
+<p>Sesli betimleme penceresi ilerlemeyi ve metni gösterir. Sonra:</p>
+<ul>
+<li><strong>SRT'yi kaydet:</strong> altyazı dosyasını kaydeder. Ona videoyla aynı adı, aynı klasörde verin; medya oynatıcınız onu ekran okuyucunuza okutabilir.</li>
+<li><strong>Senkronize Seslendirme Oluştur (MP3):</strong> betimlemeleri, seçtiğiniz bir sesle konuşmaya dönüştürür: eSpeak, bir Windows sesi ya da Gemini sesleri. eSpeak-NG pencereden indirilebilir.</li>
+<li><strong>Yeniden oluştur</strong> ve <strong>Tekrar dene:</strong> baştan başlar ya da geçici bir hatadan sonra devam eder.</li>
+</ul>
+<p>Bilgisayarınızdaki bir video dosyası için iki tür seslendirme vardır:</p>
+<ul>
+<li><strong>Standart:</strong> ses, videonun sesinin üzerine karıştırılır. Eklenti betimlemeler sırasında arka plan sesinin kısılıp kısılmayacağını sorar.</li>
+<li><strong>Genişletilmiş:</strong> videonun sesi her betimleme sırasında durur, böylece hiçbir şeyi kaçırmazsınız. Eklenti, izninizle bir kez indirilen, yaklaşık 70 MB'lık küçük bir sessizlik algılama modeli kullanır.</li>
+</ul>
+<p>Çevrimiçi bir video için MP3 yalnızca betimlemelerin sesini içerir.</p>
+
+<h3>9.4 Karakter sözlüğü</h3>
+<p>Her dizi ya da film için eklenti, adları bölümden bölüme aynı kalsın diye bir karakter listesi tutabilir. Videonun sekmesindeki ya da video penceresindeki "Karakterleri Yönet" ile açın. Bir not ile, örneğin rolü ile, bir karakter ekleyebilirsiniz; onu F2 ile düzenleyebilir, Delete ile kaldırabilir, satır başına bir ad olacak şekilde bir liste içe aktarabilir ya da bir dizinin tamamını silebilirsiniz. Yapay zeka kendi keşfettiği karakterleri kendisi ekler ve her birini yalnızca ilk göründüğünde betimler.</p>
+
+<h3>9.5 Ekran kaydı (Control+V)</h3>
+<p>Control+V etkin pencerenin kaydını sessizce ve sessiz olarak başlatır. Durdurmak için Control+V'ye yeniden basın: eklenti süreyi söyler, sonra kaydı betimletir. Eklentinin indirmeyi önerdiği ffmpeg gerekir.</p>
+
+<h2>10. Sohbet, sonuçlar ve Geçmiş</h2>
+
+<h3>10.1 Doğrudan Sohbet (Shift+C)</h3>
+<p>Yapay zekayla bir sohbet. "Soru Sorun" alanına yazın ve göndermek için Enter'a basın; Shift+Enter bir satır ekler. "Dosya Ekle" düğmesi sorunuza resim, PDF dosyası ya da ses ekler. Diğer düğmeler: Biçimlendirilmiş olarak görüntüle, İçeriği Kaydet (son yanıt, HTML olarak), Sohbeti Kaydet (tüm sohbet, metin olarak) ve Kapat.</p>
+<p>Her sohbet penceresinde: Alt+Aşağı ok sonraki iletiyi okur, Alt+Yukarı ok öncekini, Alt+C iletiyi kopyalar. Eklenti ilk ya da son iletiye ulaştığınızda bunu söyler.</p>
+
+<h3>10.2 Son sonuç (Boşluk)</h3>
+<p>Boşluk, yapay zekanın son yanıtını yeniden açar: betimleme, çeviri, metin menüsü, belge sohbeti, operatör ya da Canlı Asistan sohbeti.</p>
+
+<h3>10.3 Geçmiş (Control+H)</h3>
+<p>Geçmiş, sohbetlerinizi ve belgelerinizi, en fazla 100 tane, saklar. "Göster" listesi bunları süzer: Tümü, Sohbetler ya da Belgeler.</p>
+<ul>
+<li><strong>Aç</strong> (veya Enter): bir sohbet dosyalarıyla birlikte yeniden açılır, bir belge kaldığınız sayfada.</li>
+<li><strong>Sil</strong> (veya Delete tuşu): bir öğeyi kaldırır. Bir belge için, onu yalnızca Geçmiş'ten mi yoksa ayrıca zaten okunmuş metinden mi kaldıracağınızı seçersiniz, böylece sonraki açılışta yeniden okunur.</li>
+<li><strong>Tümünü Temizle:</strong> gösterilen listeyi boşaltır.</li>
+</ul>
+<p>"Sohbetleri geçmişe kaydet" ve "Belgeleri geçmişe kaydet" ayarları nelerin saklanacağını belirler.</p>
+
+<h2>11. Canlı Asistan ve Ortam Gözlemcisi</h2>
+<p>Bu iki özellik Google Gemini gerektirir.</p>
+
+<h3>11.1 Canlı Asistan (Control+L)</h3>
+<p>Sesli bir sohbet: mikrofona konuşursunuz, yapay zeka ekranınızı görür ve sesli yanıt verir. Örneğin "neye bakıyorum?" ya da "bana üçüncü paragrafı oku" diye sorun. Bitirmek için Control+L'ye yeniden basın.</p>
+<p>Canlı Asistan penceresi şunları sunar:</p>
+<ul>
+<li><strong>TTS Sesi:</strong> yapay zekanın sesi. Değiştirmek sohbeti yeniden başlatır.</li>
+<li><strong>Düşünme Derinliği:</strong> yapay zekanın yanıtlamadan önce ne kadar düşündüğü, buna izin veren modeller için.</li>
+<li><strong>Ses Aygıtı:</strong> sesin gittiği ses kartı.</li>
+<li><strong>Bas Konuş:</strong> mikrofon, ayarlarda seçilen tuşu basılı tutana kadar kapalı kalır. Gürültülü bir yerde yararlıdır.</li>
+<li><strong>Web kamerasını kullan:</strong> nesneler, basılı kâğıtlar ya da çevreniz hakkında soru sormak için ekran yerine kamerayı gönderir. ffmpeg gerekir. "Kamera Gizlilik Ayarları" düğmesi, kamera engelliyse Windows ayarlarını açar.</li>
+<li><strong>Sonlandır</strong> ya da <strong>Başlat.</strong> Escape pencereyi kapatır ve sohbeti sonlandırır.</li>
+</ul>
+
+<h3>11.2 Ortam Gözlemcisi (Shift+O)</h3>
+<p>Ortam Gözlemcisi sohbet olmadan arka planda çalışır: neyin değiştiğini bildirir ve hiçbir şey olmadığında sessiz kalır. Shift+O penceresini açar; Shift+O yeniden durdurur. Üç kip:</p>
+<ul>
+<li><strong>Yalnızca Sesli Çeviri:</strong> duyduklarını, mikrofondan ya da bilgisayarın sesinden, çevirir. Bilgisayarın sesi, izninizle bir kez indirilen küçük bir kitaplık gerektirir.</li>
+<li><strong>Sadece Ekran İzleyicisi:</strong> ekranda neyin değiştiğini söyler. Yalnızca ekran gerçekten değiştiğinde bir resim gönderir.</li>
+<li><strong>Yalnızca Web Kamerası İzleyicisi:</strong> ne gördüğünü sorabilmeniz için Canlı Asistan'ı kamerayla açar.</li>
+</ul>
+<p>"Yaptıklarım hakkında" raporları daha yararlı kılar. Ekran için: Genel, bir film ya da dizi izleme, canlı yayın veya sunum izleme, çevrimiçi bir toplantı veya görüşme, ya da oyun. Kamera için: Genel, görünüşümü ya da makyajımı kontrol etme, renk kontrolü yapma veya kıyafetleri eşleştirme, bir belgeyi veya etiketi okuma, son kullanma tarihini veya gıda etiketini okuma, ilaç kutusunu veya reçeteyi okuma, el yazısını veya doldurulmuş bir formu okuma, bir cihazın veya uzaktaki bir ekranın verilerini okuma, gösterge ışıklarını kontrol etme, bir nesneyi betimleme ya da etrafıma bakınma. Kendi metninizi de yazabilirsiniz. Raporlar kısa, tek cümle, ya da ayrıntılı olabilir. Pencere son seçimlerinizi hatırlar.</p>
+
+<h2>12. İstemler</h2>
+<p>İstemler, yapay zekaya verilen talimatlardır. İstem Yöneticisi'ni gelişmiş seçeneklerden, İstemler sekmesinden, "İstemleri Yönet" ile açın.</p>
+
+<h3>12.1 Eklentinin istemleri</h3>
+<p>"Varsayılan İstemler" sekmesi, değiştirebileceğiniz her özelliğin talimatlarını listeler: özet, düzeltme, çeviri, betimleme, video, transkripsiyon, dikte, OCR, CAPTCHA, gözlemcinin rapor stilleri ve bağlamları. Bir "Filtre" listesi her seferinde bir aileyi gösterir. "Seçilenlere Uygula" değişikliği kaydeder, "Seçileni Sıfırla" ya da "Tümünü Sıfırla" özgün metni geri getirir. Bazı istemler bir özellik için gereklidir: eklenti, değiştirmeden önce sizi uyarır.</p>
+
+<h3>12.2 Kendi istemleriniz</h3>
+<p>"Özel İstemler" sekmesi, R menüsünün sırasıyla kendi isteklerinizi barındırır: Ekle, Düzenle, Kaldır, Yukarı Taşı, Aşağı Taşı. Her istem için:</p>
+<ul>
+<li><strong>Ad</strong> ve <strong>İstem Metni.</strong></li>
+<li><strong>Kısayol tuşu:</strong> kaydetmek için tuşlara basın; Backspace siler. Tek bir harf, rakam ya da F1 ile F12 komut katmanında, ve her yerde NVDA+Control+Shift ve o tuşla çalışır. Alt+1 ya da Control+Shift+1 gibi bir kombinasyon her yerde yazıldığı gibi çalışır. Bir komutun ya da başka bir istemin zaten kullandığı tuş reddedilir.</li>
+<li><strong>Geri bildirim davranışı:</strong> genel ayarı izlemek, yanıtı panoya kopyalamak, doğrudan sesli okumak, ikisini birden yapmak ya da her zaman bir sohbet penceresi açmak.</li>
+</ul>
+
+<h3>12.3 Değişkenler</h3>
+<p>Bir istem, çalıştığında değiştirilen, köşeli parantez içinde sözcükler içerebilir. "Değişkenler Kılavuzu" düğmesi bunları listeler.</p>
+<ul>
+<li><strong>Metin:</strong> [selection] seçili metin, [clipboard] pano, [text] içinde bulunduğunuz alanın metni (asla bir parola değil), [currentURL] Chrome, Edge veya Firefox'taki sayfanın adresi, [clipboard_image] panodaki resim.</li>
+<li><strong>Ekran:</strong> [screen_obj] imlecin altındaki nesne, [screen_fg_obj] etkin pencere, [screen_full] tüm ekran.</li>
+<li><strong>Dosyalar:</strong> [file_ocr] okunacak bir resim veya PDF ister, [file_read] bir belge, [file_audio] bir ses dosyası.</li>
+<li><strong>Diller:</strong> {target_lang}, {source_lang}, {response_lang}, {swap_target} ve {swap_instruction}.</li>
+<li><strong>Ortam Gözlemcisi:</strong> [ambient_screen], [ambient_webcam] veya [ambient_audio] gözlemciyi başlatır, aynı kısayol onu durdurur; [mic] veya [loopback] sesi, [brief] veya [detailed] stili, örneğin [lang:fr] dili seçer.</li>
+</ul>
+<p>Eklenti, değişkenleri birbirine uymayan bir istemi reddeder ve nedenini söyler.</p>
+
+<h2>13. Google Gemini anahtarları</h2>
+
+<h3>13.1 Gemini API Anahtar Yöneticisi (G)</h3>
+<p>Hizmet olarak Google Gemini ile sizin için Gemini anahtarları oluşturur. İlk seferde "Giriş Yap ve Tarayıcıyı Aç", Google'ın oturum açma sayfasını tarayıcınızda açar: oturum açın ve Google'ın gösterdiği izin kutusunu işaretleyin. Sonra:</p>
+<ul>
+<li><strong>Yeni Proje ve Anahtar</strong> ya da <strong>Seçilen Proje için Anahtar Oluştur:</strong> anahtar oluşturulur, panoya kopyalanır ve eklenti onu kullanmayı önerir.</li>
+<li><strong>Seçili Anahtarı Kopyala, Son Oluşturulan Anahtarı Kopyala, BeMyAssistantAccess içinde kullan.</strong></li>
+<li><strong>Anahtarı Sil:</strong> onayın ardından Google'da siler ve eklentiden kaldırır.</li>
+<li><strong>Kaydedilen Anahtarları Dışa Aktar:</strong> onları bir dosyaya kaydeder.</li>
+<li><strong>Oturumu Kapat:</strong> Google oturumunu unutur.</li>
+</ul>
+<p>Oluşturulan anahtarlar bilgisayarınızda düz metin olarak saklanır: erişimini koruyun.</p>
+
+<h3>13.2 Tükenmiş anahtarlar (Alt+Q)</h3>
+<p>Alt+Q, günlük kotasını tüketmiş Gemini anahtarlarını ve ne zaman yeniden kullanılabilir olacaklarını gösterir. Bir anahtar tükendiğinde eklenti kendiliğinden bir sonrakine geçer.</p>
+
+<h2>14. Ayarlar</h2>
+<p>Basit ayarlar bölüm 1'de anlatılmıştır. "Gelişmiş seçenekler" düğmesi, en üstte "Yerel yapay zekayı hazır tut" ayarının (bölüm 2.3), ardından sekmelerin bulunduğu bir pencere açar. Bazı sekmeler yalnızca bazı hizmetlerle görünür. Tamam ile onaylayın ya da İptal ile vazgeçin.</p>
+<p>Yerel yapay zeka orada "Özel" hizmeti olarak görünür: ayarlarını olduğu gibi bırakın.</p>
+
+<h3>14.1 Bağlantı</h3>
+<ul>
+<li><strong>Sağlayıcı</strong> ve <strong>API Anahtarı,</strong> okumak için "API Anahtarını Göster" ile.</li>
+<li><strong>Gemini API Anahtarı al:</strong> bölüm 13'teki anahtar yöneticisi.</li>
+<li><strong>Modelleri Al</strong> ve <strong>Yapay Zeka Modeli:</strong> hizmetin modellerinin listesi; listede yazmak onu süzer.</li>
+<li><strong>Gelişmiş Model Yönlendirme:</strong> her görev için farklı bir model: OCR ve görü, konuşmadan metne, metinden konuşmaya, YZ Operatörü ve CAPTCHA, video analizi, Canlı Asistan.</li>
+<li><strong>Özel Sağlayıcı Ayarları,</strong> Özel hizmet için: hizmetin adresi ve türü ("OpenAI Uyumlu" veya "Gemini Uyumlu"), model adı, dosya yükleme ve her görev için ayrı adresler. "Yerel YZ Kurulumu" düğmesi, Ollama ya da LM Studio gibi kendi başınıza çalıştırdığınız programlar içindir; eklentinin kendi yerel yapay zekası buna ihtiyaç duymaz.</li>
+<li><strong>Proxy:</strong> Otomatik Algıla, SOCKS5, HTTP veya Ters Proxy; adresi, kullanıcı adı ve parolasıyla. "Proxy bağlantısını test et" onu denetler ve gecikmeyi verir.</li>
+<li><strong>Başlangıçta güncellemeleri denetle.</strong></li>
+<li><strong>Sohbette Temiz Markdown:</strong> yanıtlardaki biçimlendirme işaretlerini kaldırır.</li>
+<li><strong>YZ yanıtlarını panoya kopyala.</strong></li>
+<li><strong>Sohbetleri geçmişe kaydet.</strong></li>
+<li><strong>Doğrudan Çıktı (Sohbet Penceresi Yok):</strong> yanıtlar pencere açmak yerine sesli okunur.</li>
+</ul>
+
+<h3>14.2 Canlı Asistan (yalnızca Google Gemini)</h3>
+<ul>
+<li><strong>Ses Çıkış Aygıtı:</strong> Canlı Asistan'ın ve gözlemcinin ses kartı.</li>
+<li><strong>Kare Aralığı:</strong> ekranın bir resminin ne sıklıkla, 1 ile 10 saniye arasında, gönderildiği.</li>
+<li><strong>Düşünme Derinliği:</strong> en hızlıdan en derine.</li>
+<li><strong>Doğrudan Çıktı (Penceresiz):</strong> Canlı Asistan penceresi olmadan çalışır.</li>
+<li><strong>Bas Konuş</strong> ve tuşu: kaydetmek için tuşlara basın, örneğin F12 ya da Control+F12. Tek başına basılı tutulan bir değiştirici tuş da çalışır.</li>
+<li>Ortam Gözlemcisi'nin <strong>Gözlemci Kipi, Ses Kaynağı</strong> ve <strong>Raporlama Stili.</strong></li>
+</ul>
+
+<h3>14.3 YZ Davranışı (Google Gemini dışındaki hizmetler)</h3>
+<p><strong>Yaratıcılık:</strong> 0'dan, çok durağan, 2'ye, çok serbest. OCR'yi ya da çeviriyi etkilemez.</p>
+
+<h3>14.4 Çeviri Dilleri</h3>
+<p><strong>Kaynak</strong> (veya Otomatik Algıla), <strong>Hedef,</strong> <strong>Yapay Zeka Yanıtı</strong> ve <strong>Akıllı Takas</strong> (bölüm 7.1).</p>
+
+<h3>14.5 Belge Okuyucu</h3>
+<ul>
+<li><strong>OCR Motoru</strong> (bölüm 8.4).</li>
+<li><strong>OCR Toplu Boyutu:</strong> tüm dosyaları kabul eden hizmetler için bir seferde gönderilen sayfa sayısı.</li>
+<li><strong>Belge OCR'ı sırasında resimleri satır içi olarak betimle.</strong></li>
+<li><strong>Belgeleri dışa aktarırken sayfa numaralarını dahil et.</strong></li>
+<li><strong>Belgeleri geçmişe kaydet.</strong></li>
+<li><strong>TTS Sesi:</strong> belgelerin ses dosyalarının sesi.</li>
+</ul>
+
+<h3>14.6 Video (yalnızca Google Gemini)</h3>
+<ul>
+<li><strong>Video Parça Boyutu:</strong> sesli betimleme için gönderilen her video parçasının dakika olarak uzunluğu. Daha kısa olan daha kesindir; 0 videoyu bütün olarak gönderir.</li>
+<li><strong>Karakter listesini ilk alt başlık olarak ekle</strong> ve <strong>Başına yapay zeka sorumluluk reddi ekle.</strong></li>
+<li><strong>Karakterleri Yönet</strong> (bölüm 9.4).</li>
+</ul>
+
+<h3>14.7 CAPTCHA</h3>
+<p><strong>Görsel CAPTCHA Çözücüyü Etkinleştir,</strong> ve <strong>Metin CAPTCHA Yöntemi:</strong> imlecin altındaki nesne ya da tüm ekran.</p>
+
+<h3>14.8 İstemler</h3>
+<p>"İstemleri Yönet" düğmesi (bölüm 12) ve istemlerin sayısı.</p>
+
+<h3>14.9 Gelişmiş</h3>
+<ul>
+<li><strong>Günlük Yönetimi:</strong> eklentinin varsayılan olarak kapalı bir günlük dosyası; ayrıntı düzeyi ve ne kadar saklanacağıyla, ve Günlük Dosyasını Aç, Günlük Klasörünü Aç ve Günlük Dosyasını Temizle düğmeleriyle. Bir sorunu bildirmek için yararlıdır.</li>
+<li><strong>Yedek ve Geri Yükle:</strong> bölüm 16.</li>
+</ul>
+
+<h2>15. Hızlı ayarlar</h2>
+<p>Komut katmanında Yukarı ok ve Aşağı ok 25 ayar arasında gezinir, Sol ok ve Sağ ok bulunduğunuz ayarı değiştirir. Her değişiklik hemen kaydedilir. Eklenti örneğin "Yapay Zeka Modeli, Geçerli: … Değiştirmek için sol ve sağ okları kullanın." diye duyurur.</p>
+<ul>
+<li><strong>Yapay Zeka Sağlayıcısı:</strong> yalnızca anahtarı olan hizmetler ve Özel.</li>
+<li><strong>Yapay Zeka Modeli,</strong> sonra her görevin modeli: OCR Modeli, STT Modeli, TTS Modeli, Operatör / CAPTCHA Modeli, Video Modeli, Canlı Model. Birini değiştirmek gelişmiş yönlendirmeyi açar.</li>
+<li><strong>TTS Sesi.</strong></li>
+<li><strong>Canlı Doğrudan Çıktı (Pencere Yok)</strong> ve <strong>Gemini Canlı Ses Çıkış Aygıtı.</strong></li>
+<li><strong>Kaynak Dil, Hedef Dil</strong> ve <strong>Yapay Zeka Yanıt Dili.</strong></li>
+<li><strong>Görsel CAPTCHA Çözücü</strong> ve <strong>Metin CAPTCHA Yöntemi.</strong></li>
+<li><strong>OCR Motoru.</strong></li>
+<li><strong>OCR'da Görsel Betimleme, Belge Dışa Aktarmada Sayfa Numaraları, YZ yanıtlarını panoya kopyala, Doğrudan Çıktı (Sohbet Penceresi Yok), Sohbette Temiz Markdown, Sohbetleri geçmişe kaydet, Belgeleri geçmişe kaydet, Akıllı Takas:</strong> açık ya da kapalı.</li>
+</ul>
+
+<h2>16. Yedek, veriler ve indirmeler</h2>
+
+<h3>16.1 Yedekleme ve geri yükleme</h3>
+<p>Gelişmiş sekmesinde "Yedek", ya her şeyi (ayarlar, etiketler, süren belgeler, Geçmiş, karakterler) ya da yalnızca ayarları bir dosyaya kaydeder. "Geri Yükle", onayın ardından onu geri getirir ve geçerli ayarların ve verilerin yerine geçer. Yedek, erişim anahtarlarınızı ve proxy parolanızı düz metin olarak içerir: güvenli bir yerde saklayın.</p>
+
+<h3>16.2 Verilerin nerede olduğu</h3>
+<p>Eklenti verilerini NVDA'nın yapılandırmasındaki bir BeMyAssistantAccess klasöründe tutar: etiketler, Geçmiş, süren belgeler, karakterler, Gemini anahtarları ve günlük. Yerel yapay zeka, Windows'un yerel uygulama verileri klasöründe, ReaperAccessible, BeMyAssistantAccess altındadır.</p>
+
+<h3>16.3 İndirmeler</h3>
+<p>Bazı özellikler, eklentiye bir kez indirilen, her zaman izninizle indirilen ücretsiz bir araç gerektirir: dublaj, kayıt ve web kamerası için ffmpeg; genişletilmiş seslendirme için sessizlik algılama modeli; gözlemcide bilgisayarın sesi için kitaplık; seslendirme sesleri için eSpeak-NG.</p>
+
+<h2>17. Güncellemeler</h2>
+<p>Eklenti kendini ReaperAccessible'ın GitHub deposundan günceller. Yeni bir sürüm olduğunda onu önerir; kurulduktan sonra NVDA'nın yeniden başlatılması gerekir. Yerel yapay zeka eklentiyle birlikte güncellenmez: Manager aracılığıyla güncellenir.</p>
+
+<h2>18. Gizlilik</h2>
+<ul>
+<li><strong>Çevrimiçi bir hizmetle,</strong> ekran resimleri, belgeler ve sesler dahil istedikleriniz o hizmete gönderilir. Kişisel bilgi gösteren ekranlar için bundan kaçının.</li>
+<li><strong>Yerel yapay zekayla,</strong> yapay zekanın yanıtları bilgisayarınızda hesaplanır. Şu özellikler yine de İnternet'i kullanır: seçerseniz Chrome OCR motoru, güncelleme denetimi, Gemini anahtar yöneticisi, araçların indirilmesi ve çevrimiçi videolar.</li>
+<li>Erişim anahtarları NVDA'nın yapılandırmasında, bilgisayarınızda ve yedeklerinizde kalır.</li>
+</ul>
+
+<h2>19. Emeği geçenler</h2>
+<p>BeMyAssistantAccess, ReaperAccessible tarafından yayımlanır. Özelliklerinin çoğunu tasarlayan Mahmood Hozhabri'nin Vision Assistant Pro'suna dayanır. Yerel yapay zeka llama.cpp motorunu ve Alibaba'nın Qwen 3.5 modelini kullanır.</p>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>BeMyAssistantAccess</title>
+</head>
+<body>
+<h1>BeMyAssistantAccess</h1>
+
+<p>BeMyAssistantAccess to asystent oparty na sztucznej inteligencji dla czytnika ekranu NVDA. Opisuje ekran lub obiekt, czyta dokumenty i obrazy, tłumaczy, transkrybuje, przyjmuje dyktando, rozmawia z Tobą, nadaje nazwy nieopisanym przyciskom, analizuje filmy i potrafi kliknąć i wpisać tekst za Ciebie w programach, których NVDA nie umie czytać.</p>
+<p>Działa na dwa sposoby, do wyboru: z SI, która działa w całości na Twoim komputerze, albo z usługą internetową, taką jak Google Gemini.</p>
+
+<h2>1. Pierwsze kroki</h2>
+
+<h3>1.1 Wybór SI</h3>
+<p>Otwórz menu NVDA, potem Opcje, Ustawienia i kategorię BeMyAssistantAccess. W polu „Usługa SI” są dwa główne wybory.</p>
+<ul>
+<li><strong>Lokalna SI, na tym komputerze:</strong> wszystko dzieje się u Ciebie, za darmo i bez ograniczeń. Potrzebny jest dość wydajny komputer, a SI instaluje się osobno, za pomocą ReaperAccessible Installer Manager. Zobacz rozdział 2.</li>
+<li><strong>Google Gemini:</strong> najpełniejsza usługa, a dla niektórych funkcji jedyna (rozdział 2.4). Działa na każdym komputerze, ale wysyła to, o co prosisz, do Google. Google oferuje darmowy klucz dostępu z ograniczoną liczbą zapytań dziennie: uaktywnij przycisk „Uzyskaj darmowy klucz Gemini”, utwórz klucz na stronie Google, a potem wklej go w polu „Klucz dostępu do tej usługi”.</li>
+</ul>
+<p>Pozostałe usługi, OpenAI, Mistral AI, Groq, MiniMax i Custom, działają tak samo, z własnym kluczem dostępu. Każda usługa pamięta swój klucz: gdy zmienisz usługę, wraca klucz, który jej podałeś. Możesz podać kilka kluczy oddzielonych przecinkami: gdy jeden wyczerpie dzienny limit, dodatek użyje następnego.</p>
+
+<h3>1.2 Pozostałe proste ustawienia</h3>
+<ul>
+<li><strong>Język odpowiedzi:</strong> język, w którym SI Ci odpowiada. Za pierwszym razem jest to język NVDA.</li>
+<li><strong>Automatycznie sprawdzaj aktualizacje:</strong> gdy pole jest zaznaczone, dodatek szuka nowej wersji kilka sekund po uruchomieniu NVDA. Przycisk „Sprawdź teraz” robi to od razu.</li>
+<li><strong>Opcje zaawansowane:</strong> otwiera wszystkie pozostałe ustawienia. Zobacz rozdział 14.</li>
+</ul>
+
+<h3>1.3 Używanie poleceń</h3>
+<p>Wszystkie polecenia idą przez jeden klawisz, dzięki czemu nigdy nie przeszkadzają innym dodatkom:</p>
+<ol>
+<li>Naciśnij <strong>NVDA+Ctrl+Shift+V</strong>. Usłyszysz sygnał i słowo „Polecenia”.</li>
+<li>Puść klawisze, a potem naciśnij jedną literę. Na przykład <strong>O</strong>, aby opisać cały ekran, albo <strong>V</strong>, aby opisać obiekt pod kursorem NVDA.</li>
+</ol>
+<p>Warstwa zamyka się po jednym poleceniu. Klawisz, który nie jest poleceniem, daje niski sygnał i też ją zamyka. Litera <strong>H</strong> wymienia wszystkie polecenia. Rozdział 3 je opisuje.</p>
+<p>Każde polecenie może też dostać własny skrót: menu NVDA, Opcje, Zdarzenia wejścia, kategoria BeMyAssistantAccess.</p>
+
+<h3>1.4 Menu</h3>
+<p>Menu NVDA, potem Narzędzia, zawiera podmenu BeMyAssistantAccess z pozycjami: Czytnik dokumentów, Czat, Transkrypcja i dubbing mediów, Analizuj wideo, Asystent głosowy, Operator głosowy, Obserwator, Menedżer kluczy API Gemini, Ustawienia, Sprawdź aktualizację i Dokumentacja.</p>
+
+<h3>1.5 Dźwięki</h3>
+<ul>
+<li>Wysoki sygnał: wynik jest gotowy albo czynność została wykonana.</li>
+<li>Średni sygnał: zaczyna się nagrywanie lub przechwytywanie.</li>
+<li>Niski sygnał: coś się nie udało albo klawisz nie jest poleceniem.</li>
+<li>Dwa różne sygnały oznaczają początek i koniec pracy Asystenta głosowego i Obserwatora.</li>
+</ul>
+<p>Litera <strong>I</strong> w każdej chwili mówi, co robi dodatek.</p>
+
+<h3>1.6 Kurtyna ekranu i chronione ekrany</h3>
+<p>Polecenia, które patrzą na ekran, odmawiają działania, gdy włączona jest kurtyna ekranu NVDA, i mówią, żeby ją wyłączyć za pomocą NVDA+Ctrl+Escape. Operatory odmawiają też działania na zablokowanym pulpicie i na bezpiecznych ekranach Windows. Na tych bezpiecznych ekranach dodatek nie robi absolutnie nic.</p>
+
+<h2>2. Lokalna SI</h2>
+
+<h3>2.1 Czego potrzebuje</h3>
+<ul>
+<li>Co najmniej 30 GB pamięci.</li>
+<li>Karty graficznej z co najmniej 6 GB pamięci, dowolnej marki: NVIDIA, AMD lub Intel.</li>
+<li>Około 23 GB miejsca na dysku.</li>
+</ul>
+<p>SI zajmuje około 4 GB na karcie graficznej. Reszta modelu trafia do pamięci komputera.</p>
+
+<h3>2.2 Instalacja</h3>
+<ol>
+<li>Otwórz ReaperAccessible Installer Manager. Jeśli go nie masz, wybierz „Lokalna SI, na tym komputerze” w ustawieniach dodatku, potem uaktywnij przycisk „Jak zainstalować lokalną SI”, a następnie „Pobierz Managera”.</li>
+<li>W Managerze wybierz typ „NVDA Add-on”, potem „BeMyAssistantAccess, local AI” i zainstaluj go. Pobieranie to około 23 GB.</li>
+<li>W ustawieniach dodatku wybierz „Lokalna SI, na tym komputerze”, a potem OK.</li>
+</ol>
+<p>Instalacja odmawia kontynuowania, gdy BeMyAssistantAccess nie jest zainstalowany w NVDA albo gdy komputer ma za mało pamięci. Mówi wtedy, dlaczego. Dopóki lokalna SI jest wybrana, ale nie jest zainstalowana, każde zapytanie do dodatku wyjaśnia, jak ją zdobyć.</p>
+<p>Aby ją usunąć, wejdź w Ustawienia Windows, Zainstalowane aplikacje, „BeMyAssistantAccess - Local AI”.</p>
+
+<h3>2.3 Pierwsze czekanie</h3>
+<p>Zanim SI udzieli pierwszej odpowiedzi, musi się załadować do pamięci: od kilku sekund do około trzydziestu. Potem odpowiada szybko. Zaczyna się ładować, gdy tylko naciśniesz NVDA+Ctrl+Shift+V, w czasie gdy wybierasz literę.</p>
+<p>Ustawienie „Trzymaj lokalną SI w gotowości”, na górze opcji zaawansowanych, decyduje, kiedy zwalnia pamięć:</p>
+<ul>
+<li><strong>15 minut po ostatnim zapytaniu:</strong> wybór domyślny.</li>
+<li><strong>1 godzinę po ostatnim zapytaniu.</strong></li>
+<li><strong>Zawsze, od uruchomienia NVDA:</strong> nigdy więcej czekania, ale SI cały czas zajmuje pamięć, nawet gdy z niej nie korzystasz.</li>
+</ul>
+<p>Zawsze zatrzymuje się, gdy NVDA się zamyka.</p>
+
+<h3>2.4 Co działa z którym rodzajem SI</h3>
+<p>Lokalna SI opisuje ekran i obiekty, czyta tekst na obrazach i w dokumentach, tłumaczy, poprawia i streszcza tekst, rozmawia z Tobą, nadaje nazwy przyciskom oraz obsługuje pilota krok po kroku i Eksplorator interfejsu.</p>
+<p>Te funkcje wymagają Google Gemini albo usługi Custom typu „Gemini Compatible”: Asystent głosowy, Operator głosowy, Obserwator, analiza wideo, analiza nagrań ekranu, audiodeskrypcja i dubbing.</p>
+<p>Dyktowanie, tłumaczenie mowy i transkrypcja plików audio wymagają SI, która rozumie dźwięk: z lokalną SI jeszcze nie działają.</p>
+<p>Czytanie dokumentu na głos w postaci pliku audio działa z Google Gemini, OpenAI, MiniMax i usługą Custom, ale nie z Mistral AI, Groq ani lokalną SI.</p>
+
+<h2>3. Polecenia</h2>
+<p>Najpierw naciśnij NVDA+Ctrl+Shift+V, a potem jeden z tych klawiszy. Kolejne rozdziały szczegółowo wyjaśniają każdą funkcję.</p>
+
+<h3>3.1 Patrzenie na ekran</h3>
+<ul>
+<li><strong>O:</strong> opisuje cały ekran i czyta jego tekst.</li>
+<li><strong>V:</strong> opisuje obiekt pod kursorem NVDA.</li>
+<li><strong>E:</strong> Eksplorator interfejsu, który wymienia to, co można kliknąć, i klika za Ciebie. Rozdział 6.</li>
+<li><strong>L:</strong> nadaje nazwę przyciskowi lub obrazowi bez nazwy, który jest pod kursorem. Rozdział 6.</li>
+<li><strong>Shift+L:</strong> zarządza już nadanymi nazwami albo nadaje naraz nazwę każdemu elementowi okna, który jej nie ma. Rozdział 6.</li>
+</ul>
+
+<h3>3.2 Działanie za Ciebie</h3>
+<ul>
+<li><strong>Shift+A:</strong> pilot krok po kroku. Rozdział 4.</li>
+<li><strong>Ctrl+Shift+A:</strong> Operator AI, który sam łączy kilka czynności. Rozdział 5.</li>
+<li><strong>Ctrl+A:</strong> Operator głosowy, sterowany głosem. Tylko Google Gemini. Rozdział 5.</li>
+<li><strong>C:</strong> rozwiązywanie CAPTCHA. Rozdział 5.</li>
+</ul>
+
+<h3>3.3 Tekst i tłumaczenie</h3>
+<ul>
+<li><strong>T:</strong> tłumaczy zaznaczony tekst albo obiekt pod kursorem.</li>
+<li><strong>Shift+T:</strong> tłumaczy tekst ze schowka.</li>
+<li><strong>R:</strong> menu do streszczania, poprawiania, tłumaczenia lub wyjaśniania zaznaczonego tekstu albo do uruchomienia jednego z Twoich poleceń.</li>
+<li><strong>S:</strong> Dyktowanie.</li>
+<li><strong>Ctrl+T:</strong> tłumaczenie mowy.</li>
+</ul>
+<p>Rozdział 7 je wyjaśnia.</p>
+
+<h3>3.4 Dokumenty i pliki</h3>
+<ul>
+<li><strong>D:</strong> Czytnik dokumentów. Rozdział 8.</li>
+<li><strong>F:</strong> czyta lub opisuje plik obrazu albo PDF zaznaczony w Eksploratorze plików. Rozdział 8.</li>
+<li><strong>M:</strong> transkrybuje, tłumaczy lub dubbinguje plik audio albo wideo. Rozdział 9.</li>
+<li><strong>Shift+V:</strong> analizuje wideo i tworzy audiodeskrypcje. Tylko Google Gemini. Rozdział 9.</li>
+<li><strong>Ctrl+V:</strong> nagrywa ekran, a potem każe opisać nagranie. Tylko Google Gemini. Rozdział 9.</li>
+</ul>
+
+<h3>3.5 Rozmowa</h3>
+<ul>
+<li><strong>Shift+C:</strong> Czat z SI. Rozdział 10.</li>
+<li><strong>Spacja:</strong> otwiera ponownie ostatni wynik. Rozdział 10.</li>
+<li><strong>Ctrl+H:</strong> Historia. Rozdział 10.</li>
+<li><strong>Ctrl+L:</strong> Asystent głosowy. Tylko Google Gemini. Rozdział 11.</li>
+<li><strong>Shift+O:</strong> Obserwator. Tylko Google Gemini. Rozdział 11.</li>
+</ul>
+
+<h3>3.6 Pozostałe klawisze</h3>
+<ul>
+<li><strong>I:</strong> mówi, co robi dodatek.</li>
+<li><strong>H:</strong> lista wszystkich poleceń.</li>
+<li><strong>U:</strong> szuka aktualizacji.</li>
+<li><strong>Alt+S:</strong> otwiera ustawienia.</li>
+<li><strong>G:</strong> Menedżer kluczy API Gemini. Rozdział 13.</li>
+<li><strong>Alt+Q:</strong> klucze Gemini, które wyczerpały dzienny limit. Rozdział 13.</li>
+<li><strong>Alt+M:</strong> mówi, jakie modele SI są wybrane dla każdego zadania w trybie osobnego modelu dla każdego zadania.</li>
+<li><strong>Strzałka w górę i Strzałka w dół, Strzałka w lewo i Strzałka w prawo:</strong> szybkie ustawienia. Rozdział 15.</li>
+</ul>
+
+<h2>4. Pilot krok po kroku</h2>
+<p>Pilot krok po kroku klika i wpisuje tekst za Ciebie tam, gdzie NVDA nic nie może zrobić: w niedostępnym programie, w oknie zrobionym z obrazków. Ty decydujesz o każdej czynności; SI tylko znajduje, gdzie jest element.</p>
+<ol>
+<li>Naciśnij NVDA+Ctrl+Shift+V, a potem Shift+A.</li>
+<li>Powiedz jedną czynność, na przykład „kliknij Gry online”, „kliknij dwukrotnie plik Raport” albo „kliknij prawym przyciskiem ikonę”.</li>
+<li>Aby coś wpisać, umieść tekst w cudzysłowie: wpisz „cześć” w polu Nazwa.</li>
+<li>Dodatek mówi „Szukam...”, a potem pyta na przykład „Kliknąć: przycisk Gry online?”. Odpowiedz Tak albo Nie.</li>
+<li>Po wykonaniu czynności mówi, co teraz pokazuje ekran.</li>
+</ol>
+<p>Zasady, które Cię chronią:</p>
+<ul>
+<li>Dodatek wpisuje wyłącznie tekst, który umieściłeś w cudzysłowie. Jeśli poprosisz go o wpisanie bez podania tekstu, wyjaśni, jak to zrobić.</li>
+<li>Nic się nie dzieje bez Twojego Tak.</li>
+<li>Gdy elementu nie ma, dodatek mówi o tym, zamiast klikać na chybił trafił.</li>
+<li>Hasła zawsze wpisujesz sam: poproś tylko o kliknięcie w polu, a potem wpisz lub wklej swoje hasło.</li>
+<li>Jedna czynność naraz: Shift+A nic nie robi, dopóki trwa jakaś czynność.</li>
+</ul>
+<p>Pilot działa z lokalną SI i z usługami internetowymi, a także w programach uruchomionych jako administrator, ponieważ dodatek działa od wewnątrz NVDA.</p>
+
+<h2>5. Operatory i rozwiązywanie CAPTCHA</h2>
+
+<h3>5.1 Operator AI (Ctrl+Shift+A)</h3>
+<p>Operator AI, który pochodzi z Vision Assistant Pro, sam wykonuje całe zadanie: opisujesz je jednym zdaniem, a SI patrzy na ekran i łączy do dziesięciu czynności, takich jak kliknięcie, dwukrotne kliknięcie, kliknięcie prawym przyciskiem, wpisywanie, przewijanie, przeciąganie lub naciskanie klawiszy. Przed każdą czynnością mówi, co robi, ale nie prosi o potwierdzenie. Naciśnij ponownie Ctrl+Shift+A, aby go zatrzymać.</p>
+<p>Gdy skończy, jego odpowiedź otwiera się w oknie czatu, w którym możesz dać mu nowe polecenie. Jest mniej bezpieczny niż pilot krok po kroku, zwłaszcza z lokalną SI, a każdy krok wysyła do SI obraz ekranu.</p>
+
+<h3>5.2 Operator głosowy (Ctrl+A)</h3>
+<p>Operator głosowy rozpoczyna rozmowę z Asystentem głosowym, w której SI może działać na Twoim komputerze, gdy do niej mówisz (tylko Google Gemini). Poproś ją o coś prostymi słowami, na przykład „otwórz folder Pobrane”. Pracuje krok po kroku, do dziesięciu kroków na jedno zapytanie, i mówi każdy krok na głos. Mówi, gdy zadanie jest wykonane, anulowane, gdy potrzebuje Twojej czynności albo gdy osiągnęła limit.</p>
+<ul>
+<li>Przycisk „Zatrzymaj działanie operatora” w oknie Asystenta głosowego anuluje bieżące zadanie bez kończenia rozmowy.</li>
+<li>Naciśnij ponownie Ctrl+A, aby zakończyć sesję.</li>
+<li>Kamera nie jest dostępna, gdy operator jest włączony.</li>
+<li>Gdy pojawia się CAPTCHA, najpierw próbuje rozwiązać ją sam; w przeciwnym razie prosi Cię o wykonanie dostępnej wersji zadania.</li>
+</ul>
+
+<h3>5.3 Rozwiązywanie CAPTCHA (C)</h3>
+<p>Rozwiązywanie CAPTCHA czyta test „Nie jestem robotem” pokazany na ekranie.</p>
+<ul>
+<li><strong>CAPTCHA z tekstem lub liczbami:</strong> czyta ją, mówi „Captcha:” i podaje odpowiedź, po czym ją wpisuje.</li>
+<li><strong>CAPTCHA obrazkowa,</strong> na przykład siatka obrazów albo pole do zaznaczenia: próbuje ją rozwiązać klikaniem, do 15 prób, i mówi, gdy się uda albo gdy zrezygnuje. Naciśnij ponownie C, aby je zatrzymać.</li>
+</ul>
+<p>Na karcie CAPTCHA w opcjach zaawansowanych możesz wyłączyć rozwiązywanie obrazkowe i wybrać, czy CAPTCHA tekstowe są czytane z obiektu pod kursorem, czy z całego ekranu.</p>
+
+<h2>6. Patrzenie na ekran</h2>
+
+<h3>6.1 Opisywanie (O i V)</h3>
+<p>O opisuje cały ekran i czyta jego tekst; V opisuje tylko obiekt pod kursorem NVDA. Odpowiedź otwiera się w oknie, w którym możesz zadawać dalsze pytania o ten sam obraz, albo jest odczytywana od razu, jeśli włączony jest „Tryb bezpośredni (nie pokazuje okna czatu)” (rozdział 14).</p>
+
+<h3>6.2 Eksplorator interfejsu (E)</h3>
+<p>SI wymienia wszystko, co można kliknąć na ekranie, bez paska zadań i okien NVDA. Na liście „Wybierz element” wybierz jeden, a potem:</p>
+<ul>
+<li><strong>Kliknij:</strong> dodatek klika go, a po dwóch sekundach patrzy na ekran jeszcze raz, żebyś mógł działać dalej.</li>
+<li><strong>Dodaj etykietę:</strong> nadaje elementowi tę nazwę, a NVDA będzie ją odtąd odczytywać.</li>
+<li><strong>Anuluj:</strong> zamyka eksplorator. Ponowne E też go zatrzymuje.</li>
+</ul>
+
+<h3>6.3 Etykiety (L)</h3>
+<p>Przy przycisku lub obrazie bez nazwy L pyta SI, co to jest, i nadaje mu stałą nazwę: NVDA zawsze będzie go odczytywać pod tą nazwą w tym programie. Nazwa zostaje, gdy okno zmienia rozmiar, gdy zmieniasz ekran i gdy program jest aktualizowany. Jeśli element ma już nazwę, dodatek o tym mówi. Etykiety nie działają w przeglądarkach internetowych.</p>
+
+<h3>6.4 Menedżer etykiet (Shift+L)</h3>
+<p>Jeśli program ma już etykiety, Shift+L otwiera Menedżera etykiet: listę nadanych nazw wraz z ich typem. Możesz zaznaczyć elementy, a potem wybrać „Usuń zaznaczone”; wybrać jeden i „Zmień nazwę”; „Zaznacz wszystko” lub „Odznacz wszystko” (Ctrl+A na liście zaznacza wszystko); oraz „Skanuj ponownie”, aby znów poszukać elementów bez nazwy.</p>
+<p>Jeśli program nie ma jeszcze żadnej etykiety, Shift+L nadaje naraz nazwę każdemu elementowi okna, który jej nie ma: przyciskom, polom wyboru, linkom, kartom, elementom list, ikonom i innym.</p>
+
+<h2>7. Tekst, tłumaczenie i dyktowanie</h2>
+
+<h3>7.1 Tłumaczenie (T i Shift+T)</h3>
+<p>T tłumaczy zaznaczony tekst. Bez zaznaczenia bierze tekst pola, w którym jesteś, albo obiektu pod kursorem NVDA. Shift+T tłumaczy schowek. Tłumaczenie jest odczytywane, a potem pokazywane w oknie, chyba że włączony jest „Tryb bezpośredni (nie pokazuje okna czatu)”.</p>
+<p>Dodatek tłumaczy na język docelowy. Dzięki funkcji <strong>Zamiana</strong> tekst, który jest już w języku docelowym, jest zamiast tego tłumaczony na język źródłowy, a na angielski, jeśli źródło to „Wykryj automatycznie”. Kod i adresy internetowe nie są tłumaczone. Te języki ustawia się na karcie Języki tłumaczenia albo w szybkich ustawieniach.</p>
+
+<h3>7.2 Menu tekstu (R)</h3>
+<p>R otwiera menu dla zaznaczonego tekstu: Podsumuj, Popraw gramatykę, Popraw gramatykę i przetłumacz, Wyjaśnij, a potem każde z Twoich poleceń (rozdział 12). Jeśli polecenie potrzebuje pliku, najpierw otwiera się okno wyboru pliku. Odpowiedź otwiera się w oknie, w którym możesz zadawać kolejne pytania, albo działa zgodnie z wyborem ustawionym dla tego polecenia.</p>
+
+<h3>7.3 Dyktowanie (S) i tłumaczenie mowy (Ctrl+T)</h3>
+<ol>
+<li>Naciśnij S: sygnał i „Nasłuchiwanie”. Mów.</li>
+<li>Naciśnij ponownie S: „Wpisywanie”. Tekst zostaje wpisany tam, gdzie jest Twój kursor.</li>
+</ol>
+<p>Ctrl+T działa tak samo, ale tekst jest przed wpisaniem tłumaczony z języka źródłowego na język docelowy. Dodatek używa domyślnego mikrofonu Windows. Mniej niż sekunda mowy daje komunikat „Nie wykryto mowy”. Tekst jest wpisywany przez schowek, który zastępuje. Te dwie funkcje wymagają usługi internetowej, która rozumie dźwięk.</p>
+
+<h2>8. Czytnik dokumentów i pliki</h2>
+
+<h3>8.1 Otwieranie dokumentu (D)</h3>
+<p>D otwiera, w tej kolejności:</p>
+<ol>
+<li>pliki zaznaczone w Eksploratorze plików, czytane razem jako jeden dokument: PDF, obrazy, TIFF, zdjęcia z iPhone’a (HEIC), pliki tekstowe i HTML;</li>
+<li>w przeciwnym razie obraz ze schowka;</li>
+<li>w przeciwnym razie listę ostatnich dokumentów, z przyciskami Otwórz, Usuń, Wyczyść wszystko, Otwórz plik (Ctrl+O) i Zamknij. Bez historii od razu otwiera się okno wyboru pliku.</li>
+</ol>
+<p>D w trakcie czytania zatrzymuje je. Pliki tekstowe i HTML otwierają się od razu, bez SI. Gdy wcześniejsze czytanie zostało przerwane, dodatek proponuje wznowienie tam, gdzie się zatrzymało, nawet po ponownym uruchomieniu.</p>
+
+<h3>8.2 Okno opcji</h3>
+<p>Przed czytaniem dokumentu wielostronicowego okno Opcje pokazuje łączną liczbę stron i oferuje:</p>
+<ul>
+<li><strong>Od i Do:</strong> strony do przeczytania.</li>
+<li><strong>Przetłumacz wynik,</strong> z językiem docelowym.</li>
+<li><strong>Wplataj opisy obrazów w tekst podczas OCR:</strong> obrazy w dokumencie są opisywane w tekście.</li>
+<li><strong>Kompresuj strony PDF przed przetwarzaniem:</strong> odchudza duże zeskanowane strony przed wysłaniem.</li>
+</ul>
+<p>Potem naciśnij Rozpocznij. Strony są czytane w tle, kilka naraz; możesz zamknąć okno i wrócić później. Dodatek ogłasza każdą gotową stronę. Dokument już przeczytany otwiera się od razu, bez ponownego czytania.</p>
+
+<h3>8.3 Okno czytania</h3>
+<ul>
+<li><strong>Ctrl+Page Down i Ctrl+Page Up,</strong> albo przyciski Następna i Poprzednia: zmieniają stronę. Strzałka w dół w ostatnim wierszu i Strzałka w górę w pierwszym wierszu też zmieniają stronę.</li>
+<li><strong>Przejdź do:</strong> lista numerów stron.</li>
+<li><strong>Zapytaj AI (Alt+A):</strong> zadaje pytanie o dokument.</li>
+<li><strong>Ponowne skanowanie AI (Alt+R):</strong> czyta bieżącą stronę albo wszystkie strony jeszcze raz za pomocą SI.</li>
+<li><strong>Spróbuj ponownie:</strong> pojawia się, gdy niektóre strony się nie udały, bo usługa była zajęta, i czyta tylko te strony.</li>
+<li><strong>Generuj audio (Alt+G):</strong> zapisuje bieżącą stronę albo wszystkie strony jako plik MP3 lub WAV, wybranym głosem. Jest obecne tylko wtedy, gdy usługa umie mówić.</li>
+<li><strong>Podgląd sformatowany:</strong> pokazuje cały dokument jako sformatowany tekst, z nagłówkami.</li>
+<li><strong>Zapisz (Alt+S lub Ctrl+S):</strong> zapisuje tekst jako plik tekstowy lub HTML, z numerami stron, jeśli to ustawienie jest włączone. Jeśli brakuje stron, dodatek mówi o tym najpierw.</li>
+<li><strong>Zamknij:</strong> miejsce, w którym byłeś, zostaje zapamiętane w Historii.</li>
+</ul>
+
+<h3>8.4 Trzy silniki OCR</h3>
+<p>Silnik OCR, na karcie Czytnik dokumentów, decyduje, jak czytany jest tekst z obrazów i zeskanowanych stron:</p>
+<ul>
+<li><strong>Chrome (szybki):</strong> szybki, ale wysyła strony do usługi Google, bez względu na wybraną SI, i tłumaczy je za pomocą Tłumacza Google. To wybór domyślny przy usługach internetowych.</li>
+<li><strong>AI (zaawansowany):</strong> używa wybranej SI, zachowuje układ, linki i opisy obrazów. Wybranie lokalnej SI automatycznie wybiera ten silnik, żeby nic nie opuszczało Twojego komputera.</li>
+<li><strong>Wyodrębnij tekst (offline):</strong> czyta tylko tekst, który już jest w przeszukiwalnym pliku PDF, bez czytania żadnego obrazu.</li>
+</ul>
+
+<h3>8.5 Czytanie lub opisywanie pliku (F)</h3>
+<p>F działa na plik obrazu albo PDF zaznaczony w Eksploratorze plików, albo na obraz ze schowka, bez okna wyboru pliku. Dla pojedynczego obrazu z silnikiem SI pyta, czy wyodrębnić tekst, czy opisać obraz. Wielostronicowy PDF pokazuje okno opcji. Odpowiedź otwiera się w oknie czatu. Ponowne F je zatrzymuje.</p>
+
+<h2>9. Media i wideo</h2>
+
+<h3>9.1 Transkrypcja i dubbing (M)</h3>
+<p>M działa na plik audio albo wideo zaznaczony w Eksploratorze plików albo otwiera okno wyboru pliku. Trzy możliwości:</p>
+<ul>
+<li><strong>Transkrybuj (język oryginału):</strong> zapisuje to, co zostało powiedziane.</li>
+<li><strong>Transkrybuj i przetłumacz (język docelowy):</strong> zapisuje to w innym języku.</li>
+<li><strong>Zdubbinguj i przetłumacz (język docelowy):</strong> tworzy plik MP3, w którym mowa jest zastąpiona głosem w wybranym języku. Tylko Google Gemini.</li>
+</ul>
+<p>Dubbing wymaga darmowego narzędzia ffmpeg: dodatek proponuje jego jednorazowe pobranie, około 70 MB.</p>
+
+<h3>9.2 Analiza wideo (Shift+V)</h3>
+<p>Shift+V działa na wideo zaznaczone w Eksploratorze plików albo na adres wideo skopiowany do schowka: YouTube, Instagram, Twitter (X) lub TikTok. W przeciwnym razie otwiera się okno Analizuj wideo, w którym wklejasz adres albo wybierasz plik. Dwie czynności:</p>
+<ul>
+<li><strong>Ogólna analiza wideo:</strong> pełny opis scen, osób i tego, co się dzieje, ze streszczeniem dźwięku.</li>
+<li><strong>Generuj audiodeskrypcję (plik SRT):</strong> plik z opisami z czasami, umieszczonymi w ciszy między dialogami.</li>
+</ul>
+<p>W audiodeskrypcji możesz dodać listę postaci jako pierwszy napis, dodać ostrzeżenie, że tekst pochodzi od SI, i wybrać serial lub film, aby dodatek rozpoznawał jego postaci (rozdział 9.4). Dla filmu z YouTube pyta o długość filmu w minutach. Przesłane wideo pozostaje dostępne przez 48 godzin: możesz z niego robić kolejne pliki bez ponownego przesyłania.</p>
+
+<h3>9.3 Audiodeskrypcja i narracja</h3>
+<p>Okno audiodeskrypcji pokazuje postęp i tekst. Potem:</p>
+<ul>
+<li><strong>Zapisz SRT:</strong> zapisuje plik napisów. Nadaj mu taką samą nazwę jak wideo, w tym samym folderze, a Twój odtwarzacz multimedialny będzie mógł przekazać go czytnikowi ekranu.</li>
+<li><strong>Generuj zsynchronizowaną narrację (MP3):</strong> zamienia opisy w mowę, wybranym głosem: eSpeak, głosem Windows albo głosami Gemini. eSpeak-NG można pobrać z okna.</li>
+<li><strong>Generuj ponownie</strong> i <strong>Spróbuj ponownie:</strong> zaczynają od nowa albo kontynuują po tymczasowym błędzie.</li>
+</ul>
+<p>Dla pliku wideo na Twoim komputerze są dwa rodzaje narracji:</p>
+<ul>
+<li><strong>Standardowa:</strong> głos jest miksowany z dźwiękiem wideo. Dodatek pyta, czy ściszyć dźwięk w tle podczas opisów.</li>
+<li><strong>Rozszerzona:</strong> dźwięk wideo zatrzymuje się na czas każdego opisu, żeby nic Ci nie umknęło. Dodatek używa małego modelu wykrywania ciszy, pobieranego jednorazowo za Twoją zgodą, około 70 MB.</li>
+</ul>
+<p>Dla wideo z internetu plik MP3 zawiera tylko głos opisów.</p>
+
+<h3>9.4 Słownik postaci</h3>
+<p>Dla każdego serialu lub filmu dodatek może przechowywać listę postaci, aby ich nazwy pozostawały takie same w kolejnych odcinkach. Otwórz ją przyciskiem „Zarządzaj postaciami” na karcie Wideo albo w oknie wideo. Możesz dodać postać z notatką, na przykład z jej rolą; edytować ją klawiszem F2; usunąć klawiszem Delete; zaimportować listę, jedno imię w wierszu; albo usunąć cały serial. SI sama dodaje postaci, które odkrywa, i opisuje każdą tylko przy pierwszym pojawieniu się.</p>
+
+<h3>9.5 Nagrywanie ekranu (Ctrl+V)</h3>
+<p>Ctrl+V zaczyna nagrywać aktywne okno, po cichu i bez dźwięku. Naciśnij ponownie Ctrl+V, aby zatrzymać: dodatek podaje długość, a potem każe opisać nagranie. Potrzebny jest ffmpeg, który dodatek proponuje pobrać.</p>
+
+<h2>10. Rozmowa, wyniki i Historia</h2>
+
+<h3>10.1 Czat (Shift+C)</h3>
+<p>Rozmowa z SI. Wpisz tekst w polu „Zapytaj” i naciśnij Enter, aby wysłać; Shift+Enter dodaje wiersz. Przycisk „Dołącz plik” dodaje do pytania obrazy, pliki PDF lub dźwięki. Pozostałe przyciski: Podgląd sformatowany, Zapisz treść odpowiedzi (ostatnia odpowiedź, jako HTML), Zapisz cały czat (cała rozmowa, jako tekst) i Zamknij.</p>
+<p>W każdym oknie czatu: Alt+Strzałka w dół czyta następną wiadomość, Alt+Strzałka w górę poprzednią, a Alt+C kopiuje wiadomość. Dodatek mówi, gdy dojdziesz do pierwszej lub ostatniej wiadomości.</p>
+
+<h3>10.2 Ostatni wynik (Spacja)</h3>
+<p>Spacja otwiera ponownie ostatnią odpowiedź SI: opis, tłumaczenie, menu tekstu, czat o dokumencie, operatora albo rozmowę z Asystentem głosowym.</p>
+
+<h3>10.3 Historia (Ctrl+H)</h3>
+<p>Historia przechowuje Twoje czaty i dokumenty, do 100. Lista „Pokaż” je filtruje: Wszystkie, Czaty lub Dokumenty.</p>
+<ul>
+<li><strong>Otwórz</strong> (albo Enter): czat otwiera się ponownie z plikami, dokument na stronie, na której byłeś.</li>
+<li><strong>Usuń</strong> (albo klawisz Delete): usuwa element. Przy dokumencie wybierasz, czy usunąć go tylko z Historii, czy także już przeczytany tekst, tak aby przy następnym otwarciu został przeczytany od nowa.</li>
+<li><strong>Wyczyść wszystko:</strong> opróżnia pokazywaną listę.</li>
+</ul>
+<p>Ustawienia „Zapisuj czaty w historii” i „Zapisuj dokumenty w historii” decydują, co jest przechowywane.</p>
+
+<h2>11. Asystent głosowy i Obserwator</h2>
+<p>Te dwie funkcje wymagają Google Gemini.</p>
+
+<h3>11.1 Asystent głosowy (Ctrl+L)</h3>
+<p>Rozmowa mówiona: mówisz do mikrofonu, SI widzi Twój ekran i odpowiada na głos. Zapytaj na przykład „na co patrzę?” albo „przeczytaj mi trzeci akapit”. Naciśnij ponownie Ctrl+L, aby zakończyć.</p>
+<p>Okno Asystenta głosowego oferuje:</p>
+<ul>
+<li><strong>Głos TTS:</strong> głos SI. Jego zmiana uruchamia rozmowę od nowa.</li>
+<li><strong>Głębia myślenia:</strong> jak długo SI myśli przed odpowiedzią, dla modeli, które to umożliwiają.</li>
+<li><strong>Urządzenie audio:</strong> karta dźwiękowa, na którą trafia głos.</li>
+<li><strong>Naciśnij i mów:</strong> mikrofon pozostaje wyłączony, dopóki nie przytrzymasz klawisza wybranego w ustawieniach. Przydatne w hałaśliwym miejscu.</li>
+<li><strong>Użyj kamery:</strong> wysyła obraz z kamery zamiast ekranu, aby pytać o przedmioty, wydrukowane papiery lub otoczenie. Potrzebny jest ffmpeg. Przycisk „Ustawienia prywatności kamery” otwiera ustawienia Windows, jeśli kamera jest zablokowana.</li>
+<li><strong>Zakończ</strong> albo <strong>Start.</strong> Escape zamyka okno i kończy rozmowę.</li>
+</ul>
+
+<h3>11.2 Obserwator (Shift+O)</h3>
+<p>Obserwator działa w tle, bez rozmowy: zgłasza to, co się zmienia, i milczy, gdy nic się nie dzieje. Shift+O otwiera jego okno; ponowne Shift+O go zatrzymuje. Trzy tryby:</p>
+<ul>
+<li><strong>Tylko tłumaczenie dźwięku:</strong> tłumaczy to, co słyszy, z mikrofonu albo z dźwięku komputera. Dźwięk komputera wymaga małej biblioteki, pobieranej jednorazowo za Twoją zgodą.</li>
+<li><strong>Tylko obserwacja ekranu:</strong> mówi, co zmienia się na ekranie. Wysyła obraz tylko wtedy, gdy ekran naprawdę się zmienił.</li>
+<li><strong>Tylko obserwacja kamery:</strong> otwiera Asystenta głosowego z kamerą, żebyś mógł zapytać, co widzi.</li>
+</ul>
+<p>„Co teraz robię” sprawia, że komunikaty są bardziej przydatne. Dla ekranu: Ogólny, oglądanie filmu lub serialu, transmisji na żywo lub prezentacji, udział w spotkaniu online lub rozmowie albo gra. Dla kamery: Ogólny, sprawdzanie swojego wyglądu lub makijażu, koloru lub dobieranie ubrań, czytanie dokumentu lub etykiety, daty ważności lub etykiety żywności, opakowania leku, pisma odręcznego lub wypełnionego formularza, wyświetlacza urządzenia, kontrolek, rozpoznawanie przedmiotu albo rozglądanie się wokół. Możesz też wpisać własny tekst. Komunikaty mogą być zwięzłe, jednozdaniowe, albo szczegółowe. Okno pamięta Twoje ostatnie wybory.</p>
+
+<h2>12. Polecenia</h2>
+<p>Polecenia to instrukcje dawane SI. Otwórz Menedżera poleceń z opcji zaawansowanych, karta Polecenia, „Zarządzaj poleceniami”.</p>
+
+<h3>12.1 Polecenia dodatku</h3>
+<p>Karta „Polecenia domyślne” wymienia instrukcje każdej funkcji, które możesz zmieniać: streszczenie, poprawianie, tłumaczenie, opis, wideo, transkrypcja, dyktowanie, OCR, CAPTCHA, style komunikatów i konteksty obserwatora. Lista „Filtr” pokazuje jedną grupę naraz. „Zastosuj do wybranego” zapisuje zmianę, „Resetuj wybrane” lub „Resetuj wszystkie” przywraca pierwotny tekst. Niektóre polecenia są potrzebne jakiejś funkcji: dodatek ostrzega Cię, zanim je zmienisz.</p>
+
+<h3>12.2 Twoje własne polecenia</h3>
+<p>Karta „Polecenia niestandardowe” zawiera Twoje własne prośby, w kolejności menu R: Dodaj, Edytuj, Usuń, Przesuń w górę, Przesuń w dół. Dla każdego polecenia:</p>
+<ul>
+<li><strong>Nazwa</strong> i <strong>Treść promptu.</strong></li>
+<li><strong>Skrót klawiszowy:</strong> naciśnij klawisze, aby je zapisać; Backspace czyści. Pojedyncza litera, cyfra lub F1 do F12 działa w warstwie poleceń, a wszędzie z NVDA+Ctrl+Shift i tym klawiszem. Kombinacja, na przykład Alt+1 albo Ctrl+Shift+1, działa wszędzie tak, jak została naciśnięta. Klawisz używany już przez polecenie albo przez inne polecenie użytkownika zostaje odrzucony.</li>
+<li><strong>Sposób podania wyniku:</strong> zgodnie z ustawieniem ogólnym, skopiować odpowiedź do schowka, odczytać ją od razu, zrobić jedno i drugie albo zawsze otworzyć okno czatu.</li>
+</ul>
+
+<h3>12.3 Zmienne</h3>
+<p>Polecenie może zawierać słowa w nawiasach, które są zastępowane podczas wykonania. Przycisk „Przewodnik po zmiennych” je wymienia.</p>
+<ul>
+<li><strong>Tekst:</strong> [selection] zaznaczony tekst, [clipboard] schowek, [text] tekst pola, w którym jesteś (nigdy hasło), [currentURL] adres strony w Chrome, Edge lub Firefox, [clipboard_image] obraz ze schowka.</li>
+<li><strong>Ekran:</strong> [screen_obj] obiekt pod kursorem, [screen_fg_obj] aktywne okno, [screen_full] cały ekran.</li>
+<li><strong>Pliki:</strong> [file_ocr] prosi o obraz lub PDF do przeczytania, [file_read] dokument, [file_audio] plik dźwiękowy.</li>
+<li><strong>Języki:</strong> {target_lang}, {source_lang}, {response_lang}, {swap_target} i {swap_instruction}.</li>
+<li><strong>Obserwator:</strong> [ambient_screen], [ambient_webcam] lub [ambient_audio] uruchamiają obserwatora, którego zatrzymuje ten sam skrót; [mic] lub [loopback] wybierają dźwięk, [brief] lub [detailed] styl, a na przykład [lang:fr] język.</li>
+</ul>
+<p>Dodatek odrzuca polecenie, którego zmienne do siebie nie pasują, i mówi dlaczego.</p>
+
+<h2>13. Klucze Google Gemini</h2>
+
+<h3>13.1 Menedżer kluczy API Gemini (G)</h3>
+<p>Tworzy dla Ciebie klucze Gemini, z Google Gemini jako usługą. Za pierwszym razem „Zaloguj się i otwórz przeglądarkę” otwiera w przeglądarce stronę logowania Google: zaloguj się i zaznacz pole zgody, które pokazuje Google. Potem:</p>
+<ul>
+<li><strong>Nowy projekt i klucz</strong> albo <strong>Utwórz klucz dla wybranego projektu:</strong> klucz zostaje utworzony, skopiowany do schowka, a dodatek proponuje jego użycie.</li>
+<li><strong>Kopiuj wybrany klucz, Kopiuj ostatnio utworzony klucz, Użyj w BeMyAssistantAccess.</strong></li>
+<li><strong>Usuń klucz:</strong> usuwa go w Google, po potwierdzeniu, i usuwa z dodatku.</li>
+<li><strong>Eksportuj zapisane klucze:</strong> zapisuje je w pliku.</li>
+<li><strong>Wyloguj się:</strong> zapomina logowanie do Google.</li>
+</ul>
+<p>Utworzone klucze są przechowywane na Twoim komputerze jawnym tekstem: chroń dostęp do nich.</p>
+
+<h3>13.2 Wyczerpane klucze (Alt+Q)</h3>
+<p>Alt+Q pokazuje klucze Gemini, które wyczerpały dzienny limit, i kiedy znów będzie można ich używać. Gdy klucz się wyczerpie, dodatek sam przechodzi do następnego.</p>
+
+<h2>14. Ustawienia</h2>
+<p>Proste ustawienia są opisane w rozdziale 1. Przycisk „Opcje zaawansowane” otwiera okno, w którym na górze jest ustawienie „Trzymaj lokalną SI w gotowości” (rozdział 2.3), a potem karty. Niektóre karty pojawiają się tylko przy niektórych usługach. Potwierdź przyciskiem OK albo anuluj przyciskiem Anuluj.</p>
+<p>Lokalna SI występuje tam jako usługa „Custom”: zostaw jej ustawienia bez zmian.</p>
+
+<h3>14.1 Połączenie</h3>
+<ul>
+<li><strong>Dostawca</strong> i <strong>Klucz API,</strong> z przyciskiem „Pokaż klucz API”, aby go odczytać.</li>
+<li><strong>Uzyskaj klucz API Gemini:</strong> menedżer kluczy z rozdziału 13.</li>
+<li><strong>Pobierz modele</strong> i <strong>Model AI:</strong> lista modeli usługi; wpisywanie na liście ją filtruje.</li>
+<li><strong>Osobny model dla każdego zadania:</strong> inny model dla każdego zadania: OCR i rozpoznawanie obrazu, zamiana mowy na tekst, zamiana tekstu na mowę, Operator AI i CAPTCHA, analiza wideo, Asystent głosowy.</li>
+<li><strong>Ustawienia niestandardowego dostawcy,</strong> dla usługi Custom: adres i typ usługi („OpenAI Compatible” lub „Gemini Compatible”), nazwa modelu, przesyłanie plików i osobne adresy dla każdego zadania. Przycisk „Konfiguracja lokalnej AI” jest dla programów, które uruchamiasz sam, takich jak Ollama czy LM Studio; własna lokalna SI dodatku go nie potrzebuje.</li>
+<li><strong>Proxy:</strong> Wykryj automatycznie, SOCKS5, HTTP lub Reverse Proxy, z adresem, nazwą użytkownika i hasłem. „Testuj połączenie z proxy” sprawdza je i podaje opóźnienie.</li>
+<li><strong>Sprawdzaj aktualizacje przy uruchomieniu.</strong></li>
+<li><strong>Czyść markdown w czacie:</strong> usuwa z odpowiedzi znaki formatowania.</li>
+<li><strong>Kopiuj odpowiedzi AI do schowka.</strong></li>
+<li><strong>Zapisuj czaty w historii.</strong></li>
+<li><strong>Tryb bezpośredni (nie pokazuje okna czatu):</strong> odpowiedzi są odczytywane zamiast otwierać okno.</li>
+</ul>
+
+<h3>14.2 Asystent głosowy (tylko Google Gemini)</h3>
+<ul>
+<li><strong>Urządzenie wyjściowe audio:</strong> karta dźwiękowa Asystenta głosowego i obserwatora.</li>
+<li><strong>Odstęp między klatkami:</strong> jak często, od 1 do 10 sekund, wysyłany jest obraz ekranu.</li>
+<li><strong>Głębia myślenia:</strong> od najszybszej do najgłębszej.</li>
+<li><strong>Tryb bezpośredni (bez okna):</strong> Asystent głosowy działa bez swojego okna.</li>
+<li><strong>Naciśnij i mów</strong> i jego klawisz: naciśnij klawisze, aby je zapisać, na przykład F12 lub Ctrl+F12. Działa też sam przytrzymany klawisz modyfikujący.</li>
+<li><strong>Tryb obserwatora, Źródło dźwięku</strong> i <strong>Styl komunikatów</strong> Obserwatora.</li>
+</ul>
+
+<h3>14.3 Zachowanie AI (usługi inne niż Google Gemini)</h3>
+<p><strong>Kreatywność:</strong> od 0, bardzo stabilnie, do 2, bardzo swobodnie. Nie wpływa na OCR ani na tłumaczenie.</p>
+
+<h3>14.4 Języki tłumaczenia</h3>
+<p><strong>Język źródłowy</strong> (albo Wykryj automatycznie), <strong>Język docelowy,</strong> <strong>Język odpowiedzi AI</strong> i <strong>Zamiana</strong> (rozdział 7.1).</p>
+
+<h3>14.5 Czytnik dokumentów</h3>
+<ul>
+<li><strong>Silnik OCR</strong> (rozdział 8.4).</li>
+<li><strong>Porcja OCR:</strong> liczba stron wysyłanych naraz, dla usług, które przyjmują całe pliki.</li>
+<li><strong>Wplataj opisy obrazów w tekst podczas OCR dokumentu.</strong></li>
+<li><strong>Dołączaj numery stron przy eksporcie dokumentów.</strong></li>
+<li><strong>Zapisuj dokumenty w historii.</strong></li>
+<li><strong>Głos TTS:</strong> głos plików audio z dokumentów.</li>
+</ul>
+
+<h3>14.6 Wideo (tylko Google Gemini)</h3>
+<ul>
+<li><strong>Długość fragmentu wideo:</strong> długość w minutach każdego kawałka wideo wysyłanego do audiodeskrypcji. Krótszy jest dokładniejszy; 0 wysyła całość.</li>
+<li><strong>Dodaj listę postaci jako pierwszy napis</strong> i <strong>Dodaj zastrzeżenie AI na początku.</strong></li>
+<li><strong>Zarządzaj postaciami</strong> (rozdział 9.4).</li>
+</ul>
+
+<h3>14.7 CAPTCHA</h3>
+<p><strong>Włącz rozwiązywanie CAPTCHA obrazkowej</strong> i <strong>Metoda dla CAPTCHA tekstowej:</strong> obiekt pod kursorem albo cały ekran.</p>
+
+<h3>14.8 Polecenia</h3>
+<p>Przycisk „Zarządzaj poleceniami” (rozdział 12) i liczba poleceń.</p>
+
+<h3>14.9 Zaawansowane</h3>
+<ul>
+<li><strong>Zarządzanie dziennikiem:</strong> plik dziennika dodatku, domyślnie wyłączony, z poziomem szczegółowości i czasem przechowywania, oraz przyciski Otwórz plik dziennika, Otwórz folder dziennika i Wyczyść plik dziennika. Przydatne przy zgłaszaniu problemu.</li>
+<li><strong>Kopia zapasowa i przywracanie:</strong> rozdział 16.</li>
+</ul>
+
+<h2>15. Szybkie ustawienia</h2>
+<p>W warstwie poleceń Strzałka w górę i Strzałka w dół przechodzą po 25 ustawieniach, a Strzałka w lewo i Strzałka w prawo zmieniają to, na którym jesteś. Każda zmiana jest zapisywana od razu. Dodatek ogłasza na przykład „Model AI, Bieżący: … Zmień strzałkami w lewo i w prawo.”</p>
+<ul>
+<li><strong>Dostawca AI:</strong> tylko usługi, które mają klucz, plus Custom.</li>
+<li><strong>Model AI,</strong> a potem model każdego zadania: Model OCR, Model STT, Model TTS, Model operatora i CAPTCHA, Model wideo, Model asystenta głosowego. Zmiana któregoś włącza osobny model dla każdego zadania.</li>
+<li><strong>Głos TTS.</strong></li>
+<li><strong>Tryb bezpośredni asystenta głosowego (bez okna)</strong> i <strong>Urządzenie wyjściowe audio Gemini Live.</strong></li>
+<li><strong>Język źródłowy, Język docelowy</strong> i <strong>Język odpowiedzi AI.</strong></li>
+<li><strong>Rozwiązywanie CAPTCHA obrazkowej</strong> i <strong>Metoda dla CAPTCHA tekstowej.</strong></li>
+<li><strong>Silnik OCR.</strong></li>
+<li><strong>Opis obrazów w OCR, Numery stron w eksporcie dokumentów, Kopiuj odpowiedzi AI do schowka, Tryb bezpośredni (nie pokazuje okna czatu), Czyść markdown w czacie, Zapisuj czaty w historii, Zapisuj dokumenty w historii, Zamiana:</strong> włączone lub wyłączone.</li>
+</ul>
+
+<h2>16. Kopia zapasowa, dane i pobieranie</h2>
+
+<h3>16.1 Kopia zapasowa i przywracanie</h3>
+<p>Na karcie Zaawansowane „Kopia zapasowa” zapisuje w pliku albo wszystko (ustawienia, etykiety, dokumenty w toku, Historię, postaci), albo tylko ustawienia. „Przywróć” przywraca ją po potwierdzeniu i zastępuje bieżące ustawienia i dane. Kopia zapasowa zawiera Twoje klucze dostępu i hasło proxy jawnym tekstem: przechowuj ją w bezpiecznym miejscu.</p>
+
+<h3>16.2 Gdzie są dane</h3>
+<p>Dodatek przechowuje swoje dane w folderze BeMyAssistantAccess w konfiguracji NVDA: etykiety, Historia, dokumenty w toku, postaci, klucze Gemini i dziennik. Lokalna SI znajduje się w folderze Windows z lokalnymi danymi aplikacji, w ReaperAccessible, BeMyAssistantAccess.</p>
+
+<h3>16.3 Pobieranie</h3>
+<p>Niektóre funkcje potrzebują darmowego narzędzia, pobieranego jednorazowo do dodatku, zawsze za Twoją zgodą: ffmpeg do dubbingu, nagrywania i kamery; model wykrywania ciszy do narracji rozszerzonej; biblioteka do dźwięku komputera w obserwatorze; eSpeak-NG do głosów narracji.</p>
+
+<h2>17. Aktualizacje</h2>
+<p>Dodatek sam się aktualizuje z repozytorium GitHub ReaperAccessible. Gdy istnieje nowa wersja, proponuje ją; po instalacji NVDA musi zostać uruchomiony ponownie. Lokalna SI nie jest aktualizowana razem z dodatkiem: aktualizuje się ją przez Managera.</p>
+
+<h2>18. Prywatność</h2>
+<ul>
+<li><strong>Z usługą internetową</strong> to, o co prosisz, w tym obrazy ekranu, dokumenty i dźwięki, jest wysyłane do tej usługi. Unikaj tego przy ekranach pokazujących dane osobowe.</li>
+<li><strong>Z lokalną SI</strong> odpowiedzi SI są obliczane na Twoim komputerze. Te funkcje nadal korzystają z Internetu: silnik OCR Chrome, jeśli go wybierzesz, sprawdzanie aktualizacji, menedżer kluczy Gemini, pobieranie narzędzi i filmy z internetu.</li>
+<li>Klucze dostępu pozostają w konfiguracji NVDA, na Twoim komputerze, i w Twoich kopiach zapasowych.</li>
+</ul>
+
+<h2>19. Autorzy</h2>
+<p>BeMyAssistantAccess jest publikowany przez ReaperAccessible. Opiera się na Vision Assistant Pro autorstwa Mahmood Hozhabri, który zaprojektował większość jego funkcji. Lokalna SI używa silnika llama.cpp i modelu Qwen 3.5 firmy Alibaba.</p>
+</body>
+</html>

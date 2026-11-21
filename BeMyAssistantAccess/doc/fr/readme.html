@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>BeMyAssistantAccess</title>
+</head>
+<body>
+<h1>BeMyAssistantAccess</h1>
+
+<p>BeMyAssistantAccess est un assistant d'intelligence artificielle pour le lecteur d'écran NVDA. Il décrit l'écran ou un objet, lit les documents et les images, traduit, transcrit, prend la dictée, discute avec vous, donne un nom aux boutons sans nom, analyse des vidéos, et peut cliquer et écrire à votre place dans les programmes que NVDA ne peut pas lire.</p>
+<p>Il fonctionne de deux façons, à votre choix : avec une IA qui tourne entièrement sur votre ordinateur, ou avec un service en ligne comme Google Gemini.</p>
+
+<h2>1. Pour commencer</h2>
+
+<h3>1.1 Choisir l'IA</h3>
+<p>Ouvrez le menu NVDA, puis Préférences, Paramètres, et la catégorie BeMyAssistantAccess. Dans « Service d'IA », il y a deux grands choix.</p>
+<ul>
+<li><strong>IA locale, sur cet ordinateur :</strong> tout se passe chez vous, gratuitement et sans limite. Il faut un ordinateur assez puissant, et elle s'installe à part, avec le ReaperAccessible Installer Manager. Voir la section 2.</li>
+<li><strong>Google Gemini :</strong> le service le plus complet, et le seul pour certaines fonctions (section 2.4). Il marche sur n'importe quel ordinateur, mais il envoie ce que vous demandez à Google. Google offre une clé d'accès gratuite, avec un nombre limité de demandes par jour : activez le bouton « Obtenir une clé Gemini gratuite », créez la clé sur la page de Google, puis collez-la dans le champ « Clé d'accès de ce service ».</li>
+</ul>
+<p>Les autres services, OpenAI, Mistral AI, Groq, MiniMax et Custom, fonctionnent de la même façon avec leur propre clé d'accès. Chaque service garde sa clé : quand vous changez de service, la clé que vous lui aviez donnée revient. Vous pouvez donner plusieurs clés séparées par des virgules : quand l'une atteint sa limite du jour, l'extension passe à la suivante.</p>
+
+<h3>1.2 Les autres réglages simples</h3>
+<ul>
+<li><strong>Langue des réponses :</strong> la langue dans laquelle l'IA vous répond. La première fois, c'est la langue de NVDA.</li>
+<li><strong>Vérifier automatiquement les mises à jour :</strong> quand c'est coché, l'extension cherche une nouvelle version quelques secondes après le démarrage de NVDA. Le bouton « Vérifier maintenant » le fait tout de suite.</li>
+<li><strong>Options avancées :</strong> ouvre tous les autres réglages. Voir la section 14.</li>
+</ul>
+
+<h3>1.3 Utiliser les commandes</h3>
+<p>Toutes les commandes passent par une seule touche, pour ne jamais gêner les autres extensions :</p>
+<ol>
+<li>Appuyez sur <strong>NVDA+Contrôle+Maj+V</strong>. Vous entendez un bip et le mot « Commandes ».</li>
+<li>Relâchez, puis appuyez sur une seule lettre. Par exemple <strong>O</strong> pour décrire tout l'écran, ou <strong>V</strong> pour décrire l'objet sous le curseur de NVDA.</li>
+</ol>
+<p>La couche se ferme après une commande. Une touche qui n'est pas une commande donne un bip grave et la ferme aussi. La lettre <strong>H</strong> énumère toutes les commandes. La section 3 les décrit.</p>
+<p>Chaque commande peut aussi recevoir son propre raccourci : menu NVDA, Préférences, Gestes de commandes, catégorie BeMyAssistantAccess.</p>
+
+<h3>1.4 Le menu</h3>
+<p>Le menu NVDA, puis Outils, contient un sous-menu BeMyAssistantAccess avec : Lecteur de documents, Discussion directe, Transcription et doublage des médias, Analyser une vidéo, Assistant Live, Opérateur IA (en direct), Observateur ambiant, Gestionnaire de clés API Gemini, Paramètres, Vérification des mises à jour et Documentation.</p>
+
+<h3>1.5 Les sons</h3>
+<ul>
+<li>Un bip aigu : un résultat est prêt, ou une action est terminée.</li>
+<li>Un bip moyen : un enregistrement ou une capture commence.</li>
+<li>Un bip grave : quelque chose a échoué, ou la touche n'est pas une commande.</li>
+<li>Deux bips différents marquent le début et la fin de l'Assistant Live et de l'Observateur ambiant.</li>
+</ul>
+<p>La lettre <strong>I</strong> dit à tout moment ce que fait l'extension.</p>
+
+<h3>1.6 Rideau d'écran et écrans protégés</h3>
+<p>Les commandes qui regardent l'écran refusent de fonctionner tant que le rideau d'écran de NVDA est activé, et vous disent de le désactiver avec NVDA+Contrôle+Échap. Les opérateurs refusent aussi sur un bureau verrouillé et sur les écrans sécurisés de Windows. Sur ces écrans sécurisés, l'extension ne fait rien du tout.</p>
+
+<h2>2. L'IA locale</h2>
+
+<h3>2.1 Ce qu'il lui faut</h3>
+<ul>
+<li>Au moins 30 Go de mémoire.</li>
+<li>Une carte graphique avec au moins 6 Go de mémoire, de n'importe quelle marque : NVIDIA, AMD ou Intel.</li>
+<li>Environ 23 Go d'espace disque.</li>
+</ul>
+<p>L'IA prend environ 4 Go sur la carte graphique. Le reste du modèle va dans la mémoire de l'ordinateur.</p>
+
+<h3>2.2 L'installer</h3>
+<ol>
+<li>Ouvrez le ReaperAccessible Installer Manager. Si vous ne l'avez pas, choisissez « IA locale, sur cet ordinateur » dans les paramètres de l'extension, puis activez le bouton « Comment installer l'IA locale », puis « Télécharger le Manager ».</li>
+<li>Dans le Manager, choisissez le type « Extension NVDA », puis « BeMyAssistantAccess, IA locale », et installez-la. Le téléchargement fait environ 23 Go.</li>
+<li>Dans les paramètres de l'extension, choisissez « IA locale, sur cet ordinateur », puis OK.</li>
+</ol>
+<p>L'installation refuse de continuer quand BeMyAssistantAccess n'est pas installé dans NVDA, ou quand l'ordinateur n'a pas assez de mémoire. Elle dit alors pourquoi. Tant que l'IA locale est choisie mais pas installée, chaque demande de l'extension explique comment l'obtenir.</p>
+<p>Pour la retirer, allez dans les Paramètres de Windows, Applications installées, « BeMyAssistantAccess - Local AI ».</p>
+
+<h3>2.3 La première attente</h3>
+<p>Avant sa première réponse, l'IA doit se charger en mémoire : de quelques secondes à une trentaine de secondes. Ensuite, elle répond vite. Elle commence à se charger dès que vous appuyez sur NVDA+Contrôle+Maj+V, pendant que vous choisissez la lettre.</p>
+<p>Le réglage « Garder l'IA locale prête », en haut des options avancées, décide quand elle libère la mémoire :</p>
+<ul>
+<li><strong>15 minutes après la dernière demande :</strong> c'est le choix par défaut.</li>
+<li><strong>1 heure après la dernière demande.</strong></li>
+<li><strong>Toujours, dès le démarrage de NVDA :</strong> plus jamais d'attente, mais l'IA occupe la mémoire en permanence, même quand vous ne vous en servez pas.</li>
+</ul>
+<p>Elle s'arrête toujours quand NVDA se ferme.</p>
+
+<h3>2.4 Ce qui marche avec chaque sorte d'IA</h3>
+<p>L'IA locale décrit l'écran et les objets, lit le texte des images et des documents, traduit, corrige et résume du texte, discute avec vous, donne un nom aux boutons, et pilote le pilotage pas à pas et l'Explorateur d'interface.</p>
+<p>Ces fonctions demandent Google Gemini, ou un service Custom de type « Gemini Compatible » : l'Assistant Live, l'Opérateur en direct, l'Observateur ambiant, l'analyse de vidéos, l'analyse d'enregistrements d'écran, l'audiodescription et le doublage.</p>
+<p>La Dictée intelligente, la traduction vocale et la transcription de fichiers audio demandent une IA qui comprend le son : elles ne marchent pas encore avec l'IA locale.</p>
+<p>La lecture d'un document à voix haute sous forme de fichier audio marche avec Google Gemini, OpenAI, MiniMax et un service Custom, mais pas avec Mistral AI, Groq ni l'IA locale.</p>
+
+<h2>3. Les commandes</h2>
+<p>Appuyez d'abord sur NVDA+Contrôle+Maj+V, puis sur l'une de ces touches. Les sections suivantes expliquent chaque fonction en détail.</p>
+
+<h3>3.1 Voir l'écran</h3>
+<ul>
+<li><strong>O :</strong> décrit tout l'écran et lit son texte.</li>
+<li><strong>V :</strong> décrit l'objet sous le curseur de NVDA.</li>
+<li><strong>E :</strong> l'Explorateur d'interface, qui énumère ce sur quoi on peut cliquer et clique pour vous. Section 6.</li>
+<li><strong>L :</strong> donne un nom au bouton ou à l'image sans nom qui se trouve sous le curseur. Section 6.</li>
+<li><strong>Maj+L :</strong> gère les noms déjà donnés, ou donne d'un coup un nom à chaque élément sans nom de la fenêtre. Section 6.</li>
+</ul>
+
+<h3>3.2 Agir à votre place</h3>
+<ul>
+<li><strong>Maj+A :</strong> le pilotage pas à pas. Section 4.</li>
+<li><strong>Contrôle+Maj+A :</strong> l'Opérateur IA, qui enchaîne plusieurs actions tout seul. Section 5.</li>
+<li><strong>Contrôle+A :</strong> l'Opérateur en direct, à la voix. Google Gemini seulement. Section 5.</li>
+<li><strong>C :</strong> le résolveur de CAPTCHA. Section 5.</li>
+</ul>
+
+<h3>3.3 Texte et traduction</h3>
+<ul>
+<li><strong>T :</strong> traduit le texte sélectionné ou l'objet sous le curseur.</li>
+<li><strong>Maj+T :</strong> traduit le texte du presse-papiers.</li>
+<li><strong>R :</strong> un menu pour résumer, corriger, traduire ou expliquer le texte sélectionné, ou pour lancer l'un de vos Prompts.</li>
+<li><strong>S :</strong> la Dictée intelligente.</li>
+<li><strong>Contrôle+T :</strong> la traduction vocale.</li>
+</ul>
+<p>La section 7 les explique.</p>
+
+<h3>3.4 Documents et fichiers</h3>
+<ul>
+<li><strong>D :</strong> le Lecteur de documents. Section 8.</li>
+<li><strong>F :</strong> lit ou décrit le fichier image ou PDF sélectionné dans l'Explorateur de fichiers. Section 8.</li>
+<li><strong>M :</strong> transcrit, traduit ou double un fichier audio ou vidéo. Section 9.</li>
+<li><strong>Maj+V :</strong> analyse une vidéo, et fait des audiodescriptions. Google Gemini seulement. Section 9.</li>
+<li><strong>Contrôle+V :</strong> enregistre l'écran, puis fait décrire l'enregistrement. Google Gemini seulement. Section 9.</li>
+</ul>
+
+<h3>3.5 Discuter</h3>
+<ul>
+<li><strong>Maj+C :</strong> la Discussion directe avec l'IA. Section 10.</li>
+<li><strong>Espace :</strong> rouvre le dernier résultat. Section 10.</li>
+<li><strong>Contrôle+H :</strong> l'Historique. Section 10.</li>
+<li><strong>Contrôle+L :</strong> l'Assistant Live. Google Gemini seulement. Section 11.</li>
+<li><strong>Maj+O :</strong> l'Observateur ambiant. Google Gemini seulement. Section 11.</li>
+</ul>
+
+<h3>3.6 Les autres touches</h3>
+<ul>
+<li><strong>I :</strong> dit ce que fait l'extension.</li>
+<li><strong>H :</strong> la liste de toutes les commandes.</li>
+<li><strong>U :</strong> cherche une mise à jour.</li>
+<li><strong>Alt+S :</strong> ouvre les paramètres.</li>
+<li><strong>G :</strong> le Gestionnaire de clés API Gemini. Section 13.</li>
+<li><strong>Alt+Q :</strong> les clés Gemini dont le quota du jour est épuisé. Section 13.</li>
+<li><strong>Alt+M :</strong> dit quels modèles d'IA sont choisis pour chaque tâche dans le routage avancé.</li>
+<li><strong>Flèche haut et Flèche bas, Flèche gauche et Flèche droite :</strong> les réglages rapides. Section 15.</li>
+</ul>
+
+<h2>4. Le pilotage pas à pas</h2>
+<p>Le pilotage pas à pas clique et écrit à votre place là où NVDA ne peut rien faire : un programme inaccessible, une fenêtre faite d'images. C'est vous qui décidez de chaque action ; l'IA ne fait que trouver où se trouve l'élément.</p>
+<ol>
+<li>Appuyez sur NVDA+Contrôle+Maj+V, puis sur Maj+A.</li>
+<li>Dites une action, par exemple « clique sur Jeux en ligne », « double-clique sur le fichier Rapport » ou « clic droit sur l'icône ».</li>
+<li>Pour écrire, mettez le texte entre guillemets : écris « bonjour » dans le champ Nom.</li>
+<li>L'extension dit « Je regarde... », puis demande par exemple « Cliquer : bouton Jeux en ligne ? ». Répondez Oui ou Non.</li>
+<li>Après l'action, elle vous dit ce que montre l'écran maintenant.</li>
+</ol>
+<p>Les règles qui vous protègent :</p>
+<ul>
+<li>L'extension n'écrit jamais que le texte que vous avez mis entre guillemets. Si vous lui demandez d'écrire sans donner de texte, elle explique comment faire.</li>
+<li>Rien ne se passe sans votre Oui.</li>
+<li>Quand l'élément est introuvable, elle le dit au lieu de cliquer au hasard.</li>
+<li>Vous écrivez toujours vous-même les mots de passe : demandez seulement de cliquer dans le champ, puis tapez ou collez votre mot de passe.</li>
+<li>Une action à la fois : Maj+A ne fait rien pendant qu'une action est en cours.</li>
+</ul>
+<p>Le pilotage marche avec l'IA locale et avec les services en ligne, et aussi dans les programmes lancés en administrateur, parce que l'extension agit depuis l'intérieur de NVDA.</p>
+
+<h2>5. Les opérateurs et le résolveur de CAPTCHA</h2>
+
+<h3>5.1 Opérateur IA (Contrôle+Maj+A)</h3>
+<p>L'Opérateur IA, qui vient de Vision Assistant Pro, fait toute une tâche tout seul : vous la décrivez en une phrase, et l'IA regarde l'écran et enchaîne jusqu'à dix actions, comme cliquer, double-cliquer, faire un clic droit, écrire, faire défiler, glisser ou appuyer sur des touches. Elle dit ce qu'elle fait avant chaque action, mais ne demande pas de confirmation. Appuyez de nouveau sur Contrôle+Maj+A pour l'arrêter.</p>
+<p>Quand elle a fini, sa réponse s'ouvre dans une fenêtre de discussion, où vous pouvez lui donner une nouvelle instruction. Il est moins sûr que le pilotage pas à pas, surtout avec l'IA locale, et chaque étape envoie une image de l'écran à l'IA.</p>
+
+<h3>5.2 Opérateur en direct (Contrôle+A)</h3>
+<p>L'Opérateur en direct démarre une conversation de l'Assistant Live dans laquelle l'IA peut agir sur votre ordinateur pendant que vous lui parlez (Google Gemini seulement). Demandez-lui quelque chose en langage simple, par exemple « ouvre le dossier Téléchargements ». Elle travaille pas à pas, jusqu'à dix étapes par demande, et dit chaque étape à voix haute. Elle vous dit quand la tâche est finie, annulée, quand elle a besoin de votre action, ou quand elle a atteint sa limite.</p>
+<ul>
+<li>Le bouton « Arrêter l'action de l'opérateur » de la fenêtre de l'Assistant Live annule la tâche en cours sans mettre fin à la conversation.</li>
+<li>Appuyez de nouveau sur Contrôle+A pour terminer la séance.</li>
+<li>La webcam n'est pas disponible pendant que l'opérateur est actif.</li>
+<li>Quand un CAPTCHA apparaît, elle essaie d'abord le résolveur de CAPTCHA ; sinon, elle vous demande de faire l'épreuve accessible.</li>
+</ul>
+
+<h3>5.3 Résolveur de CAPTCHA (C)</h3>
+<p>Le résolveur de CAPTCHA lit le test « Je ne suis pas un robot » affiché à l'écran.</p>
+<ul>
+<li><strong>Un CAPTCHA de texte ou de nombres :</strong> il le lit, dit « Captcha : » suivi de la réponse, et écrit la réponse.</li>
+<li><strong>Un CAPTCHA d'images,</strong> comme une grille d'images ou une case à cocher : il essaie de le résoudre en cliquant, jusqu'à 15 essais, et dit quand c'est résolu ou quand il abandonne. Appuyez de nouveau sur C pour l'arrêter.</li>
+</ul>
+<p>Dans l'onglet CAPTCHA des options avancées, vous pouvez désactiver le résolveur d'images, et choisir si les CAPTCHA de texte se lisent à partir de l'objet sous le curseur ou de tout l'écran.</p>
+
+<h2>6. Voir l'écran</h2>
+
+<h3>6.1 Décrire (O et V)</h3>
+<p>O décrit tout l'écran et lit son texte ; V décrit seulement l'objet sous le curseur de NVDA. La réponse s'ouvre dans une fenêtre où vous pouvez poser d'autres questions sur la même image, ou elle est dite directement si « Sortie directe (pas de fenêtre de discussion) » est activée (section 14).</p>
+
+<h3>6.2 Explorateur d'interface (E)</h3>
+<p>L'IA énumère tout ce sur quoi on peut cliquer à l'écran, sans la barre des tâches ni les fenêtres de NVDA. Dans la liste « Sélectionnez un élément », choisissez-en un, puis :</p>
+<ul>
+<li><strong>Cliquer :</strong> l'extension clique dessus, puis regarde de nouveau l'écran deux secondes plus tard, pour que vous puissiez continuer.</li>
+<li><strong>Ajouter une étiquette :</strong> donne ce nom à l'élément, et NVDA l'annoncera désormais ainsi.</li>
+<li><strong>Annuler :</strong> ferme l'explorateur. E de nouveau l'arrête aussi.</li>
+</ul>
+
+<h3>6.3 Étiquettes (L)</h3>
+<p>Sur un bouton ou une image sans nom, L demande à l'IA ce que c'est, et lui donne un nom permanent : NVDA l'annoncera toujours sous ce nom dans ce programme. Le nom survit quand la fenêtre change de taille, quand vous changez d'écran et quand le programme est mis à jour. Si l'élément a déjà un nom, l'extension le dit. Les étiquettes ne marchent pas dans les navigateurs web.</p>
+
+<h3>6.4 Gestionnaire d'étiquettes (Maj+L)</h3>
+<p>Si le programme a déjà des étiquettes, Maj+L ouvre le Gestionnaire d'étiquettes : une liste des noms donnés, avec leur type. Vous pouvez cocher des éléments, puis « Supprimer sélectionnés » ; en sélectionner un et le « Renommer » ; « Tout sélectionner » ou « Tout désélectionner » (Contrôle+A dans la liste coche tout) ; et « Réanalyser » pour chercher de nouveau les éléments sans nom.</p>
+<p>Si le programme n'a encore aucune étiquette, Maj+L donne d'un coup un nom à chaque élément sans nom de la fenêtre : boutons, cases à cocher, liens, onglets, éléments de liste, icônes et autres.</p>
+
+<h2>7. Texte, traduction et dictée</h2>
+
+<h3>7.1 Traduire (T et Maj+T)</h3>
+<p>T traduit le texte sélectionné. Sans sélection, il prend le texte du champ où vous êtes, ou de l'objet sous le curseur de NVDA. Maj+T traduit le presse-papiers. La traduction est dite à voix haute, puis affichée dans une fenêtre, sauf si « Sortie directe (pas de fenêtre de discussion) » est activée.</p>
+<p>L'extension traduit vers la langue cible. Avec la <strong>Permutation intelligente</strong>, un texte qui est déjà dans la langue cible est traduit vers la langue source, ou vers l'anglais si la source est « Détection automatique ». Le code et les adresses web ne sont pas traduits. Ces langues se règlent dans l'onglet Langues de traduction, ou avec les réglages rapides.</p>
+
+<h3>7.2 Le menu du texte (R)</h3>
+<p>R ouvre un menu pour le texte sélectionné : Résumer, Corriger la grammaire, Corriger la grammaire et traduire, Expliquer, puis chacun de vos Prompts (section 12). Si un prompt a besoin d'un fichier, un sélecteur de fichier s'ouvre d'abord. La réponse s'ouvre dans une fenêtre où vous pouvez poser d'autres questions, ou suit le choix fait pour ce prompt.</p>
+
+<h3>7.3 Dictée intelligente (S) et traduction vocale (Contrôle+T)</h3>
+<ol>
+<li>Appuyez sur S : un bip et « Écoute ». Parlez.</li>
+<li>Appuyez de nouveau sur S : « Écriture ». Le texte est écrit là où se trouve votre curseur.</li>
+</ol>
+<p>Contrôle+T fonctionne de la même façon, mais le texte est traduit de la langue source vers la langue cible avant d'être écrit. L'extension utilise le microphone par défaut de Windows. Moins d'une seconde de parole donne « Aucune parole détectée ». Le texte est écrit par le presse-papiers, qu'il remplace. Ces deux fonctions demandent un service en ligne qui comprend le son.</p>
+
+<h2>8. Le Lecteur de documents et les fichiers</h2>
+
+<h3>8.1 Ouvrir un document (D)</h3>
+<p>D ouvre, dans cet ordre de priorité :</p>
+<ol>
+<li>les fichiers sélectionnés dans l'Explorateur de fichiers, lus ensemble comme un seul document : PDF, images, TIFF, photos d'iPhone (HEIC), fichiers texte et HTML ;</li>
+<li>sinon, une image qui est dans le presse-papiers ;</li>
+<li>sinon, la liste des documents récents, avec les boutons Ouvrir, Supprimer, Effacer tout, Ouvrir le fichier (Contrôle+O) et Fermer. Sans historique, le sélecteur de fichier s'ouvre directement.</li>
+</ol>
+<p>D pendant une lecture l'arrête. Les fichiers texte et HTML s'ouvrent tout de suite, sans l'IA. Quand une lecture précédente a été interrompue, l'extension propose de reprendre là où elle s'était arrêtée, même après un redémarrage.</p>
+
+<h3>8.2 La fenêtre des options</h3>
+<p>Avant de lire un document de plusieurs pages, la fenêtre Options montre le nombre total de pages et propose :</p>
+<ul>
+<li><strong>De et À :</strong> les pages à lire.</li>
+<li><strong>Traduire la sortie,</strong> avec la langue cible.</li>
+<li><strong>Décrire les images en ligne lors de l'OCR :</strong> les images du document sont décrites dans le texte.</li>
+<li><strong>Compresser les pages PDF avant le traitement :</strong> allège les grandes pages numérisées avant de les envoyer.</li>
+</ul>
+<p>Appuyez ensuite sur Commencer. Les pages sont lues en arrière-plan, plusieurs à la fois ; vous pouvez fermer la fenêtre et revenir plus tard. L'extension annonce chaque page qui est prête. Un document déjà lu se rouvre tout de suite, sans être relu.</p>
+
+<h3>8.3 La fenêtre de lecture</h3>
+<ul>
+<li><strong>Contrôle+Page suivante et Contrôle+Page précédente,</strong> ou les boutons Suivante et Précédente : changent de page. Flèche bas sur la dernière ligne et Flèche haut sur la première ligne changent aussi de page.</li>
+<li><strong>Allez à :</strong> la liste des numéros de page.</li>
+<li><strong>Demandez à l'IA (Alt+A) :</strong> pose une question sur le document.</li>
+<li><strong>Re-scanner avec l'IA (Alt+R) :</strong> relit la page en cours, ou toutes les pages, avec l'IA.</li>
+<li><strong>Essayer à nouveau :</strong> apparaît quand certaines pages ont échoué parce que le service était occupé, et ne relit que celles-là.</li>
+<li><strong>Générer de l'audio (Alt+G) :</strong> enregistre la page en cours, ou toutes les pages, dans un fichier MP3 ou WAV, avec la voix choisie. Présent seulement quand le service sait parler.</li>
+<li><strong>Afficher mis en forme :</strong> montre tout le document en texte mis en forme, avec des titres.</li>
+<li><strong>Enregistrer (Alt+S ou Contrôle+S) :</strong> enregistre le texte dans un fichier texte ou HTML, avec les numéros de page si ce réglage est activé. S'il manque des pages, l'extension le dit d'abord.</li>
+<li><strong>Fermer :</strong> l'endroit où vous étiez est gardé dans l'Historique.</li>
+</ul>
+
+<h3>8.4 Les trois moteurs d'OCR</h3>
+<p>Le moteur d'OCR, dans l'onglet Lecteur de documents, décide comment le texte des images et des pages numérisées est lu :</p>
+<ul>
+<li><strong>Chrome (rapide) :</strong> rapide, mais envoie les pages à un service de Google, quelle que soit l'IA choisie, et les traduit avec Google Traduction. C'est le choix par défaut avec les services en ligne.</li>
+<li><strong>IA (avancé) :</strong> utilise l'IA choisie, garde la mise en page, les liens et les descriptions des images. Choisir l'IA locale sélectionne automatiquement ce moteur, pour que rien ne quitte votre ordinateur.</li>
+<li><strong>Aucun (extraire la couche de texte) :</strong> lit seulement le texte déjà présent dans un PDF où l'on peut chercher, sans lire aucune image.</li>
+</ul>
+
+<h3>8.5 Lire ou décrire un fichier (F)</h3>
+<p>F agit sur le fichier image ou PDF sélectionné dans l'Explorateur de fichiers, ou sur une image du presse-papiers, sans sélecteur de fichier. Pour une seule image avec le moteur IA, elle demande s'il faut extraire le texte ou décrire l'image. Un PDF de plusieurs pages affiche la fenêtre des options. La réponse s'ouvre dans une fenêtre de discussion. F de nouveau l'arrête.</p>
+
+<h2>9. Médias et vidéo</h2>
+
+<h3>9.1 Transcription et doublage (M)</h3>
+<p>M agit sur le fichier audio ou vidéo sélectionné dans l'Explorateur de fichiers, ou ouvre un sélecteur de fichier. Trois choix :</p>
+<ul>
+<li><strong>Transcrire (langue originale) :</strong> écrit ce qui est dit.</li>
+<li><strong>Transcrire et traduire (langue cible) :</strong> l'écrit dans une autre langue.</li>
+<li><strong>Doublage et traduction (langue cible) :</strong> fabrique un fichier MP3 où la parole est remplacée par une voix dans la langue choisie. Google Gemini seulement.</li>
+</ul>
+<p>Le doublage demande l'outil gratuit ffmpeg : l'extension propose de le télécharger une seule fois, environ 70 Mo.</p>
+
+<h3>9.2 Analyse de vidéo (Maj+V)</h3>
+<p>Maj+V agit sur la vidéo sélectionnée dans l'Explorateur de fichiers, ou sur une adresse de vidéo copiée dans le presse-papiers : YouTube, Instagram, Twitter (X) ou TikTok. Sinon, la fenêtre Analyser une vidéo s'ouvre, où vous collez une adresse ou parcourez vos fichiers. Deux actions :</p>
+<ul>
+<li><strong>Analyse de vidéo générale :</strong> une description complète des scènes, des personnes et de ce qui se passe, avec un résumé du son.</li>
+<li><strong>Générer une audiodescription (fichier SRT) :</strong> un fichier de descriptions minutées, placées dans les silences entre les dialogues.</li>
+</ul>
+<p>Pour l'audiodescription, vous pouvez ajouter la liste des personnages comme premier sous-titre, ajouter un avertissement disant que le texte vient d'une IA, et choisir une série ou un film pour que l'extension reconnaisse ses personnages (section 9.4). Pour une vidéo YouTube, elle demande la durée de la vidéo en minutes. Une vidéo envoyée reste disponible pendant 48 heures : vous pouvez en tirer d'autres fichiers sans la renvoyer.</p>
+
+<h3>9.3 Audiodescription et narration</h3>
+<p>La fenêtre de l'audiodescription montre la progression et le texte. Ensuite :</p>
+<ul>
+<li><strong>Enregistrer SRT :</strong> enregistre le fichier de sous-titres. Donnez-lui le même nom que la vidéo, dans le même dossier, et votre lecteur multimédia pourra le lire à votre lecteur d'écran.</li>
+<li><strong>Générer une narration synchronisée (MP3) :</strong> transforme les descriptions en parole, avec une voix de votre choix : eSpeak, une voix de Windows, ou les voix de Gemini. eSpeak-NG peut être téléchargé depuis la fenêtre.</li>
+<li><strong>Regénérer</strong> et <strong>Essayer à nouveau :</strong> recommencent, ou continuent après une erreur temporaire.</li>
+</ul>
+<p>Pour un fichier vidéo sur votre ordinateur, deux sortes de narration :</p>
+<ul>
+<li><strong>Standard :</strong> la voix est mélangée au son de la vidéo. L'extension demande s'il faut baisser le son de fond pendant les descriptions.</li>
+<li><strong>Étendue :</strong> le son de la vidéo s'arrête pendant chaque description, pour que rien ne vous échappe. L'extension utilise un petit modèle de détection des silences, téléchargé une seule fois avec votre permission, environ 70 Mo.</li>
+</ul>
+<p>Pour une vidéo en ligne, le MP3 ne contient que la voix des descriptions.</p>
+
+<h3>9.4 Dictionnaire des personnages</h3>
+<p>Pour chaque série ou film, l'extension peut garder une liste de personnages, pour que leurs noms restent les mêmes d'un épisode à l'autre. Ouvrez-la avec « Gérer les personnages » dans l'onglet Vidéo ou dans la fenêtre de la vidéo. Vous pouvez ajouter un personnage avec une note, comme son rôle ; le modifier avec F2 ; le retirer avec Suppr ; importer une liste, un nom par ligne ; ou supprimer toute une série. L'IA ajoute d'elle-même les personnages qu'elle découvre, et ne décrit chacun que la première fois qu'il apparaît.</p>
+
+<h3>9.5 Enregistrement de l'écran (Contrôle+V)</h3>
+<p>Contrôle+V commence à enregistrer la fenêtre active, en silence et sans le son. Appuyez de nouveau sur Contrôle+V pour arrêter : l'extension dit la durée, puis fait décrire l'enregistrement. Il faut ffmpeg, que l'extension propose de télécharger.</p>
+
+<h2>10. Discuter, les résultats et l'Historique</h2>
+
+<h3>10.1 Discussion directe (Maj+C)</h3>
+<p>Une discussion avec l'IA. Écrivez dans le champ « Demander » et appuyez sur Entrée pour envoyer ; Maj+Entrée ajoute une ligne. Le bouton « Joindre un fichier » ajoute des images, des fichiers PDF ou des sons à votre question. Les autres boutons : Afficher mis en forme, Enregistrer le contenu (la dernière réponse, en HTML), Enregistrer la discussion (toute la discussion, en texte) et Fermer.</p>
+<p>Dans toutes les fenêtres de discussion : Alt+Flèche bas lit le message suivant, Alt+Flèche haut le message précédent, et Alt+C copie le message. L'extension dit quand vous arrivez au premier ou au dernier message.</p>
+
+<h3>10.2 Le dernier résultat (Espace)</h3>
+<p>Espace rouvre la dernière réponse de l'IA : description, traduction, menu du texte, discussion de document, opérateur, ou conversation de l'Assistant Live.</p>
+
+<h3>10.3 L'Historique (Contrôle+H)</h3>
+<p>L'Historique garde vos discussions et vos documents, jusqu'à 100. La liste « Afficher » les filtre : Tous, Discussions ou Documents.</p>
+<ul>
+<li><strong>Ouvrir</strong> (ou Entrée) : une discussion se rouvre avec ses fichiers, un document à la page où vous étiez.</li>
+<li><strong>Supprimer</strong> (ou la touche Suppr) : retire un élément. Pour un document, vous choisissez de le retirer de l'Historique seulement, ou aussi le texte déjà lu, pour que la prochaine ouverture le lise de nouveau.</li>
+<li><strong>Effacer tout :</strong> vide la liste affichée.</li>
+</ul>
+<p>Les réglages « Enregistrer les conversations dans l'historique » et « Enregistrer les documents dans l'historique » décident de ce qui est gardé.</p>
+
+<h2>11. Assistant Live et Observateur ambiant</h2>
+<p>Ces deux fonctions demandent Google Gemini.</p>
+
+<h3>11.1 Assistant Live (Contrôle+L)</h3>
+<p>Une conversation parlée : vous parlez dans le microphone, l'IA voit votre écran et répond à voix haute. Demandez par exemple « qu'est-ce que je regarde ? » ou « lis-moi le troisième paragraphe ». Appuyez de nouveau sur Contrôle+L pour terminer.</p>
+<p>La fenêtre de l'Assistant Live propose :</p>
+<ul>
+<li><strong>Voix de la synthèse vocale :</strong> la voix de l'IA. La changer redémarre la conversation.</li>
+<li><strong>Profondeur de réflexion :</strong> combien l'IA réfléchit avant de répondre, pour les modèles qui le permettent.</li>
+<li><strong>Périphérique audio :</strong> la carte son où va la voix.</li>
+<li><strong>Push-to-Talk :</strong> le microphone reste fermé tant que vous ne maintenez pas la touche choisie dans les paramètres. Utile dans un endroit bruyant.</li>
+<li><strong>Utiliser la webcam :</strong> envoie la caméra au lieu de l'écran, pour poser des questions sur des objets, des papiers imprimés ou votre entourage. Il faut ffmpeg. Le bouton « Paramètres de confidentialité de la caméra » ouvre les paramètres de Windows si la caméra est bloquée.</li>
+<li><strong>Fin</strong> ou <strong>Démarrer.</strong> Échap ferme la fenêtre et met fin à la conversation.</li>
+</ul>
+
+<h3>11.2 Observateur ambiant (Maj+O)</h3>
+<p>L'Observateur ambiant travaille en arrière-plan, sans conversation : il signale ce qui change et reste silencieux quand rien ne se passe. Maj+O ouvre sa fenêtre ; Maj+O de nouveau l'arrête. Trois modes :</p>
+<ul>
+<li><strong>Traduction audio uniquement :</strong> traduit ce qu'il entend, par le microphone ou par le son de l'ordinateur. Le son de l'ordinateur demande une petite bibliothèque, téléchargée une seule fois avec votre permission.</li>
+<li><strong>Surveillance d'écran uniquement :</strong> vous dit ce qui change à l'écran. Il n'envoie une image que quand l'écran a vraiment changé.</li>
+<li><strong>Surveillance de webcam uniquement :</strong> ouvre l'Assistant Live avec la caméra, pour que vous puissiez demander ce qu'il voit.</li>
+</ul>
+<p>« À propos de ce que je fais » rend les rapports plus utiles. Pour l'écran : Général, regarder un film ou une série, un flux en direct ou une présentation, suivre une réunion ou un appel en ligne, ou jouer à un jeu. Pour la caméra : Général, vérifier mon apparence ou mon maquillage, une couleur ou assortir des vêtements, lire un document ou une étiquette, une date de péremption ou une étiquette alimentaire, une boîte de médicaments, une écriture manuscrite ou un formulaire rempli, l'écran d'un appareil, les voyants lumineux, identifier un objet, ou examiner mon environnement. Vous pouvez aussi écrire votre propre texte. Les rapports peuvent être brefs, d'une phrase, ou détaillés. La fenêtre se souvient de vos derniers choix.</p>
+
+<h2>12. Prompts</h2>
+<p>Les prompts sont les instructions données à l'IA. Ouvrez le Gestionnaire de prompts depuis les options avancées, onglet Prompts, « Gérer les prompts ».</p>
+
+<h3>12.1 Les prompts de l'extension</h3>
+<p>L'onglet « Prompts par défaut » énumère les instructions de chaque fonction, que vous pouvez modifier : résumé, correction, traduction, description, vidéo, transcription, dictée, OCR, CAPTCHA, les styles de rapport et les contextes de l'observateur. Une liste « Filtre » montre une famille à la fois. « Appliquer à la sélection » enregistre le changement, « Réinitialiser la sélection » ou « Tout réinitialiser » rend le texte d'origine. Certains prompts sont nécessaires à une fonction : l'extension vous prévient avant que vous les changiez.</p>
+
+<h3>12.2 Vos propres prompts</h3>
+<p>L'onglet « Prompts personnalisés » contient vos propres demandes, dans l'ordre du menu R : Ajouter, Modifier, Supprimer, Monter, Descendre. Pour chaque prompt :</p>
+<ul>
+<li><strong>Nom</strong> et <strong>Texte du prompt.</strong></li>
+<li><strong>Touche de raccourci :</strong> appuyez sur les touches pour les enregistrer ; Retour arrière efface. Une seule lettre, un chiffre ou F1 à F12 marche dans la couche de commandes, et partout avec NVDA+Contrôle+Maj et cette touche. Une combinaison, comme Alt+1 ou Contrôle+Maj+1, marche partout telle quelle. Une touche déjà utilisée par une commande, ou par un autre prompt, est refusée.</li>
+<li><strong>Comportement du retour :</strong> suivre le réglage général, copier la réponse dans le presse-papiers, la dire directement, faire les deux, ou toujours ouvrir une fenêtre de discussion.</li>
+</ul>
+
+<h3>12.3 Les variables</h3>
+<p>Un prompt peut contenir des mots entre crochets, remplacés quand il s'exécute. Le bouton « Guide des variables » les énumère.</p>
+<ul>
+<li><strong>Texte :</strong> [selection] le texte sélectionné, [clipboard] le presse-papiers, [text] le texte du champ où vous êtes (jamais un mot de passe), [currentURL] l'adresse de la page dans Chrome, Edge ou Firefox, [clipboard_image] l'image du presse-papiers.</li>
+<li><strong>Écran :</strong> [screen_obj] l'objet sous le curseur, [screen_fg_obj] la fenêtre active, [screen_full] tout l'écran.</li>
+<li><strong>Fichiers :</strong> [file_ocr] demande une image ou un PDF à lire, [file_read] un document, [file_audio] un fichier son.</li>
+<li><strong>Langues :</strong> {target_lang}, {source_lang}, {response_lang}, {swap_target} et {swap_instruction}.</li>
+<li><strong>Observateur ambiant :</strong> [ambient_screen], [ambient_webcam] ou [ambient_audio] démarrent l'observateur, que le même raccourci arrête ; [mic] ou [loopback] choisissent le son, [brief] ou [detailed] le style, et [lang:fr], par exemple, la langue.</li>
+</ul>
+<p>L'extension refuse un prompt dont les variables ne vont pas ensemble, et dit pourquoi.</p>
+
+<h2>13. Les clés Google Gemini</h2>
+
+<h3>13.1 Gestionnaire de clés API Gemini (G)</h3>
+<p>Il crée des clés Gemini pour vous, avec Google Gemini comme service. La première fois, « Se connecter et ouvrir le navigateur » ouvre la page de connexion de Google dans votre navigateur : connectez-vous, et cochez la case de permission que Google affiche. Ensuite :</p>
+<ul>
+<li><strong>Nouveau projet et clé,</strong> ou <strong>Créer une clé pour le projet sélectionné :</strong> la clé est créée, copiée dans le presse-papiers, et l'extension propose de l'utiliser.</li>
+<li><strong>Copier la clé sélectionnée, Copier la dernière clé créée, Utiliser dans BeMyAssistantAccess.</strong></li>
+<li><strong>Supprimer la clé :</strong> la supprime chez Google, après confirmation, et la retire de l'extension.</li>
+<li><strong>Exporter les clés enregistrées :</strong> les enregistre dans un fichier.</li>
+<li><strong>Se déconnecter :</strong> oublie la connexion à Google.</li>
+</ul>
+<p>Les clés créées sont gardées sur votre ordinateur en texte clair : protégez-en l'accès.</p>
+
+<h3>13.2 Clés épuisées (Alt+Q)</h3>
+<p>Alt+Q montre les clés Gemini dont le quota du jour est épuisé, et quand elles redeviennent utilisables. Quand une clé est épuisée, l'extension passe d'elle-même à la suivante.</p>
+
+<h2>14. Les paramètres</h2>
+<p>Les réglages simples sont décrits dans la section 1. Le bouton « Options avancées » ouvre une fenêtre avec, en haut, le réglage « Garder l'IA locale prête » (section 2.3), puis les onglets. Certains onglets n'apparaissent qu'avec certains services. Confirmez avec OK, ou annulez avec Annuler.</p>
+<p>L'IA locale y apparaît comme le service « Custom » : laissez ses réglages tels quels.</p>
+
+<h3>14.1 Connexion</h3>
+<ul>
+<li><strong>Fournisseur</strong> et <strong>Clé API,</strong> avec « Afficher la clé API » pour la lire.</li>
+<li><strong>Obtenir une clé API Gemini :</strong> le gestionnaire de clés de la section 13.</li>
+<li><strong>Récupérer les modèles</strong> et <strong>Modèle d'IA :</strong> la liste des modèles du service ; taper du texte dans la liste filtre les modèles.</li>
+<li><strong>Routage de modèle avancé :</strong> un modèle différent pour chaque tâche : OCR et vision, reconnaissance vocale, synthèse vocale, Opérateur IA et CAPTCHA, analyse de vidéos, Assistant Live.</li>
+<li><strong>Paramètres du fournisseur personnalisé,</strong> pour le service Custom : l'adresse et le type du service (« OpenAI Compatible » ou « Gemini Compatible »), le nom du modèle, l'envoi de fichiers, et des adresses séparées pour chaque tâche. Le bouton « Configuration de l'IA locale » est pour les programmes que vous lancez vous-même, comme Ollama ou LM Studio ; l'IA locale de l'extension n'en a pas besoin.</li>
+<li><strong>Proxy :</strong> Détection automatique, SOCKS5, HTTP ou Proxy inverse, avec son adresse, son nom d'utilisateur et son mot de passe. « Tester la connexion au proxy » le vérifie et donne le délai.</li>
+<li><strong>Vérifier les mises à jour au démarrage.</strong></li>
+<li><strong>Nettoyer le Markdown dans la discussion :</strong> retire les signes de mise en forme des réponses.</li>
+<li><strong>Copier les réponses de l'IA dans le presse-papiers.</strong></li>
+<li><strong>Enregistrer les conversations dans l'historique.</strong></li>
+<li><strong>Sortie directe (pas de fenêtre de discussion) :</strong> les réponses sont dites au lieu d'ouvrir une fenêtre.</li>
+</ul>
+
+<h3>14.2 Assistant Live (Google Gemini seulement)</h3>
+<ul>
+<li><strong>Périphérique de sortie audio :</strong> la carte son de l'Assistant Live et de l'observateur.</li>
+<li><strong>Intervalle des images :</strong> à quelle fréquence, de 1 à 10 secondes, une image de l'écran est envoyée.</li>
+<li><strong>Profondeur de réflexion :</strong> de la plus rapide à la plus profonde.</li>
+<li><strong>Sortie directe (sans fenêtre) :</strong> l'Assistant Live fonctionne sans sa fenêtre.</li>
+<li><strong>Push-to-Talk</strong> et sa touche : appuyez sur les touches pour les enregistrer, par exemple F12 ou Contrôle+F12. Une touche de modification maintenue seule marche aussi.</li>
+<li><strong>Mode observateur, Source audio</strong> et <strong>Style de rapport</strong> de l'Observateur ambiant.</li>
+</ul>
+
+<h3>14.3 Comportement de l'IA (services autres que Google Gemini)</h3>
+<p><strong>Créativité :</strong> de 0, très stable, à 2, très libre. Elle n'a pas d'effet sur l'OCR ni sur la traduction.</p>
+
+<h3>14.4 Langues de traduction</h3>
+<p><strong>Langue source</strong> (ou Détection automatique), <strong>Langue cible,</strong> <strong>Langue de la réponse de l'IA,</strong> et <strong>Permutation intelligente</strong> (section 7.1).</p>
+
+<h3>14.5 Lecteur de documents</h3>
+<ul>
+<li><strong>Moteur d'OCR</strong> (section 8.4).</li>
+<li><strong>Taille du lot OCR :</strong> le nombre de pages envoyées à la fois, pour les services qui acceptent des fichiers entiers.</li>
+<li><strong>Décrire les images en ligne lors de l'OCR du document.</strong></li>
+<li><strong>Inclure les numéros de page lors de l'exportation de documents.</strong></li>
+<li><strong>Enregistrer les documents dans l'historique.</strong></li>
+<li><strong>Voix de la synthèse vocale :</strong> la voix des fichiers audio des documents.</li>
+</ul>
+
+<h3>14.6 Vidéo (Google Gemini seulement)</h3>
+<ul>
+<li><strong>Taille des segments vidéo :</strong> la durée, en minutes, de chaque morceau de vidéo envoyé pour l'audiodescription. Plus court est plus précis ; 0 l'envoie en entier.</li>
+<li><strong>Ajouter la liste des personnages comme premier sous-titre</strong> et <strong>Ajouter un avertissement sur l'IA au début.</strong></li>
+<li><strong>Gérer les personnages</strong> (section 9.4).</li>
+</ul>
+
+<h3>14.7 CAPTCHA</h3>
+<p><strong>Activer la résolution visuelle de CAPTCHA,</strong> et <strong>Méthode CAPTCHA texte :</strong> l'objet sous le curseur ou tout l'écran.</p>
+
+<h3>14.8 Prompts</h3>
+<p>Le bouton « Gérer les prompts » (section 12), et le nombre de prompts.</p>
+
+<h3>14.9 Avancé</h3>
+<ul>
+<li><strong>Gestion des journaux :</strong> un fichier de journal de l'extension, désactivé par défaut, avec son niveau de détail et sa durée de conservation, et les boutons Ouvrir le fichier de journal, Ouvrir le dossier des journaux et Effacer le fichier de journal. Utile pour signaler un problème.</li>
+<li><strong>Sauvegarde et restauration :</strong> section 16.</li>
+</ul>
+
+<h2>15. Les réglages rapides</h2>
+<p>Dans la couche de commandes, Flèche haut et Flèche bas parcourent 25 réglages, et Flèche gauche et Flèche droite changent celui où vous êtes. Chaque changement est enregistré tout de suite. L'extension annonce par exemple « Modèle d'IA, Actuel : … Utilisez les flèches gauche et droite pour changer. »</p>
+<ul>
+<li><strong>Fournisseur d'IA :</strong> seulement les services qui ont une clé, plus Custom.</li>
+<li><strong>Modèle d'IA,</strong> puis le modèle de chaque tâche : Modèle d'OCR, Modèle STT, Modèle de synthèse vocale, Opérateur IA / Modèle CAPTCHA, Modèle vidéo, Modèle Live. En changer un active le routage avancé.</li>
+<li><strong>Voix de la synthèse vocale.</strong></li>
+<li><strong>Sortie directe Live (pas de fenêtre)</strong> et <strong>Périphérique de sortie audio de Gemini Live.</strong></li>
+<li><strong>Langue source, Langue cible</strong> et <strong>Langue de la réponse de l'IA.</strong></li>
+<li><strong>Résolution visuelle de CAPTCHA</strong> et <strong>Méthode CAPTCHA texte.</strong></li>
+<li><strong>Moteur d'OCR.</strong></li>
+<li><strong>Description des images dans l'OCR, Numéros de page à l'exportation des documents, Copier les réponses de l'IA dans le presse-papiers, Sortie directe (pas de fenêtre de discussion), Nettoyer le Markdown dans la discussion, Enregistrer les conversations dans l'historique, Enregistrer les documents dans l'historique, Permutation intelligente :</strong> activé ou désactivé.</li>
+</ul>
+
+<h2>16. Sauvegarde, données et téléchargements</h2>
+
+<h3>16.1 Sauvegarder et restaurer</h3>
+<p>Dans l'onglet Avancé, « Sauvegarder » enregistre dans un fichier soit tout (réglages, étiquettes, documents en cours, Historique, personnages), soit seulement les réglages. « Restaurer » le ramène, après confirmation, et remplace les réglages et les données actuels. La sauvegarde contient vos clés d'accès et le mot de passe de votre proxy en texte clair : gardez-la en lieu sûr.</p>
+
+<h3>16.2 Où sont les données</h3>
+<p>L'extension garde ses données dans un dossier BeMyAssistantAccess de la configuration de NVDA : étiquettes, Historique, documents en cours, personnages, clés Gemini et journal. L'IA locale est dans le dossier Windows des données locales des applications, sous ReaperAccessible, BeMyAssistantAccess.</p>
+
+<h3>16.3 Téléchargements</h3>
+<p>Certaines fonctions ont besoin d'un outil gratuit, téléchargé une seule fois dans l'extension, toujours après votre permission : ffmpeg pour le doublage, l'enregistrement et la webcam ; le modèle de détection des silences pour la narration étendue ; la bibliothèque pour le son de l'ordinateur dans l'observateur ; eSpeak-NG pour les voix de narration.</p>
+
+<h2>17. Mises à jour</h2>
+<p>L'extension se met à jour toute seule depuis le dépôt GitHub de ReaperAccessible. Quand une nouvelle version existe, elle la propose ; une fois installée, NVDA doit redémarrer. L'IA locale n'est pas mise à jour avec l'extension : elle l'est par le Manager.</p>
+
+<h2>18. Confidentialité</h2>
+<ul>
+<li><strong>Avec un service en ligne,</strong> ce que vous demandez, y compris les images de l'écran, les documents et les sons, est envoyé à ce service. Évitez-le pour les écrans qui montrent des renseignements personnels.</li>
+<li><strong>Avec l'IA locale,</strong> les réponses de l'IA sont calculées sur votre ordinateur. Ces fonctions utilisent tout de même Internet : le moteur d'OCR Chrome si vous le choisissez, la vérification des mises à jour, le gestionnaire de clés Gemini, les téléchargements d'outils et les vidéos en ligne.</li>
+<li>Les clés d'accès restent dans la configuration de NVDA, sur votre ordinateur, et dans vos sauvegardes.</li>
+</ul>
+
+<h2>19. Crédits</h2>
+<p>BeMyAssistantAccess est publié par ReaperAccessible. Il est fondé sur Vision Assistant Pro, de Mahmood Hozhabri, qui a conçu la plupart de ses fonctions. L'IA locale utilise le moteur llama.cpp et le modèle Qwen 3.5 d'Alibaba.</p>
+</body>
+</html>
