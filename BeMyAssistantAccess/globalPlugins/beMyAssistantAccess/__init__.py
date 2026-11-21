@@ -97,7 +97,14 @@ def check_and_restore_lib_backup():
 				dst = os.path.join(target_lib_dir, item)
 				try:
 					if os.path.isdir(_long_path(src)):
-						shutil.copytree(_long_path(src), _long_path(dst), dirs_exist_ok=True)
+						# Only bring back what is missing: the files already there may be in use.
+						for root, _dirs, files in os.walk(_long_path(src)):
+							relative = os.path.relpath(root, _long_path(src))
+							target = os.path.join(_long_path(dst), relative)
+							os.makedirs(target, exist_ok=True)
+							for name in files:
+								if not os.path.exists(os.path.join(target, name)):
+									shutil.copy2(os.path.join(root, name), os.path.join(target, name))
 					elif not os.path.exists(_long_path(dst)):
 						shutil.copy2(_long_path(src), _long_path(dst))
 				except Exception as e:
