@@ -100,7 +100,7 @@ def check_and_restore_lib_backup():
 						# Only bring back what is missing: the files already there may be in use.
 						for root, _dirs, files in os.walk(_long_path(src)):
 							relative = os.path.relpath(root, _long_path(src))
-							target = os.path.join(_long_path(dst), relative)
+							target = _long_path(dst) if relative == os.curdir else os.path.join(_long_path(dst), relative)
 							os.makedirs(target, exist_ok=True)
 							for name in files:
 								if not os.path.exists(os.path.join(target, name)):
