@@ -21,3 +21,4 @@ __pycache__/
 *.nvda-addon
 *.original
 *.avant_ecoute
+!/SpeakWriteAccess/

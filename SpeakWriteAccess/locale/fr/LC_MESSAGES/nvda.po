@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SpeakWriteAccess\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "SpeakWriteAccess needs its AI, which is installed separately with the ReaperAccessible Installer Manager. In the Manager, choose the type NVDA Add-on, then SpeakWriteAccess, local AI. If you do not have the Manager on your computer, use the Download the Manager button."
+msgstr "SpeakWriteAccess a besoin de son IA, qui s'installe à part avec le ReaperAccessible Installer Manager. Dans le Manager, choisissez le type Extension NVDA, puis SpeakWriteAccess, IA locale. Si vous n'avez pas le Manager sur votre ordinateur, utilisez le bouton Télécharger le Manager."
+
+msgid "French"
+msgstr "Français"
+
+msgid "English"
+msgstr "Anglais"
+
+msgid "Spanish"
+msgstr "Espagnol"
+
+msgid "Portuguese"
+msgstr "Portugais"
+
+msgid "Italian"
+msgstr "Italien"
+
+msgid "German"
+msgstr "Allemand"
+
+msgid "Dutch"
+msgstr "Néerlandais"
+
+msgid "Polish"
+msgstr "Polonais"
+
+msgid "Romanian"
+msgstr "Roumain"
+
+msgid "Russian"
+msgstr "Russe"
+
+msgid "Ukrainian"
+msgstr "Ukrainien"
+
+msgid "Turkish"
+msgstr "Turc"
+
+msgid "Arabic"
+msgstr "Arabe"
+
+msgid "Persian"
+msgstr "Persan"
+
+msgid "Hindi"
+msgstr "Hindi"
+
+msgid "Japanese"
+msgstr "Japonais"
+
+msgid "Chinese"
+msgstr "Chinois"
+
+msgid "Korean"
+msgstr "Coréen"
+
+msgid "Vietnamese"
+msgstr "Vietnamien"
+
+msgid "Indonesian"
+msgstr "Indonésien"
+
+msgid "No mistake."
+msgstr "Aucune faute."
+
+msgid "1 correction."
+msgstr "1 correction."
+
+msgid "{count} corrections."
+msgstr "{count} corrections."
+
+msgid "The text could not be written."
+msgstr "Le texte n'a pas pu être écrit."
+
+msgid "Corrects the selected text."
+msgstr "Corrige le texte sélectionné."
+
+msgid "Starts or stops the dictation: what you say into the microphone is written where the cursor is."
+msgstr "Démarre ou arrête la dictée : ce que vous dites au micro s'écrit là où se trouve le curseur."
+
+msgid "Dictation on"
+msgstr "Dictée activée"
+
+msgid "Dictation off"
+msgstr "Dictée arrêtée"
+
+msgid "&Language of the text:"
+msgstr "&Langue du texte :"
+
+msgid "NVDA's language"
+msgstr "La langue de NVDA"
+
+msgid "15 minutes"
+msgstr "15 minutes"
+
+msgid "1 hour"
+msgstr "1 heure"
+
+msgid "Always, from the start of NVDA"
+msgstr "Toujours, dès le démarrage de NVDA"
+
+msgid "&Keep the AI ready after its last use:"
+msgstr "&Garder l'IA prête après sa dernière utilisation :"
+
+msgid "Install the AI"
+msgstr "Installer l'IA"
+
+msgid "&Download the Manager"
+msgstr "&Télécharger le Manager"
+
+msgid "&Close"
+msgstr "&Fermer"
+
+msgid "A correction is already in progress."
+msgstr "Une correction est déjà en cours."
+
+msgid "No selection."
+msgstr "Aucune sélection."
+
+msgid "Loading the AI..."
+msgstr "Chargement de l'IA..."
+
+msgid "The text was not changed: the correction did not look right."
+msgstr "Le texte n'a pas été changé : la correction ne semblait pas juste."
+
+msgid "The AI could not start."
+msgstr "L'IA n'a pas pu démarrer."
+
+msgid "No microphone found."
+msgstr "Aucun micro trouvé."
+
+msgid "Co&rrect the dictation as you speak"
+msgstr "Co&rriger la dictée au fur et à mesure"
+
+msgid "&Read aloud each phrase the dictation writes"
+msgstr "&Lire à voix haute chaque phrase écrite par la dictée"
+
+msgid "How to &install the AI..."
+msgstr "Comment &installer l'IA..."
+
+msgid "Copied to the clipboard."
+msgstr "Copié dans le presse-papiers."
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
+
+msgid "&Check for updates now"
+msgstr "&Vérifier les mises à jour maintenant"
+
+msgid "Checking for updates..."
+msgstr "Recherche de mises à jour..."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Impossible de vérifier les mises à jour. Vérifiez votre connexion Internet."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} est à jour (version {version})."
+
+msgid "{name} update"
+msgstr "Mise à jour de {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} est disponible. Vous avez la version {current}. Voulez-vous l'installer maintenant ?"
+
+msgid "Downloading the update..."
+msgstr "Téléchargement de la mise à jour..."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Téléchargement de la mise à jour : {percent} %"
+
+msgid "The update could not be downloaded."
+msgstr "La mise à jour n'a pas pu être téléchargée."
+
+msgid "The update could not be installed."
+msgstr "La mise à jour n'a pas pu être installée."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."

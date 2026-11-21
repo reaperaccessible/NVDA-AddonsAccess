@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpeakWriteAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>SpeakWriteAccess</h1>
+<p>SpeakWriteAccess fait deux choses avec une IA qui tourne sur votre propre ordinateur :</p>
+<ul>
+<li>il corrige le texte que vous avez sélectionné, d'un seul raccourci ;</li>
+<li>il écrit ce que vous dites au micro, phrase par phrase, là où se trouve le curseur.</li>
+</ul>
+<p>Rien n'est envoyé sur Internet : votre texte et votre voix restent sur votre ordinateur.</p>
+<p>L'extension s'affiche en français lorsque NVDA est en français, et en anglais dans toutes les autres langues.</p>
+
+<h2>Installer l'IA</h2>
+<p>L'IA s'installe à part, avec le ReaperAccessible Installer Manager. Dans le Manager, choisissez le type « Extension NVDA », puis « SpeakWriteAccess, IA locale ». Elle demande environ 6 Go d'espace disque et 8 Go de mémoire.</p>
+<p>Tant que l'IA n'est pas installée, les deux raccourcis ouvrent une fenêtre qui explique comment l'installer. Si vous n'avez pas le Manager sur votre ordinateur, le bouton « Télécharger le Manager » le télécharge.</p>
+<p>Une carte graphique rend l'IA plus rapide, mais elle n'est pas nécessaire. Avec une carte graphique, une correction ou une phrase dictée prend moins d'une demi-seconde. Sans carte graphique, comptez une à trois secondes.</p>
+
+<h2>Raccourcis clavier</h2>
+<ul>
+<li><strong>NVDA+Contrôle+Maj+C :</strong> corrige le texte sélectionné.</li>
+<li><strong>NVDA+Contrôle+Maj+D :</strong> démarre ou arrête la dictée.</li>
+</ul>
+<p>Vous pouvez changer ces raccourcis dans le menu NVDA, Préférences, Gestes de commandes, catégorie SpeakWriteAccess.</p>
+
+<h2>Corriger un texte</h2>
+<ol>
+<li>Sélectionnez le texte à corriger, dans un champ d'édition ou un document.</li>
+<li>Appuyez sur NVDA+Contrôle+Maj+C.</li>
+</ol>
+<p>Le texte sélectionné est remplacé par le texte corrigé, et NVDA dit combien de corrections ont été faites, par exemple « 3 corrections. ». S'il n'y avait rien à corriger, NVDA dit « Aucune faute. » et le texte ne change pas.</p>
+<p>L'IA corrige l'orthographe, la grammaire, les accords et la ponctuation, dans la langue choisie dans les réglages. Elle garde vos mots, votre ton, les noms propres et les retours à la ligne : elle ne réécrit pas votre texte.</p>
+<p>Si le texte ne peut pas être modifié, par exemple sur une page web en mode navigation, le texte corrigé est copié dans le presse-papiers.</p>
+<p>Si la réponse de l'IA ne ressemble pas à une correction de votre texte, rien n'est changé, et NVDA dit « Le texte n'a pas été changé : la correction ne semblait pas juste. ».</p>
+<p>La première utilisation après le démarrage de NVDA charge l'IA : NVDA dit « Chargement de l'IA... », et la correction arrive quelques secondes plus tard.</p>
+
+<h2>Dicter</h2>
+<ol>
+<li>Placez le curseur là où le texte doit s'écrire.</li>
+<li>Appuyez sur NVDA+Contrôle+Maj+D. NVDA dit « Dictée activée ».</li>
+<li>Parlez normalement. À chaque petite pause, la phrase que vous venez de dire s'écrit.</li>
+<li>Appuyez de nouveau sur NVDA+Contrôle+Maj+D pour arrêter. NVDA dit « Dictée arrêtée », et la dernière phrase s'écrit.</li>
+</ol>
+<p>La dictée utilise le micro par défaut de Windows. Si aucun micro n'est trouvé, NVDA dit « Aucun micro trouvé. ».</p>
+<p>Avec le réglage « Corriger la dictée au fur et à mesure », coché par défaut, chaque phrase s'écrit avec l'orthographe, les accords, les majuscules et la ponctuation corrects.</p>
+<p>Le texte est écrit par le presse-papiers, qui retrouve ensuite son contenu. Une image copiée dans le presse-papiers n'est pas gardée.</p>
+<p>Si vous activez « Lire à voix haute chaque phrase écrite par la dictée », utilisez un casque : sinon le micro risque d'entendre NVDA et d'écrire ce qu'il dit.</p>
+
+<h2>Réglages</h2>
+<p>Les réglages sont dans le menu NVDA, Préférences, Paramètres, catégorie SpeakWriteAccess.</p>
+<ul>
+<li><strong>Langue du texte :</strong> la langue dans laquelle l'IA corrige et écrit. « La langue de NVDA », le choix par défaut, suit la langue de NVDA. Vous pouvez aussi choisir parmi 20 langues : français, anglais, espagnol, portugais, italien, allemand, néerlandais, polonais, roumain, russe, ukrainien, turc, arabe, persan, hindi, japonais, chinois, coréen, vietnamien et indonésien. Toutes sont comprises dans l'IA : il n'y a rien à télécharger de plus.</li>
+<li><strong>Corriger la dictée au fur et à mesure :</strong> chaque phrase dictée s'écrit déjà corrigée. Décochée, la phrase s'écrit telle que vous l'avez dite, avec une ponctuation simple.</li>
+<li><strong>Lire à voix haute chaque phrase écrite par la dictée :</strong> NVDA lit chaque phrase après l'avoir écrite. Décoché par défaut.</li>
+<li><strong>Garder l'IA prête après sa dernière utilisation :</strong> 15 minutes, 1 heure, ou toujours, dès le démarrage de NVDA. Tant qu'elle est prête, l'IA répond tout de suite ; ensuite, elle s'arrête et libère la mémoire de l'ordinateur.</li>
+<li><strong>Comment installer l'IA... :</strong> ce bouton apparaît seulement quand l'IA n'est pas installée.</li>
+<li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> et <strong>Vérifier les mises à jour maintenant :</strong> voir la section suivante.</li>
+</ul>
+
+<h2>Mises à jour</h2>
+<p>Au démarrage de NVDA, SpeakWriteAccess vérifie s'il existe une nouvelle version. Si c'est le cas, il vous propose de l'installer, puis de redémarrer NVDA. Le bouton « Vérifier les mises à jour maintenant » fait la même vérification tout de suite.</p>
+
+<h2>Confidentialité</h2>
+<p>L'IA tourne entièrement sur votre ordinateur. Votre texte et votre voix ne sont jamais envoyés sur Internet. Rien n'est enregistré : chaque phrase dictée est oubliée dès qu'elle est écrite. La seule connexion à Internet de l'extension sert à vérifier les mises à jour.</p>
+
+<h2>Crédits</h2>
+<p>SpeakWriteAccess est fait par ReaperAccessible. L'IA est Gemma 4 de Google, qui tourne avec llama.cpp.</p>
+</body>
+</html>
