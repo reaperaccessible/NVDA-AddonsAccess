@@ -26,7 +26,7 @@ from keyboardHandler import KeyboardInputGesture
 from logHandler import log
 from scriptHandler import script
 
-from . import engine, microphone, writing
+from . import audiofile, engine, microphone, transcription, writing
 from .updater import Updater
 
 addonHandler.initTranslation()
@@ -36,6 +36,10 @@ CONFIG_SPEC = {
 	'language': 'string(default=nvda)',
 	'correctDictation': 'boolean(default=true)',
 	'readDictation': 'boolean(default=false)',
+	# The microphone of the dictation: its Windows identifier, empty for Windows' default one,
+	# and its name, to show it in the settings while it is not plugged in.
+	'microphone': 'string(default="")',
+	'microphoneName': 'string(default="")',
 	'keep': 'option("15", "60", "always", default="15")',
 	'checkForUpdates': 'boolean(default=true)',
 }
@@ -188,7 +192,7 @@ class Dictation:
 
 	def start(self):
 		self.cutter = microphone.Phrases()
-		self.microphone = microphone.Microphone(self._on_frame)
+		self.microphone = microphone.Microphone(self._on_frame, _setting('microphone'))
 		self.microphone.start()
 		self.active = True
 		self.written = False
@@ -242,6 +246,166 @@ _dictation = Dictation()
 _correcting = threading.Event()
 
 
+def _explorer_file():
+	"""The file selected in File Explorer, when File Explorer is in front; None otherwise."""
+	foreground = api.getForegroundObject()
+	focus = api.getFocusObject()
+	if foreground is None or focus is None or focus.appModule.appName != 'explorer':
+		return None
+	try:
+		import comtypes.client
+		shell = comtypes.client.CreateObject('Shell.Application')
+		found = None
+		for window in shell.Windows():
+			try:
+				if window.HWND != foreground.windowHandle:
+					continue
+				item = window.Document.FocusedItem
+				if item is None:
+					continue
+				# Several tabs share one window: the right one has the item that has NVDA's focus.
+				if found is None or (focus.name and item.Name in focus.name):
+					found = item.Path
+			except Exception:
+				continue
+		return found if found and os.path.isfile(found) else None
+	except Exception:
+		log.exception('SpeakWriteAccess: could not read the selection of File Explorer')
+		return None
+
+
+def _choose_file():
+	"""Asks for the file to transcribe; None when the window is closed without a file."""
+	patterns = ';'.join('*.' + extension for extension in audiofile.EXTENSIONS)
+	# Translators: the kinds of files offered when choosing a file to transcribe.
+	wildcard = _('Audio and video files') + f' ({patterns})|{patterns}|' + _('All files') + ' (*.*)|*.*'
+	gui.mainFrame.prePopup()
+	# Translators: the title of the window that chooses the audio or video file to transcribe.
+	dialog = wx.FileDialog(gui.mainFrame, _('Choose the file to transcribe'), wildcard=wildcard,
+		style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+	path = dialog.GetPath() if dialog.ShowModal() == wx.ID_OK else None
+	dialog.Destroy()
+	gui.mainFrame.postPopup()
+	return path
+
+
+class TranscriptionDialog(wx.Dialog):
+	"""The text of a file, written as the AI hears it, with a progress bar."""
+
+	current = None
+
+	def __init__(self, parent, path):
+		# Translators: the title of the transcription window; {name} is the name of the file.
+		super().__init__(parent, title=_('Transcription of {name}').format(name=os.path.basename(path)),
+			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
+		self.path = path
+		self.parts = []
+		self.running = True
+		sizer = wx.BoxSizer(wx.VERTICAL)
+		# Translators: the label of the text written from the file.
+		sizer.Add(wx.StaticText(self, label=_('&Transcribed text:')), 0, wx.LEFT | wx.TOP | wx.RIGHT, 10)
+		self.text = wx.TextCtrl(self, style=wx.TE_MULTILINE | wx.TE_READONLY | wx.TE_RICH2, size=(560, 260))
+		sizer.Add(self.text, 1, wx.EXPAND | wx.ALL, 10)
+		# Translators: the label of the progress bar of the transcription.
+		sizer.Add(wx.StaticText(self, label=_('Progress:')), 0, wx.LEFT | wx.RIGHT, 10)
+		self.gauge = wx.Gauge(self, range=100)
+		sizer.Add(self.gauge, 0, wx.EXPAND | wx.ALL, 10)
+		buttons = wx.BoxSizer(wx.HORIZONTAL)
+		# Translators: a button that copies the transcribed text to the clipboard.
+		self.copy = wx.Button(self, label=_('C&opy'))
+		# Translators: a button that saves the transcribed text in a text file.
+		self.save = wx.Button(self, label=_('&Save...'))
+		# Translators: the button that stops the transcription and closes its window.
+		self.closeButton = wx.Button(self, wx.ID_CANCEL, label=_('&Cancel'))
+		for button in (self.copy, self.save, self.closeButton):
+			buttons.Add(button, 0, wx.RIGHT, 10)
+		sizer.Add(buttons, 0, wx.ALIGN_RIGHT | wx.ALL, 10)
+		self.copy.Bind(wx.EVT_BUTTON, self.on_copy)
+		self.save.Bind(wx.EVT_BUTTON, self.on_save)
+		self.closeButton.Bind(wx.EVT_BUTTON, lambda event: self.Close())
+		self.Bind(wx.EVT_CLOSE, self.on_close)
+		self.SetSizerAndFit(sizer)
+		self.CentreOnScreen()
+		self.job = transcription.FileTranscription(_engine, path, _language(), _setting('correctDictation'),
+			lambda text: wx.CallAfter(self.add, text),
+			lambda fraction: wx.CallAfter(self.progress, fraction),
+			lambda status: wx.CallAfter(self.end, status))
+
+	def start(self):
+		TranscriptionDialog.current = self
+		self.job.start()
+
+	def whole(self):
+		return ' '.join(self.parts)
+
+	def add(self, text):
+		if not self:
+			return
+		# Added at the end, without moving the cursor of someone already reading the text.
+		where = self.text.GetInsertionPoint()
+		self.text.AppendText((' ' if self.parts else '') + text)
+		self.text.SetInsertionPoint(where)
+		self.parts.append(text)
+
+	def progress(self, fraction):
+		if self:
+			self.gauge.SetValue(int(fraction * 100))
+
+	def end(self, status):
+		self.running = False
+		if not self:
+			return
+		if status == transcription.CANCELLED:
+			return
+		# Translators: the button that closes the transcription window, once the transcription is over.
+		self.closeButton.SetLabel(_('&Close'))
+		if status == transcription.UNREADABLE:
+			# Translators: said when the sound of the file cannot be read.
+			ui.message(_('Windows cannot read the sound of this file.'))
+		elif status == transcription.NO_AI:
+			ui.message(_('The AI could not start.'))
+		elif not self.parts:
+			# Translators: said when the transcription is over and nothing was said in the file.
+			ui.message(_('Transcription finished: no speech was found in this file.'))
+		else:
+			# Translators: said when the transcription of a file is over.
+			ui.message(_('Transcription finished.'))
+
+	def on_copy(self, event):
+		if self.parts and api.copyToClip(self.whole(), notify=False):
+			# Translators: said when the transcribed text was copied.
+			ui.message(_('Copied to the clipboard.'))
+		elif not self.parts:
+			# Translators: said when there is no transcribed text yet.
+			ui.message(_('No text yet.'))
+
+	def on_save(self, event):
+		if not self.parts:
+			ui.message(_('No text yet.'))
+			return
+		folder, name = os.path.split(self.path)
+		# Translators: the title of the window that saves the transcribed text.
+		dialog = wx.FileDialog(self, _('Save the transcribed text'), defaultDir=folder,
+			defaultFile=os.path.splitext(name)[0] + '.txt',
+			# Translators: the kind of file the transcribed text is saved in.
+			wildcard=_('Text files') + ' (*.txt)|*.txt', style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
+		if dialog.ShowModal() == wx.ID_OK:
+			try:
+				with open(dialog.GetPath(), 'w', encoding='utf-8') as out:
+					out.write(self.whole() + '\n')
+			except OSError:
+				log.exception('SpeakWriteAccess: could not save the transcription')
+				# Translators: said when the transcribed text could not be saved.
+				ui.message(_('The text could not be saved.'))
+		dialog.Destroy()
+
+	def on_close(self, event):
+		self.job.cancel()
+		if TranscriptionDialog.current is self:
+			TranscriptionDialog.current = None
+		self.Destroy()
+
+
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# The add-on's own category in NVDA's Input Gestures dialog, never translated.
 	scriptCategory = 'SpeakWriteAccess'
@@ -264,6 +428,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def terminate(self, *args, **kwargs):
 		super().terminate(*args, **kwargs)
 		_dictation.stop()
+		if TranscriptionDialog.current:
+			TranscriptionDialog.current.job.cancel()
 		_engine.stop()
 		if self.updater is not None:
 			self.updater.cancel()
@@ -342,8 +508,44 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			# Translators: said when no microphone can be used for the dictation.
 			ui.message(_('No microphone found.'))
 			return
+		if _dictation.microphone.missing:
+			# Translators: said when the dictation starts while the microphone chosen in the settings is not plugged in.
+			ui.message(_("Dictation on, with Windows' default microphone: the chosen one is not plugged in"))
+			return
 		# Translators: said when the dictation starts.
 		ui.message(_('Dictation on'))
+
+	@script(
+		# Translators: the description of the command that transcribes a file, in Input Gestures.
+		description=_('Transcribes an audio or video file: the one selected in File Explorer, or one you choose.'),
+		gesture='kb:NVDA+control+shift+f')
+	def script_transcribeFile(self, gesture):
+		if globalVars.appArgs.secure:
+			return
+		if not engine.installed():
+			wx.CallAfter(_show_manager_dialog)
+			return
+		current = TranscriptionDialog.current
+		if current:
+			current.Raise()
+			current.closeButton.SetFocus()
+			return
+		wx.CallAfter(self._transcribe, _explorer_file())
+
+	def _transcribe(self, path):
+		if path is None:
+			path = _choose_file()
+			if path is None:
+				return
+		if not audiofile.readable(path):
+			ui.message(_('Windows cannot read the sound of this file.'))
+			return
+		gui.mainFrame.prePopup()
+		dialog = TranscriptionDialog(gui.mainFrame, path)
+		dialog.Show()
+		dialog.closeButton.SetFocus()
+		gui.mainFrame.postPopup()
+		dialog.start()
 
 	@script(
 		# Translators: the description of the command that opens the settings of SpeakWriteAccess, in Input Gestures.
@@ -377,8 +579,25 @@ class SettingsPanel(gui.settingsDialogs.SettingsPanel):
 		self.correctDictation = helper.addItem(wx.CheckBox(self, label=_('Co&rrect the dictation as you speak')))
 		self.correctDictation.SetValue(_setting('correctDictation'))
 		# Translators: a setting: NVDA reads each phrase the dictation writes.
-		self.readDictation = helper.addItem(wx.CheckBox(self, label=_('&Read aloud each phrase the dictation writes')))
+		self.readDictation = helper.addItem(wx.CheckBox(self, label=_('Read &aloud each phrase the dictation writes')))
 		self.readDictation.SetValue(_setting('readDictation'))
+
+		try:
+			plugged = microphone.devices()
+		except Exception:
+			log.exception('SpeakWriteAccess: could not list the microphones')
+			plugged = []
+		# Translators: the first choice of the list of microphones: the one chosen in Windows' sound settings.
+		self.microphones = [('', _("Windows' default microphone"))] + plugged
+		chosen = _setting('microphone')
+		if chosen and chosen not in [identifier for identifier, _name in self.microphones]:
+			# Translators: a microphone of the list that is not plugged in now; {name} is its name.
+			self.microphones.append((chosen, _('{name} (not plugged in)').format(name=_setting('microphoneName') or chosen)))
+		# Translators: the label of the list of microphones the dictation can use.
+		self.microphone = helper.addLabeledControl(_('&Microphone of the dictation:'), wx.Choice,
+			choices=[name for _identifier, name in self.microphones])
+		identifiers = [identifier for identifier, _name in self.microphones]
+		self.microphone.SetSelection(identifiers.index(chosen) if chosen in identifiers else 0)
 
 		# Translators: the choices of how long the AI stays ready after it was last used.
 		keepChoices = [_('15 minutes'), _('1 hour'), _('Always, from the start of NVDA')]
@@ -404,6 +623,10 @@ class SettingsPanel(gui.settingsDialogs.SettingsPanel):
 		section['language'] = self.codes[self.language.GetSelection()]
 		section['correctDictation'] = self.correctDictation.GetValue()
 		section['readDictation'] = self.readDictation.GetValue()
+		identifier, name = self.microphones[self.microphone.GetSelection()]
+		if identifier != section['microphone']:
+			section['microphone'] = identifier
+			section['microphoneName'] = name if identifier else ''
 		keep = self.KEEP[self.keep.GetSelection()]
 		section['keep'] = keep
 		section['checkForUpdates'] = self.checkForUpdates.GetValue()

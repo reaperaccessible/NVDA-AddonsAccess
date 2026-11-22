@@ -144,8 +144,8 @@ msgstr "Aucun micro trouvé."
 msgid "Co&rrect the dictation as you speak"
 msgstr "Co&rriger la dictée au fur et à mesure"
 
-msgid "&Read aloud each phrase the dictation writes"
-msgstr "&Lire à voix haute chaque phrase écrite par la dictée"
+msgid "Read &aloud each phrase the dictation writes"
+msgstr "Lire à voix &haute chaque phrase écrite par la dictée"
 
 msgid "How to &install the AI..."
 msgstr "Comment &installer l'IA..."
@@ -191,3 +191,66 @@ msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Red
 
 msgid "The update is already installed. Restart NVDA to finish."
 msgstr "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."
+
+msgid "Audio and video files"
+msgstr "Fichiers audio et vidéo"
+
+msgid "All files"
+msgstr "Tous les fichiers"
+
+msgid "Choose the file to transcribe"
+msgstr "Choisir le fichier à transcrire"
+
+msgid "Transcription of {name}"
+msgstr "Transcription de {name}"
+
+msgid "&Transcribed text:"
+msgstr "&Texte transcrit :"
+
+msgid "Progress:"
+msgstr "Progression :"
+
+msgid "C&opy"
+msgstr "C&opier"
+
+msgid "&Save..."
+msgstr "&Enregistrer..."
+
+msgid "&Cancel"
+msgstr "&Annuler"
+
+msgid "Windows cannot read the sound of this file."
+msgstr "Windows ne peut pas lire le son de ce fichier."
+
+msgid "Transcription finished: no speech was found in this file."
+msgstr "Transcription terminée : aucune parole n'a été trouvée dans ce fichier."
+
+msgid "Transcription finished."
+msgstr "Transcription terminée."
+
+msgid "No text yet."
+msgstr "Pas encore de texte."
+
+msgid "Save the transcribed text"
+msgstr "Enregistrer le texte transcrit"
+
+msgid "Text files"
+msgstr "Fichiers texte"
+
+msgid "The text could not be saved."
+msgstr "Le texte n'a pas pu être enregistré."
+
+msgid "Transcribes an audio or video file: the one selected in File Explorer, or one you choose."
+msgstr "Transcrit un fichier audio ou vidéo : celui sélectionné dans l'Explorateur de fichiers, ou un fichier que vous choisissez."
+
+msgid "Dictation on, with Windows' default microphone: the chosen one is not plugged in"
+msgstr "Dictée activée, avec le micro par défaut de Windows : le micro choisi n'est pas branché"
+
+msgid "Windows' default microphone"
+msgstr "Le micro par défaut de Windows"
+
+msgid "{name} (not plugged in)"
+msgstr "{name} (non branché)"
+
+msgid "&Microphone of the dictation:"
+msgstr "&Micro de la dictée :"

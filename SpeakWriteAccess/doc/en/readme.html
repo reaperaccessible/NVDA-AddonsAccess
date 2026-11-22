@@ -8,23 +8,25 @@
 </head>
 <body>
 <h1>SpeakWriteAccess</h1>
-<p>SpeakWriteAccess does two things with an AI that runs on your own computer:</p>
+<p>SpeakWriteAccess does three things with an AI that runs on your own computer:</p>
 <ul>
 <li>it corrects the text you have selected, with one shortcut;</li>
-<li>it writes what you say into the microphone, phrase by phrase, where the cursor is.</li>
+<li>it writes what you say into the microphone, phrase by phrase, where the cursor is;</li>
+<li>it writes down what is said in an audio or video file.</li>
 </ul>
 <p>Nothing is sent over the Internet: your text and your voice stay on your computer.</p>
 <p>The add-on is in French when NVDA is in French, and in English in every other language.</p>
 
 <h2>Installing the AI</h2>
 <p>The AI is installed separately, with the ReaperAccessible Installer Manager. In the Manager, choose the type "NVDA Add-on", then "SpeakWriteAccess, local AI". It needs about 6 GB of disk space and 8 GB of memory.</p>
-<p>Until the AI is installed, both shortcuts open a window that explains how to install it. If you do not have the Manager on your computer, the "Download the Manager" button downloads it.</p>
+<p>Until the AI is installed, the shortcuts open a window that explains how to install it. If you do not have the Manager on your computer, the "Download the Manager" button downloads it.</p>
 <p>A graphics card makes the AI faster, but it is not needed. With a graphics card, a correction or a dictated phrase takes less than half a second. Without one, allow one to three seconds.</p>
 
 <h2>Keyboard shortcuts</h2>
 <ul>
 <li><strong>NVDA+Control+Shift+O:</strong> corrects the selected text.</li>
 <li><strong>NVDA+Control+Shift+L:</strong> starts or stops the dictation.</li>
+<li><strong>NVDA+Control+Shift+F:</strong> transcribes an audio or video file.</li>
 <li><strong>NVDA+Control+L:</strong> opens the settings of SpeakWriteAccess, for example to change the language.</li>
 </ul>
 <p>You can change these shortcuts in the NVDA menu, Preferences, Input gestures, category SpeakWriteAccess.</p>
@@ -47,17 +49,35 @@
 <li>Speak normally. At each short pause, the phrase you just said is written.</li>
 <li>Press NVDA+Control+Shift+L again to stop. NVDA says "Dictation off", and the last phrase is written.</li>
 </ol>
-<p>The dictation uses Windows' default microphone. If no microphone is found, NVDA says "No microphone found.".</p>
+<p>The dictation uses the microphone chosen in the settings, Windows' default microphone at first. If the chosen microphone is not plugged in, the dictation uses Windows' default one, and NVDA says so when it starts. If no microphone is found, NVDA says "No microphone found.".</p>
 <p>With the setting "Correct the dictation as you speak", checked by default, each phrase is written with correct spelling, agreement, capitals and punctuation.</p>
 <p>The text is written through the clipboard, which then gets its content back. An image copied to the clipboard is not kept.</p>
 <p>If you turn on "Read aloud each phrase the dictation writes", use headphones: otherwise the microphone may hear NVDA and write what it says.</p>
 
+<h2>Transcribing an audio or video file</h2>
+<p>SpeakWriteAccess also writes down what is said in a recording: a voice message, an interview, a lecture, the sound of a video.</p>
+<ol>
+<li>In File Explorer, move to the file.</li>
+<li>Press NVDA+Control+Shift+F. Anywhere else than in File Explorer, the same key opens a window to choose the file.</li>
+</ol>
+<p>The "Transcription" window opens, on the Cancel button. The text is written in it phrase by phrase, and a bar shows the progress. When everything is written, NVDA says "Transcription finished.", and the Cancel button becomes Close.</p>
+<p>In this window:</p>
+<ul>
+<li><strong>Transcribed text:</strong> the text of the file, to read with the arrows while it is being written.</li>
+<li><strong>Copy:</strong> copies all the text to the clipboard.</li>
+<li><strong>Save:</strong> saves the text in a text file, next to the recording and with the same name.</li>
+<li><strong>Cancel</strong>, or Escape: stops the transcription and closes the window.</li>
+</ul>
+<p>Windows itself reads WAV, MP3, M4A, AAC, WMA and FLAC files, and the sound of MP4, MOV, WMV, AVI and MKV videos. If Windows cannot read a file, NVDA says "Windows cannot read the sound of this file.".</p>
+<p>The text is written in the language chosen in the settings, and corrected if "Correct the dictation as you speak" is checked. There is no longest length: a file of one hour is transcribed like a file of one minute, only longer. With a graphics card, one minute of recording takes about ten seconds. Without one, it takes longer.</p>
+
 <h2>Settings</h2>
 <p>NVDA+Control+L opens the settings directly. They are also in the NVDA menu, Preferences, Settings, category SpeakWriteAccess.</p>
 <ul>
-<li><strong>Language of the text:</strong> the language in which the AI corrects and writes. "NVDA's language", the default, follows the language of NVDA. You can also choose among 20 languages: French, English, Spanish, Portuguese, Italian, German, Dutch, Polish, Romanian, Russian, Ukrainian, Turkish, Arabic, Persian, Hindi, Japanese, Chinese, Korean, Vietnamese and Indonesian. All of them are in the AI: there is nothing more to download.</li>
-<li><strong>Correct the dictation as you speak:</strong> each dictated phrase is written already corrected. Unchecked, the phrase is written as you said it, with simple punctuation.</li>
+<li><strong>Language of the text:</strong> the language in which the AI corrects, writes and transcribes. "NVDA's language", the default, follows the language of NVDA. You can also choose among 20 languages: French, English, Spanish, Portuguese, Italian, German, Dutch, Polish, Romanian, Russian, Ukrainian, Turkish, Arabic, Persian, Hindi, Japanese, Chinese, Korean, Vietnamese and Indonesian. All of them are in the AI: there is nothing more to download.</li>
+<li><strong>Correct the dictation as you speak:</strong> each dictated or transcribed phrase is written already corrected. Unchecked, the phrase is written as you said it, with simple punctuation.</li>
 <li><strong>Read aloud each phrase the dictation writes:</strong> NVDA reads each phrase after writing it. Unchecked by default.</li>
+<li><strong>Microphone of the dictation:</strong> "Windows' default microphone", the first choice, follows Windows' sound settings. You can also choose an input of your sound cards: the dictation uses it without changing the microphone of other programs. A microphone chosen then unplugged stays in the list, marked "not plugged in".</li>
 <li><strong>Keep the AI ready after its last use:</strong> 15 minutes, 1 hour, or always, from the start of NVDA. While it is ready, the AI answers at once; after that, it stops and frees the computer's memory.</li>
 <li><strong>How to install the AI...:</strong> this button appears only when the AI is not installed.</li>
 <li><strong>Check for updates automatically when NVDA starts</strong> and <strong>Check for updates now:</strong> see the next section.</li>
@@ -67,7 +87,7 @@
 <p>When NVDA starts, SpeakWriteAccess checks whether a new version exists. If one does, it offers to install it, then to restart NVDA. The "Check for updates now" button does the same check right away.</p>
 
 <h2>Privacy</h2>
-<p>The AI runs entirely on your computer. Your text and your voice are never sent over the Internet. Nothing is recorded: each dictated phrase is forgotten as soon as it is written. The add-on's only connection to the Internet is the update check.</p>
+<p>The AI runs entirely on your computer. Your text, your voice and your files are never sent over the Internet. Nothing is recorded: each dictated phrase is forgotten as soon as it is written, and a transcribed file is never changed. The add-on's only connection to the Internet is the update check.</p>
 
 <h2>Credits</h2>
 <p>SpeakWriteAccess is made by ReaperAccessible. The AI is Google's Gemma 4, run with llama.cpp.</p>
