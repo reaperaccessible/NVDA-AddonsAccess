@@ -3,6 +3,7 @@
 # Nothing here depends on NVDA, so it can be tested on its own.
 
 import base64
+import ctypes
 import json
 import os
 import subprocess
@@ -27,6 +28,46 @@ BELOW_NORMAL_PRIORITY_CLASS = 0x00004000
 
 class EngineError(Exception):
 	pass
+
+
+def _stop_strays():
+	"""Stops any copy of the server left by an earlier start: two copies would share the graphics card's memory
+	and push one another onto the processor. The server's own name belongs to SpeakWriteAccess alone."""
+	subprocess.run(['taskkill', '/IM', os.path.basename(SERVER), '/F'], stdin=subprocess.DEVNULL,
+		stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=CREATE_NO_WINDOW)
+
+
+class _JOBOBJECT_EXTENDED_LIMIT_INFORMATION(ctypes.Structure):
+	_fields_ = [('PerProcessUserTimeLimit', ctypes.c_int64), ('PerJobUserTimeLimit', ctypes.c_int64),
+		('LimitFlags', ctypes.c_uint32), ('MinimumWorkingSetSize', ctypes.c_size_t),
+		('MaximumWorkingSetSize', ctypes.c_size_t), ('ActiveProcessLimit', ctypes.c_uint32),
+		('Affinity', ctypes.c_size_t), ('PriorityClass', ctypes.c_uint32), ('SchedulingClass', ctypes.c_uint32),
+		('IoInfo', ctypes.c_uint64 * 6), ('ProcessMemoryLimit', ctypes.c_size_t), ('JobMemoryLimit', ctypes.c_size_t),
+		('PeakProcessMemoryUsed', ctypes.c_size_t), ('PeakJobMemoryUsed', ctypes.c_size_t)]
+
+
+_job = None
+
+
+def _tie_to_us(process):
+	"""The server stops by itself when the program that started it ends, even by a crash."""
+	global _job
+	try:
+		kernel32 = ctypes.windll.kernel32
+		kernel32.CreateJobObjectW.restype = ctypes.c_void_p
+		kernel32.OpenProcess.restype = ctypes.c_void_p
+		if _job is None:
+			job = kernel32.CreateJobObjectW(None, None)
+			info = _JOBOBJECT_EXTENDED_LIMIT_INFORMATION()
+			info.LimitFlags = 0x2000   # JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE
+			kernel32.SetInformationJobObject(ctypes.c_void_p(job), 9, ctypes.byref(info), ctypes.sizeof(info))
+			_job = job
+		handle = kernel32.OpenProcess(0x0101, False, process.pid)   # PROCESS_SET_QUOTA | PROCESS_TERMINATE
+		if handle:
+			kernel32.AssignProcessToJobObject(ctypes.c_void_p(_job), ctypes.c_void_p(handle))
+			kernel32.CloseHandle(ctypes.c_void_p(handle))
+	except Exception:
+		pass
 
 
 def installed():
@@ -66,11 +107,13 @@ class Engine:
 			if not installed():
 				raise EngineError('not installed')
 			if not self.running():
+				_stop_strays()
 				arguments = [SERVER, '-m', MODEL, '--mmproj', AUDIO, '--port', str(PORT), '--host', '127.0.0.1',
 					'-c', '8192', '-np', '1', '--chat-template-kwargs', '{"enable_thinking":false}']
 				self.process = subprocess.Popen(arguments, cwd=os.path.dirname(SERVER),
 					stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
 					creationflags=CREATE_NO_WINDOW | BELOW_NORMAL_PRIORITY_CLASS)
+				_tie_to_us(self.process)
 			deadline = time.monotonic() + START_TIMEOUT
 			while time.monotonic() < deadline:
 				if not self.running():

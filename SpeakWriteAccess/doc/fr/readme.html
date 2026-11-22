@@ -39,7 +39,7 @@
 <li>Appuyez sur NVDA+Contrôle+Maj+O.</li>
 </ol>
 <p>Le texte sélectionné est remplacé par le texte corrigé, et NVDA dit combien de corrections ont été faites, par exemple « 3 corrections. ». S'il n'y avait rien à corriger, NVDA dit « Aucune faute. » et le texte ne change pas.</p>
-<p>L'IA corrige l'orthographe, la grammaire, les accords et la ponctuation, dans la langue choisie dans les réglages. Elle garde vos mots, votre ton, les noms propres et les retours à la ligne : elle ne réécrit pas votre texte.</p>
+<p>L'IA corrige l'orthographe, la grammaire, les accords et la ponctuation, dans votre langue, celle des réglages. Elle garde vos mots, votre ton, les noms propres et les retours à la ligne : elle ne réécrit pas votre texte.</p>
 <p>Si le texte ne peut pas être modifié, par exemple sur une page web en mode navigation, le texte corrigé est copié dans le presse-papiers.</p>
 <p>Si la réponse de l'IA ne ressemble pas à une correction de votre texte, rien n'est changé, et NVDA dit « Le texte n'a pas été changé : la correction ne semblait pas juste. ».</p>
 <p>La première utilisation après le démarrage de NVDA charge l'IA : NVDA dit « Chargement de l'IA... », et la correction arrive quelques secondes plus tard.</p>
@@ -60,11 +60,14 @@
 <li>Parlez normalement. À chaque petite pause, la phrase que vous venez de dire s'écrit.</li>
 <li>Appuyez de nouveau sur NVDA+Contrôle+Maj+L pour arrêter. NVDA dit « Dictée arrêtée », et la dernière phrase s'écrit.</li>
 </ol>
-<p>Si vous préférez que rien ne s'écrive pendant que vous parlez, choisissez « Tout d'un coup, quand la dictée s'arrête » dans le réglage « Écrire la dictée ». Tout ce que vous avez dit s'écrit alors d'un seul bloc, quand vous arrêtez la dictée. Si vous n'avez rien dit, NVDA dit « Rien n'a été entendu. ».</p>
-<p>La dictée utilise le micro choisi dans les réglages, le micro par défaut de Windows au départ. Si le micro choisi n'est pas branché, la dictée prend le micro par défaut de Windows, et NVDA le dit en l'activant. Si aucun micro n'est trouvé, NVDA dit « Aucun micro trouvé. ».</p>
-<p>Avec le réglage « Corriger la dictée au fur et à mesure », coché par défaut, chaque phrase s'écrit avec l'orthographe, les accords, les majuscules et la ponctuation corrects.</p>
+<p>Chaque phrase s'écrit avec l'orthographe, les accords, les majuscules et la ponctuation corrects.</p>
+<p>Trois réglages changent la dictée :</p>
+<ul>
+<li><strong>Écrire ce que vous dites en :</strong> pour dicter dans votre langue et écrire dans une autre. Par exemple, vous parlez en français, et la dictée écrit en anglais. Le texte écrit est alors une traduction faite par l'IA : elle convient aux messages de tous les jours, mais elle n'est pas aussi sûre que celle d'un traducteur.</li>
+<li><strong>Micro de la dictée :</strong> si le micro choisi n'est pas branché, la dictée prend le micro par défaut de Windows, et NVDA le dit en l'activant. Si aucun micro n'est trouvé, NVDA dit « Aucun micro trouvé. ».</li>
+<li><strong>Quand écrire la dictée :</strong> avec « Quand vous arrêtez la dictée, d'un seul bloc », rien ne s'écrit pendant que vous parlez. Tout ce que vous avez dit s'écrit d'un coup quand vous arrêtez. Si vous n'avez rien dit, NVDA dit « Rien n'a été entendu. ».</li>
+</ul>
 <p>Le texte est écrit par le presse-papiers, qui retrouve ensuite son contenu. Une image copiée dans le presse-papiers n'est pas gardée.</p>
-<p>Si vous activez « Lire à voix haute chaque phrase écrite par la dictée », utilisez un casque : sinon le micro risque d'entendre NVDA et d'écrire ce qu'il dit.</p>
 
 <h2>Transcrire un fichier audio ou vidéo</h2>
 <p>SpeakWriteAccess écrit aussi ce qui est dit dans un enregistrement : un message vocal, une entrevue, une conférence, le son d'une vidéo.</p>
@@ -81,7 +84,7 @@
 <li><strong>Annuler</strong>, ou Échap : arrête la transcription et ferme la fenêtre.</li>
 </ul>
 <p>Windows lit lui-même les fichiers WAV, MP3, M4A, AAC, WMA et FLAC, et le son des vidéos MP4, MOV, WMV, AVI et MKV. Si Windows ne sait pas lire un fichier, NVDA dit « Windows ne peut pas lire le son de ce fichier. ».</p>
-<p>Le texte est écrit dans la langue choisie dans les réglages, et corrigé si « Corriger la dictée au fur et à mesure » est coché. Il n'y a pas de durée maximale : un fichier d'une heure se transcrit comme un fichier d'une minute, en plus de temps. Avec une carte graphique, une minute d'enregistrement prend une dizaine de secondes. Sans carte graphique, c'est plus long.</p>
+<p>Le fichier doit être dit dans votre langue, celle des réglages. Le texte s'écrit corrigé, sauf si « Corriger la dictée au fur et à mesure » est décoché dans les options avancées. Il n'y a pas de durée maximale : un fichier d'une heure se transcrit comme un fichier d'une minute, en plus de temps. Avec une carte graphique, une minute d'enregistrement prend une dizaine de secondes. Sans carte graphique, c'est plus long.</p>
 
 <h2>Savoir ce qui se passe</h2>
 <p>NVDA+Contrôle+Maj+E dit, en une phrase :</p>
@@ -93,15 +96,20 @@
 </ul>
 
 <h2>Réglages</h2>
-<p>NVDA+Contrôle+L ouvre directement les réglages. Ils sont aussi dans le menu NVDA, Préférences, Paramètres, catégorie SpeakWriteAccess.</p>
+<p>NVDA+Contrôle+L ouvre directement les réglages. Ils sont aussi dans le menu NVDA, Préférences, Paramètres, catégorie SpeakWriteAccess. La page est courte :</p>
 <ul>
-<li><strong>Langue du texte :</strong> la langue dans laquelle l'IA corrige, écrit et transcrit. « La langue de NVDA », le choix par défaut, suit la langue de NVDA. Vous pouvez aussi choisir parmi 20 langues : français, anglais, espagnol, portugais, italien, allemand, néerlandais, polonais, roumain, russe, ukrainien, turc, arabe, persan, hindi, japonais, chinois, coréen, vietnamien et indonésien. Toutes sont comprises dans l'IA : il n'y a rien à télécharger de plus.</li>
-<li><strong>Écrire la dictée :</strong> « Phrase par phrase, pendant que vous parlez », le choix de départ, ou « Tout d'un coup, quand la dictée s'arrête ».</li>
-<li><strong>Corriger la dictée au fur et à mesure :</strong> chaque phrase dictée ou transcrite s'écrit déjà corrigée. Décochée, la phrase s'écrit telle que vous l'avez dite, avec une ponctuation simple.</li>
-<li><strong>Lire à voix haute chaque phrase écrite par la dictée :</strong> NVDA lit chaque phrase après l'avoir écrite. Décoché par défaut.</li>
+<li><strong>Votre langue :</strong> la langue que vous écrivez et parlez. L'IA corrige, ajoute les émojis, écrit la dictée et transcrit les fichiers dans cette langue. « La langue de NVDA », le choix de départ, suit la langue de NVDA. Vous pouvez aussi choisir parmi 20 langues : français, anglais, espagnol, portugais, italien, allemand, néerlandais, polonais, roumain, russe, ukrainien, turc, arabe, persan, hindi, japonais, chinois, coréen, vietnamien et indonésien. Toutes sont comprises dans l'IA : il n'y a rien à télécharger de plus.</li>
+<li><strong>Écrire ce que vous dites en :</strong> « Votre langue », le choix de départ, écrit la dictée telle que vous la dites. Une autre langue la traduit en l'écrivant.</li>
 <li><strong>Micro de la dictée :</strong> « Le micro par défaut de Windows », le choix de départ, suit le réglage du son de Windows. Vous pouvez aussi choisir une entrée de vos cartes de son : la dictée l'utilise sans changer le micro des autres programmes. Un micro choisi puis débranché reste dans la liste, avec la mention « non branché ».</li>
-<li><strong>Garder l'IA prête après sa dernière utilisation :</strong> 15 minutes, 1 heure, ou toujours, dès le démarrage de NVDA. Tant qu'elle est prête, l'IA répond tout de suite ; ensuite, elle s'arrête et libère la mémoire de l'ordinateur.</li>
+<li><strong>Quand écrire la dictée :</strong> « Pendant que vous parlez, phrase par phrase », le choix de départ, ou « Quand vous arrêtez la dictée, d'un seul bloc ».</li>
 <li><strong>Comment installer l'IA... :</strong> ce bouton apparaît seulement quand l'IA n'est pas installée.</li>
+<li><strong>Options avancées... :</strong> ouvre les réglages dont on a rarement besoin.</li>
+</ul>
+<p>Dans les options avancées :</p>
+<ul>
+<li><strong>Corriger la dictée au fur et à mesure :</strong> coché par défaut. Décoché, chaque phrase dictée ou transcrite s'écrit telle que vous l'avez dite, avec une ponctuation simple.</li>
+<li><strong>Lire à voix haute chaque phrase écrite par la dictée :</strong> décoché par défaut. Coché, NVDA lit chaque phrase après l'avoir écrite. Utilisez alors un casque : sinon le micro risque d'entendre NVDA et d'écrire ce qu'il dit.</li>
+<li><strong>Garder l'IA prête après sa dernière utilisation :</strong> 15 minutes, 1 heure, ou toujours, dès le démarrage de NVDA. Tant qu'elle est prête, l'IA répond tout de suite ; ensuite, elle se met au repos et libère la mémoire de l'ordinateur.</li>
 <li><strong>Vérifier automatiquement les mises à jour au démarrage de NVDA</strong> et <strong>Vérifier les mises à jour maintenant :</strong> voir la section suivante.</li>
 </ul>
 

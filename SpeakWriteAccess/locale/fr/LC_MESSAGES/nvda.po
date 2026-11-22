@@ -96,9 +96,6 @@ msgstr "Dictée activée"
 msgid "Dictation off"
 msgstr "Dictée arrêtée"
 
-msgid "&Language of the text:"
-msgstr "&Langue du texte :"
-
 msgid "NVDA's language"
 msgstr "La langue de NVDA"
 
@@ -273,15 +270,6 @@ msgstr "IA prête"
 msgid "AI at rest, it loads at its next use"
 msgstr "IA au repos, elle se charge à sa prochaine utilisation"
 
-msgid "Phrase by phrase, as you speak"
-msgstr "Phrase par phrase, pendant que vous parlez"
-
-msgid "All at once, when the dictation stops"
-msgstr "Tout d'un coup, quand la dictée s'arrête"
-
-msgid "&Write the dictation:"
-msgstr "Écrire la &dictée :"
-
 msgid "Nothing was heard."
 msgstr "Rien n'a été entendu."
 
@@ -302,3 +290,27 @@ msgstr "{count} émojis ajoutés."
 
 msgid "Adding emojis"
 msgstr "Ajout d'émojis en cours"
+
+msgid "Your &language:"
+msgstr "&Votre langue :"
+
+msgid "Your language"
+msgstr "Votre langue"
+
+msgid "&Write what you say in:"
+msgstr "Écrire ce que vous dites &en :"
+
+msgid "While you speak, phrase by phrase"
+msgstr "Pendant que vous parlez, phrase par phrase"
+
+msgid "When you stop the dictation, in one block"
+msgstr "Quand vous arrêtez la dictée, d'un seul bloc"
+
+msgid "W&hen to write the dictation:"
+msgstr "&Quand écrire la dictée :"
+
+msgid "&Advanced options..."
+msgstr "&Options avancées..."
+
+msgid "Advanced options of SpeakWriteAccess"
+msgstr "Options avancées de SpeakWriteAccess"

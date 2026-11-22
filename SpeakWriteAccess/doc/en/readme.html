@@ -39,7 +39,7 @@
 <li>Press NVDA+Control+Shift+O.</li>
 </ol>
 <p>The selected text is replaced by the corrected text, and NVDA says how many corrections were made, for example "3 corrections.". If there was nothing to correct, NVDA says "No mistake." and the text does not change.</p>
-<p>The AI corrects spelling, grammar, agreement and punctuation, in the language chosen in the settings. It keeps your words, your tone, proper names and line breaks: it does not rewrite your text.</p>
+<p>The AI corrects spelling, grammar, agreement and punctuation, in your language, the one of the settings. It keeps your words, your tone, proper names and line breaks: it does not rewrite your text.</p>
 <p>If the text cannot be changed, for example on a web page in browse mode, the corrected text is copied to the clipboard.</p>
 <p>If the AI's answer does not look like a correction of your text, nothing is changed, and NVDA says "The text was not changed: the correction did not look right.".</p>
 <p>The first use after NVDA starts loads the AI: NVDA says "Loading the AI...", and the correction comes a few seconds later.</p>
@@ -60,11 +60,14 @@
 <li>Speak normally. At each short pause, the phrase you just said is written.</li>
 <li>Press NVDA+Control+Shift+L again to stop. NVDA says "Dictation off", and the last phrase is written.</li>
 </ol>
-<p>If you prefer that nothing is written while you speak, choose "All at once, when the dictation stops" in the setting "Write the dictation". Everything you said is then written in one block when you stop the dictation. If you said nothing, NVDA says "Nothing was heard.".</p>
-<p>The dictation uses the microphone chosen in the settings, Windows' default microphone at first. If the chosen microphone is not plugged in, the dictation uses Windows' default one, and NVDA says so when it starts. If no microphone is found, NVDA says "No microphone found.".</p>
-<p>With the setting "Correct the dictation as you speak", checked by default, each phrase is written with correct spelling, agreement, capitals and punctuation.</p>
+<p>Each phrase is written with correct spelling, agreement, capitals and punctuation.</p>
+<p>Three settings change the dictation:</p>
+<ul>
+<li><strong>Write what you say in:</strong> to dictate in your language and write in another one. For example, you speak French, and the dictation writes English. The written text is then a translation made by the AI: it suits everyday messages, but it is not as sure as a translator's.</li>
+<li><strong>Microphone of the dictation:</strong> if the chosen microphone is not plugged in, the dictation uses Windows' default one, and NVDA says so when it starts. If no microphone is found, NVDA says "No microphone found.".</li>
+<li><strong>When to write the dictation:</strong> with "When you stop the dictation, in one block", nothing is written while you speak. Everything you said is written at once when you stop. If you said nothing, NVDA says "Nothing was heard.".</li>
+</ul>
 <p>The text is written through the clipboard, which then gets its content back. An image copied to the clipboard is not kept.</p>
-<p>If you turn on "Read aloud each phrase the dictation writes", use headphones: otherwise the microphone may hear NVDA and write what it says.</p>
 
 <h2>Transcribing an audio or video file</h2>
 <p>SpeakWriteAccess also writes down what is said in a recording: a voice message, an interview, a lecture, the sound of a video.</p>
@@ -81,7 +84,7 @@
 <li><strong>Cancel</strong>, or Escape: stops the transcription and closes the window.</li>
 </ul>
 <p>Windows itself reads WAV, MP3, M4A, AAC, WMA and FLAC files, and the sound of MP4, MOV, WMV, AVI and MKV videos. If Windows cannot read a file, NVDA says "Windows cannot read the sound of this file.".</p>
-<p>The text is written in the language chosen in the settings, and corrected if "Correct the dictation as you speak" is checked. There is no longest length: a file of one hour is transcribed like a file of one minute, only longer. With a graphics card, one minute of recording takes about ten seconds. Without one, it takes longer.</p>
+<p>The file must be spoken in your language, the one of the settings. The text is written corrected, unless "Correct the dictation as you speak" is unchecked in the advanced options. There is no longest length: a file of one hour is transcribed like a file of one minute, only longer. With a graphics card, one minute of recording takes about ten seconds. Without one, it takes longer.</p>
 
 <h2>Knowing what is going on</h2>
 <p>NVDA+Control+Shift+E says, in one sentence:</p>
@@ -93,15 +96,20 @@
 </ul>
 
 <h2>Settings</h2>
-<p>NVDA+Control+L opens the settings directly. They are also in the NVDA menu, Preferences, Settings, category SpeakWriteAccess.</p>
+<p>NVDA+Control+L opens the settings directly. They are also in the NVDA menu, Preferences, Settings, category SpeakWriteAccess. The page is short:</p>
 <ul>
-<li><strong>Language of the text:</strong> the language in which the AI corrects, writes and transcribes. "NVDA's language", the default, follows the language of NVDA. You can also choose among 20 languages: French, English, Spanish, Portuguese, Italian, German, Dutch, Polish, Romanian, Russian, Ukrainian, Turkish, Arabic, Persian, Hindi, Japanese, Chinese, Korean, Vietnamese and Indonesian. All of them are in the AI: there is nothing more to download.</li>
-<li><strong>Write the dictation:</strong> "Phrase by phrase, as you speak", the first choice, or "All at once, when the dictation stops".</li>
-<li><strong>Correct the dictation as you speak:</strong> each dictated or transcribed phrase is written already corrected. Unchecked, the phrase is written as you said it, with simple punctuation.</li>
-<li><strong>Read aloud each phrase the dictation writes:</strong> NVDA reads each phrase after writing it. Unchecked by default.</li>
+<li><strong>Your language:</strong> the language you write and speak. The AI corrects, adds emojis, writes the dictation and transcribes files in this language. "NVDA's language", the first choice, follows the language of NVDA. You can also choose among 20 languages: French, English, Spanish, Portuguese, Italian, German, Dutch, Polish, Romanian, Russian, Ukrainian, Turkish, Arabic, Persian, Hindi, Japanese, Chinese, Korean, Vietnamese and Indonesian. All of them are in the AI: there is nothing more to download.</li>
+<li><strong>Write what you say in:</strong> "Your language", the first choice, writes the dictation as you say it. Another language translates it as it is written.</li>
 <li><strong>Microphone of the dictation:</strong> "Windows' default microphone", the first choice, follows Windows' sound settings. You can also choose an input of your sound cards: the dictation uses it without changing the microphone of other programs. A microphone chosen then unplugged stays in the list, marked "not plugged in".</li>
-<li><strong>Keep the AI ready after its last use:</strong> 15 minutes, 1 hour, or always, from the start of NVDA. While it is ready, the AI answers at once; after that, it stops and frees the computer's memory.</li>
+<li><strong>When to write the dictation:</strong> "While you speak, phrase by phrase", the first choice, or "When you stop the dictation, in one block".</li>
 <li><strong>How to install the AI...:</strong> this button appears only when the AI is not installed.</li>
+<li><strong>Advanced options...:</strong> opens the settings that are rarely needed.</li>
+</ul>
+<p>In the advanced options:</p>
+<ul>
+<li><strong>Correct the dictation as you speak:</strong> checked by default. Unchecked, each dictated or transcribed phrase is written as you said it, with simple punctuation.</li>
+<li><strong>Read aloud each phrase the dictation writes:</strong> unchecked by default. Checked, NVDA reads each phrase after writing it. Then use headphones: otherwise the microphone may hear NVDA and write what it says.</li>
+<li><strong>Keep the AI ready after its last use:</strong> 15 minutes, 1 hour, or always, from the start of NVDA. While it is ready, the AI answers at once; after that, it goes to rest and frees the computer's memory.</li>
 <li><strong>Check for updates automatically when NVDA starts</strong> and <strong>Check for updates now:</strong> see the next section.</li>
 </ul>
 

@@ -38,6 +38,8 @@ CONFIG_SPEC = {
 	'readDictation': 'boolean(default=false)',
 	# When the dictation is written: each phrase as soon as it is said, or everything once the dictation stops.
 	'writeDictation': 'option("phrase", "end", default="phrase")',
+	# The language the dictation writes in: 'same' for the user's own, or a language it is translated into.
+	'writeIn': 'string(default=same)',
 	# The microphone of the dictation: its Windows identifier, empty for Windows' default one,
 	# and its name, to show it in the settings while it is not plugged in.
 	'microphone': 'string(default="")',
@@ -62,6 +64,12 @@ def _language():
 	if code == 'nvda':
 		code = languageHandler.getLanguage().split('_')[0]
 	return code if code in writing.ENGLISH_NAMES else 'en'
+
+
+def _target():
+	"""The language the dictation is written in, when it is not the user's own; None otherwise."""
+	code = _setting('writeIn')
+	return code if code in writing.ENGLISH_NAMES and code != _language() else None
 
 
 def _language_names():
@@ -235,7 +243,7 @@ class Dictation:
 					_engine.ensure_running()
 					writing.transcribe(_engine, microphone.to_wav(bytes(microphone.RATE)), _language(), False)
 					continue
-				text = writing.transcribe(_engine, microphone.to_wav(pcm), _language(), _setting('correctDictation'))
+				text = writing.transcribe(_engine, microphone.to_wav(pcm), _language(), _setting('correctDictation'), _target())
 			except engine.EngineError:
 				log.exception('SpeakWriteAccess: dictation')
 				# Translators: said when the AI could not be used.
@@ -657,13 +665,56 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		ui.message('. '.join(parts) + '.')
 
 
+class AdvancedDialog(wx.Dialog):
+	"""The settings most people never change, behind the button Advanced options."""
+
+	KEEP = ('15', '60', 'always')
+
+	def __init__(self, parent, values, updater):
+		# Translators: the title of the window of the advanced options.
+		super().__init__(parent, title=_('Advanced options of SpeakWriteAccess'))
+		self.values = values
+		sizer = wx.BoxSizer(wx.VERTICAL)
+		helper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
+		# Translators: a setting: each phrase of the dictation is written with correct spelling and punctuation.
+		self.correctDictation = helper.addItem(wx.CheckBox(self, label=_('Co&rrect the dictation as you speak')))
+		self.correctDictation.SetValue(values['correctDictation'])
+		# Translators: a setting: NVDA reads each phrase the dictation writes.
+		self.readDictation = helper.addItem(wx.CheckBox(self, label=_('Read &aloud each phrase the dictation writes')))
+		self.readDictation.SetValue(values['readDictation'])
+		# Translators: the choices of how long the AI stays ready after it was last used.
+		keepChoices = [_('15 minutes'), _('1 hour'), _('Always, from the start of NVDA')]
+		# Translators: the label of the setting that keeps the AI ready, so that it answers at once.
+		self.keep = helper.addLabeledControl(_('&Keep the AI ready after its last use:'), wx.Choice, choices=keepChoices)
+		self.keep.SetSelection(self.KEEP.index(values['keep']))
+		# Translators: the label for the preference to look for a new version of the add-on each time NVDA starts
+		self.checkForUpdates = helper.addItem(wx.CheckBox(self, label=_('Check for &updates automatically when NVDA starts')))
+		self.checkForUpdates.SetValue(values['checkForUpdates'])
+		# Translators: The label of a button in the settings panel that looks for a new version of the add-on right away.
+		checkNow = helper.addItem(wx.Button(self, label=_('&Check for updates now')))
+		checkNow.Bind(wx.EVT_BUTTON, lambda event: updater.check(manual=True))
+		checkNow.Enable(updater is not None)
+		helper.addDialogDismissButtons(self.CreateButtonSizer(wx.OK | wx.CANCEL))
+		sizer.Add(helper.sizer, 1, wx.ALL | wx.EXPAND, 10)
+		self.SetSizerAndFit(sizer)
+		self.CentreOnScreen()
+		self.Bind(wx.EVT_BUTTON, self.on_ok, id=wx.ID_OK)
+		self.correctDictation.SetFocus()
+
+	def on_ok(self, event):
+		self.values.update(correctDictation=self.correctDictation.GetValue(), readDictation=self.readDictation.GetValue(),
+			keep=self.KEEP[self.keep.GetSelection()], checkForUpdates=self.checkForUpdates.GetValue())
+		event.Skip()
+
+
 class SettingsPanel(gui.settingsDialogs.SettingsPanel):
+	"""A short page: the languages, the microphone and when the dictation is written; the rest is in Advanced options."""
 	# The add-on's own name: shown as a category of NVDA's Settings dialog, never translated.
 	title = 'SpeakWriteAccess'
 	# Set by the global plugin; None on secure screens.
 	updater = None
-	KEEP = ('15', '60', 'always')
 	WRITE = ('phrase', 'end')
+	ADVANCED = ('correctDictation', 'readDictation', 'keep', 'checkForUpdates')
 
 	def makeSettings(self, settingsSizer):
 		helper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
@@ -671,23 +722,18 @@ class SettingsPanel(gui.settingsDialogs.SettingsPanel):
 		self.codes = ['nvda'] + [code for code, _english in writing.LANGUAGES]
 		# Translators: the first choice of the language list: the language NVDA speaks.
 		choices = [_("NVDA's language")] + [names[code] for code in self.codes[1:]]
-		# Translators: the label of the list of languages in the settings.
-		self.language = helper.addLabeledControl(_('&Language of the text:'), wx.Choice, choices=choices)
+		# Translators: the label of the language the user speaks and writes, used to correct, dictate and transcribe.
+		self.language = helper.addLabeledControl(_('Your &language:'), wx.Choice, choices=choices)
 		current = _setting('language')
 		self.language.SetSelection(self.codes.index(current) if current in self.codes else 0)
 
-		# Translators: the choices of when the dictation is written.
-		writeChoices = [_('Phrase by phrase, as you speak'), _('All at once, when the dictation stops')]
-		# Translators: the label of the setting that chooses when the dictation is written.
-		self.writeDictation = helper.addLabeledControl(_('&Write the dictation:'), wx.Choice, choices=writeChoices)
-		self.writeDictation.SetSelection(self.WRITE.index(_setting('writeDictation')))
-
-		# Translators: a setting: each phrase of the dictation is written with correct spelling and punctuation.
-		self.correctDictation = helper.addItem(wx.CheckBox(self, label=_('Co&rrect the dictation as you speak')))
-		self.correctDictation.SetValue(_setting('correctDictation'))
-		# Translators: a setting: NVDA reads each phrase the dictation writes.
-		self.readDictation = helper.addItem(wx.CheckBox(self, label=_('Read &aloud each phrase the dictation writes')))
-		self.readDictation.SetValue(_setting('readDictation'))
+		self.targets = ['same'] + self.codes[1:]
+		# Translators: the first choice of the language the dictation writes in: the user's own, without translating.
+		targetChoices = [_('Your language')] + [names[code] for code in self.targets[1:]]
+		# Translators: the label of the language the dictation writes in; another one than the user's is a translation.
+		self.writeIn = helper.addLabeledControl(_('&Write what you say in:'), wx.Choice, choices=targetChoices)
+		current = _setting('writeIn')
+		self.writeIn.SetSelection(self.targets.index(current) if current in self.targets else 0)
 
 		try:
 			plugged = microphone.devices()
@@ -706,38 +752,41 @@ class SettingsPanel(gui.settingsDialogs.SettingsPanel):
 		identifiers = [identifier for identifier, _name in self.microphones]
 		self.microphone.SetSelection(identifiers.index(chosen) if chosen in identifiers else 0)
 
-		# Translators: the choices of how long the AI stays ready after it was last used.
-		keepChoices = [_('15 minutes'), _('1 hour'), _('Always, from the start of NVDA')]
-		# Translators: the label of the setting that keeps the AI ready, so that it answers at once.
-		self.keep = helper.addLabeledControl(_('&Keep the AI ready after its last use:'), wx.Choice, choices=keepChoices)
-		self.keep.SetSelection(self.KEEP.index(_setting('keep')))
+		# Translators: the choices of when the dictation is written.
+		writeChoices = [_('While you speak, phrase by phrase'), _('When you stop the dictation, in one block')]
+		# Translators: the label of the setting that chooses when the dictation is written.
+		self.writeDictation = helper.addLabeledControl(_('W&hen to write the dictation:'), wx.Choice, choices=writeChoices)
+		self.writeDictation.SetSelection(self.WRITE.index(_setting('writeDictation')))
 
 		if not engine.installed():
 			# Translators: a button shown when the AI is not installed; it explains how to install it.
 			install = helper.addItem(wx.Button(self, label=_('How to &install the AI...')))
 			install.Bind(wx.EVT_BUTTON, lambda event: _show_manager_dialog())
 
-		# Translators: the label for the preference to look for a new version of the add-on each time NVDA starts
-		self.checkForUpdates = helper.addItem(wx.CheckBox(self, label=_('Check for &updates automatically when NVDA starts')))
-		self.checkForUpdates.SetValue(_setting('checkForUpdates'))
-		# Translators: The label of a button in the settings panel that looks for a new version of the add-on right away.
-		checkNow = helper.addItem(wx.Button(self, label=_('&Check for updates now')))
-		checkNow.Bind(wx.EVT_BUTTON, lambda event: self.updater.check(manual=True))
-		checkNow.Enable(self.updater is not None)
+		self.advanced = {name: _setting(name) for name in self.ADVANCED}
+		# Translators: the button that opens the settings most people never change.
+		advanced = helper.addItem(wx.Button(self, label=_('&Advanced options...')))
+		advanced.Bind(wx.EVT_BUTTON, self.on_advanced)
+
+	def on_advanced(self, event):
+		values = dict(self.advanced)
+		dialog = AdvancedDialog(self, values, self.updater)
+		if dialog.ShowModal() == wx.ID_OK:
+			self.advanced = values
+		dialog.Destroy()
 
 	def onSave(self):
 		section = config.conf[CONFIG_SECTION]
 		section['language'] = self.codes[self.language.GetSelection()]
-		section['correctDictation'] = self.correctDictation.GetValue()
-		section['readDictation'] = self.readDictation.GetValue()
+		section['writeIn'] = self.targets[self.writeIn.GetSelection()]
 		section['writeDictation'] = self.WRITE[self.writeDictation.GetSelection()]
 		identifier, name = self.microphones[self.microphone.GetSelection()]
 		if identifier != section['microphone']:
 			section['microphone'] = identifier
 			section['microphoneName'] = name if identifier else ''
-		keep = self.KEEP[self.keep.GetSelection()]
-		section['keep'] = keep
-		section['checkForUpdates'] = self.checkForUpdates.GetValue()
+		for key, value in self.advanced.items():
+			section[key] = value
+		keep = self.advanced['keep']
 		_engine.set_keep(keep)
 		if keep == 'always' and engine.installed():
 			_engine.start_in_background()
