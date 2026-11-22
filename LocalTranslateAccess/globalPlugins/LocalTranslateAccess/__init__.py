@@ -1835,7 +1835,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         # No entry in the Preferences menu: every setting is in NVDA's Settings dialog.
         # No update check on secure screens (logon, UAC), where nothing may be installed.
         config.conf.spec[CONFIG_SECTION] = {'checkForUpdates': 'boolean(default=true)',
-            'copyTranslation': 'boolean(default=false)', 'replaceUnderscores': 'boolean(default=false)',
+            'copyTranslation': 'boolean(default=true)', 'replaceUnderscores': 'boolean(default=false)',
             'favorites': 'string_list(default=list())', 'activeSource': 'string(default=auto)'}
         self.updater = None
         if not globalVars.appArgs.secure:
