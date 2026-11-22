@@ -27,6 +27,7 @@
 <li><strong>NVDA+Contrôle+Maj+O :</strong> corrige le texte sélectionné.</li>
 <li><strong>NVDA+Contrôle+Maj+L :</strong> démarre ou arrête la dictée.</li>
 <li><strong>NVDA+Contrôle+Maj+F :</strong> transcrit un fichier audio ou vidéo.</li>
+<li><strong>NVDA+Contrôle+Maj+E :</strong> dit ce que fait SpeakWriteAccess, par exemple « Dictée activée. Transcription à 40 %. IA prête. ».</li>
 <li><strong>NVDA+Contrôle+L :</strong> ouvre les réglages de SpeakWriteAccess, par exemple pour changer la langue.</li>
 </ul>
 <p>Vous pouvez changer ces raccourcis dans le menu NVDA, Préférences, Gestes de commandes, catégorie SpeakWriteAccess.</p>
@@ -70,6 +71,15 @@
 </ul>
 <p>Windows lit lui-même les fichiers WAV, MP3, M4A, AAC, WMA et FLAC, et le son des vidéos MP4, MOV, WMV, AVI et MKV. Si Windows ne sait pas lire un fichier, NVDA dit « Windows ne peut pas lire le son de ce fichier. ».</p>
 <p>Le texte est écrit dans la langue choisie dans les réglages, et corrigé si « Corriger la dictée au fur et à mesure » est coché. Il n'y a pas de durée maximale : un fichier d'une heure se transcrit comme un fichier d'une minute, en plus de temps. Avec une carte graphique, une minute d'enregistrement prend une dizaine de secondes. Sans carte graphique, c'est plus long.</p>
+
+<h2>Savoir ce qui se passe</h2>
+<p>NVDA+Contrôle+Maj+E dit, en une phrase :</p>
+<ul>
+<li>si la dictée est activée ou arrêtée ;</li>
+<li>si une correction est en cours ;</li>
+<li>où en est une transcription, en pourcentage ;</li>
+<li>si l'IA est prête à répondre tout de suite, ou au repos : elle se charge alors à sa prochaine utilisation, en quelques secondes.</li>
+</ul>
 
 <h2>Réglages</h2>
 <p>NVDA+Contrôle+L ouvre directement les réglages. Ils sont aussi dans le menu NVDA, Préférences, Paramètres, catégorie SpeakWriteAccess.</p>

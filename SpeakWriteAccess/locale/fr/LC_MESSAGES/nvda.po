@@ -254,3 +254,21 @@ msgstr "{name} (non branché)"
 
 msgid "&Microphone of the dictation:"
 msgstr "&Micro de la dictée :"
+
+msgid "Says what SpeakWriteAccess is doing: the dictation, a correction or a transcription, and the AI."
+msgstr "Dit ce que fait SpeakWriteAccess : la dictée, une correction ou une transcription, et l'IA."
+
+msgid "The AI is not installed."
+msgstr "L'IA n'est pas installée."
+
+msgid "Correction in progress"
+msgstr "Correction en cours"
+
+msgid "Transcription at {percent} %"
+msgstr "Transcription à {percent} %"
+
+msgid "AI ready"
+msgstr "IA prête"
+
+msgid "AI at rest, it loads at its next use"
+msgstr "IA au repos, elle se charge à sa prochaine utilisation"

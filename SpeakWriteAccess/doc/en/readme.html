@@ -27,6 +27,7 @@
 <li><strong>NVDA+Control+Shift+O:</strong> corrects the selected text.</li>
 <li><strong>NVDA+Control+Shift+L:</strong> starts or stops the dictation.</li>
 <li><strong>NVDA+Control+Shift+F:</strong> transcribes an audio or video file.</li>
+<li><strong>NVDA+Control+Shift+E:</strong> says what SpeakWriteAccess is doing, for example "Dictation on. Transcription at 40 %. AI ready.".</li>
 <li><strong>NVDA+Control+L:</strong> opens the settings of SpeakWriteAccess, for example to change the language.</li>
 </ul>
 <p>You can change these shortcuts in the NVDA menu, Preferences, Input gestures, category SpeakWriteAccess.</p>
@@ -70,6 +71,15 @@
 </ul>
 <p>Windows itself reads WAV, MP3, M4A, AAC, WMA and FLAC files, and the sound of MP4, MOV, WMV, AVI and MKV videos. If Windows cannot read a file, NVDA says "Windows cannot read the sound of this file.".</p>
 <p>The text is written in the language chosen in the settings, and corrected if "Correct the dictation as you speak" is checked. There is no longest length: a file of one hour is transcribed like a file of one minute, only longer. With a graphics card, one minute of recording takes about ten seconds. Without one, it takes longer.</p>
+
+<h2>Knowing what is going on</h2>
+<p>NVDA+Control+Shift+E says, in one sentence:</p>
+<ul>
+<li>whether the dictation is on or off;</li>
+<li>whether a correction is in progress;</li>
+<li>how far a transcription has gone, as a percentage;</li>
+<li>whether the AI is ready to answer at once, or at rest: it then loads at its next use, in a few seconds.</li>
+</ul>
 
 <h2>Settings</h2>
 <p>NVDA+Control+L opens the settings directly. They are also in the NVDA menu, Preferences, Settings, category SpeakWriteAccess.</p>

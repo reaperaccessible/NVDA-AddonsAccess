@@ -556,6 +556,27 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return
 		wx.CallAfter(gui.mainFrame.popupSettingsDialog, gui.settingsDialogs.NVDASettingsDialog, SettingsPanel)
 
+	@script(
+		# Translators: the description of the command that says what SpeakWriteAccess is doing, in Input Gestures.
+		description=_('Says what SpeakWriteAccess is doing: the dictation, a correction or a transcription, and the AI.'),
+		gesture='kb:NVDA+control+shift+e')
+	def script_announceStatus(self, gesture):
+		if not engine.installed():
+			# Translators: said by the status command when the AI is not installed.
+			ui.message(_('The AI is not installed.'))
+			return
+		# Translators: parts of what the status command says.
+		parts = [_('Dictation on') if _dictation.active else _('Dictation off')]
+		if _correcting.is_set():
+			parts.append(_('Correction in progress'))
+		current = TranscriptionDialog.current
+		if current and current.running:
+			# Translators: said by the status command during a transcription; {percent} is how much is done.
+			parts.append(_('Transcription at {percent} %').format(percent=current.gauge.GetValue()))
+		# Translators: said by the status command: the AI answers at once, or it will load at its next use.
+		parts.append(_('AI ready') if _engine.running() else _('AI at rest, it loads at its next use'))
+		ui.message('. '.join(parts) + '.')
+
 
 class SettingsPanel(gui.settingsDialogs.SettingsPanel):
 	# The add-on's own name: shown as a category of NVDA's Settings dialog, never translated.
