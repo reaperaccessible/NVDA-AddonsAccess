@@ -284,3 +284,21 @@ msgstr "Écrire la &dictée :"
 
 msgid "Nothing was heard."
 msgstr "Rien n'a été entendu."
+
+msgid "Adds a few emojis that fit the selected text."
+msgstr "Ajoute quelques émojis qui vont avec le texte sélectionné."
+
+msgid "The text was not changed: the AI changed your words."
+msgstr "Le texte n'a pas été changé : l'IA avait modifié vos mots."
+
+msgid "No emoji added."
+msgstr "Aucun émoji ajouté."
+
+msgid "1 emoji added."
+msgstr "1 émoji ajouté."
+
+msgid "{count} emojis added."
+msgstr "{count} émojis ajoutés."
+
+msgid "Adding emojis"
+msgstr "Ajout d'émojis en cours"

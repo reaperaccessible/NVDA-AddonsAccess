@@ -8,9 +8,10 @@
 </head>
 <body>
 <h1>SpeakWriteAccess</h1>
-<p>SpeakWriteAccess fait trois choses avec une IA qui tourne sur votre propre ordinateur :</p>
+<p>SpeakWriteAccess fait quatre choses avec une IA qui tourne sur votre propre ordinateur :</p>
 <ul>
 <li>il corrige le texte que vous avez sélectionné, d'un seul raccourci ;</li>
+<li>il ajoute des émojis au texte sélectionné ;</li>
 <li>il écrit ce que vous dites au micro, phrase par phrase, là où se trouve le curseur ;</li>
 <li>il écrit ce qui est dit dans un fichier audio ou vidéo.</li>
 </ul>
@@ -30,7 +31,7 @@
 <li><strong>NVDA+Contrôle+Maj+E :</strong> dit ce que fait SpeakWriteAccess, par exemple « Dictée activée. Transcription à 40 %. IA prête. ».</li>
 <li><strong>NVDA+Contrôle+L :</strong> ouvre les réglages de SpeakWriteAccess, par exemple pour changer la langue.</li>
 </ul>
-<p>Vous pouvez changer ces raccourcis dans le menu NVDA, Préférences, Gestes de commandes, catégorie SpeakWriteAccess.</p>
+<p>Vous pouvez changer ces raccourcis dans le menu NVDA, Préférences, Gestes de commandes, catégorie SpeakWriteAccess. L'ajout d'émojis n'a pas de raccourci au départ : vous lui en donnez un au même endroit.</p>
 
 <h2>Corriger un texte</h2>
 <ol>
@@ -42,6 +43,15 @@
 <p>Si le texte ne peut pas être modifié, par exemple sur une page web en mode navigation, le texte corrigé est copié dans le presse-papiers.</p>
 <p>Si la réponse de l'IA ne ressemble pas à une correction de votre texte, rien n'est changé, et NVDA dit « Le texte n'a pas été changé : la correction ne semblait pas juste. ».</p>
 <p>La première utilisation après le démarrage de NVDA charge l'IA : NVDA dit « Chargement de l'IA... », et la correction arrive quelques secondes plus tard.</p>
+
+<h2>Ajouter des émojis</h2>
+<p>Les émojis sont de petites images, comme 😊 ou 🎉, qu'on met dans un message pour montrer une émotion. Les lecteurs d'écran les lisent par leur nom, par exemple « visage souriant ».</p>
+<ol>
+<li>Sélectionnez le texte, par exemple un message à envoyer.</li>
+<li>Appuyez sur le raccourci que vous lui avez donné dans les Gestes de commandes, catégorie SpeakWriteAccess, « Ajoute quelques émojis qui vont avec le texte sélectionné ».</li>
+</ol>
+<p>L'IA ajoute quelques émojis qui vont avec le sens, environ un par phrase, et NVDA dit combien, par exemple « 3 émojis ajoutés. ». Vos mots ne changent pas : si l'IA en avait modifié un seul, rien n'est changé, et NVDA dit « Le texte n'a pas été changé : l'IA avait modifié vos mots. ».</p>
+<p>Comme pour la correction, si le texte ne peut pas être modifié, le résultat est copié dans le presse-papiers.</p>
 
 <h2>Dicter</h2>
 <ol>
@@ -77,7 +87,7 @@
 <p>NVDA+Contrôle+Maj+E dit, en une phrase :</p>
 <ul>
 <li>si la dictée est activée ou arrêtée ;</li>
-<li>si une correction est en cours ;</li>
+<li>si une correction ou un ajout d'émojis est en cours ;</li>
 <li>où en est une transcription, en pourcentage ;</li>
 <li>si l'IA est prête à répondre tout de suite, ou au repos : elle se charge alors à sa prochaine utilisation, en quelques secondes.</li>
 </ul>

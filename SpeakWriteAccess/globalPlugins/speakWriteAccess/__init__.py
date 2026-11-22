@@ -265,6 +265,7 @@ class Dictation:
 
 _dictation = Dictation()
 _correcting = threading.Event()
+_decorating = threading.Event()   # emojis being added to the selection
 
 
 def _explorer_file():
@@ -509,6 +510,60 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(message + ' ' + _('Copied to the clipboard.'))
 
 	@script(
+		# Translators: the description of the command that adds emojis to the selected text, in Input Gestures.
+		# No key by default (Lee, 2026-11-22): one is assigned in Input Gestures.
+		description=_('Adds a few emojis that fit the selected text.'))
+	def script_addEmojis(self, gesture):
+		if globalVars.appArgs.secure:
+			return
+		if not engine.installed():
+			wx.CallAfter(_show_manager_dialog)
+			return
+		if _decorating.is_set() or _correcting.is_set():
+			ui.message(_('A correction is already in progress.'))
+			return
+		text, editable = _selection()
+		if not text.strip():
+			ui.message(_('No selection.'))
+			return
+		if not _engine.running():
+			ui.message(_('Loading the AI...'))
+		_decorating.set()
+		threading.Thread(target=self._emojis, args=(text, editable), daemon=True).start()
+
+	def _emojis(self, text, editable):
+		try:
+			result, count = writing.add_emojis(_engine, text, _language())
+		except writing.Unsure:
+			log.info('SpeakWriteAccess: emojis refused', exc_info=True)
+			# Translators: said when the AI changed the words of the text while adding emojis, so nothing was changed.
+			wx.CallAfter(ui.message, _('The text was not changed: the AI changed your words.'))
+			return
+		except engine.EngineError:
+			log.exception('SpeakWriteAccess: emojis')
+			wx.CallAfter(ui.message, _('The AI could not start.'))
+			return
+		finally:
+			_decorating.clear()
+		wx.CallAfter(self._apply_emojis, result, count, editable)
+
+	def _apply_emojis(self, result, count, editable):
+		if count <= 0:
+			# Translators: said when the AI found no emoji to add.
+			ui.message(_('No emoji added.'))
+			return
+		if count == 1:
+			# Translators: said after one emoji was added to the selected text.
+			message = _('1 emoji added.')
+		else:
+			# Translators: said after emojis were added to the selected text; {count} is how many.
+			message = _('{count} emojis added.').format(count=count)
+		if editable:
+			_paste(result, then=lambda: ui.message(message))
+		elif api.copyToClip(result, notify=False):
+			ui.message(message + ' ' + _('Copied to the clipboard.'))
+
+	@script(
 		# Translators: the description of the command that starts or stops the dictation, in Input Gestures.
 		description=_('Starts or stops the dictation: what you say into the microphone is written where the cursor is.'),
 		gesture='kb:NVDA+control+shift+l')
@@ -590,6 +645,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		parts = [_('Dictation on') if _dictation.active else _('Dictation off')]
 		if _correcting.is_set():
 			parts.append(_('Correction in progress'))
+		if _decorating.is_set():
+			# Translators: said by the status command while emojis are being added.
+			parts.append(_('Adding emojis'))
 		current = TranscriptionDialog.current
 		if current and current.running:
 			# Translators: said by the status command during a transcription; {percent} is how much is done.
