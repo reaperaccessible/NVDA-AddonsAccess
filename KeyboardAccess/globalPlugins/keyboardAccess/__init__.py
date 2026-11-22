@@ -12,6 +12,7 @@ import wx
 import addonHandler
 import api
 import config
+import core
 import globalPluginHandler
 import globalVars
 import gui
@@ -238,6 +239,8 @@ class AloneKeyWatcher:
 	def decide(self, gesture=None, **kwargs):
 		try:
 			name = alone_key()
+			if name:
+				_remote_watcher_first()   # the Remote may have been restarted since
 			if not name or inputCore.manager._captureFunc is not None:
 				return True
 			if not isinstance(gesture, keyboardHandler.KeyboardInputGesture):
@@ -275,6 +278,100 @@ class AloneKeyWatcher:
 
 
 watcher = AloneKeyWatcher()
+
+
+# --- NVDA Remote
+# While NVDA controls another computer, its Remote sends every key there before the add-ons see it,
+# and a key the add-on sends to Windows stays on this computer. So the key of the Applications key,
+# pressed alone, is held back here, and the Applications key itself is sent to the other computer.
+VK_LEFT_CONTROL = 0xA2
+VK_FAKE_CONTROL_SCAN = 0x21D   # the scan code of the Left Ctrl that Windows adds to AltGr
+
+
+def _remote_sending():
+	"""NVDA's Remote client while it sends the keys to another computer, else None."""
+	try:
+		import _remoteClient
+		client = _remoteClient._remoteClient
+		if client is not None and client.sendingKeys and client.leaderTransport is not None:
+			return client
+	except Exception:
+		pass
+	return None
+
+
+def _remote_key(client, vk, extended, pressed):
+	from _remoteClient.protocol import RemoteMessageType
+	client.leaderTransport.send(RemoteMessageType.KEY, vk_code=vk, extended=extended, pressed=pressed, scan_code=None)
+
+
+class RemoteAloneKey:
+	"""Called by NVDA for each key, before the Remote: answers at once, from NVDA's keyboard thread."""
+
+	def __init__(self):
+		self.held = None        # (when, extended): the watched key is down and not yet sent anywhere
+		self.forwarded = False  # the watched key went to the other computer, for a combination as AltGr+2
+
+	def decide(self, vkCode=None, scanCode=None, extended=None, pressed=None, injected=False, **kwargs):
+		try:
+			if injected:
+				return True
+			name = alone_key()
+			client = _remote_sending() if name else None
+			if client is None:
+				self.held, self.forwarded = None, False
+				return True
+			watched = ALONE_KEYS[name]
+			if name == 'rightAlt' and vkCode == VK_LEFT_CONTROL and scanCode == VK_FAKE_CONTROL_SCAN:
+				# The Left Ctrl that Windows adds to AltGr goes with AltGr: sent only with a combination.
+				return self.forwarded
+			if vkCode == watched:
+				if pressed:
+					if self.held is None and not self.forwarded:
+						self.held = (time.monotonic(), extended)
+					return self.forwarded   # held back here, or already sent with a combination
+				if self.forwarded:
+					self.forwarded = False
+					if name == 'rightAlt':
+						_remote_key(client, VK_LEFT_CONTROL, False, False)
+					return True
+				if self.held is not None:
+					when = self.held[0]
+					self.held = None
+					if time.monotonic() - when <= ALONE_MAX_SECONDS:
+						_remote_key(client, keys.VK_APPS, True, True)
+						_remote_key(client, keys.VK_APPS, True, False)
+					return False
+				return True
+			if self.held is not None and pressed:
+				# A combination, as AltGr+2: the other computer gets the watched key first.
+				if name == 'rightAlt':
+					_remote_key(client, VK_LEFT_CONTROL, False, True)
+				_remote_key(client, watched, self.held[1], True)
+				self.held, self.forwarded = None, True
+		except Exception:
+			log.error('KeyboardAccess: the key for the Remote failed', exc_info=True)
+		return True
+
+
+remoteWatcher = RemoteAloneKey()
+
+
+def _remote_watcher_first():
+	"""Put the add-on before NVDA's Remote, which keeps the keys it sends to the other computer."""
+	try:
+		handlers = inputCore.decide_handleRawKey._handlers
+		items = list(handlers.items())
+		mine = [item for item in items if item[1]() == remoteWatcher.decide]
+		if not mine:
+			inputCore.decide_handleRawKey.register(remoteWatcher.decide)
+			items = list(handlers.items())
+			mine = [item for item in items if item[1]() == remoteWatcher.decide]
+		if items and items[0][0] != mine[0][0]:
+			handlers.clear()
+			handlers.update(mine + [item for item in items if item[0] != mine[0][0]])
+	except Exception:
+		log.error('KeyboardAccess: cannot watch the keys before the Remote', exc_info=True)
 
 
 # --- the keyboard layouts
@@ -642,6 +739,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		config.conf.spec[CONFIG_SECTION] = CONFIG_SPEC
 		self.updater = None
 		inputCore.decide_executeGesture.register(watcher.decide)
+		_remote_watcher_first()
+		# The Remote may start after the add-ons: the order is checked again then.
+		core.postNvdaStartup.register(_remote_watcher_first)
 		self.menuItem = None
 		if globalVars.appArgs.secure:
 			return
@@ -660,6 +760,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def terminate(self, *args, **kwargs):
 		try:
 			inputCore.decide_executeGesture.unregister(watcher.decide)
+			inputCore.decide_handleRawKey.unregister(remoteWatcher.decide)
+			core.postNvdaStartup.unregister(_remote_watcher_first)
 		except Exception:
 			pass
 		if self.updater is not None:
