@@ -36,6 +36,8 @@ CONFIG_SPEC = {
 	'language': 'string(default=nvda)',
 	'correctDictation': 'boolean(default=true)',
 	'readDictation': 'boolean(default=false)',
+	# When the dictation is written: each phrase as soon as it is said, or everything once the dictation stops.
+	'writeDictation': 'option("phrase", "end", default="phrase")',
 	# The microphone of the dictation: its Windows identifier, empty for Windows' default one,
 	# and its name, to show it in the settings while it is not plugged in.
 	'microphone': 'string(default="")',
@@ -180,7 +182,8 @@ def _changes_message(count):
 
 
 class Dictation:
-	"""The microphone, cut into phrases; each phrase is written as soon as the AI has heard it."""
+	"""The microphone, cut into phrases; each phrase is written as soon as the AI has heard it,
+	or, with the setting "end", all of them together once the dictation stops."""
 
 	def __init__(self):
 		self.active = False
@@ -189,6 +192,8 @@ class Dictation:
 		self.phrases = queue.Queue()
 		self.worker = None
 		self.written = False
+		self.atEnd = False
+		self.kept = []
 
 	def start(self):
 		self.cutter = microphone.Phrases()
@@ -196,6 +201,8 @@ class Dictation:
 		self.microphone.start()
 		self.active = True
 		self.written = False
+		self.atEnd = _setting('writeDictation') == 'end'
+		self.kept = []
 		self.worker = threading.Thread(target=self._work, daemon=True)
 		self.worker.start()
 		self.phrases.put(('warm', None))
@@ -219,6 +226,8 @@ class Dictation:
 		while True:
 			kind, pcm = self.phrases.get()
 			if kind == 'end':
+				if self.atEnd:
+					wx.CallAfter(self._write_all, self.kept)
 				return
 			try:
 				if kind == 'warm':
@@ -232,7 +241,9 @@ class Dictation:
 				# Translators: said when the AI could not be used.
 				wx.CallAfter(ui.message, _('The AI could not start.'))
 				continue
-			if text:
+			if text and self.atEnd:
+				self.kept.append(text)
+			elif text:
 				wx.CallAfter(self._write, text)
 
 	def _write(self, text):
@@ -240,6 +251,16 @@ class Dictation:
 			text = ' ' + text
 		self.written = True
 		_paste(text, then=(lambda: ui.message(text.strip())) if _setting('readDictation') else None)
+
+	def _write_all(self, texts):
+		if not texts:
+			# Translators: said when the dictation stops and nothing was said, with the setting that writes at the end.
+			ui.message(_('Nothing was heard.'))
+			return
+		whole = texts[0]
+		for text in texts[1:]:
+			whole += text if text[:1] in '.,;:!?)' else ' ' + text
+		_paste(whole, then=(lambda: ui.message(whole)) if _setting('readDictation') else None)
 
 
 _dictation = Dictation()
@@ -584,6 +605,7 @@ class SettingsPanel(gui.settingsDialogs.SettingsPanel):
 	# Set by the global plugin; None on secure screens.
 	updater = None
 	KEEP = ('15', '60', 'always')
+	WRITE = ('phrase', 'end')
 
 	def makeSettings(self, settingsSizer):
 		helper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
@@ -595,6 +617,12 @@ class SettingsPanel(gui.settingsDialogs.SettingsPanel):
 		self.language = helper.addLabeledControl(_('&Language of the text:'), wx.Choice, choices=choices)
 		current = _setting('language')
 		self.language.SetSelection(self.codes.index(current) if current in self.codes else 0)
+
+		# Translators: the choices of when the dictation is written.
+		writeChoices = [_('Phrase by phrase, as you speak'), _('All at once, when the dictation stops')]
+		# Translators: the label of the setting that chooses when the dictation is written.
+		self.writeDictation = helper.addLabeledControl(_('&Write the dictation:'), wx.Choice, choices=writeChoices)
+		self.writeDictation.SetSelection(self.WRITE.index(_setting('writeDictation')))
 
 		# Translators: a setting: each phrase of the dictation is written with correct spelling and punctuation.
 		self.correctDictation = helper.addItem(wx.CheckBox(self, label=_('Co&rrect the dictation as you speak')))
@@ -644,6 +672,7 @@ class SettingsPanel(gui.settingsDialogs.SettingsPanel):
 		section['language'] = self.codes[self.language.GetSelection()]
 		section['correctDictation'] = self.correctDictation.GetValue()
 		section['readDictation'] = self.readDictation.GetValue()
+		section['writeDictation'] = self.WRITE[self.writeDictation.GetSelection()]
 		identifier, name = self.microphones[self.microphone.GetSelection()]
 		if identifier != section['microphone']:
 			section['microphone'] = identifier

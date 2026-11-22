@@ -272,3 +272,15 @@ msgstr "IA prête"
 
 msgid "AI at rest, it loads at its next use"
 msgstr "IA au repos, elle se charge à sa prochaine utilisation"
+
+msgid "Phrase by phrase, as you speak"
+msgstr "Phrase par phrase, pendant que vous parlez"
+
+msgid "All at once, when the dictation stops"
+msgstr "Tout d'un coup, quand la dictée s'arrête"
+
+msgid "&Write the dictation:"
+msgstr "Écrire la &dictée :"
+
+msgid "Nothing was heard."
+msgstr "Rien n'a été entendu."
