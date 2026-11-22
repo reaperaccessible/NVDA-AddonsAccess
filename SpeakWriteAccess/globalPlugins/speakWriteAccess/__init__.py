@@ -273,7 +273,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	@script(
 		# Translators: the description of the command that corrects the selected text, in Input Gestures.
 		description=_('Corrects the selected text.'),
-		gesture='kb:NVDA+control+shift+c')
+		gesture='kb:NVDA+control+shift+o')
 	def script_correctSelection(self, gesture):
 		if globalVars.appArgs.secure:
 			return
