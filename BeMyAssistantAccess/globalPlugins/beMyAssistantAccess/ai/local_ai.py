@@ -194,6 +194,56 @@ def _start_watcher():
 	_watcher.start()
 
 
+# --- why the engine stopped by itself
+
+# What the engine writes in engine.log, for each cause. Searched in this order: the first found wins.
+_CAUSES = (
+	("card", ("erroroutofdevicememory", "device memory allocation", "failed to allocate vulkan",
+			  "unable to allocate vulkan", "vk::device::allocatememory")),
+	("ram", ("erroroutofhostmemory", "failed to allocate cpu buffer", "cpu_buffer_type_alloc_buffer: failed",
+			 "bad_alloc", "not enough memory", "mapviewoffile failed", "createfilemapping", "failed to mmap")),
+	("driver", ("ggml_vulkan: no devices found", "vkcreateinstance", "errorinitializationfailed",
+				"errorincompatibledriver", "errordevicelost", "vulkan-1.dll")),
+	("files", ("invalid magic", "not within the file bounds", "unknown model architecture",
+			   "failed to read magic", "corrupted", "failed to load mmproj", "clip_init: failed")),
+)
+DLL_NOT_FOUND = 0xC0000135  # the engine could not start at all: Vulkan is missing from Windows
+
+
+def _log_tail(size=262144):
+	try:
+		with open(os.path.join(folder(), "engine.log"), "rb") as stream:
+			stream.seek(0, os.SEEK_END)
+			stream.seek(max(0, stream.tell() - size))
+			return stream.read().decode("utf-8", "replace").lower()
+	except OSError:
+		return ""
+
+
+def cause_in_log(text):
+	"""The cause written in the engine's journal ("card", "ram", "driver", "files"), or "" when none is known."""
+	for cause, markers in _CAUSES:
+		if any(marker in text for marker in markers):
+			return cause
+	return ""
+
+
+def failure():
+	"""Why the engine started by this NVDA session stopped by itself: "card", "ram", "driver", "files",
+	or "unknown". None when it was not started, or still runs."""
+	process = _process
+	if process is None or process.poll() is None:
+		return None
+	if process.returncode & 0xFFFFFFFF == DLL_NOT_FOUND:
+		return "driver"
+	cause = cause_in_log(_log_tail())
+	if cause:
+		return cause
+	for code, value in missing_requirements():
+		return code if code == "ram" else "card"
+	return "unknown"
+
+
 def stop():
 	global _process
 	process = _process

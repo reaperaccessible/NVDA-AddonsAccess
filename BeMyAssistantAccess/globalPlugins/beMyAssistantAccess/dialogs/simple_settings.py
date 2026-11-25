@@ -50,6 +50,37 @@ def manager_message():
 			 "activate the button Download the Manager.")
 
 
+def failure_message():
+	"""Why the local AI could not start, in words for the user; "" when it did not stop by itself."""
+	from ..ai import local_ai
+	cause = local_ai.failure()
+	if cause is None:
+		return ""
+	if cause == "ram":
+		# Translators: The local AI could not start. {need} and {have} are amounts of memory in GB.
+		return _("The local AI could not start because the computer's memory is full. Close the other programs, "
+				 "then try again. The local AI needs {need} GB of memory, and this computer has {have} GB.").format(
+			need=local_ai.MIN_RAM_GB, have=round(local_ai.ram_gb()))
+	if cause == "card":
+		# Translators: The local AI could not start. {need} and {have} are amounts of memory in GB.
+		return _("The local AI could not start because the graphics card does not have enough memory. "
+				 "It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. "
+				 "Close the other programs, then try again.").format(
+			need=local_ai.MIN_VRAM_GB, have=round(local_ai.best_card()[1]))
+	if cause == "driver":
+		# Translators: The local AI could not start.
+		return _("The local AI could not start because it cannot use the graphics card. "
+				 "Update the driver of the graphics card, restart the computer, then try again.")
+	if cause == "files":
+		# Translators: The local AI could not start.
+		return _("The local AI could not start because its files are damaged. Install it again with the "
+				 "ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI.")
+	# Translators: The local AI could not start, for a reason that is not known. {folder} is a folder on the computer.
+	return _("The local AI could not start. Close the other programs, then try again. If it still does not work, "
+			 "write to us through the contact pages of the site, and attach the file engine.log, which is in this "
+			 "folder: {folder}").format(folder=local_ai.folder())
+
+
 class ManagerDialog(wx.Dialog):
 	"""Tells how to get the local AI, with a button that downloads the Manager."""
 

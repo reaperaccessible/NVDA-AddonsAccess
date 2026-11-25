@@ -6248,3 +6248,18 @@ msgstr "将聊天记录保存到历史记录"
 
 msgid "Save Documents to History"
 msgstr "将文档保存到历史记录"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "电脑内存已满，本地 AI 无法启动。请关闭其他程序，然后重试。本地 AI 需要 {need} GB 内存，这台电脑有 {have} GB。"
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "显卡内存不足，本地 AI 无法启动。需要一块自带至少 {need} GB 显存的显卡，这块显卡有 {have} GB。请关闭其他程序，然后重试。"
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "本地 AI 无法使用显卡，因此无法启动。请更新显卡驱动程序，重新启动电脑，然后重试。"
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "本地 AI 的文件已损坏，因此无法启动。请用 ReaperAccessible Installer Manager 重新安装：选择类型 NVDA Add-on，然后选择 BeMyAssistantAccess, local AI。"
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "本地 AI 无法启动。请关闭其他程序，然后重试。如果仍然不行，请通过网站的联系页面写信给我们，并附上此文件夹中的 engine.log 文件：{folder}"

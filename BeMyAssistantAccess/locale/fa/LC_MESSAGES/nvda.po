@@ -6248,3 +6248,18 @@ msgstr "ذخیره‌ی گفتگوها در تاریخچه"
 
 msgid "Save Documents to History"
 msgstr "ذخیره‌ی اسناد در تاریخچه"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "هوش مصنوعی محلی نتوانست اجرا شود، چون حافظه‌ی رایانه پر است. برنامه‌های دیگر را ببندید و دوباره امتحان کنید. هوش مصنوعی محلی به {need} گیگابایت حافظه نیاز دارد و این رایانه {have} گیگابایت دارد."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "هوش مصنوعی محلی نتوانست اجرا شود، چون حافظه‌ی کارت گرافیک کافی نیست. کارت گرافیکی با دست‌کم {need} گیگابایت حافظه‌ی اختصاصی لازم است و این کارت {have} گیگابایت دارد. برنامه‌های دیگر را ببندید و دوباره امتحان کنید."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "هوش مصنوعی محلی نتوانست اجرا شود، چون نمی‌تواند از کارت گرافیک استفاده کند. درایور کارت گرافیک را به‌روز کنید، رایانه را دوباره راه‌اندازی کنید و دوباره امتحان کنید."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "هوش مصنوعی محلی نتوانست اجرا شود، چون فایل‌هایش آسیب دیده‌اند. آن را دوباره با ReaperAccessible Installer Manager نصب کنید: نوع NVDA Add-on و سپس BeMyAssistantAccess, local AI را انتخاب کنید."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "هوش مصنوعی محلی نتوانست اجرا شود. برنامه‌های دیگر را ببندید و دوباره امتحان کنید. اگر باز هم کار نکرد، از راه صفحه‌های تماس سایت برای ما بنویسید و فایل engine.log را که در این پوشه است پیوست کنید: {folder}"

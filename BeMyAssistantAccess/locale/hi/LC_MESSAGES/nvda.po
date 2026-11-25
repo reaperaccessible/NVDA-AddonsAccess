@@ -6249,3 +6249,18 @@ msgstr "चैट इतिहास में सहेजें"
 
 msgid "Save Documents to History"
 msgstr "दस्तावेज़ों को इतिहास में सहेजें"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "लोकल एआई शुरू नहीं हो सका, क्योंकि कंप्यूटर की मेमोरी भरी हुई है। दूसरे प्रोग्राम बंद करें, फिर दोबारा कोशिश करें। लोकल एआई को {need} GB मेमोरी चाहिए, और इस कंप्यूटर में {have} GB है।"
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "लोकल एआई शुरू नहीं हो सका, क्योंकि ग्राफ़िक्स कार्ड में पर्याप्त मेमोरी नहीं है। कम से कम {need} GB अपनी मेमोरी वाला ग्राफ़िक्स कार्ड चाहिए, और इसमें {have} GB है। दूसरे प्रोग्राम बंद करें, फिर दोबारा कोशिश करें।"
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "लोकल एआई शुरू नहीं हो सका, क्योंकि वह ग्राफ़िक्स कार्ड का उपयोग नहीं कर पा रहा। ग्राफ़िक्स कार्ड का ड्राइवर अपडेट करें, कंप्यूटर को फिर से शुरू करें, फिर दोबारा कोशिश करें।"
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "लोकल एआई शुरू नहीं हो सका, क्योंकि उसकी फ़ाइलें खराब हो गई हैं। उसे ReaperAccessible Installer Manager से फिर से इंस्टॉल करें: प्रकार NVDA Add-on चुनें, फिर BeMyAssistantAccess, local AI।"
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "लोकल एआई शुरू नहीं हो सका। दूसरे प्रोग्राम बंद करें, फिर दोबारा कोशिश करें। अगर फिर भी काम न करे, तो साइट के संपर्क पृष्ठों से हमें लिखें, और इस फ़ोल्डर में मौजूद engine.log फ़ाइल साथ भेजें: {folder}"

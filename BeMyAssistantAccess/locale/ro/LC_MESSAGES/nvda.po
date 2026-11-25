@@ -6249,3 +6249,18 @@ msgstr "Salvează chaturile în istoric"
 
 msgid "Save Documents to History"
 msgstr "Salvează documentele în istoric"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "IA locală nu a putut porni, deoarece memoria calculatorului este plină. Închide celelalte programe, apoi încearcă din nou. IA locală are nevoie de {need} GB de memorie, iar acest calculator are {have} GB."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "IA locală nu a putut porni, deoarece placa grafică nu are destulă memorie. Este nevoie de o placă grafică cu cel puțin {need} GB de memorie proprie, iar aceasta are {have} GB. Închide celelalte programe, apoi încearcă din nou."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "IA locală nu a putut porni, deoarece nu poate folosi placa grafică. Actualizează driverul plăcii grafice, repornește calculatorul, apoi încearcă din nou."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "IA locală nu a putut porni, deoarece fișierele ei sunt deteriorate. Instaleaz-o din nou cu ReaperAccessible Installer Manager: alege tipul NVDA Add-on, apoi BeMyAssistantAccess, local AI."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "IA locală nu a putut porni. Închide celelalte programe, apoi încearcă din nou. Dacă tot nu merge, scrie-ne prin paginile de contact ale site-ului și atașează fișierul engine.log, care se află în acest dosar: {folder}"

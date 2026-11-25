@@ -6248,3 +6248,18 @@ msgstr "Зберегти чати в історії"
 
 msgid "Save Documents to History"
 msgstr "Зберегти документи в історії"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "Локальний ШІ не зміг запуститися, бо пам'ять комп'ютера заповнена. Закрийте інші програми й спробуйте ще раз. Локальному ШІ потрібно {need} ГБ пам'яті, а цей комп'ютер має {have} ГБ."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "Локальний ШІ не зміг запуститися, бо відеокарта має замало пам'яті. Потрібна відеокарта з власною пам'яттю щонайменше {need} ГБ, а ця має {have} ГБ. Закрийте інші програми й спробуйте ще раз."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "Локальний ШІ не зміг запуститися, бо не може використати відеокарту. Оновіть драйвер відеокарти, перезавантажте комп'ютер і спробуйте ще раз."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "Локальний ШІ не зміг запуститися, бо його файли пошкоджено. Встановіть його знову за допомогою ReaperAccessible Installer Manager: виберіть тип NVDA Add-on, потім BeMyAssistantAccess, local AI."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "Локальний ШІ не зміг запуститися. Закрийте інші програми й спробуйте ще раз. Якщо це не допомогло, напишіть нам через сторінки контактів сайту й додайте файл engine.log, який лежить у цій папці: {folder}"

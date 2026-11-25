@@ -6249,3 +6249,18 @@ msgstr "Сохранять чаты в историю"
 
 msgid "Save Documents to History"
 msgstr "Сохранять документы в историю"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "Локальный ИИ не смог запуститься, потому что память компьютера заполнена. Закройте другие программы и попробуйте снова. Локальному ИИ нужно {need} ГБ памяти, а у этого компьютера {have} ГБ."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "Локальный ИИ не смог запуститься, потому что у видеокарты недостаточно памяти. Нужна видеокарта с собственной памятью не менее {need} ГБ, а у этой {have} ГБ. Закройте другие программы и попробуйте снова."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "Локальный ИИ не смог запуститься, потому что не может использовать видеокарту. Обновите драйвер видеокарты, перезагрузите компьютер и попробуйте снова."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "Локальный ИИ не смог запуститься, потому что его файлы повреждены. Установите его заново с помощью ReaperAccessible Installer Manager: выберите тип NVDA Add-on, затем BeMyAssistantAccess, local AI."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "Локальный ИИ не смог запуститься. Закройте другие программы и попробуйте снова. Если это не помогло, напишите нам через страницы контактов сайта и приложите файл engine.log, который находится в этой папке: {folder}"

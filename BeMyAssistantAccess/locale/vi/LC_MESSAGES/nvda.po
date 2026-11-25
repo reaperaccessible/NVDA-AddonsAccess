@@ -6214,3 +6214,18 @@ msgstr "Lưu các cuộc trò chuyện vào lịch sử"
 
 msgid "Save Documents to History"
 msgstr "Lưu tài liệu vào lịch sử"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "AI cục bộ không thể khởi động vì bộ nhớ của máy tính đã đầy. Hãy đóng các chương trình khác rồi thử lại. AI cục bộ cần {need} GB bộ nhớ, và máy tính này có {have} GB."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "AI cục bộ không thể khởi động vì card đồ họa không đủ bộ nhớ. Cần một card đồ họa có ít nhất {need} GB bộ nhớ riêng, và card này có {have} GB. Hãy đóng các chương trình khác rồi thử lại."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "AI cục bộ không thể khởi động vì không dùng được card đồ họa. Hãy cập nhật driver của card đồ họa, khởi động lại máy tính rồi thử lại."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "AI cục bộ không thể khởi động vì các tệp của nó bị hỏng. Hãy cài lại bằng ReaperAccessible Installer Manager: chọn loại NVDA Add-on, rồi BeMyAssistantAccess, local AI."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "AI cục bộ không thể khởi động. Hãy đóng các chương trình khác rồi thử lại. Nếu vẫn không được, hãy viết cho chúng tôi qua các trang liên hệ của trang web và đính kèm tệp engine.log, nằm trong thư mục này: {folder}"

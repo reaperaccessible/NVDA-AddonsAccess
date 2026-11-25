@@ -6249,3 +6249,18 @@ msgstr "Enregistrer les conversations dans l'historique"
 
 msgid "Save Documents to History"
 msgstr "Enregistrer les documents dans l'historique"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "L'IA locale n'a pas pu démarrer, car la mémoire de l'ordinateur est pleine. Fermez les autres programmes, puis réessayez. L'IA locale demande {need} Go de mémoire, et cet ordinateur en a {have} Go."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "L'IA locale n'a pas pu démarrer, car la carte graphique n'a pas assez de mémoire. Il faut une carte graphique avec au moins {need} Go de mémoire à elle, et celle-ci en a {have} Go. Fermez les autres programmes, puis réessayez."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "L'IA locale n'a pas pu démarrer, car elle ne peut pas utiliser la carte graphique. Mettez à jour le pilote de la carte graphique, redémarrez l'ordinateur, puis réessayez."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "L'IA locale n'a pas pu démarrer, car ses fichiers sont abîmés. Installez-la de nouveau avec le ReaperAccessible Installer Manager : choisissez le type Extension NVDA, puis BeMyAssistantAccess, IA locale."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "L'IA locale n'a pas pu démarrer. Fermez les autres programmes, puis réessayez. Si cela ne marche toujours pas, écrivez-nous par les pages de contact du site, et joignez le fichier engine.log, qui est dans ce dossier : {folder}"

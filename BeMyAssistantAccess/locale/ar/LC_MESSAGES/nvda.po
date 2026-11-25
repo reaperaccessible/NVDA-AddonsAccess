@@ -6248,3 +6248,18 @@ msgstr "حفظ المحادثات في السجل"
 
 msgid "Save Documents to History"
 msgstr "حفظ المستندات في السجل"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "تعذّر تشغيل الذكاء الاصطناعي المحلي لأن ذاكرة الحاسوب ممتلئة. أغلق البرامج الأخرى، ثم حاول مرة أخرى. يحتاج الذكاء الاصطناعي المحلي إلى {need} غيغابايت من الذاكرة، وفي هذا الحاسوب {have} غيغابايت."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "تعذّر تشغيل الذكاء الاصطناعي المحلي لأن ذاكرة بطاقة الرسوميات غير كافية. يلزم بطاقة رسوميات بذاكرة خاصة لا تقل عن {need} غيغابايت، وفي هذه البطاقة {have} غيغابايت. أغلق البرامج الأخرى، ثم حاول مرة أخرى."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "تعذّر تشغيل الذكاء الاصطناعي المحلي لأنه لا يستطيع استخدام بطاقة الرسوميات. حدّث برنامج تشغيل بطاقة الرسوميات، وأعد تشغيل الحاسوب، ثم حاول مرة أخرى."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "تعذّر تشغيل الذكاء الاصطناعي المحلي لأن ملفاته تالفة. ثبّته مرة أخرى بواسطة ReaperAccessible Installer Manager: اختر النوع NVDA Add-on، ثم BeMyAssistantAccess, local AI."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "تعذّر تشغيل الذكاء الاصطناعي المحلي. أغلق البرامج الأخرى، ثم حاول مرة أخرى. إذا استمرت المشكلة، فراسلنا عبر صفحات الاتصال في الموقع، وأرفق الملف engine.log الموجود في هذا المجلد: {folder}"

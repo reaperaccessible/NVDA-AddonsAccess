@@ -6249,3 +6249,18 @@ msgstr "チャットを履歴に保存する"
 
 msgid "Save Documents to History"
 msgstr "ドキュメントを履歴に保存する"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "パソコンのメモリーがいっぱいのため、ローカル AI を起動できませんでした。ほかのプログラムを閉じてから、もう一度お試しください。ローカル AI には {need} GB のメモリーが必要ですが、このパソコンは {have} GB です。"
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "グラフィックカードのメモリーが足りないため、ローカル AI を起動できませんでした。専用メモリーが {need} GB 以上のグラフィックカードが必要ですが、このカードは {have} GB です。ほかのプログラムを閉じてから、もう一度お試しください。"
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "グラフィックカードを使えないため、ローカル AI を起動できませんでした。グラフィックカードのドライバーを更新し、パソコンを再起動してから、もう一度お試しください。"
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "ファイルが壊れているため、ローカル AI を起動できませんでした。ReaperAccessible Installer Manager でもう一度インストールしてください。種類 NVDA Add-on を選び、続いて BeMyAssistantAccess, local AI を選んでください。"
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "ローカル AI を起動できませんでした。ほかのプログラムを閉じてから、もう一度お試しください。それでも動かない場合は、サイトのお問い合わせページからご連絡ください。その際、次のフォルダーにある engine.log ファイルを添付してください: {folder}"

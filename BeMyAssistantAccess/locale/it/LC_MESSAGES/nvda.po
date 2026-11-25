@@ -6250,3 +6250,18 @@ msgstr "Salva le chat nella cronologia"
 
 msgid "Save Documents to History"
 msgstr "Salva i documenti nella cronologia"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "L'IA locale non è riuscita ad avviarsi perché la memoria del computer è piena. Chiudi gli altri programmi, poi riprova. L'IA locale richiede {need} GB di memoria, e questo computer ne ha {have} GB."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "L'IA locale non è riuscita ad avviarsi perché la scheda grafica non ha abbastanza memoria. Serve una scheda grafica con almeno {need} GB di memoria propria, e questa ne ha {have} GB. Chiudi gli altri programmi, poi riprova."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "L'IA locale non è riuscita ad avviarsi perché non può usare la scheda grafica. Aggiorna il driver della scheda grafica, riavvia il computer, poi riprova."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "L'IA locale non è riuscita ad avviarsi perché i suoi file sono danneggiati. Installala di nuovo con ReaperAccessible Installer Manager: scegli il tipo NVDA Add-on, poi BeMyAssistantAccess, local AI."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "L'IA locale non è riuscita ad avviarsi. Chiudi gli altri programmi, poi riprova. Se ancora non funziona, scrivici tramite le pagine di contatto del sito e allega il file engine.log, che si trova in questa cartella: {folder}"

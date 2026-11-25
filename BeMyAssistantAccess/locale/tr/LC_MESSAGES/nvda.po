@@ -6249,3 +6249,18 @@ msgstr "Sohbetleri geçmişe kaydet"
 
 msgid "Save Documents to History"
 msgstr "Belgeleri geçmişe kaydet"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "Yerel yapay zeka başlatılamadı, çünkü bilgisayarın belleği dolu. Diğer programları kapatın, sonra yeniden deneyin. Yerel yapay zekanın {need} GB belleğe ihtiyacı var, bu bilgisayarda {have} GB var."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "Yerel yapay zeka başlatılamadı, çünkü ekran kartının belleği yetersiz. En az {need} GB kendi belleği olan bir ekran kartı gerekir, bu kartta {have} GB var. Diğer programları kapatın, sonra yeniden deneyin."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "Yerel yapay zeka başlatılamadı, çünkü ekran kartını kullanamıyor. Ekran kartının sürücüsünü güncelleyin, bilgisayarı yeniden başlatın, sonra yeniden deneyin."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "Yerel yapay zeka başlatılamadı, çünkü dosyaları bozuk. ReaperAccessible Installer Manager ile yeniden kurun: NVDA Add-on türünü, sonra BeMyAssistantAccess, local AI öğesini seçin."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "Yerel yapay zeka başlatılamadı. Diğer programları kapatın, sonra yeniden deneyin. Hâlâ çalışmazsa, sitenin iletişim sayfalarından bize yazın ve bu klasördeki engine.log dosyasını ekleyin: {folder}"

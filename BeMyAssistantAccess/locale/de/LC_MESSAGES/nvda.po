@@ -6250,3 +6250,18 @@ msgstr "Chats im Verlauf speichern"
 
 msgid "Save Documents to History"
 msgstr "Dokumente im Verlauf speichern"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "Die lokale KI konnte nicht starten, weil der Arbeitsspeicher des Computers voll ist. Schließen Sie die anderen Programme und versuchen Sie es erneut. Die lokale KI braucht {need} GB Arbeitsspeicher, und dieser Computer hat {have} GB."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "Die lokale KI konnte nicht starten, weil die Grafikkarte nicht genug Speicher hat. Sie braucht eine Grafikkarte mit mindestens {need} GB eigenem Speicher, und diese hat {have} GB. Schließen Sie die anderen Programme und versuchen Sie es erneut."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "Die lokale KI konnte nicht starten, weil sie die Grafikkarte nicht nutzen kann. Aktualisieren Sie den Treiber der Grafikkarte, starten Sie den Computer neu und versuchen Sie es erneut."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "Die lokale KI konnte nicht starten, weil ihre Dateien beschädigt sind. Installieren Sie sie erneut mit dem ReaperAccessible Installer Manager: Wählen Sie den Typ NVDA Add-on, dann BeMyAssistantAccess, local AI."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "Die lokale KI konnte nicht starten. Schließen Sie die anderen Programme und versuchen Sie es erneut. Wenn es immer noch nicht geht, schreiben Sie uns über die Kontaktseiten der Website und hängen Sie die Datei engine.log an, die in diesem Ordner liegt: {folder}"

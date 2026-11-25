@@ -6241,3 +6241,18 @@ msgstr "Simpan obrolan ke riwayat"
 
 msgid "Save Documents to History"
 msgstr "Simpan dokumen ke riwayat"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "AI lokal tidak dapat dimulai karena memori komputer penuh. Tutup program lain, lalu coba lagi. AI lokal memerlukan memori {need} GB, dan komputer ini memiliki {have} GB."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "AI lokal tidak dapat dimulai karena kartu grafis tidak memiliki cukup memori. Diperlukan kartu grafis dengan memori sendiri minimal {need} GB, dan kartu ini memiliki {have} GB. Tutup program lain, lalu coba lagi."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "AI lokal tidak dapat dimulai karena tidak dapat memakai kartu grafis. Perbarui driver kartu grafis, mulai ulang komputer, lalu coba lagi."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "AI lokal tidak dapat dimulai karena berkasnya rusak. Pasang lagi dengan ReaperAccessible Installer Manager: pilih jenis NVDA Add-on, lalu BeMyAssistantAccess, local AI."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "AI lokal tidak dapat dimulai. Tutup program lain, lalu coba lagi. Jika masih tidak berhasil, tulis kepada kami melalui halaman kontak situs, dan lampirkan berkas engine.log yang ada di folder ini: {folder}"

@@ -6249,3 +6249,18 @@ msgstr "Zapisuj czaty w historii"
 
 msgid "Save Documents to History"
 msgstr "Zapisuj dokumenty w historii"
+
+msgid "The local AI could not start because the computer's memory is full. Close the other programs, then try again. The local AI needs {need} GB of memory, and this computer has {have} GB."
+msgstr "Lokalna SI nie mogła się uruchomić, ponieważ pamięć komputera jest pełna. Zamknij inne programy i spróbuj ponownie. Lokalna SI potrzebuje {need} GB pamięci, a ten komputer ma {have} GB."
+
+msgid "The local AI could not start because the graphics card does not have enough memory. It needs a graphics card with at least {need} GB of its own memory, and this one has {have} GB. Close the other programs, then try again."
+msgstr "Lokalna SI nie mogła się uruchomić, ponieważ karta graficzna ma za mało pamięci. Potrzebna jest karta graficzna z co najmniej {need} GB własnej pamięci, a ta ma {have} GB. Zamknij inne programy i spróbuj ponownie."
+
+msgid "The local AI could not start because it cannot use the graphics card. Update the driver of the graphics card, restart the computer, then try again."
+msgstr "Lokalna SI nie mogła się uruchomić, ponieważ nie może użyć karty graficznej. Zaktualizuj sterownik karty graficznej, uruchom ponownie komputer i spróbuj jeszcze raz."
+
+msgid "The local AI could not start because its files are damaged. Install it again with the ReaperAccessible Installer Manager: choose the type NVDA Add-on, then BeMyAssistantAccess, local AI."
+msgstr "Lokalna SI nie mogła się uruchomić, ponieważ jej pliki są uszkodzone. Zainstaluj ją ponownie za pomocą ReaperAccessible Installer Manager: wybierz typ NVDA Add-on, a potem BeMyAssistantAccess, local AI."
+
+msgid "The local AI could not start. Close the other programs, then try again. If it still does not work, write to us through the contact pages of the site, and attach the file engine.log, which is in this folder: {folder}"
+msgstr "Lokalna SI nie mogła się uruchomić. Zamknij inne programy i spróbuj ponownie. Jeśli nadal nie działa, napisz do nas przez strony kontaktowe witryny i dołącz plik engine.log, który jest w tym folderze: {folder}"

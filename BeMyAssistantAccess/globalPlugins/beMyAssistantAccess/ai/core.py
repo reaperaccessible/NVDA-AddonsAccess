@@ -527,6 +527,12 @@ class AIHandler:
 			res = OpenAIHandler.call(prompt, attachments, json_mode, task)
 
 		elapsed_ms = int((time.time() - start_time) * 1000)
+		if is_ai_error(res) and nvda_config.conf["BeMyAssistantAccess"].get("local_ai", False):
+			from ..dialogs.simple_settings import failure_message
+			reason = failure_message()
+			if reason:
+				log.warning(f"Local AI stopped by itself: {res}")
+				res = "ERROR:" + reason
 		if is_ai_error(res):
 			log.warning(f"AI call error ({elapsed_ms} ms): {res}")
 		else:
