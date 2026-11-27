@@ -1834,7 +1834,7 @@ msgstr "पूछें:"
 #: addon\globalPlugins\visionAssistant\dialogs\chat_dialog.py:124
 #: addon\globalPlugins\visionAssistant\dialogs\chat_dialog.py:381
 msgid "&Attach File"
-msgstr "&Attach File"
+msgstr "फ़ाइल &जोड़ें"
 
 #. Translators: Label for attach button when files are attached
 #: addon\globalPlugins\visionAssistant\dialogs\chat_dialog.py:128

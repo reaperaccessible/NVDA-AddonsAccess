@@ -1225,7 +1225,7 @@ msgstr "Affiche la liste des commandes séquentielles disponibles."
 #: addon\globalPlugins\visionAssistant\__init__.py:334
 #: addon\globalPlugins\visionAssistant\features\operator_captcha.py:199
 msgid "Asks the AI Operator to perform an action or describe the screen."
-msgstr "Asks the AI Operator to perform an action or describe the screen."
+msgstr "Demande à l'Opérateur IA de faire une action ou de décrire l'écran."
 
 #. Translators: Command layer help description for E (interactive UI explorer).
 #. Translators: Script description for 'Shows a list of available commands in the layer.' in Input Gestures dialog.
@@ -3039,7 +3039,7 @@ msgstr "Effacer tous les documents récents ?"
 #: addon\globalPlugins\visionAssistant\dialogs\live_assistant.py:30
 #, python-brace-format
 msgid "{name} - Live Assistant"
-msgstr "{name} - Live Assistant"
+msgstr "{name} - Assistant Live"
 
 #. Translators: Label for the conversation history area in the Live Assistant window.
 #: addon\globalPlugins\visionAssistant\dialogs\live_assistant.py:46
@@ -3093,7 +3093,7 @@ msgstr "&Fin"
 #. Translators: Message shown in conversation log when voice is changed
 #: addon\globalPlugins\visionAssistant\dialogs\live_assistant.py:185
 msgid "--- Changing voice, reconnecting... ---"
-msgstr "--- Changing voice, reconnecting... ---"
+msgstr "--- Changement de voix, reconnexion... ---"
 
 #. Translators: Message shown in conversation log when thinking depth is changed
 #: addon\globalPlugins\visionAssistant\dialogs\live_assistant.py:200
