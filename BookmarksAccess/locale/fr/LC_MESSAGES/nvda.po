@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BookmarksAccess\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Adds the current web page to BookmarksAccess, and copies its address"
+msgstr "Ajoute la page web affichée à BookmarksAccess, et copie son adresse"
+
+msgid "Opens BookmarksAccess, your list of bookmarks"
+msgstr "Ouvre BookmarksAccess, votre liste de favoris"
+
+msgid "My order"
+msgstr "Mon ordre"
+
+msgid "Name, from A to Z"
+msgstr "Nom, de A à Z"
+
+msgid "Name, from Z to A"
+msgstr "Nom, de Z à A"
+
+msgid "Date added, newest first"
+msgstr "Date d'ajout, les plus récentes d'abord"
+
+msgid "Date added, oldest first"
+msgstr "Date d'ajout, les plus anciennes d'abord"
+
+msgid "Most opened first"
+msgstr "Les plus ouvertes d'abord"
+
+msgid "Bookmarks bar"
+msgstr "Barre de favoris"
+
+msgid "Bookmarks menu"
+msgstr "Menu des marque-pages"
+
+msgid "Other bookmarks"
+msgstr "Autres favoris"
+
+msgid "Mobile bookmarks"
+msgstr "Favoris du mobile"
+
+msgid "Your list is empty. Import the bookmarks of your web browsers now?"
+msgstr "Votre liste est vide. Importer maintenant les favoris de vos navigateurs web ?"
+
+msgid "&Name:"
+msgstr "&Nom :"
+
+msgid "&Address:"
+msgstr "&Adresse :"
+
+msgid "&Folder:"
+msgstr "&Dossier :"
+
+msgid "New folder"
+msgstr "Nouveau dossier"
+
+msgid "Name of the new folder:"
+msgstr "Nom du nouveau dossier :"
+
+msgid "Open in the browser"
+msgstr "Ouvrir dans le navigateur"
+
+msgid "Enter"
+msgstr "Entrée"
+
+msgid "Add an address"
+msgstr "Ajouter une adresse"
+
+msgid "Control+N"
+msgstr "Contrôle+N"
+
+msgid "Control+Shift+N"
+msgstr "Contrôle+Maj+N"
+
+msgid "Rename"
+msgstr "Renommer"
+
+msgid "F2"
+msgstr "F2"
+
+msgid "Edit the address"
+msgstr "Modifier l'adresse"
+
+msgid "Control+E"
+msgstr "Contrôle+E"
+
+msgid "Move to a folder"
+msgstr "Déplacer dans un dossier"
+
+msgid "Control+M"
+msgstr "Contrôle+M"
+
+msgid "Select the next item too"
+msgstr "Sélectionner aussi l'élément suivant"
+
+msgid "Shift+Down arrow"
+msgstr "Maj+Flèche bas"
+
+msgid "Select the previous item too"
+msgstr "Sélectionner aussi l'élément précédent"
+
+msgid "Shift+Up arrow"
+msgstr "Maj+Flèche haut"
+
+msgid "Cut"
+msgstr "Couper"
+
+msgid "Control+X"
+msgstr "Contrôle+X"
+
+msgid "Paste into this folder"
+msgstr "Coller dans ce dossier"
+
+msgid "Control+V"
+msgstr "Contrôle+V"
+
+msgid "Copy the address"
+msgstr "Copier l'adresse"
+
+msgid "Control+C"
+msgstr "Contrôle+C"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Del"
+msgstr "Suppr"
+
+msgid "Sort by"
+msgstr "Trier par"
+
+msgid "Alt+S"
+msgstr "Alt+T"
+
+msgid "Import from the browsers"
+msgstr "Importer des navigateurs"
+
+msgid "Control+I"
+msgstr "Contrôle+I"
+
+msgid "List of keys"
+msgstr "Liste des touches"
+
+msgid "Control+Shift+H"
+msgstr "Contrôle+Maj+H"
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "Escape"
+msgstr "Échap"
+
+msgid "The list is empty."
+msgstr "La liste est vide."
+
+msgid "New name:"
+msgstr "Nouveau nom :"
+
+msgid "Top of the list"
+msgstr "Haut de la liste"
+
+msgid "Deleted"
+msgstr "Supprimé"
+
+msgid "Importing..."
+msgstr "Importation..."
+
+msgid "The list could not be saved."
+msgstr "La liste n'a pas pu être enregistrée."
+
+msgid "First, {name}"
+msgstr "Premier, {name}"
+
+msgid "Last, {name}"
+msgstr "Dernier, {name}"
+
+msgid "Add"
+msgstr "Ajouter"
+
+msgid "Type the address first."
+msgstr "Tapez d'abord l'adresse."
+
+msgid "Keys of BookmarksAccess"
+msgstr "Touches de BookmarksAccess"
+
+msgid "&Close"
+msgstr "&Fermer"
+
+msgid "&Open"
+msgstr "&Ouvrir"
+
+msgid "&Add an address..."
+msgstr "&Ajouter une adresse..."
+
+msgid "&Import from the browsers"
+msgstr "&Importer des navigateurs"
+
+msgid "This is a folder, not an address."
+msgstr "C'est un dossier, pas une adresse."
+
+msgid "{count} items moved to {folder}"
+msgstr "{count} éléments déplacés dans {folder}"
+
+msgid "Nothing to paste. Cut with Control+X first."
+msgstr "Rien à coller. Coupez d'abord avec Contrôle+X."
+
+msgid "Nothing moved: the items are already there."
+msgstr "Rien n'a été déplacé : les éléments y sont déjà."
+
+msgid "Address copied"
+msgstr "Adresse copiée"
+
+msgid "No bookmarks found in Chrome, Edge, Brave or Firefox."
+msgstr "Aucun favori trouvé dans Chrome, Edge, Brave ou Firefox."
+
+msgid "No new address."
+msgstr "Aucune nouvelle adresse."
+
+msgid "Advanced options of BookmarksAccess"
+msgstr "Options avancées de BookmarksAccess"
+
+msgid "Not in a web browser."
+msgstr "Pas dans un navigateur web."
+
+msgid "No web page found. Move to the page first."
+msgstr "Aucune page web trouvée. Allez d'abord dans la page."
+
+msgid "New fol&der..."
+msgstr "Nouveau &dossier..."
+
+msgid "&Keys of the window:"
+msgstr "&Touches de la fenêtre :"
+
+msgid "NVDA+Control+Shift+U"
+msgstr "NVDA+Contrôle+Maj+U"
+
+msgid "The Applications key shows the commands; Control+Shift+H, the list of keys."
+msgstr "La touche Applications montre les commandes ; Contrôle+Maj+H, la liste des touches."
+
+msgid "&Sort by:"
+msgstr "&Trier par :"
+
+msgid "&Bookmarks:"
+msgstr "Fa&voris :"
+
+msgid "{name}, selected"
+msgstr "{name}, sélectionné"
+
+msgid "This address could not be opened."
+msgstr "Cette adresse n'a pas pu être ouverte."
+
+msgid "Moved to {folder}"
+msgstr "Déplacé dans {folder}"
+
+msgid "Move {name}"
+msgstr "Déplacer {name}"
+
+msgid "Move {count} items"
+msgstr "Déplacer {count} éléments"
+
+msgid "Delete the {count} selected items, and everything inside the folders?"
+msgstr "Supprimer les {count} éléments sélectionnés, et tout ce que contiennent les dossiers ?"
+
+msgid "&Copy the address to the clipboard when adding the current page"
+msgstr "&Copier l'adresse dans le presse-papiers en ajoutant la page affichée"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Vérifier a&utomatiquement les mises à jour au démarrage de NVDA"
+
+msgid "Check for updates &now"
+msgstr "Vérifier les mises à jour &maintenant"
+
+msgid "&Advanced options..."
+msgstr "&Options avancées..."
+
+msgid "Address copied. Already in your bookmarks."
+msgstr "Adresse copiée. Déjà dans vos favoris."
+
+msgid "Already in your bookmarks."
+msgstr "Déjà dans vos favoris."
+
+msgid "{name} (empty)"
+msgstr "{name} (vide)"
+
+msgid "{count} items cut"
+msgstr "{count} éléments coupés"
+
+msgid "Delete {name}?"
+msgstr "Supprimer {name} ?"
+
+msgid "Delete the folder {name} and the {count} addresses inside it?"
+msgstr "Supprimer le dossier {name} et les {count} adresses qu'il contient ?"
+
+msgid "Delete the folder {name}?"
+msgstr "Supprimer le dossier {name} ?"
+
+msgid "1 new address, from {browsers}."
+msgstr "1 nouvelle adresse, de {browsers}."
+
+msgid "{count} new addresses, from {browsers}."
+msgstr "{count} nouvelles adresses, de {browsers}."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "La mise à jour est installée. NVDA doit redémarrer pour terminer. Redémarrer maintenant ?"
+
+msgid "Downloading the update..."
+msgstr "Téléchargement de la mise à jour..."
+
+msgid "Checking for updates..."
+msgstr "Recherche de mises à jour..."
+
+msgid "{name} update"
+msgstr "Mise à jour de {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} est disponible. Vous avez la version {current}. Voulez-vous l'installer maintenant ?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "La mise à jour est déjà installée. Redémarrez NVDA pour terminer."
+
+msgid "The update could not be downloaded."
+msgstr "La mise à jour n'a pas pu être téléchargée."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Téléchargement de la mise à jour : {percent} %"
+
+msgid "The update could not be installed."
+msgstr "La mise à jour n'a pas pu être installée."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Impossible de vérifier les mises à jour. Vérifiez votre connexion Internet."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} est à jour (version {version})."

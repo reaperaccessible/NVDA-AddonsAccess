@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookmarksAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>BookmarksAccess</h1>
+<p>BookmarksAccess gom dấu trang của bạn từ Chrome, Edge, Brave và Firefox vào một danh sách riêng. Bạn sắp xếp danh sách này theo thư mục, trong một cửa sổ được làm cho NVDA.</p>
+<p>BookmarksAccess chỉ đọc dấu trang của các trình duyệt: nó không bao giờ thay đổi chúng. Những gì bạn làm trong danh sách của nó chỉ nằm trong danh sách của nó.</p>
+
+<h2>Phím tắt</h2>
+<ul>
+<li><strong>NVDA+Control+Shift+U:</strong> trong Chrome, Edge, Brave hoặc Firefox, thêm trang bạn đang đọc vào danh sách của bạn. Trong bất kỳ chương trình nào khác, NVDA nói "Không ở trong trình duyệt web."</li>
+</ul>
+<p>Để mở cửa sổ dấu trang của bạn, vào menu NVDA, Công cụ, BookmarksAccess. Bạn cũng có thể đặt cho nó một phím tắt riêng: menu NVDA, Tùy chọn, Cử chỉ đầu vào, danh mục BookmarksAccess, "Mở BookmarksAccess, danh sách dấu trang của bạn". Bạn có thể đổi NVDA+Control+Shift+U ở cùng chỗ đó.</p>
+
+<h2>Thêm trang bạn đang đọc</h2>
+<ol>
+<li>Trong trình duyệt web, mở trang.</li>
+<li>Nhấn NVDA+Control+Shift+U. NVDA nói "Đã sao chép địa chỉ": địa chỉ của trang giờ nằm trong clipboard, sẵn sàng để dán.</li>
+<li>Cửa sổ Thêm mở ra. Tên và địa chỉ của trang đã được điền sẵn, và bạn đang ở trong danh sách thư mục. Chọn thư mục bằng các phím mũi tên, rồi nhấn Enter.</li>
+</ol>
+<p>Trang được thêm vào, và cửa sổ dấu trang của bạn hiển thị nó. Lần sau, danh sách thư mục bắt đầu ở thư mục bạn chọn lần trước.</p>
+<p>Nút "Thư mục mới" của cửa sổ Thêm tạo ngay một thư mục cho trang.</p>
+<p>Nếu trang đã có trong danh sách của bạn, NVDA nói "Đã sao chép địa chỉ. Đã có trong dấu trang của bạn." và cửa sổ cho thấy nó nằm ở đâu.</p>
+<p>Địa chỉ được đọc từ chính trang: thanh địa chỉ không bị đụng đến. Nếu tiêu điểm không ở trong trang, ví dụ ở thanh địa chỉ, BookmarksAccess lấy trang đang hiển thị trong cửa sổ. Nếu không tìm thấy trang nào, NVDA nói "Không tìm thấy trang web. Hãy chuyển đến trang trước."</p>
+
+<h2>Cửa sổ dấu trang của bạn</h2>
+<p>Cửa sổ hiển thị một cây: các thư mục của bạn, và bên trong chúng là các địa chỉ. Di chuyển bằng mũi tên lên và xuống. Mũi tên phải mở một thư mục, mũi tên trái đóng nó. Ở mục đầu tiên, mũi tên lên nói "Đầu tiên," kèm tên của nó; ở mục cuối cùng, mũi tên xuống nói "Cuối cùng,". Một thư mục không có gì bên trong nói "trống" sau tên của nó.</p>
+<p>Phím Ứng dụng, hoặc Shift+F10, hiện các lệnh cùng với phím của chúng. Mỗi lệnh cũng chạy bằng phím của nó, ngay trong cây:</p>
+<ul>
+<li><strong>Mở trong trình duyệt (Enter):</strong> mở địa chỉ trong trình duyệt web mặc định của bạn. Trên một thư mục, Enter mở hoặc đóng nó.</li>
+<li><strong>Thêm địa chỉ (Control+N):</strong> gõ tên và địa chỉ, rồi chọn thư mục. Địa chỉ được đưa vào thư mục đã chọn, hoặc vào thư mục của địa chỉ đã chọn.</li>
+<li><strong>Thư mục mới (Control+Shift+N):</strong> tạo một thư mục bên trong thư mục đã chọn.</li>
+<li><strong>Đổi tên (F2):</strong> đổi tên của một thư mục hoặc của một địa chỉ.</li>
+<li><strong>Sửa địa chỉ (Control+E):</strong> đổi địa chỉ của một trang web.</li>
+<li><strong>Chuyển vào thư mục (Control+M):</strong> hiện danh sách các thư mục của bạn; chọn nơi mục sẽ đến, rồi nhấn Enter. Một thư mục được chuyển cùng với mọi thứ bên trong nó.</li>
+<li><strong>Chọn thêm mục tiếp theo (Shift+Mũi tên xuống):</strong> chọn mục bạn đang ở và mục tiếp theo, rồi chuyển đến mục tiếp theo. Nhấn lại để thêm mục khác. Khi đó Cắt, Chuyển vào thư mục và Xóa áp dụng cho mọi mục đã chọn. Di chuyển chỉ bằng các phím mũi tên sẽ kết thúc việc chọn.</li>
+<li><strong>Chọn thêm mục trước đó (Shift+Mũi tên lên):</strong> tương tự, đi lên.</li>
+<li><strong>Cắt (Control+X):</strong> lấy các mục đã chọn, hoặc mục bạn đang ở. Chúng vẫn ở chỗ cũ cho đến khi bạn dán.</li>
+<li><strong>Dán vào thư mục này (Control+V):</strong> chuyển các mục đã cắt vào thư mục đang chọn, hoặc vào thư mục của địa chỉ đang chọn.</li>
+<li><strong>Sao chép địa chỉ (Control+C):</strong> sao chép địa chỉ vào clipboard.</li>
+<li><strong>Xóa (Delete):</strong> hỏi trước, rồi mới xóa. Xóa một thư mục sẽ xóa mọi thứ bên trong nó.</li>
+<li><strong>Sắp xếp theo (Alt+S):</strong> đi đến danh sách Sắp xếp theo.</li>
+<li><strong>Nhập từ các trình duyệt (Control+I):</strong> xem phần tiếp theo.</li>
+<li><strong>Danh sách phím (Control+Shift+H):</strong> hiện tất cả các phím này. F1 cũng hiện nó.</li>
+<li><strong>Đóng (Escape):</strong> đóng cửa sổ.</li>
+</ul>
+<p>Các nút ở cuối cửa sổ thực hiện những lệnh thông dụng nhất: Mở, Thêm địa chỉ, Nhập từ các trình duyệt và Đóng.</p>
+<p>"Đầu danh sách", trong các danh sách thư mục, nghĩa là bên ngoài mọi thư mục.</p>
+<p>Danh sách "Sắp xếp theo", ngay trước cây, sắp xếp từng thư mục: Thứ tự của tôi, Tên từ A đến Z, Tên từ Z đến A, Ngày thêm (mới nhất hoặc cũ nhất trước), hoặc Mở nhiều nhất trước, đếm các địa chỉ được mở từ BookmarksAccess. Trong mỗi thư mục, các thư mục luôn đứng trước. Sắp xếp chỉ thay đổi những gì bạn thấy: khi quay lại "Thứ tự của tôi", cách bạn sắp đặt vẫn như cũ. Add-on nhớ lựa chọn của bạn.</p>
+
+<h2>Nhập dấu trang của bạn</h2>
+<p>Lần đầu bạn mở cửa sổ, danh sách của bạn trống: BookmarksAccess hỏi có nhập dấu trang từ các trình duyệt web của bạn không. Bạn có thể nhập lại bất cứ lúc nào bằng Control+I.</p>
+<p>BookmarksAccess tìm dấu trang của Chrome, Edge, Brave và Firefox, trong mọi hồ sơ. Mỗi trình duyệt có một thư mục riêng, chẳng hạn "Chrome" hoặc "Firefox", và các thư mục của nó được giữ bên trong: thanh dấu trang, dấu trang khác, và các thư mục của chính bạn. Nếu một trình duyệt có nhiều hồ sơ, mỗi hồ sơ có thư mục riêng, mang tên của hồ sơ.</p>
+<p>Cuối cùng, NVDA nói đã thêm bao nhiêu địa chỉ, ví dụ "120 địa chỉ mới, từ Chrome, Firefox."</p>
+<p>Nhập lại chỉ thêm các địa chỉ mới:</p>
+<ul>
+<li>một địa chỉ đã có trong danh sách của bạn không bao giờ được thêm hai lần, kể cả khi nó có trong nhiều trình duyệt;</li>
+<li>những gì bạn đã đổi tên hoặc chuyển vẫn giữ nguyên như bạn để; một địa chỉ mới vào thư mục của nó, kể cả khi bạn đã đổi tên hoặc chuyển thư mục đó;</li>
+<li>một địa chỉ bạn đã xóa sẽ không quay lại.</li>
+</ul>
+<p>Với Firefox, BookmarksAccess đọc bản sao dấu trang mà Firefox tự lưu, thường mỗi ngày một lần khi bạn dùng nó. Vì vậy, một dấu trang thêm trong Firefox hôm nay có thể chỉ đến ở lần nhập sau.</p>
+<p>Mỗi địa chỉ giữ ngày bạn đánh dấu nó trong trình duyệt. Một địa chỉ đã có trong danh sách sẽ nhận ngày đó ở lần nhập tiếp theo. Nếu bạn xóa hết, lần nhập tiếp theo sẽ đưa lại mọi địa chỉ, kể cả những địa chỉ bạn đã xóa.</p>
+
+<h2>Cài đặt</h2>
+<p>Các cài đặt nằm trong menu NVDA, Tùy chọn, Cài đặt, danh mục BookmarksAccess:</p>
+<ul>
+<li><strong>Tự động kiểm tra bản cập nhật khi NVDA khởi động</strong> và <strong>Kiểm tra bản cập nhật ngay:</strong> xem phần tiếp theo.</li>
+<li><strong>Tùy chọn nâng cao...:</strong> một tùy chọn, "Sao chép địa chỉ vào clipboard khi thêm trang đang mở", được chọn theo mặc định. Khi bỏ chọn, NVDA+Control+Shift+U thêm trang mà không thay đổi clipboard.</li>
+</ul>
+
+<h2>Cập nhật</h2>
+<p>Khi NVDA khởi động, BookmarksAccess kiểm tra xem có phiên bản mới không. Nếu có, nó đề nghị cài đặt, rồi khởi động lại NVDA. Nút "Kiểm tra bản cập nhật ngay" thực hiện cùng việc kiểm tra đó ngay lập tức.</p>
+
+<h2>Nơi danh sách của bạn được lưu</h2>
+<p>Danh sách của bạn là một tệp tên bookmarksAccess.json, trong thư mục cấu hình của NVDA, kèm một bản sao của trạng thái trước đó tên bookmarksAccess.json.bak. Nó được lưu sau mỗi thay đổi.</p>
+
+<h2>Quyền riêng tư</h2>
+<p>Dấu trang của bạn ở lại trên máy tính của bạn: không có gì được gửi qua Internet. Kết nối Internet duy nhất của add-on là việc kiểm tra bản cập nhật.</p>
+
+<h2>Ghi công</h2>
+<p>BookmarksAccess do ReaperAccessible tạo ra. Đây là phần mềm tự do, theo Giấy phép Công cộng GNU, phiên bản 3.</p>
+</body>
+</html>

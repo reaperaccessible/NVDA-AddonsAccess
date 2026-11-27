@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BookmarksAccess\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Adds the current web page to BookmarksAccess, and copies its address"
+msgstr "Adiciona a página da web atual ao BookmarksAccess e copia o endereço dela"
+
+msgid "Opens BookmarksAccess, your list of bookmarks"
+msgstr "Abre o BookmarksAccess, sua lista de favoritos"
+
+msgid "My order"
+msgstr "Minha ordem"
+
+msgid "Name, from A to Z"
+msgstr "Nome, de A a Z"
+
+msgid "Name, from Z to A"
+msgstr "Nome, de Z a A"
+
+msgid "Date added, newest first"
+msgstr "Data de adição, mais recentes primeiro"
+
+msgid "Date added, oldest first"
+msgstr "Data de adição, mais antigos primeiro"
+
+msgid "Most opened first"
+msgstr "Mais abertos primeiro"
+
+msgid "Bookmarks bar"
+msgstr "Barra de favoritos"
+
+msgid "Bookmarks menu"
+msgstr "Menu de favoritos"
+
+msgid "Other bookmarks"
+msgstr "Outros favoritos"
+
+msgid "Mobile bookmarks"
+msgstr "Favoritos do celular"
+
+msgid "Your list is empty. Import the bookmarks of your web browsers now?"
+msgstr "Sua lista está vazia. Importar agora os favoritos dos seus navegadores da web?"
+
+msgid "&Name:"
+msgstr "&Nome:"
+
+msgid "&Address:"
+msgstr "&Endereço:"
+
+msgid "&Folder:"
+msgstr "&Pasta:"
+
+msgid "New folder"
+msgstr "Nova pasta"
+
+msgid "Name of the new folder:"
+msgstr "Nome da nova pasta:"
+
+msgid "Open in the browser"
+msgstr "Abrir no navegador"
+
+msgid "Enter"
+msgstr "Enter"
+
+msgid "Add an address"
+msgstr "Adicionar um endereço"
+
+msgid "Control+N"
+msgstr "Control+N"
+
+msgid "Control+Shift+N"
+msgstr "Control+Shift+N"
+
+msgid "Rename"
+msgstr "Renomear"
+
+msgid "F2"
+msgstr "F2"
+
+msgid "Edit the address"
+msgstr "Editar o endereço"
+
+msgid "Control+E"
+msgstr "Control+E"
+
+msgid "Move to a folder"
+msgstr "Mover para uma pasta"
+
+msgid "Control+M"
+msgstr "Control+M"
+
+msgid "Select the next item too"
+msgstr "Selecionar também o próximo item"
+
+msgid "Shift+Down arrow"
+msgstr "Shift+Seta para baixo"
+
+msgid "Select the previous item too"
+msgstr "Selecionar também o item anterior"
+
+msgid "Shift+Up arrow"
+msgstr "Shift+Seta para cima"
+
+msgid "Cut"
+msgstr "Recortar"
+
+msgid "Control+X"
+msgstr "Control+X"
+
+msgid "Paste into this folder"
+msgstr "Colar nesta pasta"
+
+msgid "Control+V"
+msgstr "Control+V"
+
+msgid "Copy the address"
+msgstr "Copiar o endereço"
+
+msgid "Control+C"
+msgstr "Control+C"
+
+msgid "Delete"
+msgstr "Excluir"
+
+msgid "Del"
+msgstr "Delete"
+
+msgid "Sort by"
+msgstr "Ordenar por"
+
+msgid "Alt+S"
+msgstr "Alt+O"
+
+msgid "Import from the browsers"
+msgstr "Importar dos navegadores"
+
+msgid "Control+I"
+msgstr "Control+I"
+
+msgid "List of keys"
+msgstr "Lista de teclas"
+
+msgid "Control+Shift+H"
+msgstr "Control+Shift+H"
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "Escape"
+msgstr "Esc"
+
+msgid "The list is empty."
+msgstr "A lista está vazia."
+
+msgid "New name:"
+msgstr "Novo nome:"
+
+msgid "Top of the list"
+msgstr "Início da lista"
+
+msgid "Deleted"
+msgstr "Excluído"
+
+msgid "Importing..."
+msgstr "Importando..."
+
+msgid "The list could not be saved."
+msgstr "Não foi possível salvar a lista."
+
+msgid "First, {name}"
+msgstr "Primeiro, {name}"
+
+msgid "Last, {name}"
+msgstr "Último, {name}"
+
+msgid "Add"
+msgstr "Adicionar"
+
+msgid "Type the address first."
+msgstr "Digite primeiro o endereço."
+
+msgid "Keys of BookmarksAccess"
+msgstr "Teclas do BookmarksAccess"
+
+msgid "&Close"
+msgstr "&Fechar"
+
+msgid "&Open"
+msgstr "&Abrir"
+
+msgid "&Add an address..."
+msgstr "A&dicionar um endereço..."
+
+msgid "&Import from the browsers"
+msgstr "&Importar dos navegadores"
+
+msgid "This is a folder, not an address."
+msgstr "Isto é uma pasta, não um endereço."
+
+msgid "{count} items moved to {folder}"
+msgstr "{count} itens movidos para {folder}"
+
+msgid "Nothing to paste. Cut with Control+X first."
+msgstr "Nada para colar. Recorte primeiro com Control+X."
+
+msgid "Nothing moved: the items are already there."
+msgstr "Nada foi movido: os itens já estão aí."
+
+msgid "Address copied"
+msgstr "Endereço copiado"
+
+msgid "No bookmarks found in Chrome, Edge, Brave or Firefox."
+msgstr "Nenhum favorito encontrado no Chrome, Edge, Brave ou Firefox."
+
+msgid "No new address."
+msgstr "Nenhum endereço novo."
+
+msgid "Advanced options of BookmarksAccess"
+msgstr "Opções avançadas do BookmarksAccess"
+
+msgid "Not in a web browser."
+msgstr "Não está em um navegador da web."
+
+msgid "No web page found. Move to the page first."
+msgstr "Nenhuma página da web encontrada. Vá primeiro até a página."
+
+msgid "New fol&der..."
+msgstr "Nova pa&sta..."
+
+msgid "&Keys of the window:"
+msgstr "&Teclas da janela:"
+
+msgid "NVDA+Control+Shift+U"
+msgstr "NVDA+Control+Shift+U"
+
+msgid "The Applications key shows the commands; Control+Shift+H, the list of keys."
+msgstr "A tecla Aplicativos mostra os comandos; Control+Shift+H, a lista de teclas."
+
+msgid "&Sort by:"
+msgstr "&Ordenar por:"
+
+msgid "&Bookmarks:"
+msgstr "Fa&voritos:"
+
+msgid "{name}, selected"
+msgstr "{name}, selecionado"
+
+msgid "This address could not be opened."
+msgstr "Não foi possível abrir este endereço."
+
+msgid "Moved to {folder}"
+msgstr "Movido para {folder}"
+
+msgid "Move {name}"
+msgstr "Mover {name}"
+
+msgid "Move {count} items"
+msgstr "Mover {count} itens"
+
+msgid "Delete the {count} selected items, and everything inside the folders?"
+msgstr "Excluir os {count} itens selecionados e tudo o que há dentro das pastas?"
+
+msgid "&Copy the address to the clipboard when adding the current page"
+msgstr "&Copiar o endereço para a área de transferência ao adicionar a página atual"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Verificar &atualizações automaticamente ao iniciar o NVDA"
+
+msgid "Check for updates &now"
+msgstr "Verificar atualizações a&gora"
+
+msgid "&Advanced options..."
+msgstr "&Opções avançadas..."
+
+msgid "Address copied. Already in your bookmarks."
+msgstr "Endereço copiado. Já está nos seus favoritos."
+
+msgid "Already in your bookmarks."
+msgstr "Já está nos seus favoritos."
+
+msgid "{name} (empty)"
+msgstr "{name} (vazia)"
+
+msgid "{count} items cut"
+msgstr "{count} itens recortados"
+
+msgid "Delete {name}?"
+msgstr "Excluir {name}?"
+
+msgid "Delete the folder {name} and the {count} addresses inside it?"
+msgstr "Excluir a pasta {name} e os {count} endereços que ela contém?"
+
+msgid "Delete the folder {name}?"
+msgstr "Excluir a pasta {name}?"
+
+msgid "1 new address, from {browsers}."
+msgstr "1 endereço novo, de {browsers}."
+
+msgid "{count} new addresses, from {browsers}."
+msgstr "{count} endereços novos, de {browsers}."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "A atualização está instalada. O NVDA precisa reiniciar para concluir. Reiniciar agora?"
+
+msgid "Downloading the update..."
+msgstr "Baixando a atualização..."
+
+msgid "Checking for updates..."
+msgstr "Verificando atualizações..."
+
+msgid "{name} update"
+msgstr "Atualização do {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} está disponível. Você tem a versão {current}. Deseja instalar agora?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "A atualização já está instalada. Reinicie o NVDA para concluir."
+
+msgid "The update could not be downloaded."
+msgstr "Não foi possível baixar a atualização."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Baixando a atualização: {percent}%"
+
+msgid "The update could not be installed."
+msgstr "Não foi possível instalar a atualização."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Não foi possível verificar as atualizações. Confira sua conexão com a Internet."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} está atualizado (versão {version})."

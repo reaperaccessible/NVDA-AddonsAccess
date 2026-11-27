@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookmarksAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>BookmarksAccess</h1>
+<p>BookmarksAccess reúne tus favoritos de Chrome, Edge, Brave y Firefox en una lista propia. Organizas esta lista en carpetas, en una ventana pensada para NVDA.</p>
+<p>BookmarksAccess solo lee los favoritos de tus navegadores: nunca los modifica. Lo que haces en su lista se queda en su lista.</p>
+
+<h2>Atajo de teclado</h2>
+<ul>
+<li><strong>NVDA+Control+Mayúsculas+U:</strong> en Chrome, Edge, Brave o Firefox, añade a tu lista la página que estás leyendo. En cualquier otro programa, NVDA dice «No estás en un navegador web.»</li>
+</ul>
+<p>Para abrir la ventana de tus favoritos, ve al menú NVDA, Herramientas, BookmarksAccess. También puedes darle un atajo propio: menú NVDA, Preferencias, Gestos de entrada, categoría BookmarksAccess, «Abre BookmarksAccess, tu lista de favoritos». Puedes cambiar NVDA+Control+Mayúsculas+U en el mismo lugar.</p>
+
+<h2>Añadir la página que estás leyendo</h2>
+<ol>
+<li>En tu navegador web, abre la página.</li>
+<li>Pulsa NVDA+Control+Mayúsculas+U. NVDA dice «Dirección copiada»: la dirección de la página ya está en el portapapeles, lista para pegarla.</li>
+<li>Se abre la ventana Añadir. El nombre y la dirección de la página ya están escritos, y estás en la lista de carpetas. Elige la carpeta con las flechas y pulsa Intro.</li>
+</ol>
+<p>La página queda añadida y la ventana de tus favoritos la muestra. La próxima vez, la lista de carpetas empieza en la última carpeta que elegiste.</p>
+<p>El botón «Nueva carpeta» de la ventana Añadir crea enseguida una carpeta para la página.</p>
+<p>Si la página ya está en tu lista, NVDA dice «Dirección copiada. Ya está en tus favoritos.» y la ventana muestra dónde está.</p>
+<p>La dirección se lee de la propia página: la barra de direcciones no se toca. Si el foco no está en la página, por ejemplo en la barra de direcciones, BookmarksAccess toma la página que muestra la ventana. Si no encuentra ninguna, NVDA dice «No se encontró ninguna página web. Ve primero a la página.»</p>
+
+<h2>La ventana de tus favoritos</h2>
+<p>La ventana muestra un árbol: tus carpetas y, dentro de ellas, tus direcciones. Muévete con las flechas arriba y abajo. La flecha derecha abre una carpeta; la flecha izquierda la cierra. En el primer elemento, la flecha arriba dice «Primero,» seguido de su nombre; en el último, la flecha abajo dice «Último,». Una carpeta sin nada dentro dice «vacía» después de su nombre.</p>
+<p>La tecla Aplicaciones, o Mayúsculas+F10, muestra los comandos con sus teclas. Cada comando también funciona con su tecla, directamente desde el árbol:</p>
+<ul>
+<li><strong>Abrir en el navegador (Intro):</strong> abre la dirección en tu navegador web predeterminado. En una carpeta, Intro la abre o la cierra.</li>
+<li><strong>Añadir una dirección (Control+N):</strong> escribe el nombre y la dirección, y luego elige la carpeta. La dirección va a la carpeta seleccionada, o a la carpeta de la dirección seleccionada.</li>
+<li><strong>Nueva carpeta (Control+Mayúsculas+N):</strong> crea una carpeta dentro de la carpeta seleccionada.</li>
+<li><strong>Cambiar el nombre (F2):</strong> cambia el nombre de una carpeta o de una dirección.</li>
+<li><strong>Modificar la dirección (Control+E):</strong> cambia la dirección de una página web.</li>
+<li><strong>Mover a una carpeta (Control+M):</strong> muestra la lista de tus carpetas; elige adónde va el elemento y pulsa Intro. Una carpeta se mueve con todo lo que contiene.</li>
+<li><strong>Seleccionar también el elemento siguiente (Mayúsculas+Flecha abajo):</strong> selecciona el elemento donde estás y el siguiente, y va al siguiente. Púlsalo de nuevo para añadir más. Cortar, Mover a una carpeta y Eliminar actúan entonces sobre todos los elementos seleccionados. Moverse solo con las flechas termina la selección.</li>
+<li><strong>Seleccionar también el elemento anterior (Mayúsculas+Flecha arriba):</strong> lo mismo, hacia arriba.</li>
+<li><strong>Cortar (Control+X):</strong> toma los elementos seleccionados, o el elemento donde estás. Se quedan en su sitio hasta que los pegas.</li>
+<li><strong>Pegar en esta carpeta (Control+V):</strong> mueve los elementos cortados a la carpeta seleccionada, o a la carpeta de la dirección seleccionada.</li>
+<li><strong>Copiar la dirección (Control+C):</strong> copia la dirección al portapapeles.</li>
+<li><strong>Eliminar (Supr):</strong> pregunta primero y luego elimina. Eliminar una carpeta elimina todo lo que contiene.</li>
+<li><strong>Ordenar por (Alt+O):</strong> va a la lista Ordenar por.</li>
+<li><strong>Importar de los navegadores (Control+I):</strong> mira la sección siguiente.</li>
+<li><strong>Lista de teclas (Control+Mayúsculas+H):</strong> muestra todas estas teclas. F1 también la muestra.</li>
+<li><strong>Cerrar (Escape):</strong> cierra la ventana.</li>
+</ul>
+<p>Los botones de la parte inferior de la ventana hacen los comandos más habituales: Abrir, Añadir una dirección, Importar de los navegadores y Cerrar.</p>
+<p>«Inicio de la lista», en las listas de carpetas, significa fuera de cualquier carpeta.</p>
+<p>La lista «Ordenar por», justo antes del árbol, ordena cada carpeta: Mi orden, Nombre de la A a la Z, Nombre de la Z a la A, Fecha de adición (las más recientes o las más antiguas primero), o Las más abiertas primero, que cuenta las direcciones abiertas desde BookmarksAccess. En cada carpeta, las carpetas van siempre primero. Ordenar solo cambia lo que ves: al volver a «Mi orden», encuentras tu organización tal como la dejaste. El complemento recuerda tu elección.</p>
+
+<h2>Importar tus favoritos</h2>
+<p>La primera vez que abres la ventana, tu lista está vacía: BookmarksAccess te pregunta si quieres importar los favoritos de tus navegadores web. Puedes importar de nuevo en cualquier momento con Control+I.</p>
+<p>BookmarksAccess busca los favoritos de Chrome, Edge, Brave y Firefox, en todos los perfiles. Cada navegador tiene su propia carpeta, como «Chrome» o «Firefox», y dentro se conservan sus carpetas: barra de favoritos, otros favoritos y tus propias carpetas. Si un navegador tiene varios perfiles, cada uno tiene su carpeta, con el nombre del perfil.</p>
+<p>Al final, NVDA dice cuántas direcciones se añadieron, por ejemplo «120 direcciones nuevas, de Chrome, Firefox.»</p>
+<p>Importar de nuevo añade solo las direcciones nuevas:</p>
+<ul>
+<li>una dirección que ya está en tu lista nunca se añade dos veces, aunque esté en varios navegadores;</li>
+<li>lo que cambiaste de nombre o moviste se queda como lo dejaste; una dirección nueva va a su carpeta, aunque hayas cambiado el nombre de esa carpeta o la hayas movido;</li>
+<li>una dirección que eliminaste no vuelve.</li>
+</ul>
+<p>En Firefox, BookmarksAccess lee la copia de los favoritos que Firefox guarda por sí mismo, normalmente una vez al día cuando lo usas. Por eso, un favorito añadido hoy en Firefox puede llegar en una importación posterior.</p>
+<p>Cada dirección conserva la fecha en que la guardaste en el navegador. Una dirección que ya está en tu lista recibe esa fecha en la siguiente importación. Si lo eliminas todo, la siguiente importación trae de vuelta todas las direcciones, incluso las que habías eliminado.</p>
+
+<h2>Ajustes</h2>
+<p>Los ajustes están en el menú NVDA, Preferencias, Configuración, categoría BookmarksAccess:</p>
+<ul>
+<li><strong>Buscar actualizaciones automáticamente al iniciar NVDA</strong> y <strong>Buscar actualizaciones ahora:</strong> mira la sección siguiente.</li>
+<li><strong>Opciones avanzadas...:</strong> una sola opción, «Copiar la dirección al portapapeles al añadir la página actual», marcada de forma predeterminada. Si la desmarcas, NVDA+Control+Mayúsculas+U añade la página sin cambiar el portapapeles.</li>
+</ul>
+
+<h2>Actualizaciones</h2>
+<p>Cuando NVDA se inicia, BookmarksAccess comprueba si existe una versión nueva. Si existe, te propone instalarla y luego reiniciar NVDA. El botón «Buscar actualizaciones ahora» hace la misma comprobación al instante.</p>
+
+<h2>Dónde se guarda tu lista</h2>
+<p>Tu lista es un archivo llamado bookmarksAccess.json, en la carpeta de configuración de NVDA, con una copia de su estado anterior llamada bookmarksAccess.json.bak. Se guarda después de cada cambio.</p>
+
+<h2>Privacidad</h2>
+<p>Tus favoritos se quedan en tu equipo: no se envía nada por Internet. La única conexión del complemento a Internet es la búsqueda de actualizaciones.</p>
+
+<h2>Créditos</h2>
+<p>BookmarksAccess está hecho por ReaperAccessible. Es software libre, bajo la Licencia Pública General de GNU, versión 3.</p>
+</body>
+</html>

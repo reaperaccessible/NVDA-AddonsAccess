@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookmarksAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>BookmarksAccess</h1>
+<p>BookmarksAccess zbiera Twoje zakładki z Chrome, Edge, Brave i Firefox w jednej własnej liście. Porządkujesz tę listę w folderach, w oknie stworzonym dla NVDA.</p>
+<p>BookmarksAccess tylko odczytuje zakładki Twoich przeglądarek: nigdy ich nie zmienia. To, co robisz na jego liście, zostaje na jego liście.</p>
+
+<h2>Skrót klawiszowy</h2>
+<ul>
+<li><strong>NVDA+Ctrl+Shift+U:</strong> w Chrome, Edge, Brave lub Firefox dodaje do Twojej listy stronę, którą czytasz. W każdym innym programie NVDA mówi „To nie jest przeglądarka internetowa.”</li>
+</ul>
+<p>Aby otworzyć okno z zakładkami, przejdź do menu NVDA, Narzędzia, BookmarksAccess. Możesz też nadać mu własny skrót: menu NVDA, Preferencje, Zdarzenia wejścia, kategoria BookmarksAccess, „Otwiera BookmarksAccess, Twoją listę zakładek”. W tym samym miejscu możesz zmienić NVDA+Ctrl+Shift+U.</p>
+
+<h2>Dodawanie strony, którą czytasz</h2>
+<ol>
+<li>W przeglądarce internetowej otwórz stronę.</li>
+<li>Naciśnij NVDA+Ctrl+Shift+U. NVDA mówi „Skopiowano adres”: adres strony jest teraz w schowku, gotowy do wklejenia.</li>
+<li>Otwiera się okno Dodaj. Nazwa i adres strony są już wpisane, a Ty jesteś na liście folderów. Wybierz folder strzałkami, a potem naciśnij Enter.</li>
+</ol>
+<p>Strona zostaje dodana, a okno z zakładkami ją pokazuje. Następnym razem lista folderów zaczyna się od folderu, który wybrano ostatnio.</p>
+<p>Przycisk „Nowy folder” w oknie Dodaj od razu tworzy folder dla strony.</p>
+<p>Jeśli strona jest już na Twojej liście, NVDA mówi „Skopiowano adres. Jest już w Twoich zakładkach.”, a okno pokazuje, gdzie ona jest.</p>
+<p>Adres jest odczytywany z samej strony: pasek adresu nie jest ruszany. Jeśli fokus nie jest na stronie, na przykład jest na pasku adresu, BookmarksAccess bierze stronę wyświetlaną w oknie. Jeśli żadnej nie znajdzie, NVDA mówi „Nie znaleziono strony internetowej. Najpierw przejdź do strony.”</p>
+
+<h2>Okno z Twoimi zakładkami</h2>
+<p>Okno pokazuje drzewo: Twoje foldery, a w nich Twoje adresy. Poruszaj się strzałkami w górę i w dół. Strzałka w prawo otwiera folder, strzałka w lewo go zamyka. Na pierwszym elemencie strzałka w górę mówi „Pierwszy,” i jego nazwę; na ostatnim strzałka w dół mówi „Ostatni,”. Folder, w którym nic nie ma, mówi „pusty” po swojej nazwie.</p>
+<p>Klawisz Aplikacji lub Shift+F10 pokazuje polecenia z ich klawiszami. Każde polecenie działa też ze swoim klawiszem, prosto z drzewa:</p>
+<ul>
+<li><strong>Otwórz w przeglądarce (Enter):</strong> otwiera adres w Twojej domyślnej przeglądarce internetowej. Na folderze Enter otwiera go lub zamyka.</li>
+<li><strong>Dodaj adres (Ctrl+N):</strong> wpisz nazwę i adres, a potem wybierz folder. Adres trafia do zaznaczonego folderu lub do folderu zaznaczonego adresu.</li>
+<li><strong>Nowy folder (Ctrl+Shift+N):</strong> tworzy folder wewnątrz zaznaczonego folderu.</li>
+<li><strong>Zmień nazwę (F2):</strong> zmienia nazwę folderu lub adresu.</li>
+<li><strong>Zmień adres (Ctrl+E):</strong> zmienia adres strony internetowej.</li>
+<li><strong>Przenieś do folderu (Ctrl+M):</strong> pokazuje listę Twoich folderów; wybierz, dokąd ma trafić element, i naciśnij Enter. Folder przenosi się razem ze wszystkim, co zawiera.</li>
+<li><strong>Zaznacz także następny element (Shift+Strzałka w dół):</strong> zaznacza element, na którym jesteś, i następny, a potem przechodzi do następnego. Naciśnij ponownie, aby dodać kolejne. Wytnij, Przenieś do folderu i Usuń działają wtedy na wszystkie zaznaczone elementy. Ruch samymi strzałkami kończy zaznaczanie.</li>
+<li><strong>Zaznacz także poprzedni element (Shift+Strzałka w górę):</strong> to samo, w górę.</li>
+<li><strong>Wytnij (Ctrl+X):</strong> bierze zaznaczone elementy albo element, na którym jesteś. Zostają na miejscu, dopóki ich nie wkleisz.</li>
+<li><strong>Wklej do tego folderu (Ctrl+V):</strong> przenosi wycięte elementy do zaznaczonego folderu albo do folderu zaznaczonego adresu.</li>
+<li><strong>Kopiuj adres (Ctrl+C):</strong> kopiuje adres do schowka.</li>
+<li><strong>Usuń (Delete):</strong> najpierw pyta, potem usuwa. Usunięcie folderu usuwa wszystko, co zawiera.</li>
+<li><strong>Sortuj według (Alt+S):</strong> przechodzi do listy Sortuj według.</li>
+<li><strong>Importuj z przeglądarek (Ctrl+I):</strong> zobacz następną sekcję.</li>
+<li><strong>Lista klawiszy (Ctrl+Shift+H):</strong> pokazuje wszystkie te klawisze. F1 też ją pokazuje.</li>
+<li><strong>Zamknij (Escape):</strong> zamyka okno.</li>
+</ul>
+<p>Przyciski na dole okna wykonują najczęstsze polecenia: Otwórz, Dodaj adres, Importuj z przeglądarek i Zamknij.</p>
+<p>„Początek listy” na listach folderów oznacza: poza każdym folderem.</p>
+<p>Lista „Sortuj według”, tuż przed drzewem, porządkuje każdy folder: Moja kolejność, Nazwa od A do Z, Nazwa od Z do A, Data dodania (najnowsze lub najstarsze najpierw) albo Najczęściej otwierane najpierw, co liczy adresy otwierane z BookmarksAccess. W każdym folderze foldery są zawsze pierwsze. Sortowanie zmienia tylko to, co widzisz: po powrocie do „Moja kolejność” zastajesz swoje uporządkowanie takie, jakie zostawiłeś. Dodatek pamięta Twój wybór.</p>
+
+<h2>Importowanie zakładek</h2>
+<p>Przy pierwszym otwarciu okna Twoja lista jest pusta: BookmarksAccess pyta, czy zaimportować zakładki z Twoich przeglądarek internetowych. Możesz zaimportować ponownie w dowolnej chwili klawiszami Ctrl+I.</p>
+<p>BookmarksAccess szuka zakładek Chrome, Edge, Brave i Firefox w każdym profilu. Każda przeglądarka dostaje własny folder, na przykład „Chrome” lub „Firefox”, a jej foldery są w nim zachowane: pasek zakładek, inne zakładki i Twoje własne foldery. Jeśli przeglądarka ma kilka profili, każdy dostaje swój folder z nazwą profilu.</p>
+<p>Na końcu NVDA mówi, ile adresów dodano, na przykład „Nowe adresy: 120, z Chrome, Firefox.”</p>
+<p>Ponowny import dodaje tylko nowe adresy:</p>
+<ul>
+<li>adres, który jest już na Twojej liście, nigdy nie zostaje dodany dwa razy, nawet jeśli jest w kilku przeglądarkach;</li>
+<li>to, co zmieniono lub przeniesiono, zostaje tak, jak to zostawiono; nowy adres trafia do swojego folderu, nawet jeśli ten folder zmieniono lub przeniesiono;</li>
+<li>adres, który usunięto, nie wraca.</li>
+</ul>
+<p>W przypadku Firefoksa BookmarksAccess odczytuje kopię zakładek, którą Firefox zapisuje sam, zwykle raz dziennie, gdy go używasz. Zakładka dodana dziś w Firefoksie może więc trafić na listę przy późniejszym imporcie.</p>
+<p>Każdy adres zachowuje datę, kiedy dodałeś go do zakładek w przeglądarce. Adres, który już jest na Twojej liście, dostaje tę datę przy następnym imporcie. Jeśli usuniesz wszystko, następny import przywróci wszystkie adresy, nawet te, które usunąłeś.</p>
+
+<h2>Ustawienia</h2>
+<p>Ustawienia są w menu NVDA, Preferencje, Ustawienia, kategoria BookmarksAccess:</p>
+<ul>
+<li><strong>Sprawdzaj aktualizacje automatycznie po uruchomieniu NVDA</strong> i <strong>Sprawdź aktualizacje teraz:</strong> zobacz następną sekcję.</li>
+<li><strong>Opcje zaawansowane...:</strong> jedna opcja, „Kopiuj adres do schowka przy dodawaniu bieżącej strony”, domyślnie zaznaczona. Gdy ją odznaczysz, NVDA+Ctrl+Shift+U dodaje stronę bez zmiany schowka.</li>
+</ul>
+
+<h2>Aktualizacje</h2>
+<p>Po uruchomieniu NVDA BookmarksAccess sprawdza, czy jest nowa wersja. Jeśli jest, proponuje jej zainstalowanie, a potem ponowne uruchomienie NVDA. Przycisk „Sprawdź aktualizacje teraz” robi to samo sprawdzenie od razu.</p>
+
+<h2>Gdzie jest przechowywana Twoja lista</h2>
+<p>Twoja lista to plik o nazwie bookmarksAccess.json w folderze konfiguracji NVDA, z kopią poprzedniego stanu o nazwie bookmarksAccess.json.bak. Jest zapisywana po każdej zmianie.</p>
+
+<h2>Prywatność</h2>
+<p>Twoje zakładki zostają na Twoim komputerze: nic nie jest wysyłane przez Internet. Jedyne połączenie dodatku z Internetem to sprawdzanie aktualizacji.</p>
+
+<h2>Autorzy</h2>
+<p>BookmarksAccess jest dziełem ReaperAccessible. To wolne oprogramowanie na licencji GNU General Public License, wersja 3.</p>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookmarksAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>BookmarksAccess</h1>
+<p>BookmarksAccess gathers your bookmarks from Chrome, Edge, Brave and Firefox in one list of its own. You organise this list in folders, in a window made for NVDA.</p>
+<p>BookmarksAccess only reads your browsers' bookmarks: it never changes them. What you do in its list stays in its list.</p>
+
+<h2>Keyboard shortcut</h2>
+<ul>
+<li><strong>NVDA+Control+Shift+U:</strong> in Chrome, Edge, Brave or Firefox, adds the page you are reading to your list. In any other program, NVDA says "Not in a web browser."</li>
+</ul>
+<p>To open the window of your bookmarks, go to the NVDA menu, Tools, BookmarksAccess. You can also give it a shortcut of your own: NVDA menu, Preferences, Input gestures, category BookmarksAccess, "Opens BookmarksAccess, your list of bookmarks". You can change NVDA+Control+Shift+U in the same place.</p>
+
+<h2>Add the page you are reading</h2>
+<ol>
+<li>In your web browser, open the page.</li>
+<li>Press NVDA+Control+Shift+U. NVDA says "Address copied": the address of the page is now in the clipboard, ready to be pasted.</li>
+<li>The Add window opens. The name and the address of the page are already filled in, and you are in the list of folders. Choose the folder with the arrows, then press Enter.</li>
+</ol>
+<p>The page is added, and the window of your bookmarks shows it. The next time, the list of folders starts on the folder you chose last.</p>
+<p>The "New folder" button of the Add window makes a folder for the page right away.</p>
+<p>If the page is already in your list, NVDA says "Address copied. Already in your bookmarks." and the window shows where it is.</p>
+<p>The address is read from the page itself: the address bar is not touched. If the focus is not in the page, for example in the address bar, BookmarksAccess takes the page shown in the window. If it finds none, NVDA says "No web page found. Move to the page first."</p>
+
+<h2>The window of your bookmarks</h2>
+<p>The window shows a tree: your folders, and inside them, your addresses. Move with the up and down arrows. The right arrow opens a folder, the left arrow closes it. On the first item, the up arrow says "First," followed by its name; on the last item, the down arrow says "Last,". A folder with nothing inside says "empty" after its name.</p>
+<p>The Applications key, or Shift+F10, shows the commands with their keys. Each command also works with its key, straight from the tree:</p>
+<ul>
+<li><strong>Open in the browser (Enter):</strong> opens the address in your default web browser. On a folder, Enter opens or closes it.</li>
+<li><strong>Add an address (Control+N):</strong> type the name and the address, then choose the folder. The address goes into the selected folder, or into the folder of the selected address.</li>
+<li><strong>New folder (Control+Shift+N):</strong> makes a folder inside the selected folder.</li>
+<li><strong>Rename (F2):</strong> changes the name of a folder or of an address.</li>
+<li><strong>Edit the address (Control+E):</strong> changes the address of a web page.</li>
+<li><strong>Move to a folder (Control+M):</strong> shows the list of your folders; choose where the item goes, then press Enter. A folder moves with everything inside it.</li>
+<li><strong>Select the next item too (Shift+Down arrow):</strong> selects the item where you are and the next one, then goes there. Press it again to add more. Cut, Move to a folder and Delete then act on all the selected items. Moving with the arrows alone ends the selection.</li>
+<li><strong>Select the previous item too (Shift+Up arrow):</strong> the same, upward.</li>
+<li><strong>Cut (Control+X):</strong> takes the selected items, or the item where you are. They stay where they are until you paste them.</li>
+<li><strong>Paste into this folder (Control+V):</strong> moves the items you cut into the selected folder, or into the folder of the selected address.</li>
+<li><strong>Copy the address (Control+C):</strong> copies the address to the clipboard.</li>
+<li><strong>Delete (Del):</strong> asks first, then deletes. Deleting a folder deletes everything inside it.</li>
+<li><strong>Sort by (Alt+S):</strong> goes to the list Sort by.</li>
+<li><strong>Import from the browsers (Control+I):</strong> see the next section.</li>
+<li><strong>List of keys (Control+Shift+H):</strong> shows all these keys. F1 shows it too.</li>
+<li><strong>Close (Escape):</strong> closes the window.</li>
+</ul>
+<p>The buttons at the bottom of the window do the most common commands: Open, Add an address, Import from the browsers and Close.</p>
+<p>"Top of the list", in the lists of folders, means outside any folder.</p>
+<p>The list Sort by, just before the tree, puts each folder in order: My order, Name from A to Z, Name from Z to A, Date added (newest or oldest first), or Most opened first, which counts the addresses opened from BookmarksAccess. In each folder, the folders always come first. Sorting only changes what you see: back to My order, your own arrangement is there as you left it. The add-on remembers your choice.</p>
+
+<h2>Import your bookmarks</h2>
+<p>The first time you open the window, your list is empty: BookmarksAccess asks whether to import the bookmarks of your web browsers. You can import again at any time with Control+I.</p>
+<p>BookmarksAccess looks for the bookmarks of Chrome, Edge, Brave and Firefox, in every profile. Each browser gets its own folder, such as "Chrome" or "Firefox", and its folders are kept inside it: bookmarks bar, other bookmarks, and your own folders. If a browser has several profiles, each gets its folder, with the name of the profile.</p>
+<p>At the end, NVDA says how many addresses were added, for example "120 new addresses, from Chrome, Firefox."</p>
+<p>Importing again adds only the new addresses:</p>
+<ul>
+<li>an address already in your list is never added twice, even if it is in several browsers;</li>
+<li>what you renamed or moved stays as you left it; a new address goes into its folder, even if you renamed or moved that folder;</li>
+<li>an address you deleted does not come back.</li>
+</ul>
+<p>For Firefox, BookmarksAccess reads the copy of the bookmarks that Firefox saves by itself, usually once a day when you use it. A bookmark added in Firefox today may therefore arrive at a later import.</p>
+<p>Each address keeps the date when you bookmarked it in the browser. An address already in your list gets that date at the next import. If you delete everything, the next import brings back every address, even the ones you had deleted.</p>
+
+<h2>Settings</h2>
+<p>The settings are in the NVDA menu, Preferences, Settings, category BookmarksAccess:</p>
+<ul>
+<li><strong>Check for updates automatically when NVDA starts</strong> and <strong>Check for updates now:</strong> see the next section.</li>
+<li><strong>Advanced options...:</strong> one option, "Copy the address to the clipboard when adding the current page", checked by default. Unchecked, NVDA+Control+Shift+U adds the page without changing the clipboard.</li>
+</ul>
+
+<h2>Updates</h2>
+<p>When NVDA starts, BookmarksAccess checks whether a new version exists. If one does, it offers to install it, then to restart NVDA. The "Check for updates now" button does the same check right away.</p>
+
+<h2>Where your list is kept</h2>
+<p>Your list is a file named bookmarksAccess.json, in NVDA's configuration folder, with a copy of its previous state named bookmarksAccess.json.bak. It is saved after each change.</p>
+
+<h2>Privacy</h2>
+<p>Your bookmarks stay on your computer: nothing is sent over the Internet. The add-on's only connection to the Internet is the update check.</p>
+
+<h2>Credits</h2>
+<p>BookmarksAccess is made by ReaperAccessible. It is free software, under the GNU General Public License, version 3.</p>
+</body>
+</html>

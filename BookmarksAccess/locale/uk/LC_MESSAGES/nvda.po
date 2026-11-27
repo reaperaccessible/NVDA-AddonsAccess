@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BookmarksAccess\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Adds the current web page to BookmarksAccess, and copies its address"
+msgstr "Додає відкриту веб-сторінку до BookmarksAccess і копіює її адресу"
+
+msgid "Opens BookmarksAccess, your list of bookmarks"
+msgstr "Відкриває BookmarksAccess, ваш список закладок"
+
+msgid "My order"
+msgstr "Мій порядок"
+
+msgid "Name, from A to Z"
+msgstr "Назва, від А до Я"
+
+msgid "Name, from Z to A"
+msgstr "Назва, від Я до А"
+
+msgid "Date added, newest first"
+msgstr "Дата додавання, спершу нові"
+
+msgid "Date added, oldest first"
+msgstr "Дата додавання, спершу старі"
+
+msgid "Most opened first"
+msgstr "Спершу ті, що відкриваються найчастіше"
+
+msgid "Bookmarks bar"
+msgstr "Панель закладок"
+
+msgid "Bookmarks menu"
+msgstr "Меню закладок"
+
+msgid "Other bookmarks"
+msgstr "Інші закладки"
+
+msgid "Mobile bookmarks"
+msgstr "Закладки з телефона"
+
+msgid "Your list is empty. Import the bookmarks of your web browsers now?"
+msgstr "Ваш список порожній. Імпортувати зараз закладки ваших веб-браузерів?"
+
+msgid "&Name:"
+msgstr "&Назва:"
+
+msgid "&Address:"
+msgstr "&Адреса:"
+
+msgid "&Folder:"
+msgstr "&Папка:"
+
+msgid "New folder"
+msgstr "Нова папка"
+
+msgid "Name of the new folder:"
+msgstr "Назва нової папки:"
+
+msgid "Open in the browser"
+msgstr "Відкрити в браузері"
+
+msgid "Enter"
+msgstr "Enter"
+
+msgid "Add an address"
+msgstr "Додати адресу"
+
+msgid "Control+N"
+msgstr "Control+N"
+
+msgid "Control+Shift+N"
+msgstr "Control+Shift+N"
+
+msgid "Rename"
+msgstr "Перейменувати"
+
+msgid "F2"
+msgstr "F2"
+
+msgid "Edit the address"
+msgstr "Змінити адресу"
+
+msgid "Control+E"
+msgstr "Control+E"
+
+msgid "Move to a folder"
+msgstr "Перемістити в папку"
+
+msgid "Control+M"
+msgstr "Control+M"
+
+msgid "Select the next item too"
+msgstr "Виділити також наступний елемент"
+
+msgid "Shift+Down arrow"
+msgstr "Shift+Стрілка вниз"
+
+msgid "Select the previous item too"
+msgstr "Виділити також попередній елемент"
+
+msgid "Shift+Up arrow"
+msgstr "Shift+Стрілка вгору"
+
+msgid "Cut"
+msgstr "Вирізати"
+
+msgid "Control+X"
+msgstr "Control+X"
+
+msgid "Paste into this folder"
+msgstr "Вставити в цю папку"
+
+msgid "Control+V"
+msgstr "Control+V"
+
+msgid "Copy the address"
+msgstr "Копіювати адресу"
+
+msgid "Control+C"
+msgstr "Control+C"
+
+msgid "Delete"
+msgstr "Видалити"
+
+msgid "Del"
+msgstr "Delete"
+
+msgid "Sort by"
+msgstr "Сортувати за"
+
+msgid "Alt+S"
+msgstr "Alt+С"
+
+msgid "Import from the browsers"
+msgstr "Імпортувати з браузерів"
+
+msgid "Control+I"
+msgstr "Control+I"
+
+msgid "List of keys"
+msgstr "Список клавіш"
+
+msgid "Control+Shift+H"
+msgstr "Control+Shift+H"
+
+msgid "Close"
+msgstr "Закрити"
+
+msgid "Escape"
+msgstr "Escape"
+
+msgid "The list is empty."
+msgstr "Список порожній."
+
+msgid "New name:"
+msgstr "Нова назва:"
+
+msgid "Top of the list"
+msgstr "Початок списку"
+
+msgid "Deleted"
+msgstr "Видалено"
+
+msgid "Importing..."
+msgstr "Імпорт..."
+
+msgid "The list could not be saved."
+msgstr "Не вдалося зберегти список."
+
+msgid "First, {name}"
+msgstr "Перший, {name}"
+
+msgid "Last, {name}"
+msgstr "Останній, {name}"
+
+msgid "Add"
+msgstr "Додати"
+
+msgid "Type the address first."
+msgstr "Спочатку введіть адресу."
+
+msgid "Keys of BookmarksAccess"
+msgstr "Клавіші BookmarksAccess"
+
+msgid "&Close"
+msgstr "За&крити"
+
+msgid "&Open"
+msgstr "&Відкрити"
+
+msgid "&Add an address..."
+msgstr "&Додати адресу..."
+
+msgid "&Import from the browsers"
+msgstr "&Імпортувати з браузерів"
+
+msgid "This is a folder, not an address."
+msgstr "Це папка, а не адреса."
+
+msgid "{count} items moved to {folder}"
+msgstr "Переміщено елементів: {count}, у {folder}"
+
+msgid "Nothing to paste. Cut with Control+X first."
+msgstr "Нічого вставляти. Спершу виріжте за допомогою Control+X."
+
+msgid "Nothing moved: the items are already there."
+msgstr "Нічого не переміщено: елементи вже там."
+
+msgid "Address copied"
+msgstr "Адресу скопійовано"
+
+msgid "No bookmarks found in Chrome, Edge, Brave or Firefox."
+msgstr "У Chrome, Edge, Brave і Firefox закладок не знайдено."
+
+msgid "No new address."
+msgstr "Нових адрес немає."
+
+msgid "Advanced options of BookmarksAccess"
+msgstr "Додаткові параметри BookmarksAccess"
+
+msgid "Not in a web browser."
+msgstr "Ви не у веб-браузері."
+
+msgid "No web page found. Move to the page first."
+msgstr "Веб-сторінку не знайдено. Спочатку перейдіть на сторінку."
+
+msgid "New fol&der..."
+msgstr "Нова па&пка..."
+
+msgid "&Keys of the window:"
+msgstr "&Клавіші вікна:"
+
+msgid "NVDA+Control+Shift+U"
+msgstr "NVDA+Control+Shift+U"
+
+msgid "The Applications key shows the commands; Control+Shift+H, the list of keys."
+msgstr "Клавіша Applications показує команди; Control+Shift+H, список клавіш."
+
+msgid "&Sort by:"
+msgstr "&Сортувати за:"
+
+msgid "&Bookmarks:"
+msgstr "&Закладки:"
+
+msgid "{name}, selected"
+msgstr "{name}, виділено"
+
+msgid "This address could not be opened."
+msgstr "Не вдалося відкрити цю адресу."
+
+msgid "Moved to {folder}"
+msgstr "Переміщено в {folder}"
+
+msgid "Move {name}"
+msgstr "Перемістити {name}"
+
+msgid "Move {count} items"
+msgstr "Перемістити елементи: {count}"
+
+msgid "Delete the {count} selected items, and everything inside the folders?"
+msgstr "Видалити виділені елементи ({count}) і весь вміст папок?"
+
+msgid "&Copy the address to the clipboard when adding the current page"
+msgstr "&Копіювати адресу в буфер обміну під час додавання відкритої сторінки"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Автоматично перевіряти &оновлення під час запуску NVDA"
+
+msgid "Check for updates &now"
+msgstr "Перевірити оновлення &зараз"
+
+msgid "&Advanced options..."
+msgstr "&Додаткові параметри..."
+
+msgid "Address copied. Already in your bookmarks."
+msgstr "Адресу скопійовано. Вона вже є у ваших закладках."
+
+msgid "Already in your bookmarks."
+msgstr "Вже є у ваших закладках."
+
+msgid "{name} (empty)"
+msgstr "{name} (порожньо)"
+
+msgid "{count} items cut"
+msgstr "Вирізано елементів: {count}"
+
+msgid "Delete {name}?"
+msgstr "Видалити {name}?"
+
+msgid "Delete the folder {name} and the {count} addresses inside it?"
+msgstr "Видалити папку {name} і всі адреси в ній ({count})?"
+
+msgid "Delete the folder {name}?"
+msgstr "Видалити папку {name}?"
+
+msgid "1 new address, from {browsers}."
+msgstr "1 нова адреса, з {browsers}."
+
+msgid "{count} new addresses, from {browsers}."
+msgstr "Нових адрес: {count}, з {browsers}."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "Оновлення встановлено. Щоб завершити, потрібно перезапустити NVDA. Перезапустити зараз?"
+
+msgid "Downloading the update..."
+msgstr "Завантаження оновлення..."
+
+msgid "Checking for updates..."
+msgstr "Перевірка оновлень..."
+
+msgid "{name} update"
+msgstr "Оновлення {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "Доступна версія {new} додатка {name}. У вас версія {current}. Бажаєте встановити її зараз?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "Оновлення вже встановлено. Перезапустіть NVDA, щоб завершити."
+
+msgid "The update could not be downloaded."
+msgstr "Не вдалося завантажити оновлення."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Завантаження оновлення: {percent}%"
+
+msgid "The update could not be installed."
+msgstr "Не вдалося встановити оновлення."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Не вдалося перевірити оновлення. Перевірте з'єднання з Інтернетом."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} має найновішу версію ({version})."

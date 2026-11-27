@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BookmarksAccess\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Adds the current web page to BookmarksAccess, and copies its address"
+msgstr "Açık web sayfasını BookmarksAccess'e ekler ve adresini kopyalar"
+
+msgid "Opens BookmarksAccess, your list of bookmarks"
+msgstr "BookmarksAccess'i, yer imi listenizi açar"
+
+msgid "My order"
+msgstr "Benim sıram"
+
+msgid "Name, from A to Z"
+msgstr "Ad, A'dan Z'ye"
+
+msgid "Name, from Z to A"
+msgstr "Ad, Z'den A'ya"
+
+msgid "Date added, newest first"
+msgstr "Eklenme tarihi, en yeniler önce"
+
+msgid "Date added, oldest first"
+msgstr "Eklenme tarihi, en eskiler önce"
+
+msgid "Most opened first"
+msgstr "En çok açılanlar önce"
+
+msgid "Bookmarks bar"
+msgstr "Yer imleri çubuğu"
+
+msgid "Bookmarks menu"
+msgstr "Yer imleri menüsü"
+
+msgid "Other bookmarks"
+msgstr "Diğer yer imleri"
+
+msgid "Mobile bookmarks"
+msgstr "Mobil yer imleri"
+
+msgid "Your list is empty. Import the bookmarks of your web browsers now?"
+msgstr "Listeniz boş. Web tarayıcılarınızın yer imleri şimdi içe aktarılsın mı?"
+
+msgid "&Name:"
+msgstr "&Ad:"
+
+msgid "&Address:"
+msgstr "A&dres:"
+
+msgid "&Folder:"
+msgstr "&Klasör:"
+
+msgid "New folder"
+msgstr "Yeni klasör"
+
+msgid "Name of the new folder:"
+msgstr "Yeni klasörün adı:"
+
+msgid "Open in the browser"
+msgstr "Tarayıcıda aç"
+
+msgid "Enter"
+msgstr "Enter"
+
+msgid "Add an address"
+msgstr "Adres ekle"
+
+msgid "Control+N"
+msgstr "Control+N"
+
+msgid "Control+Shift+N"
+msgstr "Control+Shift+N"
+
+msgid "Rename"
+msgstr "Yeniden adlandır"
+
+msgid "F2"
+msgstr "F2"
+
+msgid "Edit the address"
+msgstr "Adresi düzenle"
+
+msgid "Control+E"
+msgstr "Control+E"
+
+msgid "Move to a folder"
+msgstr "Klasöre taşı"
+
+msgid "Control+M"
+msgstr "Control+M"
+
+msgid "Select the next item too"
+msgstr "Sonraki öğeyi de seç"
+
+msgid "Shift+Down arrow"
+msgstr "Shift+Aşağı ok"
+
+msgid "Select the previous item too"
+msgstr "Önceki öğeyi de seç"
+
+msgid "Shift+Up arrow"
+msgstr "Shift+Yukarı ok"
+
+msgid "Cut"
+msgstr "Kes"
+
+msgid "Control+X"
+msgstr "Control+X"
+
+msgid "Paste into this folder"
+msgstr "Bu klasöre yapıştır"
+
+msgid "Control+V"
+msgstr "Control+V"
+
+msgid "Copy the address"
+msgstr "Adresi kopyala"
+
+msgid "Control+C"
+msgstr "Control+C"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Del"
+msgstr "Delete"
+
+msgid "Sort by"
+msgstr "Sırala"
+
+msgid "Alt+S"
+msgstr "Alt+S"
+
+msgid "Import from the browsers"
+msgstr "Tarayıcılardan içe aktar"
+
+msgid "Control+I"
+msgstr "Control+I"
+
+msgid "List of keys"
+msgstr "Tuş listesi"
+
+msgid "Control+Shift+H"
+msgstr "Control+Shift+H"
+
+msgid "Close"
+msgstr "Kapat"
+
+msgid "Escape"
+msgstr "Escape"
+
+msgid "The list is empty."
+msgstr "Liste boş."
+
+msgid "New name:"
+msgstr "Yeni ad:"
+
+msgid "Top of the list"
+msgstr "Listenin başı"
+
+msgid "Deleted"
+msgstr "Silindi"
+
+msgid "Importing..."
+msgstr "İçe aktarılıyor..."
+
+msgid "The list could not be saved."
+msgstr "Liste kaydedilemedi."
+
+msgid "First, {name}"
+msgstr "İlk, {name}"
+
+msgid "Last, {name}"
+msgstr "Son, {name}"
+
+msgid "Add"
+msgstr "Ekle"
+
+msgid "Type the address first."
+msgstr "Önce adresi yazın."
+
+msgid "Keys of BookmarksAccess"
+msgstr "BookmarksAccess tuşları"
+
+msgid "&Close"
+msgstr "&Kapat"
+
+msgid "&Open"
+msgstr "&Aç"
+
+msgid "&Add an address..."
+msgstr "Adres &ekle..."
+
+msgid "&Import from the browsers"
+msgstr "Tarayıcılardan &içe aktar"
+
+msgid "This is a folder, not an address."
+msgstr "Bu bir klasör, adres değil."
+
+msgid "{count} items moved to {folder}"
+msgstr "{count} öğe {folder} klasörüne taşındı"
+
+msgid "Nothing to paste. Cut with Control+X first."
+msgstr "Yapıştırılacak bir şey yok. Önce Control+X ile kesin."
+
+msgid "Nothing moved: the items are already there."
+msgstr "Hiçbir şey taşınmadı: öğeler zaten orada."
+
+msgid "Address copied"
+msgstr "Adres kopyalandı"
+
+msgid "No bookmarks found in Chrome, Edge, Brave or Firefox."
+msgstr "Chrome, Edge, Brave veya Firefox'ta yer imi bulunamadı."
+
+msgid "No new address."
+msgstr "Yeni adres yok."
+
+msgid "Advanced options of BookmarksAccess"
+msgstr "BookmarksAccess gelişmiş seçenekleri"
+
+msgid "Not in a web browser."
+msgstr "Bir web tarayıcısında değilsiniz."
+
+msgid "No web page found. Move to the page first."
+msgstr "Web sayfası bulunamadı. Önce sayfaya gidin."
+
+msgid "New fol&der..."
+msgstr "Ye&ni klasör..."
+
+msgid "&Keys of the window:"
+msgstr "Pencerenin &tuşları:"
+
+msgid "NVDA+Control+Shift+U"
+msgstr "NVDA+Control+Shift+U"
+
+msgid "The Applications key shows the commands; Control+Shift+H, the list of keys."
+msgstr "Uygulamalar tuşu komutları gösterir; Control+Shift+H, tuş listesini."
+
+msgid "&Sort by:"
+msgstr "&Sırala:"
+
+msgid "&Bookmarks:"
+msgstr "&Yer imleri:"
+
+msgid "{name}, selected"
+msgstr "{name}, seçili"
+
+msgid "This address could not be opened."
+msgstr "Bu adres açılamadı."
+
+msgid "Moved to {folder}"
+msgstr "{folder} klasörüne taşındı"
+
+msgid "Move {name}"
+msgstr "{name} öğesini taşı"
+
+msgid "Move {count} items"
+msgstr "{count} öğeyi taşı"
+
+msgid "Delete the {count} selected items, and everything inside the folders?"
+msgstr "Seçili {count} öğe ve klasörlerin tüm içeriği silinsin mi?"
+
+msgid "&Copy the address to the clipboard when adding the current page"
+msgstr "Açık sayfayı eklerken adresi &panoya kopyala"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "NVDA başlarken &güncellemeleri otomatik denetle"
+
+msgid "Check for updates &now"
+msgstr "Güncellemeleri &şimdi denetle"
+
+msgid "&Advanced options..."
+msgstr "&Gelişmiş seçenekler..."
+
+msgid "Address copied. Already in your bookmarks."
+msgstr "Adres kopyalandı. Zaten yer imlerinizde."
+
+msgid "Already in your bookmarks."
+msgstr "Zaten yer imlerinizde."
+
+msgid "{name} (empty)"
+msgstr "{name} (boş)"
+
+msgid "{count} items cut"
+msgstr "{count} öğe kesildi"
+
+msgid "Delete {name}?"
+msgstr "{name} silinsin mi?"
+
+msgid "Delete the folder {name} and the {count} addresses inside it?"
+msgstr "{name} klasörü ve içindeki {count} adres silinsin mi?"
+
+msgid "Delete the folder {name}?"
+msgstr "{name} klasörü silinsin mi?"
+
+msgid "1 new address, from {browsers}."
+msgstr "1 yeni adres, {browsers} tarayıcısından."
+
+msgid "{count} new addresses, from {browsers}."
+msgstr "{count} yeni adres, {browsers} tarayıcısından."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "Güncelleme kuruldu. Bitirmek için NVDA'nın yeniden başlaması gerekir. Şimdi yeniden başlatılsın mı?"
+
+msgid "Downloading the update..."
+msgstr "Güncelleme indiriliyor..."
+
+msgid "Checking for updates..."
+msgstr "Güncellemeler denetleniyor..."
+
+msgid "{name} update"
+msgstr "{name} güncellemesi"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} mevcut. Sizde {current} sürümü var. Şimdi kurmak ister misiniz?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "Güncelleme zaten kurulu. Bitirmek için NVDA'yı yeniden başlatın."
+
+msgid "The update could not be downloaded."
+msgstr "Güncelleme indirilemedi."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Güncelleme indiriliyor: %{percent}"
+
+msgid "The update could not be installed."
+msgstr "Güncelleme kurulamadı."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Güncellemeler denetlenemedi. İnternet bağlantınızı kontrol edin."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} güncel (sürüm {version})."

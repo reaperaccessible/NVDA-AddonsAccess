@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookmarksAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>BookmarksAccess</h1>
+<p>BookmarksAccess, Chrome, Edge, Brave ve Firefox'taki yer imlerinizi kendi tek listesinde toplar. Bu listeyi, NVDA için yapılmış bir pencerede klasörlere ayırırsınız.</p>
+<p>BookmarksAccess tarayıcılarınızın yer imlerini yalnızca okur: onları hiçbir zaman değiştirmez. Listesinde yaptığınız her şey yalnızca kendi listesinde kalır.</p>
+
+<h2>Klavye kısayolu</h2>
+<ul>
+<li><strong>NVDA+Control+Shift+U:</strong> Chrome, Edge, Brave veya Firefox'ta, okuduğunuz sayfayı listenize ekler. Başka herhangi bir programda NVDA "Bir web tarayıcısında değilsiniz." der.</li>
+</ul>
+<p>Yer imlerinizin penceresini açmak için NVDA menüsüne, sonra Araçlar, BookmarksAccess'e gidin. Ona kendi kısayolunuzu da verebilirsiniz: NVDA menüsü, Seçenekler, Girdi hareketleri, BookmarksAccess kategorisi, "BookmarksAccess'i, yer imi listenizi açar". NVDA+Control+Shift+U kısayolunu da aynı yerden değiştirebilirsiniz.</p>
+
+<h2>Okuduğunuz sayfayı ekleyin</h2>
+<ol>
+<li>Web tarayıcınızda sayfayı açın.</li>
+<li>NVDA+Control+Shift+U tuşlarına basın. NVDA "Adres kopyalandı" der: sayfanın adresi artık panodadır ve yapıştırılmaya hazırdır.</li>
+<li>Ekle penceresi açılır. Sayfanın adı ve adresi zaten doldurulmuştur ve klasör listesindesiniz. Okları kullanarak klasörü seçin, sonra Enter'a basın.</li>
+</ol>
+<p>Sayfa eklenir ve yer imlerinizin penceresi onu gösterir. Bir sonraki sefer, klasör listesi en son seçtiğiniz klasörden başlar.</p>
+<p>Ekle penceresindeki "Yeni klasör" düğmesi, sayfa için hemen bir klasör oluşturur.</p>
+<p>Sayfa zaten listenizdeyse NVDA "Adres kopyalandı. Zaten yer imlerinizde." der ve pencere onun nerede olduğunu gösterir.</p>
+<p>Adres sayfanın kendisinden okunur: adres çubuğuna dokunulmaz. Odak sayfada değilse, örneğin adres çubuğundaysa, BookmarksAccess penceredeki sayfayı alır. Hiçbirini bulamazsa NVDA "Web sayfası bulunamadı. Önce sayfaya gidin." der.</p>
+
+<h2>Yer imlerinizin penceresi</h2>
+<p>Pencere bir ağaç gösterir: klasörleriniz ve içlerinde adresleriniz. Yukarı ve aşağı oklarla ilerleyin. Sağ ok bir klasörü açar, sol ok kapatır. İlk öğede yukarı ok, adından önce "İlk," der; son öğede aşağı ok "Son," der. İçinde hiçbir şey olmayan bir klasör, adından sonra "boş" der.</p>
+<p>Uygulamalar tuşu veya Shift+F10, komutları tuşlarıyla birlikte gösterir. Her komut, doğrudan ağaçtan kendi tuşuyla da çalışır:</p>
+<ul>
+<li><strong>Tarayıcıda aç (Enter):</strong> adresi varsayılan web tarayıcınızda açar. Bir klasörde Enter onu açar veya kapatır.</li>
+<li><strong>Adres ekle (Control+N):</strong> adı ve adresi yazın, sonra klasörü seçin. Adres, seçili klasöre ya da seçili adresin klasörüne gider.</li>
+<li><strong>Yeni klasör (Control+Shift+N):</strong> seçili klasörün içinde bir klasör oluşturur.</li>
+<li><strong>Yeniden adlandır (F2):</strong> bir klasörün ya da bir adresin adını değiştirir.</li>
+<li><strong>Adresi düzenle (Control+E):</strong> bir web sayfasının adresini değiştirir.</li>
+<li><strong>Klasöre taşı (Control+M):</strong> klasörlerinizin listesini gösterir; öğenin nereye gideceğini seçin, sonra Enter'a basın. Bir klasör, içindeki her şeyle birlikte taşınır.</li>
+<li><strong>Sonraki öğeyi de seç (Shift+Aşağı ok):</strong> bulunduğunuz öğeyi ve sonrakini seçer, sonra sonrakine gider. Daha fazlasını eklemek için yeniden basın. Kes, Klasöre taşı ve Sil o zaman seçili tüm öğelere uygulanır. Yalnızca oklarla hareket etmek seçimi bitirir.</li>
+<li><strong>Önceki öğeyi de seç (Shift+Yukarı ok):</strong> aynısı, yukarı doğru.</li>
+<li><strong>Kes (Control+X):</strong> seçili öğeleri ya da bulunduğunuz öğeyi alır. Siz yapıştırana kadar yerlerinde kalırlar.</li>
+<li><strong>Bu klasöre yapıştır (Control+V):</strong> kesilen öğeleri seçili klasöre ya da seçili adresin klasörüne taşır.</li>
+<li><strong>Adresi kopyala (Control+C):</strong> adresi panoya kopyalar.</li>
+<li><strong>Sil (Delete):</strong> önce sorar, sonra siler. Bir klasörü silmek, içindeki her şeyi siler.</li>
+<li><strong>Sırala (Alt+S):</strong> Sırala listesine gider.</li>
+<li><strong>Tarayıcılardan içe aktar (Control+I):</strong> sonraki bölüme bakın.</li>
+<li><strong>Tuş listesi (Control+Shift+H):</strong> bu tuşların hepsini gösterir. F1 de gösterir.</li>
+<li><strong>Kapat (Escape):</strong> pencereyi kapatır.</li>
+</ul>
+<p>Pencerenin altındaki düğmeler en sık kullanılan komutları yapar: Aç, Adres ekle, Tarayıcılardan içe aktar ve Kapat.</p>
+<p>Klasör listelerindeki "Listenin başı", hiçbir klasörün dışında demektir.</p>
+<p>Ağacın hemen önündeki "Sırala" listesi her klasörü sıralar: Benim sıram, Ad A'dan Z'ye, Ad Z'den A'ya, Eklenme tarihi (en yeniler ya da en eskiler önce) veya BookmarksAccess'ten açılan adresleri sayan En çok açılanlar önce. Her klasörde klasörler her zaman önce gelir. Sıralama yalnızca gördüğünüzü değiştirir: "Benim sıram"a döndüğünüzde düzeniniz bıraktığınız gibidir. Eklenti seçiminizi hatırlar.</p>
+
+<h2>Yer imlerinizi içe aktarın</h2>
+<p>Pencereyi ilk açtığınızda listeniz boştur: BookmarksAccess web tarayıcılarınızın yer imlerini içe aktarıp aktarmayacağını sorar. İstediğiniz zaman Control+I ile yeniden içe aktarabilirsiniz.</p>
+<p>BookmarksAccess, Chrome, Edge, Brave ve Firefox'un yer imlerini, tüm profillerde arar. Her tarayıcı kendi klasörünü alır, örneğin "Chrome" veya "Firefox", ve onun klasörleri içinde korunur: yer imleri çubuğu, diğer yer imleri ve kendi klasörleriniz. Bir tarayıcının birkaç profili varsa her biri, profilin adıyla kendi klasörünü alır.</p>
+<p>Sonunda NVDA kaç adres eklendiğini söyler, örneğin "120 yeni adres, Chrome, Firefox tarayıcısından."</p>
+<p>Yeniden içe aktarma yalnızca yeni adresleri ekler:</p>
+<ul>
+<li>listenizde zaten olan bir adres, birkaç tarayıcıda bulunsa bile hiçbir zaman iki kez eklenmez;</li>
+<li>yeniden adlandırdığınız ya da taşıdığınız şey bıraktığınız gibi kalır; yeni bir adres, o klasörü yeniden adlandırmış ya da taşımış olsanız bile kendi klasörüne gider;</li>
+<li>sildiğiniz bir adres geri gelmez.</li>
+</ul>
+<p>Firefox için BookmarksAccess, Firefox'un kendiliğinden kaydettiği yer imi kopyasını okur; bu genellikle kullandığınız günlerde günde bir kez olur. Bu yüzden bugün Firefox'ta eklenen bir yer imi, daha sonraki bir içe aktarmada gelebilir.</p>
+<p>Her adres, tarayıcıda yer imlerine eklediğiniz tarihi korur. Listenizde zaten olan bir adres, bir sonraki içe aktarmada bu tarihi alır. Her şeyi silerseniz, bir sonraki içe aktarma sildikleriniz dahil tüm adresleri geri getirir.</p>
+
+<h2>Ayarlar</h2>
+<p>Ayarlar NVDA menüsünde, Seçenekler, Ayarlar, BookmarksAccess kategorisindedir:</p>
+<ul>
+<li><strong>NVDA başlarken güncellemeleri otomatik denetle</strong> ve <strong>Güncellemeleri şimdi denetle:</strong> sonraki bölüme bakın.</li>
+<li><strong>Gelişmiş seçenekler...:</strong> tek bir seçenek, "Açık sayfayı eklerken adresi panoya kopyala", varsayılan olarak işaretlidir. İşareti kaldırılırsa NVDA+Control+Shift+U sayfayı panoyu değiştirmeden ekler.</li>
+</ul>
+
+<h2>Güncellemeler</h2>
+<p>NVDA başlarken BookmarksAccess yeni bir sürüm olup olmadığını denetler. Varsa, onu kurmayı, ardından NVDA'yı yeniden başlatmayı önerir. "Güncellemeleri şimdi denetle" düğmesi aynı denetimi hemen yapar.</p>
+
+<h2>Listenizin saklandığı yer</h2>
+<p>Listeniz, NVDA'nın yapılandırma klasöründe bookmarksAccess.json adlı bir dosyadır; önceki durumunun bookmarksAccess.json.bak adlı bir kopyası da vardır. Her değişiklikten sonra kaydedilir.</p>
+
+<h2>Gizlilik</h2>
+<p>Yer imleriniz bilgisayarınızda kalır: İnternet üzerinden hiçbir şey gönderilmez. Eklentinin İnternet'e tek bağlantısı güncelleme denetimidir.</p>
+
+<h2>Emeği geçenler</h2>
+<p>BookmarksAccess, ReaperAccessible tarafından yapılmıştır. GNU Genel Kamu Lisansı, sürüm 3 altında özgür bir yazılımdır.</p>
+</body>
+</html>

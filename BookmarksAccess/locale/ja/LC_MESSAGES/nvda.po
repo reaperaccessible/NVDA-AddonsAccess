@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BookmarksAccess\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Adds the current web page to BookmarksAccess, and copies its address"
+msgstr "表示中の Web ページを BookmarksAccess に追加し、そのアドレスをコピーします"
+
+msgid "Opens BookmarksAccess, your list of bookmarks"
+msgstr "BookmarksAccess、ブックマークのリストを開きます"
+
+msgid "My order"
+msgstr "自分の順番"
+
+msgid "Name, from A to Z"
+msgstr "名前 (A から Z)"
+
+msgid "Name, from Z to A"
+msgstr "名前 (Z から A)"
+
+msgid "Date added, newest first"
+msgstr "追加日 (新しい順)"
+
+msgid "Date added, oldest first"
+msgstr "追加日 (古い順)"
+
+msgid "Most opened first"
+msgstr "よく開く順"
+
+msgid "Bookmarks bar"
+msgstr "ブックマークバー"
+
+msgid "Bookmarks menu"
+msgstr "ブックマークメニュー"
+
+msgid "Other bookmarks"
+msgstr "その他のブックマーク"
+
+msgid "Mobile bookmarks"
+msgstr "モバイルのブックマーク"
+
+msgid "Your list is empty. Import the bookmarks of your web browsers now?"
+msgstr "リストが空です。今すぐ Web ブラウザーのブックマークをインポートしますか?"
+
+msgid "&Name:"
+msgstr "名前(&N):"
+
+msgid "&Address:"
+msgstr "アドレス(&A):"
+
+msgid "&Folder:"
+msgstr "フォルダー(&F):"
+
+msgid "New folder"
+msgstr "新しいフォルダー"
+
+msgid "Name of the new folder:"
+msgstr "新しいフォルダーの名前:"
+
+msgid "Open in the browser"
+msgstr "ブラウザーで開く"
+
+msgid "Enter"
+msgstr "Enter"
+
+msgid "Add an address"
+msgstr "アドレスを追加"
+
+msgid "Control+N"
+msgstr "Control+N"
+
+msgid "Control+Shift+N"
+msgstr "Control+Shift+N"
+
+msgid "Rename"
+msgstr "名前の変更"
+
+msgid "F2"
+msgstr "F2"
+
+msgid "Edit the address"
+msgstr "アドレスの変更"
+
+msgid "Control+E"
+msgstr "Control+E"
+
+msgid "Move to a folder"
+msgstr "フォルダーへ移動"
+
+msgid "Control+M"
+msgstr "Control+M"
+
+msgid "Select the next item too"
+msgstr "次の項目も選択"
+
+msgid "Shift+Down arrow"
+msgstr "Shift+下矢印"
+
+msgid "Select the previous item too"
+msgstr "前の項目も選択"
+
+msgid "Shift+Up arrow"
+msgstr "Shift+上矢印"
+
+msgid "Cut"
+msgstr "切り取り"
+
+msgid "Control+X"
+msgstr "Control+X"
+
+msgid "Paste into this folder"
+msgstr "このフォルダーに貼り付け"
+
+msgid "Control+V"
+msgstr "Control+V"
+
+msgid "Copy the address"
+msgstr "アドレスをコピー"
+
+msgid "Control+C"
+msgstr "Control+C"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Del"
+msgstr "Delete"
+
+msgid "Sort by"
+msgstr "並べ替え"
+
+msgid "Alt+S"
+msgstr "Alt+S"
+
+msgid "Import from the browsers"
+msgstr "ブラウザーからインポート"
+
+msgid "Control+I"
+msgstr "Control+I"
+
+msgid "List of keys"
+msgstr "キーの一覧"
+
+msgid "Control+Shift+H"
+msgstr "Control+Shift+H"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "Escape"
+msgstr "Escape"
+
+msgid "The list is empty."
+msgstr "リストは空です。"
+
+msgid "New name:"
+msgstr "新しい名前:"
+
+msgid "Top of the list"
+msgstr "リストの先頭"
+
+msgid "Deleted"
+msgstr "削除しました"
+
+msgid "Importing..."
+msgstr "インポート中..."
+
+msgid "The list could not be saved."
+msgstr "リストを保存できませんでした。"
+
+msgid "First, {name}"
+msgstr "先頭、{name}"
+
+msgid "Last, {name}"
+msgstr "末尾、{name}"
+
+msgid "Add"
+msgstr "追加"
+
+msgid "Type the address first."
+msgstr "先にアドレスを入力してください。"
+
+msgid "Keys of BookmarksAccess"
+msgstr "BookmarksAccess のキー"
+
+msgid "&Close"
+msgstr "閉じる(&C)"
+
+msgid "&Open"
+msgstr "開く(&O)"
+
+msgid "&Add an address..."
+msgstr "アドレスを追加(&A)..."
+
+msgid "&Import from the browsers"
+msgstr "ブラウザーからインポート(&I)"
+
+msgid "This is a folder, not an address."
+msgstr "これはフォルダーで、アドレスではありません。"
+
+msgid "{count} items moved to {folder}"
+msgstr "{count} 個の項目を {folder} に移動しました"
+
+msgid "Nothing to paste. Cut with Control+X first."
+msgstr "貼り付けるものがありません。先に Control+X で切り取ってください。"
+
+msgid "Nothing moved: the items are already there."
+msgstr "何も移動していません: 項目はすでにそこにあります。"
+
+msgid "Address copied"
+msgstr "アドレスをコピーしました"
+
+msgid "No bookmarks found in Chrome, Edge, Brave or Firefox."
+msgstr "Chrome、Edge、Brave、Firefox にブックマークが見つかりません。"
+
+msgid "No new address."
+msgstr "新しいアドレスはありません。"
+
+msgid "Advanced options of BookmarksAccess"
+msgstr "BookmarksAccess の詳細オプション"
+
+msgid "Not in a web browser."
+msgstr "Web ブラウザーではありません。"
+
+msgid "No web page found. Move to the page first."
+msgstr "Web ページが見つかりません。先にページへ移動してください。"
+
+msgid "New fol&der..."
+msgstr "新しいフォルダー(&D)..."
+
+msgid "&Keys of the window:"
+msgstr "ウィンドウのキー(&K):"
+
+msgid "NVDA+Control+Shift+U"
+msgstr "NVDA+Control+Shift+U"
+
+msgid "The Applications key shows the commands; Control+Shift+H, the list of keys."
+msgstr "アプリケーションキーでコマンドを表示します。Control+Shift+H でキーの一覧を表示します。"
+
+msgid "&Sort by:"
+msgstr "並べ替え(&S):"
+
+msgid "&Bookmarks:"
+msgstr "ブックマーク(&B):"
+
+msgid "{name}, selected"
+msgstr "{name}、選択済み"
+
+msgid "This address could not be opened."
+msgstr "このアドレスを開けませんでした。"
+
+msgid "Moved to {folder}"
+msgstr "{folder} に移動しました"
+
+msgid "Move {name}"
+msgstr "{name} を移動"
+
+msgid "Move {count} items"
+msgstr "{count} 個の項目を移動"
+
+msgid "Delete the {count} selected items, and everything inside the folders?"
+msgstr "選択した {count} 個の項目と、フォルダーの中身をすべて削除しますか?"
+
+msgid "&Copy the address to the clipboard when adding the current page"
+msgstr "表示中のページを追加するときにアドレスをクリップボードにコピーする(&C)"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "NVDA の起動時に自動的に更新を確認する(&U)"
+
+msgid "Check for updates &now"
+msgstr "今すぐ更新を確認(&N)"
+
+msgid "&Advanced options..."
+msgstr "詳細オプション(&A)..."
+
+msgid "Address copied. Already in your bookmarks."
+msgstr "アドレスをコピーしました。すでにブックマークにあります。"
+
+msgid "Already in your bookmarks."
+msgstr "すでにブックマークにあります。"
+
+msgid "{name} (empty)"
+msgstr "{name}(空)"
+
+msgid "{count} items cut"
+msgstr "{count} 個の項目を切り取りました"
+
+msgid "Delete {name}?"
+msgstr "{name} を削除しますか?"
+
+msgid "Delete the folder {name} and the {count} addresses inside it?"
+msgstr "フォルダー {name} と、その中の {count} 件のアドレスを削除しますか?"
+
+msgid "Delete the folder {name}?"
+msgstr "フォルダー {name} を削除しますか?"
+
+msgid "1 new address, from {browsers}."
+msgstr "新しいアドレス 1 件、{browsers} から。"
+
+msgid "{count} new addresses, from {browsers}."
+msgstr "新しいアドレス {count} 件、{browsers} から。"
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "更新をインストールしました。完了するには NVDA の再起動が必要です。今すぐ再起動しますか？"
+
+msgid "Downloading the update..."
+msgstr "更新をダウンロードしています..."
+
+msgid "Checking for updates..."
+msgstr "アップデートを確認しています..."
+
+msgid "{name} update"
+msgstr "{name} の更新"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} が利用できます。現在のバージョンは {current} です。今すぐインストールしますか？"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "更新はすでにインストールされています。NVDA を再起動して完了してください。"
+
+msgid "The update could not be downloaded."
+msgstr "更新をダウンロードできませんでした。"
+
+msgid "Downloading the update: {percent}%"
+msgstr "更新をダウンロード中: {percent}%"
+
+msgid "The update could not be installed."
+msgstr "更新をインストールできませんでした。"
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "更新を確認できませんでした。インターネット接続を確認してください。"
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} は最新です (バージョン {version})。"

@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BookmarksAccess\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Adds the current web page to BookmarksAccess, and copies its address"
+msgstr "Menambahkan halaman web saat ini ke BookmarksAccess, dan menyalin alamatnya"
+
+msgid "Opens BookmarksAccess, your list of bookmarks"
+msgstr "Membuka BookmarksAccess, daftar bookmark Anda"
+
+msgid "My order"
+msgstr "Urutan saya"
+
+msgid "Name, from A to Z"
+msgstr "Nama, A sampai Z"
+
+msgid "Name, from Z to A"
+msgstr "Nama, Z sampai A"
+
+msgid "Date added, newest first"
+msgstr "Tanggal ditambahkan, terbaru dulu"
+
+msgid "Date added, oldest first"
+msgstr "Tanggal ditambahkan, terlama dulu"
+
+msgid "Most opened first"
+msgstr "Paling sering dibuka dulu"
+
+msgid "Bookmarks bar"
+msgstr "Bilah bookmark"
+
+msgid "Bookmarks menu"
+msgstr "Menu markah"
+
+msgid "Other bookmarks"
+msgstr "Bookmark lainnya"
+
+msgid "Mobile bookmarks"
+msgstr "Bookmark ponsel"
+
+msgid "Your list is empty. Import the bookmarks of your web browsers now?"
+msgstr "Daftar Anda kosong. Impor bookmark dari browser web Anda sekarang?"
+
+msgid "&Name:"
+msgstr "&Nama:"
+
+msgid "&Address:"
+msgstr "&Alamat:"
+
+msgid "&Folder:"
+msgstr "&Folder:"
+
+msgid "New folder"
+msgstr "Folder baru"
+
+msgid "Name of the new folder:"
+msgstr "Nama folder baru:"
+
+msgid "Open in the browser"
+msgstr "Buka di browser"
+
+msgid "Enter"
+msgstr "Enter"
+
+msgid "Add an address"
+msgstr "Tambah alamat"
+
+msgid "Control+N"
+msgstr "Control+N"
+
+msgid "Control+Shift+N"
+msgstr "Control+Shift+N"
+
+msgid "Rename"
+msgstr "Ganti nama"
+
+msgid "F2"
+msgstr "F2"
+
+msgid "Edit the address"
+msgstr "Ubah alamat"
+
+msgid "Control+E"
+msgstr "Control+E"
+
+msgid "Move to a folder"
+msgstr "Pindahkan ke folder"
+
+msgid "Control+M"
+msgstr "Control+M"
+
+msgid "Select the next item too"
+msgstr "Pilih juga item berikutnya"
+
+msgid "Shift+Down arrow"
+msgstr "Shift+Panah bawah"
+
+msgid "Select the previous item too"
+msgstr "Pilih juga item sebelumnya"
+
+msgid "Shift+Up arrow"
+msgstr "Shift+Panah atas"
+
+msgid "Cut"
+msgstr "Potong"
+
+msgid "Control+X"
+msgstr "Control+X"
+
+msgid "Paste into this folder"
+msgstr "Tempel ke folder ini"
+
+msgid "Control+V"
+msgstr "Control+V"
+
+msgid "Copy the address"
+msgstr "Salin alamat"
+
+msgid "Control+C"
+msgstr "Control+C"
+
+msgid "Delete"
+msgstr "Hapus"
+
+msgid "Del"
+msgstr "Del"
+
+msgid "Sort by"
+msgstr "Urutkan menurut"
+
+msgid "Alt+S"
+msgstr "Alt+U"
+
+msgid "Import from the browsers"
+msgstr "Impor dari browser"
+
+msgid "Control+I"
+msgstr "Control+I"
+
+msgid "List of keys"
+msgstr "Daftar tombol"
+
+msgid "Control+Shift+H"
+msgstr "Control+Shift+H"
+
+msgid "Close"
+msgstr "Tutup"
+
+msgid "Escape"
+msgstr "Escape"
+
+msgid "The list is empty."
+msgstr "Daftar kosong."
+
+msgid "New name:"
+msgstr "Nama baru:"
+
+msgid "Top of the list"
+msgstr "Awal daftar"
+
+msgid "Deleted"
+msgstr "Dihapus"
+
+msgid "Importing..."
+msgstr "Mengimpor..."
+
+msgid "The list could not be saved."
+msgstr "Daftar tidak dapat disimpan."
+
+msgid "First, {name}"
+msgstr "Pertama, {name}"
+
+msgid "Last, {name}"
+msgstr "Terakhir, {name}"
+
+msgid "Add"
+msgstr "Tambah"
+
+msgid "Type the address first."
+msgstr "Ketik alamatnya dulu."
+
+msgid "Keys of BookmarksAccess"
+msgstr "Tombol BookmarksAccess"
+
+msgid "&Close"
+msgstr "&Tutup"
+
+msgid "&Open"
+msgstr "Bu&ka"
+
+msgid "&Add an address..."
+msgstr "T&ambah alamat..."
+
+msgid "&Import from the browsers"
+msgstr "&Impor dari browser"
+
+msgid "This is a folder, not an address."
+msgstr "Ini folder, bukan alamat."
+
+msgid "{count} items moved to {folder}"
+msgstr "{count} item dipindahkan ke {folder}"
+
+msgid "Nothing to paste. Cut with Control+X first."
+msgstr "Tidak ada yang bisa ditempel. Potong dulu dengan Control+X."
+
+msgid "Nothing moved: the items are already there."
+msgstr "Tidak ada yang dipindahkan: item sudah ada di sana."
+
+msgid "Address copied"
+msgstr "Alamat disalin"
+
+msgid "No bookmarks found in Chrome, Edge, Brave or Firefox."
+msgstr "Tidak ada bookmark di Chrome, Edge, Brave, atau Firefox."
+
+msgid "No new address."
+msgstr "Tidak ada alamat baru."
+
+msgid "Advanced options of BookmarksAccess"
+msgstr "Opsi lanjutan BookmarksAccess"
+
+msgid "Not in a web browser."
+msgstr "Bukan di browser web."
+
+msgid "No web page found. Move to the page first."
+msgstr "Halaman web tidak ditemukan. Pindah ke halamannya dulu."
+
+msgid "New fol&der..."
+msgstr "Fol&der baru..."
+
+msgid "&Keys of the window:"
+msgstr "&Tombol jendela:"
+
+msgid "NVDA+Control+Shift+U"
+msgstr "NVDA+Control+Shift+U"
+
+msgid "The Applications key shows the commands; Control+Shift+H, the list of keys."
+msgstr "Tombol Aplikasi menampilkan perintah; Control+Shift+H, daftar tombol."
+
+msgid "&Sort by:"
+msgstr "&Urutkan menurut:"
+
+msgid "&Bookmarks:"
+msgstr "&Bookmark:"
+
+msgid "{name}, selected"
+msgstr "{name}, dipilih"
+
+msgid "This address could not be opened."
+msgstr "Alamat ini tidak dapat dibuka."
+
+msgid "Moved to {folder}"
+msgstr "Dipindahkan ke {folder}"
+
+msgid "Move {name}"
+msgstr "Pindahkan {name}"
+
+msgid "Move {count} items"
+msgstr "Pindahkan {count} item"
+
+msgid "Delete the {count} selected items, and everything inside the folders?"
+msgstr "Hapus {count} item yang dipilih, beserta seluruh isi foldernya?"
+
+msgid "&Copy the address to the clipboard when adding the current page"
+msgstr "&Salin alamat ke papan klip saat menambahkan halaman saat ini"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Periksa &pembaruan secara otomatis saat NVDA dimulai"
+
+msgid "Check for updates &now"
+msgstr "Periksa pembaruan &sekarang"
+
+msgid "&Advanced options..."
+msgstr "&Opsi lanjutan..."
+
+msgid "Address copied. Already in your bookmarks."
+msgstr "Alamat disalin. Sudah ada di bookmark Anda."
+
+msgid "Already in your bookmarks."
+msgstr "Sudah ada di bookmark Anda."
+
+msgid "{name} (empty)"
+msgstr "{name} (kosong)"
+
+msgid "{count} items cut"
+msgstr "{count} item dipotong"
+
+msgid "Delete {name}?"
+msgstr "Hapus {name}?"
+
+msgid "Delete the folder {name} and the {count} addresses inside it?"
+msgstr "Hapus folder {name} dan {count} alamat di dalamnya?"
+
+msgid "Delete the folder {name}?"
+msgstr "Hapus folder {name}?"
+
+msgid "1 new address, from {browsers}."
+msgstr "1 alamat baru, dari {browsers}."
+
+msgid "{count} new addresses, from {browsers}."
+msgstr "{count} alamat baru, dari {browsers}."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "Pembaruan sudah terpasang. NVDA harus dimulai ulang untuk menyelesaikan. Mulai ulang sekarang?"
+
+msgid "Downloading the update..."
+msgstr "Mengunduh pembaruan..."
+
+msgid "Checking for updates..."
+msgstr "Memeriksa pembaruan..."
+
+msgid "{name} update"
+msgstr "Pembaruan {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} tersedia. Anda memakai versi {current}. Ingin memasangnya sekarang?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "Pembaruan sudah terpasang. Mulai ulang NVDA untuk menyelesaikan."
+
+msgid "The update could not be downloaded."
+msgstr "Pembaruan tidak dapat diunduh."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Mengunduh pembaruan: {percent}%"
+
+msgid "The update could not be installed."
+msgstr "Pembaruan tidak dapat dipasang."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Tidak dapat memeriksa pembaruan. Periksa koneksi Internet Anda."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} sudah yang terbaru (versi {version})."

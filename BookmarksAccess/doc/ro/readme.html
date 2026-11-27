@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookmarksAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>BookmarksAccess</h1>
+<p>BookmarksAccess îți adună marcajele din Chrome, Edge, Brave și Firefox într-o listă proprie. Organizezi această listă în foldere, într-o fereastră făcută pentru NVDA.</p>
+<p>BookmarksAccess doar citește marcajele browserelor tale: nu le modifică niciodată. Ce faci în lista lui rămâne în lista lui.</p>
+
+<h2>Scurtătură de tastatură</h2>
+<ul>
+<li><strong>NVDA+Control+Shift+U:</strong> în Chrome, Edge, Brave sau Firefox, adaugă în lista ta pagina pe care o citești. În orice alt program, NVDA spune «Nu ești într-un browser.»</li>
+</ul>
+<p>Pentru a deschide fereastra marcajelor tale, mergi la meniul NVDA, Instrumente, BookmarksAccess. Îi poți da și o scurtătură proprie: meniul NVDA, Preferințe, Gesturi de intrare, categoria BookmarksAccess, «Deschide BookmarksAccess, lista ta de marcaje». Poți schimba NVDA+Control+Shift+U în același loc.</p>
+
+<h2>Adaugă pagina pe care o citești</h2>
+<ol>
+<li>În browser, deschide pagina.</li>
+<li>Apasă NVDA+Control+Shift+U. NVDA spune «Adresă copiată»: adresa paginii este acum în clipboard, gata de lipit.</li>
+<li>Se deschide fereastra Adaugă. Numele și adresa paginii sunt deja completate, iar tu ești în lista de foldere. Alege folderul cu săgețile, apoi apasă Enter.</li>
+</ol>
+<p>Pagina este adăugată, iar fereastra marcajelor tale o arată. Data viitoare, lista de foldere începe cu folderul ales ultima dată.</p>
+<p>Butonul «Folder nou» din fereastra Adaugă creează pe loc un folder pentru pagină.</p>
+<p>Dacă pagina este deja în lista ta, NVDA spune «Adresă copiată. Este deja în marcajele tale.», iar fereastra arată unde se află.</p>
+<p>Adresa este citită din pagina însăși: bara de adrese nu este atinsă. Dacă focalizarea nu este în pagină, de exemplu este în bara de adrese, BookmarksAccess ia pagina afișată în fereastră. Dacă nu găsește niciuna, NVDA spune «Nicio pagină web găsită. Mergi mai întâi la pagină.»</p>
+
+<h2>Fereastra marcajelor tale</h2>
+<p>Fereastra arată un arbore: folderele tale și, în ele, adresele tale. Te miști cu săgețile sus și jos. Săgeata dreapta deschide un folder, săgeata stânga îl închide. Pe primul element, săgeata sus spune «Primul,» urmat de numele lui; pe ultimul element, săgeata jos spune «Ultimul,». Un folder fără nimic în el spune «gol» după nume.</p>
+<p>Tasta Aplicații, sau Shift+F10, arată comenzile cu tastele lor. Fiecare comandă merge și cu tasta ei, direct din arbore:</p>
+<ul>
+<li><strong>Deschide în browser (Enter):</strong> deschide adresa în browserul tău implicit. Pe un folder, Enter îl deschide sau îl închide.</li>
+<li><strong>Adaugă o adresă (Control+N):</strong> scrie numele și adresa, apoi alege folderul. Adresa merge în folderul selectat sau în folderul adresei selectate.</li>
+<li><strong>Folder nou (Control+Shift+N):</strong> creează un folder în folderul selectat.</li>
+<li><strong>Redenumește (F2):</strong> schimbă numele unui folder sau al unei adrese.</li>
+<li><strong>Modifică adresa (Control+E):</strong> schimbă adresa unei pagini web.</li>
+<li><strong>Mută într-un folder (Control+M):</strong> arată lista folderelor tale; alege unde merge elementul, apoi apasă Enter. Un folder se mută cu tot ce conține.</li>
+<li><strong>Selectează și elementul următor (Shift+Săgeată jos):</strong> selectează elementul pe care ești și pe următorul, apoi trece pe următorul. Apasă din nou pentru a adăuga altele. Decupează, Mută într-un folder și Șterge acționează atunci asupra tuturor elementelor selectate. Deplasarea doar cu săgețile încheie selecția.</li>
+<li><strong>Selectează și elementul anterior (Shift+Săgeată sus):</strong> același lucru, în sus.</li>
+<li><strong>Decupează (Control+X):</strong> ia elementele selectate sau elementul pe care ești. Rămân pe loc până când le lipești.</li>
+<li><strong>Lipește în acest folder (Control+V):</strong> mută elementele decupate în folderul selectat sau în folderul adresei selectate.</li>
+<li><strong>Copiază adresa (Control+C):</strong> copiază adresa în clipboard.</li>
+<li><strong>Șterge (Delete):</strong> întreabă mai întâi, apoi șterge. Ștergerea unui folder șterge tot ce conține.</li>
+<li><strong>Sortează după (Alt+S):</strong> merge la lista Sortează după.</li>
+<li><strong>Importă din browsere (Control+I):</strong> vezi secțiunea următoare.</li>
+<li><strong>Lista tastelor (Control+Shift+H):</strong> arată toate aceste taste. F1 o arată și el.</li>
+<li><strong>Închide (Escape):</strong> închide fereastra.</li>
+</ul>
+<p>Butoanele din partea de jos a ferestrei fac cele mai obișnuite comenzi: Deschide, Adaugă o adresă, Importă din browsere și Închide.</p>
+<p>«Începutul listei», în listele de foldere, înseamnă în afara oricărui folder.</p>
+<p>Lista „Sortează după”, chiar înainte de arbore, ordonează fiecare folder: Ordinea mea, Nume de la A la Z, Nume de la Z la A, Data adăugării (cele mai noi sau cele mai vechi întâi) sau Cele mai deschise întâi, care numără adresele deschise din BookmarksAccess. În fiecare folder, folderele vin mereu primele. Sortarea schimbă doar ce vezi: revenind la „Ordinea mea”, îți găsești aranjarea așa cum ai lăsat-o. Suplimentul își amintește alegerea ta.</p>
+
+<h2>Importă-ți marcajele</h2>
+<p>Prima dată când deschizi fereastra, lista ta este goală: BookmarksAccess întreabă dacă să importe marcajele browserelor tale. Poți importa din nou oricând cu Control+I.</p>
+<p>BookmarksAccess caută marcajele din Chrome, Edge, Brave și Firefox, în fiecare profil. Fiecare browser primește propriul folder, de exemplu «Chrome» sau «Firefox», iar folderele lui sunt păstrate înăuntru: bara de marcaje, alte marcaje și folderele tale proprii. Dacă un browser are mai multe profiluri, fiecare primește folderul lui, cu numele profilului.</p>
+<p>La sfârșit, NVDA spune câte adrese au fost adăugate, de exemplu «120 adrese noi, din Chrome, Firefox.»</p>
+<p>O nouă importare adaugă doar adresele noi:</p>
+<ul>
+<li>o adresă care este deja în lista ta nu este adăugată niciodată de două ori, chiar dacă se află în mai multe browsere;</li>
+<li>ce ai redenumit sau mutat rămâne cum ai lăsat; o adresă nouă merge în folderul ei, chiar dacă ai redenumit sau mutat acel folder;</li>
+<li>o adresă pe care ai șters-o nu revine.</li>
+</ul>
+<p>Pentru Firefox, BookmarksAccess citește copia marcajelor pe care Firefox o salvează singur, de obicei o dată pe zi când îl folosești. Un marcaj adăugat azi în Firefox poate deci ajunge la o importare ulterioară.</p>
+<p>Fiecare adresă păstrează data la care ai adăugat-o la marcaje în browser. O adresă care este deja în lista ta primește această dată la următorul import. Dacă ștergi tot, următorul import aduce înapoi toate adresele, chiar și pe cele pe care le ștersesei.</p>
+
+<h2>Setări</h2>
+<p>Setările sunt în meniul NVDA, Preferințe, Setări, categoria BookmarksAccess:</p>
+<ul>
+<li><strong>Caută automat actualizări la pornirea NVDA</strong> și <strong>Caută actualizări acum:</strong> vezi secțiunea următoare.</li>
+<li><strong>Opțiuni avansate...:</strong> o singură opțiune, «Copiază adresa în clipboard când adaugi pagina afișată», bifată implicit. Debifată, NVDA+Control+Shift+U adaugă pagina fără să schimbe clipboardul.</li>
+</ul>
+
+<h2>Actualizări</h2>
+<p>La pornirea NVDA, BookmarksAccess verifică dacă există o versiune nouă. Dacă există, se oferă s-o instaleze, apoi să repornească NVDA. Butonul «Caută actualizări acum» face aceeași verificare pe loc.</p>
+
+<h2>Unde este păstrată lista ta</h2>
+<p>Lista ta este un fișier numit bookmarksAccess.json, în folderul de configurare al NVDA, cu o copie a stării anterioare numită bookmarksAccess.json.bak. Este salvată după fiecare modificare.</p>
+
+<h2>Confidențialitate</h2>
+<p>Marcajele tale rămân pe computerul tău: nimic nu este trimis prin Internet. Singura conexiune a suplimentului la Internet este verificarea actualizărilor.</p>
+
+<h2>Mulțumiri</h2>
+<p>BookmarksAccess este făcut de ReaperAccessible. Este software liber, sub Licența Publică Generală GNU, versiunea 3.</p>
+</body>
+</html>

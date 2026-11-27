@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BookmarksAccess\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Adds the current web page to BookmarksAccess, and copies its address"
+msgstr "Thêm trang web đang mở vào BookmarksAccess và sao chép địa chỉ của trang"
+
+msgid "Opens BookmarksAccess, your list of bookmarks"
+msgstr "Mở BookmarksAccess, danh sách dấu trang của bạn"
+
+msgid "My order"
+msgstr "Thứ tự của tôi"
+
+msgid "Name, from A to Z"
+msgstr "Tên, từ A đến Z"
+
+msgid "Name, from Z to A"
+msgstr "Tên, từ Z đến A"
+
+msgid "Date added, newest first"
+msgstr "Ngày thêm, mới nhất trước"
+
+msgid "Date added, oldest first"
+msgstr "Ngày thêm, cũ nhất trước"
+
+msgid "Most opened first"
+msgstr "Mở nhiều nhất trước"
+
+msgid "Bookmarks bar"
+msgstr "Thanh dấu trang"
+
+msgid "Bookmarks menu"
+msgstr "Menu dấu trang"
+
+msgid "Other bookmarks"
+msgstr "Dấu trang khác"
+
+msgid "Mobile bookmarks"
+msgstr "Dấu trang trên điện thoại"
+
+msgid "Your list is empty. Import the bookmarks of your web browsers now?"
+msgstr "Danh sách của bạn đang trống. Nhập ngay dấu trang từ các trình duyệt web của bạn?"
+
+msgid "&Name:"
+msgstr "&Tên:"
+
+msgid "&Address:"
+msgstr "Địa &chỉ:"
+
+msgid "&Folder:"
+msgstr "&Thư mục:"
+
+msgid "New folder"
+msgstr "Thư mục mới"
+
+msgid "Name of the new folder:"
+msgstr "Tên thư mục mới:"
+
+msgid "Open in the browser"
+msgstr "Mở trong trình duyệt"
+
+msgid "Enter"
+msgstr "Enter"
+
+msgid "Add an address"
+msgstr "Thêm địa chỉ"
+
+msgid "Control+N"
+msgstr "Control+N"
+
+msgid "Control+Shift+N"
+msgstr "Control+Shift+N"
+
+msgid "Rename"
+msgstr "Đổi tên"
+
+msgid "F2"
+msgstr "F2"
+
+msgid "Edit the address"
+msgstr "Sửa địa chỉ"
+
+msgid "Control+E"
+msgstr "Control+E"
+
+msgid "Move to a folder"
+msgstr "Chuyển vào thư mục"
+
+msgid "Control+M"
+msgstr "Control+M"
+
+msgid "Select the next item too"
+msgstr "Chọn thêm mục tiếp theo"
+
+msgid "Shift+Down arrow"
+msgstr "Shift+Mũi tên xuống"
+
+msgid "Select the previous item too"
+msgstr "Chọn thêm mục trước đó"
+
+msgid "Shift+Up arrow"
+msgstr "Shift+Mũi tên lên"
+
+msgid "Cut"
+msgstr "Cắt"
+
+msgid "Control+X"
+msgstr "Control+X"
+
+msgid "Paste into this folder"
+msgstr "Dán vào thư mục này"
+
+msgid "Control+V"
+msgstr "Control+V"
+
+msgid "Copy the address"
+msgstr "Sao chép địa chỉ"
+
+msgid "Control+C"
+msgstr "Control+C"
+
+msgid "Delete"
+msgstr "Xóa"
+
+msgid "Del"
+msgstr "Delete"
+
+msgid "Sort by"
+msgstr "Sắp xếp theo"
+
+msgid "Alt+S"
+msgstr "Alt+S"
+
+msgid "Import from the browsers"
+msgstr "Nhập từ các trình duyệt"
+
+msgid "Control+I"
+msgstr "Control+I"
+
+msgid "List of keys"
+msgstr "Danh sách phím"
+
+msgid "Control+Shift+H"
+msgstr "Control+Shift+H"
+
+msgid "Close"
+msgstr "Đóng"
+
+msgid "Escape"
+msgstr "Escape"
+
+msgid "The list is empty."
+msgstr "Danh sách trống."
+
+msgid "New name:"
+msgstr "Tên mới:"
+
+msgid "Top of the list"
+msgstr "Đầu danh sách"
+
+msgid "Deleted"
+msgstr "Đã xóa"
+
+msgid "Importing..."
+msgstr "Đang nhập..."
+
+msgid "The list could not be saved."
+msgstr "Không thể lưu danh sách."
+
+msgid "First, {name}"
+msgstr "Đầu tiên, {name}"
+
+msgid "Last, {name}"
+msgstr "Cuối cùng, {name}"
+
+msgid "Add"
+msgstr "Thêm"
+
+msgid "Type the address first."
+msgstr "Hãy gõ địa chỉ trước."
+
+msgid "Keys of BookmarksAccess"
+msgstr "Phím của BookmarksAccess"
+
+msgid "&Close"
+msgstr "&Đóng"
+
+msgid "&Open"
+msgstr "&Mở"
+
+msgid "&Add an address..."
+msgstr "&Thêm địa chỉ..."
+
+msgid "&Import from the browsers"
+msgstr "&Nhập từ các trình duyệt"
+
+msgid "This is a folder, not an address."
+msgstr "Đây là một thư mục, không phải địa chỉ."
+
+msgid "{count} items moved to {folder}"
+msgstr "Đã chuyển {count} mục vào {folder}"
+
+msgid "Nothing to paste. Cut with Control+X first."
+msgstr "Không có gì để dán. Hãy cắt bằng Control+X trước."
+
+msgid "Nothing moved: the items are already there."
+msgstr "Không có gì được chuyển: các mục đã ở đó."
+
+msgid "Address copied"
+msgstr "Đã sao chép địa chỉ"
+
+msgid "No bookmarks found in Chrome, Edge, Brave or Firefox."
+msgstr "Không tìm thấy dấu trang nào trong Chrome, Edge, Brave hoặc Firefox."
+
+msgid "No new address."
+msgstr "Không có địa chỉ mới."
+
+msgid "Advanced options of BookmarksAccess"
+msgstr "Tùy chọn nâng cao của BookmarksAccess"
+
+msgid "Not in a web browser."
+msgstr "Không ở trong trình duyệt web."
+
+msgid "No web page found. Move to the page first."
+msgstr "Không tìm thấy trang web. Hãy chuyển đến trang trước."
+
+msgid "New fol&der..."
+msgstr "Thư mục &mới..."
+
+msgid "&Keys of the window:"
+msgstr "Phím của &cửa sổ:"
+
+msgid "NVDA+Control+Shift+U"
+msgstr "NVDA+Control+Shift+U"
+
+msgid "The Applications key shows the commands; Control+Shift+H, the list of keys."
+msgstr "Phím Ứng dụng hiện các lệnh; Control+Shift+H, danh sách phím."
+
+msgid "&Sort by:"
+msgstr "&Sắp xếp theo:"
+
+msgid "&Bookmarks:"
+msgstr "&Dấu trang:"
+
+msgid "{name}, selected"
+msgstr "{name}, đã chọn"
+
+msgid "This address could not be opened."
+msgstr "Không thể mở địa chỉ này."
+
+msgid "Moved to {folder}"
+msgstr "Đã chuyển vào {folder}"
+
+msgid "Move {name}"
+msgstr "Chuyển {name}"
+
+msgid "Move {count} items"
+msgstr "Chuyển {count} mục"
+
+msgid "Delete the {count} selected items, and everything inside the folders?"
+msgstr "Xóa {count} mục đã chọn và mọi thứ bên trong các thư mục?"
+
+msgid "&Copy the address to the clipboard when adding the current page"
+msgstr "&Sao chép địa chỉ vào clipboard khi thêm trang đang mở"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "Tự động kiểm tra &bản cập nhật khi NVDA khởi động"
+
+msgid "Check for updates &now"
+msgstr "Kiểm tra bản cập nhật &ngay"
+
+msgid "&Advanced options..."
+msgstr "&Tùy chọn nâng cao..."
+
+msgid "Address copied. Already in your bookmarks."
+msgstr "Đã sao chép địa chỉ. Đã có trong dấu trang của bạn."
+
+msgid "Already in your bookmarks."
+msgstr "Đã có trong dấu trang của bạn."
+
+msgid "{name} (empty)"
+msgstr "{name} (trống)"
+
+msgid "{count} items cut"
+msgstr "Đã cắt {count} mục"
+
+msgid "Delete {name}?"
+msgstr "Xóa {name}?"
+
+msgid "Delete the folder {name} and the {count} addresses inside it?"
+msgstr "Xóa thư mục {name} và {count} địa chỉ bên trong?"
+
+msgid "Delete the folder {name}?"
+msgstr "Xóa thư mục {name}?"
+
+msgid "1 new address, from {browsers}."
+msgstr "1 địa chỉ mới, từ {browsers}."
+
+msgid "{count} new addresses, from {browsers}."
+msgstr "{count} địa chỉ mới, từ {browsers}."
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "Bản cập nhật đã được cài. NVDA phải khởi động lại để hoàn tất. Khởi động lại ngay?"
+
+msgid "Downloading the update..."
+msgstr "Đang tải bản cập nhật..."
+
+msgid "Checking for updates..."
+msgstr "Đang kiểm tra cập nhật..."
+
+msgid "{name} update"
+msgstr "Cập nhật {name}"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "Đã có {name} {new}. Bạn đang dùng phiên bản {current}. Bạn có muốn cài ngay bây giờ không?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "Bản cập nhật đã được cài. Hãy khởi động lại NVDA để hoàn tất."
+
+msgid "The update could not be downloaded."
+msgstr "Không thể tải bản cập nhật."
+
+msgid "Downloading the update: {percent}%"
+msgstr "Đang tải bản cập nhật: {percent}%"
+
+msgid "The update could not be installed."
+msgstr "Không thể cài bản cập nhật."
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "Không thể kiểm tra bản cập nhật. Hãy kiểm tra kết nối Internet của bạn."
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} đã là bản mới nhất (phiên bản {version})."

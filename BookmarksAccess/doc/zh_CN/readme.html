@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookmarksAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>BookmarksAccess</h1>
+<p>BookmarksAccess 把你在 Chrome、Edge、Brave 和 Firefox 中的书签收集到它自己的一个列表里。你可以在一个专为 NVDA 设计的窗口中，按文件夹整理这个列表。</p>
+<p>BookmarksAccess 只读取你的浏览器的书签：它从不修改这些书签。你在它的列表里做的一切，都只留在它的列表里。</p>
+
+<h2>键盘快捷键</h2>
+<ul>
+<li><strong>NVDA+Control+Shift+U:</strong>在 Chrome、Edge、Brave 或 Firefox 中，把你正在阅读的页面添加到你的列表。在任何其他程序中，NVDA 会说“当前不在网页浏览器中。”</li>
+</ul>
+<p>要打开你的书签窗口，请进入 NVDA 菜单，工具，BookmarksAccess。你也可以给它设置自己的快捷键：NVDA 菜单，首选项，输入手势，类别 BookmarksAccess，“打开 BookmarksAccess，你的书签列表”。NVDA+Control+Shift+U 也可以在同一个地方更改。</p>
+
+<h2>添加你正在阅读的页面</h2>
+<ol>
+<li>在你的网页浏览器中，打开该页面。</li>
+<li>按 NVDA+Control+Shift+U。NVDA 会说“地址已复制”：页面的地址现在已经在剪贴板中，可以随时粘贴。</li>
+<li>“添加”窗口打开。页面的名称和地址已经填好，你位于文件夹列表中。用方向键选择文件夹，然后按 Enter。</li>
+</ol>
+<p>页面就添加好了，你的书签窗口会显示它。下一次，文件夹列表会从你上次选择的文件夹开始。</p>
+<p>“添加”窗口里的“新建文件夹”按钮，可以立即为这个页面建一个文件夹。</p>
+<p>如果页面已经在你的列表中，NVDA 会说“地址已复制。已经在你的书签中。”，窗口会显示它在哪里。</p>
+<p>地址是从页面本身读取的：地址栏不会被动到。如果焦点不在页面上，例如在地址栏中，BookmarksAccess 会使用窗口中显示的页面。如果一个也找不到，NVDA 会说“没有找到网页。请先切换到网页。”</p>
+
+<h2>你的书签窗口</h2>
+<p>窗口显示一棵树：你的文件夹，以及文件夹里面的地址。用上下方向键移动。右方向键展开文件夹，左方向键折叠文件夹。在第一项上按上方向键，会说“第一个，”加上它的名称；在最后一项上按下方向键，会说“最后一个，”。里面什么都没有的文件夹，会在名称后说“空”。</p>
+<p>应用程序键，或 Shift+F10，会显示命令及其按键。每条命令也可以直接在树中用它的按键执行：</p>
+<ul>
+<li><strong>在浏览器中打开(Enter):</strong>在你的默认网页浏览器中打开这个地址。在文件夹上，Enter 会展开或折叠它。</li>
+<li><strong>添加地址(Control+N):</strong>输入名称和地址，然后选择文件夹。地址会放进所选的文件夹，或所选地址所在的文件夹。</li>
+<li><strong>新建文件夹(Control+Shift+N):</strong>在所选文件夹里面建一个文件夹。</li>
+<li><strong>重命名(F2):</strong>修改文件夹或地址的名称。</li>
+<li><strong>编辑地址(Control+E):</strong>修改网页的地址。</li>
+<li><strong>移动到文件夹(Control+M):</strong>显示你的文件夹列表；选择这一项要去的地方，然后按 Enter。文件夹会连同它里面的所有内容一起移动。</li>
+<li><strong>同时选择下一项(Shift+下箭头):</strong> 选择你所在的项和下一项，然后转到下一项。再按一次可以添加更多。剪切、移动到文件夹和删除随后会作用于所有选中的项。只用方向键移动会结束选择。</li>
+<li><strong>同时选择上一项(Shift+上箭头):</strong> 同样，向上。</li>
+<li><strong>剪切(Control+X):</strong> 取走选中的项，或你所在的项。在你粘贴之前，它们留在原处。</li>
+<li><strong>粘贴到此文件夹(Control+V):</strong> 把剪切的项移动到选中的文件夹，或选中地址所在的文件夹。</li>
+<li><strong>复制地址(Control+C):</strong>把地址复制到剪贴板。</li>
+<li><strong>删除(Delete):</strong>先询问，然后删除。删除文件夹会删除它里面的所有内容。</li>
+<li><strong>排序方式(Alt+S):</strong> 转到“排序方式”列表。</li>
+<li><strong>从浏览器导入(Control+I):</strong>见下一节。</li>
+<li><strong>按键列表(Control+Shift+H):</strong>显示所有这些按键。F1 也会显示它。</li>
+<li><strong>关闭(Escape):</strong>关闭窗口。</li>
+</ul>
+<p>窗口底部的按钮可以执行最常用的命令：打开、添加地址、从浏览器导入和关闭。</p>
+<p>文件夹列表中的“列表顶部”，表示不在任何文件夹里面。</p>
+<p>树之前的“排序方式”列表可以给每个文件夹排序：我的顺序、名称从 A 到 Z、名称从 Z 到 A、添加日期（最新的或最早的在前），或打开次数最多的在前（统计从 BookmarksAccess 打开的次数）。在每个文件夹中，文件夹总是排在前面。排序只改变你看到的样子：回到“我的顺序”，你的整理还是原来的样子。插件会记住你的选择。</p>
+
+<h2>导入你的书签</h2>
+<p>你第一次打开窗口时，列表是空的：BookmarksAccess 会询问是否导入你的网页浏览器中的书签。你可以随时用 Control+I 再次导入。</p>
+<p>BookmarksAccess 会在每个用户配置文件中查找 Chrome、Edge、Brave 和 Firefox 的书签。每个浏览器都有自己的文件夹，例如“Chrome”或“Firefox”，它的各个文件夹保留在里面：书签栏、其他书签，以及你自己的文件夹。如果一个浏览器有多个配置文件，每个配置文件都有自己的文件夹，名称就是配置文件的名称。</p>
+<p>最后，NVDA 会说添加了多少个地址，例如“120 个新地址，来自 Chrome、Firefox。”</p>
+<p>再次导入时，只会添加新的地址：</p>
+<ul>
+<li>已经在你的列表中的地址，绝不会被添加两次，即使它同时出现在多个浏览器中；</li>
+<li>你重命名或移动过的内容保持你设置的样子；新地址会放进它所属的文件夹，即使你已经重命名或移动了那个文件夹；</li>
+<li>你删除过的地址不会再回来。</li>
+</ul>
+<p>对于 Firefox，BookmarksAccess 读取的是 Firefox 自己保存的书签副本，通常在你使用它的日子里每天保存一次。因此，今天在 Firefox 中添加的书签，可能要到之后的某次导入才会出现。</p>
+<p>每个地址都会保留你在浏览器中收藏它的日期。已经在列表中的地址，会在下次导入时得到这个日期。 如果你删除了全部内容，下次导入会带回所有地址，包括你删除过的地址。</p>
+
+<h2>设置</h2>
+<p>设置位于 NVDA 菜单，首选项，设置，类别 BookmarksAccess：</p>
+<ul>
+<li><strong>NVDA 启动时自动检查更新</strong>和<strong>立即检查更新:</strong>见下一节。</li>
+<li><strong>高级选项...:</strong>有一个选项，“添加当前页面时把地址复制到剪贴板”，默认已勾选。取消勾选后，NVDA+Control+Shift+U 添加页面时不会改动剪贴板。</li>
+</ul>
+
+<h2>更新</h2>
+<p>NVDA 启动时，BookmarksAccess 会检查是否有新版本。如果有，它会提议安装，然后重新启动 NVDA。“立即检查更新”按钮会马上进行同样的检查。</p>
+
+<h2>你的列表保存在哪里</h2>
+<p>你的列表是一个名为 bookmarksAccess.json 的文件，位于 NVDA 的配置文件夹中，并带有一个保存上一个状态的副本，名为 bookmarksAccess.json.bak。每次更改后都会保存。</p>
+
+<h2>隐私</h2>
+<p>你的书签留在你的电脑上：不会通过互联网发送任何内容。这个附加组件唯一连接互联网的地方是检查更新。</p>
+
+<h2>致谢</h2>
+<p>BookmarksAccess 由 ReaperAccessible 制作。它是自由软件，遵循 GNU 通用公共许可证第 3 版。</p>
+</body>
+</html>

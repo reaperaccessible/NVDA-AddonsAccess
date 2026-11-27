@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookmarksAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>BookmarksAccess</h1>
+<p>BookmarksAccess mengumpulkan bookmark Anda dari Chrome, Edge, Brave, dan Firefox dalam satu daftar miliknya sendiri. Anda mengatur daftar ini dalam folder, di sebuah jendela yang dibuat untuk NVDA.</p>
+<p>BookmarksAccess hanya membaca bookmark browser Anda: tidak pernah mengubahnya. Apa yang Anda lakukan di daftarnya tetap berada di daftarnya.</p>
+
+<h2>Pintasan keyboard</h2>
+<ul>
+<li><strong>NVDA+Control+Shift+U:</strong> di Chrome, Edge, Brave, atau Firefox, menambahkan halaman yang sedang Anda baca ke daftar Anda. Di program lain, NVDA mengucapkan "Bukan di browser web."</li>
+</ul>
+<p>Untuk membuka jendela bookmark Anda, buka menu NVDA, Alat, BookmarksAccess. Anda juga bisa memberinya pintasan sendiri: menu NVDA, Preferensi, Gestur masukan, kategori BookmarksAccess, "Membuka BookmarksAccess, daftar bookmark Anda". NVDA+Control+Shift+U bisa diubah di tempat yang sama.</p>
+
+<h2>Menambahkan halaman yang sedang Anda baca</h2>
+<ol>
+<li>Di browser web Anda, buka halamannya.</li>
+<li>Tekan NVDA+Control+Shift+U. NVDA mengucapkan "Alamat disalin": alamat halaman kini ada di papan klip, siap ditempel.</li>
+<li>Jendela Tambah terbuka. Nama dan alamat halaman sudah terisi, dan Anda berada di daftar folder. Pilih folder dengan tombol panah, lalu tekan Enter.</li>
+</ol>
+<p>Halaman ditambahkan, dan jendela bookmark Anda menampilkannya. Lain kali, daftar folder dimulai dari folder yang Anda pilih terakhir.</p>
+<p>Tombol "Folder baru" di jendela Tambah langsung membuat folder untuk halaman itu.</p>
+<p>Jika halaman sudah ada di daftar Anda, NVDA mengucapkan "Alamat disalin. Sudah ada di bookmark Anda." dan jendela menunjukkan letaknya.</p>
+<p>Alamat dibaca dari halaman itu sendiri: bilah alamat tidak disentuh. Jika fokus tidak berada di halaman, misalnya di bilah alamat, BookmarksAccess mengambil halaman yang tampil di jendela. Jika tidak menemukannya, NVDA mengucapkan "Halaman web tidak ditemukan. Pindah ke halamannya dulu."</p>
+
+<h2>Jendela bookmark Anda</h2>
+<p>Jendela menampilkan sebuah pohon: folder Anda, dan di dalamnya alamat Anda. Bergeraklah dengan tombol panah atas dan bawah. Panah kanan membuka folder, panah kiri menutupnya. Pada item pertama, panah atas mengucapkan "Pertama," diikuti namanya; pada item terakhir, panah bawah mengucapkan "Terakhir,". Folder yang tidak berisi apa pun mengucapkan "kosong" setelah namanya.</p>
+<p>Tombol Aplikasi, atau Shift+F10, menampilkan perintah beserta tombolnya. Setiap perintah juga bekerja dengan tombolnya, langsung dari pohon:</p>
+<ul>
+<li><strong>Buka di browser (Enter):</strong> membuka alamat di browser web bawaan Anda. Pada folder, Enter membuka atau menutupnya.</li>
+<li><strong>Tambah alamat (Control+N):</strong> ketik nama dan alamat, lalu pilih folder. Alamat masuk ke folder yang dipilih, atau ke folder dari alamat yang dipilih.</li>
+<li><strong>Folder baru (Control+Shift+N):</strong> membuat folder di dalam folder yang dipilih.</li>
+<li><strong>Ganti nama (F2):</strong> mengganti nama folder atau alamat.</li>
+<li><strong>Ubah alamat (Control+E):</strong> mengubah alamat halaman web.</li>
+<li><strong>Pindahkan ke folder (Control+M):</strong> menampilkan daftar folder Anda; pilih tujuan item, lalu tekan Enter. Folder berpindah bersama semua isinya.</li>
+<li><strong>Pilih juga item berikutnya (Shift+Panah bawah):</strong> memilih item tempat Anda berada dan item berikutnya, lalu pindah ke item berikutnya. Tekan lagi untuk menambah. Potong, Pindahkan ke folder, dan Hapus lalu berlaku untuk semua item yang dipilih. Bergerak hanya dengan panah mengakhiri pilihan.</li>
+<li><strong>Pilih juga item sebelumnya (Shift+Panah atas):</strong> sama, ke atas.</li>
+<li><strong>Potong (Control+X):</strong> mengambil item yang dipilih, atau item tempat Anda berada. Item tetap di tempatnya sampai Anda menempelnya.</li>
+<li><strong>Tempel ke folder ini (Control+V):</strong> memindahkan item yang dipotong ke folder yang dipilih, atau ke folder dari alamat yang dipilih.</li>
+<li><strong>Salin alamat (Control+C):</strong> menyalin alamat ke papan klip.</li>
+<li><strong>Hapus (Del):</strong> bertanya dulu, baru menghapus. Menghapus folder berarti menghapus semua isinya.</li>
+<li><strong>Urutkan menurut (Alt+U):</strong> pergi ke daftar Urutkan menurut.</li>
+<li><strong>Impor dari browser (Control+I):</strong> lihat bagian berikutnya.</li>
+<li><strong>Daftar tombol (Control+Shift+H):</strong> menampilkan semua tombol ini. F1 juga menampilkannya.</li>
+<li><strong>Tutup (Escape):</strong> menutup jendela.</li>
+</ul>
+<p>Tombol di bagian bawah jendela menjalankan perintah yang paling sering dipakai: Buka, Tambah alamat, Impor dari browser, dan Tutup.</p>
+<p>"Awal daftar", di daftar folder, berarti di luar folder mana pun.</p>
+<p>Daftar "Urutkan menurut", tepat sebelum pohon, mengurutkan setiap folder: Urutan saya, Nama A sampai Z, Nama Z sampai A, Tanggal ditambahkan (terbaru atau terlama dulu), atau Paling sering dibuka dulu, yang menghitung alamat yang dibuka dari BookmarksAccess. Di setiap folder, folder selalu di depan. Mengurutkan hanya mengubah tampilan: kembali ke "Urutan saya", susunan Anda masih seperti yang Anda tinggalkan. Add-on mengingat pilihan Anda.</p>
+
+<h2>Mengimpor bookmark Anda</h2>
+<p>Saat pertama kali membuka jendela, daftar Anda kosong: BookmarksAccess bertanya apakah bookmark browser web Anda akan diimpor. Anda bisa mengimpor lagi kapan saja dengan Control+I.</p>
+<p>BookmarksAccess mencari bookmark Chrome, Edge, Brave, dan Firefox, di setiap profil. Setiap browser mendapat foldernya sendiri, seperti "Chrome" atau "Firefox", dan folder-foldernya dipertahankan di dalamnya: bilah bookmark, bookmark lainnya, dan folder Anda sendiri. Jika sebuah browser punya beberapa profil, masing-masing mendapat foldernya, dengan nama profil.</p>
+<p>Di akhir, NVDA menyebutkan berapa banyak alamat yang ditambahkan, misalnya "120 alamat baru, dari Chrome, Firefox."</p>
+<p>Mengimpor lagi hanya menambahkan alamat yang baru:</p>
+<ul>
+<li>alamat yang sudah ada di daftar Anda tidak pernah ditambahkan dua kali, meskipun ada di beberapa browser;</li>
+<li>apa yang Anda ganti namanya atau pindahkan tetap seperti yang Anda tinggalkan; alamat baru masuk ke foldernya, meskipun folder itu sudah Anda ganti namanya atau pindahkan;</li>
+<li>alamat yang Anda hapus tidak kembali.</li>
+</ul>
+<p>Untuk Firefox, BookmarksAccess membaca salinan bookmark yang disimpan Firefox sendiri, biasanya sekali sehari saat Anda memakainya. Jadi, bookmark yang ditambahkan hari ini di Firefox mungkin baru masuk pada impor berikutnya.</p>
+<p>Setiap alamat menyimpan tanggal saat Anda menandainya di browser. Alamat yang sudah ada di daftar Anda mendapat tanggal itu pada impor berikutnya. Jika Anda menghapus semuanya, impor berikutnya mengembalikan semua alamat, termasuk yang pernah Anda hapus.</p>
+
+<h2>Pengaturan</h2>
+<p>Pengaturan ada di menu NVDA, Preferensi, Pengaturan, kategori BookmarksAccess:</p>
+<ul>
+<li><strong>Periksa pembaruan secara otomatis saat NVDA dimulai</strong> dan <strong>Periksa pembaruan sekarang:</strong> lihat bagian berikutnya.</li>
+<li><strong>Opsi lanjutan...:</strong> satu opsi, "Salin alamat ke papan klip saat menambahkan halaman saat ini", yang dicentang secara bawaan. Jika tidak dicentang, NVDA+Control+Shift+U menambahkan halaman tanpa mengubah papan klip.</li>
+</ul>
+
+<h2>Pembaruan</h2>
+<p>Saat NVDA dimulai, BookmarksAccess memeriksa apakah ada versi baru. Jika ada, ia menawarkan untuk memasangnya, lalu memulai ulang NVDA. Tombol "Periksa pembaruan sekarang" melakukan pemeriksaan yang sama saat itu juga.</p>
+
+<h2>Tempat daftar Anda disimpan</h2>
+<p>Daftar Anda adalah sebuah berkas bernama bookmarksAccess.json, di folder konfigurasi NVDA, dengan salinan kondisi sebelumnya bernama bookmarksAccess.json.bak. Berkas ini disimpan setelah setiap perubahan.</p>
+
+<h2>Privasi</h2>
+<p>Bookmark Anda tetap berada di komputer Anda: tidak ada yang dikirim lewat Internet. Satu-satunya hubungan add-on ini ke Internet adalah pemeriksaan pembaruan.</p>
+
+<h2>Kredit</h2>
+<p>BookmarksAccess dibuat oleh ReaperAccessible. Ini adalah perangkat lunak bebas, di bawah GNU General Public License, versi 3.</p>
+</body>
+</html>

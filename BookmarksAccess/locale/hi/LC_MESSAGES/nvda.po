@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BookmarksAccess\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Adds the current web page to BookmarksAccess, and copies its address"
+msgstr "मौजूदा वेब पेज को BookmarksAccess में जोड़ता है, और उसका पता कॉपी करता है"
+
+msgid "Opens BookmarksAccess, your list of bookmarks"
+msgstr "BookmarksAccess खोलता है, आपके बुकमार्क की सूची"
+
+msgid "My order"
+msgstr "मेरा क्रम"
+
+msgid "Name, from A to Z"
+msgstr "नाम, A से Z"
+
+msgid "Name, from Z to A"
+msgstr "नाम, Z से A"
+
+msgid "Date added, newest first"
+msgstr "जोड़ने की तारीख़, नए पहले"
+
+msgid "Date added, oldest first"
+msgstr "जोड़ने की तारीख़, पुराने पहले"
+
+msgid "Most opened first"
+msgstr "सबसे ज़्यादा खोले गए पहले"
+
+msgid "Bookmarks bar"
+msgstr "बुकमार्क बार"
+
+msgid "Bookmarks menu"
+msgstr "बुकमार्क मेनू"
+
+msgid "Other bookmarks"
+msgstr "अन्य बुकमार्क"
+
+msgid "Mobile bookmarks"
+msgstr "मोबाइल के बुकमार्क"
+
+msgid "Your list is empty. Import the bookmarks of your web browsers now?"
+msgstr "आपकी सूची खाली है। क्या अपने वेब ब्राउज़रों के बुकमार्क अभी इंपोर्ट करें?"
+
+msgid "&Name:"
+msgstr "नाम (&N):"
+
+msgid "&Address:"
+msgstr "पता (&A):"
+
+msgid "&Folder:"
+msgstr "फ़ोल्डर (&F):"
+
+msgid "New folder"
+msgstr "नया फ़ोल्डर"
+
+msgid "Name of the new folder:"
+msgstr "नए फ़ोल्डर का नाम:"
+
+msgid "Open in the browser"
+msgstr "ब्राउज़र में खोलें"
+
+msgid "Enter"
+msgstr "Enter"
+
+msgid "Add an address"
+msgstr "पता जोड़ें"
+
+msgid "Control+N"
+msgstr "Control+N"
+
+msgid "Control+Shift+N"
+msgstr "Control+Shift+N"
+
+msgid "Rename"
+msgstr "नाम बदलें"
+
+msgid "F2"
+msgstr "F2"
+
+msgid "Edit the address"
+msgstr "पता बदलें"
+
+msgid "Control+E"
+msgstr "Control+E"
+
+msgid "Move to a folder"
+msgstr "फ़ोल्डर में ले जाएँ"
+
+msgid "Control+M"
+msgstr "Control+M"
+
+msgid "Select the next item too"
+msgstr "अगला आइटम भी चुनें"
+
+msgid "Shift+Down arrow"
+msgstr "Shift+नीचे तीर"
+
+msgid "Select the previous item too"
+msgstr "पिछला आइटम भी चुनें"
+
+msgid "Shift+Up arrow"
+msgstr "Shift+ऊपर तीर"
+
+msgid "Cut"
+msgstr "काटें"
+
+msgid "Control+X"
+msgstr "Control+X"
+
+msgid "Paste into this folder"
+msgstr "इस फ़ोल्डर में चिपकाएँ"
+
+msgid "Control+V"
+msgstr "Control+V"
+
+msgid "Copy the address"
+msgstr "पता कॉपी करें"
+
+msgid "Control+C"
+msgstr "Control+C"
+
+msgid "Delete"
+msgstr "हटाएँ"
+
+msgid "Del"
+msgstr "Delete"
+
+msgid "Sort by"
+msgstr "क्रम"
+
+msgid "Alt+S"
+msgstr "Alt+S"
+
+msgid "Import from the browsers"
+msgstr "ब्राउज़रों से इंपोर्ट करें"
+
+msgid "Control+I"
+msgstr "Control+I"
+
+msgid "List of keys"
+msgstr "कुंजियों की सूची"
+
+msgid "Control+Shift+H"
+msgstr "Control+Shift+H"
+
+msgid "Close"
+msgstr "बंद करें"
+
+msgid "Escape"
+msgstr "Escape"
+
+msgid "The list is empty."
+msgstr "सूची खाली है।"
+
+msgid "New name:"
+msgstr "नया नाम:"
+
+msgid "Top of the list"
+msgstr "सूची की शुरुआत"
+
+msgid "Deleted"
+msgstr "हटाया गया"
+
+msgid "Importing..."
+msgstr "इंपोर्ट हो रहा है..."
+
+msgid "The list could not be saved."
+msgstr "सूची सहेजी नहीं जा सकी।"
+
+msgid "First, {name}"
+msgstr "पहला, {name}"
+
+msgid "Last, {name}"
+msgstr "आखिरी, {name}"
+
+msgid "Add"
+msgstr "जोड़ें"
+
+msgid "Type the address first."
+msgstr "पहले पता लिखें।"
+
+msgid "Keys of BookmarksAccess"
+msgstr "BookmarksAccess की कुंजियाँ"
+
+msgid "&Close"
+msgstr "बंद करें (&C)"
+
+msgid "&Open"
+msgstr "खोलें (&O)"
+
+msgid "&Add an address..."
+msgstr "पता जोड़ें (&A)..."
+
+msgid "&Import from the browsers"
+msgstr "ब्राउज़रों से इंपोर्ट करें (&I)"
+
+msgid "This is a folder, not an address."
+msgstr "यह एक फ़ोल्डर है, पता नहीं।"
+
+msgid "{count} items moved to {folder}"
+msgstr "{count} आइटम {folder} में ले जाए गए"
+
+msgid "Nothing to paste. Cut with Control+X first."
+msgstr "चिपकाने के लिए कुछ नहीं है। पहले Control+X से काटें।"
+
+msgid "Nothing moved: the items are already there."
+msgstr "कुछ नहीं ले जाया गया: आइटम पहले से वहीं हैं।"
+
+msgid "Address copied"
+msgstr "पता कॉपी हो गया"
+
+msgid "No bookmarks found in Chrome, Edge, Brave or Firefox."
+msgstr "Chrome, Edge, Brave या Firefox में कोई बुकमार्क नहीं मिला।"
+
+msgid "No new address."
+msgstr "कोई नया पता नहीं।"
+
+msgid "Advanced options of BookmarksAccess"
+msgstr "BookmarksAccess के उन्नत विकल्प"
+
+msgid "Not in a web browser."
+msgstr "वेब ब्राउज़र में नहीं हैं।"
+
+msgid "No web page found. Move to the page first."
+msgstr "कोई वेब पेज नहीं मिला। पहले पेज पर जाएँ।"
+
+msgid "New fol&der..."
+msgstr "नया फ़ोल्डर (&D)..."
+
+msgid "&Keys of the window:"
+msgstr "विंडो की कुंजियाँ (&K):"
+
+msgid "NVDA+Control+Shift+U"
+msgstr "NVDA+Control+Shift+U"
+
+msgid "The Applications key shows the commands; Control+Shift+H, the list of keys."
+msgstr "ऐप्लिकेशन कुंजी आदेश दिखाती है; Control+Shift+H, कुंजियों की सूची।"
+
+msgid "&Sort by:"
+msgstr "क्रम (&S):"
+
+msgid "&Bookmarks:"
+msgstr "बुकमार्क (&B):"
+
+msgid "{name}, selected"
+msgstr "{name}, चयनित"
+
+msgid "This address could not be opened."
+msgstr "यह पता खोला नहीं जा सका।"
+
+msgid "Moved to {folder}"
+msgstr "{folder} में ले जाया गया"
+
+msgid "Move {name}"
+msgstr "{name} को ले जाएँ"
+
+msgid "Move {count} items"
+msgstr "{count} आइटम ले जाएँ"
+
+msgid "Delete the {count} selected items, and everything inside the folders?"
+msgstr "चुने गए {count} आइटम और फ़ोल्डरों के अंदर का सब कुछ हटाएँ?"
+
+msgid "&Copy the address to the clipboard when adding the current page"
+msgstr "मौजूदा पेज जोड़ते समय पता क्लिपबोर्ड पर कॉपी करें (&C)"
+
+msgid "Check for &updates automatically when NVDA starts"
+msgstr "NVDA शुरू होने पर अपने आप अपडेट जाँचें (&U)"
+
+msgid "Check for updates &now"
+msgstr "अपडेट अभी जाँचें (&N)"
+
+msgid "&Advanced options..."
+msgstr "उन्नत विकल्प (&A)..."
+
+msgid "Address copied. Already in your bookmarks."
+msgstr "पता कॉपी हो गया। यह पहले से आपके बुकमार्क में है।"
+
+msgid "Already in your bookmarks."
+msgstr "यह पहले से आपके बुकमार्क में है।"
+
+msgid "{name} (empty)"
+msgstr "{name} (खाली)"
+
+msgid "{count} items cut"
+msgstr "{count} आइटम काटे गए"
+
+msgid "Delete {name}?"
+msgstr "क्या {name} हटाएँ?"
+
+msgid "Delete the folder {name} and the {count} addresses inside it?"
+msgstr "क्या फ़ोल्डर {name} और उसके अंदर के {count} पते हटाएँ?"
+
+msgid "Delete the folder {name}?"
+msgstr "क्या फ़ोल्डर {name} हटाएँ?"
+
+msgid "1 new address, from {browsers}."
+msgstr "1 नया पता, {browsers} से।"
+
+msgid "{count} new addresses, from {browsers}."
+msgstr "{count} नए पते, {browsers} से।"
+
+msgid "The update is installed. NVDA must restart to finish. Restart now?"
+msgstr "अपडेट इंस्टॉल हो गया। पूरा करने के लिए NVDA को रीस्टार्ट करना होगा। अभी रीस्टार्ट करें?"
+
+msgid "Downloading the update..."
+msgstr "अपडेट डाउनलोड हो रहा है..."
+
+msgid "Checking for updates..."
+msgstr "अपडेट के लिए जाँच की जा रही है..."
+
+msgid "{name} update"
+msgstr "{name} अपडेट"
+
+msgid "{name} {new} is available. You have version {current}. Do you want to install it now?"
+msgstr "{name} {new} उपलब्ध है। आपके पास संस्करण {current} है। क्या आप इसे अभी इंस्टॉल करना चाहते हैं?"
+
+msgid "The update is already installed. Restart NVDA to finish."
+msgstr "अपडेट पहले से इंस्टॉल है। पूरा करने के लिए NVDA को रीस्टार्ट करें।"
+
+msgid "The update could not be downloaded."
+msgstr "अपडेट डाउनलोड नहीं हो सका।"
+
+msgid "Downloading the update: {percent}%"
+msgstr "अपडेट डाउनलोड हो रहा है: {percent}%"
+
+msgid "The update could not be installed."
+msgstr "अपडेट इंस्टॉल नहीं हो सका।"
+
+msgid "Could not check for updates. Check your Internet connection."
+msgstr "अपडेट नहीं जाँचे जा सके। अपना इंटरनेट कनेक्शन जाँचें।"
+
+msgid "{name} is up to date (version {version})."
+msgstr "{name} अप-टू-डेट है (संस्करण {version})।"

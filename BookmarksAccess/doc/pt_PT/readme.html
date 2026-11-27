@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookmarksAccess</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>BookmarksAccess</h1>
+<p>O BookmarksAccess reúne os seus favoritos do Chrome, Edge, Brave e Firefox numa lista própria. Organiza essa lista em pastas, numa janela feita para o NVDA.</p>
+<p>O BookmarksAccess apenas lê os favoritos dos seus navegadores: nunca os altera. O que faz na lista dele fica só na lista dele.</p>
+
+<h2>Atalho de teclado</h2>
+<ul>
+<li><strong>NVDA+Control+Shift+U:</strong> no Chrome, Edge, Brave ou Firefox, adiciona à sua lista a página que está a ler. Em qualquer outro programa, o NVDA diz «Não está num navegador.»</li>
+</ul>
+<p>Para abrir a janela dos seus favoritos, vá ao menu do NVDA, Ferramentas, BookmarksAccess. Pode também dar-lhe um atalho seu: menu do NVDA, Preferências, Gestos de entrada, categoria BookmarksAccess, «Abre o BookmarksAccess, a sua lista de favoritos». Pode mudar NVDA+Control+Shift+U no mesmo sítio.</p>
+
+<h2>Adicionar a página que está a ler</h2>
+<ol>
+<li>No seu navegador, abra a página.</li>
+<li>Prima NVDA+Control+Shift+U. O NVDA diz «Endereço copiado»: o endereço da página já está na área de transferência, pronto a ser colado.</li>
+<li>A janela Adicionar abre-se. O nome e o endereço da página já estão preenchidos, e está na lista de pastas. Escolha a pasta com as setas e prima Enter.</li>
+</ol>
+<p>A página é adicionada, e a janela dos seus favoritos mostra-a. Da próxima vez, a lista de pastas começa na última pasta que escolheu.</p>
+<p>O botão «Nova pasta» da janela Adicionar cria logo uma pasta para a página.</p>
+<p>Se a página já está na sua lista, o NVDA diz «Endereço copiado. Já está nos seus favoritos.» e a janela mostra onde ela está.</p>
+<p>O endereço é lido da própria página: a barra de endereços não é tocada. Se o foco não está na página, por exemplo na barra de endereços, o BookmarksAccess usa a página mostrada na janela. Se não encontrar nenhuma, o NVDA diz «Nenhuma página web encontrada. Vá primeiro para a página.»</p>
+
+<h2>A janela dos seus favoritos</h2>
+<p>A janela mostra uma árvore: as suas pastas e, dentro delas, os seus endereços. Desloque-se com as setas para cima e para baixo. A seta para a direita abre uma pasta, a seta para a esquerda fecha-a. No primeiro item, a seta para cima diz «Primeiro,» seguido do nome dele; no último item, a seta para baixo diz «Último,». Uma pasta sem nada dentro diz «vazia» depois do nome.</p>
+<p>A tecla Aplicações, ou Shift+F10, mostra os comandos com as suas teclas. Cada comando também funciona com a sua tecla, diretamente na árvore:</p>
+<ul>
+<li><strong>Abrir no navegador (Enter):</strong> abre o endereço no seu navegador predefinido. Numa pasta, Enter abre-a ou fecha-a.</li>
+<li><strong>Adicionar um endereço (Control+N):</strong> escreva o nome e o endereço, depois escolha a pasta. O endereço vai para a pasta selecionada, ou para a pasta do endereço selecionado.</li>
+<li><strong>Nova pasta (Control+Shift+N):</strong> cria uma pasta dentro da pasta selecionada.</li>
+<li><strong>Mudar o nome (F2):</strong> muda o nome de uma pasta ou de um endereço.</li>
+<li><strong>Editar o endereço (Control+E):</strong> muda o endereço de uma página web.</li>
+<li><strong>Mover para uma pasta (Control+M):</strong> mostra a lista das suas pastas; escolha para onde o item vai e prima Enter. Uma pasta move-se com tudo o que tem dentro.</li>
+<li><strong>Selecionar também o item seguinte (Shift+Seta para baixo):</strong> seleciona o item onde está e o seguinte, e vai para o seguinte. Prima de novo para acrescentar mais. Cortar, Mover para uma pasta e Apagar agem então sobre todos os itens selecionados. Mover-se só com as setas termina a seleção.</li>
+<li><strong>Selecionar também o item anterior (Shift+Seta para cima):</strong> o mesmo, para cima.</li>
+<li><strong>Cortar (Control+X):</strong> pega nos itens selecionados, ou no item onde está. Ficam no lugar até os colar.</li>
+<li><strong>Colar nesta pasta (Control+V):</strong> move os itens cortados para a pasta selecionada, ou para a pasta do endereço selecionado.</li>
+<li><strong>Copiar o endereço (Control+C):</strong> copia o endereço para a área de transferência.</li>
+<li><strong>Apagar (Del):</strong> pergunta primeiro e depois apaga. Apagar uma pasta apaga tudo o que tem dentro.</li>
+<li><strong>Ordenar por (Alt+O):</strong> vai para a lista Ordenar por.</li>
+<li><strong>Importar dos navegadores (Control+I):</strong> veja a secção seguinte.</li>
+<li><strong>Lista de teclas (Control+Shift+H):</strong> mostra todas estas teclas. F1 também a mostra.</li>
+<li><strong>Fechar (Esc):</strong> fecha a janela.</li>
+</ul>
+<p>Os botões na parte de baixo da janela fazem os comandos mais comuns: Abrir, Adicionar um endereço, Importar dos navegadores e Fechar.</p>
+<p>«Início da lista», nas listas de pastas, quer dizer fora de qualquer pasta.</p>
+<p>A lista "Ordenar por", mesmo antes da árvore, ordena cada pasta: A minha ordem, Nome de A a Z, Nome de Z a A, Data de adição (mais recentes ou mais antigos primeiro), ou Mais abertos primeiro, que conta os endereços abertos a partir do BookmarksAccess. Em cada pasta, as pastas vêm sempre primeiro. Ordenar só muda o que vê: ao voltar a "A minha ordem", encontra a sua arrumação tal como a deixou. O suplemento lembra-se da sua escolha.</p>
+
+<h2>Importar os seus favoritos</h2>
+<p>Na primeira vez que abre a janela, a sua lista está vazia: o BookmarksAccess pergunta se deve importar os favoritos dos seus navegadores. Pode importar de novo a qualquer momento com Control+I.</p>
+<p>O BookmarksAccess procura os favoritos do Chrome, Edge, Brave e Firefox, em todos os perfis. Cada navegador recebe a sua própria pasta, como «Chrome» ou «Firefox», e as pastas dele são mantidas lá dentro: barra de favoritos, outros favoritos e as suas próprias pastas. Se um navegador tem vários perfis, cada um recebe a sua pasta, com o nome do perfil.</p>
+<p>No fim, o NVDA diz quantos endereços foram adicionados, por exemplo «120 endereços novos, de Chrome, Firefox.»</p>
+<p>Importar de novo adiciona apenas os endereços novos:</p>
+<ul>
+<li>um endereço que já está na sua lista nunca é adicionado duas vezes, mesmo que esteja em vários navegadores;</li>
+<li>o que mudou de nome ou moveu fica como deixou; um endereço novo vai para a sua pasta, mesmo que tenha mudado o nome ou movido essa pasta;</li>
+<li>um endereço que apagou não volta.</li>
+</ul>
+<p>No Firefox, o BookmarksAccess lê a cópia dos favoritos que o próprio Firefox guarda, normalmente uma vez por dia quando o usa. Um favorito adicionado hoje no Firefox pode, por isso, chegar numa importação posterior.</p>
+<p>Cada endereço guarda a data em que o adicionou aos favoritos no navegador. Um endereço que já está na sua lista recebe essa data na próxima importação. Se apagar tudo, a próxima importação traz de volta todos os endereços, mesmo os que tinha apagado.</p>
+
+<h2>Definições</h2>
+<p>As definições estão no menu do NVDA, Preferências, Definições, categoria BookmarksAccess:</p>
+<ul>
+<li><strong>Procurar atualizações automaticamente ao iniciar o NVDA</strong> e <strong>Procurar atualizações agora:</strong> veja a secção seguinte.</li>
+<li><strong>Opções avançadas...:</strong> uma opção, «Copiar o endereço para a área de transferência ao adicionar a página atual», marcada por predefinição. Desmarcada, NVDA+Control+Shift+U adiciona a página sem mudar a área de transferência.</li>
+</ul>
+
+<h2>Atualizações</h2>
+<p>Quando o NVDA arranca, o BookmarksAccess verifica se existe uma versão nova. Se existir, oferece-se para a instalar e depois reiniciar o NVDA. O botão «Procurar atualizações agora» faz a mesma verificação logo.</p>
+
+<h2>Onde fica guardada a sua lista</h2>
+<p>A sua lista é um ficheiro chamado bookmarksAccess.json, na pasta de configuração do NVDA, com uma cópia do estado anterior chamada bookmarksAccess.json.bak. É guardada após cada alteração.</p>
+
+<h2>Privacidade</h2>
+<p>Os seus favoritos ficam no seu computador: nada é enviado pela Internet. A única ligação do complemento à Internet é a procura de atualizações.</p>
+
+<h2>Créditos</h2>
+<p>O BookmarksAccess é feito pela ReaperAccessible. É software livre, sob a Licença Pública Geral GNU, versão 3.</p>
+</body>
+</html>
