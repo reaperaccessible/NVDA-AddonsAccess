@@ -58,6 +58,29 @@ _UI_ELEMENT_FILLER_STATES = frozenset(
 )
 
 
+def _ui_elements_from(data):
+	"""The UI Explorer's elements, each a dict with a label and a position, from whatever shape the AI answered:
+	a list, a single element, or a list kept under a key such as "elements"."""
+	if isinstance(data, dict):
+		lists = [value for value in data.values() if isinstance(value, list)]
+		data = lists[0] if lists else [data]
+	if not isinstance(data, list):
+		return []
+	elements = []
+	for item in data:
+		if not isinstance(item, dict):
+			continue
+		label = item.get("label")
+		if not isinstance(label, str) or not label.strip():
+			continue
+		try:
+			x, y = int(float(item.get("x"))), int(float(item.get("y")))
+		except (TypeError, ValueError):
+			continue
+		elements.append(dict(item, label=label, x=x, y=y))
+	return elements
+
+
 def _read_ui_element_label(raw_label):
 	text = (raw_label or "").strip()
 	if not text:
@@ -152,6 +175,7 @@ class OperatorCaptchaMixin:
 										"y": int(y_match.group(1)),
 									},
 								)
+				elements = _ui_elements_from(elements)
 				if not elements:
 					raise ValueError("JSON failed")
 				tones.beep(1000, 100)
